@@ -1,0 +1,607 @@
+[
+  {
+    "path": "acceptance-orchestrator\\SKILL.md",
+    "name": "acceptance-orchestrator",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "achieving-cmmc-level-2-compliance\\SKILL.md",
+    "name": "achieving-cmmc-level-2-compliance",
+    "issues": [
+      "description too short"
+    ]
+  },
+  {
+    "path": "analyzing-command-and-control-communication\\SKILL.md",
+    "name": "analyzing-command-and-control-communication",
+    "issues": [
+      "high-risk offensive without safety/legal framing"
+    ]
+  },
+  {
+    "path": "analyzing-heap-spray-exploitation\\SKILL.md",
+    "name": "analyzing-heap-spray-exploitation",
+    "issues": [
+      "high-risk offensive without safety/legal framing"
+    ]
+  },
+  {
+    "path": "analyzing-ios-app-security-with-objection\\SKILL.md",
+    "name": "analyzing-ios-app-security-with-objection",
+    "issues": [
+      "description too short"
+    ]
+  },
+  {
+    "path": "analyzing-linux-kernel-rootkits\\SKILL.md",
+    "name": "analyzing-linux-kernel-rootkits",
+    "issues": [
+      "high-risk offensive without safety/legal framing"
+    ]
+  },
+  {
+    "path": "analyzing-malware-persistence-with-autoruns\\SKILL.md",
+    "name": "analyzing-malware-persistence-with-autoruns",
+    "issues": [
+      "high-risk offensive without safety/legal framing"
+    ]
+  },
+  {
+    "path": "analyzing-ransomware-network-indicators\\SKILL.md",
+    "name": "analyzing-ransomware-network-indicators",
+    "issues": [
+      "high-risk offensive without safety/legal framing"
+    ]
+  },
+  {
+    "path": "analyzing-typosquatting-domains-with-dnstwist\\SKILL.md",
+    "name": "analyzing-typosquatting-domains-with-dnstwist",
+    "issues": [
+      "high-risk offensive without safety/legal framing"
+    ]
+  },
+  {
+    "path": "auditing-foundry-smart-contract-security\\SKILL.md",
+    "name": "auditing-foundry-smart-contract-security",
+    "issues": [
+      "description too short"
+    ]
+  },
+  {
+    "path": "channel-economics\\SKILL.md",
+    "name": "channel-economics",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "codebase-design\\SKILL.md",
+    "name": "codebase-design",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "complexity-cuts\\SKILL.md",
+    "name": "complexity-cuts",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "consulting-analysis\\SKILL.md",
+    "name": "consulting-analysis",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "context-compression\\SKILL.md",
+    "name": "context-compression",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "deep-research\\SKILL.md",
+    "name": "deep-research",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "dependency-auditor\\SKILL.md",
+    "name": "dependency-auditor",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "deploying-cloud-deception-with-decoy-resources\\SKILL.md",
+    "name": "deploying-cloud-deception-with-decoy-resources",
+    "issues": [
+      "description too short"
+    ]
+  },
+  {
+    "path": "deploying-tailscale-for-zero-trust-vpn\\SKILL.md",
+    "name": "deploying-tailscale-for-zero-trust-vpn",
+    "issues": [
+      "missing type"
+    ]
+  },
+  {
+    "path": "design-consultation\\SKILL.md",
+    "name": "design-consultation",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "design-html\\SKILL.md",
+    "name": "design-html",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "design-shotgun\\SKILL.md",
+    "name": "design-shotgun",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "designing-adversary-engagement-with-mitre-engage\\SKILL.md",
+    "name": "designing-adversary-engagement-with-mitre-engage",
+    "issues": [
+      "description too short"
+    ]
+  },
+  {
+    "path": "detecting-dcsync-attack-in-active-directory\\SKILL.md",
+    "name": "detecting-dcsync-attack-in-active-directory",
+    "issues": [
+      "high-risk offensive without safety/legal framing"
+    ]
+  },
+  {
+    "path": "detecting-t1055-process-injection-with-sysmon\\SKILL.md",
+    "name": "detecting-t1055-process-injection-with-sysmon",
+    "issues": [
+      "high-risk offensive without safety/legal framing"
+    ]
+  },
+  {
+    "path": "diagram\\SKILL.md",
+    "name": "diagram",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "docker-development\\SKILL.md",
+    "name": "docker-development",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "eu-ai-act-specialist\\SKILL.md",
+    "name": "eu-ai-act-specialist",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "executing-active-directory-attack-simulation\\SKILL.md",
+    "name": "executing-active-directory-attack-simulation",
+    "issues": [
+      "high-risk offensive without safety/legal framing"
+    ]
+  },
+  {
+    "path": "executing-nist-rmf-authorization-to-operate\\SKILL.md",
+    "name": "executing-nist-rmf-authorization-to-operate",
+    "issues": [
+      "description too short"
+    ]
+  },
+  {
+    "path": "grill-me\\SKILL.md",
+    "name": "grill-me",
+    "issues": [
+      "body too short (<100 chars)"
+    ]
+  },
+  {
+    "path": "grill-with-docs\\SKILL.md",
+    "name": "grill-with-docs",
+    "issues": [
+      "body too short (<100 chars)"
+    ]
+  },
+  {
+    "path": "guard\\SKILL.md",
+    "name": "guard",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "gui-skill-action-graph\\SKILL.md",
+    "name": "gui-skill-action-graph",
+    "issues": [
+      "missing type"
+    ]
+  },
+  {
+    "path": "idea-lineage\\SKILL.md",
+    "name": "idea-lineage",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "implementing-anti-phishing-training-program\\SKILL.md",
+    "name": "implementing-anti-phishing-training-program",
+    "issues": [
+      "high-risk offensive without safety/legal framing"
+    ]
+  },
+  {
+    "path": "implementing-google-workspace-phishing-protection\\SKILL.md",
+    "name": "implementing-google-workspace-phishing-protection",
+    "issues": [
+      "high-risk offensive without safety/legal framing"
+    ]
+  },
+  {
+    "path": "implementing-hipaa-security-rule-safeguards\\SKILL.md",
+    "name": "implementing-hipaa-security-rule-safeguards",
+    "issues": [
+      "description too short"
+    ]
+  },
+  {
+    "path": "implementing-nerc-cip-compliance-controls\\SKILL.md",
+    "name": "implementing-nerc-cip-compliance-controls",
+    "issues": [
+      "high-risk offensive without safety/legal framing"
+    ]
+  },
+  {
+    "path": "implementing-ransomware-kill-switch-detection\\SKILL.md",
+    "name": "implementing-ransomware-kill-switch-detection",
+    "issues": [
+      "high-risk offensive without safety/legal framing"
+    ]
+  },
+  {
+    "path": "incident-response\\SKILL.md",
+    "name": "incident-response",
+    "issues": [
+      "description too short"
+    ]
+  },
+  {
+    "path": "invariant-guard\\SKILL.md",
+    "name": "invariant-guard",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "lm-evaluation-harness\\SKILL.md",
+    "name": "lm-evaluation-harness",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "macos-computer-use\\SKILL.md",
+    "name": "macos-computer-use",
+    "issues": [
+      "description too short"
+    ]
+  },
+  {
+    "path": "managed-agent-launch-cma\\SKILL.md",
+    "name": "managed-agent-launch-cma",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "managing-third-party-vendor-risk\\SKILL.md",
+    "name": "managing-third-party-vendor-risk",
+    "issues": [
+      "description too short"
+    ]
+  },
+  {
+    "path": "market-research-methodology\\SKILL.md",
+    "name": "market-research-methodology",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "obliteratus\\SKILL.md",
+    "name": "obliteratus",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "okf-knowledge-extraction\\SKILL.md",
+    "name": "okf-knowledge-extraction",
+    "issues": [
+      "missing type"
+    ]
+  },
+  {
+    "path": "okf-knowledge-format\\SKILL.md",
+    "name": "okf-knowledge-format",
+    "issues": [
+      "missing type"
+    ]
+  },
+  {
+    "path": "partnerships-architect\\SKILL.md",
+    "name": "partnerships-architect",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "performance-engineer\\SKILL.md",
+    "name": "performance-engineer",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "performing-active-directory-vulnerability-assessment\\SKILL.md",
+    "name": "performing-active-directory-vulnerability-assessment",
+    "issues": [
+      "high-risk offensive without safety/legal framing"
+    ]
+  },
+  {
+    "path": "performing-lateral-movement-detection\\SKILL.md",
+    "name": "performing-lateral-movement-detection",
+    "issues": [
+      "high-risk offensive without safety/legal framing"
+    ]
+  },
+  {
+    "path": "performing-static-malware-analysis-with-pe-studio\\SKILL.md",
+    "name": "performing-static-malware-analysis-with-pe-studio",
+    "issues": [
+      "high-risk offensive without safety/legal framing"
+    ]
+  },
+  {
+    "path": "plan-tune\\SKILL.md",
+    "name": "plan-tune",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "product-research-methodology\\SKILL.md",
+    "name": "product-research-methodology",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "prompt-governance\\SKILL.md",
+    "name": "prompt-governance",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "prompt-injection-detection\\SKILL.md",
+    "name": "prompt-injection-detection",
+    "issues": [
+      "high-risk offensive without safety/legal framing"
+    ]
+  },
+  {
+    "path": "python-debugpy\\SKILL.md",
+    "name": "python-debugpy",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "research-ops-orchestrator\\SKILL.md",
+    "name": "research-ops-orchestrator",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "runaway-guard\\SKILL.md",
+    "name": "runaway-guard",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "setup-gbrain\\SKILL.md",
+    "name": "setup-gbrain",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "ship\\SKILL.md",
+    "name": "ship",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "skill-creation\\SKILL.md",
+    "name": "skill-creation",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "skill-model\\SKILL.md",
+    "name": "skill-model",
+    "issues": [
+      "missing type"
+    ]
+  },
+  {
+    "path": "statistical-analyst\\SKILL.md",
+    "name": "statistical-analyst",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "testing-ransomware-recovery-procedures\\SKILL.md",
+    "name": "testing-ransomware-recovery-procedures",
+    "issues": [
+      "high-risk offensive without safety/legal framing"
+    ]
+  },
+  {
+    "path": "vibe-code-auditor\\SKILL.md",
+    "name": "vibe-code-auditor",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "vllm\\SKILL.md",
+    "name": "vllm",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  },
+  {
+    "path": "xurl\\SKILL.md",
+    "name": "xurl",
+    "issues": [
+      "missing frontmatter",
+      "missing type",
+      "missing name/title",
+      "description too short"
+    ]
+  }
+]
