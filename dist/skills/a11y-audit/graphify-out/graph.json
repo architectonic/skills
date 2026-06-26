@@ -1,0 +1,116 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "Accessibility Audit (a11y-audit)",
+      "file_type": "document",
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "skill_a11y_audit",
+      "community": 0,
+      "norm_label": "accessibility audit (a11y-audit)"
+    },
+    {
+      "label": "WCAG 2.2 Specification",
+      "file_type": "concept",
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "source_url": "https://www.w3.org/TR/WCAG22/",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "wcag_2_2_specification",
+      "community": 0,
+      "norm_label": "wcag 2.2 specification"
+    },
+    {
+      "label": "WAI-ARIA Authoring Practices 1.2",
+      "file_type": "concept",
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "source_url": "https://www.w3.org/WAI/ARIA/apg/",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "wai_aria_authoring_practices_1_2",
+      "community": 0,
+      "norm_label": "wai-aria authoring practices 1.2"
+    },
+    {
+      "label": "Deque axe-core Rules",
+      "file_type": "concept",
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "source_url": "https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "deque_axe_core_rules",
+      "community": 0,
+      "norm_label": "deque axe-core rules"
+    },
+    {
+      "label": "eslint-plugin-jsx-a11y",
+      "file_type": "concept",
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "source_url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "eslint_plugin_jsx_a11y",
+      "community": 0,
+      "norm_label": "eslint-plugin-jsx-a11y"
+    }
+  ],
+  "links": [
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "skill_a11y_audit",
+      "target": "deque_axe_core_rules"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "skill_a11y_audit",
+      "target": "eslint_plugin_jsx_a11y"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "skill_a11y_audit",
+      "target": "wai_aria_authoring_practices_1_2"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "skill_a11y_audit",
+      "target": "wcag_2_2_specification"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "408ef72f54bdb3244b2ed5a7d3fb55c21687b732"
+}

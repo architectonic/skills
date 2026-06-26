@@ -1,0 +1,1 @@
+{"nodes": [{"id": "detecting_aws_credential_exposure_with_trufflehog_skill", "label": "Detecting AWS Credential Exposure with TruffleHog", "file_type": "document", "source_file": "detecting-aws-credential-exposure-with-trufflehog/SKILL.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}], "edges": [], "hyperedges": []}

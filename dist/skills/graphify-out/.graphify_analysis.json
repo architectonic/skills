@@ -1,0 +1,1675 @@
+{
+  "communities": {
+    "0": [
+      "open-gstack-browser_antibot",
+      "open-gstack-browser_askuserquestion",
+      "open-gstack-browser_browse",
+      "open-gstack-browser_checkpoint",
+      "open-gstack-browser_chromium-profile",
+      "open-gstack-browser_claude-model",
+      "open-gstack-browser_conductor",
+      "open-gstack-browser_gbrain",
+      "open-gstack-browser_gstack-brain-sync",
+      "open-gstack-browser_gstack-config",
+      "open-gstack-browser_gstack-decision-log",
+      "open-gstack-browser_gstack-decision-search",
+      "open-gstack-browser_gstack-learnings-log",
+      "open-gstack-browser_gstack-learnings-search",
+      "open-gstack-browser_gstack-question-log",
+      "open-gstack-browser_gstack-question-preference",
+      "open-gstack-browser_gstack-repo-mode",
+      "open-gstack-browser_gstack-session-kind",
+      "open-gstack-browser_gstack-slug",
+      "open-gstack-browser_gstack-telemetry-log",
+      "open-gstack-browser_gstack-timeline-log",
+      "open-gstack-browser_gstack-update-check",
+      "open-gstack-browser_launch",
+      "open-gstack-browser_plan-mode",
+      "open-gstack-browser_sidebar",
+      "open-gstack-browser_skill",
+      "open-gstack-browser_telemetry",
+      "opensrc_cache",
+      "opensrc_crates",
+      "opensrc_npm",
+      "opensrc_opensrc-path",
+      "opensrc_overview",
+      "opensrc_pypi",
+      "opensrc_skill"
+    ],
+    "1": [
+      "operating-havoc-c2_bofs",
+      "operating-havoc-c2_client",
+      "operating-havoc-c2_demon",
+      "operating-havoc-c2_indirect-syscalls",
+      "operating-havoc-c2_mitre-t1027-007",
+      "operating-havoc-c2_mitre-t1055",
+      "operating-havoc-c2_mitre-t1071-001",
+      "operating-havoc-c2_mitre-t1090-001",
+      "operating-havoc-c2_mitre-t1620",
+      "operating-havoc-c2_net-execution",
+      "operating-havoc-c2_overview",
+      "operating-havoc-c2_pivoting",
+      "operating-havoc-c2_skill",
+      "operating-havoc-c2_sleep-obfuscation",
+      "operating-havoc-c2_stack-spoofing",
+      "operating-havoc-c2_teamserver",
+      "operating-havoc-c2_yaotl",
+      "operating-sliver-c2_armory",
+      "operating-sliver-c2_dns",
+      "operating-sliver-c2_implants",
+      "operating-sliver-c2_mitre-t1059",
+      "operating-sliver-c2_mitre-t1071-001",
+      "operating-sliver-c2_mitre-t1090-001",
+      "operating-sliver-c2_mitre-t1572",
+      "operating-sliver-c2_mitre-t1620",
+      "operating-sliver-c2_mtls",
+      "operating-sliver-c2_overview",
+      "operating-sliver-c2_pivoting",
+      "operating-sliver-c2_post-exploitation",
+      "operating-sliver-c2_server",
+      "operating-sliver-c2_sessions",
+      "operating-sliver-c2_skill",
+      "operating-sliver-c2_wireguard"
+    ],
+    "2": [
+      "ble-security",
+      "bleak",
+      "blind-ssrf",
+      "brand-impersonation",
+      "brandmonitor",
+      "burp-collaborator",
+      "clickjacking",
+      "cloud-metadata",
+      "dns-rebinding",
+      "dnstwist",
+      "domain-squatting",
+      "frame-ancestors",
+      "frame-busting",
+      "gatt",
+      "google-safe-browsing",
+      "gopher-protocol",
+      "gopherus",
+      "interact-sh",
+      "out-of-band-detection",
+      "performing-blind-ssrf-exploitation_skill",
+      "performing-bluetooth-security-assessment_skill",
+      "performing-brand-monitoring-for-impersonation_skill",
+      "performing-clickjacking-attack-test_skill",
+      "rebinder-net",
+      "ssrfmap",
+      "webhook-site",
+      "x-frame-options"
+    ],
+    "3": [
+      "triaging-security-incident-with-ir-playbook_skill",
+      "triaging-security-incident_skill",
+      "triaging-vulnerabilities-with-ssvc-framework_skill",
+      "triaging-windows-with-kape_skill",
+      "ubiquitous-language_skill",
+      "using-agent-skills_skill",
+      "validating-backup-integrity-for-recovery_skill",
+      "validating-tpm-measured-boot-attestation_skill",
+      "vendor-management_skill",
+      "vendor-skill-packaging_skill",
+      "venue-templates_skill",
+      "vercel-deploy_skill",
+      "verifying-build-provenance-with-slsa-sigstore_skill",
+      "vertical-slice-issues_skill",
+      "vibe-code-auditor_skill",
+      "video-generation_skill",
+      "vllm_skill",
+      "web-artifacts-builder_skill",
+      "web-design-guidelines_skill",
+      "what-if-oracle_skill",
+      "workflow-builder_skill",
+      "workflow-orchestration_skill",
+      "writing-beats_skill",
+      "writing-fragments_skill",
+      "writing-great-skills_skill",
+      "writing-shape_skill",
+      "xurl_skill"
+    ],
+    "4": [
+      "browse_binary",
+      "gstack_brain_sync",
+      "gstack_config",
+      "gstack_decision_log",
+      "gstack_decision_search",
+      "gstack_learnings_log",
+      "gstack_learnings_search",
+      "gstack_question_log",
+      "gstack_question_preference",
+      "gstack_repo_mode",
+      "gstack_session_kind",
+      "gstack_slug",
+      "gstack_team_init",
+      "gstack_telemetry_log",
+      "gstack_timeline_log",
+      "gstack_update_check",
+      "qa_gauntlet_skill",
+      "qa_only_skill",
+      "qa_references",
+      "qa_skill",
+      "qa_templates",
+      "retro_compare_mode",
+      "retro_global_mode",
+      "retro_skill"
+    ],
+    "5": [
+      "office-hours_alternatives",
+      "office-hours_brain_context",
+      "office-hours_builder_mode",
+      "office-hours_cross_model",
+      "office-hours_founder_signal",
+      "office-hours_premise_challenge",
+      "office-hours_question_tuning",
+      "office-hours_startup_mode",
+      "office-hours_visual_design",
+      "office_hours_gstack",
+      "office_hours_skill",
+      "okf-knowledge-extraction_hierarchy",
+      "okf-knowledge-extraction_procedure",
+      "okf-knowledge-extraction_skill",
+      "okf-knowledge-format_frontmatter",
+      "okf-knowledge-format_skill",
+      "okf-pipeline-pattern_connector",
+      "okf-pipeline-pattern_skill",
+      "on-call-handoff-patterns_skill",
+      "on-call-handoff-patterns_templates",
+      "ontology_authority_ranking",
+      "ontology_claim_classes",
+      "ontology_relationship_model",
+      "ontology_skill"
+    ],
+    "6": [
+      "github-actions_actionlint",
+      "github-actions_allstar",
+      "github-actions_codeowners",
+      "github-actions_dependabot",
+      "github-actions_github_token_permissions",
+      "github-actions_oidc_federation",
+      "github-actions_pull_request_target",
+      "github-actions_scorecard",
+      "github-actions_script_injection",
+      "github-actions_sha_pinning",
+      "github-actions_stepsecurity",
+      "securing-github-actions-workflows_skill",
+      "securing-serverless-functions_skill",
+      "serverless_dependency_scanning",
+      "serverless_guardduty",
+      "serverless_input_validation",
+      "serverless_least_privilege_iam",
+      "serverless_runtime_monitoring",
+      "serverless_secrets_management",
+      "serverless_semgrep",
+      "serverless_snyk"
+    ],
+    "7": [
+      "open-notebook_ai-providers",
+      "open-notebook_chat",
+      "open-notebook_docker",
+      "open-notebook_esperanto",
+      "open-notebook_fastapi",
+      "open-notebook_langchain",
+      "open-notebook_nextjs",
+      "open-notebook_notebooks",
+      "open-notebook_overview",
+      "open-notebook_podcast",
+      "open-notebook_search",
+      "open-notebook_skill",
+      "open-notebook_sources",
+      "open-notebook_surrealdb",
+      "open-notebook_transformations",
+      "openclaw-skills-framework_architecture",
+      "openclaw-skills-framework_clawhub",
+      "openclaw-skills-framework_gating",
+      "openclaw-skills-framework_loading-order",
+      "openclaw-skills-framework_skill",
+      "openclaw-skills-framework_workshop"
+    ],
+    "8": [
+      "helm_chart_provenance",
+      "helm_checkov",
+      "helm_kube_linter",
+      "helm_kubesec",
+      "helm_rbac",
+      "helm_secrets_management",
+      "helm_security_context",
+      "helm_trivy",
+      "k8s_admission_controls",
+      "k8s_falco",
+      "k8s_kube_bench",
+      "k8s_kyverno",
+      "k8s_network_policies",
+      "k8s_pod_security_standards",
+      "k8s_rbac",
+      "k8s_runtime_security",
+      "k8s_trivy",
+      "k8s_workload_identity",
+      "securing-helm-chart-deployments_skill",
+      "securing-kubernetes-on-cloud_skill"
+    ],
+    "9": [
+      "historian_audit_python_tool",
+      "historian_audit_trail",
+      "historian_data_diode",
+      "historian_dmz_replication",
+      "historian_osisoft_pi",
+      "historian_pi_trust",
+      "historian_pi_vision",
+      "historian_waterfall",
+      "ot_remote_access_beyondtrust",
+      "ot_remote_access_claroty",
+      "ot_remote_access_co_attendance",
+      "ot_remote_access_cyberark",
+      "ot_remote_access_duo",
+      "ot_remote_access_intermediate_system",
+      "ot_remote_access_jump_server",
+      "ot_remote_access_pam",
+      "ot_remote_access_session_manager_python",
+      "ot_remote_access_session_recording",
+      "securing-historian-server-in-ot-environment_skill",
+      "securing-remote-access-to-ot-environment_skill"
+    ],
+    "10": [
+      "security-best-practices_authentication",
+      "security-best-practices_data_protection",
+      "security-best-practices_input_validation",
+      "security-best-practices_skill",
+      "security-review_access_control",
+      "security-review_dependency_safety",
+      "security-review_repository_safety",
+      "security-review_skill",
+      "security-review_third_party_skill_ingestion",
+      "setup-pre-commit_husky",
+      "setup-pre-commit_lint_staged",
+      "setup-pre-commit_skill",
+      "sharp-edges-analysis_skill",
+      "sharp-edges_algorithm_selection",
+      "sharp-edges_configuration_cliffs",
+      "sharp-edges_dangerous_defaults",
+      "sharp-edges_primitive_vs_semantic",
+      "sharp-edges_silent_failures",
+      "sharp-edges_stringly_typed"
+    ],
+    "11": [
+      "operationalizing_misp_threat_feeds_agent",
+      "operationalizing_misp_threat_feeds_misp",
+      "operationalizing_misp_threat_feeds_pymisp",
+      "operationalizing_misp_threat_feeds_sigma",
+      "operationalizing_misp_threat_feeds_skill",
+      "operationalizing_misp_threat_feeds_suricata",
+      "operationalizing_misp_threat_feeds_wazuh",
+      "performing_active_directory_bloodhound_analysis_bloodhound",
+      "performing_active_directory_bloodhound_analysis_neo4j",
+      "performing_active_directory_bloodhound_analysis_sharphound",
+      "performing_active_directory_bloodhound_analysis_skill",
+      "performing_active_directory_compromise_investigation_impacket",
+      "performing_active_directory_compromise_investigation_mimikatz",
+      "performing_active_directory_compromise_investigation_skill",
+      "performing_active_directory_compromise_investigation_velociraptor",
+      "performing_active_directory_forest_trust_attack_impacket",
+      "performing_active_directory_forest_trust_attack_ldap3",
+      "performing_active_directory_forest_trust_attack_skill"
+    ],
+    "12": [
+      "performing_cloud_forensics_investigation_athena",
+      "performing_cloud_forensics_investigation_aws",
+      "performing_cloud_forensics_investigation_azure",
+      "performing_cloud_forensics_investigation_cloudtrail",
+      "performing_cloud_forensics_investigation_gcp",
+      "performing_cloud_log_forensics_with_athena_alb",
+      "performing_cloud_log_forensics_with_athena_athena",
+      "performing_cloud_log_forensics_with_athena_cloudtrail",
+      "performing_cloud_log_forensics_with_athena_s3",
+      "performing_cloud_log_forensics_with_athena_vpc_flow_logs",
+      "performing_cloud_native_threat_hunting_with_aws_detective_aws_detective",
+      "performing_cloud_native_threat_hunting_with_aws_detective_cloudtrail",
+      "performing_cloud_native_threat_hunting_with_aws_detective_guardduty",
+      "performing_cloud_native_threat_hunting_with_aws_detective_vpc_flow_logs",
+      "performing_cloud_penetration_testing_with_pacu_aws",
+      "performing_cloud_penetration_testing_with_pacu_guardduty",
+      "performing_cloud_penetration_testing_with_pacu_pacu",
+      "performing_cloud_penetration_testing_with_pacu_security_hub"
+    ],
+    "13": [
+      "implementing-aws-config-rules-for-compliance_SKILL",
+      "implementing-aws-macie-for-data-classification_SKILL",
+      "implementing-aws-security-hub_SKILL",
+      "implementing-azure-ad-privileged-identity-management_SKILL",
+      "implementing-azure-defender-for-cloud_SKILL",
+      "implementing-cloud-dlp-for-data-protection_SKILL",
+      "implementing-cloud-trail-log-analysis_SKILL",
+      "implementing-cloud-vulnerability-posture-management_SKILL",
+      "implementing-conditional-access-policies-azure-ad_SKILL",
+      "implementing-data-loss-prevention-with-microsoft-purview_SKILL",
+      "implementing-delinea-secret-server-for-pam_SKILL"
+    ],
+    "14": [
+      "setup-browser-cookies_skill",
+      "setup-gbrain_init",
+      "setup-gbrain_install_cli",
+      "setup-gbrain_register_mcp",
+      "setup-gbrain_repo_policy",
+      "setup-gbrain_skill",
+      "setup-matt-pocock-skills_domain_docs",
+      "setup-matt-pocock-skills_issue_tracker",
+      "setup-matt-pocock-skills_skill",
+      "setup-matt-pocock-skills_triage_labels"
+    ],
+    "15": [
+      "skill_security_chaos_engineering",
+      "skill_security_monitoring_datadog",
+      "skill_siem_correlation_apt",
+      "skill_siem_use_case_tuning",
+      "skill_siem_use_cases_detection",
+      "skill_syslog_rsyslog",
+      "skill_tetragon",
+      "skill_threat_modeling_mitre",
+      "skill_ticketing_incidents",
+      "skill_waf_modsecurity"
+    ],
+    "16": [
+      "ad_tiered_model_skill",
+      "bloodhound_ce_skill",
+      "dcsync_skill",
+      "internal_pentest_skill",
+      "osint_recon_skill",
+      "pretext_call_skill",
+      "red_team_engagement_skill",
+      "social_engineering_pentest_skill",
+      "spearphishing_skill"
+    ],
+    "17": [
+      "implementing-device-posture-assessment-in-zero-trust_skill",
+      "implementing-disk-encryption-with-bitlocker_skill",
+      "implementing-end-to-end-encryption-for-messaging_skill",
+      "implementing-envelope-encryption-with-aws-kms_skill",
+      "implementing-hardware-security-key-authentication_skill",
+      "implementing-hashicorp-vault-dynamic-secrets_skill",
+      "implementing-identity-governance-with-sailpoint_skill",
+      "implementing-identity-verification-for-zero-trust_skill",
+      "implementing-just-in-time-access-provisioning_skill"
+    ],
+    "18": [
+      "migration_architect_canary",
+      "migration_architect_compatibility_script",
+      "migration_architect_expand_contract",
+      "migration_architect_parallel_schema",
+      "migration_architect_planner_script",
+      "migration_architect_rollback_script",
+      "migration_architect_skill",
+      "migration_architect_strangler_fig"
+    ],
+    "19": [
+      "setup-deploy_configure_claude_md",
+      "setup-deploy_detect_platform",
+      "setup-deploy_skill",
+      "ship_bump_version",
+      "ship_create_pr",
+      "ship_detect_merge_base",
+      "ship_run_tests",
+      "ship_skill"
+    ],
+    "20": [
+      "skill_usb_device_control",
+      "skill_zero_trust_beyondcorp",
+      "skill_zero_trust_boundary",
+      "skill_zero_trust_cloud",
+      "skill_zero_trust_dns_nextdns",
+      "skill_zero_trust_network_access",
+      "skill_zero_trust_saas",
+      "skill_zsp_cyberark"
+    ],
+    "21": [
+      "implementing-ebpf-security-monitoring_skill",
+      "implementing-endpoint-detection-with-wazuh_skill",
+      "implementing-endpoint-dlp-controls_skill",
+      "implementing-file-integrity-monitoring-with-aide_skill",
+      "implementing-gcp-organization-policy-constraints_skill",
+      "implementing-gcp-vpc-firewall-rules_skill",
+      "implementing-kubernetes-network-policy-with-calico_skill"
+    ],
+    "22": [
+      "skill_saml_sso_okta",
+      "skill_scim_provisioning",
+      "skill_secret_scanning_gitleaks",
+      "skill_secrets_management_vault",
+      "skill_secrets_scanning_cicd",
+      "skill_semgrep_custom_sast",
+      "skill_zkp_authentication"
+    ],
+    "23": [
+      "doc_coauthoring_skill",
+      "document_generate_skill",
+      "document_release_skill",
+      "docx_skill",
+      "dream_cycle_skill",
+      "edit_article_skill"
+    ],
+    "24": [
+      "parsing_artifacts_with_eric_zimmerman_tools_mftecmd",
+      "parsing_artifacts_with_eric_zimmerman_tools_pecmd",
+      "parsing_artifacts_with_eric_zimmerman_tools_recmd",
+      "parsing_artifacts_with_eric_zimmerman_tools_sbecmd",
+      "parsing_artifacts_with_eric_zimmerman_tools_skill",
+      "parsing_artifacts_with_eric_zimmerman_tools_timeline_explorer"
+    ],
+    "25": [
+      "performance_engineer_grafana",
+      "performance_engineer_k6",
+      "performance_engineer_opentelemetry",
+      "performance_engineer_prometheus",
+      "performance_engineer_redis",
+      "performance_engineer_skill"
+    ],
+    "26": [
+      "reverse_engineering_android_malware_with_jadx_skill",
+      "reverse_engineering_dotnet_malware_with_dnspy_skill",
+      "reverse_engineering_ios_app_with_frida_skill",
+      "reverse_engineering_malware_with_ghidra_skill",
+      "reverse_engineering_ransomware_encryption_routine_skill",
+      "reverse_engineering_rust_malware_skill"
+    ],
+    "27": [
+      "scanning_container_images_with_grype_skill",
+      "scanning_containers_with_trivy_in_cicd_skill",
+      "scanning_docker_images_with_trivy_skill",
+      "scanning_kubernetes_manifests_with_kubesec_skill",
+      "securing_container_registry_images_skill",
+      "securing_container_registry_with_harbor_skill"
+    ],
+    "28": [
+      "burp-suite",
+      "performing-web-application-firewall-bypass_skill",
+      "sqlmap",
+      "waf-bypass",
+      "wafw00f"
+    ],
+    "29": [
+      "calculate_auth_risk_score",
+      "detect_brute_force",
+      "detect_impossible_travel",
+      "detect_password_spray",
+      "detecting_anomalous_authentication_patterns_skill"
+    ],
+    "30": [
+      "implementing-aqua-security-for-container-scanning_SKILL",
+      "implementing-attack-surface-management_SKILL",
+      "implementing-code-signing-for-artifacts_SKILL",
+      "implementing-container-image-minimal-base-with-distroless_SKILL",
+      "implementing-container-network-policies-with-calico_SKILL"
+    ],
+    "31": [
+      "implementing-dmarc-dkim-spf-email-security_skill",
+      "implementing-email-sandboxing-with-proofpoint_skill",
+      "implementing-google-workspace-admin-security_skill",
+      "implementing-google-workspace-phishing-protection_skill",
+      "implementing-google-workspace-sso-configuration_skill"
+    ],
+    "32": [
+      "investigate",
+      "ios_clean",
+      "ios_fix",
+      "ios_qa",
+      "ios_sync"
+    ],
+    "33": [
+      "minimum_viable_memory_system_10_file_kit",
+      "minimum_viable_memory_system_agents_md",
+      "minimum_viable_memory_system_memory_model_md",
+      "minimum_viable_memory_system_skill",
+      "minimum_viable_memory_system_start_here_md"
+    ],
+    "34": [
+      "performing_cloud_asset_inventory_with_cartography_aws",
+      "performing_cloud_asset_inventory_with_cartography_azure",
+      "performing_cloud_asset_inventory_with_cartography_cartography",
+      "performing_cloud_asset_inventory_with_cartography_gcp",
+      "performing_cloud_asset_inventory_with_cartography_neo4j"
+    ],
+    "35": [
+      "self-improving-champion-loop_champion_state",
+      "self-improving-champion-loop_gate",
+      "self-improving-champion-loop_guard_checks",
+      "self-improving-champion-loop_skill",
+      "self-improving-champion-loop_working_signal"
+    ],
+    "36": [
+      "session-report_analyze_script",
+      "session-report_skill",
+      "session-report_template_html",
+      "session-usage-report_skill",
+      "session-usage-report_template_html"
+    ],
+    "37": [
+      "analyze_dns_entropy",
+      "detect_beaconing",
+      "detecting_command_and_control_over_dns_skill",
+      "train_dga_classifier"
+    ],
+    "38": [
+      "detecting_aws_guardduty_findings_automation_skill",
+      "detecting_cryptomining_in_cloud_skill",
+      "ec2_instance_isolation",
+      "iam_credential_compromise_response"
+    ],
+    "39": [
+      "docker_development_skill",
+      "eradicating_malware_from_infected_systems_skill",
+      "escaping_containers_to_host_skill",
+      "exploiting_api_injection_vulnerabilities_skill"
+    ],
+    "40": [
+      "eric-zimmerman-tools",
+      "kape",
+      "performing-windows-artifact-analysis-with-eric-zimmerman-tools_skill",
+      "timeline-explorer"
+    ],
+    "41": [
+      "frogger",
+      "performing-vlan-hopping-attack_skill",
+      "vlan-hopping",
+      "yersinia"
+    ],
+    "42": [
+      "github-actions-templates_skill",
+      "gitlab-ci-patterns_skill",
+      "gitops-workflow_skill",
+      "helm-chart-builder_skill"
+    ],
+    "43": [
+      "hook-basics_skill",
+      "hook-debugging_skill",
+      "hook-development_skill",
+      "hook-events_skill"
+    ],
+    "44": [
+      "implementing-beyondcorp-zero-trust-access-model_SKILL",
+      "implementing-browser-isolation-for-zero-trust_SKILL",
+      "implementing-cisa-zero-trust-maturity-model_SKILL",
+      "implementing-conduit-security-for-ot-remote-access_SKILL"
+    ],
+    "45": [
+      "implementing-devsecops-security-scanning_skill",
+      "implementing-fuzz-testing-in-cicd-with-aflplusplus_skill",
+      "implementing-github-advanced-security-for-code-scanning_skill",
+      "implementing-infrastructure-as-code-security-scanning_skill"
+    ],
+    "46": [
+      "implementing-gdpr-data-protection-controls_skill",
+      "implementing-gdpr-data-subject-access-request_skill",
+      "implementing-hipaa-security-rule-safeguards_skill",
+      "implementing-iso-27001-information-security-management_skill"
+    ],
+    "47": [
+      "ios_sync_skill",
+      "kubernetes_operator_skill",
+      "land_and_deploy_skill",
+      "landing_report_skill"
+    ],
+    "48": [
+      "linddun",
+      "owasp-threat-dragon",
+      "performing-threat-modeling-with-owasp-threat-dragon_skill",
+      "stride"
+    ],
+    "49": [
+      "log2timeline",
+      "performing-timeline-reconstruction-with-plaso_skill",
+      "plaso",
+      "timesketch"
+    ],
+    "50": [
+      "modeling_threats_opencti_platform",
+      "modeling_threats_pycti_client",
+      "modeling_threats_stix2",
+      "modeling_threats_with_opencti_skill"
+    ],
+    "51": [
+      "monitoring_scada_modbus_pymodbus",
+      "monitoring_scada_modbus_scapy",
+      "monitoring_scada_modbus_skill",
+      "monitoring_scada_modbus_zeek"
+    ],
+    "52": [
+      "performing_agentless_vulnerability_scanning_skill",
+      "performing_asset_criticality_scoring_for_vulns_skill",
+      "performing_authenticated_scan_with_openvas_skill",
+      "performing_authenticated_vulnerability_scan_skill"
+    ],
+    "53": [
+      "revenue_operations_skill",
+      "revops_gtm_efficiency",
+      "revops_pipeline_metrics",
+      "scenario_war_room_skill"
+    ],
+    "54": [
+      "securing_api_gateway_with_aws_waf_skill",
+      "securing_aws_iam_permissions_skill",
+      "securing_aws_lambda_execution_roles_skill",
+      "securing_azure_with_microsoft_defender_skill"
+    ],
+    "55": [
+      "skill_soar_phantom",
+      "skill_soar_playbook_phishing",
+      "skill_soar_xsoar",
+      "skill_velociraptor_ir"
+    ],
+    "56": [
+      "skill_stix2_sharing",
+      "skill_stix_taxii_integration",
+      "skill_taxii_opentaxii",
+      "skill_threat_intelligence_lifecycle"
+    ],
+    "57": [
+      "aircrack-ng",
+      "hashcat",
+      "performing-wifi-password-cracking-with-aircrack_skill"
+    ],
+    "58": [
+      "communication_profile",
+      "detecting_anomalies_in_industrial_control_systems_skill",
+      "ics_anomaly_detector"
+    ],
+    "59": [
+      "complexity_cuts_skill",
+      "construction_discipline_skill",
+      "consulting_analysis_skill"
+    ],
+    "60": [
+      "detecting_attacks_on_scada_systems_skill",
+      "process_anomaly_detector",
+      "scada_baseline_builder"
+    ],
+    "61": [
+      "detecting_container_escape_attempts_skill",
+      "detecting_container_escape_with_falco_rules_skill",
+      "detecting_container_runtime_threats_with_falco_skill"
+    ],
+    "62": [
+      "domain_modeling_skill",
+      "event_sourcing_architect_skill",
+      "event_store_design_skill"
+    ],
+    "63": [
+      "dossier_skill",
+      "executing_red_team_engagement_planning_skill",
+      "executing_red_team_exercise_skill"
+    ],
+    "64": [
+      "generating-and-analyzing-sboms_skill",
+      "generating-forensic-timelines-with-hayabusa_skill",
+      "generating-threat-intelligence-reports_skill"
+    ],
+    "65": [
+      "grafana-dashboards_skill",
+      "gstack-openclaw-retro_skill",
+      "health_skill"
+    ],
+    "66": [
+      "gstack",
+      "plan-ceo-review_skill",
+      "plan-design-review_skill"
+    ],
+    "67": [
+      "gstack-upgrade_skill",
+      "gstack_skill",
+      "guard_skill"
+    ],
+    "68": [
+      "hardening-docker-containers-for-production_skill",
+      "hardening-docker-daemon-configuration_skill",
+      "hardening-linux-endpoint-with-cis-benchmark_skill"
+    ],
+    "69": [
+      "implementing-dragos-platform-for-ot-monitoring_skill",
+      "implementing-ics-firewall-with-tofino_skill",
+      "implementing-iec-62443-security-zones_skill"
+    ],
+    "70": [
+      "implementing-honeypot-for-ransomware-detection_skill",
+      "implementing-honeytokens-for-breach-detection_skill",
+      "implementing-immutable-backup-with-restic_skill"
+    ],
+    "71": [
+      "knowledge_ops_skill",
+      "learn_skill",
+      "llm_wiki_skill"
+    ],
+    "72": [
+      "loop_engineering_skill",
+      "loop_me_skill",
+      "loop_pattern_reference_skill"
+    ],
+    "73": [
+      "make_pdf_skill",
+      "markdown_mermaid_writing_skill",
+      "meeting_intelligence_skill"
+    ],
+    "74": [
+      "managed_agent_launch_cma_skill",
+      "managed_agent_launch_skill",
+      "marketplace_skill_triage_skill"
+    ],
+    "75": [
+      "managing_cloud_identity_with_okta_skill",
+      "managing_third_party_vendor_risk_skill",
+      "migrating_to_post_quantum_cryptography_skill"
+    ],
+    "76": [
+      "mcp_integration_skill",
+      "mcp_security_review_skill",
+      "mcp_server_builder_skill"
+    ],
+    "77": [
+      "moving_lateral_netexec_impacket",
+      "moving_lateral_netexec_skill",
+      "moving_lateral_netexec_tool"
+    ],
+    "78": [
+      "multi_agent_architecture_coordination_patterns",
+      "multi_agent_architecture_four_layer",
+      "multi_agent_architecture_skill"
+    ],
+    "79": [
+      "performing-privilege-escalation-on-linux_skill",
+      "performing-privileged-account-access-review_skill",
+      "performing-privileged-account-discovery_skill"
+    ],
+    "80": [
+      "performing-purple-team-atomic-testing_skill",
+      "performing-purple-team-exercise_skill",
+      "performing-threat-emulation-with-atomic-red-team_skill"
+    ],
+    "81": [
+      "performing-security-headers-audit_skill",
+      "performing-ssl-stripping-attack_skill",
+      "performing-ssl-tls-inspection-configuration_skill"
+    ],
+    "82": [
+      "performing-service-account-audit_skill",
+      "performing-service-account-credential-rotation_skill",
+      "performing-soc2-type2-audit-preparation_skill"
+    ],
+    "83": [
+      "performing-user-behavior-analytics_skill",
+      "splunk",
+      "ueba"
+    ],
+    "84": [
+      "performing_cloud_forensics_with_aws_cloudtrail_athena",
+      "performing_cloud_forensics_with_aws_cloudtrail_boto3",
+      "performing_cloud_forensics_with_aws_cloudtrail_cloudtrail"
+    ],
+    "85": [
+      "performing_cloud_incident_containment_procedures_aws",
+      "performing_cloud_incident_containment_procedures_azure",
+      "performing_cloud_incident_containment_procedures_gcp"
+    ],
+    "86": [
+      "saga_orchestration_skill",
+      "scaffold_exercises_skill",
+      "schema_versioning_skill"
+    ],
+    "87": [
+      "scientific_visualization_skill",
+      "scrape_skill",
+      "screenshot_automation_skill"
+    ],
+    "88": [
+      "sentry-observability_event_list",
+      "sentry-observability_issue_list",
+      "sentry-observability_skill"
+    ],
+    "89": [
+      "skill_vuln_mgmt_greenbone",
+      "skill_vuln_remediation_sla",
+      "skill_vuln_sla_breach"
+    ],
+    "90": [
+      "api_security_testing_skill",
+      "oauth2_skill"
+    ],
+    "91": [
+      "arp_poison_detector",
+      "detecting_arp_poisoning_in_network_traffic_skill"
+    ],
+    "92": [
+      "aws_verified_access_skill",
+      "zpa_skill"
+    ],
+    "93": [
+      "bopla_scanner",
+      "detecting_broken_object_property_level_authorization_skill"
+    ],
+    "94": [
+      "cloud_ir_skill",
+      "cloud_pentest_skill"
+    ],
+    "95": [
+      "detecting_api_enumeration_attacks_skill",
+      "enumeration_detector"
+    ],
+    "96": [
+      "detecting_attacks_on_historian_servers_skill",
+      "historian_attack_detector"
+    ],
+    "97": [
+      "detecting_credential_dumping_techniques_skill",
+      "detecting_dcsync_attack_in_active_directory_skill"
+    ],
+    "98": [
+      "diagram_skill",
+      "diagrams_charts_skill"
+    ],
+    "99": [
+      "distributed_tracing_skill",
+      "env_manager_skill"
+    ],
+    "100": [
+      "emulating_cloud_attacks_with_stratus_red_team_skill",
+      "enumerating_cloud_with_cloudfox_skill"
+    ],
+    "101": [
+      "eu_ai_act_specialist_skill",
+      "executing_nist_rmf_authorization_to_operate_skill"
+    ],
+    "102": [
+      "executing_active_directory_attack_simulation_skill",
+      "exploiting_active_directory_with_bloodhound_skill"
+    ],
+    "103": [
+      "exploiting_active_directory_certificate_services_esc1_skill",
+      "exploiting_adcs_with_certipy_skill"
+    ],
+    "104": [
+      "frontier-agent-governance_skill",
+      "full-output-enforcement_skill"
+    ],
+    "105": [
+      "get-available-resources_skill",
+      "gpu-acceleration-python_skill"
+    ],
+    "106": [
+      "git-guardrails-claude-code_skill",
+      "git-worktree-manager_skill"
+    ],
+    "107": [
+      "grill-with-docs_skill",
+      "grilling_skill"
+    ],
+    "108": [
+      "gstack-openclaw-ceo-review_skill",
+      "gstack-openclaw-office-hours_skill"
+    ],
+    "109": [
+      "gui-skill-action-graph_skill",
+      "hackernews-frontpage_skill"
+    ],
+    "110": [
+      "hids_skill",
+      "suricata_skill"
+    ],
+    "111": [
+      "implementing-attack-path-analysis-with-xm-cyber_SKILL",
+      "implementing-continuous-security-validation-with-bas_SKILL"
+    ],
+    "112": [
+      "implementing-canary-tokens-for-network-intrusion_SKILL",
+      "implementing-deception-based-detection-with-canarytoken_SKILL"
+    ],
+    "113": [
+      "implementing-cloud-waf-rules_SKILL",
+      "implementing-ddos-mitigation-with-cloudflare_SKILL"
+    ],
+    "114": [
+      "implementing-diamond-model-analysis_skill",
+      "implementing-epss-score-for-vulnerability-prioritization_skill"
+    ],
+    "115": [
+      "implementing-digital-signatures-with-ed25519_skill",
+      "implementing-jwt-signing-and-verification_skill"
+    ],
+    "116": [
+      "implementing-gcp-binary-authorization_skill",
+      "implementing-image-provenance-verification-with-cosign_skill"
+    ],
+    "117": [
+      "incident_response",
+      "investigating_ransomware"
+    ],
+    "118": [
+      "integrating_dast_owasp_zap",
+      "integrating_sast"
+    ],
+    "119": [
+      "investigating_insider_threat",
+      "investigating_phishing"
+    ],
+    "120": [
+      "kismet",
+      "performing-wireless-security-assessment-with-kismet_skill"
+    ],
+    "121": [
+      "legacy_code_safety_skill",
+      "legacy_modernizer_skill"
+    ],
+    "122": [
+      "mapping_attack_paths_with_bloodhound_ce_skill",
+      "mapping_mitre_attack_techniques_skill"
+    ],
+    "123": [
+      "memory_lifecycle_skill",
+      "memory_substrate_checklist_skill"
+    ],
+    "124": [
+      "minecraft_modpack_server_backup_script",
+      "minecraft_modpack_server_skill"
+    ],
+    "125": [
+      "minimal_fix_loop_verifier",
+      "minimal_fix_skill"
+    ],
+    "126": [
+      "monorepo_navigator_analyzer_script",
+      "monorepo_navigator_skill"
+    ],
+    "127": [
+      "nessus",
+      "performing-vulnerability-scanning-with-nessus_skill"
+    ],
+    "128": [
+      "nikto",
+      "performing-web-application-scanning-with-nikto_skill"
+    ],
+    "129": [
+      "obliteratus_cli",
+      "obliteratus_skill"
+    ],
+    "130": [
+      "orchestrating_llm_attacks_with_pyrit_pyrit",
+      "orchestrating_llm_attacks_with_pyrit_skill"
+    ],
+    "131": [
+      "owasp-risk-rating",
+      "performing-web-application-vulnerability-triage_skill"
+    ],
+    "132": [
+      "performing-post-quantum-cryptography-migration_skill",
+      "performing-privacy-impact-assessment_skill"
+    ],
+    "133": [
+      "performing-ransomware-response_skill",
+      "performing-ransomware-tabletop-exercise_skill"
+    ],
+    "134": [
+      "performing-red-team-phishing-with-gophish_skill",
+      "performing-red-team-with-covenant_skill"
+    ],
+    "135": [
+      "performing-s7comm-protocol-security-analysis_skill",
+      "performing-scada-hmi-security-assessment_skill"
+    ],
+    "136": [
+      "performing-sca-dependency-scanning-with-snyk_skill",
+      "performing-supply-chain-attack-simulation_skill"
+    ],
+    "137": [
+      "performing-static-malware-analysis-with-pe-studio_skill",
+      "performing-threat-hunting-with-yara-rules_skill"
+    ],
+    "138": [
+      "performing-threat-intelligence-sharing-with-misp_skill",
+      "performing-threat-landscape-assessment-for-sector_skill"
+    ],
+    "139": [
+      "performing-web-cache-deception-attack_skill",
+      "web-cache-deception"
+    ],
+    "140": [
+      "performing-yara-rule-development-for-detection_skill",
+      "yara"
+    ],
+    "141": [
+      "performing_access_recertification_with_saviynt_saviynt",
+      "performing_access_recertification_with_saviynt_skill"
+    ],
+    "142": [
+      "performing_active_directory_penetration_test_skill",
+      "performing_active_directory_vulnerability_assessment_skill"
+    ],
+    "143": [
+      "performing_adversary_in_the_middle_phishing_detection_skill",
+      "performing_arp_spoofing_attack_simulation_skill"
+    ],
+    "144": [
+      "performing_android_app_static_analysis_with_mobsf_skill",
+      "performing_automated_malware_analysis_with_cape_skill"
+    ],
+    "145": [
+      "performing_api_fuzzing_with_restler_skill",
+      "performing_api_inventory_and_discovery_skill"
+    ],
+    "146": [
+      "performing_api_rate_limiting_bypass_skill",
+      "performing_api_security_testing_with_postman_skill"
+    ],
+    "147": [
+      "performing_cloud_native_forensics_with_falco_falco",
+      "performing_cloud_native_forensics_with_falco_kubernetes"
+    ],
+    "148": [
+      "phishing_ir_skill",
+      "post_incident_ll_skill"
+    ],
+    "149": [
+      "runaway_guard_skill",
+      "securing_agentic_ai_tool_invocation_skill"
+    ],
+    "150": [
+      "scanning_infrastructure_with_nessus_skill",
+      "scanning_network_with_nmap_advanced_skill"
+    ],
+    "151": [
+      "skill_sigstore_signing",
+      "skill_supply_chain_in_toto"
+    ],
+    "152": [
+      "windows_defender_skill",
+      "windows_event_logging_skill"
+    ],
+    "153": [
+      "ca_openssl_skill"
+    ],
+    "154": [
+      "compliance_os_skill"
+    ],
+    "155": [
+      "detecting_aws_cloudtrail_anomalies_skill"
+    ],
+    "156": [
+      "detecting_aws_credential_exposure_with_trufflehog_skill"
+    ],
+    "157": [
+      "detecting_aws_iam_privilege_escalation_skill"
+    ],
+    "158": [
+      "detecting_azure_lateral_movement_skill"
+    ],
+    "159": [
+      "detecting_azure_service_principal_abuse_skill"
+    ],
+    "160": [
+      "detecting_azure_storage_account_misconfigurations_skill"
+    ],
+    "161": [
+      "detecting_beaconing_patterns_with_zeek_skill"
+    ],
+    "162": [
+      "detecting_bluetooth_low_energy_attacks_skill"
+    ],
+    "163": [
+      "detecting_business_email_compromise_skill"
+    ],
+    "164": [
+      "detecting_cloud_threats_with_guardduty_skill"
+    ],
+    "165": [
+      "detecting_compromised_cloud_credentials_skill"
+    ],
+    "166": [
+      "detecting_container_drift_at_runtime_skill"
+    ],
+    "167": [
+      "detecting_data_and_model_poisoning_skill"
+    ],
+    "168": [
+      "fresh-clone-loop_skill"
+    ],
+    "169": [
+      "frontend-design_skill"
+    ],
+    "170": [
+      "frontend-ui-engineering_skill"
+    ],
+    "171": [
+      "github-deep-research_skill"
+    ],
+    "172": [
+      "graphify-onboarding_skill"
+    ],
+    "173": [
+      "grill-me_skill"
+    ],
+    "174": [
+      "gstack-openclaw-investigate_skill"
+    ],
+    "175": [
+      "handoff_skill"
+    ],
+    "176": [
+      "hsm_skill"
+    ],
+    "177": [
+      "iap_skill"
+    ],
+    "178": [
+      "implementing-application-whitelisting-with-applocker_SKILL"
+    ],
+    "179": [
+      "implementing-aws-iam-permission-boundaries_SKILL"
+    ],
+    "180": [
+      "implementing-aws-nitro-enclave-security_SKILL"
+    ],
+    "181": [
+      "implementing-bgp-security-with-rpki_SKILL"
+    ],
+    "182": [
+      "improve_codebase_architecture"
+    ],
+    "183": [
+      "indexing_issue_auditor"
+    ],
+    "184": [
+      "insecure_defaults"
+    ],
+    "185": [
+      "intercepting_mobile_traffic"
+    ],
+    "186": [
+      "internal_comms"
+    ],
+    "187": [
+      "interview_me"
+    ],
+    "188": [
+      "invariant_guard"
+    ],
+    "189": [
+      "iso27001_audit_prep_skill"
+    ],
+    "190": [
+      "issue_triage_skill"
+    ],
+    "191": [
+      "jupyter_notebook_creation_skill"
+    ],
+    "192": [
+      "ldap_hardening_skill"
+    ],
+    "193": [
+      "liteparse_skill"
+    ],
+    "194": [
+      "litreview_skill"
+    ],
+    "195": [
+      "llm_cost_optimizer_skill"
+    ],
+    "196": [
+      "lm_evaluation_harness_skill"
+    ],
+    "197": [
+      "macos_computer_use_skill"
+    ],
+    "198": [
+      "managing_intelligence_lifecycle_skill"
+    ],
+    "199": [
+      "market_research_methodology_skill"
+    ],
+    "200": [
+      "memory_forensics_skill"
+    ],
+    "201": [
+      "mfa_duo_skill"
+    ],
+    "202": [
+      "microsegmentation_skill"
+    ],
+    "203": [
+      "migrate_to_shoehorn_skill"
+    ],
+    "204": [
+      "mitm_simulation_skill"
+    ],
+    "205": [
+      "mobile_pentest_skill"
+    ],
+    "206": [
+      "mock_hunter_skill"
+    ],
+    "207": [
+      "monitoring_dark_web_sources_skill"
+    ],
+    "208": [
+      "music_audio_tools_skill"
+    ],
+    "209": [
+      "netlify_deploy_skill"
+    ],
+    "210": [
+      "newsletter_generation_skill"
+    ],
+    "211": [
+      "observability_designer_skill"
+    ],
+    "212": [
+      "obsidian_vault_skill"
+    ],
+    "213": [
+      "orchestrate_batch_refactor_skill"
+    ],
+    "214": [
+      "pair_agent_skill"
+    ],
+    "215": [
+      "partnerships_architect_skill"
+    ],
+    "216": [
+      "pass_the_ticket_skill"
+    ],
+    "217": [
+      "patent_skill"
+    ],
+    "218": [
+      "performance_profiler_skill"
+    ],
+    "219": [
+      "performing-second-order-sql-injection_skill"
+    ],
+    "220": [
+      "performing-serverless-function-security-review_skill"
+    ],
+    "221": [
+      "performing-soap-web-service-security-testing_skill"
+    ],
+    "222": [
+      "performing-sqlite-database-forensics_skill"
+    ],
+    "223": [
+      "performing-ssrf-vulnerability-exploitation_skill"
+    ],
+    "224": [
+      "performing-steganography-detection_skill"
+    ],
+    "225": [
+      "performing-subdomain-enumeration-with-subfinder_skill"
+    ],
+    "226": [
+      "performing-thick-client-application-penetration-test_skill"
+    ],
+    "227": [
+      "performing_access_review_and_certification_skill"
+    ],
+    "228": [
+      "performing_ai_driven_osint_correlation_skill"
+    ],
+    "229": [
+      "performing_alert_triage_with_elastic_siem_skill"
+    ],
+    "230": [
+      "pfsense_skill"
+    ],
+    "231": [
+      "phase-gated-debugging_skill"
+    ],
+    "232": [
+      "tls13_skill"
+    ],
+    "233": [
+      "vlan_segmentation_skill"
+    ]
+  },
+  "cohesion": {
+    "0": 0.058823529411764705,
+    "1": 0.06060606060606061,
+    "2": 0.08547008547008547,
+    "3": 0.1339031339031339,
+    "4": 0.18840579710144928,
+    "5": 0.09057971014492754,
+    "6": 0.09523809523809523,
+    "7": 0.09523809523809523,
+    "8": 0.1,
+    "9": 0.1,
+    "10": 0.10526315789473684,
+    "11": 0.1111111111111111,
+    "12": 0.1111111111111111,
+    "13": 0.18181818181818182,
+    "14": 0.2,
+    "15": 0.2,
+    "16": 0.2222222222222222,
+    "17": 0.2222222222222222,
+    "18": 0.25,
+    "19": 0.25,
+    "20": 0.25,
+    "21": 0.2857142857142857,
+    "22": 0.2857142857142857,
+    "23": 0.3333333333333333,
+    "24": 0.3333333333333333,
+    "25": 0.3333333333333333,
+    "26": 0.3333333333333333,
+    "27": 0.3333333333333333,
+    "28": 0.4,
+    "29": 0.4,
+    "30": 0.4,
+    "31": 0.4,
+    "32": 0.4,
+    "33": 0.4,
+    "34": 0.4,
+    "35": 0.4,
+    "36": 0.5,
+    "37": 0.5,
+    "38": 0.5,
+    "39": 0.5,
+    "40": 0.5,
+    "41": 0.5,
+    "42": 0.5,
+    "43": 0.5,
+    "44": 0.5,
+    "45": 0.5,
+    "46": 0.6666666666666666,
+    "47": 0.5,
+    "48": 0.5,
+    "49": 0.5,
+    "50": 0.5,
+    "51": 0.5,
+    "52": 0.6666666666666666,
+    "53": 0.5,
+    "54": 0.5,
+    "55": 0.5,
+    "56": 0.5,
+    "57": 0.6666666666666666,
+    "58": 0.6666666666666666,
+    "59": 0.6666666666666666,
+    "60": 0.6666666666666666,
+    "61": 0.6666666666666666,
+    "62": 0.6666666666666666,
+    "63": 0.6666666666666666,
+    "64": 0.6666666666666666,
+    "65": 0.6666666666666666,
+    "66": 0.6666666666666666,
+    "67": 0.6666666666666666,
+    "68": 0.6666666666666666,
+    "69": 1.0,
+    "70": 0.6666666666666666,
+    "71": 0.6666666666666666,
+    "72": 1.0,
+    "73": 0.6666666666666666,
+    "74": 0.6666666666666666,
+    "75": 0.6666666666666666,
+    "76": 0.6666666666666666,
+    "77": 0.6666666666666666,
+    "78": 0.6666666666666666,
+    "79": 0.6666666666666666,
+    "80": 0.6666666666666666,
+    "81": 0.6666666666666666,
+    "82": 0.6666666666666666,
+    "83": 0.6666666666666666,
+    "84": 0.6666666666666666,
+    "85": 0.6666666666666666,
+    "86": 0.6666666666666666,
+    "87": 0.6666666666666666,
+    "88": 0.6666666666666666,
+    "89": 0.6666666666666666,
+    "90": 1.0,
+    "91": 1.0,
+    "92": 1.0,
+    "93": 1.0,
+    "94": 1.0,
+    "95": 1.0,
+    "96": 1.0,
+    "97": 1.0,
+    "98": 1.0,
+    "99": 1.0,
+    "100": 1.0,
+    "101": 1.0,
+    "102": 1.0,
+    "103": 1.0,
+    "104": 1.0,
+    "105": 1.0,
+    "106": 1.0,
+    "107": 1.0,
+    "108": 1.0,
+    "109": 1.0,
+    "110": 1.0,
+    "111": 1.0,
+    "112": 1.0,
+    "113": 1.0,
+    "114": 1.0,
+    "115": 1.0,
+    "116": 1.0,
+    "117": 1.0,
+    "118": 1.0,
+    "119": 1.0,
+    "120": 1.0,
+    "121": 1.0,
+    "122": 1.0,
+    "123": 1.0,
+    "124": 1.0,
+    "125": 1.0,
+    "126": 1.0,
+    "127": 1.0,
+    "128": 1.0,
+    "129": 1.0,
+    "130": 1.0,
+    "131": 1.0,
+    "132": 1.0,
+    "133": 1.0,
+    "134": 1.0,
+    "135": 1.0,
+    "136": 1.0,
+    "137": 1.0,
+    "138": 1.0,
+    "139": 1.0,
+    "140": 1.0,
+    "141": 1.0,
+    "142": 1.0,
+    "143": 1.0,
+    "144": 1.0,
+    "145": 1.0,
+    "146": 1.0,
+    "147": 1.0,
+    "148": 1.0,
+    "149": 1.0,
+    "150": 1.0,
+    "151": 1.0,
+    "152": 1.0,
+    "153": 1.0,
+    "154": 1.0,
+    "155": 1.0,
+    "156": 1.0,
+    "157": 1.0,
+    "158": 1.0,
+    "159": 1.0,
+    "160": 1.0,
+    "161": 1.0,
+    "162": 1.0,
+    "163": 1.0,
+    "164": 1.0,
+    "165": 1.0,
+    "166": 1.0,
+    "167": 1.0,
+    "168": 1.0,
+    "169": 1.0,
+    "170": 1.0,
+    "171": 1.0,
+    "172": 1.0,
+    "173": 1.0,
+    "174": 1.0,
+    "175": 1.0,
+    "176": 1.0,
+    "177": 1.0,
+    "178": 1.0,
+    "179": 1.0,
+    "180": 1.0,
+    "181": 1.0,
+    "182": 1.0,
+    "183": 1.0,
+    "184": 1.0,
+    "185": 1.0,
+    "186": 1.0,
+    "187": 1.0,
+    "188": 1.0,
+    "189": 1.0,
+    "190": 1.0,
+    "191": 1.0,
+    "192": 1.0,
+    "193": 1.0,
+    "194": 1.0,
+    "195": 1.0,
+    "196": 1.0,
+    "197": 1.0,
+    "198": 1.0,
+    "199": 1.0,
+    "200": 1.0,
+    "201": 1.0,
+    "202": 1.0,
+    "203": 1.0,
+    "204": 1.0,
+    "205": 1.0,
+    "206": 1.0,
+    "207": 1.0,
+    "208": 1.0,
+    "209": 1.0,
+    "210": 1.0,
+    "211": 1.0,
+    "212": 1.0,
+    "213": 1.0,
+    "214": 1.0,
+    "215": 1.0,
+    "216": 1.0,
+    "217": 1.0,
+    "218": 1.0,
+    "219": 1.0,
+    "220": 1.0,
+    "221": 1.0,
+    "222": 1.0,
+    "223": 1.0,
+    "224": 1.0,
+    "225": 1.0,
+    "226": 1.0,
+    "227": 1.0,
+    "228": 1.0,
+    "229": 1.0,
+    "230": 1.0,
+    "231": 1.0,
+    "232": 1.0,
+    "233": 1.0
+  },
+  "gods": [
+    {
+      "id": "open-gstack-browser_skill",
+      "label": "open-gstack-browser Skill",
+      "degree": 28
+    },
+    {
+      "id": "using-agent-skills_skill",
+      "label": "Using Agent Skills",
+      "degree": 25
+    },
+    {
+      "id": "qa_skill",
+      "label": "qa skill definition",
+      "degree": 19
+    },
+    {
+      "id": "qa_only_skill",
+      "label": "qa-only skill definition",
+      "degree": 17
+    },
+    {
+      "id": "retro_skill",
+      "label": "retro skill definition",
+      "degree": 17
+    },
+    {
+      "id": "operating-havoc-c2_skill",
+      "label": "Operating Havoc C2 Skill",
+      "degree": 17
+    },
+    {
+      "id": "operating-sliver-c2_skill",
+      "label": "Operating Sliver C2 Skill",
+      "degree": 16
+    },
+    {
+      "id": "open-notebook_skill",
+      "label": "open-notebook Skill",
+      "degree": 15
+    },
+    {
+      "id": "performing-blind-ssrf-exploitation_skill",
+      "label": "Performing Blind SSRF Exploitation",
+      "degree": 14
+    },
+    {
+      "id": "securing-github-actions-workflows_skill",
+      "label": "Securing GitHub Actions Workflows",
+      "degree": 12
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Reverse Engineering Android Malware with JADX",
+      "target": "Reverse Engineering Malware with Ghidra",
+      "source_files": [
+        "reverse-engineering-android-malware-with-jadx/SKILL.md",
+        "reverse-engineering-malware-with-ghidra/SKILL.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link; peripheral node `Reverse Engineering Android Malware with JADX` unexpectedly reaches hub `Reverse Engineering Malware with Ghidra`"
+    },
+    {
+      "source": "Reverse Engineering .NET Malware with dnSpy",
+      "target": "Reverse Engineering Malware with Ghidra",
+      "source_files": [
+        "reverse-engineering-dotnet-malware-with-dnspy/SKILL.md",
+        "reverse-engineering-malware-with-ghidra/SKILL.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link; peripheral node `Reverse Engineering .NET Malware with dnSpy` unexpectedly reaches hub `Reverse Engineering Malware with Ghidra`"
+    },
+    {
+      "source": "Reverse Engineering iOS App with Frida",
+      "target": "Reverse Engineering Malware with Ghidra",
+      "source_files": [
+        "reverse-engineering-ios-app-with-frida/SKILL.md",
+        "reverse-engineering-malware-with-ghidra/SKILL.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link; peripheral node `Reverse Engineering iOS App with Frida` unexpectedly reaches hub `Reverse Engineering Malware with Ghidra`"
+    },
+    {
+      "source": "Reverse Engineering Ransomware Encryption Routine",
+      "target": "Reverse Engineering Malware with Ghidra",
+      "source_files": [
+        "reverse-engineering-ransomware-encryption-routine/SKILL.md",
+        "reverse-engineering-malware-with-ghidra/SKILL.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link; peripheral node `Reverse Engineering Ransomware Encryption Routine` unexpectedly reaches hub `Reverse Engineering Malware with Ghidra`"
+    },
+    {
+      "source": "Reverse Engineering Rust Malware",
+      "target": "Reverse Engineering Malware with Ghidra",
+      "source_files": [
+        "reverse-engineering-rust-malware/SKILL.md",
+        "reverse-engineering-malware-with-ghidra/SKILL.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link; peripheral node `Reverse Engineering Rust Malware` unexpectedly reaches hub `Reverse Engineering Malware with Ghidra`"
+    }
+  ],
+  "tokens": {
+    "input": 1442987,
+    "output": 122107
+  }
+}

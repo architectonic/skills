@@ -1,0 +1,46 @@
+{
+  "communities": {
+    "0": [
+      "deque_axe_core_rules",
+      "eslint_plugin_jsx_a11y",
+      "skill_a11y_audit",
+      "wai_aria_authoring_practices_1_2",
+      "wcag_2_2_specification"
+    ]
+  },
+  "cohesion": {
+    "0": 0.4
+  },
+  "gods": [
+    {
+      "id": "skill_a11y_audit",
+      "label": "Accessibility Audit (a11y-audit)",
+      "degree": 4
+    },
+    {
+      "id": "wcag_2_2_specification",
+      "label": "WCAG 2.2 Specification",
+      "degree": 1
+    },
+    {
+      "id": "wai_aria_authoring_practices_1_2",
+      "label": "WAI-ARIA Authoring Practices 1.2",
+      "degree": 1
+    },
+    {
+      "id": "deque_axe_core_rules",
+      "label": "Deque axe-core Rules",
+      "degree": 1
+    },
+    {
+      "id": "eslint_plugin_jsx_a11y",
+      "label": "eslint-plugin-jsx-a11y",
+      "degree": 1
+    }
+  ],
+  "surprises": [],
+  "tokens": {
+    "input": 1456,
+    "output": 801
+  }
+}
