@@ -1,11 +1,28 @@
 ---
 name: Analyzing Network Packets with Scapy
 description: Craft, send, sniff, and dissect network packets using Scapy for protocol
-tags: [research, agent-skill, okf, scapy, packet-analysis, network-forensics, protocol-dissection, pcap, traffic-analysis, security]
+tags:
+- business
+- research
+- skill
+- okf
+- scapy
+- packet-analysis
+- network-forensics
+- protocol-dissection
+- pcap
+- traffic-analysis
+- security
 license: Apache-2.0
 type: Playbook
+title: Analyzing Network Packets with Scapy
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Analyzing Network Packets with Scapy
 

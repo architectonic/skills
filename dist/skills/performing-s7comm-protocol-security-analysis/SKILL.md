@@ -1,11 +1,30 @@
 ---
 name: Performing S7comm Protocol Security Analysis
 description: Perform security analysis of Siemens S7comm and S7CommPlus protocols
-tags: [software-development, software-development, agent-skill, okf, ot-security, ics, s7comm, siemens, plc-security, protocol-analysis, scada, vulnerability-assessment, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- ot-security
+- ics
+- s7comm
+- siemens
+- plc-security
+- protocol-analysis
+- scada
+- vulnerability-assessment
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing S7comm Protocol Security Analysis
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing S7comm Protocol Security Analysis
 

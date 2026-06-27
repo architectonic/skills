@@ -1,8 +1,19 @@
 ---
 name: context-compression
-description: Compress超长 agent session context using structured strategies. Activate when sessions approach context window limits, when designing summarization pipelines, or when agents 'forget' file paths/decisions after long conversations. Three methods: anchored iterative summarization, opaque compression, regenerative full summary.
-tags: [context-management, agent-operations, token-optimization, summarization]
+title: Context Compression Strategies
+description: 'When agent sessions generate massive context histories, compression
+  becomes mandatory. The naive approach optimizes tokens-per-request. The correct
+  optimization target is **tokens-per-task**: total tokens consumed to complete a
+  task, including re-fetching costs when compression loses critical information.'
 type: Playbook
+domain: agent-operations
+tags:
+- agent-operations
+- okf
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Context Compression Strategies

@@ -1,11 +1,28 @@
 ---
 name: Testing JWT Token Security
 description: Assessing JSON Web Token implementations for cryptographic weaknesses,
-tags: [software-development, software-development, agent-skill, okf, penetration-testing, jwt, authentication, web-security, token-security, burpsuite, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- penetration-testing
+- jwt
+- authentication
+- web-security
+- token-security
+- burpsuite
+- security
 license: Apache-2.0
 type: Playbook
+title: Testing JWT Token Security
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Testing JWT Token Security
 

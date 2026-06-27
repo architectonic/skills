@@ -1,8 +1,23 @@
 ---
 name: OKF Knowledge Extraction
-description: How to extract, normalize, and store public knowledge in OKF-compatible format. Use when adding any external source to the catalog, creating new knowledge files, or converting raw source material into canonical AOMK entries.
-tags: [canonical, okf, extraction, ingestion, knowledge-management]
+description: How to extract, normalize, and store public knowledge in OKF-compatible
+  format. Use when adding any external source to the catalog, creating new knowledge
+  files, or converting raw source material into canonical AOMK entries.
+tags:
+- writing
+- canonical
+- okf
+- extraction
+- ingestion
+- knowledge-management
 resource: https://github.com/Agent-Memory-Ops-Kit/AMOK
+title: OKF Knowledge Extraction
+type: Playbook
+domain: writing
+risk_level: medium
+requires_review: true
+source_family: amok-native
+source_status: adapted
 ---
 
 # OKF Knowledge Extraction

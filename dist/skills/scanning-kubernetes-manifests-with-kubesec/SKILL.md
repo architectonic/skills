@@ -1,11 +1,30 @@
 ---
 name: Scanning Kubernetes Manifests with Kubesec
 description: Perform security risk analysis on Kubernetes resource manifests using
-tags: [devops, agent-skill, okf, kubesec, kubernetes, manifest-scanning, security-scanning, devsecops, misconfiguration, static-analysis, ci-cd, security]
+tags:
+- software-engineering
+- devops
+- skill
+- okf
+- kubesec
+- kubernetes
+- manifest-scanning
+- security-scanning
+- devsecops
+- misconfiguration
+- static-analysis
+- ci-cd
+- security
 license: Apache-2.0
 type: Playbook
+title: Scanning Kubernetes Manifests with Kubesec
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Scanning Kubernetes Manifests with Kubesec
 

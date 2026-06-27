@@ -1,11 +1,29 @@
 ---
 name: Implementing SIEM Use Case Tuning
 description: Tune SIEM detection rules to reduce false positives by analyzing alert
-tags: [software-development, software-development, agent-skill, okf, siem, detection-engineering, false-positive-reduction, splunk, elastic, alert-tuning, soc, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- siem
+- detection-engineering
+- false-positive-reduction
+- splunk
+- elastic
+- alert-tuning
+- soc
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing SIEM Use Case Tuning
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing SIEM Use Case Tuning
 

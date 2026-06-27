@@ -1,8 +1,19 @@
 ---
 name: loop-me
 description: Grill me about specs for the workflows I want to build, within this workspace.
-tags: [software-development, software-development, agent-skill, okf, curation]
+tags:
+- agent-operations
+- software-engineering
+- skill
+- okf
+- curation
 type: Reference
+title: loop-me
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # loop-me

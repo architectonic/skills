@@ -1,11 +1,31 @@
 ---
 name: Configuring AWS Verified Access for ZTNA
 description: Configure AWS Verified Access to provide VPN-less zero trust network
-tags: [software-development, software-development, agent-skill, okf, zero-trust, aws, verified-access, ztna, cedar-policy, vpn-less, identity-verification, device-posture, aws-ram, security]
+tags:
+- cloud-security
+- software-engineering
+- skill
+- okf
+- zero-trust
+- aws
+- verified-access
+- ztna
+- cedar-policy
+- vpn-less
+- identity-verification
+- device-posture
+- aws-ram
+- security
 license: Apache-2.0
 type: Playbook
+title: Configuring AWS Verified Access for ZTNA
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Configuring AWS Verified Access for ZTNA
 

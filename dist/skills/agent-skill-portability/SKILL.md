@@ -1,8 +1,23 @@
 ---
 name: agent-skill-portability
-description: Research on agent skill portability, security implications, and cross-agent compatibility challenges.
-tags: [research, skill-portability, security, cross-agent, compatibility, agent-ecosystem]
+description: Research on agent skill portability, security implications, and cross-agent
+  compatibility challenges.
+tags:
+- agent-operations
+- research
+- skill-portability
+- security
+- cross-agent
+- compatibility
+- agent-ecosystem
+- okf
 type: Playbook
+title: Agent Skill Portability and Security Studies
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Agent Skill Portability and Security Studies (2026)

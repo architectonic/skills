@@ -1,9 +1,30 @@
 ---
 name: Parsing Artifacts with Eric Zimmerman Tools
-description: Parse registry, prefetch, shellbags, and MFT with EZ Tools and Timeline Explorer.
-tags: [software-development, software-development, agent-skill, okf, digital-forensics, eric-zimmerman, registry-forensics, prefetch, shellbags, mft, dfir, artifact-parsing, security]
+description: Parse registry, prefetch, shellbags, and MFT with EZ Tools and Timeline
+  Explorer.
+tags:
+- forensics
+- software-engineering
+- skill
+- okf
+- digital-forensics
+- eric-zimmerman
+- registry-forensics
+- prefetch
+- shellbags
+- mft
+- dfir
+- artifact-parsing
+- security
 license: Apache-2.0
 type: Playbook
+title: Parsing Artifacts with Eric Zimmerman Tools
+domain: forensics
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Parsing Artifacts with Eric Zimmerman Tools

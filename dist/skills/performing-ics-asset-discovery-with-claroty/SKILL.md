@@ -1,11 +1,30 @@
 ---
 name: Performing ICS Asset Discovery with Claroty
 description: Perform comprehensive ICS/OT asset discovery using Claroty xDome platform,
-tags: [software-development, software-development, agent-skill, okf, ot-security, ics, asset-discovery, claroty, xdome, scada, network-visibility, iec62443, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- ot-security
+- ics
+- asset-discovery
+- claroty
+- xdome
+- scada
+- network-visibility
+- iec62443
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing ICS Asset Discovery with Claroty
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing ICS Asset Discovery with Claroty
 

@@ -1,11 +1,30 @@
 ---
 name: Implementing API Security Testing with 42Crunch
 description: Implement comprehensive API security testing using the 42Crunch platform
-tags: [software-development, software-development, agent-skill, okf, api-security, 42crunch, openapi, api-audit, api-scan, conformance-testing, shift-left, ci-cd-security, owasp-api-top-10, security]
+tags:
+- software-engineering
+- skill
+- okf
+- api-security
+- 42crunch
+- openapi
+- api-audit
+- api-scan
+- conformance-testing
+- shift-left
+- ci-cd-security
+- owasp-api-top-10
+- security
 license: Apache-2.0
 type: API Endpoint
+title: Implementing API Security Testing with 42Crunch
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing API Security Testing with 42Crunch
 

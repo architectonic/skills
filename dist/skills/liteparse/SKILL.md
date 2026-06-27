@@ -1,9 +1,22 @@
 ---
 name: Liteparse
-description: Local document and PDF parsing with spatial text and bounding boxes. Use for extracting text from PDFs, DOCX, Office files, and images; OCR on scans; layout-preserved JSON for RAG; batch-ingesting paper folders; or page screenshots for multimodal agents. Prefer over MarkItDown when you need bboxes, fast local parsing, or PNG page renders. All processing is local — no cloud API required.
+description: Local document and PDF parsing with spatial text and bounding boxes.
+  Use for extracting text from PDFs, DOCX, Office files, and images; OCR on scans;
+  layout-preserved JSON for RAG; batch-ingesting paper folders; or page screenshots
+  for multimodal agents. Prefer over MarkItDown when you need bboxes, fast local parsing,
+  or PNG page renders. All processing is local — no cloud API required.
 source: K-Dense-AI/scientific-agent-skills (MIT), based on run-llama/liteparse
 distilled: 2026-06-23
 type: Playbook
+title: LiteParse — Local Document Parsing
+domain: design
+tags:
+- design
+- okf
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # LiteParse — Local Document Parsing

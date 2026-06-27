@@ -1,12 +1,28 @@
 ---
 name: Implementing Syslog Centralization with Rsyslog
 description: Configure rsyslog for centralized log collection with TLS encryption,
-tags: [software-development, software-development, agent-skill, okf, syslog, rsyslog, log-centralization, tls-encryption, log-management, security-operations, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- syslog
+- rsyslog
+- log-centralization
+- tls-encryption
+- log-management
+- security-operations
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Syslog Centralization with Rsyslog
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
-
 
 # Implementing Syslog Centralization with Rsyslog
 

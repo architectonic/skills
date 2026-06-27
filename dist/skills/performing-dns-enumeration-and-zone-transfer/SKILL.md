@@ -1,9 +1,26 @@
 ---
 name: Performing DNS Enumeration and Zone Transfer
 description: Enumerates DNS records, attempts zone transfers, brute-forces subdomains,
-tags: [software-development, software-development, agent-skill, okf, network-security, dns, enumeration, zone-transfer, reconnaissance, security]
+tags:
+- writing
+- software-engineering
+- skill
+- okf
+- network-security
+- dns
+- enumeration
+- zone-transfer
+- reconnaissance
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing DNS Enumeration and Zone Transfer
+domain: writing
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Performing DNS Enumeration and Zone Transfer

@@ -1,11 +1,28 @@
 ---
 name: Performing Entitlement Review with SailPoint IdentityIQ
 description: Performs entitlement review and access certification campaigns using
-tags: [software-development, software-development, agent-skill, okf, sailpoint, identityiq, access-review, entitlement-certification, iga, access-governance, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- sailpoint
+- identityiq
+- access-review
+- entitlement-certification
+- iga
+- access-governance
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Entitlement Review with SailPoint IdentityIQ
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Entitlement Review with SailPoint IdentityIQ
 

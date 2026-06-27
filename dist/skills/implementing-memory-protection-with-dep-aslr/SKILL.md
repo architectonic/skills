@@ -1,9 +1,27 @@
 ---
 name: Implementing Memory Protection with DEP and ASLR
 description: Implements memory protection mechanisms including DEP (Data Execution
-tags: [software-development, software-development, agent-skill, okf, endpoint, memory-protection, dep, aslr, exploit-mitigation, cfg, security]
+tags:
+- security-offensive
+- software-engineering
+- skill
+- okf
+- endpoint
+- memory-protection
+- dep
+- aslr
+- exploit-mitigation
+- cfg
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Memory Protection with DEP and ASLR
+domain: security-offensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing Memory Protection with DEP and ASLR

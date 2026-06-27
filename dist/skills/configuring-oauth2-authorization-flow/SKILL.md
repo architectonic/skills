@@ -1,9 +1,29 @@
 ---
 name: Configuring OAuth 2.0 Authorization Flow
 description: Configure secure OAuth 2.0 authorization flows including Authorization
-tags: [software-development, software-development, agent-skill, okf, iam, identity, access-control, authentication, authorization, oauth2, oidc, pkce, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- iam
+- identity
+- access-control
+- authentication
+- authorization
+- oauth2
+- oidc
+- pkce
+- security
 license: Apache-2.0
 type: Playbook
+title: Configuring OAuth 2.0 Authorization Flow
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Configuring OAuth 2.0 Authorization Flow

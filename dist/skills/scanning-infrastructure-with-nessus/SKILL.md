@@ -1,9 +1,27 @@
 ---
 name: Scanning Infrastructure with Nessus
 description: Tenable Nessus is the industry-leading vulnerability scanner used to
-tags: [software-development, software-development, agent-skill, okf, vulnerability-management, cve, nessus, tenable, infrastructure-scanning, risk, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- vulnerability-management
+- cve
+- nessus
+- tenable
+- infrastructure-scanning
+- risk
+- security
 license: Apache-2.0
 type: Playbook
+title: Scanning Infrastructure with Nessus
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Scanning Infrastructure with Nessus

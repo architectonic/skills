@@ -1,11 +1,29 @@
 ---
 name: Building DevSecOps Pipeline with GitLab CI
 description: Design and implement a comprehensive DevSecOps pipeline in GitLab CI/CD
-tags: [software-development, software-development, agent-skill, okf, gitlab-ci, devsecops, sast, dast, container-scanning, dependency-scanning, secret-detection, cicd-security, security]
+tags:
+- software-engineering
+- skill
+- okf
+- gitlab-ci
+- devsecops
+- sast
+- dast
+- container-scanning
+- dependency-scanning
+- secret-detection
+- cicd-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Building DevSecOps Pipeline with GitLab CI
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Building DevSecOps Pipeline with GitLab CI
 

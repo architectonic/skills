@@ -1,8 +1,21 @@
 ---
 name: Security Review
-description: Security gate checklist for reviewing agent-made changes and third-party agent skill ingestion. Use before merging, shipping, or promoting any skill or code change that touches sensitive surfaces.
-tags: [agent-operations, agent-operations, security, review, gate, okf]
+description: Security gate checklist for reviewing agent-made changes and third-party
+  agent skill ingestion. Use before merging, shipping, or promoting any skill or code
+  change that touches sensitive surfaces.
+tags:
+- agent-operations
+- security
+- review
+- gate
+- okf
 type: Playbook
+title: Security Review
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Security Review

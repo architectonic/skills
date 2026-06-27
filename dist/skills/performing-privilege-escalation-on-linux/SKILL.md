@@ -1,9 +1,28 @@
 ---
 name: Performing Privilege Escalation on Linux
 description: Linux privilege escalation involves elevating from a low-privilege user
-tags: [software-development, software-development, agent-skill, okf, red-team, adversary-simulation, mitre-attack, exploitation, post-exploitation, privilege-escalation, linux, security]
+tags:
+- security-offensive
+- software-engineering
+- skill
+- okf
+- red-team
+- adversary-simulation
+- mitre-attack
+- exploitation
+- post-exploitation
+- privilege-escalation
+- linux
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Privilege Escalation on Linux
+domain: security-offensive
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Performing Privilege Escalation on Linux

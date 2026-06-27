@@ -1,8 +1,19 @@
 ---
 name: diagram
-description: Turn an English description (or mermaid source) into a diagram triplet: the source, an editable .excalidraw file you can open (gstack)
-tags: [creative, agent-skill, okf, curation]
+title: diagram
+description: on excalidraw.com, and rendered SVG + PNG (clean mermaid style; the .excalidraw
+  carries the hand-drawn aesthetic). Fully offline. Use when asked to "make a diagram",
+  "draw the architecture", "create a flowchart", "diagram this", or "visualize this
+  flow".
 type: Playbook
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_status: adapted
 ---
 
 # diagram

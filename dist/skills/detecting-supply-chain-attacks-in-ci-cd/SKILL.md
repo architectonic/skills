@@ -1,11 +1,27 @@
 ---
 name: Detecting Supply Chain Attacks in CI/CD
 description: Scans GitHub Actions workflows and CI/CD pipeline configurations for
-tags: [software-development, software-development, agent-skill, okf, supply-chain-security, ci-cd-security, github-actions, pipeline-security, dependency-pinning, devsecops, security]
+tags:
+- software-engineering
+- skill
+- okf
+- supply-chain-security
+- ci-cd-security
+- github-actions
+- pipeline-security
+- dependency-pinning
+- devsecops
+- security
 license: Apache-2.0
 type: Playbook
+title: Detecting Supply Chain Attacks in CI/CD
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Detecting Supply Chain Attacks in CI/CD
 

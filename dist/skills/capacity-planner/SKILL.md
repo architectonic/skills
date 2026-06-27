@@ -1,11 +1,31 @@
 ---
 name: Capacity Planner — Ops Team Sizing with Erlang-C Queueing Theory
-description: Size ops capacity for teams that handle queued work (Support, CX, CS, BizOps, IT ops, Finance ops). Erlang-C queueing math, P90 demand sizing, shrinkage-adjusted FTE, manager-trigger thresholds, and quarterly hiring sequence with ramp + attrition. Produces capacity sizing at multiple utilization levels, per-member utilization health, and a 12-month hiring plan.
+description: Size ops capacity for teams that handle queued work (Support, CX, CS,
+  BizOps, IT ops, Finance ops). Erlang-C queueing math, P90 demand sizing, shrinkage-adjusted
+  FTE, manager-trigger thresholds, and quarterly hiring sequence with ramp + attrition.
+  Produces capacity sizing at multiple utilization levels, per-member utilization
+  health, and a 12-month hiring plan.
 version: 1.0.0
 source: claude-skills/business-operations/capacity-planner (MIT)
 author: claude-code-skills (distilled by Agent-Memory-Ops-Kit)
-tags: [productivity, bizops, capacity, headcount, utilization, queueing-theory, ops-planning, workforce]
+tags:
+- software-engineering
+- productivity
+- bizops
+- capacity
+- headcount
+- utilization
+- queueing-theory
+- ops-planning
+- workforce
+- okf
 type: Playbook
+title: Capacity Planner — Ops Team Sizing with Erlang-C Queueing Theory
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: amok-native
+source_status: adapted
 ---
 
 # Capacity Planner — Ops Team Sizing with Erlang-C Queueing Theory

@@ -1,8 +1,17 @@
 ---
 name: design-consultation
-description: Design consultation: understands your product, researches the landscape, proposes a complete design system (aesthetic, typography, color, layout, spacing, motion), and generates font+color preview... (gstack)
-tags: [creative, agent-skill, okf, curation]
+title: design-consultation
+description: '<!-- AUTO-GENERATED from SKILL.md.tmpl — do not edit directly --> <!--
+  Regenerate: bun run gen:skill-docs -->'
 type: Playbook
+domain: design
+tags:
+- design
+- okf
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_status: adapted
 ---
 
 # design-consultation

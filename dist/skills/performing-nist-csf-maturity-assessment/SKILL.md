@@ -1,9 +1,27 @@
 ---
 name: Performing NIST CSF Maturity Assessment
 description: The NIST Cybersecurity Framework (CSF) 2.0, released in February 2024,
-tags: [software-development, software-development, agent-skill, okf, compliance, governance, nist, csf, maturity-assessment, risk-management, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- compliance
+- governance
+- nist
+- csf
+- maturity-assessment
+- risk-management
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing NIST CSF Maturity Assessment
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Performing NIST CSF Maturity Assessment

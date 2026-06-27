@@ -1,9 +1,26 @@
 ---
 name: Performing Bandwidth Throttling Attack Simulation
 description: Simulates bandwidth throttling and network degradation attacks using
-tags: [software-development, software-development, agent-skill, okf, network-security, bandwidth-throttling, qos, traffic-shaping, network-resilience, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- network-security
+- bandwidth-throttling
+- qos
+- traffic-shaping
+- network-resilience
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Bandwidth Throttling Attack Simulation
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Performing Bandwidth Throttling Attack Simulation

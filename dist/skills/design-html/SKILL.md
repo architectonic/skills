@@ -1,8 +1,17 @@
 ---
 name: design-html
-description: Design finalization: generates production-quality Pretext-native HTML/CSS. (gstack)
-tags: [creative, agent-skill, okf, curation]
+title: design-html
+description: '<!-- AUTO-GENERATED from SKILL.md.tmpl — do not edit directly --> <!--
+  Regenerate: bun run gen:skill-docs -->'
 type: Playbook
+domain: design
+tags:
+- design
+- okf
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_status: adapted
 ---
 
 # design-html

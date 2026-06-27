@@ -1,8 +1,19 @@
 ---
 name: teach
 description: Teach the user a new skill or concept, within this workspace.
-tags: [skill-management, skill-management, agent-skill, okf, curation]
+tags:
+- business
+- skill-management
+- skill
+- okf
+- curation
 type: Playbook
+title: teach
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # teach

@@ -1,11 +1,17 @@
 ---
 name: Auditing Foundry Smart Contract Security
-description: >-
-tags: [software-development, software-development, agent-skill, okf, security]
+description: 'Deployed smart contracts are **immutable** and custody **real funds**,
+  so a bug shipped to mainnet cannot be patched — it can only be exploited. Most catastrophic
+  DeFi losses come from a small set of recurring classes: reentrancy, broken access'
+tags:
+- software-development
+- software-development
+- agent-skill
+- okf
+- security
 license: Apache-2.0
 type: Playbook
 ---
-
 
 # Auditing Foundry Smart Contract Security
 

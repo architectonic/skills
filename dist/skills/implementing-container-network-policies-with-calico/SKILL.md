@@ -1,9 +1,27 @@
 ---
 name: Implementing Container Network Policies with Calico
 description: Enforce Kubernetes network segmentation using Calico CNI network policies
-tags: [devops, agent-skill, okf, container-security, kubernetes, calico, network-policy, microsegmentation, cni, security]
+tags:
+- business
+- devops
+- skill
+- okf
+- container-security
+- kubernetes
+- calico
+- network-policy
+- microsegmentation
+- cni
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Container Network Policies with Calico
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing Container Network Policies with Calico

@@ -1,11 +1,29 @@
 ---
 name: Detecting Shadow API Endpoints
 description: Discover and inventory shadow API endpoints that operate outside documented
-tags: [software-development, software-development, agent-skill, okf, api-security, shadow-apis, api-discovery, undocumented-apis, zombie-apis, api-inventory, attack-surface-management, api-governance, security]
+tags:
+- software-engineering
+- skill
+- okf
+- api-security
+- shadow-apis
+- api-discovery
+- undocumented-apis
+- zombie-apis
+- api-inventory
+- attack-surface-management
+- api-governance
+- security
 license: Apache-2.0
 type: API Endpoint
+title: Detecting Shadow API Endpoints
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Detecting Shadow API Endpoints
 

@@ -1,11 +1,31 @@
 ---
 name: Implementing DDoS Mitigation with Cloudflare
 description: Configure Cloudflare DDoS protection with managed rulesets, rate limiting,
-tags: [software-development, software-development, agent-skill, okf, ddos, cloudflare, ddos-mitigation, rate-limiting, waf, bot-management, layer-7, volumetric-attack, network-security, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- ddos
+- cloudflare
+- ddos-mitigation
+- rate-limiting
+- waf
+- bot-management
+- layer-7
+- volumetric-attack
+- network-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing DDoS Mitigation with Cloudflare
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing DDoS Mitigation with Cloudflare
 

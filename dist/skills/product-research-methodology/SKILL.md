@@ -1,8 +1,17 @@
 ---
 name: product-research-methodology
-description: Product/user research as method-and-repository discipline: selecting the right method for the goal (generative interviews vs usability test vs concept test), computing method-based saturation/sample size with explicit confidence, and synthesizing coded observations into insights while flagging single-source anecdotes. An insight requires recurrence across independent participants — a single quote is an anecdote.
-tags: [research, research-ops, product-research, ux-research, jtbd, usability, saturation, insight-synthesis]
+title: Product Research Methodology
+description: 'Product/user research as operational discipline: choosing the right
+  method, sizing it honestly, and synthesizing findings into governed insights. Core
+  rule: **method must match the goal**, and **an insight requires recurrence across
+  independent participants**.'
 type: Playbook
+domain: research
+tags:
+- research
+- okf
+risk_level: medium
+requires_review: true
 ---
 
 # Product Research Methodology

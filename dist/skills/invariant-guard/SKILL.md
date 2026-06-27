@@ -1,8 +1,17 @@
 ---
 name: invariant-guard
-description: Correctness-first coding: force writing function contracts, loop invariants, termination arguments, and edge cases BEFORE code. Use when writing or reviewing algorithms where the obvious implementation is subtly wrong (binary search, Boyer-Moore, QuickSelect, in-place mutation, recursion).
-tags: [software-development, correctness, algorithms, loop-invariants, contracts, verification, software-development]
+title: Invariant-Guard — Correctness-First Coding
+description: The model knows what a loop invariant is. It knows recursion needs a
+  base case. It knows about empty lists, integer overflow, and the difference between
+  `<` and `≤`. It just does not write these down before producing code — so it ships
+  subtle correctness bugs that tests do not catch.
 type: Playbook
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: medium
+requires_review: true
 ---
 
 # Invariant-Guard — Correctness-First Coding

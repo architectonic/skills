@@ -1,8 +1,26 @@
 ---
 name: okf-pipeline-pattern
-description: Build deterministic OKF (Open Knowledge Format) pipelines that extract structured data from sources, produce knowledge bundles, enrich them through agent-guided grounding, and optionally sync back. Use when building reproducible knowledge extraction workflows from databases, filesystems, git repos, or APIs. Covers connector contracts, producer/enrichment loops, provenance, and MCP exposure.
-tags: [skill-management, okf, knowledge-format, pipeline, connector, provenance, extraction]
+description: Build deterministic OKF (Open Knowledge Format) pipelines that extract
+  structured data from sources, produce knowledge bundles, enrich them through agent-guided
+  grounding, and optionally sync back. Use when building reproducible knowledge extraction
+  workflows from databases, filesystems, git repos, or APIs. Covers connector contracts,
+  producer/enrichment loops, provenance, and MCP exposure.
+tags:
+- software-engineering
+- skill-management
+- okf
+- knowledge-format
+- pipeline
+- connector
+- provenance
+- extraction
 type: Reference
+title: OKF Pipeline Pattern
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # OKF Pipeline Pattern

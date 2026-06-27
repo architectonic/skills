@@ -1,9 +1,27 @@
 ---
 name: Hardening Linux Endpoint with CIS Benchmark
 description: Hardens Linux endpoints using CIS Benchmark recommendations for Ubuntu,
-tags: [software-development, software-development, agent-skill, okf, endpoint, hardening, linux-security, cis-benchmark, ubuntu, rhel, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- endpoint
+- hardening
+- linux-security
+- cis-benchmark
+- ubuntu
+- rhel
+- security
 license: Apache-2.0
 type: Playbook
+title: Hardening Linux Endpoint with CIS Benchmark
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Hardening Linux Endpoint with CIS Benchmark

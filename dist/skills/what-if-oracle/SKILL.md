@@ -1,11 +1,24 @@
 ---
 name: What If Oracle
-description: Structured What-If scenario analysis with 4-6 branch possibility exploration (best, likely, worst, wild card, contrarian, second-order). Use when the user asks speculative what-if questions about uncertain futures, strategic forks, contingency planning, or stress-testing a decision before committing.
-source: K-Dense-AI/scientific-agent-skills (MIT), adapted from AHK Strategies (CC BY-NC-SA 4.0)
+description: Structured What-If scenario analysis with 4-6 branch possibility exploration
+  (best, likely, worst, wild card, contrarian, second-order). Use when the user asks
+  speculative what-if questions about uncertain futures, strategic forks, contingency
+  planning, or stress-testing a decision before committing.
+source: K-Dense-AI/scientific-agent-skills (MIT), adapted from AHK Strategies (CC
+  BY-NC-SA 4.0)
 original-author: Ashraf Hussein Kahoush / AHK Strategies
 research-doi: 10.5281/zenodo.18736841, 10.5281/zenodo.18807387
 distilled: 2026-06-23
 type: Playbook
+title: What-If Oracle — Possibility Space Explorer
+domain: research
+tags:
+- research
+- okf
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # What-If Oracle — Possibility Space Explorer

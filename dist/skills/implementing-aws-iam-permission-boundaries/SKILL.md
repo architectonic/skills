@@ -1,11 +1,27 @@
 ---
 name: Implementing AWS IAM Permission Boundaries
 description: Configure IAM permission boundaries in AWS to delegate role creation
-tags: [software-development, software-development, agent-skill, okf, aws, iam, permission-boundaries, least-privilege, delegation, cloud-security, security]
+tags:
+- software-engineering
+- skill
+- okf
+- aws
+- iam
+- permission-boundaries
+- least-privilege
+- delegation
+- cloud-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing AWS IAM Permission Boundaries
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing AWS IAM Permission Boundaries
 

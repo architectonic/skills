@@ -1,13 +1,27 @@
 ---
 name: Detecting DCSync Attack in Active Directory
 description: Detect DCSync attacks where adversaries abuse Active Directory replication
-tags: [software-development, software-development, agent-skill, okf, threat-hunting, active-directory, dcsync, credential-theft, mitre-t1003-006, mimikatz, kerberos, security]
+tags:
+- software-development
+- software-development
+- agent-skill
+- okf
+- threat-hunting
+- active-directory
+- dcsync
+- credential-theft
+- mitre-t1003-006
+- mimikatz
+- kerberos
+- security
 license: Apache-2.0
 type: Playbook
 ---
 
-
 # Detecting DCSync Attack in Active Directory
+
+
+**Authorized-use only:** Use this skill only for owned systems, sanctioned lab environments, or engagements with explicit written permission. Document scope, preserve evidence, and follow applicable law, policy, and incident-response procedures.
 
 ## When to Use
 

@@ -1,9 +1,28 @@
 ---
 name: Implementing Identity Governance with SailPoint
 description: Deploy SailPoint IdentityNow or IdentityIQ for identity governance and
-tags: [software-development, software-development, agent-skill, okf, iam, identity, access-control, governance, sailpoint, iga, lifecycle, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- iam
+- identity
+- access-control
+- governance
+- sailpoint
+- iga
+- lifecycle
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Identity Governance with SailPoint
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing Identity Governance with SailPoint

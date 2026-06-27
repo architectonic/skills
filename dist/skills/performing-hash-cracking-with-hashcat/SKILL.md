@@ -1,9 +1,26 @@
 ---
 name: Performing Hash Cracking with Hashcat
 description: Hash cracking is an essential skill for penetration testers and security
-tags: [software-development, software-development, agent-skill, okf, cryptography, hash-cracking, password-security, hashcat, penetration-testing, security]
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- cryptography
+- hash-cracking
+- password-security
+- hashcat
+- penetration-testing
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Hash Cracking with Hashcat
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Performing Hash Cracking with Hashcat

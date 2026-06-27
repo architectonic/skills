@@ -1,11 +1,29 @@
 ---
 name: Performing SCADA HMI Security Assessment
 description: Perform security assessments of SCADA Human-Machine Interface (HMI)
-tags: [software-development, software-development, agent-skill, okf, ot-security, ics, scada, hmi, security-assessment, vulnerability, iec62443, nist-800-82, security]
+tags:
+- software-engineering
+- skill
+- okf
+- ot-security
+- ics
+- scada
+- hmi
+- security-assessment
+- vulnerability
+- iec62443
+- nist-800-82
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing SCADA HMI Security Assessment
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing SCADA HMI Security Assessment
 

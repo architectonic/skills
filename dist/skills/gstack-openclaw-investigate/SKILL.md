@@ -1,10 +1,22 @@
 ---
 name: gstack-openclaw-investigate
-description: Use when asked to debug, fix a bug, investigate an error, or do root cause analysis, and when users report errors, stack traces, unexpected behavior, or say something stopped working.
-tags: [agent-operations, agent-operations, agent-skill, okf, curation]
+description: Use when asked to debug, fix a bug, investigate an error, or do root
+  cause analysis, and when users report errors, stack traces, unexpected behavior,
+  or say something stopped working.
+tags:
+- software-engineering
+- agent-operations
+- skill
+- okf
+- curation
 type: Playbook
+title: Systematic Debugging
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
-
 
 # Systematic Debugging
 

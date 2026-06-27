@@ -1,11 +1,28 @@
 ---
 name: Performing Threat Emulation with Atomic Red Team
 description: Executes Atomic Red Team tests for MITRE ATT&CK technique validation
-tags: [software-development, software-development, agent-skill, okf, threat-emulation, atomic-red-team, mitre-attack, adversary-emulation, atomic-operator, purple-team, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- threat-emulation
+- atomic-red-team
+- mitre-attack
+- adversary-emulation
+- atomic-operator
+- purple-team
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Threat Emulation with Atomic Red Team
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Threat Emulation with Atomic Red Team
 

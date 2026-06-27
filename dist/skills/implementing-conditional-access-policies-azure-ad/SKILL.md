@@ -1,9 +1,28 @@
 ---
 name: Implementing Conditional Access Policies in Azure AD
 description: Configure Microsoft Entra ID (Azure AD) Conditional Access policies for
-tags: [software-development, software-development, agent-skill, okf, iam, identity, access-control, azure-ad, entra-id, conditional-access, zero-trust, security]
+tags:
+- cloud-security
+- software-engineering
+- skill
+- okf
+- iam
+- identity
+- access-control
+- azure-ad
+- entra-id
+- conditional-access
+- zero-trust
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Conditional Access Policies in Azure AD
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing Conditional Access Policies in Azure AD

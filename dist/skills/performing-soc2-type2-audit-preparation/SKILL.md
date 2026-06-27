@@ -1,11 +1,28 @@
 ---
 name: Performing SOC 2 Type II Audit Preparation
 description: Automates SOC 2 Type II audit preparation including gap assessment against
-tags: [software-development, software-development, agent-skill, okf, soc2, compliance, grc, aicpa-tsc, audit-preparation, governance-risk-compliance, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- soc2
+- compliance
+- grc
+- aicpa-tsc
+- audit-preparation
+- governance-risk-compliance
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing SOC 2 Type II Audit Preparation
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing SOC 2 Type II Audit Preparation
 

@@ -1,7 +1,18 @@
 ---
 name: skill-optimization-loop
-description: Pattern for optimizing agent skills through bounded text-space edits with validation gates. Use when you want to improve a skill document systematically without human rewriting — treat the skill as trainable state.
+description: Pattern for optimizing agent skills through bounded text-space edits
+  with validation gates. Use when you want to improve a skill document systematically
+  without human rewriting — treat the skill as trainable state.
 type: Playbook
+title: Skill Optimization Loop
+domain: agent-operations
+tags:
+- agent-operations
+- okf
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Skill Optimization Loop

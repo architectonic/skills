@@ -1,9 +1,27 @@
 ---
 name: Implementing PAM for Database Access
 description: Deploy privileged access management for database systems including Oracle,
-tags: [software-development, software-development, agent-skill, okf, iam, identity, access-control, privileged-access, pam, database, dba, security]
+tags:
+- software-engineering
+- skill
+- okf
+- iam
+- identity
+- access-control
+- privileged-access
+- pam
+- database
+- dba
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing PAM for Database Access
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing PAM for Database Access

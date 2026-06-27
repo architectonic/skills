@@ -1,8 +1,19 @@
 ---
 name: land-and-deploy
 description: Land and deploy workflow. (gstack)
-tags: [devops, agent-skill, okf, curation]
+tags:
+- software-engineering
+- devops
+- skill
+- okf
+- curation
 type: Playbook
+title: land-and-deploy
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: vercel-skills
+source_status: adapted
 ---
 
 # land-and-deploy

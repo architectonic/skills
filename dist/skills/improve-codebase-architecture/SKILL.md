@@ -1,10 +1,21 @@
 ---
 name: improve-codebase-architecture
-description: Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.
-tags: [software-development, software-development, agent-skill, okf, curation]
+description: Scan a codebase for deepening opportunities, present them as a visual
+  HTML report, then grill through whichever one you pick.
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- curation
 type: Playbook
+title: Improve Codebase Architecture
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
-
 
 # Improve Codebase Architecture
 

@@ -1,8 +1,20 @@
 ---
 name: writing-great-skills
-description: Reference for writing and editing skills well — the vocabulary and principles that make a skill predictable.
-tags: [productivity, agent-skill, okf, curation]
+description: Reference for writing and editing skills well — the vocabulary and principles
+  that make a skill predictable.
+tags:
+- agent-operations
+- productivity
+- skill
+- okf
+- curation
 type: Playbook
+title: writing-great-skills
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # writing-great-skills

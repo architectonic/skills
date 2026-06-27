@@ -1,11 +1,22 @@
 ---
 name: Prompt Injection Detection
-description: Detect prompt injection attacks targeting LLM-based applications. Use when sanitizing user inputs, building input validation for AI agents, or scanning for prompt injection vulnerabilities. Covers direct injections (system prompt overrides, role-play escapes) and indirect injections (encoded payloads, multi-language obfuscation).
-tags: [red-teaming, prompt-injection, llm-security, input-validation, owasp]
+description: Detect prompt injection attacks targeting LLM-based applications. Use
+  when sanitizing user inputs, building input validation for AI agents, or scanning
+  for prompt injection vulnerabilities. Covers direct injections (system prompt overrides,
+  role-play escapes) and indirect injections (encoded payloads, multi-language obfuscation).
+tags:
+- red-teaming
+- prompt-injection
+- llm-security
+- input-validation
+- owasp
 type: Playbook
 ---
 
 # Prompt Injection Detection
+
+
+**Authorized-use only:** Use this skill only for owned systems, sanctioned lab environments, or engagements with explicit written permission. Document scope, preserve evidence, and follow applicable law, policy, and incident-response procedures.
 
 Detect prompt injection attacks targeting LLM-based applications using multi-layered defense.
 

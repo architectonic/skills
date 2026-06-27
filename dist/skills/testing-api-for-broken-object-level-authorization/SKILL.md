@@ -1,9 +1,26 @@
 ---
 name: Testing API for Broken Object Level Authorization
 description: Tests REST and GraphQL APIs for Broken Object Level Authorization (BOLA/IDOR)
-tags: [software-development, software-development, agent-skill, okf, api-security, owasp, bola, idor, authorization, rest-security, security]
+tags:
+- software-engineering
+- skill
+- okf
+- api-security
+- owasp
+- bola
+- idor
+- authorization
+- rest-security
+- security
 license: Apache-2.0
 type: API Endpoint
+title: Testing API for Broken Object Level Authorization
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Testing API for Broken Object Level Authorization

@@ -1,11 +1,30 @@
 ---
 name: Culture Architect — Company Culture as Operational System
-description: Build, measure, and evolve company culture as operational behavior — not wall posters. Covers mission/vision/values workshops, values-to-behaviors translation, culture code creation, culture health assessment, and cultural rituals by stage. Culture = (What you reward) + (What you tolerate) + (What you celebrate).
+description: Build, measure, and evolve company culture as operational behavior —
+  not wall posters. Covers mission/vision/values workshops, values-to-behaviors translation,
+  culture code creation, culture health assessment, and cultural rituals by stage.
+  Culture = (What you reward) + (What you tolerate) + (What you celebrate).
 version: 1.0.0
 source: claude-skills/c-level-advisor/culture-architect (MIT)
 author: Alireza Rezvani (distilled by Agent-Memory-Ops-Kit)
-tags: [productivity, culture, values, mission, vision, culture-code, leadership, org-design]
+tags:
+- research
+- productivity
+- culture
+- values
+- mission
+- vision
+- culture-code
+- leadership
+- org-design
+- okf
 type: Playbook
+title: Culture Architect — Company Culture as Operational System
+domain: research
+risk_level: medium
+requires_review: false
+source_family: amok-native
+source_status: adapted
 ---
 
 # Culture Architect — Company Culture as Operational System

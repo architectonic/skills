@@ -1,8 +1,17 @@
 ---
 name: channel-economics
-description: Analyze direct vs. partner-led channel economics: compute fully-loaded cost-to-serve per channel, channel ROI under three lenses (cash/LTV/marginal), and optimal channel mix subject to constraints. Outputs per-channel verdicts (DOUBLE-DOWN/MAINTAIN/DEFUND/EXIT), sensitivity-tested mix recommendation, and diminishing-returns inflection point. For Head of Commercial, RevOps, and VP Sales doing quarterly channel review.
-tags: [productivity, commercial, channel-economics, cost-to-serve, channel-mix, channel-roi, unit-economics]
+title: Channel Economics
+description: 'Analyze and rebalance direct vs. partner-led channel economics. Answers
+  three questions at the quarterly channel review:'
 type: Playbook
+domain: business
+tags:
+- business
+- okf
+risk_level: low
+requires_review: false
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Channel Economics

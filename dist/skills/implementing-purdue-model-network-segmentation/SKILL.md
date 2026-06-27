@@ -1,11 +1,30 @@
 ---
 name: Implementing Purdue Model Network Segmentation
 description: Implement network segmentation based on the Purdue Enterprise Reference
-tags: [software-development, software-development, agent-skill, okf, ot-security, ics, purdue-model, network-segmentation, iec62443, defense-in-depth, dmz, scada, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- ot-security
+- ics
+- purdue-model
+- network-segmentation
+- iec62443
+- defense-in-depth
+- dmz
+- scada
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Purdue Model Network Segmentation
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Purdue Model Network Segmentation
 

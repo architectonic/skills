@@ -1,8 +1,17 @@
 ---
 name: prompt-governance
-description: Use when managing prompts in production at scale — versioning prompts, running A/B tests on prompts, building prompt registries, preventing prompt regressions, or creating eval pipelines for production AI features. Triggers: "manage prompts in production", "prompt versioning", "prompt regression", "prompt A/B test", "prompt registry", "eval pipeline". NOT for writing or improving individual prompts.
-tags: [agent-operations, prompt-engineering, production-ai, prompt-registry, eval-pipeline, a-b-testing, ai-governance]
+title: Prompt Governance
+description: Treat prompts as first-class infrastructure — versioned, tested, evaluated,
+  and deployed with the same rigor as application code. Prevent quality regressions,
+  enable safe iteration, and give teams confidence that prompt changes will not break
+  production.
 type: Playbook
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: medium
+requires_review: true
 ---
 
 # Prompt Governance

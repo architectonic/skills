@@ -1,9 +1,27 @@
 ---
 name: Detecting AWS CloudTrail Anomalies
 description: Detect unusual API call patterns in AWS CloudTrail logs using boto3,
-tags: [software-development, software-development, agent-skill, okf, cloud-security, aws, cloudtrail, anomaly-detection, threat-detection, boto3, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- cloud-security
+- aws
+- cloudtrail
+- anomaly-detection
+- threat-detection
+- boto3
+- security
 license: Apache-2.0
 type: Playbook
+title: Detecting AWS CloudTrail Anomalies
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Detecting AWS CloudTrail Anomalies

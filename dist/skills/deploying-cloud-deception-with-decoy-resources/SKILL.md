@@ -1,11 +1,25 @@
 ---
 name: Deploying Cloud Deception with Decoy Resources
-description: >-
-tags: [software-development, software-development, agent-skill, okf, cloud-deception, aws, azure, gcp, canary-token, honeytoken, cloudtrail, breach-detection, security]
+description: This is the cloud counterpart to on-prem honeypot/honeytoken/canary-token
+  deployment skills. For program strategy and how these Activities map to adversary
+  engagement goals, use `designing-adversary-engagement-with-mitre-engage`.
+tags:
+- software-development
+- software-development
+- agent-skill
+- okf
+- cloud-deception
+- aws
+- azure
+- gcp
+- canary-token
+- honeytoken
+- cloudtrail
+- breach-detection
+- security
 license: Apache-2.0
 type: Playbook
 ---
-
 
 # Deploying Cloud Deception with Decoy Resources
 

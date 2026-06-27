@@ -1,8 +1,19 @@
 ---
 name: ship
-description: Ship workflow: detect + merge base branch, run tests, review diff, bump VERSION, update CHANGELOG, commit, push, create PR. (gstack)
-tags: [devops, agent-skill, okf, curation]
+title: ship
+description: Use when asked to "ship", "deploy", "push to main", "create a PR", "merge
+  and push", or "get it deployed". Proactively invoke this skill (do NOT push/PR directly)
+  when the user says code is ready, asks about deploying, wants to push code up, or
+  asks to create a PR.
 type: Playbook
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_status: adapted
 ---
 
 # ship

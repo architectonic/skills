@@ -1,7 +1,24 @@
 ---
 name: gui-skill-action-graph
-description: Compose GUI agent skills as composable action graphs for computer-use tasks. Use when building GUI automation skills, designing multi-step desktop workflows, or integrating with GUI agent frameworks. Covers action retrieval, DAG-like composition, vision grounding, and execution budgets.
-tags: [autonomous-ai-agents, autonomous-ai-agents, gui-agent, action-graph, computer-use, skill-composition]
+description: Compose GUI agent skills as composable action graphs for computer-use
+  tasks. Use when building GUI automation skills, designing multi-step desktop workflows,
+  or integrating with GUI agent frameworks. Covers action retrieval, DAG-like composition,
+  vision grounding, and execution budgets.
+tags:
+- agent-operations
+- autonomous-ai-agents
+- gui-agent
+- action-graph
+- computer-use
+- skill-composition
+- okf
+title: gui-skill-action-graph
+type: Playbook
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # gui-skill-action-graph

@@ -1,11 +1,27 @@
 ---
 name: Building Identity Governance Lifecycle Process
 description: Builds comprehensive identity governance and lifecycle management processes
-tags: [software-development, software-development, agent-skill, okf, identity-governance, lifecycle-management, jml, access-provisioning, rbac, iga, security]
+tags:
+- software-engineering
+- skill
+- okf
+- identity-governance
+- lifecycle-management
+- jml
+- access-provisioning
+- rbac
+- iga
+- security
 license: Apache-2.0
 type: Playbook
+title: Building Identity Governance Lifecycle Process
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Building Identity Governance Lifecycle Process
 

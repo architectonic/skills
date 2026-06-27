@@ -1,11 +1,27 @@
 ---
 name: Bypassing Authentication with Forced Browsing
 description: Discovering and accessing unprotected pages, APIs, and administrative
-tags: [software-development, software-development, agent-skill, okf, penetration-testing, authentication-bypass, forced-browsing, ffuf, directory-enumeration, owasp, security]
+tags:
+- software-engineering
+- skill
+- okf
+- penetration-testing
+- authentication-bypass
+- forced-browsing
+- ffuf
+- directory-enumeration
+- owasp
+- security
 license: Apache-2.0
 type: Playbook
+title: Bypassing Authentication with Forced Browsing
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Bypassing Authentication with Forced Browsing
 

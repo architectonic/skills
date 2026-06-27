@@ -1,11 +1,27 @@
 ---
 name: Ponytail Audit — Repo-Wide Over-Engineering Scan
-description: "Audit the whole repo for over-engineering. A ranked list of what to delete, simplify, or replace with stdlib or native features."
-tags: [agent-skill, okf, software-development, code-review, yagni, simplicity, audit]
+description: Audit the whole repo for over-engineering. A ranked list of what to delete,
+  simplify, or replace with stdlib or native features.
+tags:
+- design
+- skill
+- okf
+- software-engineering
+- code-review
+- yagni
+- simplicity
+- audit
 source: https://github.com/DietrichGebert/ponytail
 license: MIT
 risk: low
 type: Playbook
+title: Ponytail Audit — Repo-Wide Over-Engineering Scan
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: MIT
+source_status: adapted
 ---
 
 # Ponytail Audit — Repo-Wide Over-Engineering Scan

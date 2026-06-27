@@ -1,10 +1,16 @@
 ---
-name: Idea Lineage
-description: Trace one idea's evolution through knowledge pages: first mention, best articulation, related concepts, reversals, contradictions, abandoned branches, and the current live version. Use for single-idea conceptual lineage, not broad concept-map synthesis.
-source: gbrain/skills/idea-lineage/SKILL.md (MIT license, https://github.com/byungkyu/gbrain)
-category: agent-operations
-tags: [agent-operations, idea-lineage, evolution, concepts, brain, knowledge-graph]
+name: idea-lineage
+title: Idea Lineage — Single-Idea Evolution
+description: 'Trace how one idea changed across time: when it first appeared, when
+  it became sharp, what it displaced, what it contradicted, and what version is alive
+  now.'
 type: Playbook
+domain: writing
+tags:
+- writing
+- okf
+risk_level: medium
+requires_review: true
 ---
 
 # Idea Lineage — Single-Idea Evolution

@@ -1,11 +1,27 @@
 ---
 name: Detecting AWS Credential Exposure with TruffleHog
 description: Detecting exposed AWS credentials in source code repositories, CI/CD
-tags: [software-development, software-development, agent-skill, okf, cloud-security, aws, credential-exposure, trufflehog, secrets-detection, devsecops, security]
+tags:
+- software-engineering
+- skill
+- okf
+- cloud-security
+- aws
+- credential-exposure
+- trufflehog
+- secrets-detection
+- devsecops
+- security
 license: Apache-2.0
 type: Playbook
+title: Detecting AWS Credential Exposure with TruffleHog
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Detecting AWS Credential Exposure with TruffleHog
 

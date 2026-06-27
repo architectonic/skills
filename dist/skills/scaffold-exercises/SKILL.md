@@ -1,10 +1,22 @@
 ---
 name: scaffold-exercises
-description: Create exercise directory structures with sections, problems, solutions, and explainers that pass linting. Use when user wants to scaffold exercises, create exercise stubs, or set up a new course section.
-tags: [software-development, software-development, agent-skill, okf, curation]
+description: Create exercise directory structures with sections, problems, solutions,
+  and explainers that pass linting. Use when user wants to scaffold exercises, create
+  exercise stubs, or set up a new course section.
+tags:
+- agent-operations
+- software-engineering
+- skill
+- okf
+- curation
 type: Playbook
+title: Scaffold Exercises
+domain: agent-operations
+risk_level: medium
+requires_review: false
+source_family: agent-skills-standard
+source_status: adapted
 ---
-
 
 # Scaffold Exercises
 

@@ -1,7 +1,19 @@
 ---
 name: vercel-deploy-claimable
-description: Deploy applications and websites to Vercel. Use this skill when the user requests deployment actions such as "Deploy my app", "Deploy this to production", "Create a preview deployment", "Deploy and give me the link", or "Push this live". No authentication required - returns preview URL and claimable deployment link.
+description: Deploy applications and websites to Vercel. Use this skill when the user
+  requests deployment actions such as "Deploy my app", "Deploy this to production",
+  "Create a preview deployment", "Deploy and give me the link", or "Push this live".
+  No authentication required - returns preview URL and claimable deployment link.
 type: Playbook
+title: vercel-deploy-claimable
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: medium
+requires_review: true
+source_family: vercel-skills
+source_status: adapted
 ---
 
 # vercel-deploy-claimable

@@ -1,11 +1,27 @@
 ---
 name: Implementing Pod Security Admission Controller
 description: Implement Kubernetes Pod Security Admission to enforce baseline and restricted
-tags: [devops, agent-skill, okf, kubernetes, pod-security-admission, psa, pod-security-standards, admission-controller, security]
+tags:
+- software-engineering
+- devops
+- skill
+- okf
+- kubernetes
+- pod-security-admission
+- psa
+- pod-security-standards
+- admission-controller
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Pod Security Admission Controller
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Pod Security Admission Controller
 

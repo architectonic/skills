@@ -1,11 +1,27 @@
 ---
 name: Detecting Container Escape with Falco Rules
 description: Detect container escape attempts in real-time using Falco runtime security
-tags: [software-development, software-development, agent-skill, okf, falco, container-escape, runtime-security, syscall-monitoring, kubernetes, detection, security]
+tags:
+- software-engineering
+- skill
+- okf
+- falco
+- container-escape
+- runtime-security
+- syscall-monitoring
+- kubernetes
+- detection
+- security
 license: Apache-2.0
 type: Playbook
+title: Detecting Container Escape with Falco Rules
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Detecting Container Escape with Falco Rules
 

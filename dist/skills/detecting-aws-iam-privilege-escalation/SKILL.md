@@ -1,11 +1,29 @@
 ---
 name: Detecting AWS IAM Privilege Escalation
 description: Detect AWS IAM privilege escalation paths using boto3 and Cloudsplaining
-tags: [software-development, software-development, agent-skill, okf, aws, iam, privilege-escalation, cloudsplaining, boto3, policy-analysis, least-privilege, security]
+tags:
+- cloud-security
+- software-engineering
+- skill
+- okf
+- aws
+- iam
+- privilege-escalation
+- cloudsplaining
+- boto3
+- policy-analysis
+- least-privilege
+- security
 license: Apache-2.0
 type: Playbook
+title: Detecting AWS IAM Privilege Escalation
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Detecting AWS IAM Privilege Escalation
 

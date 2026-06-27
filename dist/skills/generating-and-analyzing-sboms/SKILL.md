@@ -1,9 +1,30 @@
 ---
 name: Generating and Analyzing SBOMs
-description: Produce and ingest CycloneDX and SPDX SBOMs and correlate them to vulnerability intelligence.
-tags: [research, agent-skill, okf, supply-chain-security, sbom, cyclonedx, spdx, syft, grype, vulnerability-management, devsecops, security]
+description: Produce and ingest CycloneDX and SPDX SBOMs and correlate them to vulnerability
+  intelligence.
+tags:
+- design
+- research
+- skill
+- okf
+- supply-chain-security
+- sbom
+- cyclonedx
+- spdx
+- syft
+- grype
+- vulnerability-management
+- devsecops
+- security
 license: Apache-2.0
 type: Playbook
+title: Generating and Analyzing SBOMs
+domain: design
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Generating and Analyzing SBOMs

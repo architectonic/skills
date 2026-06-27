@@ -1,11 +1,29 @@
 ---
 name: Implementing Patch Management for OT Systems
 description: This skill covers implementing a structured patch management program
-tags: [software-development, software-development, agent-skill, okf, ot-security, ics, scada, industrial-control, iec62443, patch-management, vulnerability-management, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- ot-security
+- ics
+- scada
+- industrial-control
+- iec62443
+- patch-management
+- vulnerability-management
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Patch Management for OT Systems
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Patch Management for OT Systems
 

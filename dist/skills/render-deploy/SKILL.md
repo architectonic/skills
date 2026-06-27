@@ -1,8 +1,25 @@
 ---
 name: render-deploy
-description: Deploy applications to Render using Git-backed Blueprints (render.yaml). Use when the user wants to deploy, host, publish, or set up their application on Render's cloud platform. Complements existing vercel-deploy, cloudflare-deploy, and netlify-deploy skills.
-tags: [devops, deploy, render, hosting, blueprint, iac]
+description: Deploy applications to Render using Git-backed Blueprints (render.yaml).
+  Use when the user wants to deploy, host, publish, or set up their application on
+  Render's cloud platform. Complements existing vercel-deploy, cloudflare-deploy,
+  and netlify-deploy skills.
+tags:
+- software-engineering
+- devops
+- deploy
+- render
+- hosting
+- blueprint
+- iac
+- okf
 type: Playbook
+title: Deploy to Render
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: vercel-skills
+source_status: adapted
 ---
 
 # Deploy to Render

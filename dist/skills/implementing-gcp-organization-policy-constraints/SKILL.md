@@ -1,11 +1,29 @@
 ---
 name: Implementing GCP Organization Policy Constraints
 description: Implement GCP Organization Policy constraints to enforce security guardrails
-tags: [software-development, software-development, agent-skill, okf, gcp, organization-policy, constraints, governance, compliance, cloud-security, resource-manager, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- gcp
+- organization-policy
+- constraints
+- governance
+- compliance
+- cloud-security
+- resource-manager
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing GCP Organization Policy Constraints
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing GCP Organization Policy Constraints
 

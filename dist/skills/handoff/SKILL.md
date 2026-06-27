@@ -1,8 +1,20 @@
 ---
 name: handoff
-description: Compact the current conversation into a handoff document for another agent to pick up.
-tags: [software-development, software-development, agent-skill, okf, curation]
+description: Compact the current conversation into a handoff document for another
+  agent to pick up.
+tags:
+- agent-operations
+- software-engineering
+- skill
+- okf
+- curation
 type: Playbook
+title: handoff
+domain: agent-operations
+risk_level: medium
+requires_review: false
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # handoff

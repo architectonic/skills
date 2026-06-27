@@ -1,9 +1,31 @@
 ---
 name: Orchestrating LLM Attacks with PyRIT
-description: Build multi-turn, Crescendo, and Tree-of-Attacks-with-Pruning (TAP) automated attack chains against conversational LLM agents using Microsoft PyRIT, with adversarial chat and scorer feedback loops.
-tags: [software-development, software-development, agent-skill, okf, ai-security, llm-red-teaming, pyrit, multi-turn-attacks, crescendo, jailbreak, prompt-injection, mitre-atlas, security]
+description: Build multi-turn, Crescendo, and Tree-of-Attacks-with-Pruning (TAP) automated
+  attack chains against conversational LLM agents using Microsoft PyRIT, with adversarial
+  chat and scorer feedback loops.
+tags:
+- research
+- software-engineering
+- skill
+- okf
+- ai-security
+- llm-red-teaming
+- pyrit
+- multi-turn-attacks
+- crescendo
+- jailbreak
+- prompt-injection
+- mitre-atlas
+- security
 license: Apache-2.0
 type: Playbook
+title: Orchestrating LLM Attacks with PyRIT
+domain: research
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Orchestrating LLM Attacks with PyRIT

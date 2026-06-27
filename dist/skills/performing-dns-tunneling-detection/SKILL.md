@@ -1,11 +1,28 @@
 ---
 name: Performing DNS Tunneling Detection
 description: Detects DNS tunneling by computing Shannon entropy of DNS query names,
-tags: [software-development, software-development, agent-skill, okf, dns-tunneling, exfiltration-detection, shannon-entropy, dns-analysis, threat-detection, security-operations, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- dns-tunneling
+- exfiltration-detection
+- shannon-entropy
+- dns-analysis
+- threat-detection
+- security-operations
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing DNS Tunneling Detection
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing DNS Tunneling Detection
 

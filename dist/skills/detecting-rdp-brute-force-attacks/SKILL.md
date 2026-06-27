@@ -1,9 +1,27 @@
 ---
 name: Detecting RDP Brute Force Attacks
 description: Detect RDP brute force attacks by analyzing Windows Security Event Logs
-tags: [software-development, software-development, agent-skill, okf, threat-detection, rdp, brute-force, windows-event-logs, blue-team, siem, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- threat-detection
+- rdp
+- brute-force
+- windows-event-logs
+- blue-team
+- siem
+- security
 license: Apache-2.0
 type: Playbook
+title: Detecting RDP Brute Force Attacks
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Detecting RDP Brute Force Attacks

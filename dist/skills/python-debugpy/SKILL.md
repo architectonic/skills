@@ -1,7 +1,14 @@
 ---
 name: python-debugpy
-description: Debug Python: pdb REPL + debugpy remote (DAP).
+title: python-debugpy
+description: 'Three tools, picked by situation:'
 type: Playbook
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: medium
+requires_review: true
 ---
 
 # python-debugpy

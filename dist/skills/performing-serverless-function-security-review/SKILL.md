@@ -1,11 +1,28 @@
 ---
 name: Performing Serverless Function Security Review
 description: Performing security reviews of serverless functions across AWS Lambda,
-tags: [devops, agent-skill, okf, cloud-security, serverless, lambda, azure-functions, cloud-functions, security-review, security]
+tags:
+- software-engineering
+- devops
+- skill
+- okf
+- cloud-security
+- serverless
+- lambda
+- azure-functions
+- cloud-functions
+- security-review
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Serverless Function Security Review
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Serverless Function Security Review
 

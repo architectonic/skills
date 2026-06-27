@@ -1,11 +1,27 @@
 ---
 name: Performing Insider Threat Investigation
 description: Investigates insider threat incidents involving employees, contractors,
-tags: [software-development, software-development, agent-skill, okf, insider-threat, user-behavior-analytics, data-exfiltration, privilege-misuse, dfir, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- insider-threat
+- user-behavior-analytics
+- data-exfiltration
+- privilege-misuse
+- dfir
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Insider Threat Investigation
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Insider Threat Investigation
 

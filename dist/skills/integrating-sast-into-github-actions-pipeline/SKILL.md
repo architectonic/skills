@@ -1,11 +1,28 @@
 ---
 name: Integrating SAST into GitHub Actions Pipeline
 description: This skill covers integrating Static Application Security Testing (SAST)
-tags: [devops, agent-skill, okf, devsecops, cicd, sast, codeql, semgrep, secure-sdlc, security]
+tags:
+- software-engineering
+- devops
+- skill
+- okf
+- devsecops
+- cicd
+- sast
+- codeql
+- semgrep
+- secure-sdlc
+- security
 license: Apache-2.0
 type: Playbook
+title: Integrating SAST into GitHub Actions Pipeline
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Integrating SAST into GitHub Actions Pipeline
 

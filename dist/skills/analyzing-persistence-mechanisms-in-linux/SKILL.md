@@ -1,11 +1,29 @@
 ---
 name: Analyzing Persistence Mechanisms in Linux
 description: Detect and analyze Linux persistence mechanisms including crontab entries,
-tags: [research, agent-skill, okf, linux-persistence, crontab, systemd, ld-preload, auditd, threat-hunting, incident-response, security]
+tags:
+- security-offensive
+- research
+- skill
+- okf
+- linux-persistence
+- crontab
+- systemd
+- ld-preload
+- auditd
+- threat-hunting
+- incident-response
+- security
 license: Apache-2.0
 type: Playbook
+title: Analyzing Persistence Mechanisms in Linux
+domain: security-offensive
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Analyzing Persistence Mechanisms in Linux
 

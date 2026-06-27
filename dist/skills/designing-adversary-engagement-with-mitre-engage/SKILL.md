@@ -1,11 +1,25 @@
 ---
 name: Designing Adversary Engagement with MITRE Engage
-description: >-
-tags: [software-development, software-development, agent-skill, okf, mitre-engage, adversary-engagement, deception, denial-and-deception, engage-matrix, cyber-deception, threat-intelligence, detection-engineering, security]
+description: This skill is the **strategy and operations layer** that sits above tactical
+  deployment skills (honeypot, honeytoken, canary-token, and decoy-file deployment).
+  Use those skills to *implement* the Activities this skill selects and sequences.
+tags:
+- software-development
+- software-development
+- agent-skill
+- okf
+- mitre-engage
+- adversary-engagement
+- deception
+- denial-and-deception
+- engage-matrix
+- cyber-deception
+- threat-intelligence
+- detection-engineering
+- security
 license: Apache-2.0
 type: Playbook
 ---
-
 
 # Designing Adversary Engagement with MITRE Engage
 

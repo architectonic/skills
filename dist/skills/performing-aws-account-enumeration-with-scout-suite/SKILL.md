@@ -1,11 +1,29 @@
 ---
 name: Performing AWS Account Enumeration with ScoutSuite
 description: Perform comprehensive security posture assessment of AWS accounts using
-tags: [software-development, software-development, agent-skill, okf, aws, scoutsuite, cloud-security, enumeration, misconfiguration, security-audit, cspm, nccgroup, security]
+tags:
+- software-engineering
+- skill
+- okf
+- aws
+- scoutsuite
+- cloud-security
+- enumeration
+- misconfiguration
+- security-audit
+- cspm
+- nccgroup
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing AWS Account Enumeration with ScoutSuite
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing AWS Account Enumeration with ScoutSuite
 

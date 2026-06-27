@@ -1,9 +1,26 @@
 ---
 name: Implementing API Gateway Security Controls
 description: Implements security controls at the API gateway layer including authentication
-tags: [software-development, software-development, agent-skill, okf, api-security, api-gateway, kong, aws-api-gateway, rate-limiting, waf, security]
+tags:
+- software-engineering
+- skill
+- okf
+- api-security
+- api-gateway
+- kong
+- aws-api-gateway
+- rate-limiting
+- waf
+- security
 license: Apache-2.0
 type: API Endpoint
+title: Implementing API Gateway Security Controls
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing API Gateway Security Controls

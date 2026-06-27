@@ -1,11 +1,29 @@
 ---
 name: Performing Cloud Asset Inventory with Cartography
 description: Perform comprehensive cloud asset inventory and relationship mapping
-tags: [software-development, software-development, agent-skill, okf, cartography, neo4j, cloud-security, asset-inventory, attack-path, graph-database, cncf, lyft, security]
+tags:
+- software-engineering
+- skill
+- okf
+- cartography
+- neo4j
+- cloud-security
+- asset-inventory
+- attack-path
+- graph-database
+- cncf
+- lyft
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Cloud Asset Inventory with Cartography
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Cloud Asset Inventory with Cartography
 

@@ -1,11 +1,27 @@
 ---
 name: Securing AWS Lambda Execution Roles
 description: Securing AWS Lambda execution roles by implementing least-privilege
-tags: [devops, agent-skill, okf, cloud-security, aws, lambda, iam, least-privilege, execution-roles, security]
+tags:
+- devops
+- skill
+- okf
+- cloud-security
+- aws
+- lambda
+- iam
+- least-privilege
+- execution-roles
+- security
 license: Apache-2.0
 type: Playbook
+title: Securing AWS Lambda Execution Roles
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Securing AWS Lambda Execution Roles
 

@@ -1,11 +1,29 @@
 ---
 name: Detecting Broken Object Property Level Authorization
 description: Detect and test for OWASP API3:2023 Broken Object Property Level Authorization
-tags: [software-development, software-development, agent-skill, okf, api-security, bopla, owasp-api3, mass-assignment, excessive-data-exposure, property-level-authorization, api-testing, penetration-testing, security]
+tags:
+- software-engineering
+- skill
+- okf
+- api-security
+- bopla
+- owasp-api3
+- mass-assignment
+- excessive-data-exposure
+- property-level-authorization
+- api-testing
+- penetration-testing
+- security
 license: Apache-2.0
 type: Playbook
+title: Detecting Broken Object Property Level Authorization
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Detecting Broken Object Property Level Authorization
 

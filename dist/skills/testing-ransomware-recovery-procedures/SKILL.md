@@ -1,12 +1,26 @@
 ---
 name: Testing Ransomware Recovery Procedures
 description: Test and validate ransomware recovery procedures including backup restore
-tags: [devops, agent-skill, okf, incident-response, ransomware, disaster-recovery, backup, rto, rpo, resilience, security]
+tags:
+- devops
+- agent-skill
+- okf
+- incident-response
+- ransomware
+- disaster-recovery
+- backup
+- rto
+- rpo
+- resilience
+- security
 license: Apache-2.0
 type: Playbook
 ---
 
 # Testing Ransomware Recovery Procedures
+
+
+**Authorized-use only:** Use this skill only for owned systems, sanctioned lab environments, or engagements with explicit written permission. Document scope, preserve evidence, and follow applicable law, policy, and incident-response procedures.
 
 ## When to Use
 

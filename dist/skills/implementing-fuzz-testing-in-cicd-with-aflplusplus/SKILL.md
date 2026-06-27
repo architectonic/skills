@@ -1,11 +1,28 @@
 ---
 name: Implementing Fuzz Testing in CI/CD with AFL++
 description: Integrate AFL++ coverage-guided fuzz testing into CI/CD pipelines to
-tags: [software-development, software-development, agent-skill, okf, aflplusplus, fuzz-testing, cicd, coverage-guided-fuzzing, security-testing, vulnerability-discovery, afl, security]
+tags:
+- software-engineering
+- skill
+- okf
+- aflplusplus
+- fuzz-testing
+- cicd
+- coverage-guided-fuzzing
+- security-testing
+- vulnerability-discovery
+- afl
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Fuzz Testing in CI/CD with AFL++
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Fuzz Testing in CI/CD with AFL++
 

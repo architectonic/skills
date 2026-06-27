@@ -1,11 +1,30 @@
 ---
 name: Securing Remote Access to OT Environment
 description: This skill covers implementing secure remote access to OT/ICS environments
-tags: [devops, agent-skill, okf, ot-security, ics, scada, industrial-control, iec62443, remote-access, jump-server, mfa, security]
+tags:
+- runtime-tools
+- devops
+- skill
+- okf
+- ot-security
+- ics
+- scada
+- industrial-control
+- iec62443
+- remote-access
+- jump-server
+- mfa
+- security
 license: Apache-2.0
 type: Playbook
+title: Securing Remote Access to OT Environment
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Securing Remote Access to OT Environment
 

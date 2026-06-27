@@ -1,7 +1,19 @@
 ---
 name: a11y-audit
-description: WCAG 2.2 accessibility audit pipeline — scan, fix, and verify Level A/AA compliance across React, Next.js, Vue, Angular, Svelte, and plain HTML. Use when auditing accessibility, fixing a11y violations, checking color contrast, generating compliance reports, or integrating a11y checks into CI/CD.
+description: WCAG 2.2 accessibility audit pipeline — scan, fix, and verify Level A/AA
+  compliance across React, Next.js, Vue, Angular, Svelte, and plain HTML. Use when
+  auditing accessibility, fixing a11y violations, checking color contrast, generating
+  compliance reports, or integrating a11y checks into CI/CD.
 type: Playbook
+title: Accessibility Audit
+domain: design
+risk_level: medium
+requires_review: true
+source_family: vercel-skills
+source_status: adapted
+tags:
+- design
+- okf
 ---
 
 # Accessibility Audit (a11y-audit)

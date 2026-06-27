@@ -1,6 +1,6 @@
 # Frontmatter Proposals Summary
 
-Total proposals: **1143**
+Total proposals: **1162**
 
 This file is proposal-only. No files have been modified.
 
@@ -29,10 +29,13 @@ This file is proposal-only. No files have been modified.
   "path": "a11y-audit\\SKILL.md",
   "proposed_frontmatter": {
     "name": "a11y-audit",
-    "title": "a11y-audit",
+    "title": "Accessibility Audit",
     "description": "WCAG 2.2 accessibility audit pipeline — scan, fix, and verify Level A/AA compliance across React, Next.js, Vue, Angular, Svelte, and plain HTML. Use when auditing accessibility, fixing a11y violations, checking color contrast, generating compliance reports, or integrating a11y checks into CI/CD.",
     "type": "Playbook",
-    "tags": [],
+    "tags": [
+      "design",
+      "okf"
+    ],
     "domain": "design",
     "risk_level": "medium",
     "requires_review": true,
@@ -40,8 +43,11 @@ This file is proposal-only. No files have been modified.
   },
   "current_frontmatter": {
     "type": "Playbook",
-    "tags": [],
-    "source_status": "",
+    "tags": [
+      "design",
+      "okf"
+    ],
+    "source_status": "adapted",
     "risk_level": "medium",
     "requires_review": true
   }
@@ -55,8 +61,9 @@ This file is proposal-only. No files have been modified.
     "description": "Extract DPAPI-protected secrets such as credentials and browser data offline and online.",
     "type": "Playbook",
     "tags": [
+      "security-offensive",
       "software-engineering",
-      "agent-operations",
+      "skill",
       "okf",
       "red-team",
       "credential-access",
@@ -76,8 +83,9 @@ This file is proposal-only. No files have been modified.
   "current_frontmatter": {
     "type": "Playbook",
     "tags": [
+      "security-offensive",
       "software-engineering",
-      "agent-operations",
+      "skill",
       "okf",
       "red-team",
       "credential-access",
@@ -89,7 +97,7 @@ This file is proposal-only. No files have been modified.
       "mimikatz",
       "security"
     ],
-    "source_status": "",
+    "source_status": "adapted",
     "risk_level": "high",
     "requires_review": true
   }
@@ -103,6 +111,7 @@ This file is proposal-only. No files have been modified.
     "description": "Take over Active Directory user and computer accounts by writing alternate certificate keys to msDS-KeyCredentialLink (Shadow Credentials) with pyWhisker, Whisker, and Certipy, then authenticate via PKINIT.",
     "type": "Playbook",
     "tags": [
+      "security-offensive",
       "software-engineering",
       "agent-operations",
       "okf",
@@ -124,6 +133,7 @@ This file is proposal-only. No files have been modified.
   "current_frontmatter": {
     "type": "Playbook",
     "tags": [
+      "security-offensive",
       "software-engineering",
       "agent-operations",
       "okf",
@@ -152,7 +162,8 @@ This file is proposal-only. No files have been modified.
     "type": "Playbook",
     "tags": [
       "research",
-      "agent-operations"
+      "skill",
+      "okf"
     ],
     "domain": "research",
     "risk_level": "medium",
@@ -163,9 +174,10 @@ This file is proposal-only. No files have been modified.
     "type": "Playbook",
     "tags": [
       "research",
-      "agent-operations"
+      "skill",
+      "okf"
     ],
-    "source_status": "",
+    "source_status": "adapted",
     "risk_level": "medium",
     "requires_review": true
   }
@@ -175,19 +187,25 @@ This file is proposal-only. No files have been modified.
   "path": "acceptance-orchestrator\\SKILL.md",
   "proposed_frontmatter": {
     "name": "acceptance-orchestrator",
-    "title": "acceptance-orchestrator",
-    "description": "",
+    "title": "Acceptance Orchestrator",
+    "description": "Orchestrate coding work as a state machine that ends only when acceptance criteria are verified with evidence or the task is explicitly escalated.",
     "type": "Playbook",
-    "tags": [],
+    "tags": [
+      "business",
+      "okf"
+    ],
     "domain": "business",
     "risk_level": "medium",
     "requires_review": true,
-    "source_family": "unknown"
+    "source_family": "agent-skills-standard"
   },
   "current_frontmatter": {
-    "type": "",
-    "tags": [],
-    "source_status": "",
+    "type": "Playbook",
+    "tags": [
+      "business",
+      "okf"
+    ],
+    "source_status": "adapted",
     "risk_level": "medium",
     "requires_review": true
   }
@@ -198,9 +216,10 @@ This file is proposal-only. No files have been modified.
   "proposed_frontmatter": {
     "name": "achieving-cmmc-level-2-compliance",
     "title": "Achieving CMMC Level 2 Compliance",
-    "description": "",
+    "description": "Confirm the contract requires CMMC Level 2 (CUI present, not just FCI). FCI-only contracts are **Level 1** (the 15 FAR 52.204-21 requirements). Identify CUI categories from the contract and the DoD CUI Registry.",
     "type": "Playbook",
     "tags": [
+      "business",
       "software-engineering",
       "agent-operations",
       "okf",
@@ -224,6 +243,7 @@ This file is proposal-only. No files have been modified.
   "current_frontmatter": {
     "type": "Playbook",
     "tags": [
+      "business",
       "software-engineering",
       "agent-operations",
       "okf",
@@ -254,7 +274,7 @@ This file is proposal-only. No files have been modified.
     "type": "Playbook",
     "tags": [
       "software-engineering",
-      "agent-operations",
+      "skill",
       "okf",
       "forensics",
       "disk-imaging",
@@ -273,7 +293,7 @@ This file is proposal-only. No files have been modified.
     "type": "Playbook",
     "tags": [
       "software-engineering",
-      "agent-operations",
+      "skill",
       "okf",
       "forensics",
       "disk-imaging",
@@ -283,7 +303,7 @@ This file is proposal-only. No files have been modified.
       "hash-verification",
       "security"
     ],
-    "source_status": "",
+    "source_status": "adapted",
     "risk_level": "medium",
     "requires_review": true
   }
@@ -302,7 +322,8 @@ This file is proposal-only. No files have been modified.
       "safety",
       "linting",
       "skills",
-      "mcp"
+      "mcp",
+      "okf"
     ],
     "domain": "agent-operations",
     "risk_level": "medium",
@@ -317,7 +338,8 @@ This file is proposal-only. No files have been modified.
       "safety",
       "linting",
       "skills",
-      "mcp"
+      "mcp",
+      "okf"
     ],
     "source_status": "",
     "risk_level": "medium",
@@ -329,10 +351,13 @@ This file is proposal-only. No files have been modified.
   "path": "agent-development\\SKILL.md",
   "proposed_frontmatter": {
     "name": "agent-development",
-    "title": "agent-development",
+    "title": "Agent Development for Claude Code Plugins",
     "description": "Create autonomous agent configurations for Claude Code plugins. Use when building subagents, designing agent frontmatter, writing system prompts, defining triggering conditions, or structuring agent files. Covers agent file format, description writing, tool restriction, model selection, and validation rules.",
     "type": "Playbook",
-    "tags": [],
+    "tags": [
+      "agent-operations",
+      "okf"
+    ],
     "domain": "agent-operations",
     "risk_level": "medium",
     "requires_review": true,
@@ -340,7 +365,10 @@ This file is proposal-only. No files have been modified.
   },
   "current_frontmatter": {
     "type": "Playbook",
-    "tags": [],
+    "tags": [
+      "agent-operations",
+      "okf"
+    ],
     "source_status": "",
     "risk_level": "medium",
     "requires_review": true
@@ -358,7 +386,8 @@ This file is proposal-only. No files have been modified.
       "agent-operations",
       "handoff",
       "context",
-      "cross-session"
+      "cross-session",
+      "okf"
     ],
     "domain": "agent-operations",
     "risk_level": "medium",
@@ -371,7 +400,8 @@ This file is proposal-only. No files have been modified.
       "agent-operations",
       "handoff",
       "context",
-      "cross-session"
+      "cross-session",
+      "okf"
     ],
     "source_status": "",
     "risk_level": "medium",
@@ -389,7 +419,8 @@ This file is proposal-only. No files have been modified.
     "tags": [
       "agent-operations",
       "memory",
-      "self-improvement"
+      "self-improvement",
+      "okf"
     ],
     "domain": "agent-operations",
     "risk_level": "medium",
@@ -401,7 +432,8 @@ This file is proposal-only. No files have been modified.
     "tags": [
       "agent-operations",
       "memory",
-      "self-improvement"
+      "self-improvement",
+      "okf"
     ],
     "source_status": "",
     "risk_level": "medium",
@@ -421,7 +453,8 @@ This file is proposal-only. No files have been modified.
       "agent-operations",
       "operating-loop",
       "modus-operandi",
-      "safety"
+      "safety",
+      "okf"
     ],
     "domain": "agent-operations",
     "risk_level": "medium",
@@ -435,7 +468,8 @@ This file is proposal-only. No files have been modified.
       "agent-operations",
       "operating-loop",
       "modus-operandi",
-      "safety"
+      "safety",
+      "okf"
     ],
     "source_status": "",
     "risk_level": "medium",
@@ -447,15 +481,17 @@ This file is proposal-only. No files have been modified.
   "path": "agent-skill-configuration\\SKILL.md",
   "proposed_frontmatter": {
     "name": "agent-skill-configuration",
-    "title": "agent-skill-configuration",
+    "title": "Agent Skill and Agentic Coding Configuration Studies",
     "description": "Research on configuring and optimizing agent skills in agentic coding workflows.",
     "type": "Playbook",
     "tags": [
+      "agent-operations",
       "research",
       "skill-configuration",
       "agentic-coding",
       "agent-setup",
-      "tool-integration"
+      "tool-integration",
+      "okf"
     ],
     "domain": "agent-operations",
     "risk_level": "medium",
@@ -465,13 +501,15 @@ This file is proposal-only. No files have been modified.
   "current_frontmatter": {
     "type": "Playbook",
     "tags": [
+      "agent-operations",
       "research",
       "skill-configuration",
       "agentic-coding",
       "agent-setup",
-      "tool-integration"
+      "tool-integration",
+      "okf"
     ],
-    "source_status": "",
+    "source_status": "adapted",
     "risk_level": "medium",
     "requires_review": true
   }
@@ -481,16 +519,18 @@ This file is proposal-only. No files have been modified.
   "path": "agent-skill-portability\\SKILL.md",
   "proposed_frontmatter": {
     "name": "agent-skill-portability",
-    "title": "agent-skill-portability",
+    "title": "Agent Skill Portability and Security Studies",
     "description": "Research on agent skill portability, security implications, and cross-agent compatibility challenges.",
     "type": "Playbook",
     "tags": [
+      "agent-operations",
       "research",
       "skill-portability",
       "security",
       "cross-agent",
       "compatibility",
-      "agent-ecosystem"
+      "agent-ecosystem",
+      "okf"
     ],
     "domain": "agent-operations",
     "risk_level": "medium",
@@ -500,14 +540,16 @@ This file is proposal-only. No files have been modified.
   "current_frontmatter": {
     "type": "Playbook",
     "tags": [
+      "agent-operations",
       "research",
       "skill-portability",
       "security",
       "cross-agent",
       "compatibility",
-      "agent-ecosystem"
+      "agent-ecosystem",
+      "okf"
     ],
-    "source_status": "",
+    "source_status": "adapted",
     "risk_level": "medium",
     "requires_review": true
   }
@@ -521,13 +563,15 @@ This file is proposal-only. No files have been modified.
     "description": "Audits GitHub Actions workflows for security vulnerabilities in AI agent integrations (Claude Code Action, Gemini CLI, OpenAI Codex, GitHub AI Inference). Detects 9 attack vectors where attacker-controlled input reaches AI agents in CI/CD pipelines. Use when reviewing workflow files that invoke AI coding agents, auditing CI/CD pipeline security for prompt injection risks, or evaluating agentic action configurations.",
     "type": "Playbook",
     "tags": [
+      "software-engineering",
       "agent-operations",
       "security",
       "ci-cd",
       "github-actions",
       "ai-agent",
       "prompt-injection",
-      "static-analysis"
+      "static-analysis",
+      "okf"
     ],
     "domain": "software-engineering",
     "risk_level": "medium",
@@ -537,13 +581,15 @@ This file is proposal-only. No files have been modified.
   "current_frontmatter": {
     "type": "Playbook",
     "tags": [
+      "software-engineering",
       "agent-operations",
       "security",
       "ci-cd",
       "github-actions",
       "ai-agent",
       "prompt-injection",
-      "static-analysis"
+      "static-analysis",
+      "okf"
     ],
     "source_status": "",
     "risk_level": "medium",
@@ -555,10 +601,13 @@ This file is proposal-only. No files have been modified.
   "path": "agents-md-improver\\SKILL.md",
   "proposed_frontmatter": {
     "name": "agents-md-improver",
-    "title": "agents-md-improver",
+    "title": "Agent Instruction File Improver",
     "description": "Audit and improve AGENTS.md / CLAUDE.md / SOUL.md files in repositories. Use when the user asks to check, audit, update, improve, or fix agent instruction files. Scans for all agent instruction files, evaluates quality against a rubric, outputs quality report, then makes targeted updates. Also use when the user mentions \"agent instruction maintenance\", \"project memory optimization\", or \"rules file audit\". Adapted from anthropic-claude-plugins-official/claude-md-improver.",
     "type": "Playbook",
-    "tags": [],
+    "tags": [
+      "software-engineering",
+      "okf"
+    ],
     "domain": "software-engineering",
     "risk_level": "medium",
     "requires_review": true,
@@ -566,7 +615,10 @@ This file is proposal-only. No files have been modified.
   },
   "current_frontmatter": {
     "type": "Playbook",
-    "tags": [],
+    "tags": [
+      "software-engineering",
+      "okf"
+    ],
     "source_status": "",
     "risk_level": "medium",
     "requires_review": true
@@ -577,7 +629,7 @@ This file is proposal-only. No files have been modified.
   "path": "ai-native-cli\\SKILL.md",
   "proposed_frontmatter": {
     "name": "ai-native-cli",
-    "title": "ai-native-cli",
+    "title": "Agent-Friendly CLI Spec",
     "description": "Design spec with 98 rules for building CLI tools that AI agents can safely use. Covers structured JSON output, error handling, input contracts, safety guardrails, exit codes, and agent self-description.",
     "type": "Playbook",
     "tags": [
@@ -586,7 +638,8 @@ This file is proposal-only. No files have been modified.
       "agent-safety",
       "json-output",
       "error-handling",
-      "spec"
+      "spec",
+      "okf"
     ],
     "domain": "agent-operations",
     "risk_level": "medium",
@@ -601,7 +654,8 @@ This file is proposal-only. No files have been modified.
       "agent-safety",
       "json-output",
       "error-handling",
-      "spec"
+      "spec",
+      "okf"
     ],
     "source_status": "",
     "risk_level": "medium",
@@ -613,17 +667,19 @@ This file is proposal-only. No files have been modified.
   "path": "ai-seo\\SKILL.md",
   "proposed_frontmatter": {
     "name": "ai-seo",
-    "title": "ai-seo",
+    "title": "AI SEO",
     "description": "Optimize content for AI search and LLM citations across AI Overviews, ChatGPT, Perplexity, Claude, Gemini, and similar systems. Covers AI visibility audit, three-pillar optimization strategy (structure/authority/presence), and monitoring.",
     "type": "Reference",
     "tags": [
+      "writing",
       "productivity",
       "seo",
       "ai-search",
       "llm-citations",
       "geo",
       "aeo",
-      "content-optimization"
+      "content-optimization",
+      "okf"
     ],
     "domain": "writing",
     "risk_level": "medium",
@@ -633,13 +689,15 @@ This file is proposal-only. No files have been modified.
   "current_frontmatter": {
     "type": "Reference",
     "tags": [
+      "writing",
       "productivity",
       "seo",
       "ai-search",
       "llm-citations",
       "geo",
       "aeo",
-      "content-optimization"
+      "content-optimization",
+      "okf"
     ],
     "source_status": "",
     "risk_level": "medium",
@@ -655,6 +713,7 @@ This file is proposal-only. No files have been modified.
     "description": "Restructure and optimize alert rules for monitoring platforms (Sentry, PagerDuty, Datadog, OpsGenie). Use when reducing alert noise, fixing alert fatigue, creating alert rules, setting up escalation policies, tuning alerting thresholds, or creating on-call runbooks.",
     "type": "Playbook",
     "tags": [
+      "design",
       "devops",
       "alerting",
       "on-call",
@@ -662,7 +721,8 @@ This file is proposal-only. No files have been modified.
       "datadog",
       "sentry",
       "incident-response",
-      "observability"
+      "observability",
+      "okf"
     ],
     "domain": "design",
     "risk_level": "medium",
@@ -672,6 +732,7 @@ This file is proposal-only. No files have been modified.
   "current_frontmatter": {
     "type": "Playbook",
     "tags": [
+      "design",
       "devops",
       "alerting",
       "on-call",
@@ -679,7 +740,8 @@ This file is proposal-only. No files have been modified.
       "datadog",
       "sentry",
       "incident-response",
-      "observability"
+      "observability",
+      "okf"
     ],
     "source_status": "",
     "risk_level": "medium",
@@ -691,10 +753,13 @@ This file is proposal-only. No files have been modified.
   "path": "algorithmic-art\\SKILL.md",
   "proposed_frontmatter": {
     "name": "algorithmic-art",
-    "title": "algorithmic-art",
+    "title": "Algorithmic Art",
     "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations.",
     "type": "Playbook",
-    "tags": [],
+    "tags": [
+      "design",
+      "okf"
+    ],
     "domain": "design",
     "risk_level": "medium",
     "requires_review": true,
@@ -702,7 +767,10 @@ This file is proposal-only. No files have been modified.
   },
   "current_frontmatter": {
     "type": "Playbook",
-    "tags": [],
+    "tags": [
+      "design",
+      "okf"
+    ],
     "source_status": "",
     "risk_level": "medium",
     "requires_review": true

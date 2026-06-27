@@ -1,12 +1,28 @@
 ---
 name: Analyzing Cloud Storage Access Patterns
 description: Detect abnormal access patterns in AWS S3, GCS, and Azure Blob Storage
-tags: [research, agent-skill, okf, cloud-security, aws-s3, gcs, azure-blob-storage, cloudtrail, data-access-anomaly, exfiltration-detection, security]
+tags:
+- research
+- skill
+- okf
+- cloud-security
+- aws-s3
+- gcs
+- azure-blob-storage
+- cloudtrail
+- data-access-anomaly
+- exfiltration-detection
+- security
 license: Apache-2.0
 type: Playbook
+title: Analyzing Cloud Storage Access Patterns
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
-
 
 # Analyzing Cloud Storage Access Patterns
 

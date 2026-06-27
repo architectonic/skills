@@ -1,8 +1,14 @@
 ---
-name: Skill Creation
-description: Create a skill from scratch using the 6-step process: understand use cases, plan resources, create structure, write, validate, iterate. Use when building a new skill for any agent plugin or runtime.
-tags: [skill-management, skill-management, skill-creation, process, workflow]
+name: skill-creation
+title: Skill Creation Process
+description: Six steps to create an effective skill.
 type: Playbook
+domain: agent-operations
+tags:
+- agent-operations
+- okf
+risk_level: medium
+requires_review: false
 ---
 
 # Skill Creation Process

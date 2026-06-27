@@ -1,8 +1,22 @@
 ---
 name: skill-distillation
-description: Distill execution traces, source repos, and raw skill dumps into improved or new agent skills. Use when synthesizing skills from observed execution patterns, consolidating multiple runtime-specific skills, or improving existing skills from evidence. Covers contrastive induction, paired verification, and closed-loop refinement.
-tags: [skill-management, skill-management, distillation, self-improvement]
+description: Distill execution traces, source repos, and raw skill dumps into improved
+  or new agent skills. Use when synthesizing skills from observed execution patterns,
+  consolidating multiple runtime-specific skills, or improving existing skills from
+  evidence. Covers contrastive induction, paired verification, and closed-loop refinement.
+tags:
+- agent-operations
+- skill-management
+- distillation
+- self-improvement
+- okf
 type: Playbook
+title: skill-distillation
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # skill-distillation

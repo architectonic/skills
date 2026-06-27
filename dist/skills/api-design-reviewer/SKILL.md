@@ -1,11 +1,30 @@
 ---
 name: API Design Reviewer — Linting, Breaking Change Detection, and Scorecards
-description: Comprehensive REST API design review with automated linting, breaking-change detection, and design scorecards. Catches inconsistent conventions, missing versioning, and design smells before APIs ship. Use when reviewing a PR that adds or changes API endpoints, auditing an existing API for v2 migration, or establishing API standards for a team.
+description: Comprehensive REST API design review with automated linting, breaking-change
+  detection, and design scorecards. Catches inconsistent conventions, missing versioning,
+  and design smells before APIs ship. Use when reviewing a PR that adds or changes
+  API endpoints, auditing an existing API for v2 migration, or establishing API standards
+  for a team.
 version: 1.0.0
 source: claude-skills/engineering/api-design-reviewer (MIT)
 author: Claude Skills Team (distilled by Agent-Memory-Ops-Kit)
-tags: [software-development, engineering, api, rest, design-review, breaking-change, linting, openapi]
+tags:
+- software-engineering
+- engineering
+- api
+- rest
+- design-review
+- breaking-change
+- linting
+- openapi
+- okf
 type: API Endpoint
+title: API Design Reviewer — Linting, Breaking Change Detection, and Scorecards
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: amok-native
+source_status: adapted
 ---
 
 # API Design Reviewer — Linting, Breaking Change Detection, and Scorecards

@@ -1,11 +1,28 @@
 ---
 name: Implementing Infrastructure as Code Security Scanning
 description: This skill covers implementing automated security scanning for Infrastructure
-tags: [software-development, software-development, agent-skill, okf, devsecops, cicd, iac-security, checkov, tfsec, terraform, secure-sdlc, security]
+tags:
+- software-engineering
+- skill
+- okf
+- devsecops
+- cicd
+- iac-security
+- checkov
+- tfsec
+- terraform
+- secure-sdlc
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Infrastructure as Code Security Scanning
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Infrastructure as Code Security Scanning
 

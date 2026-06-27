@@ -1,11 +1,29 @@
 ---
 name: Detecting Anomalies in Industrial Control Systems
 description: This skill covers deploying anomaly detection systems for industrial
-tags: [software-development, software-development, agent-skill, okf, ot-security, ics, scada, industrial-control, iec62443, anomaly-detection, machine-learning, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- ot-security
+- ics
+- scada
+- industrial-control
+- iec62443
+- anomaly-detection
+- machine-learning
+- security
 license: Apache-2.0
 type: Playbook
+title: Detecting Anomalies in Industrial Control Systems
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Detecting Anomalies in Industrial Control Systems
 

@@ -1,9 +1,26 @@
 ---
 name: Implementing End-to-End Encryption for Messaging
 description: End-to-end encryption (E2EE) ensures that only the communicating parties
-tags: [software-development, software-development, agent-skill, okf, cryptography, encryption, e2e, messaging, signal-protocol, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- cryptography
+- encryption
+- e2e
+- messaging
+- signal-protocol
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing End-to-End Encryption for Messaging
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing End-to-End Encryption for Messaging

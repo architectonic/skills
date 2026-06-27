@@ -1,7 +1,23 @@
 ---
 name: OKF Knowledge Format
-description: Reference for OKF-compatible YAML frontmatter, source status values, risk levels, preferred types, and repository fields. Use when creating new OKF-compatible entries or reviewing existing ones.
-tags: [skill-management, okf, format, reference, frontmatter, standards]
+description: Reference for OKF-compatible YAML frontmatter, source status values,
+  risk levels, preferred types, and repository fields. Use when creating new OKF-compatible
+  entries or reviewing existing ones.
+tags:
+- software-engineering
+- skill-management
+- okf
+- format
+- reference
+- frontmatter
+- standards
+title: OKF Knowledge Format
+type: Playbook
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # OKF Knowledge Format

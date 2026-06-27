@@ -1,11 +1,30 @@
 ---
 name: Implementing AWS Macie for Data Classification
 description: Implement Amazon Macie to automatically discover, classify, and protect
-tags: [software-development, software-development, agent-skill, okf, aws, macie, data-classification, s3, pii, sensitive-data, dlp, compliance, security]
+tags:
+- cloud-security
+- software-engineering
+- skill
+- okf
+- aws
+- macie
+- data-classification
+- s3
+- pii
+- sensitive-data
+- dlp
+- compliance
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing AWS Macie for Data Classification
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing AWS Macie for Data Classification
 

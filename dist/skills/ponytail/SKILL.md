@@ -1,11 +1,25 @@
 ---
 name: Ponytail — Lazy Senior Dev Mode
-description: "Lazy senior dev mode. Forces the simplest, shortest solution that works: YAGNI, stdlib first, no unrequested abstractions. Active every response until stopped."
-tags: [agent-skill, okf, software-development, coding-discipline, yagni, simplicity]
+description: 'Lazy senior dev mode. Forces the simplest, shortest solution that works:
+  YAGNI, stdlib first, no unrequested abstractions. Active every response until stopped.'
+tags:
+- skill
+- okf
+- software-engineering
+- coding-discipline
+- yagni
+- simplicity
 source: https://github.com/DietrichGebert/ponytail
 license: MIT
 risk: low
 type: Playbook
+title: Ponytail — Lazy Senior Dev Mode
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: MIT
+source_status: adapted
 ---
 
 # Ponytail — Lazy Senior Dev Mode

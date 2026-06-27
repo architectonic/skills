@@ -1,11 +1,28 @@
 ---
 name: Performing Subdomain Enumeration with Subfinder
 description: Enumerate subdomains of target domains using ProjectDiscovery's Subfinder
-tags: [software-development, software-development, agent-skill, okf, subdomain-enumeration, reconnaissance, bug-bounty, attack-surface, subfinder, passive-recon, osint, security]
+tags:
+- software-engineering
+- skill
+- okf
+- subdomain-enumeration
+- reconnaissance
+- bug-bounty
+- attack-surface
+- subfinder
+- passive-recon
+- osint
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Subdomain Enumeration with Subfinder
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Subdomain Enumeration with Subfinder
 

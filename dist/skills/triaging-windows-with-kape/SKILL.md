@@ -1,9 +1,29 @@
 ---
 name: Triaging Windows with KAPE
 description: Run targeted forensic artifact collection and module parsing with KAPE.
-tags: [research, agent-skill, okf, digital-forensics, kape, triage, artifact-collection, incident-response, eric-zimmerman, dfir, windows-forensics, security]
+tags:
+- forensics
+- research
+- skill
+- okf
+- digital-forensics
+- kape
+- triage
+- artifact-collection
+- incident-response
+- eric-zimmerman
+- dfir
+- windows-forensics
+- security
 license: Apache-2.0
 type: Playbook
+title: Triaging Windows with KAPE
+domain: forensics
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Triaging Windows with KAPE

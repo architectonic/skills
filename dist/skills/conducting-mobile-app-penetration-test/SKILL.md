@@ -1,9 +1,26 @@
 ---
 name: Conducting Mobile App Penetration Test
 description: Conducts penetration testing of iOS and Android mobile applications
-tags: [software-development, software-development, agent-skill, okf, mobile-pentest, owasp-mastg, android-security, ios-security, mobile-application-security, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- mobile-pentest
+- owasp-mastg
+- android-security
+- ios-security
+- mobile-application-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Conducting Mobile App Penetration Test
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Conducting Mobile App Penetration Test

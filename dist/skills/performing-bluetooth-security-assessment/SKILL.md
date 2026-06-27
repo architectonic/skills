@@ -1,12 +1,25 @@
 ---
 name: Performing Bluetooth Security Assessment
 description: Assess Bluetooth Low Energy device security by scanning, enumerating
-tags: [software-development, software-development, agent-skill, okf, bluetooth, ble, gatt, wireless-security, security]
+tags:
+- software-engineering
+- skill
+- okf
+- bluetooth
+- ble
+- gatt
+- wireless-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Bluetooth Security Assessment
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
-
 
 # Performing Bluetooth Security Assessment
 

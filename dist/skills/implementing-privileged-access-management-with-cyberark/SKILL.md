@@ -1,9 +1,27 @@
 ---
 name: Implementing Privileged Access Management with CyberArk
 description: Deploy CyberArk Privileged Access Management to discover, vault, rotate,
-tags: [software-development, software-development, agent-skill, okf, iam, identity, access-control, privileged-access, pam, cyberark, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- iam
+- identity
+- access-control
+- privileged-access
+- pam
+- cyberark
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Privileged Access Management with CyberArk
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing Privileged Access Management with CyberArk

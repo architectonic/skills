@@ -1,10 +1,22 @@
 ---
 name: design-an-interface
-description: Generate multiple radically different interface designs for a module using parallel sub-agents. Use when user wants to design an API, explore interface options, compare module shapes, or mentions "design it twice".
-tags: [productivity, agent-skill, okf, curation]
+description: Generate multiple radically different interface designs for a module
+  using parallel sub-agents. Use when user wants to design an API, explore interface
+  options, compare module shapes, or mentions "design it twice".
+tags:
+- design
+- productivity
+- skill
+- okf
+- curation
 type: Playbook
+title: Design an Interface
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
-
 
 # Design an Interface
 

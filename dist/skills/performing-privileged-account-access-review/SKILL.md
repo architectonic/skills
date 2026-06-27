@@ -1,11 +1,29 @@
 ---
 name: Performing Privileged Account Access Review
 description: Conduct systematic reviews of privileged accounts to validate access
-tags: [software-development, software-development, agent-skill, okf, pam, access-review, privileged-accounts, least-privilege, compliance, audit, identity-governance, security]
+tags:
+- writing
+- software-engineering
+- skill
+- okf
+- pam
+- access-review
+- privileged-accounts
+- least-privilege
+- compliance
+- audit
+- identity-governance
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Privileged Account Access Review
+domain: writing
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Privileged Account Access Review
 

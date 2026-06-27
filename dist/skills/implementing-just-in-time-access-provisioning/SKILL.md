@@ -1,9 +1,28 @@
 ---
 name: Implementing Just-In-Time Access Provisioning
 description: Implement Just-In-Time (JIT) access provisioning to eliminate standing
-tags: [software-development, software-development, agent-skill, okf, iam, identity, access-control, jit, provisioning, zero-trust, least-privilege, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- iam
+- identity
+- access-control
+- jit
+- provisioning
+- zero-trust
+- least-privilege
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Just-In-Time Access Provisioning
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing Just-In-Time Access Provisioning

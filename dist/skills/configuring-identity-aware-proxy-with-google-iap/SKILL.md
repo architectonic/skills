@@ -1,11 +1,29 @@
 ---
 name: Configuring Identity-Aware Proxy with Google IAP
 description: Configuring Google Cloud Identity-Aware Proxy (IAP) to enforce per-request
-tags: [software-development, software-development, agent-skill, okf, google-iap, identity-aware-proxy, gcp, zero-trust, access-context-manager, cloud-run, app-engine, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- google-iap
+- identity-aware-proxy
+- gcp
+- zero-trust
+- access-context-manager
+- cloud-run
+- app-engine
+- security
 license: Apache-2.0
 type: Playbook
+title: Configuring Identity-Aware Proxy with Google IAP
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Configuring Identity-Aware Proxy with Google IAP
 

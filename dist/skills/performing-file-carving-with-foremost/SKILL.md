@@ -1,11 +1,27 @@
 ---
 name: Performing File Carving with Foremost
 description: Recover files from disk images and unallocated space using Foremost's
-tags: [software-development, software-development, agent-skill, okf, forensics, file-carving, foremost, data-recovery, evidence-recovery, unallocated-space, security]
+tags:
+- software-engineering
+- skill
+- okf
+- forensics
+- file-carving
+- foremost
+- data-recovery
+- evidence-recovery
+- unallocated-space
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing File Carving with Foremost
+domain: forensics
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing File Carving with Foremost
 

@@ -1,9 +1,26 @@
 ---
 name: Implementing Application Whitelisting with AppLocker
 description: Implements application whitelisting using Windows AppLocker to restrict
-tags: [software-development, software-development, agent-skill, okf, endpoint, applocker, application-whitelisting, windows-security, software-restriction, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- endpoint
+- applocker
+- application-whitelisting
+- windows-security
+- software-restriction
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Application Whitelisting with AppLocker
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing Application Whitelisting with AppLocker

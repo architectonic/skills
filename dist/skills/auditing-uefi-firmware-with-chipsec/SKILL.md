@@ -1,9 +1,30 @@
 ---
 name: Auditing UEFI Firmware with CHIPSEC
-description: Use Intel CHIPSEC to assess platform firmware configuration, SPI flash write protection, BIOS lock, SMM/SMRR, and Secure Boot variable state, dump SPI flash, and triage UEFI variables for firmware-level threats.
-tags: [software-development, software-development, agent-skill, okf, hardware-firmware-security, uefi, chipsec, spi-flash, bios-write-protection, secure-boot, firmware-assessment, platform-security, security]
+description: Use Intel CHIPSEC to assess platform firmware configuration, SPI flash
+  write protection, BIOS lock, SMM/SMRR, and Secure Boot variable state, dump SPI
+  flash, and triage UEFI variables for firmware-level threats.
+tags:
+- software-engineering
+- skill
+- okf
+- hardware-firmware-security
+- uefi
+- chipsec
+- spi-flash
+- bios-write-protection
+- secure-boot
+- firmware-assessment
+- platform-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Auditing UEFI Firmware with CHIPSEC
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Auditing UEFI Firmware with CHIPSEC

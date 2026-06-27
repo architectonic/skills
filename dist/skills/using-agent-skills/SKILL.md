@@ -1,7 +1,18 @@
 ---
 name: using-agent-skills
-description: Discovers and invokes agent skills. Use when starting a session or when you need to discover which skill applies to the current task. This is the meta-skill that governs how all other skills are discovered and invoked.
+description: Discovers and invokes agent skills. Use when starting a session or when
+  you need to discover which skill applies to the current task. This is the meta-skill
+  that governs how all other skills are discovered and invoked.
 type: Playbook
+title: Using Agent Skills
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Using Agent Skills

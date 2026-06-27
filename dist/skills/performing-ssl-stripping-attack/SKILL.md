@@ -1,9 +1,26 @@
 ---
 name: Performing SSL Stripping Attack
 description: Simulates SSL stripping attacks using sslstrip, Bettercap, and mitmproxy
-tags: [software-development, software-development, agent-skill, okf, network-security, ssl-stripping, https, hsts, tls-security, security]
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- network-security
+- ssl-stripping
+- https
+- hsts
+- tls-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing SSL Stripping Attack
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Performing SSL Stripping Attack

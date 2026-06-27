@@ -1,11 +1,27 @@
 ---
 name: Performing Container Escape Detection
 description: Detects container escape attempts by analyzing namespace configurations,
-tags: [software-development, software-development, agent-skill, okf, container-security, container-escape, privileged-container, namespace-analysis, linux-capabilities, threat-detection, security]
+tags:
+- software-engineering
+- skill
+- okf
+- container-security
+- container-escape
+- privileged-container
+- namespace-analysis
+- linux-capabilities
+- threat-detection
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Container Escape Detection
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Container Escape Detection
 

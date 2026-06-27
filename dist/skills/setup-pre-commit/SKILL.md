@@ -1,10 +1,21 @@
 ---
 name: setup-pre-commit
-description: Set up Husky pre-commit hooks with lint-staged (Prettier), type checking, and tests in the current repo. Use when user wants to add pre-commit hooks, set up Husky, configure lint-staged, or add commit-time formatting/typechecking/testing.
-tags: [software-development, software-development, agent-skill, okf, curation]
+description: Set up Husky pre-commit hooks with lint-staged (Prettier), type checking,
+  and tests in the current repo. Use when user wants to add pre-commit hooks, set
+  up Husky, configure lint-staged, or add commit-time formatting/typechecking/testing.
+tags:
+- software-engineering
+- skill
+- okf
+- curation
 type: Playbook
+title: Setup Pre-Commit Hooks
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
-
 
 # Setup Pre-Commit Hooks
 

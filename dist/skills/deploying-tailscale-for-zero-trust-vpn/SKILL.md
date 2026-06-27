@@ -1,10 +1,30 @@
 ---
 name: Deploying Tailscale for Zero Trust VPN
 description: Deploy and configure Tailscale as a WireGuard-based zero trust mesh VPN
-tags: [software-development, software-development, agent-skill, okf, zero-trust, tailscale, wireguard, mesh-vpn, ztna, peer-to-peer, acl, identity-aware, headscale, security]
+tags:
+- software-engineering
+- skill
+- okf
+- zero-trust
+- tailscale
+- wireguard
+- mesh-vpn
+- ztna
+- peer-to-peer
+- acl
+- identity-aware
+- headscale
+- security
 license: Apache-2.0
+title: Deploying Tailscale for Zero Trust VPN
+type: Playbook
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Deploying Tailscale for Zero Trust VPN
 

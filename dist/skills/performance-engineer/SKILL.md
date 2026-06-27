@@ -1,8 +1,17 @@
 ---
-name: Performance Engineer
-description: Comprehensive performance engineering: observability, load testing, multi-tier caching, frontend/backend/cloud optimization, performance budgets, and SRE practices.
-tags: [software-development, performance, observability, load-testing, caching, sre, profiling, optimization]
+name: performance-engineer
+title: Performance Engineer
+description: '1. **Establish Baseline**: Measure current performance with real user
+  monitoring 2. **Identify Bottlenecks**: Use profiling, distributed tracing, and
+  load testing 3. **Prioritize Optimizations**: Based on user impact, business value,
+  and effort'
 type: Playbook
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: medium
+requires_review: true
 ---
 
 # Performance Engineer

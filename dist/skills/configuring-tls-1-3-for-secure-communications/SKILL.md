@@ -1,9 +1,26 @@
 ---
 name: Configuring TLS 1.3 for Secure Communications
 description: TLS 1.3 (RFC 8446) is the latest version of the Transport Layer Security
-tags: [software-development, software-development, agent-skill, okf, cryptography, tls, ssl, transport-security, network-security, security]
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- cryptography
+- tls
+- ssl
+- transport-security
+- network-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Configuring TLS 1.3 for Secure Communications
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Configuring TLS 1.3 for Secure Communications

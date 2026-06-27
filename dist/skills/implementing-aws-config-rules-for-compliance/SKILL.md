@@ -1,11 +1,27 @@
 ---
 name: Implementing AWS Config Rules for Compliance
 description: Implementing AWS Config rules for continuous compliance monitoring of
-tags: [software-development, software-development, agent-skill, okf, cloud-security, aws, config-rules, compliance, automation, remediation, security]
+tags:
+- software-engineering
+- skill
+- okf
+- cloud-security
+- aws
+- config-rules
+- compliance
+- automation
+- remediation
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing AWS Config Rules for Compliance
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing AWS Config Rules for Compliance
 

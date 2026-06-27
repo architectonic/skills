@@ -1,10 +1,19 @@
 ---
-name: Consulting Analysis & Report Generation
-description: Produce professional, consulting-grade research reports (market analysis, consumer insights, brand analysis, financial analysis, industry research, competitive intelligence, investment due diligence). Two-phase workflow: (1) generate structured analysis framework with chapter skeleton, data requirements, and framework selection; (2) synthesize collected data into final report with "Visual Anchor → Data Contrast → Integrated Analysis" flow. Includes 20+ professional analysis frameworks (SWOT, PESTEL, Porter's Five Forces, BCG Matrix, etc.).
-source: deer-flow/skills/public/consulting-analysis/SKILL.md (MIT license, https://github.com/deer-flow/deer-flow)
-category: productivity
-tags: [productivity, consulting, analysis, market-research, report-generation, frameworks, strategic-analysis]
+name: consulting-analysis
+title: Consulting Analysis & Report Generation
+description: Produce professional, consulting-grade research reports in Markdown format,
+  covering domains such as **market analysis, consumer insights, brand strategy, financial
+  analysis, industry research, competitive intelligence, investment research, and
+  macroeconomic analysis**.
 type: Playbook
+domain: research
+tags:
+- research
+- okf
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Consulting Analysis & Report Generation

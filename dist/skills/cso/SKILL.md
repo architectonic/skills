@@ -1,8 +1,18 @@
 ---
 name: cso
 description: Chief Security Officer mode. (gstack)
-tags: [software-development, software-development, agent-skill, okf, curation]
+tags:
+- software-engineering
+- skill
+- okf
+- curation
 type: Playbook
+title: cso
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: vercel-skills
+source_status: adapted
 ---
 
 # cso

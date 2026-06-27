@@ -1,11 +1,32 @@
 ---
 name: Performing Cloud Storage Forensic Acquisition
 description: Perform forensic acquisition and analysis of cloud storage services including
-tags: [software-development, software-development, agent-skill, okf, cloud-forensics, google-drive, onedrive, dropbox, box, cloud-acquisition, api-forensics, sync-client, endpoint-artifacts, magnet-axiom, security]
+tags:
+- forensics
+- software-engineering
+- skill
+- okf
+- cloud-forensics
+- google-drive
+- onedrive
+- dropbox
+- box
+- cloud-acquisition
+- api-forensics
+- sync-client
+- endpoint-artifacts
+- magnet-axiom
+- security
 license: Apache-2.0
 type: API Endpoint
+title: Performing Cloud Storage Forensic Acquisition
+domain: forensics
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Cloud Storage Forensic Acquisition
 

@@ -1,11 +1,30 @@
 ---
 name: Implementing Supply Chain Security with in-toto
 description: Implement software supply chain integrity verification for container
-tags: [software-development, software-development, agent-skill, okf, in-toto, supply-chain-security, attestation, slsa, sigstore, container-security, cncf, provenance, sbom, security]
+tags:
+- software-engineering
+- skill
+- okf
+- in-toto
+- supply-chain-security
+- attestation
+- slsa
+- sigstore
+- container-security
+- cncf
+- provenance
+- sbom
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Supply Chain Security with in-toto
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Supply Chain Security with in-toto
 

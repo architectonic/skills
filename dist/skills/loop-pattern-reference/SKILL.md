@@ -1,8 +1,24 @@
 ---
 name: Loop Pattern Reference
-description: Design bounded, observable, and auditable agent feedback cycles. Use when creating or evaluating any repeatable agent workflow (reconciliation, review, discovery, ingestion, curation, testing). Defines the canonical loop shape, required boundaries, terminal states, and validation rules that all AMOK loops must follow.
-tags: [loops, feedback-cycle, safety, bounded-automation, pattern]
+description: Design bounded, observable, and auditable agent feedback cycles. Use
+  when creating or evaluating any repeatable agent workflow (reconciliation, review,
+  discovery, ingestion, curation, testing). Defines the canonical loop shape, required
+  boundaries, terminal states, and validation rules that all AMOK loops must follow.
+tags:
+- design
+- loops
+- feedback-cycle
+- safety
+- bounded-automation
+- pattern
+- okf
 type: Reference
+title: Loop Pattern Reference
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Loop Pattern Reference

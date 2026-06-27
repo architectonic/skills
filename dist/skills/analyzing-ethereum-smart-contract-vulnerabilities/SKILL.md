@@ -1,11 +1,30 @@
 ---
 name: Analyzing Ethereum Smart Contract Vulnerabilities
 description: Perform static and symbolic analysis of Solidity smart contracts using
-tags: [research, agent-skill, okf, ethereum, solidity, smart-contract, slither, mythril, blockchain, defi, audit, security]
+tags:
+- business
+- research
+- skill
+- okf
+- ethereum
+- solidity
+- smart-contract
+- slither
+- mythril
+- blockchain
+- defi
+- audit
+- security
 license: Apache-2.0
 type: Playbook
+title: Analyzing Ethereum Smart Contract Vulnerabilities
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Analyzing Ethereum Smart Contract Vulnerabilities
 

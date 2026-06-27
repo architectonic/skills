@@ -1,11 +1,28 @@
 ---
 name: Performing Access Recertification with Saviynt
 description: Configure and execute access recertification campaigns in Saviynt Enterprise
-tags: [software-development, software-development, agent-skill, okf, saviynt, access-recertification, identity-governance, compliance, certification-campaign, iga, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- saviynt
+- access-recertification
+- identity-governance
+- compliance
+- certification-campaign
+- iga
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Access Recertification with Saviynt
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Access Recertification with Saviynt
 

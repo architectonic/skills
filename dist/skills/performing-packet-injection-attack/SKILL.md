@@ -1,9 +1,26 @@
 ---
 name: Performing Packet Injection Attack
 description: Crafts and injects custom network packets using Scapy, hping3, and Nemesis
-tags: [software-development, software-development, agent-skill, okf, network-security, packet-injection, scapy, hping3, protocol-testing, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- network-security
+- packet-injection
+- scapy
+- hping3
+- protocol-testing
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Packet Injection Attack
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Performing Packet Injection Attack

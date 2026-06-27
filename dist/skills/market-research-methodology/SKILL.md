@@ -1,8 +1,17 @@
 ---
 name: market-research-methodology
-description: Upstream market research methodology: TAM/SAM/SOM sizing (both top-down AND bottoms-up, never a single unsourced number), survey sample size with finite-population correction and per-segment minimums, and scoring market segments against Kotler's measurable/substantial/accessible/differentiable/actionable criteria. For market-research analysts and product marketing at the sizing/survey/segmentation moment. Distinct from campaign analytics — this is evidence-building methodology, not live-campaign optimization.
-tags: [research, research-ops, market-research, tam-sam-som, market-sizing, survey, sampling, segmentation]
+title: Market Research Methodology
+description: 'Upstream market research: market sizing, survey/sampling design, and
+  segmentation. The discipline is **method + assumptions**: a TAM is never a single
+  number, a survey is never powered only in aggregate, and a segment is never a demographic
+  slice.'
 type: Playbook
+domain: research
+tags:
+- research
+- okf
+risk_level: medium
+requires_review: false
 ---
 
 # Market Research Methodology

@@ -1,11 +1,25 @@
 ---
 name: Ponytail Debt — Shortcut Ledger
-description: "Harvest every ponytail: shortcut comment into one debt ledger, so deferrals get tracked instead of forgotten. One-shot report."
-tags: [agent-skill, okf, software-development, technical-debt, tracking, yagni]
+description: 'Harvest every ponytail: shortcut comment into one debt ledger, so deferrals
+  get tracked instead of forgotten. One-shot report.'
+tags:
+- skill
+- okf
+- software-engineering
+- technical-debt
+- tracking
+- yagni
 source: https://github.com/DietrichGebert/ponytail
 license: MIT
 risk: low
 type: Playbook
+title: Ponytail Debt — Shortcut Ledger
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: MIT
+source_status: adapted
 ---
 
 # Ponytail Debt — Shortcut Ledger

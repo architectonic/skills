@@ -1,8 +1,22 @@
 ---
 name: Skill Writing Style
-description: Follow writing conventions for agent skills — imperative voice, third-person description, trigger phrases, and progressive disclosure. Use when writing or reviewing any skill document.
-tags: [skill-management, skill-management, writing-style, conventions, voice]
+description: Follow writing conventions for agent skills — imperative voice, third-person
+  description, trigger phrases, and progressive disclosure. Use when writing or reviewing
+  any skill document.
+tags:
+- writing
+- skill-management
+- writing-style
+- conventions
+- voice
+- okf
 type: Playbook
+title: Skill Writing Style
+domain: writing
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Skill Writing Style

@@ -1,11 +1,28 @@
 ---
 name: Building Role Mining for RBAC Optimization
 description: Apply bottom-up and top-down role mining techniques to discover optimal
-tags: [software-development, software-development, agent-skill, okf, rbac, role-mining, identity-governance, access-control, least-privilege, clustering, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- rbac
+- role-mining
+- identity-governance
+- access-control
+- least-privilege
+- clustering
+- security
 license: Apache-2.0
 type: Playbook
+title: Building Role Mining for RBAC Optimization
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Building Role Mining for RBAC Optimization
 

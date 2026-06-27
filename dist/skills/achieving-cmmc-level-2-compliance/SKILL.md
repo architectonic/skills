@@ -1,11 +1,27 @@
 ---
 name: Achieving CMMC Level 2 Compliance
-description: >-
-tags: [software-development, software-development, agent-skill, okf, cmmc, nist-800-171, cui, sprs, dfars, c3pao, poam, compliance, governance, defense-industrial-base, security]
+description: Confirm the contract requires CMMC Level 2 (CUI present, not just FCI).
+  FCI-only contracts are **Level 1** (the 15 FAR 52.204-21 requirements). Identify
+  CUI categories from the contract and the DoD CUI Registry.
+tags:
+- software-development
+- software-development
+- agent-skill
+- okf
+- cmmc
+- nist-800-171
+- cui
+- sprs
+- dfars
+- c3pao
+- poam
+- compliance
+- governance
+- defense-industrial-base
+- security
 license: Apache-2.0
 type: Playbook
 ---
-
 
 # Achieving CMMC Level 2 Compliance
 

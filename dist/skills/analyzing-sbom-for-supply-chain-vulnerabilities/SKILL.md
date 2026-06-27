@@ -1,11 +1,31 @@
 ---
 name: Analyzing SBOM for Supply Chain Vulnerabilities
 description: Parses Software Bill of Materials (SBOM) in CycloneDX and SPDX JSON
-tags: [research, agent-skill, okf, sbom, cyclonedx, spdx, nvd, cve, supply-chain, dependency-analysis, syft, grype, security]
+tags:
+- design
+- research
+- skill
+- okf
+- sbom
+- cyclonedx
+- spdx
+- nvd
+- cve
+- supply-chain
+- dependency-analysis
+- syft
+- grype
+- security
 license: Apache-2.0
 type: Playbook
+title: Analyzing SBOM for Supply Chain Vulnerabilities
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Analyzing SBOM for Supply Chain Vulnerabilities
 

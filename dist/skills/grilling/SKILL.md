@@ -1,8 +1,20 @@
 ---
 name: grilling
-description: Interview the user relentlessly about a plan or design. Use when the user wants to stress-test a plan before building, or uses any 'grill' trigger phrases.
-tags: [software-development, software-development, agent-skill, okf, curation]
+description: Interview the user relentlessly about a plan or design. Use when the
+  user wants to stress-test a plan before building, or uses any 'grill' trigger phrases.
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- curation
 type: Playbook
+title: grilling
+domain: business
+risk_level: medium
+requires_review: false
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # grilling

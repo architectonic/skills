@@ -1,9 +1,28 @@
 ---
 name: Implementing Passwordless Authentication with FIDO2
 description: Deploy FIDO2/WebAuthn passwordless authentication using security keys
-tags: [software-development, software-development, agent-skill, okf, iam, identity, access-control, authentication, fido2, webauthn, passwordless, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- iam
+- identity
+- access-control
+- authentication
+- fido2
+- webauthn
+- passwordless
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Passwordless Authentication with FIDO2
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing Passwordless Authentication with FIDO2

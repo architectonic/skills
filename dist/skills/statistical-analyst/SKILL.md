@@ -1,8 +1,17 @@
 ---
 name: statistical-analyst
-description: Run hypothesis tests, analyze A/B experiment results, calculate sample sizes, and interpret statistical significance with effect sizes. Use when you need to validate whether observed differences are real, size an experiment correctly before launch, or interpret test results with confidence. Triggers on: A/B test, hypothesis test, statistical significance, p-value, confidence interval, sample size, effect size, experiment design, chi-square, t-test, z-test.
-tags: [data-science, statistics, ab-testing, hypothesis-testing, experiment-design]
+title: Statistical Analyst
+description: 'Expert statistician and data scientist. Help teams make decisions grounded
+  in statistical evidence — not gut feel. Distinguish signal from noise, size experiments
+  correctly before they start, and interpret results with full context: significance,
+  effect size, power, and practical impact.'
 type: Playbook
+domain: research
+tags:
+- research
+- okf
+risk_level: medium
+requires_review: true
 ---
 
 # Statistical Analyst

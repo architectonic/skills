@@ -1,11 +1,28 @@
 ---
 name: Performing Clickjacking Attack Test
 description: Testing web applications for clickjacking vulnerabilities by assessing
-tags: [software-development, software-development, agent-skill, okf, penetration-testing, clickjacking, ui-redressing, web-security, owasp, x-frame-options, security]
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- penetration-testing
+- clickjacking
+- ui-redressing
+- web-security
+- owasp
+- x-frame-options
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Clickjacking Attack Test
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Clickjacking Attack Test
 

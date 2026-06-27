@@ -1,11 +1,28 @@
 ---
 name: Implementing mTLS for Zero Trust Services
 description: Configures mutual TLS (mTLS) authentication between microservices using
-tags: [software-development, software-development, agent-skill, okf, mtls, zero-trust, mutual-tls, service-authentication, certificate-management, microservices-security, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- mtls
+- zero-trust
+- mutual-tls
+- service-authentication
+- certificate-management
+- microservices-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing mTLS for Zero Trust Services
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing mTLS for Zero Trust Services
 

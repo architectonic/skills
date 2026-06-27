@@ -1,0 +1,187 @@
+{
+  "write": true,
+  "selected_count": 30,
+  "changed_count": 30,
+  "results": [
+    {
+      "path": "deploying-tailscale-for-zero-trust-vpn\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "embedded-captions\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "eu-ai-act-specialist\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "guard\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "gui-skill-action-graph\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "idea-lineage\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "invariant-guard\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "lm-evaluation-harness\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "managed-agent-launch-cma\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "market-research-methodology\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "motion-graphics\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "obliteratus\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "okf-knowledge-extraction\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "okf-knowledge-format\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "partnerships-architect\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "performance-engineer\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "plan-tune\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "product-research-methodology\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "prompt-governance\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "python-debugpy\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "research-ops-orchestrator\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "runaway-guard\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "setup-gbrain\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "ship\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "skill-creation\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "skill-model\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "statistical-analyst\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "vibe-code-auditor\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "vllm\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    },
+    {
+      "path": "xurl\\SKILL.md",
+      "changed": true,
+      "had_frontmatter": true,
+      "written": true
+    }
+  ]
+}

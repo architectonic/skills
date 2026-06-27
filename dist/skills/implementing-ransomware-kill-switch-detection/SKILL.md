@@ -1,13 +1,26 @@
 ---
 name: Implementing Ransomware Kill Switch Detection
 description: Detects and exploits ransomware kill switch mechanisms including mutex-based
-tags: [software-development, software-development, agent-skill, okf, ransomware, kill-switch, mutex, detection, wannacry, malware-analysis, security]
+tags:
+- software-development
+- software-development
+- agent-skill
+- okf
+- ransomware
+- kill-switch
+- mutex
+- detection
+- wannacry
+- malware-analysis
+- security
 license: Apache-2.0
 type: Playbook
 ---
 
-
 # Implementing Ransomware Kill Switch Detection
+
+
+**Authorized-use only:** Use this skill only for owned systems, sanctioned lab environments, or engagements with explicit written permission. Document scope, preserve evidence, and follow applicable law, policy, and incident-response procedures.
 
 ## When to Use
 

@@ -1,11 +1,29 @@
 ---
 name: Performing Hardware Security Module Integration
 description: Integrate Hardware Security Modules (HSMs) using PKCS#11 interface for
-tags: [software-development, software-development, agent-skill, okf, hsm, pkcs11, cloudhsm, yubihsm2, key-management, cryptographic-operations, hardware-security, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- hsm
+- pkcs11
+- cloudhsm
+- yubihsm2
+- key-management
+- cryptographic-operations
+- hardware-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Hardware Security Module Integration
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Hardware Security Module Integration
 

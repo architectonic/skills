@@ -1,11 +1,27 @@
 ---
 name: Performing AWS Privilege Escalation Assessment
 description: Performing authorized privilege escalation assessments in AWS environments
-tags: [software-development, software-development, agent-skill, okf, cloud-security, aws, privilege-escalation, iam, pacu, offensive-security, security]
+tags:
+- software-engineering
+- skill
+- okf
+- cloud-security
+- aws
+- privilege-escalation
+- iam
+- pacu
+- offensive-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing AWS Privilege Escalation Assessment
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing AWS Privilege Escalation Assessment
 

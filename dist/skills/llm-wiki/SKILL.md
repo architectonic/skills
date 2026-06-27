@@ -1,11 +1,28 @@
 ---
 name: LLM Wiki — Persistent Knowledge Base Pattern
-description: "Build and maintain a persistent, compounding wiki as a structured collection of markdown files. The LLM reads sources, extracts key information, and integrates it into the wiki — updating entity pages, revising topic summaries, noting contradictions. The wiki is a persistent artifact, not a per-query RAG retrieval."
-tags: [agent-skill, okf, agent-operations, memory, knowledge-base, wiki]
+description: Build and maintain a persistent, compounding wiki as a structured collection
+  of markdown files. The LLM reads sources, extracts key information, and integrates
+  it into the wiki — updating entity pages, revising topic summaries, noting contradictions.
+  The wiki is a persistent artifact, not a per-query RAG retrieval.
+tags:
+- research
+- skill
+- okf
+- agent-operations
+- memory
+- knowledge-base
+- wiki
 source: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
 license: Public domain (gist)
 risk: low
 type: Playbook
+title: LLM Wiki — Persistent Knowledge Base Pattern
+domain: research
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Public domain (gist)
+source_status: adapted
 ---
 
 # LLM Wiki — Persistent Knowledge Base Pattern

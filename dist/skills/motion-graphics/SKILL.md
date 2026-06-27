@@ -1,22 +1,18 @@
 ---
 name: motion-graphics
-description: >
-  Use when the user wants a short, design-led motion graphic where motion is the
-  message: kinetic typography, stat or number count-up, chart/data-viz hit,
-  logo sting, brand lockup, lower-third, callout, social overlay, animated
-  headline/tweet/news item, motion poster, or quick captured-page highlight.
-  Usually under 10s and up to ~30s, with no narration arc, voice-over, or
-  live-action subject. Can render to MP4 or transparent overlay. Not for longer,
-  multi-scene, narrated, or brand-reel pieces (use general-video), narrated
-  website videos (website-to-video), topic explainers
-  (faceless-explainer), product promos (product-launch-video), PR videos
-  (pr-to-video), or captions on existing footage (embedded-captions). When unsure whether it's a
-  quick motion-first piece or a longer / narrated treatment, see /hyperframes.
-tags: [agent-skill]
-  {
-    "tags": "orchestrator, motion-graphics, kinetic-type, data-viz, logo-reveal, lower-thirds, news, tweet, webpage, asset-fusion, short-form, overlay, no-narration",
-  }
+title: motion-graphics — dispatch entry
+description: 'A short design-led motion graphic. **Asset-first**: decide the asset
+  strategy and source real material _before_ designing the shot, then design the shot
+  around what you have, then compose by reusing catalog capabilities. All artifacts
+  go to `PROJECT_DIR = videos/<project-name>/` (created in Step 0); all paths below
+  are relative to it.'
 type: Playbook
+domain: design
+tags:
+- design
+- okf
+risk_level: medium
+requires_review: true
 ---
 
 # motion-graphics — dispatch entry

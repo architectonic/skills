@@ -1,9 +1,28 @@
 ---
 name: Performing User Behavior Analytics
 description: Performs User and Entity Behavior Analytics (UEBA) to detect anomalous
-tags: [software-development, software-development, agent-skill, okf, soc, ueba, user-behavior, insider-threat, anomaly-detection, splunk, baseline, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- soc
+- ueba
+- user-behavior
+- insider-threat
+- anomaly-detection
+- splunk
+- baseline
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing User Behavior Analytics
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Performing User Behavior Analytics

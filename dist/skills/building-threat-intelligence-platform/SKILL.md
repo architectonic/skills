@@ -1,9 +1,28 @@
 ---
 name: Building Threat Intelligence Platform
 description: Building a Threat Intelligence Platform (TIP) involves deploying and
-tags: [software-development, software-development, agent-skill, okf, threat-intelligence, cti, ioc, mitre-attack, stix, platform-building, misp, opencti, security]
+tags:
+- software-engineering
+- skill
+- okf
+- threat-intelligence
+- cti
+- ioc
+- mitre-attack
+- stix
+- platform-building
+- misp
+- opencti
+- security
 license: Apache-2.0
 type: Playbook
+title: Building Threat Intelligence Platform
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Building Threat Intelligence Platform

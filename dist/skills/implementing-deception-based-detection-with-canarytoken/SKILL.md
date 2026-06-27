@@ -1,11 +1,28 @@
 ---
 name: Implementing Deception-Based Detection with Canarytoken
 description: Deploy and monitor Canary Tokens via the Thinkst Canary API for deception-based
-tags: [software-development, software-development, agent-skill, okf, canarytoken, deception, honeytokens, breach-detection, thinkst-canary, tripwire, early-warning, security]
+tags:
+- software-engineering
+- skill
+- okf
+- canarytoken
+- deception
+- honeytokens
+- breach-detection
+- thinkst-canary
+- tripwire
+- early-warning
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Deception-Based Detection with Canarytoken
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Deception-Based Detection with Canarytoken
 

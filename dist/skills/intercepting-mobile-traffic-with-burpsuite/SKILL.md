@@ -1,9 +1,27 @@
 ---
 name: Intercepting Mobile Traffic with Burp Suite
 description: Intercepts and analyzes HTTP/HTTPS traffic from mobile applications
-tags: [software-development, software-development, agent-skill, okf, mobile-security, android, ios, burp-suite, traffic-interception, penetration-testing, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- mobile-security
+- android
+- ios
+- burp-suite
+- traffic-interception
+- penetration-testing
+- security
 license: Apache-2.0
 type: Playbook
+title: Intercepting Mobile Traffic with Burp Suite
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Intercepting Mobile Traffic with Burp Suite

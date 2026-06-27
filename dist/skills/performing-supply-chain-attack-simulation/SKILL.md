@@ -1,11 +1,28 @@
 ---
 name: Performing Supply Chain Attack Simulation
 description: Simulate and detect software supply chain attacks including typosquatting
-tags: [software-development, software-development, agent-skill, okf, supply-chain, typosquatting, dependency-confusion, package-verification, pip-audit, pypi, software-composition-analysis, security]
+tags:
+- software-engineering
+- skill
+- okf
+- supply-chain
+- typosquatting
+- dependency-confusion
+- package-verification
+- pip-audit
+- pypi
+- software-composition-analysis
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Supply Chain Attack Simulation
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Supply Chain Attack Simulation
 

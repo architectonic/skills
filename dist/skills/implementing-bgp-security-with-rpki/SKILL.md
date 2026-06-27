@@ -1,11 +1,31 @@
 ---
 name: Implementing BGP Security with RPKI
 description: Implement BGP route origin validation using RPKI with Route Origin Authorizations,
-tags: [software-development, software-development, agent-skill, okf, bgp, rpki, route-origin-validation, rov, roa, route-hijacking, internet-routing, bgp-security, prefix-hijack, security]
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- bgp
+- rpki
+- route-origin-validation
+- rov
+- roa
+- route-hijacking
+- internet-routing
+- bgp-security
+- prefix-hijack
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing BGP Security with RPKI
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing BGP Security with RPKI
 

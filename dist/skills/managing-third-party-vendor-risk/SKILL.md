@@ -1,11 +1,28 @@
 ---
 name: Managing Third-Party Vendor Risk
-description: >-
-tags: [software-development, software-development, agent-skill, okf, third-party-risk, vendor-risk-management, tprm, supply-chain-risk, c-scrm, nist-800-161, soc2, caiq, continuous-monitoring, governance, security]
+description: 'Catalog every third party and capture: data sensitivity handled, type
+  of access (network, physical, none), business criticality, and regulatory scope.
+  You cannot manage what you have not inventoried — shadow vendors are a common blind
+  spot.'
+tags:
+- software-development
+- software-development
+- agent-skill
+- okf
+- third-party-risk
+- vendor-risk-management
+- tprm
+- supply-chain-risk
+- c-scrm
+- nist-800-161
+- soc2
+- caiq
+- continuous-monitoring
+- governance
+- security
 license: Apache-2.0
 type: Playbook
 ---
-
 
 # Managing Third-Party Vendor Risk
 

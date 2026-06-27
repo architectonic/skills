@@ -1,11 +1,33 @@
 ---
 name: Knowledge Ops — SOP/Runbook Authoring and KB Hygiene
-description: Author, validate, and clean up company SOPs and internal runbooks. 5W2H completeness checks, cross-link and orphan-page validation across wikis, KB ingestion + hygiene reporting, runbook step verification (named owner, expected duration, observable success signal, rollback path, escalation contact). Pairs Ishikawa's 5W2H method, Gawande's Checklist Manifesto, ISO 9001, ITIL v4, and Google SRE Workbook runbook discipline.
+description: Author, validate, and clean up company SOPs and internal runbooks. 5W2H
+  completeness checks, cross-link and orphan-page validation across wikis, KB ingestion
+  + hygiene reporting, runbook step verification (named owner, expected duration,
+  observable success signal, rollback path, escalation contact). Pairs Ishikawa's
+  5W2H method, Gawande's Checklist Manifesto, ISO 9001, ITIL v4, and Google SRE Workbook
+  runbook discipline.
 version: 1.0.0
 source: claude-skills/business-operations/knowledge-ops (MIT)
 author: claude-code-skills (distilled by Agent-Memory-Ops-Kit)
-tags: [productivity, bizops, sop, runbook, knowledge-management, kb, 5w2h, wiki, ops-documentation]
+tags:
+- agent-operations
+- productivity
+- bizops
+- sop
+- runbook
+- knowledge-management
+- kb
+- 5w2h
+- wiki
+- ops-documentation
+- okf
 type: Playbook
+title: Knowledge Ops — SOP/Runbook Authoring and KB Hygiene
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: amok-native
+source_status: adapted
 ---
 
 # Knowledge Ops — SOP/Runbook Authoring and KB Hygiene

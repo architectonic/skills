@@ -1,9 +1,28 @@
 ---
 name: Hunting for Registry Run Key Persistence
 description: Detect MITRE ATT&CK T1547.001 registry Run key persistence by analyzing
-tags: [software-development, software-development, agent-skill, okf, persistence, registry-run-keys, t1547-001, sysmon, threat-hunting, windows-forensics, mitre-attack, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- persistence
+- registry-run-keys
+- t1547-001
+- sysmon
+- threat-hunting
+- windows-forensics
+- mitre-attack
+- security
 license: Apache-2.0
 type: Playbook
+title: Hunting for Registry Run Key Persistence
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Hunting for Registry Run Key Persistence

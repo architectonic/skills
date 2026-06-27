@@ -1,11 +1,27 @@
 ---
 name: Implementing Honeytokens for Breach Detection
 description: Deploys canary tokens and honeytokens (fake AWS credentials, DNS canaries,
-tags: [software-development, software-development, agent-skill, okf, deception-technology, honeytokens, canary-tokens, breach-detection, dns-canary, security-operations, security]
+tags:
+- software-engineering
+- skill
+- okf
+- deception-technology
+- honeytokens
+- canary-tokens
+- breach-detection
+- dns-canary
+- security-operations
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Honeytokens for Breach Detection
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Honeytokens for Breach Detection
 

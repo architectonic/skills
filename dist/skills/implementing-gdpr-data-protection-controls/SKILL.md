@@ -1,9 +1,27 @@
 ---
 name: Implementing GDPR Data Protection Controls
 description: The General Data Protection Regulation (EU) 2016/679 (GDPR) is the EU's
-tags: [software-development, software-development, agent-skill, okf, compliance, governance, gdpr, privacy, data-protection, eu-regulation, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- compliance
+- governance
+- gdpr
+- privacy
+- data-protection
+- eu-regulation
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing GDPR Data Protection Controls
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing GDPR Data Protection Controls

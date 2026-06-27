@@ -1,7 +1,22 @@
 ---
 name: Skill Model
-description: OKF-compatible frontmatter schema and template for agent skills. Use when creating new skills, validating skill frontmatter, or designing skill metadata fields.
-tags: [skill-management, skill-management, schema, okf, frontmatter, template]
+description: OKF-compatible frontmatter schema and template for agent skills. Use
+  when creating new skills, validating skill frontmatter, or designing skill metadata
+  fields.
+tags:
+- agent-operations
+- skill-management
+- schema
+- okf
+- frontmatter
+- template
+title: Skill Model
+type: Playbook
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Skill Model

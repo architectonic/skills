@@ -1,11 +1,27 @@
 ---
 name: Performing SCA Dependency Scanning with Snyk
 description: This skill covers implementing Software Composition Analysis (SCA) using
-tags: [software-development, software-development, agent-skill, okf, devsecops, cicd, sca, snyk, dependency-scanning, secure-sdlc, security]
+tags:
+- software-engineering
+- skill
+- okf
+- devsecops
+- cicd
+- sca
+- snyk
+- dependency-scanning
+- secure-sdlc
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing SCA Dependency Scanning with Snyk
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing SCA Dependency Scanning with Snyk
 

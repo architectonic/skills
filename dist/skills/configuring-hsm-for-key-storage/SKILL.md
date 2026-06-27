@@ -1,9 +1,26 @@
 ---
 name: Configuring HSM for Key Storage
 description: Hardware Security Modules (HSMs) are tamper-resistant physical devices
-tags: [software-development, software-development, agent-skill, okf, cryptography, hsm, key-management, pkcs11, hardware-security, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- cryptography
+- hsm
+- key-management
+- pkcs11
+- hardware-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Configuring HSM for Key Storage
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Configuring HSM for Key Storage

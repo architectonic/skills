@@ -1,11 +1,33 @@
 ---
 name: Process Mapper — BPMN Documentation and Bottleneck Analysis
-description: Document end-to-end business processes in BPMN-style notation, measure cycle times by stage, surface where work spends most of its time waiting vs. being worked, and quantify the gap between processing time and total elapsed time. Pairs Lean / Six Sigma / Theory-of-Constraints with deterministic analysis to produce a process map, ranked bottleneck list, and cycle-time analysis (P50, P90, value-add ratio, Little's Law throughput).
+description: Document end-to-end business processes in BPMN-style notation, measure
+  cycle times by stage, surface where work spends most of its time waiting vs. being
+  worked, and quantify the gap between processing time and total elapsed time. Pairs
+  Lean / Six Sigma / Theory-of-Constraints with deterministic analysis to produce
+  a process map, ranked bottleneck list, and cycle-time analysis (P50, P90, value-add
+  ratio, Little's Law throughput).
 version: 1.0.0
 source: claude-skills/business-operations/process-mapper (MIT)
 author: claude-code-skills (distilled by Agent-Memory-Ops-Kit)
-tags: [productivity, bizops, process, bpmn, bottleneck, cycle-time, lean, six-sigma, value-stream]
+tags:
+- agent-operations
+- productivity
+- bizops
+- process
+- bpmn
+- bottleneck
+- cycle-time
+- lean
+- six-sigma
+- value-stream
+- okf
 type: Playbook
+title: Process Mapper — BPMN Documentation and Bottleneck Analysis
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: amok-native
+source_status: adapted
 ---
 
 # Process Mapper — BPMN Documentation and Bottleneck Analysis

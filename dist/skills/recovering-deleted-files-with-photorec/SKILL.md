@@ -1,11 +1,27 @@
 ---
 name: Recovering Deleted Files with PhotoRec
 description: Recover deleted files from disk images and storage media using PhotoRec's
-tags: [software-development, software-development, agent-skill, okf, forensics, file-recovery, photorec, file-carving, data-recovery, evidence-recovery, security]
+tags:
+- software-engineering
+- skill
+- okf
+- forensics
+- file-recovery
+- photorec
+- file-carving
+- data-recovery
+- evidence-recovery
+- security
 license: Apache-2.0
 type: Playbook
+title: Recovering Deleted Files with PhotoRec
+domain: forensics
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Recovering Deleted Files with PhotoRec
 

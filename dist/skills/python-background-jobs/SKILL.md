@@ -1,7 +1,19 @@
 ---
 name: python-background-jobs
-description: Implement background job processing and task queues in Python. Use when building async task processing, job queues, long-running operations, event-driven architectures, or decoupling work from request/response cycles. Covers Celery, RQ, Dramatiq, idempotency, DLQ, and job state management.
+description: Implement background job processing and task queues in Python. Use when
+  building async task processing, job queues, long-running operations, event-driven
+  architectures, or decoupling work from request/response cycles. Covers Celery, RQ,
+  Dramatiq, idempotency, DLQ, and job state management.
 type: Playbook
+title: Python Background Jobs & Task Queues
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Python Background Jobs & Task Queues

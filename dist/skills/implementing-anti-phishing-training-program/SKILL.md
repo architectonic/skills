@@ -1,12 +1,27 @@
 ---
 name: Implementing Anti-Phishing Training Program
 description: Security awareness training is the human layer of phishing defense. An
-tags: [software-development, software-development, agent-skill, okf, phishing, email-security, social-engineering, dmarc, awareness, training, security-culture, security]
+tags:
+- software-development
+- software-development
+- agent-skill
+- okf
+- phishing
+- email-security
+- social-engineering
+- dmarc
+- awareness
+- training
+- security-culture
+- security
 license: Apache-2.0
 type: Playbook
 ---
 
 # Implementing Anti-Phishing Training Program
+
+
+**Authorized-use only:** Use this skill only for owned systems, sanctioned lab environments, or engagements with explicit written permission. Document scope, preserve evidence, and follow applicable law, policy, and incident-response procedures.
 
 ## Overview
 Security awareness training is the human layer of phishing defense. An effective anti-phishing training program combines regular simulations, interactive learning modules, metric tracking, and positive reinforcement to build a security-conscious culture. This skill covers designing, deploying, and measuring a comprehensive phishing awareness program using platforms like KnowBe4, Proofpoint Security Awareness, and open-source alternatives.

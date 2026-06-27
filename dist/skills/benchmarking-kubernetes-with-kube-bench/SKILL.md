@@ -1,9 +1,28 @@
 ---
 name: Benchmarking Kubernetes with kube-bench
 description: Run CIS Kubernetes Benchmark checks and remediate findings with kube-bench.
-tags: [devops, agent-skill, okf, kubernetes, kube-bench, cis-benchmark, container-security, hardening, compliance, cluster-security, security]
+tags:
+- software-engineering
+- devops
+- skill
+- okf
+- kubernetes
+- kube-bench
+- cis-benchmark
+- container-security
+- hardening
+- compliance
+- cluster-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Benchmarking Kubernetes with kube-bench
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Benchmarking Kubernetes with kube-bench

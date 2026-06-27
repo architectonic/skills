@@ -1,8 +1,23 @@
 ---
 name: openclaw-skills-framework
-description: OpenClaw skill system architecture — SKILL.md format, loading order, workshop, and gating.
-tags: [research, openclaw, skill-architecture, skill-format, skill-workshop, skill-loading]
+description: OpenClaw skill system architecture — SKILL.md format, loading order,
+  workshop, and gating.
+tags:
+- software-engineering
+- research
+- openclaw
+- skill-architecture
+- skill-format
+- skill-workshop
+- skill-loading
+- okf
 type: Playbook
+title: OpenClaw Skills Framework
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # OpenClaw Skills Framework

@@ -1,8 +1,23 @@
 ---
 name: writing-shape
-description: Take a markdown file of raw material and shape it into an article through a conversational session — drafting candidate openings, growing the piece paragraph by paragraph, arguing about format (lists, tables, callouts, quotes) at each step. Use when the user has a pile of notes, fragments, or a rough draft and wants help turning it into something publishable.
-tags: [productivity, agent-skill, okf, curation]
+description: Take a markdown file of raw material and shape it into an article through
+  a conversational session — drafting candidate openings, growing the piece paragraph
+  by paragraph, arguing about format (lists, tables, callouts, quotes) at each step.
+  Use when the user has a pile of notes, fragments, or a rough draft and wants help
+  turning it into something publishable.
+tags:
+- writing
+- productivity
+- skill
+- okf
+- curation
 type: Playbook
+title: writing-shape
+domain: writing
+risk_level: medium
+requires_review: false
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # writing-shape

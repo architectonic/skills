@@ -1,9 +1,26 @@
 ---
 name: Performing Android App Static Analysis with MobSF
 description: Performs automated static analysis of Android applications using Mobile
-tags: [software-development, software-development, agent-skill, okf, mobile-security, android, mobsf, static-analysis, owasp-mobile, penetration-testing, security]
+tags:
+- software-engineering
+- skill
+- okf
+- mobile-security
+- android
+- mobsf
+- static-analysis
+- owasp-mobile
+- penetration-testing
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Android App Static Analysis with MobSF
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Performing Android App Static Analysis with MobSF

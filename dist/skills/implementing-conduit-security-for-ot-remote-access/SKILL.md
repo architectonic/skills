@@ -1,11 +1,30 @@
 ---
 name: Implementing Conduit Security for OT Remote Access
 description: Implement secure conduit architecture for OT remote access following
-tags: [software-development, software-development, agent-skill, okf, ot-security, ics, remote-access, iec62443, jump-server, zero-trust, conduit, mfa, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- ot-security
+- ics
+- remote-access
+- iec62443
+- jump-server
+- zero-trust
+- conduit
+- mfa
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Conduit Security for OT Remote Access
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Conduit Security for OT Remote Access
 

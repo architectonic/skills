@@ -1,11 +1,27 @@
 ---
 name: Performing OSINT with SpiderFoot
 description: Automate OSINT collection using SpiderFoot REST API and CLI for target
-tags: [software-development, software-development, agent-skill, okf, osint, spiderfoot, reconnaissance, threat-intelligence, attack-surface, target-profiling, security]
+tags:
+- software-engineering
+- skill
+- okf
+- osint
+- spiderfoot
+- reconnaissance
+- threat-intelligence
+- attack-surface
+- target-profiling
+- security
 license: Apache-2.0
 type: API Endpoint
+title: Performing OSINT with SpiderFoot
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing OSINT with SpiderFoot
 

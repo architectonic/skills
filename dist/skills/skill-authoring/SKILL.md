@@ -2,6 +2,15 @@
 name: hermes-agent-skill-authoring
 description: Use when <trigger>. <one-line behavior>.
 type: Playbook
+title: hermes-agent-skill-authoring
+domain: agent-operations
+tags:
+- agent-operations
+- okf
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # hermes-agent-skill-authoring

@@ -1,9 +1,26 @@
 ---
 name: Performing API Fuzzing with RESTler
 description: Uses Microsoft RESTler to perform stateful REST API fuzzing by automatically
-tags: [software-development, software-development, agent-skill, okf, api-security, fuzzing, restler, automated-testing, openapi, stateful-testing, security]
+tags:
+- software-engineering
+- skill
+- okf
+- api-security
+- fuzzing
+- restler
+- automated-testing
+- openapi
+- stateful-testing
+- security
 license: Apache-2.0
 type: API Endpoint
+title: Performing API Fuzzing with RESTler
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Performing API Fuzzing with RESTler

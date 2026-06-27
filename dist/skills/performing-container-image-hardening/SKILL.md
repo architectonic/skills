@@ -1,11 +1,27 @@
 ---
 name: Performing Container Image Hardening
 description: This skill covers hardening container images by minimizing attack surface,
-tags: [software-development, software-development, agent-skill, okf, devsecops, cicd, container-hardening, docker, cis-benchmark, secure-sdlc, security]
+tags:
+- software-engineering
+- skill
+- okf
+- devsecops
+- cicd
+- container-hardening
+- docker
+- cis-benchmark
+- secure-sdlc
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Container Image Hardening
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Container Image Hardening
 

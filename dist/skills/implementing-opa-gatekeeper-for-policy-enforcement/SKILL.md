@@ -1,11 +1,28 @@
 ---
 name: Implementing OPA Gatekeeper for Policy Enforcement
 description: Enforce Kubernetes admission policies using OPA Gatekeeper with ConstraintTemplates,
-tags: [devops, agent-skill, okf, opa, gatekeeper, kubernetes, admission-control, policy-as-code, rego, security]
+tags:
+- software-engineering
+- devops
+- skill
+- okf
+- opa
+- gatekeeper
+- kubernetes
+- admission-control
+- policy-as-code
+- rego
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing OPA Gatekeeper for Policy Enforcement
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing OPA Gatekeeper for Policy Enforcement
 

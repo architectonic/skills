@@ -1,13 +1,26 @@
 ---
 name: Analyzing Ransomware Network Indicators
 description: Identify ransomware network indicators including C2 beaconing patterns,
-tags: [research, agent-skill, okf, ransomware, c2-beaconing, zeek, netflow, tor, exfiltration, network-forensics, security]
+tags:
+- research
+- agent-skill
+- okf
+- ransomware
+- c2-beaconing
+- zeek
+- netflow
+- tor
+- exfiltration
+- network-forensics
+- security
 license: Apache-2.0
 type: Playbook
 ---
 
-
 # Analyzing Ransomware Network Indicators
+
+
+**Authorized-use only:** Use this skill only for owned systems, sanctioned lab environments, or engagements with explicit written permission. Document scope, preserve evidence, and follow applicable law, policy, and incident-response procedures.
 
 ## Overview
 

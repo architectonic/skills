@@ -1,11 +1,27 @@
 ---
 name: Testing CORS Misconfiguration
 description: Identifying and exploiting Cross-Origin Resource Sharing misconfigurations
-tags: [software-development, software-development, agent-skill, okf, penetration-testing, cors, web-security, owasp, same-origin-policy, burpsuite, security]
+tags:
+- software-engineering
+- skill
+- okf
+- penetration-testing
+- cors
+- web-security
+- owasp
+- same-origin-policy
+- burpsuite
+- security
 license: Apache-2.0
 type: Playbook
+title: Testing CORS Misconfiguration
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Testing CORS Misconfiguration
 

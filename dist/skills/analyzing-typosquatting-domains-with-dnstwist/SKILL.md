@@ -1,12 +1,27 @@
 ---
 name: Analyzing Typosquatting Domains with DNSTwist
 description: Detect typosquatting, homograph phishing, and brand impersonation domains
-tags: [research, agent-skill, okf, dnstwist, typosquatting, phishing, domain-monitoring, brand-protection, homograph, dns, threat-intelligence, security]
+tags:
+- research
+- agent-skill
+- okf
+- dnstwist
+- typosquatting
+- phishing
+- domain-monitoring
+- brand-protection
+- homograph
+- dns
+- threat-intelligence
+- security
 license: Apache-2.0
 type: Playbook
 ---
 
 # Analyzing Typosquatting Domains with DNSTwist
+
+
+**Authorized-use only:** Use this skill only for owned systems, sanctioned lab environments, or engagements with explicit written permission. Document scope, preserve evidence, and follow applicable law, policy, and incident-response procedures.
 
 ## Overview
 

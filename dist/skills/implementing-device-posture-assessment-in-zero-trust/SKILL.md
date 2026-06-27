@@ -1,11 +1,29 @@
 ---
 name: Implementing Device Posture Assessment in Zero Trust
 description: Implementing device posture assessment as a zero trust access control
-tags: [software-development, software-development, agent-skill, okf, device-posture, zero-trust, endpoint-compliance, crowdstrike-zta, intune, conditional-access, jamf, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- device-posture
+- zero-trust
+- endpoint-compliance
+- crowdstrike-zta
+- intune
+- conditional-access
+- jamf
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Device Posture Assessment in Zero Trust
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Device Posture Assessment in Zero Trust
 

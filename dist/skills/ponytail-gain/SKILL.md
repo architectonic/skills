@@ -1,11 +1,26 @@
 ---
 name: Ponytail Gain — Impact Scoreboard
-description: "Show ponytail measured impact as a scoreboard: less code, less cost, more speed, from the benchmark medians. One-shot display."
-tags: [agent-skill, okf, software-development, metrics, benchmarking, yagni]
+description: 'Show ponytail measured impact as a scoreboard: less code, less cost,
+  more speed, from the benchmark medians. One-shot display.'
+tags:
+- research
+- skill
+- okf
+- software-engineering
+- metrics
+- benchmarking
+- yagni
 source: https://github.com/DietrichGebert/ponytail
 license: MIT
 risk: low
 type: Metric
+title: Ponytail Gain — Impact Scoreboard
+domain: research
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: MIT
+source_status: adapted
 ---
 
 # Ponytail Gain — Impact Scoreboard

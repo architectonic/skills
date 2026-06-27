@@ -1,0 +1,126 @@
+{
+  "selected_count": 30,
+  "changed_count": 30,
+  "results": [
+    {
+      "path": "achieving-cmmc-level-2-compliance/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "analyzing-command-and-control-communication/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "analyzing-heap-spray-exploitation/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "analyzing-ios-app-security-with-objection/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "analyzing-linux-kernel-rootkits/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "analyzing-malware-persistence-with-autoruns/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "analyzing-ransomware-network-indicators/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "analyzing-typosquatting-domains-with-dnstwist/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "auditing-foundry-smart-contract-security/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "deploying-cloud-deception-with-decoy-resources/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "designing-adversary-engagement-with-mitre-engage/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "detecting-dcsync-attack-in-active-directory/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "detecting-t1055-process-injection-with-sysmon/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "executing-active-directory-attack-simulation/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "executing-nist-rmf-authorization-to-operate/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "grill-me/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "grill-with-docs/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "implementing-anti-phishing-training-program/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "implementing-google-workspace-phishing-protection/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "implementing-hipaa-security-rule-safeguards/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "implementing-nerc-cip-compliance-controls/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "implementing-ransomware-kill-switch-detection/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "incident-response/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "macos-computer-use/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "managing-third-party-vendor-risk/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "performing-active-directory-vulnerability-assessment/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "performing-lateral-movement-detection/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "performing-static-malware-analysis-with-pe-studio/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "prompt-injection-detection/SKILL.md",
+      "changed": true
+    },
+    {
+      "path": "testing-ransomware-recovery-procedures/SKILL.md",
+      "changed": true
+    }
+  ]
+}

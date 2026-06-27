@@ -1,11 +1,31 @@
 ---
 name: Implementing Runtime Security with Tetragon
 description: Implement eBPF-based runtime security observability and enforcement in
-tags: [software-development, software-development, agent-skill, okf, tetragon, ebpf, runtime-security, kubernetes, cilium, container-security, observability, kernel-security, cncf, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- tetragon
+- ebpf
+- runtime-security
+- kubernetes
+- cilium
+- container-security
+- observability
+- kernel-security
+- cncf
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Runtime Security with Tetragon
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Runtime Security with Tetragon
 

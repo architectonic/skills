@@ -1,11 +1,29 @@
 ---
 name: Performing Security Headers Audit
 description: Auditing HTTP security headers including CSP, HSTS, X-Frame-Options,
-tags: [software-development, software-development, agent-skill, okf, penetration-testing, security-headers, csp, hsts, owasp, web-security, hardening, security]
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- penetration-testing
+- security-headers
+- csp
+- hsts
+- owasp
+- web-security
+- hardening
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Security Headers Audit
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Security Headers Audit
 

@@ -1,9 +1,25 @@
 ---
 name: Conducting API Security Testing
 description: Conducts security testing of REST, GraphQL, and gRPC APIs to identify
-tags: [software-development, software-development, agent-skill, okf, api-security, owasp-api-top10, rest, graphql, authorization-testing, security]
+tags:
+- software-engineering
+- skill
+- okf
+- api-security
+- owasp-api-top10
+- rest
+- graphql
+- authorization-testing
+- security
 license: Apache-2.0
 type: API Endpoint
+title: Conducting API Security Testing
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Conducting API Security Testing

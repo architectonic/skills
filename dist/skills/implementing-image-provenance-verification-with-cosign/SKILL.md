@@ -1,11 +1,29 @@
 ---
 name: Implementing Image Provenance Verification with Cosign
 description: Sign and verify container image provenance using Sigstore Cosign with
-tags: [software-development, software-development, agent-skill, okf, cosign, sigstore, image-signing, supply-chain, provenance, keyless, slsa, security]
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- cosign
+- sigstore
+- image-signing
+- supply-chain
+- provenance
+- keyless
+- slsa
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Image Provenance Verification with Cosign
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Image Provenance Verification with Cosign
 

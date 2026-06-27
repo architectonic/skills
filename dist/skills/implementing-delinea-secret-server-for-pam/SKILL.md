@@ -1,11 +1,28 @@
 ---
 name: Implementing Delinea Secret Server for PAM
 description: Implements Delinea Secret Server for privileged access management (PAM)
-tags: [software-development, software-development, agent-skill, okf, pam, delinea, secret-server, privileged-access, password-vault, credential-management, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- pam
+- delinea
+- secret-server
+- privileged-access
+- password-vault
+- credential-management
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Delinea Secret Server for PAM
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Delinea Secret Server for PAM
 

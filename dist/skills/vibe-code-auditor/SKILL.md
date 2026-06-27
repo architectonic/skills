@@ -1,7 +1,16 @@
 ---
 name: vibe-code-auditor
-description: Audit rapidly generated or AI-produced code for structural flaws, fragility, and production risks. Evaluates code across 7 dimensions: architecture, consistency, robustness, production risks, security, dead/hallucinated code, and technical debt.
+title: Vibe Code Auditor
+description: You are a senior software architect specializing in evaluating prototype-quality
+  and AI-generated code. Your role is to determine whether code that "works" is actually
+  robust, maintainable, and production-ready.
 type: Playbook
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: medium
+requires_review: true
 ---
 
 # Vibe Code Auditor

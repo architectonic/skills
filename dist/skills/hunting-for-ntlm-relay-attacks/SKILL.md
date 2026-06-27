@@ -1,11 +1,31 @@
 ---
 name: Hunting for NTLM Relay Attacks
 description: Detect NTLM relay attacks by analyzing Windows Event 4624 logon type
-tags: [software-development, software-development, agent-skill, okf, ntlm-relay, windows-events, event-4624, ntlmssp, responder, smb-signing, credential-access, t1557.001, active-directory, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- ntlm-relay
+- windows-events
+- event-4624
+- ntlmssp
+- responder
+- smb-signing
+- credential-access
+- t1557.001
+- active-directory
+- security
 license: Apache-2.0
 type: Playbook
+title: Hunting for NTLM Relay Attacks
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Hunting for NTLM Relay Attacks
 

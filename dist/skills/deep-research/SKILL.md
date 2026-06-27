@@ -1,10 +1,18 @@
 ---
-name: Deep Research
-description: Conduct thorough web research with citations before answering or generating content. Use when the user asks what something is, asks for an explanation or comparison, needs current information, or wants research-backed content. Four-phase methodology: broad exploration, deep dive, diversity & validation, synthesis check.
-source: deer-flow/skills/public/deep-research/SKILL.md (MIT license, https://github.com/deer-flow/deer-flow). Supersedes previous shorter version.
-category: research
-tags: [research, web-search, citations, methodology, synthesis]
+name: deep-research
+title: Deep Research
+description: Systematic methodology for conducting thorough web research. **Load this
+  skill BEFORE starting any content generation task** to ensure you gather sufficient
+  information from multiple angles, depths, and sources.
 type: Playbook
+domain: research
+tags:
+- research
+- okf
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Deep Research

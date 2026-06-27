@@ -1,9 +1,25 @@
 ---
 name: Performing API Security Testing with Postman
 description: Uses Postman to perform structured API security testing by building
-tags: [software-development, software-development, agent-skill, okf, api-security, postman, owasp, automated-testing, security-validation, security]
+tags:
+- software-engineering
+- skill
+- okf
+- api-security
+- postman
+- owasp
+- automated-testing
+- security-validation
+- security
 license: Apache-2.0
 type: API Endpoint
+title: Performing API Security Testing with Postman
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Performing API Security Testing with Postman

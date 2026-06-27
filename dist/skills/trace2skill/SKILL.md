@@ -1,8 +1,23 @@
 ---
 name: trace2skill
-description: Distill trajectory-local lessons into transferable agent skills via parallel patch consolidation.
-tags: [research, skill-evolution, trajectory-learning, agent-skills, skill-creation, inductive-reasoning]
+description: Distill trajectory-local lessons into transferable agent skills via parallel
+  patch consolidation.
+tags:
+- agent-operations
+- research
+- skill-evolution
+- trajectory-learning
+- agent-skills
+- skill-creation
+- inductive-reasoning
+- okf
 type: Playbook
+title: Trace2Skill
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Trace2Skill

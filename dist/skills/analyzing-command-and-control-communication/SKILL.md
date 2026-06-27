@@ -1,13 +1,24 @@
 ---
 name: Analyzing Command-and-Control Communication
 description: Analyzes malware command-and-control (C2) communication protocols to
-tags: [research, agent-skill, okf, malware, c2, command-and-control, beacon, protocol-analysis, security]
+tags:
+- research
+- agent-skill
+- okf
+- malware
+- c2
+- command-and-control
+- beacon
+- protocol-analysis
+- security
 license: Apache-2.0
 type: Playbook
 ---
 
-
 # Analyzing Command-and-Control Communication
+
+
+**Authorized-use only:** Use this skill only for owned systems, sanctioned lab environments, or engagements with explicit written permission. Document scope, preserve evidence, and follow applicable law, policy, and incident-response procedures.
 
 ## When to Use
 

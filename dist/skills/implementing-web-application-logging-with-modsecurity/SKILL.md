@@ -1,9 +1,27 @@
 ---
 name: Implementing Web Application Logging with ModSecurity
 description: Configure ModSecurity WAF with OWASP Core Rule Set (CRS) for web application
-tags: [software-development, software-development, agent-skill, okf, modsecurity, waf, crs, owasp, web-security, audit-logging, rule-tuning, security]
+tags:
+- software-engineering
+- skill
+- okf
+- modsecurity
+- waf
+- crs
+- owasp
+- web-security
+- audit-logging
+- rule-tuning
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Web Application Logging with ModSecurity
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing Web Application Logging with ModSecurity

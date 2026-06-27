@@ -1,9 +1,27 @@
 ---
 name: Implementing Patch Management Workflow
 description: Patch management is the systematic process of identifying, testing, deploying,
-tags: [software-development, software-development, agent-skill, okf, vulnerability-management, patch-management, wsus, sccm, ansible, risk, security]
+tags:
+- security-offensive
+- software-engineering
+- skill
+- okf
+- vulnerability-management
+- patch-management
+- wsus
+- sccm
+- ansible
+- risk
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Patch Management Workflow
+domain: security-offensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing Patch Management Workflow

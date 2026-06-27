@@ -1,8 +1,19 @@
 ---
 name: qa-only
 description: Report-only QA testing. (gstack)
-tags: [agent-operations, agent-operations, agent-skill, okf, curation]
+tags:
+- software-engineering
+- agent-operations
+- skill
+- okf
+- curation
 type: Playbook
+title: qa-only
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: vercel-skills
+source_status: adapted
 ---
 
 # qa-only

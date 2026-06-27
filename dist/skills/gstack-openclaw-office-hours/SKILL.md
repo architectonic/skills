@@ -1,10 +1,22 @@
 ---
 name: gstack-openclaw-office-hours
-description: Use when asked to brainstorm, evaluate whether an idea is worth building, run office hours, or think through a new product idea or design direction before any code is written.
-tags: [creative, agent-skill, okf, curation]
+description: Use when asked to brainstorm, evaluate whether an idea is worth building,
+  run office hours, or think through a new product idea or design direction before
+  any code is written.
+tags:
+- business
+- creative
+- skill
+- okf
+- curation
 type: Playbook
+title: YC Office Hours
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
-
 
 # YC Office Hours
 

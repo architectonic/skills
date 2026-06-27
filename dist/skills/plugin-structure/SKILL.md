@@ -1,7 +1,21 @@
 ---
 name: plugin-structure
-description: This skill should be used when the user asks to "create a plugin", "scaffold a plugin", "understand plugin structure", "organize plugin components", "set up plugin.json", "use ${CLAUDE_PLUGIN_ROOT}", "add commands/agents/skills/hooks", "configure auto-discovery", or needs guidance on plugin directory layout, manifest configuration, component organization, file naming conventions, or Claude Code plugin architecture best practices.
+description: This skill should be used when the user asks to "create a plugin", "scaffold
+  a plugin", "understand plugin structure", "organize plugin components", "set up
+  plugin.json", "use ${CLAUDE_PLUGIN_ROOT}", "add commands/agents/skills/hooks", "configure
+  auto-discovery", or needs guidance on plugin directory layout, manifest configuration,
+  component organization, file naming conventions, or Claude Code plugin architecture
+  best practices.
 type: Playbook
+title: Plugin Structure for Claude Code
+domain: runtime-tools
+tags:
+- runtime-tools
+- okf
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Plugin Structure for Claude Code

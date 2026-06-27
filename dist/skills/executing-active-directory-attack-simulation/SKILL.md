@@ -1,12 +1,25 @@
 ---
 name: Executing Active Directory Attack Simulation
 description: Executes authorized attack simulations against Active Directory environments
-tags: [software-development, software-development, agent-skill, okf, active-directory, bloodhound, mimikatz, kerberoasting, domain-compromise, security]
+tags:
+- software-development
+- software-development
+- agent-skill
+- okf
+- active-directory
+- bloodhound
+- mimikatz
+- kerberoasting
+- domain-compromise
+- security
 license: Apache-2.0
 type: Playbook
 ---
 
 # Executing Active Directory Attack Simulation
+
+
+**Authorized-use only:** Use this skill only for owned systems, sanctioned lab environments, or engagements with explicit written permission. Document scope, preserve evidence, and follow applicable law, policy, and incident-response procedures.
 
 ## When to Use
 

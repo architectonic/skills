@@ -1,11 +1,27 @@
 ---
 name: Implementing HashiCorp Vault Dynamic Secrets
 description: Implements HashiCorp Vault dynamic secrets engines for database credentials,
-tags: [software-development, software-development, agent-skill, okf, hashicorp-vault, dynamic-secrets, secrets-management, database-credentials, aws-secrets, pki, security]
+tags:
+- software-engineering
+- skill
+- okf
+- hashicorp-vault
+- dynamic-secrets
+- secrets-management
+- database-credentials
+- aws-secrets
+- pki
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing HashiCorp Vault Dynamic Secrets
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing HashiCorp Vault Dynamic Secrets
 

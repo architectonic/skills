@@ -1,11 +1,28 @@
 ---
 name: Trace2Skill — Skill Evolution from Execution Trajectories
-description: Distill trajectory-local lessons into transferable agent skills via parallel patch consolidation. Use when you have multiple agent execution traces (successes and failures) and want to extract portable skill improvements. Based on arxiv:2603.25158, arxiv:2605.21810.
-tags: [skill-management, skill-evolution, trajectory-learning, skill-creation, research, agent-improvement]
+description: Distill trajectory-local lessons into transferable agent skills via parallel
+  patch consolidation. Use when you have multiple agent execution traces (successes
+  and failures) and want to extract portable skill improvements. Based on arxiv:2603.25158,
+  arxiv:2605.21810.
+tags:
+- agent-operations
+- skill-management
+- skill-evolution
+- trajectory-learning
+- skill-creation
+- research
+- agent-improvement
+- okf
 source_repo: trace2skill
 source_path: SKILL.md
 distilled_at: 2026-06-22
 type: Playbook
+title: Trace2Skill — Skill Evolution from Execution Trajectories
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Trace2Skill — Skill Evolution from Execution Trajectories

@@ -1,11 +1,27 @@
 ---
 name: Implementing AWS Security Hub
 description: This skill covers deploying AWS Security Hub as a centralized cloud
-tags: [software-development, software-development, agent-skill, okf, aws-security-hub, cspm, compliance-automation, security-standards, finding-aggregation, security]
+tags:
+- cloud-security
+- software-engineering
+- skill
+- okf
+- aws-security-hub
+- cspm
+- compliance-automation
+- security-standards
+- finding-aggregation
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing AWS Security Hub
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing AWS Security Hub
 

@@ -1,8 +1,23 @@
 ---
 name: Loop Engineering
-description: Design bounded, observable, and auditable agent loops. Use when creating or evaluating any repeatable agent cycle (reconciliation, review, discovery, ingestion, etc).
-tags: [agent-operations, loops, safety, rollout, taxonomy]
+description: Design bounded, observable, and auditable agent loops. Use when creating
+  or evaluating any repeatable agent cycle (reconciliation, review, discovery, ingestion,
+  etc).
+tags:
+- business
+- agent-operations
+- loops
+- safety
+- rollout
+- taxonomy
+- okf
 type: Playbook
+title: Loop Engineering
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Loop Engineering

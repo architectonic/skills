@@ -1,8 +1,18 @@
 ---
 name: guard
-description: Full safety mode: destructive command warnings + directory-scoped edits. (gstack)
-tags: [agent-operations, agent-operations, agent-skill, okf, curation]
+title: guard
+description: Combines /careful (warns before rm -rf, DROP TABLE, force-push, etc.)
+  with /freeze (blocks edits outside a specified directory). Use for maximum safety
+  when touching prod or debugging live systems. Use when asked to "guard mode",
 type: Playbook
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: low
+requires_review: false
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # guard

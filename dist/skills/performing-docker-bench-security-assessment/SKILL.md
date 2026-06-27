@@ -1,9 +1,24 @@
 ---
 name: Performing Docker Bench Security Assessment
 description: Docker Bench for Security is an open-source script that checks dozens
-tags: [software-development, software-development, agent-skill, okf, containers, docker, security, cis-benchmark, assessment]
+tags:
+- software-engineering
+- skill
+- okf
+- containers
+- docker
+- security
+- cis-benchmark
+- assessment
 license: Apache-2.0
 type: Playbook
+title: Performing Docker Bench Security Assessment
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Performing Docker Bench Security Assessment

@@ -1,8 +1,17 @@
 ---
 name: design-shotgun
-description: Design shotgun: generate multiple AI design variants, open a comparison board, collect structured feedback, and iterate. (gstack)
-tags: [creative, agent-skill, okf, curation]
+title: design-shotgun
+description: '<!-- AUTO-GENERATED from SKILL.md.tmpl — do not edit directly --> <!--
+  Regenerate: bun run gen:skill-docs -->'
 type: Playbook
+domain: design
+tags:
+- design
+- okf
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_status: adapted
 ---
 
 # design-shotgun

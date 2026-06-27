@@ -1,9 +1,27 @@
 ---
 name: Performing Privileged Account Discovery
 description: Discover and inventory all privileged accounts across enterprise infrastructure
-tags: [software-development, software-development, agent-skill, okf, iam, identity, access-control, privileged-access, discovery, inventory, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- iam
+- identity
+- access-control
+- privileged-access
+- discovery
+- inventory
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Privileged Account Discovery
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Performing Privileged Account Discovery

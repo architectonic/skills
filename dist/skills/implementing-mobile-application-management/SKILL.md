@@ -1,9 +1,26 @@
 ---
 name: Implementing Mobile Application Management
 description: Implements Mobile Application Management (MAM) policies to protect enterprise
-tags: [software-development, software-development, agent-skill, okf, mobile-security, android, ios, mam, enterprise-security, owasp-mobile, security]
+tags:
+- software-engineering
+- skill
+- okf
+- mobile-security
+- android
+- ios
+- mam
+- enterprise-security
+- owasp-mobile
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Mobile Application Management
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing Mobile Application Management

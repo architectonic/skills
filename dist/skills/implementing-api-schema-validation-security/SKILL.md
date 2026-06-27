@@ -1,11 +1,29 @@
 ---
 name: Implementing API Schema Validation Security
 description: Implement API schema validation using OpenAPI specifications and JSON
-tags: [software-development, software-development, agent-skill, okf, api-security, schema-validation, openapi, json-schema, input-validation, data-leakage-prevention, mass-assignment, api-gateway, security]
+tags:
+- software-engineering
+- skill
+- okf
+- api-security
+- schema-validation
+- openapi
+- json-schema
+- input-validation
+- data-leakage-prevention
+- mass-assignment
+- api-gateway
+- security
 license: Apache-2.0
 type: API Endpoint
+title: Implementing API Schema Validation Security
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing API Schema Validation Security
 

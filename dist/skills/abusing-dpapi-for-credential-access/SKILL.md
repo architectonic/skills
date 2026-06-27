@@ -1,9 +1,30 @@
 ---
 name: Abusing DPAPI for Credential Access
-description: Extract DPAPI-protected secrets such as credentials and browser data offline and online.
-tags: [software-development, software-development, agent-skill, okf, red-team, credential-access, dpapi, sharpdpapi, post-exploitation, active-directory, windows, mimikatz, security]
+description: Extract DPAPI-protected secrets such as credentials and browser data
+  offline and online.
+tags:
+- security-offensive
+- software-engineering
+- skill
+- okf
+- red-team
+- credential-access
+- dpapi
+- sharpdpapi
+- post-exploitation
+- active-directory
+- windows
+- mimikatz
+- security
 license: Apache-2.0
 type: Playbook
+title: Abusing DPAPI for Credential Access
+domain: security-offensive
+risk_level: high
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Abusing DPAPI for Credential Access

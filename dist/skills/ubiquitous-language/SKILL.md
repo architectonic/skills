@@ -1,10 +1,23 @@
 ---
 name: ubiquitous-language
-description: Extract a DDD-style ubiquitous language glossary from the current conversation, flagging ambiguities and proposing canonical terms. Saves to UBIQUITOUS_LANGUAGE.md. Use when user wants to define domain terms, build a glossary, harden terminology, create a ubiquitous language, or mentions "domain model" or "DDD".
-tags: [software-development, software-development, agent-skill, okf, curation]
+description: Extract a DDD-style ubiquitous language glossary from the current conversation,
+  flagging ambiguities and proposing canonical terms. Saves to UBIQUITOUS_LANGUAGE.md.
+  Use when user wants to define domain terms, build a glossary, harden terminology,
+  create a ubiquitous language, or mentions "domain model" or "DDD".
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- curation
 type: Playbook
+title: Ubiquitous Language
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
-
 
 # Ubiquitous Language
 

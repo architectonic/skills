@@ -1,11 +1,31 @@
 ---
 name: Detecting Azure Storage Account Misconfigurations
 description: Audit Azure Blob and ADLS storage accounts for public access exposure,
-tags: [software-development, software-development, agent-skill, okf, azure, storage-accounts, blob-storage, adls, sas-tokens, encryption, public-access, cloud-misconfiguration, azure-mgmt-storage, security]
+tags:
+- cloud-security
+- software-engineering
+- skill
+- okf
+- azure
+- storage-accounts
+- blob-storage
+- adls
+- sas-tokens
+- encryption
+- public-access
+- cloud-misconfiguration
+- azure-mgmt-storage
+- security
 license: Apache-2.0
 type: Playbook
+title: Detecting Azure Storage Account Misconfigurations
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Detecting Azure Storage Account Misconfigurations
 

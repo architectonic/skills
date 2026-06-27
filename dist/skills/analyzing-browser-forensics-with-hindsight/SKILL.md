@@ -1,11 +1,32 @@
 ---
 name: Analyzing Browser Forensics with Hindsight
 description: Analyze Chromium-based browser artifacts using Hindsight to extract browsing
-tags: [research, agent-skill, okf, browser-forensics, hindsight, chrome-forensics, chromium, edge, browsing-history, cookies, downloads, cache, web-artifacts, security]
+tags:
+- runtime-tools
+- research
+- skill
+- okf
+- browser-forensics
+- hindsight
+- chrome-forensics
+- chromium
+- edge
+- browsing-history
+- cookies
+- downloads
+- cache
+- web-artifacts
+- security
 license: Apache-2.0
 type: Playbook
+title: Analyzing Browser Forensics with Hindsight
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Analyzing Browser Forensics with Hindsight
 

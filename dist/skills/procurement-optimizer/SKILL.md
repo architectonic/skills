@@ -1,11 +1,31 @@
 ---
 name: Procurement Optimizer — Spend Categorization and Supplier Rationalization
-description: Run annual SaaS audits, category-level spend reviews, and supplier rationalization. Categorize spend (UNSPSC-aligned with Pareto breakdown), purchasing-cycle analysis (bottleneck categories per Theory of Constraints), and risk-balanced supplier consolidation that refuses single-source recommendations for tier-1 categories without a documented break-glass plan.
+description: Run annual SaaS audits, category-level spend reviews, and supplier rationalization.
+  Categorize spend (UNSPSC-aligned with Pareto breakdown), purchasing-cycle analysis
+  (bottleneck categories per Theory of Constraints), and risk-balanced supplier consolidation
+  that refuses single-source recommendations for tier-1 categories without a documented
+  break-glass plan.
 version: 1.0.0
 source: claude-skills/business-operations/procurement-optimizer (MIT)
 author: claude-code-skills (distilled by Agent-Memory-Ops-Kit)
-tags: [productivity, bizops, procurement, spend-categorization, supplier-consolidation, unspsc, saas-audit, purchasing-cycle]
+tags:
+- business
+- productivity
+- bizops
+- procurement
+- spend-categorization
+- supplier-consolidation
+- unspsc
+- saas-audit
+- purchasing-cycle
+- okf
 type: Playbook
+title: Procurement Optimizer — Spend Categorization and Supplier Rationalization
+domain: business
+risk_level: medium
+requires_review: true
+source_family: amok-native
+source_status: adapted
 ---
 
 # Procurement Optimizer — Spend Categorization and Supplier Rationalization

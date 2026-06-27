@@ -1,11 +1,33 @@
 ---
 name: Observability Designer — Production Observability Strategy
-description: Design production-ready observability strategies combining metrics, logs, and traces. SLI/SLO design, golden-signals monitoring, alert optimization, dashboard generation. Use when adding observability to a new service, refactoring noisy alerting, or designing an SLO program before scaling production load. Complements slo-architect (which handles error-budget math).
+description: Design production-ready observability strategies combining metrics, logs,
+  and traces. SLI/SLO design, golden-signals monitoring, alert optimization, dashboard
+  generation. Use when adding observability to a new service, refactoring noisy alerting,
+  or designing an SLO program before scaling production load. Complements slo-architect
+  (which handles error-budget math).
 version: 1.0.0
 source: claude-skills/engineering/observability-designer (MIT)
 author: Claude Skills Team (distilled by Agent-Memory-Ops-Kit)
-tags: [devops, engineering, observability, monitoring, sli, slo, alerting, dashboard, metrics, traces]
+tags:
+- software-engineering
+- devops
+- engineering
+- observability
+- monitoring
+- sli
+- slo
+- alerting
+- dashboard
+- metrics
+- traces
+- okf
 type: Metric
+title: Observability Designer — Production Observability Strategy
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: amok-native
+source_status: adapted
 ---
 
 # Observability Designer — Production Observability Strategy

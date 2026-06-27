@@ -1,8 +1,24 @@
 ---
 name: skill-authoring-doctrine
-description: Doctrine for writing and editing high-quality agent skills. Use when authoring new skills, reviewing existing skills, or diagnosing skill failure modes. Covers predictability as the root virtue, context load vs cognitive load tradeoffs, information hierarchy, failure modes (premature completion, duplication, sediment, sprawl, no-op), leading words, and pruning discipline.
-tags: [skill-management, skill-management, skill-authoring, doctrine, predictability]
+description: Doctrine for writing and editing high-quality agent skills. Use when
+  authoring new skills, reviewing existing skills, or diagnosing skill failure modes.
+  Covers predictability as the root virtue, context load vs cognitive load tradeoffs,
+  information hierarchy, failure modes (premature completion, duplication, sediment,
+  sprawl, no-op), leading words, and pruning discipline.
+tags:
+- agent-operations
+- skill-management
+- skill-authoring
+- doctrine
+- predictability
+- okf
 type: Reference
+title: skill-authoring-doctrine
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # skill-authoring-doctrine

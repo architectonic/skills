@@ -1,7 +1,17 @@
 ---
 name: acceptance-orchestrator
-description: Orchestrate coding work as a state machine from issue intake through implementation, review, deployment, and acceptance verification. Core rule: optimize for DoD proven, not code changed.
+title: Acceptance Orchestrator
 type: Playbook
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+description: Orchestrate coding work as a state machine that ends only when acceptance
+  criteria are verified with evidence or the task is explicitly escalated.
+tags:
+- business
+- okf
+source_status: adapted
 ---
 
 # Acceptance Orchestrator

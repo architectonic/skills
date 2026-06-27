@@ -1,11 +1,27 @@
 ---
 name: Implementing Secret Scanning with Gitleaks
 description: This skill covers implementing Gitleaks for detecting and preventing
-tags: [software-development, software-development, agent-skill, okf, devsecops, cicd, secret-scanning, gitleaks, pre-commit, secure-sdlc, security]
+tags:
+- software-engineering
+- skill
+- okf
+- devsecops
+- cicd
+- secret-scanning
+- gitleaks
+- pre-commit
+- secure-sdlc
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Secret Scanning with Gitleaks
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Secret Scanning with Gitleaks
 

@@ -1,8 +1,24 @@
 ---
 name: regulated-domain-skill-governance
-description: Govern skills that operate in regulated domains such as finance, healthcare, legal, or any domain with compliance, disclosure, or liability requirements. Use when reviewing or creating skills that touch regulated APIs, produce reports that could be construed as advice, or handle sensitive domain data.
-tags: [skill-management, skill-management, governance, regulated-domain, compliance, disclosure]
+description: Govern skills that operate in regulated domains such as finance, healthcare,
+  legal, or any domain with compliance, disclosure, or liability requirements. Use
+  when reviewing or creating skills that touch regulated APIs, produce reports that
+  could be construed as advice, or handle sensitive domain data.
+tags:
+- agent-operations
+- skill-management
+- governance
+- regulated-domain
+- compliance
+- disclosure
+- okf
 type: Playbook
+title: regulated-domain-skill-governance
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # regulated-domain-skill-governance

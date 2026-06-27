@@ -1,9 +1,27 @@
 ---
 name: Testing Android Intents for Vulnerabilities
 description: Tests Android inter-process communication (IPC) through intents for
-tags: [software-development, software-development, agent-skill, okf, mobile-security, android, intents, ipc-security, owasp-mobile, penetration-testing, security]
+tags:
+- writing
+- software-engineering
+- skill
+- okf
+- mobile-security
+- android
+- intents
+- ipc-security
+- owasp-mobile
+- penetration-testing
+- security
 license: Apache-2.0
 type: Playbook
+title: Testing Android Intents for Vulnerabilities
+domain: writing
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Testing Android Intents for Vulnerabilities

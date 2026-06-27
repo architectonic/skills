@@ -1,11 +1,27 @@
 ---
 name: Executing the NIST RMF to an Authorization to Operate (ATO)
-description: >-
-tags: [software-development, software-development, agent-skill, okf, nist-rmf, nist-800-37, ato, fisma, fedramp, nist-800-53, fips-199, ssp, poam, continuous-monitoring, governance, security]
+description: NIST SP 800-37 Rev 2 defines **seven steps**. Prepare is the foundation;
+  the rest run in order and then loop through Monitor.
+tags:
+- software-development
+- software-development
+- agent-skill
+- okf
+- nist-rmf
+- nist-800-37
+- ato
+- fisma
+- fedramp
+- nist-800-53
+- fips-199
+- ssp
+- poam
+- continuous-monitoring
+- governance
+- security
 license: Apache-2.0
 type: Playbook
 ---
-
 
 # Executing the NIST RMF to an Authorization to Operate (ATO)
 

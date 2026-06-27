@@ -1,11 +1,31 @@
 ---
 name: Performing SOAP Web Service Security Testing
 description: Perform security testing of SOAP web services by analyzing WSDL definitions
-tags: [software-development, software-development, agent-skill, okf, soap, web-services, wsdl, xml-injection, xxe, ws-security, penetration-testing, soapaction-spoofing, xpath-injection, security]
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- soap
+- web-services
+- wsdl
+- xml-injection
+- xxe
+- ws-security
+- penetration-testing
+- soapaction-spoofing
+- xpath-injection
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing SOAP Web Service Security Testing
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing SOAP Web Service Security Testing
 

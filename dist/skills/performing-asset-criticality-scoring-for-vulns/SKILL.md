@@ -1,9 +1,28 @@
 ---
 name: Performing Asset Criticality Scoring for Vulns
 description: Develop and apply a multi-factor asset criticality scoring model to weight
-tags: [software-development, software-development, agent-skill, okf, asset-criticality, vulnerability-prioritization, risk-management, cmdb, business-impact, crown-jewels, asset-classification, security]
+tags:
+- research
+- software-engineering
+- skill
+- okf
+- asset-criticality
+- vulnerability-prioritization
+- risk-management
+- cmdb
+- business-impact
+- crown-jewels
+- asset-classification
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Asset Criticality Scoring for Vulns
+domain: research
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Performing Asset Criticality Scoring for Vulns

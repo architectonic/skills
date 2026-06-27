@@ -1,12 +1,29 @@
 ---
 name: Performing Lateral Movement Detection
 description: Detects lateral movement techniques including Pass-the-Hash, PsExec,
-tags: [software-development, software-development, agent-skill, okf, soc, lateral-movement, mitre-attack, pass-the-hash, psexec, wmi, rdp, smb, detection, security]
+tags:
+- software-development
+- software-development
+- agent-skill
+- okf
+- soc
+- lateral-movement
+- mitre-attack
+- pass-the-hash
+- psexec
+- wmi
+- rdp
+- smb
+- detection
+- security
 license: Apache-2.0
 type: Playbook
 ---
 
 # Performing Lateral Movement Detection
+
+
+**Authorized-use only:** Use this skill only for owned systems, sanctioned lab environments, or engagements with explicit written permission. Document scope, preserve evidence, and follow applicable law, policy, and incident-response procedures.
 
 ## When to Use
 

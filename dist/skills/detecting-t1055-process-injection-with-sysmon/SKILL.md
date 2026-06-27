@@ -1,13 +1,27 @@
 ---
 name: Detecting T1055 Process Injection with Sysmon
 description: Detect process injection techniques (T1055) including classic DLL injection,
-tags: [software-development, software-development, agent-skill, okf, threat-hunting, process-injection, sysmon, mitre-t1055, defense-evasion, dll-injection, process-hollowing, security]
+tags:
+- software-development
+- software-development
+- agent-skill
+- okf
+- threat-hunting
+- process-injection
+- sysmon
+- mitre-t1055
+- defense-evasion
+- dll-injection
+- process-hollowing
+- security
 license: Apache-2.0
 type: Playbook
 ---
 
-
 # Detecting T1055 Process Injection with Sysmon
+
+
+**Authorized-use only:** Use this skill only for owned systems, sanctioned lab environments, or engagements with explicit written permission. Document scope, preserve evidence, and follow applicable law, policy, and incident-response procedures.
 
 ## When to Use
 

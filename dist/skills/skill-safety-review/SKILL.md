@@ -1,8 +1,25 @@
 ---
 name: Skill Safety Review
-description: Evaluate agent skills for safety risks before ingestion or promotion. Use when reviewing candidate skills from external registries, marketplaces, or unknown sources. Covers instruction-hijack detection, supply-chain risk, permission escalation, and skill-family ambiguity.
-tags: [skill-management, skill-management, safety, security, review, ingestion, supply-chain]
+description: Evaluate agent skills for safety risks before ingestion or promotion.
+  Use when reviewing candidate skills from external registries, marketplaces, or unknown
+  sources. Covers instruction-hijack detection, supply-chain risk, permission escalation,
+  and skill-family ambiguity.
+tags:
+- agent-operations
+- skill-management
+- safety
+- security
+- review
+- ingestion
+- supply-chain
+- okf
 type: Playbook
+title: Skill Safety Review
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Skill Safety Review

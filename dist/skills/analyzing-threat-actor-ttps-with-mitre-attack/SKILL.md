@@ -1,9 +1,28 @@
 ---
 name: Analyzing Threat Actor TTPs with MITRE ATT&CK
 description: MITRE ATT&CK is a globally-accessible knowledge base of adversary tactics,
-tags: [research, agent-skill, okf, threat-intelligence, cti, ioc, mitre-attack, stix, ttp-analysis, threat-actors, security]
+tags:
+- security-defensive
+- research
+- skill
+- okf
+- threat-intelligence
+- cti
+- ioc
+- mitre-attack
+- stix
+- ttp-analysis
+- threat-actors
+- security
 license: Apache-2.0
 type: Playbook
+title: Analyzing Threat Actor TTPs with MITRE ATT&CK
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Analyzing Threat Actor TTPs with MITRE ATT&CK

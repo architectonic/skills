@@ -1,7 +1,18 @@
 ---
 name: skill-lifecycle-states
-description: Canonical skill lifecycle states (S0–S7) for tracking skill maturity from raw experience to archived. Use when designing skill registries, ingestion pipelines, or governance workflows that need explicit state transitions.
+description: Canonical skill lifecycle states (S0–S7) for tracking skill maturity
+  from raw experience to archived. Use when designing skill registries, ingestion
+  pipelines, or governance workflows that need explicit state transitions.
 type: Playbook
+title: Skill Lifecycle States
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Skill Lifecycle States

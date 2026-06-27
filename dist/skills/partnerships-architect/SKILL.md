@@ -1,8 +1,15 @@
 ---
 name: partnerships-architect
-description: Evaluate and structure business partnerships: classify partner tier (referral/reseller/OEM/SI-consulting/strategic alliance) from independent-demand evidence, design 90-day joint GTM plan, model revshare against direct-sale margin, and define kill criteria for unwinding under-performing partnerships. For Head of Partnerships, Head of BD, and Founder-CEOs evaluating reseller agreements, OEM deals, or strategic alliances.
-tags: [productivity, commercial, partnerships, joint-gtm, revshare, oem, reseller, strategic-alliance]
+title: Partnerships Architect
+description: 'Evaluate and structure business partnerships. Answers four questions
+  when a prospective partner shows up:'
 type: Playbook
+domain: business
+tags:
+- business
+- okf
+risk_level: low
+requires_review: false
 ---
 
 # Partnerships Architect

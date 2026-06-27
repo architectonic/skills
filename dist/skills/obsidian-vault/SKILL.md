@@ -1,10 +1,21 @@
 ---
 name: obsidian-vault
-description: Search, create, and manage notes in the Obsidian vault with wikilinks and index notes. Use when user wants to find, create, or organize notes in Obsidian.
-tags: [skill-management, skill-management, agent-skill, okf, curation]
+description: Search, create, and manage notes in the Obsidian vault with wikilinks
+  and index notes. Use when user wants to find, create, or organize notes in Obsidian.
+tags:
+- software-engineering
+- skill-management
+- skill
+- okf
+- curation
 type: Playbook
+title: Obsidian Vault
+domain: software-engineering
+risk_level: medium
+requires_review: false
+source_family: agent-skills-standard
+source_status: adapted
 ---
-
 
 # Obsidian Vault
 

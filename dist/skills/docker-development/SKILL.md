@@ -1,8 +1,16 @@
 ---
 name: docker-development
-description: Docker and container development — Dockerfile optimization, docker-compose orchestration, multi-stage builds, and container security hardening. Use when: user wants to optimize a Dockerfile, create or improve docker-compose configurations, implement multi-stage builds, audit container security, reduce image size, or follow container best practices. Triggers on: Dockerfile, docker-compose, container, image size, build cache, Docker security, multi-stage build.
-tags: [devops, docker, containers, security, optimization]
+title: Docker Development
+description: Smaller images. Faster builds. Secure containers. No guesswork.
 type: Playbook
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Docker Development

@@ -1,8 +1,20 @@
 ---
 name: to-prd
-description: Turn the current conversation into a PRD and publish it to the project issue tracker — no interview, just synthesis of what you've already discussed.
-tags: [software-development, software-development, agent-skill, okf, curation]
+description: Turn the current conversation into a PRD and publish it to the project
+  issue tracker — no interview, just synthesis of what you've already discussed.
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- curation
 type: Playbook
+title: to-prd
+domain: business
+risk_level: medium
+requires_review: true
+source_family: matt-pocock-skills
+source_status: adapted
 ---
 
 # to-prd

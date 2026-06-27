@@ -1,11 +1,29 @@
 ---
 name: Implementing API Abuse Detection with Rate Limiting
 description: Implement API abuse detection using token bucket, sliding window, and
-tags: [software-development, software-development, agent-skill, okf, api-security, rate-limiting, token-bucket, sliding-window, ddos-protection, brute-force-prevention, api-abuse, api-gateway, security]
+tags:
+- software-engineering
+- skill
+- okf
+- api-security
+- rate-limiting
+- token-bucket
+- sliding-window
+- ddos-protection
+- brute-force-prevention
+- api-abuse
+- api-gateway
+- security
 license: Apache-2.0
 type: API Endpoint
+title: Implementing API Abuse Detection with Rate Limiting
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing API Abuse Detection with Rate Limiting
 

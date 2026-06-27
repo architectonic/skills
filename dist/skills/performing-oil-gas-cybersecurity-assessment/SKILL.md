@@ -1,11 +1,30 @@
 ---
 name: Performing Oil & Gas Cybersecurity Assessment
 description: This skill covers conducting cybersecurity assessments specific to oil
-tags: [software-development, software-development, agent-skill, okf, ot-security, ics, scada, industrial-control, iec62443, oil-gas, pipeline-security, api1164, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- ot-security
+- ics
+- scada
+- industrial-control
+- iec62443
+- oil-gas
+- pipeline-security
+- api1164
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Oil & Gas Cybersecurity Assessment
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Oil & Gas Cybersecurity Assessment
 

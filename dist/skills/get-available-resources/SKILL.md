@@ -1,9 +1,22 @@
 ---
 name: Get Available Resources
-description: Detect available computational resources (CPU cores, GPUs, memory, disk space) at the start of any computationally intensive task. Generates a resource report with strategic recommendations for parallel processing, memory management, GPU acceleration, and large-data handling. Use proactively before data analysis, model training, or large-scale processing.
+description: Detect available computational resources (CPU cores, GPUs, memory, disk
+  space) at the start of any computationally intensive task. Generates a resource
+  report with strategic recommendations for parallel processing, memory management,
+  GPU acceleration, and large-data handling. Use proactively before data analysis,
+  model training, or large-scale processing.
 source: K-Dense-AI/scientific-agent-skills (MIT)
 distilled: 2026-06-23
 type: Playbook
+title: Get Available Resources
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: medium
+requires_review: false
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Get Available Resources

@@ -1,9 +1,27 @@
 ---
 name: Performing Dynamic Analysis of Android App
 description: Performs runtime dynamic analysis of Android applications using Frida,
-tags: [software-development, software-development, agent-skill, okf, mobile-security, android, frida, dynamic-analysis, owasp-mobile, penetration-testing, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- mobile-security
+- android
+- frida
+- dynamic-analysis
+- owasp-mobile
+- penetration-testing
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Dynamic Analysis of Android App
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Performing Dynamic Analysis of Android App

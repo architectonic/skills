@@ -1,11 +1,28 @@
 ---
 name: Implementing Aqua Security for Container Scanning
 description: Deploy Aqua Security's Trivy scanner to detect vulnerabilities, misconfigurations,
-tags: [software-development, software-development, agent-skill, okf, aqua-security, trivy, container-scanning, vulnerability-scanning, sbom, image-security, supply-chain, security]
+tags:
+- software-engineering
+- skill
+- okf
+- aqua-security
+- trivy
+- container-scanning
+- vulnerability-scanning
+- sbom
+- image-security
+- supply-chain
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Aqua Security for Container Scanning
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Aqua Security for Container Scanning
 

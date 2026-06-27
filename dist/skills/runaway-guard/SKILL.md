@@ -1,7 +1,18 @@
 ---
 name: runaway-guard
-description: Cost-safety discipline for paid AI/inference APIs: treat $-cost as a third complexity dimension. Forces written per-run $-cap, per-day $-cap, max-iterations bound, concurrency limit, and provider-dashboard hard cap BEFORE any call site is written.
+title: Runaway Guard — $-Cost is the Third Complexity Dimension
+description: 'Every loop has time complexity and space complexity. A loop that calls
+  a paid API has a third: **dollars per execution**. The model tracks the first two
+  automatically. It does not track the third, so it ships code where a single bug
+  — a retry without bound, a stream reconnect storm, an agent that re-queues itself,
+  a webhook that fires the same job twice — silently spends real money.'
 type: Playbook
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: medium
+requires_review: true
 ---
 
 # Runaway Guard — $-Cost is the Third Complexity Dimension

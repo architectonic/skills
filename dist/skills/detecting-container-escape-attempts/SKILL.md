@@ -1,9 +1,25 @@
 ---
 name: Detecting Container Escape Attempts
 description: Container escape is a critical attack technique where an adversary breaks
-tags: [software-development, software-development, agent-skill, okf, containers, kubernetes, docker, security, runtime-security, escape-detection]
+tags:
+- software-engineering
+- skill
+- okf
+- containers
+- kubernetes
+- docker
+- security
+- runtime-security
+- escape-detection
 license: Apache-2.0
 type: Playbook
+title: Detecting Container Escape Attempts
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Detecting Container Escape Attempts

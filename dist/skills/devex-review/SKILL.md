@@ -1,8 +1,19 @@
 ---
 name: devex-review
 description: Live developer experience audit. (gstack)
-tags: [agent-operations, agent-operations, agent-skill, okf, curation]
+tags:
+- writing
+- agent-operations
+- skill
+- okf
+- curation
 type: Playbook
+title: devex-review
+domain: writing
+risk_level: medium
+requires_review: true
+source_family: vercel-skills
+source_status: adapted
 ---
 
 # devex-review

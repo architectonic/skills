@@ -1,7 +1,16 @@
 ---
 name: vllm
-description: vLLM: high-throughput LLM serving, OpenAI API, quantization.
+title: vllm
+description: Use when deploying production LLM APIs, optimizing inference latency/throughput,
+  or serving models with limited GPU memory. Supports OpenAI-compatible endpoints,
+  quantization (GPTQ/AWQ/FP8), and tensor parallelism.
 type: Playbook
+domain: research
+tags:
+- research
+- okf
+risk_level: medium
+requires_review: true
 ---
 
 # vllm

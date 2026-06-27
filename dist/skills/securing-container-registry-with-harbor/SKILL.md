@@ -1,9 +1,26 @@
 ---
 name: Securing Container Registry with Harbor
 description: Harbor is an open-source container registry that provides security features
-tags: [devops, agent-skill, okf, containers, kubernetes, docker, security, registry, harbor]
+tags:
+- software-engineering
+- devops
+- skill
+- okf
+- containers
+- kubernetes
+- docker
+- security
+- registry
+- harbor
 license: Apache-2.0
 type: Playbook
+title: Securing Container Registry with Harbor
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Securing Container Registry with Harbor

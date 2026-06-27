@@ -1,9 +1,22 @@
 ---
 name: Database Lookup
-description: Deterministically query 78+ public scientific, biomedical, materials science, regulatory, finance, and demographics databases through documented REST APIs. Use for reproducible lookups of compounds, genes, proteins, pathways, variants, clinical trials, patents, economic indicators, and database-backed scientific facts when endpoints, filters, pagination, and provenance need to be explicit.
+description: Deterministically query 78+ public scientific, biomedical, materials
+  science, regulatory, finance, and demographics databases through documented REST
+  APIs. Use for reproducible lookups of compounds, genes, proteins, pathways, variants,
+  clinical trials, patents, economic indicators, and database-backed scientific facts
+  when endpoints, filters, pagination, and provenance need to be explicit.
 source: K-Dense-AI/scientific-agent-skills (MIT)
 distilled: 2026-06-23
 type: API Endpoint
+title: Database Lookup
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Database Lookup

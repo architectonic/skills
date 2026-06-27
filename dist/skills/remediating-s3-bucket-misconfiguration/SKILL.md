@@ -1,11 +1,27 @@
 ---
 name: Remediating S3 Bucket Misconfiguration
 description: This skill provides step-by-step procedures for identifying and remediating
-tags: [software-development, software-development, agent-skill, okf, s3-security, bucket-misconfiguration, data-exposure, public-access-block, aws-config, security]
+tags:
+- cloud-security
+- software-engineering
+- skill
+- okf
+- s3-security
+- bucket-misconfiguration
+- data-exposure
+- public-access-block
+- aws-config
+- security
 license: Apache-2.0
 type: Playbook
+title: Remediating S3 Bucket Misconfiguration
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Remediating S3 Bucket Misconfiguration
 

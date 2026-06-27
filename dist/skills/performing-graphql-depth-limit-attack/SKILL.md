@@ -1,11 +1,29 @@
 ---
 name: Performing GraphQL Depth Limit Attack
 description: Execute and test GraphQL depth limit attacks using deeply nested recursive
-tags: [software-development, software-development, agent-skill, okf, graphql, depth-limit, denial-of-service, nested-queries, api-security, query-complexity, resource-exhaustion, penetration-testing, security]
+tags:
+- software-engineering
+- skill
+- okf
+- graphql
+- depth-limit
+- denial-of-service
+- nested-queries
+- api-security
+- query-complexity
+- resource-exhaustion
+- penetration-testing
+- security
 license: Apache-2.0
 type: API Endpoint
+title: Performing GraphQL Depth Limit Attack
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing GraphQL Depth Limit Attack
 

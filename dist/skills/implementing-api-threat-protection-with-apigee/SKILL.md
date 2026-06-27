@@ -1,11 +1,31 @@
 ---
 name: Implementing API Threat Protection with Apigee
 description: Implement API threat protection using Google Apigee policies including
-tags: [software-development, software-development, agent-skill, okf, apigee, api-gateway, threat-protection, json-threat-protection, xml-threat-protection, spike-arrest, oauth2, google-cloud, owasp-api-top-10, security]
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- apigee
+- api-gateway
+- threat-protection
+- json-threat-protection
+- xml-threat-protection
+- spike-arrest
+- oauth2
+- google-cloud
+- owasp-api-top-10
+- security
 license: Apache-2.0
 type: API Endpoint
+title: Implementing API Threat Protection with Apigee
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing API Threat Protection with Apigee
 

@@ -1,11 +1,30 @@
 ---
 name: Performing Threat Modeling with OWASP Threat Dragon
 description: Use OWASP Threat Dragon to create data flow diagrams, identify threats
-tags: [software-development, software-development, agent-skill, okf, threat-modeling, owasp, threat-dragon, stride, linddun, secure-design, dfd, data-flow, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- threat-modeling
+- owasp
+- threat-dragon
+- stride
+- linddun
+- secure-design
+- dfd
+- data-flow
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Threat Modeling with OWASP Threat Dragon
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Threat Modeling with OWASP Threat Dragon
 

@@ -1,9 +1,25 @@
 ---
 name: Performing GraphQL Introspection Attack
 description: Performs GraphQL introspection attacks to extract the full API schema
-tags: [software-development, software-development, agent-skill, okf, api-security, graphql, introspection, schema-extraction, query-abuse, security]
+tags:
+- software-engineering
+- skill
+- okf
+- api-security
+- graphql
+- introspection
+- schema-extraction
+- query-abuse
+- security
 license: Apache-2.0
 type: API Endpoint
+title: Performing GraphQL Introspection Attack
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Performing GraphQL Introspection Attack

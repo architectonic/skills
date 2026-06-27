@@ -1,9 +1,31 @@
 ---
 name: Verifying Build Provenance with SLSA and Sigstore
-description: Verify signed artifacts and SLSA build provenance with Sigstore cosign and slsa-verifier, enforce keyless OIDC identity, and apply SLSA Build levels to harden the software supply chain.
-tags: [devops, agent-skill, okf, supply-chain, slsa, sigstore, cosign, provenance, attestation, keyless-signing, code-signing, security]
+description: Verify signed artifacts and SLSA build provenance with Sigstore cosign
+  and slsa-verifier, enforce keyless OIDC identity, and apply SLSA Build levels to
+  harden the software supply chain.
+tags:
+- software-engineering
+- devops
+- skill
+- okf
+- supply-chain
+- slsa
+- sigstore
+- cosign
+- provenance
+- attestation
+- keyless-signing
+- code-signing
+- security
 license: Apache-2.0
 type: Playbook
+title: Verifying Build Provenance with SLSA and Sigstore
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Verifying Build Provenance with SLSA and Sigstore

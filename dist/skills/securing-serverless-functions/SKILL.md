@@ -1,11 +1,27 @@
 ---
 name: Securing Serverless Functions
 description: This skill covers security hardening for serverless compute platforms
-tags: [devops, agent-skill, okf, serverless-security, aws-lambda, azure-functions, function-hardening, supply-chain, security]
+tags:
+- software-engineering
+- devops
+- skill
+- okf
+- serverless-security
+- aws-lambda
+- azure-functions
+- function-hardening
+- supply-chain
+- security
 license: Apache-2.0
 type: Playbook
+title: Securing Serverless Functions
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Securing Serverless Functions
 

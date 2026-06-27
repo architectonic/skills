@@ -1,11 +1,28 @@
 ---
 name: Implementing Cloud WAF Rules
 description: This skill covers deploying and tuning Web Application Firewall rules
-tags: [software-development, software-development, agent-skill, okf, cloud-waf, aws-waf, azure-waf, cloudflare-waf, owasp-protection, rate-limiting, security]
+tags:
+- cloud-security
+- software-engineering
+- skill
+- okf
+- cloud-waf
+- aws-waf
+- azure-waf
+- cloudflare-waf
+- owasp-protection
+- rate-limiting
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Cloud WAF Rules
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Cloud WAF Rules
 

@@ -1,9 +1,27 @@
 ---
 name: Monitoring SCADA Modbus Traffic Anomalies
 description: Monitors Modbus TCP traffic on SCADA and ICS networks to detect anomalous
-tags: [software-development, software-development, agent-skill, okf, modbus-tcp, scada, ics-security, deep-packet-inspection, anomaly-detection, ot-monitoring, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- modbus-tcp
+- scada
+- ics-security
+- deep-packet-inspection
+- anomaly-detection
+- ot-monitoring
+- security
 license: Apache-2.0
 type: Playbook
+title: Monitoring SCADA Modbus Traffic Anomalies
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Monitoring SCADA Modbus Traffic Anomalies

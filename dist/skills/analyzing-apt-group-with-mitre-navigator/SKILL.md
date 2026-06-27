@@ -1,9 +1,29 @@
 ---
 name: Analyzing APT Group with MITRE ATT&CK Navigator
 description: Analyze advanced persistent threat (APT) group techniques using MITRE
-tags: [research, agent-skill, okf, mitre-attack, navigator, apt, threat-actor, ttp-analysis, heatmap, detection-gap, threat-intelligence, security]
+tags:
+- security-defensive
+- research
+- skill
+- okf
+- mitre-attack
+- navigator
+- apt
+- threat-actor
+- ttp-analysis
+- heatmap
+- detection-gap
+- threat-intelligence
+- security
 license: Apache-2.0
 type: Playbook
+title: Analyzing APT Group with MITRE ATT&CK Navigator
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Analyzing APT Group with MITRE ATT&CK Navigator

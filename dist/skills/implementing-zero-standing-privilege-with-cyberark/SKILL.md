@@ -1,11 +1,27 @@
 ---
 name: Implementing Zero Standing Privilege with CyberArk
 description: Deploy CyberArk Secure Cloud Access to eliminate standing privileges
-tags: [software-development, software-development, agent-skill, okf, cyberark, zero-standing-privilege, jit-access, pam, cloud-security, least-privilege, security]
+tags:
+- software-engineering
+- skill
+- okf
+- cyberark
+- zero-standing-privilege
+- jit-access
+- pam
+- cloud-security
+- least-privilege
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Zero Standing Privilege with CyberArk
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Zero Standing Privilege with CyberArk
 

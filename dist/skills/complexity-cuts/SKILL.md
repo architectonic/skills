@@ -1,8 +1,17 @@
 ---
 name: complexity-cuts
-description: Lower Big-O on existing code via a one-transformation-at-a-time playbook with verify-revert-stop. Use when refactoring existing code that has poor Big-O: nested loops, O(n²) or worse scans, repeated work, N+1 query patterns, or serial await in loops.
-tags: [software-development, algorithms, big-o, refactoring, optimization, performance, n-plus-one, complexity]
+title: complexity-cuts — Lower Big-O on Existing Code
+description: Lower time/space complexity on existing code via a one-transformation-at-a-time
+  playbook with verify-revert-stop.
 type: Playbook
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # complexity-cuts — Lower Big-O on Existing Code

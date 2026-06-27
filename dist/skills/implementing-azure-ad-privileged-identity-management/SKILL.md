@@ -1,11 +1,29 @@
 ---
 name: Implementing Azure AD Privileged Identity Management
 description: Configure Microsoft Entra Privileged Identity Management to enforce just-in-time
-tags: [software-development, software-development, agent-skill, okf, azure-ad, pim, entra-id, just-in-time, privileged-roles, identity-governance, zero-trust, security]
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- azure-ad
+- pim
+- entra-id
+- just-in-time
+- privileged-roles
+- identity-governance
+- zero-trust
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Azure AD Privileged Identity Management
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Azure AD Privileged Identity Management
 

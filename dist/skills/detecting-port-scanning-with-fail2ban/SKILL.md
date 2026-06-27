@@ -1,9 +1,26 @@
 ---
 name: Detecting Port Scanning with Fail2ban
 description: Configures Fail2ban with custom filters and actions to detect port scanning
-tags: [software-development, software-development, agent-skill, okf, network-security, fail2ban, port-scanning, intrusion-prevention, automated-defense, security]
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- network-security
+- fail2ban
+- port-scanning
+- intrusion-prevention
+- automated-defense
+- security
 license: Apache-2.0
 type: Playbook
+title: Detecting Port Scanning with Fail2ban
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Detecting Port Scanning with Fail2ban

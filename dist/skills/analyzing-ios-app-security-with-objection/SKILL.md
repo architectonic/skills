@@ -1,7 +1,17 @@
 ---
 name: Analyzing iOS App Security with Objection
-description: >-
-tags: [research, agent-skill, okf, mobile-security, ios, objection, frida, owasp-mobile, penetration-testing, security]
+description: 'Use this skill when:'
+tags:
+- research
+- agent-skill
+- okf
+- mobile-security
+- ios
+- objection
+- frida
+- owasp-mobile
+- penetration-testing
+- security
 license: Apache-2.0
 type: Playbook
 ---

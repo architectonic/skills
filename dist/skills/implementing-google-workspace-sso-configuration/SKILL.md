@@ -1,11 +1,28 @@
 ---
 name: Implementing Google Workspace SSO Configuration
 description: Configure SAML 2.0 single sign-on for Google Workspace with a third-party
-tags: [software-development, software-development, agent-skill, okf, google-workspace, sso, saml, identity-provider, authentication, federation, security]
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- google-workspace
+- sso
+- saml
+- identity-provider
+- authentication
+- federation
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Google Workspace SSO Configuration
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Google Workspace SSO Configuration
 

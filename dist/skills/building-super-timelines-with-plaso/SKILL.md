@@ -1,9 +1,29 @@
 ---
 name: Building Super Timelines with Plaso
 description: Generate log2timeline and Plaso super-timelines and triage them in Timesketch.
-tags: [software-development, software-development, agent-skill, okf, digital-forensics, plaso, log2timeline, super-timeline, timesketch, dfir, timeline-analysis, incident-response, security]
+tags:
+- forensics
+- software-engineering
+- skill
+- okf
+- digital-forensics
+- plaso
+- log2timeline
+- super-timeline
+- timesketch
+- dfir
+- timeline-analysis
+- incident-response
+- security
 license: Apache-2.0
 type: Playbook
+title: Building Super Timelines with Plaso
+domain: forensics
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Building Super Timelines with Plaso

@@ -1,9 +1,26 @@
 ---
 name: Testing Mobile API Authentication
 description: Tests authentication and authorization mechanisms in mobile application
-tags: [software-development, software-development, agent-skill, okf, mobile-security, android, ios, api-security, authentication, penetration-testing, security]
+tags:
+- software-engineering
+- skill
+- okf
+- mobile-security
+- android
+- ios
+- api-security
+- authentication
+- penetration-testing
+- security
 license: Apache-2.0
 type: API Endpoint
+title: Testing Mobile API Authentication
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Testing Mobile API Authentication

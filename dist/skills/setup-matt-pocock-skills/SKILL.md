@@ -1,10 +1,22 @@
 ---
 name: setup-matt-pocock-skills
-description: Configure this repo for the engineering skills — set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills.
-tags: [software-development, software-development, agent-skill, okf, curation]
+description: Configure this repo for the engineering skills — set up its issue tracker,
+  triage label vocabulary, and domain doc layout. Run once before first use of the
+  other engineering skills.
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- curation
 type: Playbook
+title: Setup Matt Pocock's Skills
+domain: business
+risk_level: medium
+requires_review: true
+source_family: matt-pocock-skills
+source_status: adapted
 ---
-
 
 # Setup Matt Pocock's Skills
 

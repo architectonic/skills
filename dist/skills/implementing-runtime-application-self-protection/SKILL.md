@@ -1,11 +1,30 @@
 ---
 name: Implementing Runtime Application Self-Protection
 description: Deploy Runtime Application Self-Protection (RASP) agents to detect and
-tags: [software-development, software-development, agent-skill, okf, rasp, application-security, openrasp, runtime-protection, sqli, xss, rce, devsecops, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- rasp
+- application-security
+- openrasp
+- runtime-protection
+- sqli
+- xss
+- rce
+- devsecops
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Runtime Application Self-Protection
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Runtime Application Self-Protection
 

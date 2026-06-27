@@ -1,7 +1,19 @@
 ---
 name: lm-evaluation-harness
-description: lm-eval-harness: benchmark LLMs (MMLU, GSM8K, etc.).
+title: lm-evaluation-harness
+description: Evaluates LLMs across 60+ academic benchmarks (MMLU, HumanEval, GSM8K,
+  TruthfulQA, HellaSwag). Use when benchmarking model quality, comparing models, reporting
+  academic results, or tracking training progress. Industry standard used by EleutherAI,
+  HuggingFace, and major labs. Supports HuggingFace, vLLM, APIs.
 type: Playbook
+domain: research
+tags:
+- research
+- okf
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_status: adapted
 ---
 
 # lm-evaluation-harness

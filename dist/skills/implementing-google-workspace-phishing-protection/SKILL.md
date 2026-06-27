@@ -1,12 +1,27 @@
 ---
 name: Implementing Google Workspace Phishing Protection
 description: Configure Google Workspace advanced phishing and malware protection settings
-tags: [software-development, software-development, agent-skill, okf, google-workspace, gmail, phishing, email-security, safe-browsing, anti-spoofing, admin-console, security]
+tags:
+- software-development
+- software-development
+- agent-skill
+- okf
+- google-workspace
+- gmail
+- phishing
+- email-security
+- safe-browsing
+- anti-spoofing
+- admin-console
+- security
 license: Apache-2.0
 type: Playbook
 ---
 
 # Implementing Google Workspace Phishing Protection
+
+
+**Authorized-use only:** Use this skill only for owned systems, sanctioned lab environments, or engagements with explicit written permission. Document scope, preserve evidence, and follow applicable law, policy, and incident-response procedures.
 
 ## Overview
 Google Workspace provides advanced phishing and malware protection through the Admin Console under Apps > Google Workspace > Gmail > Safety. Key features include Enhanced Pre-Delivery Scanning that examines messages more thoroughly before they reach inboxes, attachment and link protection that scans for malware and checks against known malicious sites, and spoofing detection for domain and employee name impersonation. Google's Advanced Protection Program (APP) provides the strongest account security for high-privilege users.

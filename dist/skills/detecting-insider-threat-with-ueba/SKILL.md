@@ -1,11 +1,29 @@
 ---
 name: Detecting Insider Threat with UEBA
 description: Implement User and Entity Behavior Analytics using Elasticsearch/OpenSearch
-tags: [software-development, software-development, agent-skill, okf, ueba, insider-threat, anomaly-detection, elasticsearch, behavior-analytics, machine-learning, siem, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- ueba
+- insider-threat
+- anomaly-detection
+- elasticsearch
+- behavior-analytics
+- machine-learning
+- siem
+- security
 license: Apache-2.0
 type: Playbook
+title: Detecting Insider Threat with UEBA
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Detecting Insider Threat with UEBA
 

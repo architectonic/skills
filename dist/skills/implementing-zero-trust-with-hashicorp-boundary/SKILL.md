@@ -1,11 +1,30 @@
 ---
 name: Implementing Zero Trust with HashiCorp Boundary
 description: Implement HashiCorp Boundary for identity-aware zero trust infrastructure
-tags: [software-development, software-development, agent-skill, okf, zero-trust, hashicorp, boundary, privileged-access, vault, identity-aware-proxy, session-recording, just-in-time-access, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- zero-trust
+- hashicorp
+- boundary
+- privileged-access
+- vault
+- identity-aware-proxy
+- session-recording
+- just-in-time-access
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Zero Trust with HashiCorp Boundary
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Zero Trust with HashiCorp Boundary
 

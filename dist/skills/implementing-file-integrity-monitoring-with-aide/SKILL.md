@@ -1,11 +1,29 @@
 ---
 name: Implementing File Integrity Monitoring with AIDE
 description: Configure AIDE (Advanced Intrusion Detection Environment) for file integrity
-tags: [software-development, software-development, agent-skill, okf, aide, file-integrity, hids, baseline, intrusion-detection, compliance, linux-security, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- aide
+- file-integrity
+- hids
+- baseline
+- intrusion-detection
+- compliance
+- linux-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing File Integrity Monitoring with AIDE
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing File Integrity Monitoring with AIDE
 

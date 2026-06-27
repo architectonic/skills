@@ -1,9 +1,27 @@
 ---
 name: Implementing Envelope Encryption with AWS KMS
 description: Envelope encryption is a strategy where data is encrypted with a data
-tags: [software-development, software-development, agent-skill, okf, cryptography, encryption, aws, kms, envelope-encryption, key-management, security]
+tags:
+- cloud-security
+- software-engineering
+- skill
+- okf
+- cryptography
+- encryption
+- aws
+- kms
+- envelope-encryption
+- key-management
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Envelope Encryption with AWS KMS
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing Envelope Encryption with AWS KMS

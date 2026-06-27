@@ -1,9 +1,31 @@
 ---
 name: Auditing Kubernetes RBAC Privilege Escalation
-description: Find over-permissive RBAC roles and service-account token abuse paths in Kubernetes using kubectl auth can-i, rbac-police, kubectl-who-can, and rakkess during authorized cluster security reviews.
-tags: [devops, agent-skill, okf, kubernetes, rbac, privilege-escalation, service-account, least-privilege, kubectl, access-control, attack-paths, security]
+description: Find over-permissive RBAC roles and service-account token abuse paths
+  in Kubernetes using kubectl auth can-i, rbac-police, kubectl-who-can, and rakkess
+  during authorized cluster security reviews.
+tags:
+- software-engineering
+- devops
+- skill
+- okf
+- kubernetes
+- rbac
+- privilege-escalation
+- service-account
+- least-privilege
+- kubectl
+- access-control
+- attack-paths
+- security
 license: Apache-2.0
 type: Playbook
+title: Auditing Kubernetes RBAC Privilege Escalation
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Auditing Kubernetes RBAC Privilege Escalation

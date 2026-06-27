@@ -1,9 +1,26 @@
 ---
 name: Implementing API Rate Limiting and Throttling
 description: Implements API rate limiting and throttling controls using token bucket,
-tags: [software-development, software-development, agent-skill, okf, api-security, rate-limiting, throttling, redis, token-bucket, abuse-prevention, security]
+tags:
+- software-engineering
+- skill
+- okf
+- api-security
+- rate-limiting
+- throttling
+- redis
+- token-bucket
+- abuse-prevention
+- security
 license: Apache-2.0
 type: API Endpoint
+title: Implementing API Rate Limiting and Throttling
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing API Rate Limiting and Throttling

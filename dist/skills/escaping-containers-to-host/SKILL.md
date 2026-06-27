@@ -1,9 +1,30 @@
 ---
 name: Escaping Containers to Host
-description: Exploit privileged pods, host mounts, runC CVEs, and exposed Docker sockets to break out of a container and reach the underlying host during authorized container-security assessments.
-tags: [software-development, software-development, agent-skill, okf, container-escape, privileged-container, runc-cve, docker-socket, host-mount, kubernetes, privilege-escalation, breakout, security]
+description: Exploit privileged pods, host mounts, runC CVEs, and exposed Docker sockets
+  to break out of a container and reach the underlying host during authorized container-security
+  assessments.
+tags:
+- software-engineering
+- skill
+- okf
+- container-escape
+- privileged-container
+- runc-cve
+- docker-socket
+- host-mount
+- kubernetes
+- privilege-escalation
+- breakout
+- security
 license: Apache-2.0
 type: Playbook
+title: Escaping Containers to Host
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Escaping Containers to Host

@@ -1,11 +1,29 @@
 ---
 name: Analyzing Office 365 Audit Logs for Compromise
 description: Parse Office 365 Unified Audit Logs via Microsoft Graph API to detect
-tags: [research, agent-skill, okf, office365, microsoft-graph, audit-logs, email-compromise, inbox-rules, oauth, bec, security]
+tags:
+- security-defensive
+- research
+- skill
+- okf
+- office365
+- microsoft-graph
+- audit-logs
+- email-compromise
+- inbox-rules
+- oauth
+- bec
+- security
 license: Apache-2.0
 type: Playbook
+title: Analyzing Office 365 Audit Logs for Compromise
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Analyzing Office 365 Audit Logs for Compromise
 

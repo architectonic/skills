@@ -1,11 +1,28 @@
 ---
 name: Hunting for Unusual Service Installations
 description: Detect suspicious Windows service installations (MITRE ATT&CK T1543.003)
-tags: [software-development, software-development, agent-skill, okf, threat-hunting, t1543.003, service-installation, persistence, event-7045, sysmon, windows-services, security]
+tags:
+- software-engineering
+- skill
+- okf
+- threat-hunting
+- t1543.003
+- service-installation
+- persistence
+- event-7045
+- sysmon
+- windows-services
+- security
 license: Apache-2.0
 type: Playbook
+title: Hunting for Unusual Service Installations
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Hunting for Unusual Service Installations
 

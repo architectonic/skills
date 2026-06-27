@@ -1,9 +1,26 @@
 ---
 name: Implementing Endpoint DLP Controls
 description: Implements endpoint Data Loss Prevention (DLP) controls to detect and
-tags: [software-development, software-development, agent-skill, okf, endpoint, dlp, data-loss-prevention, data-protection, content-inspection, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- endpoint
+- dlp
+- data-loss-prevention
+- data-protection
+- content-inspection
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Endpoint DLP Controls
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing Endpoint DLP Controls

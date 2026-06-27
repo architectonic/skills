@@ -1,12 +1,29 @@
 ---
 name: Analyzing Web Server Logs for Intrusion
 description: Parse Apache and Nginx access logs to detect SQL injection attempts,
-tags: [research, agent-skill, okf, web-log-analysis, apache-logs, nginx-logs, sql-injection-detection, lfi-detection, directory-traversal, intrusion-detection, security]
+tags:
+- security-defensive
+- research
+- skill
+- okf
+- web-log-analysis
+- apache-logs
+- nginx-logs
+- sql-injection-detection
+- lfi-detection
+- directory-traversal
+- intrusion-detection
+- security
 license: Apache-2.0
 type: Playbook
+title: Analyzing Web Server Logs for Intrusion
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
-
 
 # Analyzing Web Server Logs for Intrusion
 

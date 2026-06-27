@@ -1,9 +1,26 @@
 ---
 name: Implementing RSA Key Pair Management
 description: RSA (Rivest-Shamir-Adleman) is the most widely deployed asymmetric cryptographic
-tags: [software-development, software-development, agent-skill, okf, cryptography, rsa, key-management, pki, asymmetric-encryption, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- cryptography
+- rsa
+- key-management
+- pki
+- asymmetric-encryption
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing RSA Key Pair Management
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing RSA Key Pair Management

@@ -1,8 +1,24 @@
 ---
 name: netlify-deploy
-description: Deploy web projects to Netlify using the Netlify CLI. Use when the user asks to deploy, host, publish, or link a site/repo on Netlify, including preview and production deploys. Complements existing vercel-deploy and cloudflare-deploy skills.
-tags: [devops, deploy, netlify, hosting, cli]
+description: Deploy web projects to Netlify using the Netlify CLI. Use when the user
+  asks to deploy, host, publish, or link a site/repo on Netlify, including preview
+  and production deploys. Complements existing vercel-deploy and cloudflare-deploy
+  skills.
+tags:
+- software-engineering
+- devops
+- deploy
+- netlify
+- hosting
+- cli
+- okf
 type: Playbook
+title: Netlify Deployment
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: vercel-skills
+source_status: adapted
 ---
 
 # Netlify Deployment

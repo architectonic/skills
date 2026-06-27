@@ -1,9 +1,28 @@
 ---
 name: Implementing SAML SSO with Okta
 description: Implement SAML 2.0 Single Sign-On (SSO) using Okta as the Identity Provider
-tags: [software-development, software-development, agent-skill, okf, iam, identity, access-control, authentication, saml, sso, okta, security]
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- iam
+- identity
+- access-control
+- authentication
+- saml
+- sso
+- okta
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing SAML SSO with Okta
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing SAML SSO with Okta

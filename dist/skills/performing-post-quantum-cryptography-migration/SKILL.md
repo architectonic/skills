@@ -1,11 +1,31 @@
 ---
 name: Performing Post-Quantum Cryptography Migration
 description: Assesses organizational readiness for post-quantum cryptography migration
-tags: [software-development, software-development, agent-skill, okf, post-quantum, pqc, crystals-kyber, ml-kem, ml-dsa, fips-203, fips-204, hybrid-tls, crypto-agility, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- post-quantum
+- pqc
+- crystals-kyber
+- ml-kem
+- ml-dsa
+- fips-203
+- fips-204
+- hybrid-tls
+- crypto-agility
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Post-Quantum Cryptography Migration
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Post-Quantum Cryptography Migration
 

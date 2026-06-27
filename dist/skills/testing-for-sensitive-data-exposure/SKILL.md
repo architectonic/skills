@@ -1,11 +1,29 @@
 ---
 name: Testing for Sensitive Data Exposure
 description: Identifying sensitive data exposure vulnerabilities including API key
-tags: [red-teaming, agent-skill, okf, penetration-testing, data-exposure, pii, owasp, web-security, api-keys, secrets, security]
+tags:
+- software-engineering
+- red-teaming
+- skill
+- okf
+- penetration-testing
+- data-exposure
+- pii
+- owasp
+- web-security
+- api-keys
+- secrets
+- security
 license: Apache-2.0
 type: Playbook
+title: Testing for Sensitive Data Exposure
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Testing for Sensitive Data Exposure
 

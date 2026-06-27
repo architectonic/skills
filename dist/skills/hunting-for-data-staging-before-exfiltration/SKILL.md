@@ -1,11 +1,29 @@
 ---
 name: Hunting for Data Staging Before Exfiltration
 description: Detect data staging activity before exfiltration by monitoring for archive
-tags: [software-development, software-development, agent-skill, okf, data-staging, exfiltration, t1074, archive-detection, edr, threat-hunting, dlp, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- data-staging
+- exfiltration
+- t1074
+- archive-detection
+- edr
+- threat-hunting
+- dlp
+- security
 license: Apache-2.0
 type: Playbook
+title: Hunting for Data Staging Before Exfiltration
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Hunting for Data Staging Before Exfiltration
 

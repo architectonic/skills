@@ -1,11 +1,27 @@
 ---
 name: Auditing AWS S3 Bucket Permissions
 description: Systematically audit AWS S3 bucket permissions to identify publicly
-tags: [software-development, software-development, agent-skill, okf, cloud-security, aws, s3, bucket-permissions, data-protection, access-control, security]
+tags:
+- software-engineering
+- skill
+- okf
+- cloud-security
+- aws
+- s3
+- bucket-permissions
+- data-protection
+- access-control
+- security
 license: Apache-2.0
 type: Playbook
+title: Auditing AWS S3 Bucket Permissions
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Auditing AWS S3 Bucket Permissions
 

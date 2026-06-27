@@ -1,12 +1,25 @@
 ---
 name: Implementing Secrets Scanning in CI/CD
 description: Integrate gitleaks and trufflehog into CI/CD pipelines to detect leaked
-tags: [software-development, software-development, agent-skill, okf, secrets-scanning, gitleaks, trufflehog, ci-cd, security]
+tags:
+- software-engineering
+- skill
+- okf
+- secrets-scanning
+- gitleaks
+- trufflehog
+- ci-cd
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Secrets Scanning in CI/CD
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
-
 
 # Implementing Secrets Scanning in CI/CD
 

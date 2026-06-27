@@ -1,11 +1,28 @@
 ---
 name: Implementing Log Forwarding with Fluentd
 description: Configure Fluentd and Fluent Bit for centralized log aggregation, routing,
-tags: [software-development, software-development, agent-skill, okf, fluentd, fluent-bit, log-aggregation, log-forwarding, siem, centralized-logging, observability, security]
+tags:
+- software-engineering
+- skill
+- okf
+- fluentd
+- fluent-bit
+- log-aggregation
+- log-forwarding
+- siem
+- centralized-logging
+- observability
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Log Forwarding with Fluentd
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Log Forwarding with Fluentd
 

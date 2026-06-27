@@ -1,11 +1,26 @@
 ---
 name: Ponytail Review — Diff Review for Over-Engineering
-description: "Review a diff for over-engineering. Finds what to delete: reinvented stdlib, needless deps, speculative abstractions. One line per finding."
-tags: [agent-skill, okf, software-development, code-review, yagni, simplicity]
+description: 'Review a diff for over-engineering. Finds what to delete: reinvented
+  stdlib, needless deps, speculative abstractions. One line per finding.'
+tags:
+- design
+- skill
+- okf
+- software-engineering
+- code-review
+- yagni
+- simplicity
 source: https://github.com/DietrichGebert/ponytail
 license: MIT
 risk: low
 type: Playbook
+title: Ponytail Review — Diff Review for Over-Engineering
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: MIT
+source_status: adapted
 ---
 
 # Ponytail Review — Diff Review for Over-Engineering

@@ -1,11 +1,29 @@
 ---
 name: Implementing SCIM Provisioning with Okta
 description: Implement automated user provisioning and deprovisioning using SCIM 2.0
-tags: [software-development, software-development, agent-skill, okf, scim, okta, provisioning, identity-management, automation, sso, lifecycle-management, security]
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- scim
+- okta
+- provisioning
+- identity-management
+- automation
+- sso
+- lifecycle-management
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing SCIM Provisioning with Okta
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing SCIM Provisioning with Okta
 

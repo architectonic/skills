@@ -1,11 +1,28 @@
 ---
 name: Implementing Zero Trust for SaaS Applications
 description: Implementing zero trust access controls for SaaS applications using
-tags: [software-development, software-development, agent-skill, okf, zero-trust, saas-security, casb, sspm, conditional-access, oauth-governance, session-controls, security]
+tags:
+- software-engineering
+- skill
+- okf
+- zero-trust
+- saas-security
+- casb
+- sspm
+- conditional-access
+- oauth-governance
+- session-controls
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Zero Trust for SaaS Applications
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Zero Trust for SaaS Applications
 

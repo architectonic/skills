@@ -1,11 +1,34 @@
 ---
 name: Compliance OS — Multi-Framework Compliance Orchestration
-description: Meta-orchestrator for compliance teams. CONFIGURE which frameworks apply, COMPUTE cross-framework control overlap, SIMULATE internal audits, and CONSOLIDATE evidence across multiple frameworks. Supports ISO 27001/13485/42001/14971, EU AI Act, MDR 745, GDPR, SOC 2, FDA QSR, NIST CSF 2.0, NIS2, HIPAA. Does NOT replace per-framework skills — it orchestrates them.
+description: Meta-orchestrator for compliance teams. CONFIGURE which frameworks apply,
+  COMPUTE cross-framework control overlap, SIMULATE internal audits, and CONSOLIDATE
+  evidence across multiple frameworks. Supports ISO 27001/13485/42001/14971, EU AI
+  Act, MDR 745, GDPR, SOC 2, FDA QSR, NIST CSF 2.0, NIS2, HIPAA. Does NOT replace
+  per-framework skills — it orchestrates them.
 version: 1.0.0
 source: claude-skills/compliance-os/compliance-os (MIT)
 author: Alireza Rezvani (distilled by Agent-Memory-Ops-Kit)
-tags: [productivity, compliance, grc, iso27001, soc2, gdpr, hipaa, nist, ai-act, audit, multi-framework]
+tags:
+- business
+- productivity
+- compliance
+- grc
+- iso27001
+- soc2
+- gdpr
+- hipaa
+- nist
+- ai-act
+- audit
+- multi-framework
+- okf
 type: Playbook
+title: Compliance OS — Multi-Framework Compliance Orchestration
+domain: business
+risk_level: medium
+requires_review: true
+source_family: amok-native
+source_status: adapted
 ---
 
 # Compliance OS — Multi-Framework Compliance Orchestration

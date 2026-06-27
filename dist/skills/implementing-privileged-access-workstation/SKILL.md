@@ -1,11 +1,29 @@
 ---
 name: Implementing Privileged Access Workstation
 description: Design and implement Privileged Access Workstations (PAWs) with device
-tags: [software-development, software-development, agent-skill, okf, privileged-access, paw, zero-trust, device-hardening, cyberark, beyondtrust, just-in-time-access, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- privileged-access
+- paw
+- zero-trust
+- device-hardening
+- cyberark
+- beyondtrust
+- just-in-time-access
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Privileged Access Workstation
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Privileged Access Workstation
 

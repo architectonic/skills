@@ -1,12 +1,28 @@
 ---
 name: Detecting SQL Injection via WAF Logs
 description: Analyze WAF (ModSecurity/AWS WAF/Cloudflare) logs to detect SQL injection
-tags: [software-development, software-development, agent-skill, okf, waf-log-analysis, sql-injection-detection, modsecurity, aws-waf, cloudflare-waf, web-application-security, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- waf-log-analysis
+- sql-injection-detection
+- modsecurity
+- aws-waf
+- cloudflare-waf
+- web-application-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Detecting SQL Injection via WAF Logs
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
-
 
 # Detecting SQL Injection via WAF Logs
 

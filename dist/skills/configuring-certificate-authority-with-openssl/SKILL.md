@@ -1,9 +1,26 @@
 ---
 name: Configuring Certificate Authority with OpenSSL
 description: A Certificate Authority (CA) is the trust anchor in a PKI hierarchy,
-tags: [software-development, software-development, agent-skill, okf, cryptography, pki, certificate-authority, openssl, x509, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- cryptography
+- pki
+- certificate-authority
+- openssl
+- x509
+- security
 license: Apache-2.0
 type: Playbook
+title: Configuring Certificate Authority with OpenSSL
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Configuring Certificate Authority with OpenSSL

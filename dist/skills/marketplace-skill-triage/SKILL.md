@@ -1,8 +1,25 @@
 ---
 name: marketplace-skill-triage
-description: Triage skills from public marketplaces and aggregators using evidence-based scoring rather than popularity alone. Use when evaluating candidate skills from skills.sh, awesome lists, GitHub marketplaces, or arXiv-backed skill research. Covers license checks, duplicate-intent detection, executable-surface analysis, maintainer verification, and evaluation-evidence scoring.
-tags: [skill-management, skill-management, triage, marketplace, quality, provenance]
+description: Triage skills from public marketplaces and aggregators using evidence-based
+  scoring rather than popularity alone. Use when evaluating candidate skills from
+  skills.sh, awesome lists, GitHub marketplaces, or arXiv-backed skill research. Covers
+  license checks, duplicate-intent detection, executable-surface analysis, maintainer
+  verification, and evaluation-evidence scoring.
+tags:
+- business
+- skill-management
+- triage
+- marketplace
+- quality
+- provenance
+- okf
 type: Playbook
+title: Marketplace Skill Triage
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Marketplace Skill Triage

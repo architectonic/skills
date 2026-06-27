@@ -1,9 +1,23 @@
 ---
 name: Statistical Power & Sample Size
-description: Sample-size and statistical power calculations for planning studies. Use whenever someone asks "how many subjects/samples/replicates do I need", wants an a priori power analysis, a minimum detectable effect (MDE), a power curve, or needs to justify a sample size for a grant, IRB protocol, or pre-registration. Covers closed-form power for t-tests, ANOVA, proportions, correlations, chi-square, and regression, plus simulation-based (Monte Carlo) power for designs with no formula.
+description: Sample-size and statistical power calculations for planning studies.
+  Use whenever someone asks "how many subjects/samples/replicates do I need", wants
+  an a priori power analysis, a minimum detectable effect (MDE), a power curve, or
+  needs to justify a sample size for a grant, IRB protocol, or pre-registration. Covers
+  closed-form power for t-tests, ANOVA, proportions, correlations, chi-square, and
+  regression, plus simulation-based (Monte Carlo) power for designs with no formula.
 source: K-Dense-AI/scientific-agent-skills (MIT)
 distilled: 2026-06-23
 type: Playbook
+title: Statistical Power & Sample Size
+domain: research
+tags:
+- research
+- okf
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Statistical Power & Sample Size

@@ -1,9 +1,27 @@
 ---
 name: Implementing Data Loss Prevention with Microsoft Purview
 description: Implements data loss prevention policies using Microsoft Purview to
-tags: [software-development, software-development, agent-skill, okf, dlp, microsoft-purview, sensitivity-labels, endpoint-dlp, data-classification, compliance, security]
+tags:
+- research
+- software-engineering
+- skill
+- okf
+- dlp
+- microsoft-purview
+- sensitivity-labels
+- endpoint-dlp
+- data-classification
+- compliance
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Data Loss Prevention with Microsoft Purview
+domain: research
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing Data Loss Prevention with Microsoft Purview

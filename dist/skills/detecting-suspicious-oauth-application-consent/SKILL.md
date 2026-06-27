@@ -1,11 +1,29 @@
 ---
 name: Detecting Suspicious OAuth Application Consent
 description: Detect risky OAuth application consent grants in Azure AD / Microsoft
-tags: [software-development, software-development, agent-skill, okf, oauth, azure-ad, entra-id, microsoft-graph, illicit-consent, cloud-security, application-permissions, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- oauth
+- azure-ad
+- entra-id
+- microsoft-graph
+- illicit-consent
+- cloud-security
+- application-permissions
+- security
 license: Apache-2.0
 type: Playbook
+title: Detecting Suspicious OAuth Application Consent
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Detecting Suspicious OAuth Application Consent
 

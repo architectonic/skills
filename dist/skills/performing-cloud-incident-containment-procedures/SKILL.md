@@ -1,11 +1,29 @@
 ---
 name: Performing Cloud Incident Containment Procedures
 description: Execute cloud-native incident containment across AWS, Azure, and GCP
-tags: [software-development, software-development, agent-skill, okf, cloud-security, incident-containment, aws, azure, gcp, cloud-forensics, credential-revocation, network-isolation, security]
+tags:
+- software-engineering
+- skill
+- okf
+- cloud-security
+- incident-containment
+- aws
+- azure
+- gcp
+- cloud-forensics
+- credential-revocation
+- network-isolation
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Cloud Incident Containment Procedures
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Cloud Incident Containment Procedures
 

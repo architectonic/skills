@@ -1,8 +1,20 @@
 ---
 name: academic-research
-description: Search, review, synthesize, and write academic research. Use for arXiv paper search, paper review, systematic literature reviews, consulting analysis reports, and full research paper writing (NeurIPS/ICML/ICLR). Covers the full research lifecycle from discovery to publication.
-tags: [research, agent-skill]
+description: Search, review, synthesize, and write academic research. Use for arXiv
+  paper search, paper review, systematic literature reviews, consulting analysis reports,
+  and full research paper writing (NeurIPS/ICML/ICLR). Covers the full research lifecycle
+  from discovery to publication.
+tags:
+- research
+- skill
+- okf
 type: Playbook
+title: academic-research
+domain: research
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # academic-research

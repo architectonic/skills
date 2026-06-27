@@ -1,9 +1,29 @@
 ---
 name: Defending LLMs with Guardrails
-description: Deploy Llama Guard, NeMo Guardrails, and LLM Guard input/output scanners as runtime defenses.
-tags: [software-development, software-development, agent-skill, okf, ai-security, llm-guardrails, llama-guard, nemo-guardrails, llm-guard, prompt-injection, content-moderation, runtime-defense, security]
+description: Deploy Llama Guard, NeMo Guardrails, and LLM Guard input/output scanners
+  as runtime defenses.
+tags:
+- software-engineering
+- skill
+- okf
+- ai-security
+- llm-guardrails
+- llama-guard
+- nemo-guardrails
+- llm-guard
+- prompt-injection
+- content-moderation
+- runtime-defense
+- security
 license: Apache-2.0
 type: Playbook
+title: Defending LLMs with Guardrails
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Defending LLMs with Guardrails

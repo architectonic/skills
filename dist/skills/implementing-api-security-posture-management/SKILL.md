@@ -1,11 +1,29 @@
 ---
 name: Implementing API Security Posture Management
 description: Implement API Security Posture Management to continuously discover, classify,
-tags: [software-development, software-development, agent-skill, okf, api-security, aspm, api-posture-management, api-discovery, risk-scoring, api-governance, continuous-monitoring, api-inventory, security]
+tags:
+- software-engineering
+- skill
+- okf
+- api-security
+- aspm
+- api-posture-management
+- api-discovery
+- risk-scoring
+- api-governance
+- continuous-monitoring
+- api-inventory
+- security
 license: Apache-2.0
 type: API Endpoint
+title: Implementing API Security Posture Management
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing API Security Posture Management
 

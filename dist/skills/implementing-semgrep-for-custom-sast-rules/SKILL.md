@@ -1,11 +1,28 @@
 ---
 name: Implementing Semgrep for Custom SAST Rules
 description: Write custom Semgrep SAST rules in YAML to detect application-specific
-tags: [software-development, software-development, agent-skill, okf, semgrep, sast, static-analysis, custom-rules, devsecops, code-security, security]
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- semgrep
+- sast
+- static-analysis
+- custom-rules
+- devsecops
+- code-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Semgrep for Custom SAST Rules
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Semgrep for Custom SAST Rules
 

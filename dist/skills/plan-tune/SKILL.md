@@ -1,8 +1,18 @@
 ---
 name: plan-tune
-description: Self-tuning question sensitivity + developer psychographic for gstack (v1: observational). (gstack)
-tags: [agent-operations, agent-operations, agent-skill, okf, curation]
+title: plan-tune
+description: Review which AskUserQuestion prompts fire across gstack skills, set per-question
+  preferences (never-ask / always-ask / ask-only-for-one-way), inspect the dual-track
+  profile (what you declared vs what your behavior suggests), and enable/disable
 type: Playbook
+domain: writing
+tags:
+- writing
+- okf
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_status: adapted
 ---
 
 # plan-tune

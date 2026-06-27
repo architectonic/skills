@@ -1,11 +1,28 @@
 ---
 name: Analyzing Memory Forensics with LiME and Volatility
 description: Performs Linux memory acquisition using LiME (Linux Memory Extractor)
-tags: [research, agent-skill, okf, memory-forensics, linux-forensics, lime, volatility, incident-response, kernel-modules, security]
+tags:
+- forensics
+- research
+- skill
+- okf
+- memory-forensics
+- linux-forensics
+- lime
+- volatility
+- incident-response
+- kernel-modules
+- security
 license: Apache-2.0
 type: Playbook
+title: Analyzing Memory Forensics with LiME and Volatility
+domain: forensics
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Analyzing Memory Forensics with LiME and Volatility
 

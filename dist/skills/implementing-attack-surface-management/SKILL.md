@@ -1,11 +1,28 @@
 ---
 name: Implementing Attack Surface Management
 description: Implements external attack surface management (EASM) using Shodan, Censys,
-tags: [software-development, software-development, agent-skill, okf, attack-surface, reconnaissance, shodan, censys, subfinder, nuclei, asset-discovery, security]
+tags:
+- software-engineering
+- skill
+- okf
+- attack-surface
+- reconnaissance
+- shodan
+- censys
+- subfinder
+- nuclei
+- asset-discovery
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Attack Surface Management
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Attack Surface Management
 

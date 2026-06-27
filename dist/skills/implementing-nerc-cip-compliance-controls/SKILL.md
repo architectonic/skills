@@ -1,13 +1,28 @@
 ---
 name: Implementing NERC CIP Compliance Controls
 description: This skill covers implementing North American Electric Reliability Corporation
-tags: [software-development, software-development, agent-skill, okf, ot-security, ics, scada, industrial-control, iec62443, nerc-cip, power-grid, compliance, security]
+tags:
+- software-development
+- software-development
+- agent-skill
+- okf
+- ot-security
+- ics
+- scada
+- industrial-control
+- iec62443
+- nerc-cip
+- power-grid
+- compliance
+- security
 license: Apache-2.0
 type: Playbook
 ---
 
-
 # Implementing NERC CIP Compliance Controls
+
+
+**Authorized-use only:** Use this skill only for owned systems, sanctioned lab environments, or engagements with explicit written permission. Document scope, preserve evidence, and follow applicable law, policy, and incident-response procedures.
 
 ## When to Use
 

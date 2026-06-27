@@ -1,8 +1,23 @@
 ---
 name: Source Discovery and Triage
-description: Find, evaluate, and normalize newly published agent skill sets, loop repositories, and knowledge bundles. Use when scanning for new public agent knowledge to catalog.
-tags: [agent-operations, agent-operations, discovery, triage, source-profiling, normalization]
+description: Find, evaluate, and normalize newly published agent skill sets, loop
+  repositories, and knowledge bundles. Use when scanning for new public agent knowledge
+  to catalog.
+tags:
+- software-engineering
+- agent-operations
+- discovery
+- triage
+- source-profiling
+- normalization
+- okf
 type: Playbook
+title: Source Discovery and Triage
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Source Discovery and Triage

@@ -1,11 +1,27 @@
 ---
 name: Auditing Terraform Infrastructure for Security
 description: Auditing Terraform infrastructure-as-code for security misconfigurations
-tags: [software-development, software-development, agent-skill, okf, cloud-security, terraform, infrastructure-as-code, checkov, tfsec, policy-as-code, security]
+tags:
+- software-engineering
+- skill
+- okf
+- cloud-security
+- terraform
+- infrastructure-as-code
+- checkov
+- tfsec
+- policy-as-code
+- security
 license: Apache-2.0
 type: Playbook
+title: Auditing Terraform Infrastructure for Security
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Auditing Terraform Infrastructure for Security
 

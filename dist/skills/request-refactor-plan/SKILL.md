@@ -1,8 +1,21 @@
 ---
 name: request-refactor-plan
-description: Create a detailed refactor plan with tiny commits via user interview, then file it as a GitHub issue. Use when user wants to plan a refactor, create a refactoring RFC, or break a refactor into safe incremental steps.
-tags: [software-development, software-development, agent-skill, okf, curation]
+description: Create a detailed refactor plan with tiny commits via user interview,
+  then file it as a GitHub issue. Use when user wants to plan a refactor, create a
+  refactoring RFC, or break a refactor into safe incremental steps.
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- curation
 type: Playbook
+title: request-refactor-plan
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # request-refactor-plan

@@ -1,9 +1,28 @@
 ---
 name: Performing Access Review and Certification
 description: Conduct systematic access reviews and certifications to ensure users
-tags: [software-development, software-development, agent-skill, okf, iam, identity, access-control, access-review, certification, compliance, governance, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- iam
+- identity
+- access-control
+- access-review
+- certification
+- compliance
+- governance
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Access Review and Certification
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Performing Access Review and Certification

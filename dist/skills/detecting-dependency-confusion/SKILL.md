@@ -1,9 +1,30 @@
 ---
 name: Detecting Dependency Confusion
-description: Detect and prevent public-over-private name resolution in npm, PyPI, and Maven.
-tags: [software-development, software-development, agent-skill, okf, supply-chain-security, dependency-confusion, npm, pypi, maven, package-management, devsecops, namespace-hijacking, security]
+description: Detect and prevent public-over-private name resolution in npm, PyPI,
+  and Maven.
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- supply-chain-security
+- dependency-confusion
+- npm
+- pypi
+- maven
+- package-management
+- devsecops
+- namespace-hijacking
+- security
 license: Apache-2.0
 type: Playbook
+title: Detecting Dependency Confusion
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Detecting Dependency Confusion

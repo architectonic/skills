@@ -1,9 +1,21 @@
 ---
 name: Venue Templates
-description: LaTeX templates, formatting requirements, and submission guidelines for major scientific publication venues (Nature, Science, PLOS, IEEE, ACM), conferences (NeurIPS, ICML, CVPR, CHI), research posters, and grant proposals (NSF, NIH, DOE, DARPA). Use when preparing manuscripts, conference papers, posters, or grant proposals.
+description: LaTeX templates, formatting requirements, and submission guidelines for
+  major scientific publication venues (Nature, Science, PLOS, IEEE, ACM), conferences
+  (NeurIPS, ICML, CVPR, CHI), research posters, and grant proposals (NSF, NIH, DOE,
+  DARPA). Use when preparing manuscripts, conference papers, posters, or grant proposals.
 source: K-Dense-AI/scientific-agent-skills (MIT)
 distilled: 2026-06-23
 type: Playbook
+title: Venue Templates
+domain: research
+tags:
+- research
+- okf
+risk_level: medium
+requires_review: false
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Venue Templates

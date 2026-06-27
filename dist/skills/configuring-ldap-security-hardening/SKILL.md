@@ -1,9 +1,27 @@
 ---
 name: Configuring LDAP Security Hardening
 description: Harden LDAP directory services against common attacks including credential
-tags: [software-development, software-development, agent-skill, okf, iam, identity, access-control, ldap, directory-services, hardening, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- iam
+- identity
+- access-control
+- ldap
+- directory-services
+- hardening
+- security
 license: Apache-2.0
 type: Playbook
+title: Configuring LDAP Security Hardening
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Configuring LDAP Security Hardening

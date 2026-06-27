@@ -1,8 +1,24 @@
 ---
 name: skill-revision
-description: Revise agent skills using execution traces, verifier feedback, and utility gates. Use when improving cold-start LLM-authored skills, when a skill fails in production, or when evidence-based skill improvement is needed. Covers trace-conditioned diagnosis, principle-memory retrieval, anchored editing, and utility-gated promotion.
-tags: [skill-management, skill-management, skill-revision, trace-conditioned, verifier, self-improvement]
+description: Revise agent skills using execution traces, verifier feedback, and utility
+  gates. Use when improving cold-start LLM-authored skills, when a skill fails in
+  production, or when evidence-based skill improvement is needed. Covers trace-conditioned
+  diagnosis, principle-memory retrieval, anchored editing, and utility-gated promotion.
+tags:
+- agent-operations
+- skill-management
+- skill-revision
+- trace-conditioned
+- verifier
+- self-improvement
+- okf
 type: Playbook
+title: skill-revision
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # skill-revision

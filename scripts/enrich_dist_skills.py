@@ -19,6 +19,7 @@ from collections import Counter, defaultdict
 import json
 import re
 import yaml
+from typing import Iterable
 
 ROOT = Path("dist/skills")
 OUT = Path("reports")
@@ -44,6 +45,76 @@ def parse_frontmatter(text: str):
         fm = {}
     body = text[m.end():]
     return fm, body
+
+
+def slug_to_title(value: str) -> str:
+    text = value.replace("_", " ").replace("-", " ").strip()
+    text = re.sub(r"\s+", " ", text)
+    if not text:
+        return value
+    words = []
+    for word in text.split():
+        if word.isupper():
+            words.append(word)
+        elif len(word) <= 3 and word.lower() in {"api", "cli", "sdk", "css", "html", "sql", "aws", "gcp"}:
+            words.append(word.upper())
+        else:
+            words.append(word.capitalize())
+    return " ".join(words)
+
+
+def first_heading(body: str) -> str:
+    for line in body.splitlines():
+        if line.startswith("# "):
+            heading = line[2:].strip()
+            heading = re.sub(r"\s+\([^)]*\)$", "", heading).strip()
+            return heading
+    return ""
+
+
+def first_meaningful_paragraph(body: str) -> str:
+    lines = []
+    for raw in body.splitlines():
+        line = raw.strip()
+        if not line:
+            if lines:
+                break
+            continue
+        if line.startswith("#") or line.startswith(">") or line.startswith("```") or line.startswith("<!--"):
+            continue
+        if line.startswith("|") or re.match(r"^[-*]\s", line):
+            continue
+        lines.append(line)
+        if len(" ".join(lines)) >= 220:
+            break
+    paragraph = " ".join(lines).strip()
+    paragraph = re.sub(r"\s+", " ", paragraph)
+    return paragraph
+
+
+TAG_RENAMES = {
+    "agent-skill": "skill",
+    "software-development": "software-engineering",
+}
+
+
+def normalize_tags(tags: Iterable[str], domain: str) -> list[str]:
+    normalized = []
+    seen = set()
+    for tag in tags:
+        value = str(tag).strip().lower()
+        if not value:
+            continue
+        value = TAG_RENAMES.get(value, value)
+        if value not in seen:
+            seen.add(value)
+            normalized.append(value)
+    if domain and domain not in seen:
+        normalized.insert(0, domain)
+        seen.add(domain)
+    if "okf" not in seen:
+        normalized.append("okf")
+    return normalized
 
 
 # ---------------------------------------------------------------------------
@@ -937,15 +1008,22 @@ def main():
             raw_tags = [str(raw_tags)]
         tags = dedupe_tags(raw_tags)
 
-        title = fm.get("name") or fm.get("title") or name
-        typ = fm.get("type", "")
-        desc = fm.get("description", "")
-        if isinstance(desc, str):
-            desc = desc.strip()
+        heading = first_heading(body)
+        title = (
+            str(fm.get("title", "")).strip()
+            or heading
+            or str(fm.get("name", "")).strip()
+            or slug_to_title(name)
+        )
+        typ = str(fm.get("type", "")).strip()
+        desc = str(fm.get("description", "")).strip()
+        if not desc:
+            desc = first_meaningful_paragraph(body)
 
         domain, domain_conf = derive_domain(text, tags, name)
         risk, requires_review, risk_reasons = derive_risk(text, tags, name)
         source_family, source_conf = fingerprint_source(text, tags)
+        tags = normalize_tags(tags, domain)
         issues = quality_gate_check(fm, body, name, risk, requires_review, domain)
 
         domain_counter[domain] += 1

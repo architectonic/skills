@@ -1,11 +1,31 @@
 ---
 name: Vendor Management — Scorecard, SLA Tracking, and Third-Party Risk
-description: Review, score, and audit third-party SaaS/vendor relationships. Run vendor scorecards with industry tuning, track SLA compliance with credit-claim flags, classify third-party risk across 4 risk vectors, prepare tier-1 vendor reviews, and audit the SaaS portfolio. Produces KEEP / REVIEW / REPLACE recommendations with deterministic scoring.
+description: Review, score, and audit third-party SaaS/vendor relationships. Run vendor
+  scorecards with industry tuning, track SLA compliance with credit-claim flags, classify
+  third-party risk across 4 risk vectors, prepare tier-1 vendor reviews, and audit
+  the SaaS portfolio. Produces KEEP / REVIEW / REPLACE recommendations with deterministic
+  scoring.
 version: 1.0.0
 source: claude-skills/business-operations/vendor-management (MIT)
 author: claude-code-skills (distilled by Agent-Memory-Ops-Kit)
-tags: [productivity, bizops, vendor, sla, third-party-risk, vendor-management, saas-management, tprm]
+tags:
+- business
+- productivity
+- bizops
+- vendor
+- sla
+- third-party-risk
+- vendor-management
+- saas-management
+- tprm
+- okf
 type: Playbook
+title: Vendor Management — Scorecard, SLA Tracking, and Third-Party Risk
+domain: business
+risk_level: medium
+requires_review: true
+source_family: amok-native
+source_status: adapted
 ---
 
 # Vendor Management — Scorecard, SLA Tracking, and Third-Party Risk

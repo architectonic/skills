@@ -1,11 +1,29 @@
 ---
 name: Implementing Zero Trust with BeyondCorp
 description: Deploy Google BeyondCorp Enterprise zero trust access controls using
-tags: [software-development, software-development, agent-skill, okf, zero-trust, beyondcorp, google-cloud, iap, context-aware-access, device-trust, identity, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- zero-trust
+- beyondcorp
+- google-cloud
+- iap
+- context-aware-access
+- device-trust
+- identity
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Zero Trust with BeyondCorp
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Zero Trust with BeyondCorp
 

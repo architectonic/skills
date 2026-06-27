@@ -1,8 +1,19 @@
 ---
 name: qa
 description: Systematically QA test a web application and fix bugs found. (gstack)
-tags: [agent-operations, agent-operations, agent-skill, okf, curation]
+tags:
+- software-engineering
+- agent-operations
+- skill
+- okf
+- curation
 type: Playbook
+title: qa
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: vercel-skills
+source_status: adapted
 ---
 
 # qa

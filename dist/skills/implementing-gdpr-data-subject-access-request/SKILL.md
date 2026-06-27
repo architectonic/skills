@@ -1,11 +1,29 @@
 ---
 name: Implementing GDPR Data Subject Access Request (DSAR) Workflow
 description: Automates GDPR Data Subject Access Request (DSAR) workflows including
-tags: [software-development, software-development, agent-skill, okf, gdpr, dsar, privacy, pii-discovery, data-subject-rights, compliance, article-15, security]
+tags:
+- writing
+- software-engineering
+- skill
+- okf
+- gdpr
+- dsar
+- privacy
+- pii-discovery
+- data-subject-rights
+- compliance
+- article-15
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing GDPR Data Subject Access Request (DSAR) Workflow
+domain: writing
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing GDPR Data Subject Access Request (DSAR) Workflow
 

@@ -1,9 +1,28 @@
 ---
 name: Building IOC Enrichment Pipeline with OpenCTI
 description: OpenCTI is an open-source platform for managing cyber threat intelligence
-tags: [software-development, software-development, agent-skill, okf, threat-intelligence, cti, ioc, mitre-attack, stix, opencti, enrichment, virustotal, security]
+tags:
+- software-engineering
+- skill
+- okf
+- threat-intelligence
+- cti
+- ioc
+- mitre-attack
+- stix
+- opencti
+- enrichment
+- virustotal
+- security
 license: Apache-2.0
 type: Playbook
+title: Building IOC Enrichment Pipeline with OpenCTI
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Building IOC Enrichment Pipeline with OpenCTI

@@ -1,8 +1,16 @@
 ---
 name: research-ops-orchestrator
-description: Domain orchestrator for enterprise Research Operations. Routes research planning inquiries to the right sub-skill: clinical-research (study design, endpoints, sample size), research-finance (R&D budget, burn rate, CapEx/OpEx), market-research (TAM/SAM/SOM, surveys, segmentation), or product-research (user interviews, usability tests, insight synthesis). Use when the inquiry spans research planning, funding, scoping, or synthesis across workstreams.
-tags: [research, research-ops, orchestrator, clinical-research, research-finance, market-research, product-research, rd]
+title: Research Operations — Domain Orchestrator
+description: Routes enterprise research operations inquiries to the appropriate sub-skill.
+  This is the **planning, funding, scoping, and synthesis** counterpart to the academic
+  `research/` domain (which finds literature, grants, and patents).
 type: Playbook
+domain: research
+tags:
+- research
+- okf
+risk_level: medium
+requires_review: true
 ---
 
 # Research Operations — Domain Orchestrator

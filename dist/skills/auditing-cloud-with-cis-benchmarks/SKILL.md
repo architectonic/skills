@@ -1,11 +1,27 @@
 ---
 name: Auditing Cloud with CIS Benchmarks
 description: This skill details how to conduct cloud security audits using Center
-tags: [software-development, software-development, agent-skill, okf, cis-benchmarks, cloud-audit, compliance-assessment, prowler, security-hardening, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- cis-benchmarks
+- cloud-audit
+- compliance-assessment
+- prowler
+- security-hardening
+- security
 license: Apache-2.0
 type: Playbook
+title: Auditing Cloud with CIS Benchmarks
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Auditing Cloud with CIS Benchmarks
 

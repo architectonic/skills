@@ -1,11 +1,30 @@
 ---
 name: Detecting DNP3 Protocol Anomalies
 description: Detect anomalies in DNP3 (Distributed Network Protocol 3) communications
-tags: [software-development, software-development, agent-skill, okf, ot-security, ics, dnp3, scada, anomaly-detection, protocol-analysis, energy-sector, ids, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- ot-security
+- ics
+- dnp3
+- scada
+- anomaly-detection
+- protocol-analysis
+- energy-sector
+- ids
+- security
 license: Apache-2.0
 type: Playbook
+title: Detecting DNP3 Protocol Anomalies
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Detecting DNP3 Protocol Anomalies
 

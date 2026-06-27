@@ -1,11 +1,29 @@
 ---
 name: Implementing HIPAA Security Rule Safeguards
-description: >-
-tags: [software-development, software-development, agent-skill, okf, hipaa, hipaa-security-rule, ephi, phi, 45-cfr-164, risk-analysis, baa, breach-notification, ocr, compliance, governance, security]
+description: This is **required** and foundational. Inventory ePHI and systems, identify
+  threats and vulnerabilities, assess current controls, determine likelihood and impact,
+  and assign risk levels. (Pair with the NIST 800-30 methodology and HHS's SRA Tool.)
+  Output is a documented, dated risk analysis — the artifact OCR asks for first.
+tags:
+- software-development
+- software-development
+- agent-skill
+- okf
+- hipaa
+- hipaa-security-rule
+- ephi
+- phi
+- 45-cfr-164
+- risk-analysis
+- baa
+- breach-notification
+- ocr
+- compliance
+- governance
+- security
 license: Apache-2.0
 type: Playbook
 ---
-
 
 # Implementing HIPAA Security Rule Safeguards
 

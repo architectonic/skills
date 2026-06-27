@@ -1,9 +1,26 @@
 ---
 name: Implementing JWT Signing and Verification
 description: JSON Web Tokens (JWT) defined in RFC 7519 are compact, URL-safe tokens
-tags: [software-development, software-development, agent-skill, okf, cryptography, jwt, authentication, token-security, digital-signatures, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- cryptography
+- jwt
+- authentication
+- token-security
+- digital-signatures
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing JWT Signing and Verification
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing JWT Signing and Verification

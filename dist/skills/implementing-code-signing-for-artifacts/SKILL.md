@@ -1,11 +1,27 @@
 ---
 name: Implementing Code Signing for Artifacts
 description: This skill covers implementing code signing for build artifacts to ensure
-tags: [software-development, software-development, agent-skill, okf, devsecops, cicd, code-signing, supply-chain, sigstore, secure-sdlc, security]
+tags:
+- software-engineering
+- skill
+- okf
+- devsecops
+- cicd
+- code-signing
+- supply-chain
+- sigstore
+- secure-sdlc
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Code Signing for Artifacts
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Code Signing for Artifacts
 

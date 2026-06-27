@@ -1,6 +1,7 @@
 ---
 name: incident-response
-description: >
+description: 'Full lifecycle security incident triage: classify, escalate, collect
+  evidence, notify regulators.'
 type: Playbook
 ---
 

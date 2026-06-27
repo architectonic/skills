@@ -1,9 +1,30 @@
 ---
 name: Detecting Typosquatting Packages
-description: Flag misspelled, brandjacked, and typosquatted package names across npm, PyPI, and crates.io before installation using edit-distance, keyboard-proximity, and known-target corpus matching with typomania, OSSGadget, and pypi-scan.
-tags: [software-development, software-development, agent-skill, okf, supply-chain-security, typosquatting, package-registry, npm, pypi, typomania, ossgadget, dependency-screening, security]
+description: Flag misspelled, brandjacked, and typosquatted package names across npm,
+  PyPI, and crates.io before installation using edit-distance, keyboard-proximity,
+  and known-target corpus matching with typomania, OSSGadget, and pypi-scan.
+tags:
+- software-engineering
+- skill
+- okf
+- supply-chain-security
+- typosquatting
+- package-registry
+- npm
+- pypi
+- typomania
+- ossgadget
+- dependency-screening
+- security
 license: Apache-2.0
 type: Playbook
+title: Detecting Typosquatting Packages
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Detecting Typosquatting Packages

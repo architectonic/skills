@@ -1,11 +1,28 @@
 ---
 name: Performing Cloud Native Forensics with Falco
 description: Uses Falco YAML rules for runtime threat detection in containers and
-tags: [software-development, software-development, agent-skill, okf, cloud-security, falco, runtime-threat-detection, container-forensics, kubernetes-security, syscall-monitoring, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- cloud-security
+- falco
+- runtime-threat-detection
+- container-forensics
+- kubernetes-security
+- syscall-monitoring
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Cloud Native Forensics with Falco
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Cloud Native Forensics with Falco
 

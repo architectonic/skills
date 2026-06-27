@@ -1,10 +1,21 @@
 ---
 name: to-issues
-description: Break a plan, spec, or PRD into independently-grabbable issues on the project issue tracker using tracer-bullet vertical slices.
-tags: [software-development, software-development, agent-skill, okf, curation]
+description: Break a plan, spec, or PRD into independently-grabbable issues on the
+  project issue tracker using tracer-bullet vertical slices.
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- curation
 type: Playbook
+title: To Issues
+domain: business
+risk_level: medium
+requires_review: true
+source_family: matt-pocock-skills
+source_status: adapted
 ---
-
 
 # To Issues
 

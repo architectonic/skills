@@ -1,11 +1,28 @@
 ---
 name: Securing Helm Chart Deployments
 description: Secure Helm chart deployments by validating chart integrity, scanning
-tags: [devops, agent-skill, okf, helm, kubernetes, chart-security, supply-chain, configuration-security, deployment, security]
+tags:
+- software-engineering
+- devops
+- skill
+- okf
+- helm
+- kubernetes
+- chart-security
+- supply-chain
+- configuration-security
+- deployment
+- security
 license: Apache-2.0
 type: Playbook
+title: Securing Helm Chart Deployments
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Securing Helm Chart Deployments
 

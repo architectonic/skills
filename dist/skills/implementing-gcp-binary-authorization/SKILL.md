@@ -1,11 +1,29 @@
 ---
 name: Implementing GCP Binary Authorization
 description: Implement GCP Binary Authorization to enforce deploy-time security controls
-tags: [software-development, software-development, agent-skill, okf, gcp, binary-authorization, container-security, supply-chain, gke, cloud-run, attestation, software-integrity, security]
+tags:
+- software-engineering
+- skill
+- okf
+- gcp
+- binary-authorization
+- container-security
+- supply-chain
+- gke
+- cloud-run
+- attestation
+- software-integrity
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing GCP Binary Authorization
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing GCP Binary Authorization
 

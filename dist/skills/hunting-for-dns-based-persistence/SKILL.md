@@ -1,11 +1,29 @@
 ---
 name: Hunting for DNS-based Persistence
 description: Hunt for DNS-based persistence mechanisms including DNS hijacking, dangling
-tags: [software-development, software-development, agent-skill, okf, dns, persistence, threat-hunting, passive-dns, dns-hijacking, subdomain-takeover, securitytrails, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- dns
+- persistence
+- threat-hunting
+- passive-dns
+- dns-hijacking
+- subdomain-takeover
+- securitytrails
+- security
 license: Apache-2.0
 type: Playbook
+title: Hunting for DNS-based Persistence
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Hunting for DNS-based Persistence
 

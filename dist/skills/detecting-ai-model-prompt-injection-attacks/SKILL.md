@@ -1,9 +1,26 @@
 ---
 name: Detecting AI Model Prompt Injection Attacks
 description: Detects prompt injection attacks targeting LLM-based applications using
-tags: [red-teaming, agent-skill, okf, prompt-injection, llm-security, owasp-llm-top10, nlp-classification, input-validation, security]
+tags:
+- research
+- red-teaming
+- skill
+- okf
+- prompt-injection
+- llm-security
+- owasp-llm-top10
+- nlp-classification
+- input-validation
+- security
 license: Apache-2.0
 type: Playbook
+title: Detecting AI Model Prompt Injection Attacks
+domain: research
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Detecting AI Model Prompt Injection Attacks

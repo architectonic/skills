@@ -1,8 +1,18 @@
 ---
 name: setup-gbrain
-description: Set up gbrain for this coding agent: install the CLI, initialize a local PGLite or Supabase brain, register MCP, capture per-remote trust policy. (gstack)
-tags: [software-development, software-development, agent-skill, okf, curation]
+title: setup-gbrain
+description: 'One command from zero to "gbrain is running, and this agent can call
+  it." Use when: "setup gbrain", "connect gbrain", "start gbrain", "install gbrain",
+  "configure gbrain for this machine".'
 type: Playbook
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_status: adapted
 ---
 
 # setup-gbrain

@@ -1,13 +1,27 @@
 ---
 name: Analyzing Linux Kernel Rootkits
 description: Detect kernel-level rootkits in Linux memory dumps using Volatility3
-tags: [research, agent-skill, okf, rootkit, linux, kernel, volatility3, memory-forensics, malware-analysis, rkhunter, forensics, security]
+tags:
+- research
+- agent-skill
+- okf
+- rootkit
+- linux
+- kernel
+- volatility3
+- memory-forensics
+- malware-analysis
+- rkhunter
+- forensics
+- security
 license: Apache-2.0
 type: Playbook
 ---
 
-
 # Analyzing Linux Kernel Rootkits
+
+
+**Authorized-use only:** Use this skill only for owned systems, sanctioned lab environments, or engagements with explicit written permission. Document scope, preserve evidence, and follow applicable law, policy, and incident-response procedures.
 
 ## Overview
 

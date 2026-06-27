@@ -1,10 +1,22 @@
 ---
 name: gstack-openclaw-ceo-review
-description: Use when asked to review a plan, challenge a proposal, run a CEO review, poke holes in an approach, think bigger about scope, or decide whether to expand or reduce the plan.
-tags: [agent-operations, agent-operations, agent-skill, okf, curation]
+description: Use when asked to review a plan, challenge a proposal, run a CEO review,
+  poke holes in an approach, think bigger about scope, or decide whether to expand
+  or reduce the plan.
+tags:
+- software-engineering
+- agent-operations
+- skill
+- okf
+- curation
 type: Playbook
+title: CEO Plan Review
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
-
 
 # CEO Plan Review
 

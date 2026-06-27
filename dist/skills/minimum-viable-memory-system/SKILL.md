@@ -1,8 +1,23 @@
 ---
 name: Minimum Viable Memory System
-description: The 10-file governed memory kit every project needs for safe, continuous agent work. Use when setting up a new project memory layer, onboarding agents to an existing project, or diagnosing missing project memory infrastructure.
-tags: [canonical, memory, kit, agent-operations, onboarding, governance]
+description: The 10-file governed memory kit every project needs for safe, continuous
+  agent work. Use when setting up a new project memory layer, onboarding agents to
+  an existing project, or diagnosing missing project memory infrastructure.
+tags:
+- canonical
+- memory
+- kit
+- agent-operations
+- onboarding
+- governance
+- okf
 type: Playbook
+title: Minimum Viable Memory System
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Minimum Viable Memory System

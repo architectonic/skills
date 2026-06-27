@@ -1,14 +1,14 @@
 # dist/skills Risk Report
 
-Total skills: **1143**
+Total skills: **1162**
 
 ## By risk level
 
 | Value | Count |
 |---|---:|
-| `medium` | 711 |
+| `medium` | 733 |
 | `high` | 423 |
-| `low` | 9 |
+| `low` | 6 |
 
 ### High-risk skills
 
@@ -442,9 +442,9 @@ Total skills: **1143**
 
 | Path | Risk | Reasons |
 |---|---|---|
-| `a11y-audit\SKILL.md` | medium | medium-risk: audit; medium-risk: remediation; medium-risk: sla |
-| `academic-research\SKILL.md` | medium | medium-risk: write; medium-risk: topic; medium-risk: report |
-| `acceptance-orchestrator\SKILL.md` | medium | medium-risk: verification; medium-risk: rule; medium-risk: deploy |
+| `a11y-audit\SKILL.md` | medium | medium-risk: audit; medium-risk: domain; medium-risk: remediation |
+| `academic-research\SKILL.md` | medium | medium-risk: write; medium-risk: domain; medium-risk: topic |
+| `acceptance-orchestrator\SKILL.md` | medium | medium-risk: domain; medium-risk: rule; medium-risk: verification |
 | `achieving-cmmc-level-2-compliance\SKILL.md` | medium | medium-risk: incident; medium-risk: network; medium-risk: service |
 | `acquiring-disk-image-with-dd-and-dcfldd\SKILL.md` | medium | medium-risk: image; medium-risk: hash; medium-risk: verification |
 | `agent-context-validation\SKILL.md` | medium | medium-risk: validation; medium-risk: trigger; medium-risk: api |
@@ -452,8 +452,8 @@ Total skills: **1143**
 | `agent-handoff\SKILL.md` | medium | medium-risk: write; medium-risk: verification; medium-risk: api |
 | `agent-memory-system\SKILL.md` | medium | medium-risk: update; medium-risk: identity; medium-risk: role |
 | `agent-operating-loop\SKILL.md` | medium | medium-risk: production; medium-risk: authentication; medium-risk: authorization |
-| `agent-skill-configuration\SKILL.md` | medium | medium-risk: key; medium-risk: snapshot; medium-risk: performance |
-| `agent-skill-portability\SKILL.md` | medium | medium-risk: key; medium-risk: credential; medium-risk: performance |
+| `agent-skill-configuration\SKILL.md` | medium | medium-risk: domain; medium-risk: key; medium-risk: snapshot |
+| `agent-skill-portability\SKILL.md` | medium | medium-risk: domain; medium-risk: key; medium-risk: credential |
 | `agentic-actions-auditor\SKILL.md` | medium | medium-risk: trigger; medium-risk: access; medium-risk: audit |
 | `agents-md-improver\SKILL.md` | medium | medium-risk: audit; medium-risk: update; medium-risk: report |
 | `ai-native-cli\SKILL.md` | medium | medium-risk: api; medium-risk: validation; medium-risk: rule |
@@ -463,16 +463,16 @@ Total skills: **1143**
 | `analyzing-api-gateway-access-logs\SKILL.md` | medium | medium-risk: api; medium-risk: gateway; medium-risk: access |
 | `analyzing-apt-group-with-mitre-navigator\SKILL.md` | medium | medium-risk: domain; medium-risk: access; medium-risk: key |
 | `analyzing-azure-activity-logs-for-threats\SKILL.md` | medium | medium-risk: monitor; medium-risk: cloud; medium-risk: domain |
-| `analyzing-browser-forensics-with-hindsight\SKILL.md` | medium | medium-risk: cache; medium-risk: database; medium-risk: storage |
+| `analyzing-browser-forensics-with-hindsight\SKILL.md` | medium | medium-risk: cache; medium-risk: domain; medium-risk: database |
 | `analyzing-cloud-storage-access-patterns\SKILL.md` | medium | medium-risk: cloud; medium-risk: storage; medium-risk: access |
 | `analyzing-ethereum-smart-contract-vulnerabilities\SKILL.md` | medium | medium-risk: audit; medium-risk: domain; medium-risk: install |
 | `analyzing-ios-app-security-with-objection\SKILL.md` | medium | medium-risk: access; medium-risk: production; medium-risk: authorization |
 | `analyzing-lnk-file-and-jump-list-artifacts\SKILL.md` | medium | medium-risk: access; medium-risk: mac; medium-risk: domain |
 | `analyzing-memory-forensics-with-lime-and-volatility\SKILL.md` | medium | medium-risk: incident; medium-risk: response; medium-risk: domain |
-| `analyzing-network-packets-with-scapy\SKILL.md` | medium | medium-risk: network; medium-risk: dns; medium-risk: domain |
-| `analyzing-office365-audit-logs-for-compromise\SKILL.md` | medium | medium-risk: audit; medium-risk: api; medium-risk: rule |
-| `analyzing-persistence-mechanisms-in-linux\SKILL.md` | medium | medium-risk: incident; medium-risk: response; medium-risk: service |
+| `analyzing-network-packets-with-scapy\SKILL.md` | medium | medium-risk: network; medium-risk: domain; medium-risk: dns |
+| `analyzing-office365-audit-logs-for-compromise\SKILL.md` | medium | medium-risk: audit; medium-risk: api; medium-risk: domain |
+| `analyzing-persistence-mechanisms-in-linux\SKILL.md` | medium | medium-risk: incident; medium-risk: response; medium-risk: domain |
 
 ### Skills requiring review
 
-Count: **1102**
+Count: **1127**

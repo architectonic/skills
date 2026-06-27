@@ -1,11 +1,28 @@
 ---
 name: Implementing GitHub Advanced Security for Code Scanning
 description: Configure GitHub Advanced Security with CodeQL to perform automated static
-tags: [software-development, software-development, agent-skill, okf, github-advanced-security, codeql, sast, code-scanning, supply-chain-security, devops-security, shift-left, security]
+tags:
+- software-engineering
+- skill
+- okf
+- github-advanced-security
+- codeql
+- sast
+- code-scanning
+- supply-chain-security
+- devops-security
+- shift-left
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing GitHub Advanced Security for Code Scanning
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing GitHub Advanced Security for Code Scanning
 

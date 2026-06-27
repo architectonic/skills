@@ -1,10 +1,23 @@
 ---
 name: gstack-openclaw-retro
-description: Weekly engineering retrospective. Analyzes commit history, work patterns, and code quality metrics with persistent history and trend tracking. Team-aware with per-person contributions, praise, and growth areas. Use when asked for weekly retro, what shipped this week, or engineering retrospective.
-tags: [devops, agent-skill, okf, curation]
+description: Weekly engineering retrospective. Analyzes commit history, work patterns,
+  and code quality metrics with persistent history and trend tracking. Team-aware
+  with per-person contributions, praise, and growth areas. Use when asked for weekly
+  retro, what shipped this week, or engineering retrospective.
+tags:
+- software-engineering
+- devops
+- skill
+- okf
+- curation
 type: Metric
+title: Weekly Engineering Retrospective
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
-
 
 # Weekly Engineering Retrospective
 

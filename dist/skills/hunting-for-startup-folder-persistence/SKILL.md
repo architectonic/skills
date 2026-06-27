@@ -1,11 +1,29 @@
 ---
 name: Hunting for Startup Folder Persistence
 description: Detect T1547.001 startup folder persistence by monitoring Windows startup
-tags: [software-development, software-development, agent-skill, okf, threat-hunting, t1547.001, startup-folder, persistence, autoruns, watchdog, filesystem-monitoring, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- threat-hunting
+- t1547.001
+- startup-folder
+- persistence
+- autoruns
+- watchdog
+- filesystem-monitoring
+- security
 license: Apache-2.0
 type: Playbook
+title: Hunting for Startup Folder Persistence
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Hunting for Startup Folder Persistence
 

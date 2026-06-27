@@ -1,11 +1,29 @@
 ---
 name: Securing Container Registry Images
 description: Securing container registry images by implementing vulnerability scanning
-tags: [devops, agent-skill, okf, cloud-security, containers, registry, image-scanning, trivy, cosign, supply-chain, security]
+tags:
+- software-engineering
+- devops
+- skill
+- okf
+- cloud-security
+- containers
+- registry
+- image-scanning
+- trivy
+- cosign
+- supply-chain
+- security
 license: Apache-2.0
 type: Playbook
+title: Securing Container Registry Images
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Securing Container Registry Images
 

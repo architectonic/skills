@@ -1,9 +1,27 @@
 ---
 name: Implementing ISO 27001 Information Security Management
 description: ISO/IEC 27001:2022 is the international standard for establishing, implementing,
-tags: [software-development, software-development, agent-skill, okf, compliance, governance, iso27001, isms, risk-management, certification, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- compliance
+- governance
+- iso27001
+- isms
+- risk-management
+- certification
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing ISO 27001 Information Security Management
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing ISO 27001 Information Security Management

@@ -1,9 +1,29 @@
 ---
 name: Emulating Cloud Attacks with Stratus Red Team
-description: Detonate granular AWS, Azure, GCP, and Kubernetes attack techniques to validate
-tags: [devops, agent-skill, okf, stratus-red-team, adversary-emulation, cloud-security, detection-validation, purple-team, aws, mitre-attack, threat-detection, security]
+description: Detonate granular AWS, Azure, GCP, and Kubernetes attack techniques to
+  validate
+tags:
+- devops
+- skill
+- okf
+- stratus-red-team
+- adversary-emulation
+- cloud-security
+- detection-validation
+- purple-team
+- aws
+- mitre-attack
+- threat-detection
+- security
 license: Apache-2.0
 type: Playbook
+title: Emulating Cloud Attacks with Stratus Red Team
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Emulating Cloud Attacks with Stratus Red Team

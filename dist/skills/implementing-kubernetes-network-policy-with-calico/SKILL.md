@@ -1,11 +1,28 @@
 ---
 name: Implementing Kubernetes Network Policy with Calico
 description: Implement Kubernetes network segmentation using Calico NetworkPolicy
-tags: [devops, agent-skill, okf, calico, kubernetes, network-policy, network-segmentation, zero-trust, cni, security]
+tags:
+- software-engineering
+- devops
+- skill
+- okf
+- calico
+- kubernetes
+- network-policy
+- network-segmentation
+- zero-trust
+- cni
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Kubernetes Network Policy with Calico
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing Kubernetes Network Policy with Calico
 

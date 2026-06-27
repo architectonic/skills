@@ -1,11 +1,28 @@
 ---
 name: Hunting Credential Stuffing Attacks
 description: Detects credential stuffing attacks by analyzing authentication logs
-tags: [software-development, software-development, agent-skill, okf, credential-stuffing, authentication-logs, login-anomaly, asn-analysis, threat-hunting, account-takeover, security]
+tags:
+- security-defensive
+- software-engineering
+- skill
+- okf
+- credential-stuffing
+- authentication-logs
+- login-anomaly
+- asn-analysis
+- threat-hunting
+- account-takeover
+- security
 license: Apache-2.0
 type: Playbook
+title: Hunting Credential Stuffing Attacks
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Hunting Credential Stuffing Attacks
 

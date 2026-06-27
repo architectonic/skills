@@ -1,11 +1,27 @@
 ---
 name: Analyzing Azure Activity Logs for Threats
 description: Queries Azure Monitor activity logs and sign-in logs via azure-monitor-query
-tags: [research, agent-skill, okf, azure, cloud-security, azure-monitor, kql, threat-hunting, activity-logs, security]
+tags:
+- research
+- skill
+- okf
+- azure
+- cloud-security
+- azure-monitor
+- kql
+- threat-hunting
+- activity-logs
+- security
 license: Apache-2.0
 type: Playbook
+title: Analyzing Azure Activity Logs for Threats
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Analyzing Azure Activity Logs for Threats
 

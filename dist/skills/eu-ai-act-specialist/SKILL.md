@@ -1,7 +1,15 @@
 ---
 name: eu-ai-act-specialist
-description: EU AI Act (Regulation 2024/1689) operational compliance. Three decisions: (1) Risk tier classification — prohibited/high-risk/limited-risk/minimal, (2) Conformity assessment route for high-risk systems, (3) Per-role obligations (provider/deployer/importer/distributor). Cites Articles + Annexes for every output.
+title: EU AI Act Compliance Specialist
+description: Operational skill for Regulation (EU) 2024/1689. **Three decisions, no
+  executive AI strategy:**
 type: Playbook
+domain: writing
+tags:
+- writing
+- okf
+risk_level: medium
+requires_review: true
 ---
 
 # EU AI Act Compliance Specialist

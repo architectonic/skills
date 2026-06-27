@@ -1,11 +1,30 @@
 ---
 name: Implementing ICS Firewall with Tofino
 description: Deploy and configure Tofino industrial firewalls from Belden/Hirschmann
-tags: [software-development, software-development, agent-skill, okf, ot-security, ics, firewall, tofino, belden, deep-packet-inspection, network-security, scada, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- ot-security
+- ics
+- firewall
+- tofino
+- belden
+- deep-packet-inspection
+- network-security
+- scada
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing ICS Firewall with Tofino
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Implementing ICS Firewall with Tofino
 

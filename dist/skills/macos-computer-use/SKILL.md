@@ -1,6 +1,8 @@
 ---
 name: macos-computer-use
-description: |
+description: You have a `computer_use` tool that drives the Mac in the **background**.
+  Your actions do NOT move the user's cursor, steal keyboard focus, or switch Spaces.
+  The user can keep typing in their editor while you click around in
 type: Playbook
 ---
 

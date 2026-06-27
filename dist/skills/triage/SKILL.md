@@ -1,7 +1,17 @@
 ---
 name: triage
-description: Move issues and external PRs through a state machine of triage roles — categorise, verify, grill if needed, and write agent-ready briefs.
+description: Move issues and external PRs through a state machine of triage roles
+  — categorise, verify, grill if needed, and write agent-ready briefs.
 type: Playbook
+title: Triage
+domain: forensics
+tags:
+- forensics
+- okf
+risk_level: medium
+requires_review: true
+source_family: matt-pocock-skills
+source_status: adapted
 ---
 
 # Triage

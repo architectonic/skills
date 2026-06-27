@@ -1,12 +1,20 @@
 ---
-name: Managed Agent Launch
-description: Help a technical founder build and deploy an agent on Claude Managed Agents (CMA). Use when a founder says "launch my agent", "/launch-your-agent", "build me a managed agent", or wants to build something on CMA. Keywords: managed agents, CMA, founder, launch, scheduled deployment, outcome rubric.
-tags: [autonomous-ai-agents, cma, managed-agents, claude, deployment, launch, founder]
-source_repo: anthropics/launch-your-agent
-source_path: .claude/skills/launch-your-agent/SKILL.md
-source_license: Apache-2.0
-distilled_at: 2026-06-21
+name: managed-agent-launch-cma
+title: Managed Agent Launch
+description: Help a **technical founder** build whatever they want on Claude Managed
+  Agents (CMA) — an internal worker, a piece of their product, a customer-facing agent.
+  Interview them about what they want, scope a v0, launch it in their own account,
+  grade it against their own definition of done, iterate, and (if it should run on
+  a clock) put it on a scheduled deployment.
 type: Playbook
+domain: agent-operations
+tags:
+- agent-operations
+- okf
+risk_level: medium
+requires_review: true
+source_family: vercel-skills
+source_status: adapted
 ---
 
 # Managed Agent Launch

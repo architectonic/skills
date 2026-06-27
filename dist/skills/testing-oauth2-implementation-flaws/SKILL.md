@@ -1,9 +1,26 @@
 ---
 name: Testing OAuth2 Implementation Flaws
 description: Tests OAuth 2.0 and OpenID Connect implementations for security flaws
-tags: [software-development, software-development, agent-skill, okf, api-security, oauth2, oidc, authentication, redirect-uri, token-security, security]
+tags:
+- software-engineering
+- skill
+- okf
+- api-security
+- oauth2
+- oidc
+- authentication
+- redirect-uri
+- token-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Testing OAuth2 Implementation Flaws
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Testing OAuth2 Implementation Flaws

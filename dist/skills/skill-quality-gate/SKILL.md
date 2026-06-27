@@ -1,8 +1,21 @@
 ---
 name: skill-quality-gate
-description: Validate, lint, and score agent skills before promotion into the skill library. Use when evaluating a candidate skill for quality, safety, and completeness. Covers schema validation, frontmatter checks, content quality, and scoring dimensions.
-tags: [skill-management, skill-management, quality-gate, validation]
+description: Validate, lint, and score agent skills before promotion into the skill
+  library. Use when evaluating a candidate skill for quality, safety, and completeness.
+  Covers schema validation, frontmatter checks, content quality, and scoring dimensions.
+tags:
+- agent-operations
+- skill-management
+- quality-gate
+- validation
+- okf
 type: Playbook
+title: skill-quality-gate
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # skill-quality-gate

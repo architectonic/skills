@@ -1,7 +1,17 @@
 ---
 name: obliteratus
-description: OBLITERATUS: abliterate LLM refusals (diff-in-means).
+title: obliteratus
+description: 9 CLI methods, 28 analysis modules, 116 model presets across 5 compute
+  tiers, tournament evaluation, and telemetry-driven recommendations.
 type: Playbook
+domain: research
+tags:
+- research
+- okf
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_status: adapted
 ---
 
 # obliteratus

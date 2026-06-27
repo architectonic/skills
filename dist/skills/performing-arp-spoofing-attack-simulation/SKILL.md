@@ -1,9 +1,25 @@
 ---
 name: Performing ARP Spoofing Attack Simulation
 description: Simulates ARP spoofing attacks in authorized lab or pentest environments
-tags: [software-development, software-development, agent-skill, okf, network-security, arp-spoofing, mitm, ettercap, layer2-attack, security]
+tags:
+- software-engineering
+- skill
+- okf
+- network-security
+- arp-spoofing
+- mitm
+- ettercap
+- layer2-attack
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing ARP Spoofing Attack Simulation
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Performing ARP Spoofing Attack Simulation

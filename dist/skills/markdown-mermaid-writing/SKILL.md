@@ -1,10 +1,22 @@
 ---
 name: Markdown Mermaid Writing
-description: Comprehensive markdown and Mermaid diagram writing standard. Use when creating any document, report, analysis, or visualization. Establishes text-based diagrams as the default documentation format with full style guides (markdown + mermaid), 24 diagram type references, and 9 document templates.
+description: Comprehensive markdown and Mermaid diagram writing standard. Use when
+  creating any document, report, analysis, or visualization. Establishes text-based
+  diagrams as the default documentation format with full style guides (markdown +
+  mermaid), 24 diagram type references, and 9 document templates.
 source: K-Dense-AI/scientific-agent-skills (MIT)
 original-author: Clayton Young / Superior Byte Works, LLC (@borealBytes)
 distilled: 2026-06-23
 type: Reference
+title: Markdown & Mermaid Writing
+domain: design
+tags:
+- design
+- okf
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Markdown & Mermaid Writing

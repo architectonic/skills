@@ -1,9 +1,25 @@
 ---
 name: Implementing Kubernetes Pod Security Standards
 description: Pod Security Standards (PSS) define three levels of security policies
-tags: [devops, agent-skill, okf, containers, kubernetes, security, pod-security, psa]
+tags:
+- software-engineering
+- devops
+- skill
+- okf
+- containers
+- kubernetes
+- security
+- pod-security
+- psa
 license: Apache-2.0
 type: Playbook
+title: Implementing Kubernetes Pod Security Standards
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing Kubernetes Pod Security Standards

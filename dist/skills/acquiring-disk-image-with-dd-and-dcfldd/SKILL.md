@@ -1,11 +1,27 @@
 ---
 name: Acquiring Disk Image with dd and dcfldd
 description: Create forensically sound bit-for-bit disk images using dd and dcfldd
-tags: [software-development, software-development, agent-skill, okf, forensics, disk-imaging, evidence-acquisition, dd, dcfldd, hash-verification, security]
+tags:
+- software-engineering
+- skill
+- okf
+- forensics
+- disk-imaging
+- evidence-acquisition
+- dd
+- dcfldd
+- hash-verification
+- security
 license: Apache-2.0
 type: Playbook
+title: Acquiring Disk Image with dd and dcfldd
+domain: forensics
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Acquiring Disk Image with dd and dcfldd
 

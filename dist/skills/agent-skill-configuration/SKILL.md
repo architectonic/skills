@@ -1,8 +1,22 @@
 ---
 name: agent-skill-configuration
-description: Research on configuring and optimizing agent skills in agentic coding workflows.
-tags: [research, skill-configuration, agentic-coding, agent-setup, tool-integration]
+description: Research on configuring and optimizing agent skills in agentic coding
+  workflows.
+tags:
+- agent-operations
+- research
+- skill-configuration
+- agentic-coding
+- agent-setup
+- tool-integration
+- okf
 type: Playbook
+title: Agent Skill and Agentic Coding Configuration Studies
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Agent Skill and Agentic Coding Configuration Studies

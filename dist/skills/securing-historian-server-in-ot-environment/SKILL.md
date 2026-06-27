@@ -1,11 +1,30 @@
 ---
 name: Securing Historian Server in OT Environment
 description: This skill covers hardening and securing process historian servers (OSIsoft
-tags: [devops, agent-skill, okf, ot-security, ics, scada, industrial-control, iec62443, historian, osisoft-pi, data-integrity, security]
+tags:
+- business
+- devops
+- skill
+- okf
+- ot-security
+- ics
+- scada
+- industrial-control
+- iec62443
+- historian
+- osisoft-pi
+- data-integrity
+- security
 license: Apache-2.0
 type: Playbook
+title: Securing Historian Server in OT Environment
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Securing Historian Server in OT Environment
 

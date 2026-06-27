@@ -1,9 +1,24 @@
 ---
 name: Hardening Docker Containers for Production
 description: Hardening Docker containers for production involves applying security
-tags: [software-development, software-development, agent-skill, okf, containers, docker, security, hardening, cis-benchmark]
+tags:
+- software-engineering
+- skill
+- okf
+- containers
+- docker
+- security
+- hardening
+- cis-benchmark
 license: Apache-2.0
 type: Playbook
+title: Hardening Docker Containers for Production
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Hardening Docker Containers for Production

@@ -1,8 +1,19 @@
 ---
 name: freeze
 description: Restrict file edits to a specific directory for the session. (gstack)
-tags: [agent-operations, agent-operations, agent-skill, okf, curation]
+tags:
+- software-engineering
+- agent-operations
+- skill
+- okf
+- curation
 type: Playbook
+title: freeze
+domain: software-engineering
+risk_level: medium
+requires_review: false
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # freeze

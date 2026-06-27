@@ -1,9 +1,18 @@
 ---
-name: Codebase Design — Deep Modules
-description: Design deep modules: small interfaces hiding complex implementation. Use when designing or restructuring code modules, finding seams, improving testability, or when another skill needs the deep-module vocabulary.
-tags: [software-development, design, modules, interfaces, seams, testability, architecture, deep-modules]
-runtime_targets: [many]
+name: codebase-design
+title: Codebase Design — Deep Modules
+description: 'Design **deep modules**: a lot of behaviour behind a small interface,
+  placed at a clean seam, testable through that interface. Use this language and these
+  principles wherever code is being designed or restructured.'
 type: Playbook
+domain: software-engineering
+tags:
+- software-engineering
+- okf
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_status: adapted
 ---
 
 # Codebase Design — Deep Modules

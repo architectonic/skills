@@ -1,9 +1,26 @@
 ---
 name: Hunting for T1098 Account Manipulation
 description: Hunt for MITRE ATT&CK T1098 account manipulation including shadow admin
-tags: [software-development, software-development, agent-skill, okf, threat-hunting, mitre-attack, t1098, account-manipulation, active-directory, persistence, security]
+tags:
+- software-engineering
+- skill
+- okf
+- threat-hunting
+- mitre-attack
+- t1098
+- account-manipulation
+- active-directory
+- persistence
+- security
 license: Apache-2.0
 type: Playbook
+title: Hunting for T1098 Account Manipulation
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Hunting for T1098 Account Manipulation

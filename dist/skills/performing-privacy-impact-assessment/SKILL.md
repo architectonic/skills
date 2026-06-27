@@ -1,11 +1,30 @@
 ---
 name: Performing Privacy Impact Assessment
 description: Automates the Privacy Impact Assessment (PIA) workflow including data
-tags: [software-development, software-development, agent-skill, okf, privacy, impact-assessment, gdpr, ccpa, nist, dpia, data-flow-mapping, risk-scoring, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- privacy
+- impact-assessment
+- gdpr
+- ccpa
+- nist
+- dpia
+- data-flow-mapping
+- risk-scoring
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Privacy Impact Assessment
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Privacy Impact Assessment
 

@@ -1,9 +1,27 @@
 ---
 name: Reverse Engineering iOS App with Frida
 description: Reverse engineers iOS applications using Frida dynamic instrumentation
-tags: [software-development, software-development, agent-skill, okf, mobile-security, ios, frida, reverse-engineering, owasp-mobile, penetration-testing, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- mobile-security
+- ios
+- frida
+- reverse-engineering
+- owasp-mobile
+- penetration-testing
+- security
 license: Apache-2.0
 type: Playbook
+title: Reverse Engineering iOS App with Frida
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Reverse Engineering iOS App with Frida

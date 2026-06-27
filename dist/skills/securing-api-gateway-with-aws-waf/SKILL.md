@@ -1,11 +1,29 @@
 ---
 name: Securing API Gateway with AWS WAF
 description: Securing API Gateway endpoints with AWS WAF by configuring managed rule
-tags: [devops, agent-skill, okf, cloud-security, aws, waf, api-gateway, rate-limiting, bot-protection, owasp, security]
+tags:
+- software-engineering
+- devops
+- skill
+- okf
+- cloud-security
+- aws
+- waf
+- api-gateway
+- rate-limiting
+- bot-protection
+- owasp
+- security
 license: Apache-2.0
 type: API Endpoint
+title: Securing API Gateway with AWS WAF
+domain: software-engineering
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Securing API Gateway with AWS WAF
 

@@ -1,11 +1,28 @@
 ---
 name: Performing Mobile Device Forensics with Cellebrite
 description: Acquire and analyze mobile device data using Cellebrite UFED and open-source
-tags: [software-development, software-development, agent-skill, okf, forensics, mobile-forensics, cellebrite, smartphone-analysis, ios-forensics, android-forensics, security]
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- forensics
+- mobile-forensics
+- cellebrite
+- smartphone-analysis
+- ios-forensics
+- android-forensics
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Mobile Device Forensics with Cellebrite
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Mobile Device Forensics with Cellebrite
 

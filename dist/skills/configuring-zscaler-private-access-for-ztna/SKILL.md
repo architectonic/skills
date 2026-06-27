@@ -1,11 +1,29 @@
 ---
 name: Configuring Zscaler Private Access for ZTNA
 description: Configuring Zscaler Private Access (ZPA) to replace traditional VPN
-tags: [software-development, software-development, agent-skill, okf, zscaler, zpa, ztna, zero-trust, app-connector, access-policy, sase, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- zscaler
+- zpa
+- ztna
+- zero-trust
+- app-connector
+- access-policy
+- sase
+- security
 license: Apache-2.0
 type: Playbook
+title: Configuring Zscaler Private Access for ZTNA
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Configuring Zscaler Private Access for ZTNA
 

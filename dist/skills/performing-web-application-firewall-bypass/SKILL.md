@@ -1,11 +1,29 @@
 ---
 name: Performing Web Application Firewall Bypass
 description: Bypass Web Application Firewall protections using encoding techniques,
-tags: [software-development, software-development, agent-skill, okf, waf-bypass, waf-evasion, sql-injection, xss, payload-obfuscation, encoding-bypass, web-security, security]
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- waf-bypass
+- waf-evasion
+- sql-injection
+- xss
+- payload-obfuscation
+- encoding-bypass
+- web-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing Web Application Firewall Bypass
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing Web Application Firewall Bypass
 

@@ -1,9 +1,27 @@
 ---
 name: Implementing Disk Encryption with BitLocker
 description: Implements full disk encryption using Microsoft BitLocker on Windows
-tags: [software-development, software-development, agent-skill, okf, endpoint, encryption, bitlocker, tpm, data-protection, windows-security, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- endpoint
+- encryption
+- bitlocker
+- tpm
+- data-protection
+- windows-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing Disk Encryption with BitLocker
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing Disk Encryption with BitLocker

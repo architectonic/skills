@@ -1,11 +1,30 @@
 ---
 name: Performing JWT None Algorithm Attack
 description: Execute and test the JWT none algorithm attack to bypass signature verification
-tags: [software-development, software-development, agent-skill, okf, jwt, none-algorithm, authentication-bypass, token-manipulation, signature-bypass, penetration-testing, owasp, web-security, security]
+tags:
+- runtime-tools
+- software-engineering
+- skill
+- okf
+- jwt
+- none-algorithm
+- authentication-bypass
+- token-manipulation
+- signature-bypass
+- penetration-testing
+- owasp
+- web-security
+- security
 license: Apache-2.0
 type: Playbook
+title: Performing JWT None Algorithm Attack
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
-
 
 # Performing JWT None Algorithm Attack
 

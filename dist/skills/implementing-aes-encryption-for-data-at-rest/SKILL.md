@@ -1,9 +1,26 @@
 ---
 name: Implementing AES Encryption for Data at Rest
 description: AES (Advanced Encryption Standard) is a symmetric block cipher standardized
-tags: [software-development, software-development, agent-skill, okf, cryptography, encryption, aes, data-at-rest, symmetric-encryption, security]
+tags:
+- design
+- software-engineering
+- skill
+- okf
+- cryptography
+- encryption
+- aes
+- data-at-rest
+- symmetric-encryption
+- security
 license: Apache-2.0
 type: Playbook
+title: Implementing AES Encryption for Data at Rest
+domain: design
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Implementing AES Encryption for Data at Rest

@@ -1,9 +1,28 @@
 ---
 name: Building Patch Tuesday Response Process
 description: Establish a structured operational process to triage, test, and deploy
-tags: [software-development, software-development, agent-skill, okf, patch-management, patch-tuesday, microsoft, wsus, sccm, vulnerability-remediation, windows-update, security]
+tags:
+- business
+- software-engineering
+- skill
+- okf
+- patch-management
+- patch-tuesday
+- microsoft
+- wsus
+- sccm
+- vulnerability-remediation
+- windows-update
+- security
 license: Apache-2.0
 type: Playbook
+title: Building Patch Tuesday Response Process
+domain: business
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Building Patch Tuesday Response Process
