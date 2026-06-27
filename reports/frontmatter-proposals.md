@@ -1,6 +1,6 @@
 # Frontmatter Proposals Summary
 
-Total proposals: **1162**
+Total proposals: **1167**
 
 This file is proposal-only. No files have been modified.
 

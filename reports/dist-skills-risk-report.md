@@ -1,12 +1,12 @@
 # dist/skills Risk Report
 
-Total skills: **1162**
+Total skills: **1167**
 
 ## By risk level
 
 | Value | Count |
 |---|---:|
-| `medium` | 733 |
+| `medium` | 738 |
 | `high` | 423 |
 | `low` | 6 |
 
@@ -475,4 +475,4 @@ Total skills: **1162**
 
 ### Skills requiring review
 
-Count: **1127**
+Count: **1132**

@@ -1,12 +1,12 @@
 # dist/skills Source Fingerprint Report
 
-Total skills: **1162**
+Total skills: **1167**
 
 ## By inferred source family
 
 | Value | Count |
 |---|---:|
-| `agent-skills-standard` | 536 |
+| `agent-skills-standard` | 541 |
 | `anthropic-cybersecurity-skills` | 335 |
 | `unknown` | 225 |
 | `vercel-skills` | 51 |
@@ -18,5 +18,5 @@ Total skills: **1162**
 | Confidence | Count |
 |---|---:|
 | low (<0.2) | 450 |
-| medium (0.2-0.5) | 361 |
+| medium (0.2-0.5) | 366 |
 | high (>=0.5) | 351 |

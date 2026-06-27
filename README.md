@@ -225,6 +225,45 @@ Instantiation adapts a template or skill set to a specific project, user, agent,
 
 Do not preserve template language as if it were instantiated knowledge.
 
+## Distribution
+
+This repository now exposes a minimal distribution surface for both human browsing and machine installation:
+
+```text
+README.md
+dist/catalog.json
+dist/catalog.md
+dist/install-manifest.json
+dist/skills/<skill-slug>/SKILL.md
+```
+
+### Open GitHub repo
+
+For direct GitHub/repo browsing:
+
+1. Start at `README.md`
+2. Inspect `dist/catalog.json` or `dist/catalog.md` for discovery
+3. Open the selected skill under `dist/skills/<skill-slug>/SKILL.md`
+
+### `npx skills add <github/repo>`
+
+For package-style installers, the intended contract is:
+
+1. Clone or fetch the repo
+2. Read `dist/install-manifest.json`
+3. Use `dist/catalog.json` to enumerate skills and metadata
+4. Copy selected skill directories from `dist/skills/`
+
+The installer should preserve the skill directory name, respect `risk_level` and `requires_review`, and avoid silently auto-installing high-risk skills.
+
+### Build manifests
+
+Regenerate distribution manifests after inventory or metadata changes:
+
+```bash
+python scripts/build_distribution_catalog.py
+```
+
 ## Status
 
 Draft. The immediate goal is to define a small, high-signal, runtime-neutral skill corpus and export it into runtime-specific formats only when useful.

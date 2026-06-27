@@ -19070,6 +19070,41 @@
     "license": ""
   },
   {
+    "path": "identity-upkeep\\SKILL.md",
+    "name": "identity-upkeep",
+    "title": "identity-upkeep",
+    "type": "Playbook",
+    "description": "Maintain the identity layer so participant roles, boundaries, preferences, and privacy rules stay explicit, minimal, and free from inference creep.",
+    "tags": [
+      "business",
+      "agent-operations",
+      "upkeep",
+      "identity",
+      "privacy",
+      "boundaries",
+      "governance",
+      "okf"
+    ],
+    "domain": "business",
+    "domain_confidence": 0.26,
+    "risk_level": "medium",
+    "requires_review": true,
+    "risk_reasons": [
+      "medium-risk: identity",
+      "medium-risk: trigger",
+      "medium-risk: log",
+      "medium-risk: verification"
+    ],
+    "source_family": "agent-skills-standard",
+    "source_confidence": 0.25,
+    "quality_issues": [],
+    "source_status": "",
+    "source_name": "",
+    "source_url": "",
+    "source_license": "",
+    "license": ""
+  },
+  {
     "path": "image-generation\\SKILL.md",
     "name": "image-generation",
     "title": "image-generation",
@@ -35499,6 +35534,39 @@
     "license": "Apache-2.0"
   },
   {
+    "path": "project-upkeep\\SKILL.md",
+    "name": "project-upkeep",
+    "title": "project-upkeep",
+    "type": "Playbook",
+    "description": "Maintain the project layer so each project namespace stays source-grounded, current, decision-aware, and small enough to remain useful.",
+    "tags": [
+      "agent-operations",
+      "upkeep",
+      "project",
+      "source-grounding",
+      "decisions",
+      "handoff",
+      "okf"
+    ],
+    "domain": "agent-operations",
+    "domain_confidence": 0.23,
+    "risk_level": "medium",
+    "requires_review": true,
+    "risk_reasons": [
+      "medium-risk: trigger",
+      "medium-risk: identity",
+      "medium-risk: verification"
+    ],
+    "source_family": "agent-skills-standard",
+    "source_confidence": 0.25,
+    "quality_issues": [],
+    "source_status": "",
+    "source_name": "",
+    "source_url": "",
+    "source_license": "",
+    "license": ""
+  },
+  {
     "path": "prometheus-configuration\\SKILL.md",
     "name": "prometheus-configuration",
     "title": "Prometheus Configuration",
@@ -39247,6 +39315,40 @@
     "license": ""
   },
   {
+    "path": "skills-upkeep\\SKILL.md",
+    "name": "skills-upkeep",
+    "title": "skills-upkeep",
+    "type": "Playbook",
+    "description": "Maintain the skills layer so reusable procedures stay normalized, categorized, source-aware, packageable, and safe for progressive discovery.",
+    "tags": [
+      "software-engineering",
+      "agent-operations",
+      "upkeep",
+      "skills",
+      "curation",
+      "packaging",
+      "distribution",
+      "okf"
+    ],
+    "domain": "software-engineering",
+    "domain_confidence": 0.31,
+    "risk_level": "medium",
+    "requires_review": true,
+    "risk_reasons": [
+      "medium-risk: trigger",
+      "medium-risk: install",
+      "medium-risk: verification"
+    ],
+    "source_family": "agent-skills-standard",
+    "source_confidence": 0.25,
+    "quality_issues": [],
+    "source_status": "",
+    "source_name": "",
+    "source_url": "",
+    "source_license": "",
+    "license": ""
+  },
+  {
     "path": "slack-gif-creator\\SKILL.md",
     "name": "slack-gif-creator",
     "title": "Slack GIF Creator",
@@ -39881,6 +39983,77 @@
     ],
     "source_family": "unknown",
     "source_confidence": 0.0,
+    "quality_issues": [],
+    "source_status": "",
+    "source_name": "",
+    "source_url": "",
+    "source_license": "",
+    "license": ""
+  },
+  {
+    "path": "teleagent-system-upkeep\\SKILL.md",
+    "name": "teleagent-system-upkeep",
+    "title": "teleagent-system-upkeep",
+    "type": "Playbook",
+    "description": "Coordinate a full maintenance pass across teleology, identity, project, and skills so the TeleAgent stack remains coherent top-down.",
+    "tags": [
+      "software-engineering",
+      "agent-operations",
+      "upkeep",
+      "teleagent",
+      "system-maintenance",
+      "cross-repo",
+      "orchestration",
+      "okf"
+    ],
+    "domain": "software-engineering",
+    "domain_confidence": 0.22,
+    "risk_level": "medium",
+    "requires_review": true,
+    "risk_reasons": [
+      "medium-risk: identity",
+      "medium-risk: stack",
+      "medium-risk: trigger",
+      "medium-risk: update",
+      "medium-risk: verification"
+    ],
+    "source_family": "agent-skills-standard",
+    "source_confidence": 0.25,
+    "quality_issues": [],
+    "source_status": "",
+    "source_name": "",
+    "source_url": "",
+    "source_license": "",
+    "license": ""
+  },
+  {
+    "path": "teleology-upkeep\\SKILL.md",
+    "name": "teleology-upkeep",
+    "title": "teleology-upkeep",
+    "type": "Playbook",
+    "description": "Maintain the teleology layer so purpose, truth rules, authority boundaries, and memory doctrine stay coherent with the rest of the TeleAgent system.",
+    "tags": [
+      "agent-operations",
+      "upkeep",
+      "teleology",
+      "doctrine",
+      "governance",
+      "system-design",
+      "okf"
+    ],
+    "domain": "agent-operations",
+    "domain_confidence": 0.2,
+    "risk_level": "medium",
+    "requires_review": true,
+    "risk_reasons": [
+      "medium-risk: trigger",
+      "medium-risk: identity",
+      "medium-risk: policy",
+      "medium-risk: update",
+      "medium-risk: log"
+    ],
+    "source_family": "agent-skills-standard",
+    "source_confidence": 0.25,
     "quality_issues": [],
     "source_status": "",
     "source_name": "",

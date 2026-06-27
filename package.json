@@ -1,0 +1,30 @@
+{
+  "name": "architectonic-skills",
+  "version": "0.1.0",
+  "description": "Runtime-neutral TeleAgent skills bundle with install and discovery manifests.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "bin": {
+    "architectonic-skills": "./bin/architectonic-skills.js"
+  },
+  "files": [
+    "bin",
+    "README.md",
+    "index.md",
+    "doctrine",
+    "dist",
+    "scripts"
+  ],
+  "scripts": {
+    "build:catalog": "python scripts/build_distribution_catalog.py"
+  },
+  "keywords": [
+    "teleagent",
+    "skills",
+    "okf",
+    "agents",
+    "catalog",
+    "knowledge",
+    "architectonic"
+  ]
+}

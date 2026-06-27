@@ -1,0 +1,24 @@
+{
+  "schema_version": "0.1",
+  "package_name": "@teleagent/skills",
+  "distribution_kind": "skill-bundle",
+  "install_root": "dist/skills",
+  "discovery_files": [
+    "README.md",
+    "dist/catalog.json",
+    "dist/catalog.md",
+    "dist/install-manifest.json"
+  ],
+  "recommended_entrypoints": {
+    "github_repo": "README.md",
+    "installer_catalog": "dist/catalog.json"
+  },
+  "selection_fields": [
+    "slug",
+    "title",
+    "domain",
+    "risk_level",
+    "tags",
+    "requires_review"
+  ]
+}

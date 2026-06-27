@@ -1,17 +1,17 @@
 # dist/skills Domain Report
 
-Total skills: **1162**
+Total skills: **1167**
 
 ## By derived domain
 
 | Value | Count |
 |---|---:|
-| `software-engineering` | 328 |
+| `software-engineering` | 330 |
 | `security-defensive` | 201 |
 | `design` | 127 |
-| `business` | 96 |
+| `business` | 97 |
 | `runtime-tools` | 87 |
-| `agent-operations` | 74 |
+| `agent-operations` | 76 |
 | `writing` | 66 |
 | `security-offensive` | 59 |
 | `cloud-security` | 52 |
@@ -23,7 +23,7 @@ Total skills: **1162**
 
 | Value | Count |
 |---|---:|
-| `Playbook` | 1098 |
+| `Playbook` | 1103 |
 | `API Endpoint` | 35 |
 | `Metric` | 16 |
 | `Reference` | 13 |
@@ -32,5 +32,5 @@ Total skills: **1162**
 
 | Confidence | Count |
 |---|---:|
-| low (<0.4) | 1088 |
+| low (<0.4) | 1093 |
 | medium (0.4-0.7) | 74 |
