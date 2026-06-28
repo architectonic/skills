@@ -17,6 +17,12 @@ Install it with:
 npx architectonic add skills
 ```
 
+Optional addon for teams that want structured corpus upkeep loops:
+
+```bash
+npx architectonic add living-knowledge
+```
+
 It defines compact procedures that help agents perform specific kinds of work better, safer, faster, or with fewer repeated failures.
 
 This repository is not a prompt pack, a private memory vault, a project-specific playbook, or a runtime-specific skill dump. It should contain only skills that teach a useful procedure an agent would not reliably perform by default.
@@ -69,6 +75,19 @@ a large workflow that should be a playbook, living-knowledge campaign, or agent 
 ```
 
 In the constitutional vocabulary, `skills` operationalizes Technē: reusable craft and procedure. Skill success is not truth; knowledge claims still belong in the knowledge layer.
+
+## Relationship to the stack
+
+```text
+constitution      = root scaffold
+doctrine          = what must govern the work
+identity          = who performs or approves the work
+project           = where the work is situated
+skills            = how repeatable work is carried out
+knowledge         = what reviewed claims and evidence are retained
+meta              = how the system audits and improves itself
+living-knowledge  = optional addon for campaign-based maintenance of knowledge
+```
 
 ## Base skill format
 
