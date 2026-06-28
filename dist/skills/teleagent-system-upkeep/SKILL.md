@@ -1,6 +1,6 @@
 ---
 name: teleagent-system-upkeep
-description: Coordinate a full maintenance pass across teleology, identity, project, and skills so the TeleAgent stack remains coherent top-down.
+description: Coordinate a full maintenance pass across doctrine, identity, project, and skills so the Architectonic stack remains coherent top-down.
 tags: [agent-operations, upkeep, teleagent, system-maintenance, cross-repo, orchestration, okf]
 type: Playbook
 ---
@@ -9,7 +9,7 @@ type: Playbook
 
 ## Purpose
 
-Run a deliberate top-down maintenance pass across the four TeleAgent layers without losing the distinction between doctrine, identity, procedures, and project state.
+Run a deliberate top-down maintenance pass across the Architectonic layers without losing the distinction between doctrine, identity, procedures, and project state.
 
 ## Trigger
 
@@ -21,7 +21,7 @@ Use this playbook when:
 
 ## Composes
 
-- `teleology-upkeep`
+- `doctrine-upkeep`
 - `identity-upkeep`
 - `skills-upkeep`
 - `project-upkeep`
@@ -29,14 +29,14 @@ Use this playbook when:
 ## Order
 
 ```text
-teleology -> identity -> skills -> project
+doctrine -> identity -> skills -> project
 ```
 
 Start from governing doctrine, then participant boundaries, then reusable procedures, then active project/application state.
 
 ## Procedure
 
-1. Run `teleology-upkeep` first and note any doctrine changes that affect the other layers.
+1. Run `doctrine-upkeep` first and note any doctrine changes that affect the other layers.
 2. Run `identity-upkeep` next so participant boundaries and privacy rules are refreshed under the current doctrine.
 3. Run `skills-upkeep` after that so reusable procedures reflect the latest doctrine and identity constraints.
 4. Run `project-upkeep` last so project documentation and operating state are aligned with the current doctrine, identity rules, and available procedures.

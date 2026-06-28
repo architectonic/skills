@@ -23,7 +23,7 @@ Use this skill when:
 
 - the current identity repository docs and indexes
 - explicit user-confirmed identity facts or preference changes
-- relevant teleology doctrine about privacy, memory, and authority
+- relevant doctrine about privacy, memory, and authority
 - any repo-local notes that may have been misplaced into identity
 
 ## Procedure

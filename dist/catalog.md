@@ -1,34 +1,35 @@
 # Skills Distribution Catalog
 
-- Package: `@teleagent/skills`
+- Package: `architectonic-skills`
 - Install root: `dist/skills`
-- Skill count: **1167**
+- Skill count: **1170**
 
 ## Domains
 
 | Domain | Count |
 |---|---:|
-| `agent-operations` | 79 |
-| `business` | 96 |
-| `cloud-security` | 52 |
-| `design` | 127 |
-| `forensics` | 27 |
-| `media` | 11 |
-| `research` | 34 |
-| `runtime-tools` | 87 |
-| `security-defensive` | 201 |
-| `security-offensive` | 59 |
-| `software-engineering` | 328 |
-| `writing` | 66 |
+| `agent-operations` | 94 |
+| `business` | 45 |
+| `cloud-security` | 41 |
+| `design` | 40 |
+| `forensics` | 22 |
+| `media` | 1 |
+| `research` | 89 |
+| `runtime-tools` | 33 |
+| `security-defensive` | 51 |
+| `security-offensive` | 5 |
+| `software-engineering` | 146 |
+| `uncategorized` | 587 |
+| `writing` | 16 |
 
 ## Risk Levels
 
 | Risk | Count |
 |---|---:|
-| `high` | 423 |
-| `low` | 6 |
-| `medium` | 733 |
-| `unspecified` | 5 |
+| `high` | 1 |
+| `low` | 3 |
+| `medium` | 407 |
+| `unspecified` | 759 |
 
 ## Install Notes
 

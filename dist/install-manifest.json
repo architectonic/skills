@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1",
-  "package_name": "@teleagent/skills",
+  "package_name": "architectonic-skills",
   "distribution_kind": "skill-bundle",
   "install_root": "dist/skills",
   "discovery_files": [

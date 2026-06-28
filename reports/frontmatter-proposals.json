@@ -1,10 +1,10 @@
-[
+﻿[
   {
     "path": "a11y-audit\\SKILL.md",
     "proposed_frontmatter": {
       "name": "a11y-audit",
       "title": "Accessibility Audit",
-      "description": "WCAG 2.2 accessibility audit pipeline — scan, fix, and verify Level A/AA compliance across React, Next.js, Vue, Angular, Svelte, and plain HTML. Use when auditing accessibility, fixing a11y violations, checking color contrast, generating compliance reports, or integrating a11y checks into CI/CD.",
+      "description": "WCAG 2.2 accessibility audit pipeline â€” scan, fix, and verify Level A/AA compliance across React, Next.js, Vue, Angular, Svelte, and plain HTML. Use when auditing accessibility, fixing a11y violations, checking color contrast, generating compliance reports, or integrating a11y checks into CI/CD.",
       "type": "Playbook",
       "tags": [
         "design",
@@ -409,7 +409,7 @@
     "proposed_frontmatter": {
       "name": "agent-operating-loop",
       "title": "Agent Operating Loop",
-      "description": "The canonical Read → Classify → Inspect → Plan → Act → Verify → Reconcile → Handoff cycle that governs how an agent should approach any task. Use as the default procedure before starting work.",
+      "description": "The canonical Read â†’ Classify â†’ Inspect â†’ Plan â†’ Act â†’ Verify â†’ Reconcile â†’ Handoff cycle that governs how an agent should approach any task. Use as the default procedure before starting work.",
       "type": "Playbook",
       "tags": [
         "loops",
@@ -4092,7 +4092,7 @@
     "path": "api-design-reviewer\\SKILL.md",
     "proposed_frontmatter": {
       "name": "api-design-reviewer",
-      "title": "API Design Reviewer — Linting, Breaking Change Detection, and Scorecards",
+      "title": "API Design Reviewer â€” Linting, Breaking Change Detection, and Scorecards",
       "description": "Comprehensive REST API design review with automated linting, breaking-change detection, and design scorecards. Catches inconsistent conventions, missing versioning, and design smells before APIs ship. Use when reviewing a PR that adds or changes API endpoints, auditing an existing API for v2 migration, or establishing API standards for a team.",
       "type": "API Endpoint",
       "tags": [
@@ -4134,7 +4134,7 @@
     "proposed_frontmatter": {
       "name": "apple-macos-apps",
       "title": "apple-macos-apps",
-      "description": "Operate Apple user-facing macOS apps from the terminal or GUI bridge — Notes, Reminders, Messages, Find My, and adjacent app-specific automation.",
+      "description": "Operate Apple user-facing macOS apps from the terminal or GUI bridge â€” Notes, Reminders, Messages, Find My, and adjacent app-specific automation.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -4548,7 +4548,7 @@
     "proposed_frontmatter": {
       "name": "auditing-foundry-smart-contract-security",
       "title": "Auditing Foundry Smart Contract Security",
-      "description": "Deployed smart contracts are **immutable** and custody **real funds**, so a bug shipped to mainnet cannot be patched — it can only be exploited. Most catastrophic DeFi losses come from a small set of recurring classes: reentrancy, broken access",
+      "description": "Deployed smart contracts are **immutable** and custody **real funds**, so a bug shipped to mainnet cannot be patched â€” it can only be exploited. Most catastrophic DeFi losses come from a small set of recurring classes: reentrancy, broken access",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -5062,7 +5062,7 @@
     "proposed_frontmatter": {
       "name": "autoplan",
       "title": "autoplan",
-      "description": "Auto-review pipeline — reads the full CEO, design, eng, and DX review skills from disk and runs them sequentially with auto-decisions using 6 decision principles. (gstack)",
+      "description": "Auto-review pipeline â€” reads the full CEO, design, eng, and DX review skills from disk and runs them sequentially with auto-decisions using 6 decision principles. (gstack)",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -5095,7 +5095,7 @@
     "proposed_frontmatter": {
       "name": "autoresearch-loop",
       "title": "Autoresearch Loop",
-      "description": "Autonomous iteration loop — modify, verify, keep/discard against any metric. Use when the user wants to iteratively improve code, hunt bugs, audit security, or optimize against a measurable goal without manual step-by-step guidance.",
+      "description": "Autonomous iteration loop â€” modify, verify, keep/discard against any metric. Use when the user wants to iteratively improve code, hunt bugs, audit security, or optimize against a measurable goal without manual step-by-step guidance.",
       "type": "Metric",
       "tags": [
         "business",
@@ -5348,7 +5348,7 @@
     "proposed_frontmatter": {
       "name": "browser-trace",
       "title": "Browser Trace",
-      "description": "Capture a full DevTools-protocol trace of any browser automation — CDP firehose, screenshots, and DOM dumps — then bisect into per-page searchable buckets. Use when debugging failed browser automation runs, auditing network/console/DOM activity, or feeding structured per-page summaries back into agent loops.",
+      "description": "Capture a full DevTools-protocol trace of any browser automation â€” CDP firehose, screenshots, and DOM dumps â€” then bisect into per-page searchable buckets. Use when debugging failed browser automation runs, auditing network/console/DOM activity, or feeding structured per-page summaries back into agent loops.",
       "type": "Playbook",
       "tags": [
         "design",
@@ -5418,7 +5418,7 @@
     "proposed_frontmatter": {
       "name": "build-mcp-server",
       "title": "Build an MCP Server",
-      "description": "This skill should be used when the user asks to \"build an MCP server\", \"create an MCP\", \"make an MCP integration\", \"wrap an API for Claude\", \"expose tools to Claude\", \"make an MCP app\", or discusses building something with the Model Context Protocol. It is the entry point for MCP server development — it interrogates the user about their use case, determines the right deployment model (remote HTTP, MCPB, local stdio), picks a tool-design pattern, and hands off to specialized skills.",
+      "description": "This skill should be used when the user asks to \"build an MCP server\", \"create an MCP\", \"make an MCP integration\", \"wrap an API for Claude\", \"expose tools to Claude\", \"make an MCP app\", or discusses building something with the Model Context Protocol. It is the entry point for MCP server development â€” it interrogates the user about their use case, determines the right deployment model (remote HTTP, MCPB, local stdio), picks a tool-design pattern, and hands off to specialized skills.",
       "type": "Reference",
       "tags": [
         "runtime-tools",
@@ -7256,8 +7256,8 @@
     "path": "canvas-design\\SKILL.md",
     "proposed_frontmatter": {
       "name": "canvas-design",
-      "title": "Canvas Design — Visual Art Creation",
-      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. Use when the user asks to create a poster, piece of art, design, or other static visual piece. Creates original visual designs — never copying existing artists' work. Produces design philosophy documents plus rendered PNG/PDF output.",
+      "title": "Canvas Design â€” Visual Art Creation",
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. Use when the user asks to create a poster, piece of art, design, or other static visual piece. Creates original visual designs â€” never copying existing artists' work. Produces design philosophy documents plus rendered PNG/PDF output.",
       "type": "Playbook",
       "tags": [
         "design",
@@ -7283,7 +7283,7 @@
     "path": "capacity-planner\\SKILL.md",
     "proposed_frontmatter": {
       "name": "capacity-planner",
-      "title": "Capacity Planner — Ops Team Sizing with Erlang-C Queueing Theory",
+      "title": "Capacity Planner â€” Ops Team Sizing with Erlang-C Queueing Theory",
       "description": "Size ops capacity for teams that handle queued work (Support, CX, CS, BizOps, IT ops, Finance ops). Erlang-C queueing math, P90 demand sizing, shrinkage-adjusted FTE, manager-trigger thresholds, and quarterly hiring sequence with ramp + attrition. Produces capacity sizing at multiple utilization levels, per-member utilization health, and a 12-month hiring plan.",
       "type": "Playbook",
       "tags": [
@@ -7326,7 +7326,7 @@
     "path": "capture\\SKILL.md",
     "proposed_frontmatter": {
       "name": "capture",
-      "title": "Capture — Single Ingestion Entrypoint",
+      "title": "Capture â€” Single Ingestion Entrypoint",
       "description": "Save any thought or content into persistent knowledge storage via one command. The single human-facing ingestion entrypoint that handles both local and remote installs. Use when the user says \"capture this\", \"save this thought\", \"remember this\", or \"save to brain\".",
       "type": "Playbook",
       "tags": [
@@ -7368,7 +7368,7 @@
     "proposed_frontmatter": {
       "name": "careful",
       "title": "Careful",
-      "description": "Safety guardrails for destructive commands — warn before rm -rf, force-push, DROP TABLE, or production mutations. Use when touching production, debugging live systems, or working in shared environments.",
+      "description": "Safety guardrails for destructive commands â€” warn before rm -rf, force-push, DROP TABLE, or production mutations. Use when touching production, debugging live systems, or working in shared environments.",
       "type": "Playbook",
       "tags": [
         "writing",
@@ -7603,7 +7603,7 @@
     "proposed_frontmatter": {
       "name": "claude-api-reference",
       "title": "Claude API Reference",
-      "description": "Full reference for the Claude API / Anthropic SDK — model IDs, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration.",
+      "description": "Full reference for the Claude API / Anthropic SDK â€” model IDs, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration.",
       "type": "API Endpoint",
       "tags": [
         "research",
@@ -7684,7 +7684,7 @@
     "proposed_frontmatter": {
       "name": "clean-code-discipline",
       "title": "Clean Code Discipline",
-      "description": "Clean code principles from Robert C. Martin's \"Clean Code\" — readability, naming, function design, error handling, and boundary separation as agent operating discipline.",
+      "description": "Clean code principles from Robert C. Martin's \"Clean Code\" â€” readability, naming, function design, error handling, and boundary separation as agent operating discipline.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -7928,7 +7928,7 @@
     "path": "codebase-design\\SKILL.md",
     "proposed_frontmatter": {
       "name": "codebase-design",
-      "title": "Codebase Design — Deep Modules",
+      "title": "Codebase Design â€” Deep Modules",
       "description": "Design **deep modules**: a lot of behaviour behind a small interface, placed at a clean seam, testable through that interface. Use this language and these principles wherever code is being designed or restructured.",
       "type": "Playbook",
       "tags": [
@@ -7956,7 +7956,7 @@
     "proposed_frontmatter": {
       "name": "codex",
       "title": "codex",
-      "description": "OpenAI Codex CLI wrapper — three modes. (gstack)",
+      "description": "OpenAI Codex CLI wrapper â€” three modes. (gstack)",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -8389,7 +8389,7 @@
     "proposed_frontmatter": {
       "name": "command-plugin-integration",
       "title": "Command Plugin Integration",
-      "description": "Integrate commands with plugin components — CLAUDE_PLUGIN_ROOT, agents, skills, hooks, and multi-component workflows. Use when building commands that reference plugin files, trigger agents, or coordinate with hooks.",
+      "description": "Integrate commands with plugin components â€” CLAUDE_PLUGIN_ROOT, agents, skills, hooks, and multi-component workflows. Use when building commands that reference plugin files, trigger agents, or coordinate with hooks.",
       "type": "Playbook",
       "tags": [
         "runtime-tools",
@@ -8522,7 +8522,7 @@
     "path": "complexity-cuts\\SKILL.md",
     "proposed_frontmatter": {
       "name": "complexity-cuts",
-      "title": "complexity-cuts — Lower Big-O on Existing Code",
+      "title": "complexity-cuts â€” Lower Big-O on Existing Code",
       "description": "Lower time/space complexity on existing code via a one-transformation-at-a-time playbook with verify-revert-stop.",
       "type": "Playbook",
       "tags": [
@@ -8549,8 +8549,8 @@
     "path": "compliance-os\\SKILL.md",
     "proposed_frontmatter": {
       "name": "compliance-os",
-      "title": "Compliance OS — Multi-Framework Compliance Orchestration",
-      "description": "Meta-orchestrator for compliance teams. CONFIGURE which frameworks apply, COMPUTE cross-framework control overlap, SIMULATE internal audits, and CONSOLIDATE evidence across multiple frameworks. Supports ISO 27001/13485/42001/14971, EU AI Act, MDR 745, GDPR, SOC 2, FDA QSR, NIST CSF 2.0, NIS2, HIPAA. Does NOT replace per-framework skills — it orchestrates them.",
+      "title": "Compliance OS â€” Multi-Framework Compliance Orchestration",
+      "description": "Meta-orchestrator for compliance teams. CONFIGURE which frameworks apply, COMPUTE cross-framework control overlap, SIMULATE internal audits, and CONSOLIDATE evidence across multiple frameworks. Supports ISO 27001/13485/42001/14971, EU AI Act, MDR 745, GDPR, SOC 2, FDA QSR, NIST CSF 2.0, NIS2, HIPAA. Does NOT replace per-framework skills â€” it orchestrates them.",
       "type": "Playbook",
       "tags": [
         "business",
@@ -10123,7 +10123,7 @@
     "proposed_frontmatter": {
       "name": "construction-discipline",
       "title": "Construction Discipline",
-      "description": "Code construction discipline from Steve McConnell's \"Code Complete\" — clarity, defect reduction, variable naming, control flow, error handling, and evidence-based quality as agent operating discipline.",
+      "description": "Code construction discipline from Steve McConnell's \"Code Complete\" â€” clarity, defect reduction, variable naming, control flow, error handling, and evidence-based quality as agent operating discipline.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -10530,7 +10530,7 @@
     "proposed_frontmatter": {
       "name": "cross-session-handoff",
       "title": "Cross-Session Handoff",
-      "description": "Compact the current conversation into a handoff document for another agent or fresh session to pick up. Use when a thread is full, you need to branch off (e.g., into a prototype session), or you want to preserve context across session boundaries. This is a fork — you open a new session and reference the handoff file to carry context across.",
+      "description": "Compact the current conversation into a handoff document for another agent or fresh session to pick up. Use when a thread is full, you need to branch off (e.g., into a prototype session), or you want to preserve context across session boundaries. This is a fork â€” you open a new session and reference the handoff file to carry context across.",
       "type": "Playbook",
       "tags": [
         "agent-operations",
@@ -10593,8 +10593,8 @@
     "path": "culture-architect\\SKILL.md",
     "proposed_frontmatter": {
       "name": "culture-architect",
-      "title": "Culture Architect — Company Culture as Operational System",
-      "description": "Build, measure, and evolve company culture as operational behavior — not wall posters. Covers mission/vision/values workshops, values-to-behaviors translation, culture code creation, culture health assessment, and cultural rituals by stage. Culture = (What you reward) + (What you tolerate) + (What you celebrate).",
+      "title": "Culture Architect â€” Company Culture as Operational System",
+      "description": "Build, measure, and evolve company culture as operational behavior â€” not wall posters. Covers mission/vision/values workshops, values-to-behaviors translation, culture code creation, culture health assessment, and cultural rituals by stage. Culture = (What you reward) + (What you tolerate) + (What you celebrate).",
       "type": "Playbook",
       "tags": [
         "research",
@@ -10637,7 +10637,7 @@
     "proposed_frontmatter": {
       "name": "data-intensive-design",
       "title": "Data-Intensive Design",
-      "description": "Distributed data system design from Martin Kleppmann's \"Designing Data-Intensive Applications\" — consistency, replication, partitioning, stream processing, and schema evolution as agent operating discipline.",
+      "description": "Distributed data system design from Martin Kleppmann's \"Designing Data-Intensive Applications\" â€” consistency, replication, partitioning, stream processing, and schema evolution as agent operating discipline.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -10814,7 +10814,7 @@
     "proposed_frontmatter": {
       "name": "data-structure-protocol",
       "title": "Data Structure Protocol",
-      "description": "Give agents persistent structural memory of a codebase — navigate dependencies, track public APIs, and understand why connections exist without re-reading the whole repo. Uses a .dsp/ directory for stable, queryable structural maps.",
+      "description": "Give agents persistent structural memory of a codebase â€” navigate dependencies, track public APIs, and understand why connections exist without re-reading the whole repo. Uses a .dsp/ directory for stable, queryable structural maps.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -11786,7 +11786,7 @@
     "proposed_frontmatter": {
       "name": "design-consultation",
       "title": "design-consultation",
-      "description": "<!-- AUTO-GENERATED from SKILL.md.tmpl — do not edit directly --> <!-- Regenerate: bun run gen:skill-docs -->",
+      "description": "<!-- AUTO-GENERATED from SKILL.md.tmpl â€” do not edit directly --> <!-- Regenerate: bun run gen:skill-docs -->",
       "type": "Playbook",
       "tags": [
         "design",
@@ -11813,7 +11813,7 @@
     "proposed_frontmatter": {
       "name": "design-html",
       "title": "design-html",
-      "description": "<!-- AUTO-GENERATED from SKILL.md.tmpl — do not edit directly --> <!-- Regenerate: bun run gen:skill-docs -->",
+      "description": "<!-- AUTO-GENERATED from SKILL.md.tmpl â€” do not edit directly --> <!-- Regenerate: bun run gen:skill-docs -->",
       "type": "Playbook",
       "tags": [
         "design",
@@ -11840,7 +11840,7 @@
     "proposed_frontmatter": {
       "name": "design-shotgun",
       "title": "design-shotgun",
-      "description": "<!-- AUTO-GENERATED from SKILL.md.tmpl — do not edit directly --> <!-- Regenerate: bun run gen:skill-docs -->",
+      "description": "<!-- AUTO-GENERATED from SKILL.md.tmpl â€” do not edit directly --> <!-- Regenerate: bun run gen:skill-docs -->",
       "type": "Playbook",
       "tags": [
         "design",
@@ -16329,7 +16329,7 @@
     "proposed_frontmatter": {
       "name": "domain-modeling",
       "title": "Domain Modeling",
-      "description": "Actively build and sharpen a project's domain model during design. Use when the user wants to pin down domain terminology or a ubiquitous language, record an architectural decision, or when another skill needs to maintain the domain model. Not for passively reading a glossary — for actively changing the model.",
+      "description": "Actively build and sharpen a project's domain model during design. Use when the user wants to pin down domain terminology or a ubiquitous language, record an architectural decision, or when another skill needs to maintain the domain model. Not for passively reading a glossary â€” for actively changing the model.",
       "type": "Playbook",
       "tags": [
         "agent-operations",
@@ -16365,8 +16365,8 @@
     "path": "dossier\\SKILL.md",
     "proposed_frontmatter": {
       "name": "dossier",
-      "title": "Dossier — Decision-Grade Entity Research",
-      "description": "Decision-grade entity research — produces a hypothesis-tested dossier on a specific company, person, nonprofit, or government org. Forces intake to state a hypothesis upfront so the dossier tests it rather than confirms it. Output is a structured report with verdict on hypothesis, identity facts, 12-month activity timeline, network and reputation signals, red flags, conversation hooks tied to specific findings, and source-provenance audit log. Use when the user asks for background research, diligence, or meeting prep on a specific entity (e.g., 'prep me for a meeting with [person/company]', 'due diligence on [company]').",
+      "title": "Dossier â€” Decision-Grade Entity Research",
+      "description": "Decision-grade entity research â€” produces a hypothesis-tested dossier on a specific company, person, nonprofit, or government org. Forces intake to state a hypothesis upfront so the dossier tests it rather than confirms it. Output is a structured report with verdict on hypothesis, identity facts, 12-month activity timeline, network and reputation signals, red flags, conversation hooks tied to specific findings, and source-provenance audit log. Use when the user asks for background research, diligence, or meeting prep on a specific entity (e.g., 'prep me for a meeting with [person/company]', 'due diligence on [company]').",
       "type": "Playbook",
       "tags": [
         "research",
@@ -16459,7 +16459,7 @@
     "proposed_frontmatter": {
       "name": "embedded-captions",
       "title": "Embedded Captions",
-      "description": "**One catalog, picked up front** ([CATALOG.md](CATALOG.md) — 17 identities; the three engines behind it are backend detail). **Standard** (default) builds a clean verbatim **rail** (lower-third subtitle carrying most text) + an **embed** climax composited _into_ the scene behind the subject at the peak. **Cinematic** is pure embed — no rail, every caption composited behind the subject (hero typography, accumulation, occlusion as the effect). **Theme** is a complete themed constitution — body paradigm × hero setpiece × front fx × plate reaction, composed from registries ([themes/README.md](themes/README.md)): `ordnance` `terminal` `neonsign` `stardust` `stomp`. Most explainer / voiceover is **Standard**; **embed is the scarce, earned peak** — embedding every word is the common mistake; Theme is for VFX-grade asks (\"炸\", \"特效\", \"像 AE 做的\").",
+      "description": "**One catalog, picked up front** ([CATALOG.md](CATALOG.md) â€” 17 identities; the three engines behind it are backend detail). **Standard** (default) builds a clean verbatim **rail** (lower-third subtitle carrying most text) + an **embed** climax composited _into_ the scene behind the subject at the peak. **Cinematic** is pure embed â€” no rail, every caption composited behind the subject (hero typography, accumulation, occlusion as the effect). **Theme** is a complete themed constitution â€” body paradigm Ã— hero setpiece Ã— front fx Ã— plate reaction, composed from registries ([themes/README.md](themes/README.md)): `ordnance` `terminal` `neonsign` `stardust` `stomp`. Most explainer / voiceover is **Standard**; **embed is the scarce, earned peak** â€” embedding every word is the common mistake; Theme is for VFX-grade asks (\"ç‚¸\", \"ç‰¹æ•ˆ\", \"åƒ AE åšçš„\").",
       "type": "Playbook",
       "tags": [
         "design",
@@ -18506,7 +18506,7 @@
     "proposed_frontmatter": {
       "name": "faceless-explainer",
       "title": "Faceless Explainer to HyperFrames",
-      "description": "turn arbitrary text — an article, notes, a topic, a brief — into a faceless explainer video, up to ~3 min (sweet spot 30-90s), where every visual is invented (typography, abstract graphics, diagrams, data-viz) rather than captured. There is no URL, no website capture, and no real assets. Use this skill for topic explainers, concept breakdowns, how-tos, listicles, and narrative explainers. Do not use it for a product launch/promo (use /product-launch-video), a tour of a real website (use /website-to-video), a GitHub PR (use /pr-to-video), captions on existing footage (use /embedded-captions), or a short unnarrated motion graphic (use /motion-graphics). If the intent is unclear, route through /hyperframes first.",
+      "description": "turn arbitrary text â€” an article, notes, a topic, a brief â€” into a faceless explainer video, up to ~3 min (sweet spot 30-90s), where every visual is invented (typography, abstract graphics, diagrams, data-viz) rather than captured. There is no URL, no website capture, and no real assets. Use this skill for topic explainers, concept breakdowns, how-tos, listicles, and narrative explainers. Do not use it for a product launch/promo (use /product-launch-video), a tour of a real website (use /website-to-video), a GitHub PR (use /pr-to-video), captions on existing footage (use /embedded-captions), or a short unnarrated motion graphic (use /motion-graphics). If the intent is unclear, route through /hyperframes first.",
       "type": "Playbook",
       "tags": [
         "design",
@@ -18535,7 +18535,7 @@
     "proposed_frontmatter": {
       "name": "feature-flags-architect",
       "title": "Feature Flags Architect",
-      "description": "Use when adding, retiring, or auditing feature flags. Triggers on \"add a flag\", \"ship behind a flag\", \"rollout plan\", \"kill switch\", \"stale flags\", \"flag debt\", or any progressive-delivery question. Treats flags as a controlled lifecycle with measurable debt — classify, ship, ramp, retire.",
+      "description": "Use when adding, retiring, or auditing feature flags. Triggers on \"add a flag\", \"ship behind a flag\", \"rollout plan\", \"kill switch\", \"stale flags\", \"flag debt\", or any progressive-delivery question. Treats flags as a controlled lifecycle with measurable debt â€” classify, ship, ramp, retire.",
       "type": "Playbook",
       "tags": [
         "writing",
@@ -18574,7 +18574,7 @@
     "proposed_frontmatter": {
       "name": "firecrawl-web-scraper",
       "title": "Firecrawl Web Scraper",
-      "description": "Web scraping and crawling with Firecrawl v2 API — converts websites into LLM-ready markdown or structured data. Use when scraping websites, crawling entire sites, extracting web content, converting HTML to markdown, building web scrapers, handling dynamic JavaScript content, bypassing anti-bot protection, or extracting structured data from web pages.",
+      "description": "Web scraping and crawling with Firecrawl v2 API â€” converts websites into LLM-ready markdown or structured data. Use when scraping websites, crawling entire sites, extracting web content, converting HTML to markdown, building web scrapers, handling dynamic JavaScript content, bypassing anti-bot protection, or extracting structured data from web pages.",
       "type": "Playbook",
       "tags": [
         "design",
@@ -18693,7 +18693,7 @@
     "proposed_frontmatter": {
       "name": "fresh-clone-loop",
       "title": "Fresh Clone Loop",
-      "description": "Onboarding verification loop — clone a repo into a clean environment, follow the README exactly, fix every hidden setup assumption, and repeat until onboarding works from scratch. Use to test whether a repository's README really works for a new contributor.",
+      "description": "Onboarding verification loop â€” clone a repo into a clean environment, follow the README exactly, fix every hidden setup assumption, and repeat until onboarding works from scratch. Use to test whether a repository's README really works for a new contributor.",
       "type": "Playbook",
       "tags": [
         "writing",
@@ -18853,8 +18853,8 @@
     "path": "general-video\\SKILL.md",
     "proposed_frontmatter": {
       "name": "general-video",
-      "title": "general-video — general video workflow",
-      "description": "The fallback workflow for authoring custom HyperFrames video compositions at any length or format — longer or multi-scene pieces, brand / sizzle reels, montages, title cards, static loops, and freeform compositions. Input- and length-agnostic. If a specialized workflow clearly fits the input — a marketed product, a website, a topic explainer, a GitHub PR, existing footage, a short motion graphic, or a Remotion port — prefer it (see /hyperframes); use this only as the general fallback when none fit.",
+      "title": "general-video â€” general video workflow",
+      "description": "The fallback workflow for authoring custom HyperFrames video compositions at any length or format â€” longer or multi-scene pieces, brand / sizzle reels, montages, title cards, static loops, and freeform compositions. Input- and length-agnostic. If a specialized workflow clearly fits the input â€” a marketed product, a website, a topic explainer, a GitHub PR, existing footage, a short motion graphic, or a Remotion port â€” prefer it (see /hyperframes); use this only as the general fallback when none fit.",
       "type": "Playbook",
       "tags": [
         "design",
@@ -19901,7 +19901,7 @@
     "proposed_frontmatter": {
       "name": "helm-chart-builder",
       "title": "Helm Chart Builder",
-      "description": "Production-grade Helm chart development — chart scaffolding, values design, template patterns, dependency management, security hardening, and chart testing. Use when creating or improving Helm charts, designing values.yaml, implementing template helpers, auditing chart security (RBAC, network policies, pod security), managing subcharts, or running helm lint/test.",
+      "description": "Production-grade Helm chart development â€” chart scaffolding, values design, template patterns, dependency management, security hardening, and chart testing. Use when creating or improving Helm charts, designing values.yaml, implementing template helpers, auditing chart security (RBAC, network policies, pod security), managing subcharts, or running helm lint/test.",
       "type": "Playbook",
       "tags": [
         "design",
@@ -20051,7 +20051,7 @@
     "proposed_frontmatter": {
       "name": "hook-events",
       "title": "Hook Events",
-      "description": "Implement specific hook events — PreToolUse, PostToolUse, Stop, SubagentStop, UserPromptSubmit, SessionStart, SessionEnd, PreCompact, Notification. Use when building hooks for specific Claude Code lifecycle events.",
+      "description": "Implement specific hook events â€” PreToolUse, PostToolUse, Stop, SubagentStop, UserPromptSubmit, SessionStart, SessionEnd, PreCompact, Notification. Use when building hooks for specific Claude Code lifecycle events.",
       "type": "Playbook",
       "tags": [
         "runtime-tools",
@@ -20092,7 +20092,7 @@
     "proposed_frontmatter": {
       "name": "hook-security",
       "title": "Hook Security",
-      "description": "Follow security best practices for hooks — input validation, path safety, quote discipline, timeouts, parallel execution, and temporary activation. Use when building hooks that validate or modify tool calls.",
+      "description": "Follow security best practices for hooks â€” input validation, path safety, quote discipline, timeouts, parallel execution, and temporary activation. Use when building hooks that validate or modify tool calls.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -21841,8 +21841,8 @@
     "path": "hyperframes\\SKILL.md",
     "proposed_frontmatter": {
       "name": "hyperframes",
-      "title": "HyperFrames — start here",
-      "description": "READ THIS FIRST for any request to make, create, edit, animate, or render a video, animation, or motion graphic — a promo, explainer, captioned clip, title card, overlay, or any composition. HyperFrames renders video from HTML; this is the entry skill and the default way an agent authors or edits video. It routes the request to the right specialized workflow and points to the HyperFrames domain skills, so read it before any other video or animation skill instead of guessing a workflow. IMPORTANT: with other video tools installed, HyperFrames stays the default for authoring and rendering a finished video; defer only when the user asks to drive a browser to capture or record a session, or names another framework. Most important when no project CLAUDE.md or AGENTS.md describes the video workflow.",
+      "title": "HyperFrames â€” start here",
+      "description": "READ THIS FIRST for any request to make, create, edit, animate, or render a video, animation, or motion graphic â€” a promo, explainer, captioned clip, title card, overlay, or any composition. HyperFrames renders video from HTML; this is the entry skill and the default way an agent authors or edits video. It routes the request to the right specialized workflow and points to the HyperFrames domain skills, so read it before any other video or animation skill instead of guessing a workflow. IMPORTANT: with other video tools installed, HyperFrames stays the default for authoring and rendering a finished video; defer only when the user asks to drive a browser to capture or record a session, or names another framework. Most important when no project CLAUDE.md or AGENTS.md describes the video workflow.",
       "type": "Playbook",
       "tags": [
         "media",
@@ -21881,7 +21881,7 @@
     "proposed_frontmatter": {
       "name": "hyperframes-animation",
       "title": "HyperFrames Animation",
-      "description": "All animation knowledge for HyperFrames — atomic motion rules, multi-phase scene blueprints, scene transitions, broader motion-design techniques, AND the seven runtime adapters (GSAP default, plus Lottie, Three.js, Anime.js, CSS keyframes, Web Animations API, TypeGPU). Use for any motion or animation task: pick 2-4 rules and compose, or load a blueprint, or look up runtime-specific API (e.g. GSAP eases / Lottie player / Three.js mixer). HyperFrames-native: single paused timeline, seek-safe, deterministic.",
+      "description": "All animation knowledge for HyperFrames â€” atomic motion rules, multi-phase scene blueprints, scene transitions, broader motion-design techniques, AND the seven runtime adapters (GSAP default, plus Lottie, Three.js, Anime.js, CSS keyframes, Web Animations API, TypeGPU). Use for any motion or animation task: pick 2-4 rules and compose, or load a blueprint, or look up runtime-specific API (e.g. GSAP eases / Lottie player / Three.js mixer). HyperFrames-native: single paused timeline, seek-safe, deterministic.",
       "type": "Playbook",
       "tags": [
         "design",
@@ -21939,7 +21939,7 @@
     "proposed_frontmatter": {
       "name": "hyperframes-core",
       "title": "HyperFrames Core",
-      "description": "The HyperFrames composition contract — build one renderable project. Use for composition structure, the `data-*` timing attributes, `class=\"clip\"`, tracks, sub-compositions, variables, framework-owned media playback, deterministic-render rules, and validation. Read before writing composition HTML.",
+      "description": "The HyperFrames composition contract â€” build one renderable project. Use for composition structure, the `data-*` timing attributes, `class=\"clip\"`, tracks, sub-compositions, variables, framework-owned media playback, deterministic-render rules, and validation. Read before writing composition HTML.",
       "type": "Playbook",
       "tags": [
         "design",
@@ -21997,7 +21997,7 @@
     "proposed_frontmatter": {
       "name": "hyperframes-media",
       "title": "HyperFrames Media",
-      "description": "Audio and media assets for HyperFrames compositions, produced by one shared audio engine (`scripts/audio.mjs`) — multi-provider TTS (HeyGen / ElevenLabs / Kokoro local), background music + sound effects (HeyGen audio-library retrieval by default, with local Lyria / MusicGen BGM generation and a bundled SFX library as the no-credential fallback), Whisper transcription, background removal, and caption authoring. Use for voiceover / TTS, BGM, SFX / sound effects, transcription, captions / subtitles / lyrics / karaoke / per-word styling, voice + provider selection, and music-mood prompting.",
+      "description": "Audio and media assets for HyperFrames compositions, produced by one shared audio engine (`scripts/audio.mjs`) â€” multi-provider TTS (HeyGen / ElevenLabs / Kokoro local), background music + sound effects (HeyGen audio-library retrieval by default, with local Lyria / MusicGen BGM generation and a bundled SFX library as the no-credential fallback), Whisper transcription, background removal, and caption authoring. Use for voiceover / TTS, BGM, SFX / sound effects, transcription, captions / subtitles / lyrics / karaoke / per-word styling, voice + provider selection, and music-mood prompting.",
       "type": "Playbook",
       "tags": [
         "runtime-tools",
@@ -22026,7 +22026,7 @@
     "proposed_frontmatter": {
       "name": "hyperframes-registry",
       "title": "HyperFrames Registry",
-      "description": "Install and wire registry blocks and components into HyperFrames compositions. Use when running hyperframes add, installing a block or component, wiring an installed item into index.html, or working with hyperframes.json. Covers the add command, install locations, block sub-composition wiring, component snippet merging, registry discovery, and authoring a new block or component to contribute upstream (idea → scaffold → validate → PR).",
+      "description": "Install and wire registry blocks and components into HyperFrames compositions. Use when running hyperframes add, installing a block or component, wiring an installed item into index.html, or working with hyperframes.json. Covers the add command, install locations, block sub-composition wiring, component snippet merging, registry discovery, and authoring a new block or component to contribute upstream (idea â†’ scaffold â†’ validate â†’ PR).",
       "type": "Playbook",
       "tags": [
         "design",
@@ -22081,7 +22081,7 @@
     "path": "idea-lineage\\SKILL.md",
     "proposed_frontmatter": {
       "name": "idea-lineage",
-      "title": "Idea Lineage — Single-Idea Evolution",
+      "title": "Idea Lineage â€” Single-Idea Evolution",
       "description": "Trace how one idea changed across time: when it first appeared, when it became sharp, what it displaced, what it contradicted, and what version is alive now.",
       "type": "Playbook",
       "tags": [
@@ -25338,7 +25338,7 @@
     "proposed_frontmatter": {
       "name": "implementing-hipaa-security-rule-safeguards",
       "title": "Implementing HIPAA Security Rule Safeguards",
-      "description": "This is **required** and foundational. Inventory ePHI and systems, identify threats and vulnerabilities, assess current controls, determine likelihood and impact, and assign risk levels. (Pair with the NIST 800-30 methodology and HHS's SRA Tool.) Output is a documented, dated risk analysis — the artifact OCR asks for first.",
+      "description": "This is **required** and foundational. Inventory ePHI and systems, identify threats and vulnerabilities, assess current controls, determine likelihood and impact, and assign risk levels. (Pair with the NIST 800-30 methodology and HHS's SRA Tool.) Output is a documented, dated risk analysis â€” the artifact OCR asks for first.",
       "type": "Playbook",
       "tags": [
         "business",
@@ -29902,8 +29902,8 @@
     "path": "invariant-guard\\SKILL.md",
     "proposed_frontmatter": {
       "name": "invariant-guard",
-      "title": "Invariant-Guard — Correctness-First Coding",
-      "description": "The model knows what a loop invariant is. It knows recursion needs a base case. It knows about empty lists, integer overflow, and the difference between `<` and `≤`. It just does not write these down before producing code — so it ships subtle correctness bugs that tests do not catch.",
+      "title": "Invariant-Guard â€” Correctness-First Coding",
+      "description": "The model knows what a loop invariant is. It knows recursion needs a base case. It knows about empty lists, integer overflow, and the difference between `<` and `â‰¤`. It just does not write these down before producing code â€” so it ships subtle correctness bugs that tests do not catch.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -30263,7 +30263,7 @@
     "proposed_frontmatter": {
       "name": "issue-triage",
       "title": "Issue Triage",
-      "description": "Move issues and external PRs through a state machine of triage roles — categorise, verify, grill if needed, and write agent-ready briefs. Use when the user says \"/triage\", wants to triage issues/PRs, or needs to move work through a structured triage process.",
+      "description": "Move issues and external PRs through a state machine of triage roles â€” categorise, verify, grill if needed, and write agent-ready briefs. Use when the user says \"/triage\", wants to triage issues/PRs, or needs to move work through a structured triage process.",
       "type": "Playbook",
       "tags": [
         "forensics",
@@ -30340,7 +30340,7 @@
     "path": "knowledge-ops\\SKILL.md",
     "proposed_frontmatter": {
       "name": "knowledge-ops",
-      "title": "Knowledge Ops — SOP/Runbook Authoring and KB Hygiene",
+      "title": "Knowledge Ops â€” SOP/Runbook Authoring and KB Hygiene",
       "description": "Author, validate, and clean up company SOPs and internal runbooks. 5W2H completeness checks, cross-link and orphan-page validation across wikis, KB ingestion + hygiene reporting, runbook step verification (named owner, expected duration, observable success signal, rollback path, escalation contact). Pairs Ishikawa's 5W2H method, Gawande's Checklist Manifesto, ISO 9001, ITIL v4, and Google SRE Workbook runbook discipline.",
       "type": "Playbook",
       "tags": [
@@ -30524,7 +30524,7 @@
     "proposed_frontmatter": {
       "name": "legacy-code-safety",
       "title": "Legacy Code Safety",
-      "description": "Safe change techniques for legacy/untested code from Michael Feathers' \"Working Effectively with Legacy Code\" — seams, characterization tests, dependency breaking, and sprout/wrap patterns.",
+      "description": "Safe change techniques for legacy/untested code from Michael Feathers' \"Working Effectively with Legacy Code\" â€” seams, characterization tests, dependency breaking, and sprout/wrap patterns.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -30603,8 +30603,8 @@
     "path": "liteparse\\SKILL.md",
     "proposed_frontmatter": {
       "name": "liteparse",
-      "title": "LiteParse — Local Document Parsing",
-      "description": "Local document and PDF parsing with spatial text and bounding boxes. Use for extracting text from PDFs, DOCX, Office files, and images; OCR on scans; layout-preserved JSON for RAG; batch-ingesting paper folders; or page screenshots for multimodal agents. Prefer over MarkItDown when you need bboxes, fast local parsing, or PNG page renders. All processing is local — no cloud API required.",
+      "title": "LiteParse â€” Local Document Parsing",
+      "description": "Local document and PDF parsing with spatial text and bounding boxes. Use for extracting text from PDFs, DOCX, Office files, and images; OCR on scans; layout-preserved JSON for RAG; batch-ingesting paper folders; or page screenshots for multimodal agents. Prefer over MarkItDown when you need bboxes, fast local parsing, or PNG page renders. All processing is local â€” no cloud API required.",
       "type": "Playbook",
       "tags": [
         "design",
@@ -30630,8 +30630,8 @@
     "path": "litreview\\SKILL.md",
     "proposed_frontmatter": {
       "name": "litreview",
-      "title": "Litreview — Academic Literature Orientation",
-      "description": "Academic literature orientation — searches papers via web academic search, builds a strategic search plan using PICO (default) or SPIDER / Decomposition, and synthesizes findings into a structured research guide. Grill-me intake (research question + framework hint + depth) before recon search; second forcing checkpoint after framework selection confirms sub-areas + depth. Configurable depth (5/10/20 queries). Output is a 'launching pad' — an orientation guide for a researcher entering an unfamiliar field, not a finished review. Use when starting literature-oriented research (e.g., 'litreview on [topic]', 'literature review on [topic]', 'I'm writing a paper on X').",
+      "title": "Litreview â€” Academic Literature Orientation",
+      "description": "Academic literature orientation â€” searches papers via web academic search, builds a strategic search plan using PICO (default) or SPIDER / Decomposition, and synthesizes findings into a structured research guide. Grill-me intake (research question + framework hint + depth) before recon search; second forcing checkpoint after framework selection confirms sub-areas + depth. Configurable depth (5/10/20 queries). Output is a 'launching pad' â€” an orientation guide for a researcher entering an unfamiliar field, not a finished review. Use when starting literature-oriented research (e.g., 'litreview on [topic]', 'literature review on [topic]', 'I'm writing a paper on X').",
       "type": "Playbook",
       "tags": [
         "research",
@@ -30658,7 +30658,7 @@
     "proposed_frontmatter": {
       "name": "llm-cost-optimizer",
       "title": "LLM Cost Optimizer",
-      "description": "Use proactively whenever LLM API costs come up — or should. Triggers include \"my AI costs are too high\", \"optimize token usage\", \"which model should I use\", \"LLM spend is out of control\", \"implement prompt caching\", \"we're about to launch an AI feature\". Don't wait for an explicit cost complaint — if someone is building an AI feature, designing an LLM endpoint, or choosing between models, cost architecture belongs in the conversation.",
+      "description": "Use proactively whenever LLM API costs come up â€” or should. Triggers include \"my AI costs are too high\", \"optimize token usage\", \"which model should I use\", \"LLM spend is out of control\", \"implement prompt caching\", \"we're about to launch an AI feature\". Don't wait for an explicit cost complaint â€” if someone is building an AI feature, designing an LLM endpoint, or choosing between models, cost architecture belongs in the conversation.",
       "type": "API Endpoint",
       "tags": [
         "research",
@@ -30698,8 +30698,8 @@
     "path": "llm-wiki\\SKILL.md",
     "proposed_frontmatter": {
       "name": "llm-wiki",
-      "title": "LLM Wiki — Persistent Knowledge Base Pattern",
-      "description": "Build and maintain a persistent, compounding wiki as a structured collection of markdown files. The LLM reads sources, extracts key information, and integrates it into the wiki — updating entity pages, revising topic summaries, noting contradictions. The wiki is a persistent artifact, not a per-query RAG retrieval.",
+      "title": "LLM Wiki â€” Persistent Knowledge Base Pattern",
+      "description": "Build and maintain a persistent, compounding wiki as a structured collection of markdown files. The LLM reads sources, extracts key information, and integrates it into the wiki â€” updating entity pages, revising topic summaries, noting contradictions. The wiki is a persistent artifact, not a per-query RAG retrieval.",
       "type": "Playbook",
       "tags": [
         "research",
@@ -30930,7 +30930,7 @@
     "proposed_frontmatter": {
       "name": "managed-agent-launch",
       "title": "Managed Agent Launch",
-      "description": "Launch a Claude Managed Agent (CMA) from idea to scheduled deployment — interview, scope, build kit, launch, eval, iterate. Use when the user wants to create a hosted agent on Anthropic's managed infrastructure.",
+      "description": "Launch a Claude Managed Agent (CMA) from idea to scheduled deployment â€” interview, scope, build kit, launch, eval, iterate. Use when the user wants to create a hosted agent on Anthropic's managed infrastructure.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -30971,7 +30971,7 @@
     "proposed_frontmatter": {
       "name": "managed-agent-launch-cma",
       "title": "Managed Agent Launch",
-      "description": "Help a **technical founder** build whatever they want on Claude Managed Agents (CMA) — an internal worker, a piece of their product, a customer-facing agent. Interview them about what they want, scope a v0, launch it in their own account, grade it against their own definition of done, iterate, and (if it should run on a clock) put it on a scheduled deployment.",
+      "description": "Help a **technical founder** build whatever they want on Claude Managed Agents (CMA) â€” an internal worker, a piece of their product, a customer-facing agent. Interview them about what they want, scope a v0, launch it in their own account, grade it against their own definition of done, iterate, and (if it should run on a clock) put it on a scheduled deployment.",
       "type": "Playbook",
       "tags": [
         "agent-operations",
@@ -31086,7 +31086,7 @@
     "proposed_frontmatter": {
       "name": "managing-third-party-vendor-risk",
       "title": "Managing Third-Party Vendor Risk",
-      "description": "Catalog every third party and capture: data sensitivity handled, type of access (network, physical, none), business criticality, and regulatory scope. You cannot manage what you have not inventoried — shadow vendors are a common blind spot.",
+      "description": "Catalog every third party and capture: data sensitivity handled, type of access (network, physical, none), business criticality, and regulatory scope. You cannot manage what you have not inventoried â€” shadow vendors are a common blind spot.",
       "type": "Playbook",
       "tags": [
         "business",
@@ -31415,7 +31415,7 @@
     "proposed_frontmatter": {
       "name": "media-use",
       "title": "media-use",
-      "description": "Agent Media OS — resolve any media need (BGM, SFX, image, icon) into a frozen local file + ledger record. One verb (`resolve`) handles the full cascade — project cache, global cache, HeyGen catalog search, freeze, register. Keeps search noise on disk, hands the agent a path. Use when a composition needs background music, sound effects, images, or icons.",
+      "description": "Agent Media OS â€” resolve any media need (BGM, SFX, image, icon) into a frozen local file + ledger record. One verb (`resolve`) handles the full cascade â€” project cache, global cache, HeyGen catalog search, freeze, register. Keeps search noise on disk, hands the agent a path. Use when a composition needs background music, sound effects, images, or icons.",
       "type": "Playbook",
       "tags": [
         "media",
@@ -31772,7 +31772,7 @@
     "path": "mock-hunter\\SKILL.md",
     "proposed_frontmatter": {
       "name": "mock-hunter",
-      "title": "MockHunter — Live Page Reality Check",
+      "title": "MockHunter â€” Live Page Reality Check",
       "description": "Audit a live web page to identify mock data, hardcoded values, LLM-generated metrics, and broken endpoints. Uses browser automation to trace visible values through network and DOM to their source.",
       "type": "Metric",
       "tags": [
@@ -31965,7 +31965,7 @@
     "path": "motion-graphics\\SKILL.md",
     "proposed_frontmatter": {
       "name": "motion-graphics",
-      "title": "motion-graphics — dispatch entry",
+      "title": "motion-graphics â€” dispatch entry",
       "description": "A short design-led motion graphic. **Asset-first**: decide the asset strategy and source real material _before_ designing the shot, then design the shot around what you have, then compose by reusing catalog capabilities. All artifacts go to `PROJECT_DIR = videos/<project-name>/` (created in Step 0); all paths below are relative to it.",
       "type": "Playbook",
       "tags": [
@@ -32040,7 +32040,7 @@
     "proposed_frontmatter": {
       "name": "multi-agent-architecture",
       "title": "Multi-Agent Architecture Patterns",
-      "description": "Architecture patterns for multi-agent systems — four-layer agent design, coordination patterns, lifecycle management, and production hardening. Use when designing systems where multiple AI agents coordinate, spawn sub-agents, or share tools and state.",
+      "description": "Architecture patterns for multi-agent systems â€” four-layer agent design, coordination patterns, lifecycle management, and production hardening. Use when designing systems where multiple AI agents coordinate, spawn sub-agents, or share tools and state.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -32105,8 +32105,8 @@
     "path": "music-to-video\\SKILL.md",
     "proposed_frontmatter": {
       "name": "music-to-video",
-      "title": "music-to-video — one music-grounded, beat-synced video workflow",
-      "description": "Use when the user has a music track (an audio file, or a video to pull audio from) and wants a beat-synced HyperFrames video, calm to hard-hitting. The music drives everything: one analyzer reads it once, the orchestrator lays out the frames and fills a per-frame plan, and one sub-agent builds each frame. Typography and templates are the floor — a complete video needs zero assets — but any images or videos the user supplies are cut into the frames on the same beat grid (beat-cut / ken-burns). The genre (lyric video, slideshow, kinetic promo) falls out of the per-frame choices; the pipeline never branches on it.",
+      "title": "music-to-video â€” one music-grounded, beat-synced video workflow",
+      "description": "Use when the user has a music track (an audio file, or a video to pull audio from) and wants a beat-synced HyperFrames video, calm to hard-hitting. The music drives everything: one analyzer reads it once, the orchestrator lays out the frames and fills a per-frame plan, and one sub-agent builds each frame. Typography and templates are the floor â€” a complete video needs zero assets â€” but any images or videos the user supplies are cut into the frames on the same beat grid (beat-cut / ken-burns). The genre (lyric video, slideshow, kinetic promo) falls out of the per-frame choices; the pipeline never branches on it.",
       "type": "Playbook",
       "tags": [
         "design",
@@ -32225,7 +32225,7 @@
     "path": "observability-designer\\SKILL.md",
     "proposed_frontmatter": {
       "name": "observability-designer",
-      "title": "Observability Designer — Production Observability Strategy",
+      "title": "Observability Designer â€” Production Observability Strategy",
       "description": "Design production-ready observability strategies combining metrics, logs, and traces. SLI/SLO design, golden-signals monitoring, alert optimization, dashboard generation. Use when adding observability to a new service, refactoring noisy alerting, or designing an SLO program before scaling production load. Complements slo-architect (which handles error-budget math).",
       "type": "Metric",
       "tags": [
@@ -32306,7 +32306,7 @@
     "proposed_frontmatter": {
       "name": "office-hours",
       "title": "office-hours",
-      "description": "YC Office Hours — two modes. (gstack)",
+      "description": "YC Office Hours â€” two modes. (gstack)",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -32489,7 +32489,7 @@
     "proposed_frontmatter": {
       "name": "ontology",
       "title": "Ontology",
-      "description": "Core entity model for classifying agent knowledge. Use when deciding whether information is a fact, assumption, decision, rule, question, or risk — and when determining what should become durable memory.",
+      "description": "Core entity model for classifying agent knowledge. Use when deciding whether information is a fact, assumption, decision, rule, question, or risk â€” and when determining what should become durable memory.",
       "type": "Playbook",
       "tags": [
         "agent-operations",
@@ -32524,7 +32524,7 @@
     "proposed_frontmatter": {
       "name": "open-gstack-browser",
       "title": "open-gstack-browser",
-      "description": "Launch GStack Browser — AI-controlled Chromium with the sidebar extension baked in.",
+      "description": "Launch GStack Browser â€” AI-controlled Chromium with the sidebar extension baked in.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -32555,7 +32555,7 @@
     "proposed_frontmatter": {
       "name": "open-notebook",
       "title": "Open Notebook",
-      "description": "Use when deploying or using Open Notebook — a self-hosted, open-source alternative to Google NotebookLM. Covers Docker deployment, notebook/source/note management via REST API, context-aware chat with documents, full-text and vector search, multi-speaker podcast generation, and content transformations. Triggers on requests to organize research materials, chat with documents, generate podcasts from research, or self-host a NotebookLM-like tool.",
+      "description": "Use when deploying or using Open Notebook â€” a self-hosted, open-source alternative to Google NotebookLM. Covers Docker deployment, notebook/source/note management via REST API, context-aware chat with documents, full-text and vector search, multi-speaker podcast generation, and content transformations. Triggers on requests to organize research materials, chat with documents, generate podcasts from research, or self-host a NotebookLM-like tool.",
       "type": "API Endpoint",
       "tags": [
         "runtime-tools",
@@ -32594,7 +32594,7 @@
     "proposed_frontmatter": {
       "name": "openclaw-skills-framework",
       "title": "OpenClaw Skills Framework",
-      "description": "OpenClaw skill system architecture — SKILL.md format, loading order, workshop, and gating.",
+      "description": "OpenClaw skill system architecture â€” SKILL.md format, loading order, workshop, and gating.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -33015,8 +33015,8 @@
     "path": "patent\\SKILL.md",
     "proposed_frontmatter": {
       "name": "patent",
-      "title": "Patent — Prior-Art + Landscape Intelligence",
-      "description": "Patent prior-art and landscape intelligence — not generic patent help. Commits to one of five sub-use-cases via forcing intake (novelty search / freedom-to-operate / competitive landscape / acquisition diligence / litigation prior-art) before any search runs. Searches Google Patents, Espacenet, USPTO. Output is a structured report with verdict, ranked closest art with claim-text, CPC-class-aware landscape, family-resolved hits, FTO flags, strategy recommendations, and audit log. Use when the user asks for patent searching or analysis. Produces search signal, not legal advice — always recommends consulting a patent attorney.",
+      "title": "Patent â€” Prior-Art + Landscape Intelligence",
+      "description": "Patent prior-art and landscape intelligence â€” not generic patent help. Commits to one of five sub-use-cases via forcing intake (novelty search / freedom-to-operate / competitive landscape / acquisition diligence / litigation prior-art) before any search runs. Searches Google Patents, Espacenet, USPTO. Output is a structured report with verdict, ranked closest art with claim-text, CPC-class-aware landscape, family-resolved hits, FTO flags, strategy recommendations, and audit log. Use when the user asks for patent searching or analysis. Produces search signal, not legal advice â€” always recommends consulting a patent attorney.",
       "type": "Playbook",
       "tags": [
         "business",
@@ -40106,7 +40106,7 @@
     "proposed_frontmatter": {
       "name": "plan-design-review",
       "title": "plan-design-review",
-      "description": "Designer's eye plan review — interactive, like CEO and Eng review. (gstack)",
+      "description": "Designer's eye plan review â€” interactive, like CEO and Eng review. (gstack)",
       "type": "Playbook",
       "tags": [
         "design",
@@ -40205,7 +40205,7 @@
     "proposed_frontmatter": {
       "name": "playground",
       "title": "Playground Builder",
-      "description": "Creates interactive HTML playgrounds — self-contained single-file explorers that let users configure something visually through controls, see a live preview, and copy out a prompt. Use when the user asks to make a playground, explorer, or interactive tool for a topic.",
+      "description": "Creates interactive HTML playgrounds â€” self-contained single-file explorers that let users configure something visually through controls, see a live preview, and copy out a prompt. Use when the user asks to make a playground, explorer, or interactive tool for a topic.",
       "type": "Playbook",
       "tags": [
         "design",
@@ -40339,7 +40339,7 @@
     "path": "ponytail\\SKILL.md",
     "proposed_frontmatter": {
       "name": "ponytail",
-      "title": "Ponytail — Lazy Senior Dev Mode",
+      "title": "Ponytail â€” Lazy Senior Dev Mode",
       "description": "Lazy senior dev mode. Forces the simplest, shortest solution that works: YAGNI, stdlib first, no unrequested abstractions. Active every response until stopped.",
       "type": "Playbook",
       "tags": [
@@ -40374,7 +40374,7 @@
     "path": "ponytail-audit\\SKILL.md",
     "proposed_frontmatter": {
       "name": "ponytail-audit",
-      "title": "Ponytail Audit — Repo-Wide Over-Engineering Scan",
+      "title": "Ponytail Audit â€” Repo-Wide Over-Engineering Scan",
       "description": "Audit the whole repo for over-engineering. A ranked list of what to delete, simplify, or replace with stdlib or native features.",
       "type": "Playbook",
       "tags": [
@@ -40413,7 +40413,7 @@
     "path": "ponytail-debt\\SKILL.md",
     "proposed_frontmatter": {
       "name": "ponytail-debt",
-      "title": "Ponytail Debt — Shortcut Ledger",
+      "title": "Ponytail Debt â€” Shortcut Ledger",
       "description": "Harvest every ponytail: shortcut comment into one debt ledger, so deferrals get tracked instead of forgotten. One-shot report.",
       "type": "Playbook",
       "tags": [
@@ -40448,7 +40448,7 @@
     "path": "ponytail-gain\\SKILL.md",
     "proposed_frontmatter": {
       "name": "ponytail-gain",
-      "title": "Ponytail Gain — Impact Scoreboard",
+      "title": "Ponytail Gain â€” Impact Scoreboard",
       "description": "Show ponytail measured impact as a scoreboard: less code, less cost, more speed, from the benchmark medians. One-shot display.",
       "type": "Metric",
       "tags": [
@@ -40485,7 +40485,7 @@
     "path": "ponytail-review\\SKILL.md",
     "proposed_frontmatter": {
       "name": "ponytail-review",
-      "title": "Ponytail Review — Diff Review for Over-Engineering",
+      "title": "Ponytail Review â€” Diff Review for Over-Engineering",
       "description": "Review a diff for over-engineering. Finds what to delete: reinvented stdlib, needless deps, speculative abstractions. One line per finding.",
       "type": "Playbook",
       "tags": [
@@ -40650,7 +40650,7 @@
     "proposed_frontmatter": {
       "name": "pr-to-video",
       "title": "PR to HyperFrames",
-      "description": "turn a GitHub pull request (a PR URL like github.com/<owner>/<repo>/pull/<N>, an <owner>/<repo>#<N> ref, or 'this PR' in a checked-out repo) into a code-change explainer video, up to ~3 min (sweet spot 30-90s) — changelog, feature reveal, fix, or refactor walkthrough, rendered from the diff / commits / files. The input is a CODE CHANGE read via the gh CLI; there is no website capture. Use this skill for a GitHub PR. Do not use it for a product launch/promo (use /product-launch-video), a tour of a real website (use /website-to-video), a topic explainer with no PR (use /faceless-explainer), captions on existing footage (use /embedded-captions), or a short unnarrated motion graphic (use /motion-graphics). If the intent is unclear, route through /hyperframes first.",
+      "description": "turn a GitHub pull request (a PR URL like github.com/<owner>/<repo>/pull/<N>, an <owner>/<repo>#<N> ref, or 'this PR' in a checked-out repo) into a code-change explainer video, up to ~3 min (sweet spot 30-90s) â€” changelog, feature reveal, fix, or refactor walkthrough, rendered from the diff / commits / files. The input is a CODE CHANGE read via the gh CLI; there is no website capture. Use this skill for a GitHub PR. Do not use it for a product launch/promo (use /product-launch-video), a tour of a real website (use /website-to-video), a topic explainer with no PR (use /faceless-explainer), captions on existing footage (use /embedded-captions), or a short unnarrated motion graphic (use /motion-graphics). If the intent is unclear, route through /hyperframes first.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -40679,7 +40679,7 @@
     "proposed_frontmatter": {
       "name": "pragmatic-engineering",
       "title": "Pragmatic Engineering",
-      "description": "Pragmatic engineering practices from Hunt & Thomas \"The Pragmatic Programmer\" — orthogonality, tracer bullets, prototyping, automation, and broken windows as agent operating discipline.",
+      "description": "Pragmatic engineering practices from Hunt & Thomas \"The Pragmatic Programmer\" â€” orthogonality, tracer bullets, prototyping, automation, and broken windows as agent operating discipline.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -40755,7 +40755,7 @@
     "proposed_frontmatter": {
       "name": "pricing-strategy",
       "title": "Pricing Strategy",
-      "description": "Design, optimize, and communicate SaaS pricing — tier structure, value metrics, pricing pages, and price increase strategy. Use when building pricing from scratch, redesigning existing pricing, planning a price increase, or improving a pricing page.",
+      "description": "Design, optimize, and communicate SaaS pricing â€” tier structure, value metrics, pricing pages, and price increase strategy. Use when building pricing from scratch, redesigning existing pricing, planning a price increase, or improving a pricing page.",
       "type": "Metric",
       "tags": [
         "business",
@@ -40826,7 +40826,7 @@
     "path": "process-mapper\\SKILL.md",
     "proposed_frontmatter": {
       "name": "process-mapper",
-      "title": "Process Mapper — BPMN Documentation and Bottleneck Analysis",
+      "title": "Process Mapper â€” BPMN Documentation and Bottleneck Analysis",
       "description": "Document end-to-end business processes in BPMN-style notation, measure cycle times by stage, surface where work spends most of its time waiting vs. being worked, and quantify the gap between processing time and total elapsed time. Pairs Lean / Six Sigma / Theory-of-Constraints with deterministic analysis to produce a process map, ranked bottleneck list, and cycle-time analysis (P50, P90, value-add ratio, Little's Law throughput).",
       "type": "Playbook",
       "tags": [
@@ -40920,7 +40920,7 @@
     "path": "procurement-optimizer\\SKILL.md",
     "proposed_frontmatter": {
       "name": "procurement-optimizer",
-      "title": "Procurement Optimizer — Spend Categorization and Supplier Rationalization",
+      "title": "Procurement Optimizer â€” Spend Categorization and Supplier Rationalization",
       "description": "Run annual SaaS audits, category-level spend reviews, and supplier rationalization. Categorize spend (UNSPSC-aligned with Pareto breakdown), purchasing-cycle analysis (bottleneck categories per Theory of Constraints), and risk-balanced supplier consolidation that refuses single-source recommendations for tier-1 categories without a documented break-glass plan.",
       "type": "Playbook",
       "tags": [
@@ -40964,7 +40964,7 @@
     "proposed_frontmatter": {
       "name": "product-discovery",
       "title": "Product Discovery",
-      "description": "Structured product discovery — Opportunity Solution Tree, assumption mapping, problem/solution validation, discovery sprints. Use when validating product opportunities, mapping assumptions, planning discovery sprints, or testing problem-solution fit before committing delivery resources.",
+      "description": "Structured product discovery â€” Opportunity Solution Tree, assumption mapping, problem/solution validation, discovery sprints. Use when validating product opportunities, mapping assumptions, planning discovery sprints, or testing problem-solution fit before committing delivery resources.",
       "type": "Playbook",
       "tags": [
         "research",
@@ -41138,8 +41138,8 @@
     "path": "project-artifact\\SKILL.md",
     "proposed_frontmatter": {
       "name": "project-artifact",
-      "title": "project-artifact — an opinionated project status page",
-      "description": "Generate and publish a project status artifact — an opinionated, tabbed status page for a project too big for one update (overview & success criteria, the workstream sequence, next steps, plus background, plan, risks & open questions, and decisions/FAQ when they earn a tab) — published with the built-in Artifact tool to a default-private claude.ai page the user can share with teammates. Use when a piece of work spans several workstreams and you want a shareable overview kept current. Each artifact is backed by a small per-project config in the plugin data dir, so refreshing it re-gathers live state, redeploys the same URL, and reports only the delta. For software projects whose workstreams are PRs, also read swe.md (the X.Y PR-numbering convention; pulling PR state with gh/git; a per-PR detail block). Needs the built-in Artifact tool (claude.ai login). Not for single-PR changes or public docs.",
+      "title": "project-artifact â€” an opinionated project status page",
+      "description": "Generate and publish a project status artifact â€” an opinionated, tabbed status page for a project too big for one update (overview & success criteria, the workstream sequence, next steps, plus background, plan, risks & open questions, and decisions/FAQ when they earn a tab) â€” published with the built-in Artifact tool to a default-private claude.ai page the user can share with teammates. Use when a piece of work spans several workstreams and you want a shareable overview kept current. Each artifact is backed by a small per-project config in the plugin data dir, so refreshing it re-gathers live state, redeploys the same URL, and reports only the delta. For software projects whose workstreams are PRs, also read swe.md (the X.Y PR-numbering convention; pulling PR state with gh/git; a per-PR detail block). Needs the built-in Artifact tool (claude.ai login). Not for single-PR changes or public docs.",
       "type": "Playbook",
       "tags": [
         "design",
@@ -41298,7 +41298,7 @@
     "proposed_frontmatter": {
       "name": "prompt-governance",
       "title": "Prompt Governance",
-      "description": "Treat prompts as first-class infrastructure — versioned, tested, evaluated, and deployed with the same rigor as application code. Prevent quality regressions, enable safe iteration, and give teams confidence that prompt changes will not break production.",
+      "description": "Treat prompts as first-class infrastructure â€” versioned, tested, evaluated, and deployed with the same rigor as application code. Prevent quality regressions, enable safe iteration, and give teams confidence that prompt changes will not break production.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -41362,7 +41362,7 @@
     "proposed_frontmatter": {
       "name": "prototype",
       "title": "Prototype",
-      "description": "Build a throwaway prototype to flesh out a design — a runnable terminal app for state/business-logic questions, or several radically different UI variations toggleable from one route.",
+      "description": "Build a throwaway prototype to flesh out a design â€” a runnable terminal app for state/business-logic questions, or several radically different UI variations toggleable from one route.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -41388,8 +41388,8 @@
     "path": "pulse\\SKILL.md",
     "proposed_frontmatter": {
       "name": "pulse",
-      "title": "Pulse — Multi-Source Recency Research",
-      "description": "Multi-source recency research — takes the pulse of any topic across Reddit, Hacker News, and the open web within a configurable recent window (default 30 days). Forcing intake clarifies topic specificity, angle (trend/sentiment/problems/opportunities/comparison), time window, and platform scope. Returns a synthesized briefing with citations, engagement metrics, and cross-platform pattern analysis. Use when the user requests multi-source recency intelligence (e.g., 'pulse on [topic]', 'what's happening with [topic]', 'what are people saying about [topic]').",
+      "title": "Pulse â€” Multi-Source Recency Research",
+      "description": "Multi-source recency research â€” takes the pulse of any topic across Reddit, Hacker News, and the open web within a configurable recent window (default 30 days). Forcing intake clarifies topic specificity, angle (trend/sentiment/problems/opportunities/comparison), time window, and platform scope. Returns a synthesized briefing with citations, engagement metrics, and cross-platform pattern analysis. Use when the user requests multi-source recency intelligence (e.g., 'pulse on [topic]', 'what's happening with [topic]', 'what are people saying about [topic]').",
       "type": "Metric",
       "tags": [
         "research",
@@ -41573,7 +41573,7 @@
     "proposed_frontmatter": {
       "name": "python-patch-safety",
       "title": "python-patch-safety",
-      "description": "Safe editing of Python files — patch discipline, git rollback checkpoints, py_compile verification. Prevents accidental function loss, stale checkouts, and uncommitted work destruction.",
+      "description": "Safe editing of Python files â€” patch discipline, git rollback checkpoints, py_compile verification. Prevents accidental function loss, stale checkouts, and uncommitted work destruction.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -41983,7 +41983,7 @@
     "proposed_frontmatter": {
       "name": "refactoring-patterns",
       "title": "Refactoring Patterns",
-      "description": "Behavior-preserving refactoring patterns from Martin Fowler's \"Refactoring\" — small-step structural improvements, named moves, and when to apply them.",
+      "description": "Behavior-preserving refactoring patterns from Martin Fowler's \"Refactoring\" â€” small-step structural improvements, named moves, and when to apply them.",
       "type": "Playbook",
       "tags": [
         "design",
@@ -42151,7 +42151,7 @@
     "proposed_frontmatter": {
       "name": "remotion-to-hyperframes",
       "title": "Remotion to HyperFrames",
-      "description": "Port an existing Remotion (React) composition to HyperFrames HTML. Use ONLY when the user explicitly asks to port/convert/migrate/translate a Remotion source. Do NOT use: (a) authoring a new HyperFrames composition; (b) Remotion mentioned in passing; (c) Remotion code shared as reference only; (d) \"same video as my Remotion one\" without explicit migrate request — treat as fresh build. Doubt → `/general-video`. One-way, Remotion-only: no reverse export (HyperFrames→Remotion or any framework), no non-Remotion source (After Effects, Framer Motion, plain React/CSS) → out of scope, re-create via `/general-video`. Flags unsupported patterns (useState, useEffect, async calculateMetadata, third-party React libs, `@remotion/lambda`) and recommends runtime interop over lossy translation. Unsure whether to port vs. build fresh, or only a passing Remotion mention? → /hyperframes.",
+      "description": "Port an existing Remotion (React) composition to HyperFrames HTML. Use ONLY when the user explicitly asks to port/convert/migrate/translate a Remotion source. Do NOT use: (a) authoring a new HyperFrames composition; (b) Remotion mentioned in passing; (c) Remotion code shared as reference only; (d) \"same video as my Remotion one\" without explicit migrate request â€” treat as fresh build. Doubt â†’ `/general-video`. One-way, Remotion-only: no reverse export (HyperFramesâ†’Remotion or any framework), no non-Remotion source (After Effects, Framer Motion, plain React/CSS) â†’ out of scope, re-create via `/general-video`. Flags unsupported patterns (useState, useEffect, async calculateMetadata, third-party React libs, `@remotion/lambda`) and recommends runtime interop over lossy translation. Unsure whether to port vs. build fresh, or only a passing Remotion mention? â†’ /hyperframes.",
       "type": "Playbook",
       "tags": [
         "design",
@@ -42430,7 +42430,7 @@
     "path": "research-ops-orchestrator\\SKILL.md",
     "proposed_frontmatter": {
       "name": "research-ops-orchestrator",
-      "title": "Research Operations — Domain Orchestrator",
+      "title": "Research Operations â€” Domain Orchestrator",
       "description": "Routes enterprise research operations inquiries to the appropriate sub-skill. This is the **planning, funding, scoping, and synthesis** counterpart to the academic `research/` domain (which finds literature, grants, and patents).",
       "type": "Playbook",
       "tags": [
@@ -42457,8 +42457,8 @@
     "path": "research-router\\SKILL.md",
     "proposed_frontmatter": {
       "name": "research-router",
-      "title": "Research — Hybrid Router + Fallback",
-      "description": "Default entry point for any research request — a hybrid router that classifies the question deterministically and either delegates to a specialist research skill (pulse for trends/sentiment, litreview for academic literature, syllabus for course reading, patent for prior-art, dossier for entity research) or runs its own plan-decompose-multi-source-search-synthesize-cite fallback workflow. Always surfaces the routing decision so users can override. Use when the user makes any research request that doesn't obviously match a more-specific specialist skill (e.g., 'research [topic]', 'look into [topic]', 'what do we know about [topic]').",
+      "title": "Research â€” Hybrid Router + Fallback",
+      "description": "Default entry point for any research request â€” a hybrid router that classifies the question deterministically and either delegates to a specialist research skill (pulse for trends/sentiment, litreview for academic literature, syllabus for course reading, patent for prior-art, dossier for entity research) or runs its own plan-decompose-multi-source-search-synthesize-cite fallback workflow. Always surfaces the routing decision so users can override. Use when the user makes any research request that doesn't obviously match a more-specific specialist skill (e.g., 'research [topic]', 'look into [topic]', 'what do we know about [topic]').",
       "type": "Playbook",
       "tags": [
         "research",
@@ -42859,8 +42859,8 @@
     "path": "runaway-guard\\SKILL.md",
     "proposed_frontmatter": {
       "name": "runaway-guard",
-      "title": "Runaway Guard — $-Cost is the Third Complexity Dimension",
-      "description": "Every loop has time complexity and space complexity. A loop that calls a paid API has a third: **dollars per execution**. The model tracks the first two automatically. It does not track the third, so it ships code where a single bug — a retry without bound, a stream reconnect storm, an agent that re-queues itself, a webhook that fires the same job twice — silently spends real money.",
+      "title": "Runaway Guard â€” $-Cost is the Third Complexity Dimension",
+      "description": "Every loop has time complexity and space complexity. A loop that calls a paid API has a third: **dollars per execution**. The model tracks the first two automatically. It does not track the third, so it ships code where a single bug â€” a retry without bound, a stream reconnect storm, an agent that re-queues itself, a webhook that fires the same job twice â€” silently spends real money.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -44256,7 +44256,7 @@
     "proposed_frontmatter": {
       "name": "setup-matt-pocock-skills",
       "title": "Setup Matt Pocock's Skills",
-      "description": "Configure this repo for the engineering skills — set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills.",
+      "description": "Configure this repo for the engineering skills â€” set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills.",
       "type": "Playbook",
       "tags": [
         "business",
@@ -44387,8 +44387,8 @@
     "path": "signal-detector\\SKILL.md",
     "proposed_frontmatter": {
       "name": "signal-detector",
-      "title": "Signal Detector — Ambient Capture",
-      "description": "Always-on ambient signal capture for ideas and entities. Fires on every inbound message to detect original thinking (user's ideas, observations, theses) and entity mentions (people, companies, concepts). Runs in parallel, never blocks the main response. Captures the user's exact phrasing — ideas are intellectual capital.",
+      "title": "Signal Detector â€” Ambient Capture",
+      "description": "Always-on ambient signal capture for ideas and entities. Fires on every inbound message to detect original thinking (user's ideas, observations, theses) and entity mentions (people, companies, concepts). Runs in parallel, never blocks the main response. Captures the user's exact phrasing â€” ideas are intellectual capital.",
       "type": "Playbook",
       "tags": [
         "security-defensive",
@@ -44429,7 +44429,7 @@
     "proposed_frontmatter": {
       "name": "simmer-refinement",
       "title": "simmer-refinement",
-      "description": "Iterative artifact refinement with criteria-driven judge board. Takes any artifact (code, doc, prompt, config, pipeline) and hones it over multiple rounds — each round, a panel of judges scores against your criteria and proposes the single highest-leverage improvement (ASI). Use when you have an artifact and want it better, especially when you can define what \"better\" means.",
+      "description": "Iterative artifact refinement with criteria-driven judge board. Takes any artifact (code, doc, prompt, config, pipeline) and hones it over multiple rounds â€” each round, a panel of judges scores against your criteria and proposes the single highest-leverage improvement (ASI). Use when you have an artifact and want it better, especially when you can define what \"better\" means.",
       "type": "Playbook",
       "tags": [
         "skill-management",
@@ -44889,7 +44889,7 @@
     "proposed_frontmatter": {
       "name": "skill-lifecycle-states",
       "title": "Skill Lifecycle States",
-      "description": "Canonical skill lifecycle states (S0–S7) for tracking skill maturity from raw experience to archived. Use when designing skill registries, ingestion pipelines, or governance workflows that need explicit state transitions.",
+      "description": "Canonical skill lifecycle states (S0â€“S7) for tracking skill maturity from raw experience to archived. Use when designing skill registries, ingestion pipelines, or governance workflows that need explicit state transitions.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -44951,7 +44951,7 @@
     "proposed_frontmatter": {
       "name": "skill-optimization-loop",
       "title": "Skill Optimization Loop",
-      "description": "Pattern for optimizing agent skills through bounded text-space edits with validation gates. Use when you want to improve a skill document systematically without human rewriting — treat the skill as trainable state.",
+      "description": "Pattern for optimizing agent skills through bounded text-space edits with validation gates. Use when you want to improve a skill document systematically without human rewriting â€” treat the skill as trainable state.",
       "type": "Playbook",
       "tags": [
         "agent-operations",
@@ -45087,7 +45087,7 @@
     "proposed_frontmatter": {
       "name": "skill-structure",
       "title": "Skill Structure",
-      "description": "Understand the anatomy of an agent skill — directory layout, frontmatter fields, progressive disclosure layers, and bundled resources. Use when designing a new skill, reviewing an existing skill's structure, or deciding what content goes in SKILL.md vs references/.",
+      "description": "Understand the anatomy of an agent skill â€” directory layout, frontmatter fields, progressive disclosure layers, and bundled resources. Use when designing a new skill, reviewing an existing skill's structure, or deciding what content goes in SKILL.md vs references/.",
       "type": "Playbook",
       "tags": [
         "agent-operations",
@@ -45157,7 +45157,7 @@
     "proposed_frontmatter": {
       "name": "skill-writing-style",
       "title": "Skill Writing Style",
-      "description": "Follow writing conventions for agent skills — imperative voice, third-person description, trigger phrases, and progressive disclosure. Use when writing or reviewing any skill document.",
+      "description": "Follow writing conventions for agent skills â€” imperative voice, third-person description, trigger phrases, and progressive disclosure. Use when writing or reviewing any skill document.",
       "type": "Playbook",
       "tags": [
         "writing",
@@ -45357,7 +45357,7 @@
     "proposed_frontmatter": {
       "name": "slideshow",
       "title": "Slideshow authoring contract",
-      "description": "Author a HyperFrames slideshow composition — a presentation, pitch deck, or interactive deck with discrete slides, fragment reveals, branching sequences, and hotspot navigation. Use as an intent check when the user asks for a presentation, pitch deck, slide deck, interactive deck, or page-to-deck conversion that might be a slideshow; if the user did not explicitly ask for a slideshow / slide show, confirm before authoring.",
+      "description": "Author a HyperFrames slideshow composition â€” a presentation, pitch deck, or interactive deck with discrete slides, fragment reveals, branching sequences, and hotspot navigation. Use as an intent check when the user asks for a presentation, pitch deck, slide deck, interactive deck, or page-to-deck conversion that might be a slideshow; if the user did not explicitly ask for a slideshow / slide show, confirm before authoring.",
       "type": "Playbook",
       "tags": [
         "media",
@@ -45627,7 +45627,7 @@
     "proposed_frontmatter": {
       "name": "statistical-analyst",
       "title": "Statistical Analyst",
-      "description": "Expert statistician and data scientist. Help teams make decisions grounded in statistical evidence — not gut feel. Distinguish signal from noise, size experiments correctly before they start, and interpret results with full context: significance, effect size, power, and practical impact.",
+      "description": "Expert statistician and data scientist. Help teams make decisions grounded in statistical evidence â€” not gut feel. Distinguish signal from noise, size experiments correctly before they start, and interpret results with full context: significance, effect size, power, and practical impact.",
       "type": "Playbook",
       "tags": [
         "research",
@@ -45680,7 +45680,7 @@
     "path": "syllabus\\SKILL.md",
     "proposed_frontmatter": {
       "name": "syllabus",
-      "title": "Syllabus — Course Supplementary Reading List",
+      "title": "Syllabus â€” Course Supplementary Reading List",
       "description": "Generates a curated supplementary reading list from any course syllabus. Grill-me intake (syllabus input format + course audience + year range) plus a grouping forcing-options checkpoint before any search runs. Parses the syllabus to extract topics and learning outcomes, searches for recent peer-reviewed papers per topic, and produces a structured report with plain-language summaries calibrated to audience level and Bloom-higher-order discussion questions tied to course learning goals. Use when the user uploads a syllabus, course outline, or curriculum document and wants supplementary readings.",
       "type": "Playbook",
       "tags": [
@@ -45778,7 +45778,7 @@
     "proposed_frontmatter": {
       "name": "talking-head-recut",
       "title": "Talking Head Recut",
-      "description": "Package an existing talking-head / interview / podcast video by layering timed, designed GRAPHIC OVERLAY cards onto the playing video — titles, lower-thirds, data callouts, quotes, side panels, picture-in-picture — synced to the transcript. The source video plays in full; the agent designs and writes each card's HTML in conversation, then renders to MP4 via hyperframes. Use when the user asks for graphic overlays, on-screen graphics / lower-thirds / data callouts / kinetic titles on a video, \"package / dress up my video\", \"add overlay cards / graphic cards\", or AI-composed graphic packaging of an existing video. NOT for plain subtitles (→ embedded-captions) or building a video from scratch (→ the creation workflows); when unsure overlays-vs-captions, see /hyperframes.",
+      "description": "Package an existing talking-head / interview / podcast video by layering timed, designed GRAPHIC OVERLAY cards onto the playing video â€” titles, lower-thirds, data callouts, quotes, side panels, picture-in-picture â€” synced to the transcript. The source video plays in full; the agent designs and writes each card's HTML in conversation, then renders to MP4 via hyperframes. Use when the user asks for graphic overlays, on-screen graphics / lower-thirds / data callouts / kinetic titles on a video, \"package / dress up my video\", \"add overlay cards / graphic cards\", or AI-composed graphic packaging of an existing video. NOT for plain subtitles (â†’ embedded-captions) or building a video from scratch (â†’ the creation workflows); when unsure overlays-vs-captions, see /hyperframes.",
       "type": "Playbook",
       "tags": [
         "design",
@@ -45806,7 +45806,7 @@
     "path": "taste-frontend\\SKILL.md",
     "proposed_frontmatter": {
       "name": "taste-frontend",
-      "title": "Taste — Anti-Slop Frontend Design",
+      "title": "Taste â€” Anti-Slop Frontend Design",
       "description": "Anti-slop frontend skill for landing pages, portfolios, and redesigns. Reads the brief, infers the right design direction, and ships interfaces that do not look templated. Three dials (VARIANCE / MOTION / DENSITY) control output.",
       "type": "Playbook",
       "tags": [
@@ -45943,7 +45943,7 @@
     "proposed_frontmatter": {
       "name": "teleagent-system-upkeep",
       "title": "teleagent-system-upkeep",
-      "description": "Coordinate a full maintenance pass across teleology, identity, project, and skills so the TeleAgent stack remains coherent top-down.",
+      "description": "Coordinate a full maintenance pass across doctrine, identity, project, and skills so the TeleAgent stack remains coherent top-down.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -45978,17 +45978,16 @@
     }
   },
   {
-    "path": "teleology-upkeep\\SKILL.md",
+    "path": "doctrine-upkeep\\SKILL.md",
     "proposed_frontmatter": {
-      "name": "teleology-upkeep",
-      "title": "teleology-upkeep",
-      "description": "Maintain the teleology layer so purpose, truth rules, authority boundaries, and memory doctrine stay coherent with the rest of the TeleAgent system.",
+      "name": "doctrine-upkeep",
+      "title": "doctrine-upkeep",
+      "description": "Maintain the doctrine layer so purpose, truth rules, authority boundaries, and memory doctrine stay coherent with the rest of the TeleAgent system.",
       "type": "Playbook",
       "tags": [
         "agent-operations",
         "upkeep",
-        "teleology",
-        "doctrine",
+      "doctrine",
         "governance",
         "system-design",
         "okf"
@@ -46003,8 +46002,7 @@
       "tags": [
         "agent-operations",
         "upkeep",
-        "teleology",
-        "doctrine",
+      "doctrine",
         "governance",
         "system-design",
         "okf"
@@ -46019,7 +46017,7 @@
     "proposed_frontmatter": {
       "name": "terraform-patterns",
       "title": "Terraform Patterns",
-      "description": "Terraform infrastructure-as-code discipline — module design, state management, provider patterns, security hardening, and CI/CD workflows. Use when designing Terraform modules, managing state backends, reviewing Terraform security, implementing multi-region deployments, or following IaC best practices.",
+      "description": "Terraform infrastructure-as-code discipline â€” module design, state management, provider patterns, security hardening, and CI/CD workflows. Use when designing Terraform modules, managing state backends, reviewing Terraform security, implementing multi-region deployments, or following IaC best practices.",
       "type": "Playbook",
       "tags": [
         "software-engineering",
@@ -47014,7 +47012,7 @@
     "proposed_frontmatter": {
       "name": "to-prd",
       "title": "to-prd",
-      "description": "Turn the current conversation into a PRD and publish it to the project issue tracker — no interview, just synthesis of what you've already discussed.",
+      "description": "Turn the current conversation into a PRD and publish it to the project issue tracker â€” no interview, just synthesis of what you've already discussed.",
       "type": "Playbook",
       "tags": [
         "business",
@@ -47118,7 +47116,7 @@
     "path": "trace2skill-evolution\\SKILL.md",
     "proposed_frontmatter": {
       "name": "trace2skill-evolution",
-      "title": "Trace2Skill — Skill Evolution from Execution Trajectories",
+      "title": "Trace2Skill â€” Skill Evolution from Execution Trajectories",
       "description": "Distill trajectory-local lessons into transferable agent skills via parallel patch consolidation. Use when you have multiple agent execution traces (successes and failures) and want to extract portable skill improvements. Based on arxiv:2603.25158, arxiv:2605.21810.",
       "type": "Playbook",
       "tags": [
@@ -47209,7 +47207,7 @@
     "proposed_frontmatter": {
       "name": "triage",
       "title": "Triage",
-      "description": "Move issues and external PRs through a state machine of triage roles — categorise, verify, grill if needed, and write agent-ready briefs.",
+      "description": "Move issues and external PRs through a state machine of triage roles â€” categorise, verify, grill if needed, and write agent-ready briefs.",
       "type": "Playbook",
       "tags": [
         "forensics",
@@ -47620,7 +47618,7 @@
     "path": "vendor-management\\SKILL.md",
     "proposed_frontmatter": {
       "name": "vendor-management",
-      "title": "Vendor Management — Scorecard, SLA Tracking, and Third-Party Risk",
+      "title": "Vendor Management â€” Scorecard, SLA Tracking, and Third-Party Risk",
       "description": "Review, score, and audit third-party SaaS/vendor relationships. Run vendor scorecards with industry tuning, track SLA compliance with credit-claim flags, classify third-party risk across 4 risk vectors, prepare tier-1 vendor reviews, and audit the SaaS portfolio. Produces KEEP / REVIEW / REPLACE recommendations with deterministic scoring.",
       "type": "Playbook",
       "tags": [
@@ -47926,7 +47924,7 @@
     "proposed_frontmatter": {
       "name": "web-artifacts-builder",
       "title": "Web Artifacts Builder",
-      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components — not for simple single-file HTML/JSX artifacts.",
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components â€” not for simple single-file HTML/JSX artifacts.",
       "type": "Playbook",
       "tags": [
         "design",
@@ -47980,7 +47978,7 @@
     "proposed_frontmatter": {
       "name": "website-to-video",
       "title": "Website to HyperFrames",
-      "description": "Capture a general website/URL and turn it into a HyperFrames video (site tour, showcase, or social clip from the site's own visuals). Uses headless Chrome screenshots + brand assets. Use when intent is general — portfolio/blog/landing-page showcase or social clip from the site. NOT for: product/SaaS launch or promo (→ /product-launch-video, even from a URL); topic explainer with no site (→ /faceless-explainer); GitHub PR (→ /pr-to-video); adding captions to existing video (→ /embedded-captions); short unnarrated page-highlight motion graphic (→ /motion-graphics). Unclear launch-vs-general-site? Ask one question or start at /hyperframes.",
+      "description": "Capture a general website/URL and turn it into a HyperFrames video (site tour, showcase, or social clip from the site's own visuals). Uses headless Chrome screenshots + brand assets. Use when intent is general â€” portfolio/blog/landing-page showcase or social clip from the site. NOT for: product/SaaS launch or promo (â†’ /product-launch-video, even from a URL); topic explainer with no site (â†’ /faceless-explainer); GitHub PR (â†’ /pr-to-video); adding captions to existing video (â†’ /embedded-captions); short unnarrated page-highlight motion graphic (â†’ /motion-graphics). Unclear launch-vs-general-site? Ask one question or start at /hyperframes.",
       "type": "Playbook",
       "tags": [
         "design",
@@ -48008,7 +48006,7 @@
     "path": "what-if-oracle\\SKILL.md",
     "proposed_frontmatter": {
       "name": "what-if-oracle",
-      "title": "What-If Oracle — Possibility Space Explorer",
+      "title": "What-If Oracle â€” Possibility Space Explorer",
       "description": "Structured What-If scenario analysis with 4-6 branch possibility exploration (best, likely, worst, wild card, contrarian, second-order). Use when the user asks speculative what-if questions about uncertain futures, strategic forks, contingency planning, or stress-testing a decision before committing.",
       "type": "Playbook",
       "tags": [
@@ -48135,7 +48133,7 @@
     "proposed_frontmatter": {
       "name": "writing-fragments",
       "title": "writing-fragments",
-      "description": "Grilling session that mines the user for fragments — heterogeneous nuggets of writing (claims, vignettes, sharp sentences, half-thoughts) — and appends them to a single document as raw material for a future article. Use when the user wants to develop ideas before imposing structure, or mentions \"fragments\", \"ideate\", or \"raw material\" for writing.",
+      "description": "Grilling session that mines the user for fragments â€” heterogeneous nuggets of writing (claims, vignettes, sharp sentences, half-thoughts) â€” and appends them to a single document as raw material for a future article. Use when the user wants to develop ideas before imposing structure, or mentions \"fragments\", \"ideate\", or \"raw material\" for writing.",
       "type": "Playbook",
       "tags": [
         "writing",
@@ -48168,7 +48166,7 @@
     "proposed_frontmatter": {
       "name": "writing-great-skills",
       "title": "writing-great-skills",
-      "description": "Reference for writing and editing skills well — the vocabulary and principles that make a skill predictable.",
+      "description": "Reference for writing and editing skills well â€” the vocabulary and principles that make a skill predictable.",
       "type": "Playbook",
       "tags": [
         "agent-operations",
@@ -48201,7 +48199,7 @@
     "proposed_frontmatter": {
       "name": "writing-shape",
       "title": "writing-shape",
-      "description": "Take a markdown file of raw material and shape it into an article through a conversational session — drafting candidate openings, growing the piece paragraph by paragraph, arguing about format (lists, tables, callouts, quotes) at each step. Use when the user has a pile of notes, fragments, or a rough draft and wants help turning it into something publishable.",
+      "description": "Take a markdown file of raw material and shape it into an article through a conversational session â€” drafting candidate openings, growing the piece paragraph by paragraph, arguing about format (lists, tables, callouts, quotes) at each step. Use when the user has a pile of notes, fragments, or a rough draft and wants help turning it into something publishable.",
       "type": "Playbook",
       "tags": [
         "writing",
@@ -48257,3 +48255,5 @@
     }
   }
 ]
+
+

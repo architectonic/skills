@@ -19,13 +19,17 @@ FM_RE = re.compile(r"^---\r?\n(.*?)\r?\n---\r?\n", re.S)
 
 
 def load_inventory() -> list[dict]:
-    rows = json.loads(REPORT.read_text(encoding="utf-8"))
-    by_path = {row["path"].replace("\\", "/"): row for row in rows}
+    rows = json.loads(REPORT.read_text(encoding="utf-8-sig"))
+    current_paths = {skill_file.relative_to(SKILLS).as_posix() for skill_file in sorted(SKILLS.rglob("SKILL.md"))}
+    by_path = {
+        row["path"].replace("\\", "/"): row
+        for row in rows
+        if row["path"].replace("\\", "/") in current_paths
+    }
 
     for skill_file in sorted(SKILLS.rglob("SKILL.md")):
         rel_path = skill_file.relative_to(SKILLS).as_posix()
-        if rel_path not in by_path:
-            by_path[rel_path] = synthesize_inventory_row(skill_file, rel_path)
+        by_path[rel_path] = synthesize_inventory_row(skill_file, rel_path)
 
     return list(by_path.values())
 
@@ -151,7 +155,7 @@ def build_catalog(rows: list[dict]) -> dict:
     return {
         "schema_version": "0.1",
         "package": {
-            "name": "@teleagent/skills",
+            "name": "architectonic-skills",
             "install_root": "dist/skills",
             "entrypoint": "README.md",
         },
