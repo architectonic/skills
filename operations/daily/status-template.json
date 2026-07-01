@@ -1,0 +1,39 @@
+{
+  "date": "YYYY-MM-DD",
+  "current_state": "observe",
+  "repo": "architectonic/skills",
+  "package": {
+    "name": "architectonic-skills",
+    "version": null,
+    "install_root": "dist/skills",
+    "catalog": "dist/catalog.json",
+    "install_manifest": "dist/install-manifest.json"
+  },
+  "metrics": {
+    "candidate_sources_discovered": 0,
+    "sources_reviewed": 0,
+    "sources_blocked": 0,
+    "normalized_entries_added": 0,
+    "skills_updated": 0,
+    "catalog_skill_count": null,
+    "high_risk_count": null,
+    "requires_review_count": null,
+    "catalog_build_status": null,
+    "publication_readiness": null
+  },
+  "queues": {
+    "discovery": 0,
+    "review": 0,
+    "normalization": 0,
+    "catalog": 0,
+    "risk": 0,
+    "packaging": 0,
+    "publication": 0,
+    "maintenance": 0,
+    "critic": 0
+  },
+  "runs": [],
+  "blockers": [],
+  "last_commit": null,
+  "next_action": null
+}
