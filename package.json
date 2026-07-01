@@ -1,7 +1,7 @@
 {
   "name": "architectonic-skills",
-  "version": "0.1.1",
-  "description": "Runtime-neutral TeleAgent skills bundle with install and discovery manifests.",
+  "version": "0.1.2",
+  "description": "Runtime-neutral TeleAgent skills bundle with install, discovery manifests, and loop-engineered maintenance operations.",
   "license": "Apache-2.0",
   "type": "module",
   "bin": {
@@ -12,6 +12,7 @@
     "README.md",
     "index.md",
     "doctrine",
+    "operations",
     "dist",
     "scripts"
   ],
@@ -25,6 +26,7 @@
     "agents",
     "catalog",
     "knowledge",
-    "architectonic"
+    "architectonic",
+    "loop-engineering"
   ]
 }
