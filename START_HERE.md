@@ -1,9 +1,9 @@
 ---
 type: Entry Point
 title: Start Here
-description: First-run traversal guide for agents using the reusable skill bundle.
-tags: [start-here, skills, procedures, okf]
-okf_version: "0.1"
+description: First-run traversal guide for agents using or maintaining the reusable skill bundle and aggregator.
+tags: [start-here, skills, procedures, okf, loop-engineering]
+okf_version: "0.2"
 status: draft
 ---
 
@@ -20,6 +20,8 @@ This is the first-run guide for agents reading `skills`.
 5. Read `doctrine/skill.md` before using or adding skills.
 6. Read `doctrine/okf-frontmatter.md` before editing metadata.
 7. Read `doctrine/ingestion-policy.md` and `doctrine/normalization-pipeline.md` before importing external material.
+8. Read `operations/aggregator-loop.md` and `operations/project-operator-prompt.md` before running scheduled aggregator maintenance.
+9. Read `operations/daily/README.md` before writing ledger or queue state.
 
 ## Skill Test
 
@@ -29,10 +31,38 @@ Keep a skill if it teaches a non-obvious procedure, prevents recurring failure, 
 
 Remove a skill if it repeats generic model knowledge, has no clear trigger, cannot be verified, or belongs in doctrine, project templates, agents, or operator procedures instead.
 
-## Canonical Loop
+## Aggregator Test
+
+A public skill or loop source belongs in the aggregator only if it has usable provenance and teaches, demonstrates, benchmarks, or packages reusable agent behavior.
+
+Default stance:
 
 ```text
-Read → Classify → Inspect → Plan → Act → Verify → Reconcile → Handoff
+catalog source first
+review license and risk
+normalize only if useful
+package only if safe and installable
+publish only if provenance is clear
+```
+
+## Canonical Change Loop
+
+```text
+Read -> Classify -> Inspect -> Plan -> Act -> Verify -> Reconcile -> Handoff
 ```
 
 Use this loop for all durable changes.
+
+## Canonical Maintenance Loop
+
+```text
+Observe
+-> Plan
+-> Act
+-> Evaluate
+-> Repair / Learn
+-> Persist memory
+-> Repeat
+```
+
+Use this loop for scheduled aggregator operation through the project operator.
