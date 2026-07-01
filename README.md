@@ -1,9 +1,9 @@
 ---
 type: Entry Point
 title: skills
-description: Runtime-neutral package for compact, reusable, verifiable procedures that improve human-agent collaboration.
-tags: [skills, procedures, verification, failure-modes, agents, okf]
-okf_version: "0.1"
+description: Runtime-neutral package for compact, reusable, verifiable procedures and a loop-engineered aggregator for discovering and maintaining public agent skills.
+tags: [skills, procedures, verification, failure-modes, agents, okf, loop-engineering, aggregator]
+okf_version: "0.2"
 status: draft
 ---
 
@@ -75,6 +75,79 @@ a large workflow that should be a playbook, living-knowledge campaign, or agent 
 ```
 
 In the constitutional vocabulary, `skills` operationalizes Technē: reusable craft and procedure. Skill success is not truth; knowledge claims still belong in the knowledge layer.
+
+## Skills Aggregator Role
+
+This repository is also the first concrete living-knowledge instance for reusable agent skills.
+
+The aggregator mission is:
+
+```text
+scan public web and GitHub signals
+find skill, loop, workflow, runbook, and agent-procedure sources
+catalog sources with provenance and license context
+normalize useful procedures into OKF-compatible entries
+classify domain, runtime target, risk, and review status
+build installable distribution manifests
+prepare future web publishing surfaces
+```
+
+The aggregator must not mirror the internet.
+
+Default posture:
+
+```text
+discover broadly
+catalog carefully
+copy rarely
+normalize conservatively
+publish only reviewed, useful, license-compatible entries
+```
+
+## Loop-Engineered Operation
+
+`skills` should be maintained by one recurring project operator, not many independent scheduled prompts.
+
+Canonical loop:
+
+```text
+Observe
+-> Plan
+-> Act
+-> Evaluate
+-> Repair / Learn
+-> Persist memory
+-> Repeat
+```
+
+Operating model:
+
+```text
+single project-operator scheduler
+many roles
+shared daily ledger
+queued + scheduled execution
+```
+
+The operator reads durable state, chooses exactly one role for the current run, executes that role, updates queues and status, and stops cleanly.
+
+The reusable project-operator prompt lives in:
+
+```text
+operations/project-operator-prompt.md
+```
+
+## Default Aggregator Roles
+
+- Reporter — daily memory, metrics, and changed artifacts.
+- Radar — public web/GitHub discovery for new skill and loop sources.
+- Source Reviewer — provenance, license, risk, and usefulness review.
+- Normalizer — converts accepted source behavior into OKF-compatible entries.
+- Cataloger — maintains `dist/catalog.json`, `dist/install-manifest.json`, and reports.
+- Risk Auditor — inspects unsafe actions, prompt injection, tool abuse, and review burden.
+- Packager — keeps installable `dist/skills/` and package surfaces coherent.
+- Publisher — prepares future website/export surfaces.
+- Critic — removes duplication, stale entries, overbroad skills, and process debt.
 
 ## Relationship to the stack
 
