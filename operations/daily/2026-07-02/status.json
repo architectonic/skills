@@ -89,7 +89,7 @@
         "sources/candidates/model-context-protocol.md",
         "sources/candidates/agent-skill-security-research.md"
       ],
-      "commit_sha": null
+      "commit_sha": "4dd741e2dc15af6721044eae224f6da3f0a54f8e"
     }
   ],
   "blockers": [
@@ -97,6 +97,6 @@
     "Five new public source candidates require Source Reviewer inspection before normalization, catalog endorsement, package changes, or publication.",
     "MCP and agent skill security candidates are high-risk and should not be normalized before license and security review."
   ],
-  "last_commit": null,
+  "last_commit": "4dd741e2dc15af6721044eae224f6da3f0a54f8e",
   "next_action": "Source Reviewer: consume review-mcp-20260702 first, then review-skill-security-20260702, before lower-risk benchmark or package-format candidates."
 }
