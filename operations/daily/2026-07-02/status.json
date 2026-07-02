@@ -1,6 +1,6 @@
 {
   "date": "2026-07-02",
-  "current_state": "catalog-blocked-review-progressing",
+  "current_state": "package-blocked-catalog-drift",
   "repo": "architectonic/skills",
   "package": {
     "name": "architectonic-skills",
@@ -19,7 +19,7 @@
     "high_risk_count": 1,
     "requires_review_count": null,
     "catalog_build_status": "blocked-connector-only-run-cannot-execute-build-catalog",
-    "publication_readiness": "not-ready-catalog-drift-uncataloged-high-risk-local-skill-and-unreviewed-candidates-remain"
+    "publication_readiness": "not-ready-catalog-drift-package-compatibility-blocked-unreviewed-candidate-remains"
   },
   "queues": {
     "discovery": 0,
@@ -33,34 +33,36 @@
     "critic": 0
   },
   "latest_run": {
-    "timestamp": "2026-07-02T18:58:13-03:00",
-    "scheduled_role": "Source Reviewer",
-    "selected_role": "Cataloger",
-    "override_reason": "Priority-1 catalog drift and generated install-surface mismatch block Packager and Publisher; the remaining review item is lower priority and broad discovery remains inappropriate while catalog/package gates are unresolved.",
-    "role": "Cataloger",
-    "selection_reason": "Risk queue was empty. Catalog queue contained priority-1 items, including catalog-reconcile-dist-catalog-surfaces-20260702. The builder must reconcile dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and reports together, so the safe Cataloger action was to mark the reconciliation item blocked rather than hand-edit generated files.",
+    "timestamp": "2026-07-02T19:58:52-03:00",
+    "scheduled_role": "Packager",
+    "selected_role": "Packager",
+    "override_reason": null,
+    "role": "Packager",
+    "selection_reason": "The 19 cadence slot selected Packager. Risk queue was empty; review queue had only a lower-priority open item; catalog blockers were already explicitly blocked pending checked-out or CI-backed catalog generation. A concrete packaging queue item existed but depended on catalog reconciliation, so the bounded Packager action was to inspect surfaces and mark package compatibility blocked rather than endorse install compatibility.",
     "inspected_ref": "main",
-    "inspected_commit_sha": "db26a99d7905ffecc7849f2c7983f2b5e6ec89d7",
-    "queue_item": "catalog-reconcile-dist-catalog-surfaces-20260702",
+    "inspected_commit_sha": "987175545da70a38f2ffcca08e5cc04501fb1609",
+    "queue_item": "package-agent-skills-compatibility-review-20260702",
     "actions": [
-      "Read required entrypoint, doctrine, loop, operator-stability, daily ledger, queue, operations log, package, catalog builder, and existing catalog plan files by direct path fetch through the GitHub connector.",
-      "Verified package.json defines build:catalog as python scripts/build_distribution_catalog.py.",
-      "Verified the catalog builder reads reports/dist-skills-enriched-inventory.json and dist/skills/**/SKILL.md, then writes dist/catalog.json, dist/install-manifest.json, and dist/catalog.md as a coupled generated set.",
-      "Marked catalog-reconcile-dist-catalog-surfaces-20260702 blocked pending a checked-out repository or CI-backed npm run build:catalog execution.",
-      "Did not hand-edit dist/catalog.json, dist/catalog.md, dist/install-manifest.json, or reports."
+      "Read required entrypoint, doctrine, loop, operator-stability, daily ledger, queue, operations log, package, install manifest, catalog, report, and packaging plan files by direct path fetch through the GitHub connector.",
+      "Verified package.json still exposes architectonic-skills 0.1.2, Apache-2.0 license, bin/architectonic-skills.js, files including bin, README.md, index.md, doctrine, operations, dist, and scripts, and build:catalog as python scripts/build_distribution_catalog.py.",
+      "Verified bin/architectonic-skills.js is bounded informational CLI output pointing users to dist/catalog.json, README.md, and dist/skills.",
+      "Verified dist/install-manifest.json declares dist/skills as install root and includes README.md, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json as discovery files.",
+      "Confirmed install-facing drift remains: dist/catalog.md reports 1173 skills and 2 high-risk entries while dist/catalog.json reports 1170 skills and 1 high-risk entry.",
+      "Marked package-agent-skills-compatibility-review-20260702 blocked because Agent Skills compatibility cannot be endorsed until catalog/install/report surfaces are reconciled and the high-risk MCP skill is reflected across generated metadata.",
+      "Did not modify skills, dist/skills, generated catalog files, install manifest, reports, or third-party source content."
     ],
     "files_changed": [
       "operations/daily/2026-07-02/queues.json",
-      "operations/daily/2026-07-02/catalog-plan.md",
+      "operations/daily/2026-07-02/packaging-plan.md",
       "operations/log.md",
       "operations/daily/2026-07-02/status.json"
     ],
     "intermediate_commits": [
-      "651ed3eabd50715e966810a245067414a6cbbd19",
-      "64621751fdf21bc33b30305b9e79b8fc76ee51ea",
-      "987175545da70a38f2ffcca08e5cc04501fb1609"
+      "b0a2024a2e7e918975a4d6b1bd118e33933b814b",
+      "6fafc36588022c4bc18e29603bad7d9dba93758a",
+      "1114d4507800d4739338f18c0268914bb1d1b299"
     ],
-    "commit_sha": "987175545da70a38f2ffcca08e5cc04501fb1609"
+    "commit_sha": "1114d4507800d4739338f18c0268914bb1d1b299"
   },
   "blockers": [
     "requires_review_count was not available from the inspected catalog summary and should be computed by a future checked-out Cataloger pass.",
@@ -70,9 +72,10 @@
     "The new MCP security skill is not reflected in dist/catalog.json, dist/catalog.md, dist/install-manifest.json, or reports.",
     "Connector-only run could not execute scripts/build_distribution_catalog.py; hand-editing generated catalog files was rejected.",
     "catalog-reconcile-dist-catalog-surfaces-20260702 is blocked pending checked-out or CI-backed catalog generation.",
+    "package-agent-skills-compatibility-review-20260702 is blocked pending catalog/install/report surface reconciliation.",
     "Agent skill security research license and redistribution boundaries remain unresolved; it must stay reviewed-reference-only-risk-audited, not copied or normalized as source content.",
     "SWE-Skills-Bench is useful as validation evidence but should remain reviewed-reference-only until a separate isolated benchmark execution and credentials policy exists."
   ],
-  "last_commit": "987175545da70a38f2ffcca08e5cc04501fb1609",
-  "next_action": "Run Cataloger from a checked-out repository or CI-backed build surface to execute npm run build:catalog, reconcile dist/catalog.json, dist/catalog.md, dist/install-manifest.json, reports, compute requires_review_count, and then clear or update blocked catalog items before Packager, Publisher, or further broad discovery. If Source Reviewer runs before that, consume only review-agentskillos-20260702 and avoid broad Radar expansion."
+  "last_commit": "1114d4507800d4739338f18c0268914bb1d1b299",
+  "next_action": "Run Cataloger from a checked-out repository or CI-backed build surface to execute npm run build:catalog, reconcile dist/catalog.json, dist/catalog.md, dist/install-manifest.json, reports, compute requires_review_count, and then clear or update blocked catalog and packaging items before Publisher or further broad discovery. If Source Reviewer runs before that, consume only review-agentskillos-20260702 and avoid broad Radar expansion."
 }
