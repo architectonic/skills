@@ -11,8 +11,9 @@ license: UNKNOWN
 runtime_targets: [claude-code, openclaw, local-agent-skills, skill-marketplaces]
 skill_format: security-research
 risk_level: high
-ingestion_status: reviewed-reference-only
+ingestion_status: reviewed-reference-only-risk-audited
 reviewed_at: 2026-07-02
+risk_audited_at: 2026-07-02
 ---
 
 # Agent Skill Security Research
@@ -62,7 +63,7 @@ Default ingestion mode remains reference-only. Do not copy paper text, datasets,
 
 The source should inform defensive process, not content import.
 
-Potential future local checklist themes:
+Durable local checklist themes now captured in `operations/daily/2026-07-02/risk-audit.md`:
 
 - inspect skill files together with repository context;
 - treat scanner output as an alert, not ground truth;
@@ -75,19 +76,27 @@ Potential future local checklist themes:
 
 High risk.
 
-This source discusses malicious skills, executable payload classes, marketplace scanner outputs, repository hijacking, local command execution, credential exposure, and supply-chain abuse. It is safe as a reviewed reference-only source, but any normalization must be defensive, summarized, and routed through Risk Auditor before being added as a reusable skill or public recommendation.
+This source discusses malicious skills, executable payload classes, marketplace scanner outputs, repository hijacking, local command execution, credential exposure, and supply-chain abuse. It is safe as a reviewed reference-only source, but any local normalization must be defensive, summarized, and avoid operational attack content.
+
+## Risk Audit Outcome
+
+Accepted as `reviewed-reference-only-risk-audited`.
+
+The Risk Auditor created a local defensive checklist for third-party agent-skill ingestion, scanner interpretation, abandoned-repository risk, and repository-context validation.
+
+This does not authorize copying source material or endorsing any third-party skills from the research corpus. It only authorizes using the reviewed source as evidence for local defensive review gates.
 
 ## Ingestion Decision
 
-Accepted as `reviewed-reference-only`.
+Accepted as `reviewed-reference-only-risk-audited`.
 
-Do not normalize yet. Queue a Risk Auditor pass to derive a safe third-party skill security checklist without copying operational attack content.
+Do not normalize paper text, repository code, datasets, scanner prompts, payloads, attack examples, or exploit descriptions. Any future normalized entry must be a local defensive checklist or review procedure, must preserve attribution, and must remain high-risk/requires-review if it touches execution, marketplace trust, or repository supply-chain review.
 
 ## Queue Outcome
 
 - Consumed: `review-skill-security-20260702`
-- Created: `risk-third-party-skill-security-checklist-20260702`
+- Consumed: `risk-third-party-skill-security-checklist-20260702`
 
 ## Next Action
 
-Risk Auditor should inspect this reviewed profile and create a durable defensive checklist for third-party skill ingestion, scanner interpretation, abandoned-repository risk, and repository-context validation.
+Cataloger should reconcile catalog and install surfaces for the already-created local MCP security skill before any package or publication endorsement. Source Reviewer should later continue with `review-agent-skills-standard-20260702` after catalog drift is handled.
