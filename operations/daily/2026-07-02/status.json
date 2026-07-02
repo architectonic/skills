@@ -11,7 +11,7 @@
   },
   "metrics": {
     "candidate_sources_discovered": 5,
-    "sources_reviewed": 0,
+    "sources_reviewed": 1,
     "sources_blocked": 0,
     "normalized_entries_added": 0,
     "skills_updated": 0,
@@ -23,10 +23,10 @@
   },
   "queues": {
     "discovery": 0,
-    "review": 5,
+    "review": 4,
     "normalization": 0,
     "catalog": 0,
-    "risk": 0,
+    "risk": 1,
     "packaging": 0,
     "publication": 0,
     "maintenance": 0,
@@ -90,13 +90,33 @@
         "sources/candidates/agent-skill-security-research.md"
       ],
       "commit_sha": "4dd741e2dc15af6721044eae224f6da3f0a54f8e"
+    },
+    {
+      "timestamp": "2026-07-02T04:59:54-03:00",
+      "role": "Source Reviewer",
+      "selection_reason": "Default 04 cadence selected Cataloger, but catalog queue pressure was zero while five review items were open. Review and safety outrank catalog growth, so Source Reviewer consumed the highest-priority MCP review item.",
+      "queue_item": "review-mcp-20260702",
+      "actions": [
+        "Read required entrypoint, doctrine, loop, ledger, queue, candidate source, and operations context.",
+        "Verified official MCP documentation and repository provenance, MIT license for the official specification/documentation repository, adoption signals, maintenance signals, and high-risk external-tool surfaces.",
+        "Created a reviewed reference-only source profile for MCP and queued Risk Auditor follow-up before any normalization or publication."
+      ],
+      "files_changed": [
+        "sources/reviewed/model-context-protocol.md",
+        "operations/daily/2026-07-02/review-plan.md",
+        "operations/daily/2026-07-02/queues.json",
+        "operations/daily/2026-07-02/status.json",
+        "operations/log.md"
+      ],
+      "commit_sha": "6acef01f2307b30cca1e63306f7f969fd5db2f23"
     }
   ],
   "blockers": [
     "requires_review_count was not available from the inspected catalog summary and should be computed by a future Cataloger pass.",
-    "Five new public source candidates require Source Reviewer inspection before normalization, catalog endorsement, package changes, or publication.",
-    "MCP and agent skill security candidates are high-risk and should not be normalized before license and security review."
+    "Four public source candidates still require Source Reviewer inspection before normalization, catalog endorsement, package changes, or publication.",
+    "MCP is reviewed only as reference-only and requires Risk Auditor checklist work before any MCP-derived normalization.",
+    "Agent skill security research remains high-priority review work."
   ],
-  "last_commit": "4dd741e2dc15af6721044eae224f6da3f0a54f8e",
-  "next_action": "Source Reviewer: consume review-mcp-20260702 first, then review-skill-security-20260702, before lower-risk benchmark or package-format candidates."
+  "last_commit": "6acef01f2307b30cca1e63306f7f969fd5db2f23",
+  "next_action": "Risk Auditor: consume risk-mcp-security-checklist-20260702 before normalizing MCP-derived entries. Source Reviewer should then consume review-skill-security-20260702."
 }
