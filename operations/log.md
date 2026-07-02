@@ -32,6 +32,9 @@ status: active
 - Ran Risk Auditor pass because the scheduled Normalizer slot had no normalization queue while high-priority MCP risk work was open.
 - Consumed `risk-mcp-security-checklist-20260702`, created `operations/daily/2026-07-02/risk-audit.md`, and marked `sources/reviewed/model-context-protocol.md` as reviewed-reference-only-risk-audited.
 - Created Normalizer queue item `normalize-mcp-external-tool-security-checklist-20260702`; MCP remains high risk and not publication/package-ready.
+- Ran Normalizer pass because the scheduled Publisher slot had no publication queue while high-priority audited normalization work was open.
+- Consumed `normalize-mcp-external-tool-security-checklist-20260702` and created `skills/mcp-external-tool-security-review.md` as a local high-risk, requires-review skill derived from the local risk audit.
+- Created `operations/daily/2026-07-02/normalization-plan.md` and queued `catalog-mcp-security-skill-20260702`; catalog rebuild/reconciliation remains required before packaging or publication endorsement.
 
 ## 2026-07-01
 
