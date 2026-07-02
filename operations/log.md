@@ -21,6 +21,10 @@ status: active
 - Added five public source candidates under `sources/candidates/`: SWE-Skills-Bench, AgentSkillOS, Agent Skills Open Standard, Model Context Protocol, and Agent Skill Security Research.
 - Queued five Source Reviewer items; no source was normalized, packaged, or published because license and security review remain incomplete.
 - Prioritized MCP and agent skill security candidates for review before lower-risk benchmark or package-format candidates.
+- Ran Source Reviewer pass because review queue pressure outweighed an empty Cataloger queue.
+- Consumed `review-mcp-20260702` and created reviewed reference-only profile `sources/reviewed/model-context-protocol.md`.
+- Verified official MCP documentation, official specification/documentation repository, MIT license for that repository, adoption signals, and high-risk tool/external-action surfaces.
+- Added Risk Auditor queue item `risk-mcp-security-checklist-20260702`; MCP remains blocked from normalization, packaging, or publication until risk review is complete.
 
 ## 2026-07-01
 
