@@ -93,6 +93,46 @@ The source is high-risk because it discusses malicious skill behavior, marketpla
 - Removed `review-skill-security-20260702` from `queues.review`.
 - Added `risk-third-party-skill-security-checklist-20260702` to `queues.risk`.
 
+## 17:01 Source Review - Agent Skills Open Standard
+
+### Selected Item
+
+Consumed `review-agent-skills-standard-20260702`.
+
+Target: `sources/candidates/agent-skills-open-standard.md`
+
+Reviewed source: Agent Skills Open Standard
+
+### Decision
+
+Agent Skills Open Standard is accepted as a reviewed reference-only source profile.
+
+Reviewed profile created at:
+
+```text
+sources/reviewed/agent-skills-open-standard.md
+```
+
+### Evidence Summary
+
+- Official documentation describes Agent Skills as a lightweight open format for extending agents with reusable capabilities and workflows.
+- The official repository README describes the required `SKILL.md` file and optional `scripts/`, `references/`, and `assets/` directories.
+- The official repository README states that repository code is Apache-2.0 and documentation is CC-BY-4.0.
+- The specification defines required `name` and `description` frontmatter fields, optional `license`, `compatibility`, `metadata`, and experimental `allowed-tools` fields.
+- The client-implementation guide documents progressive disclosure, `.agents/skills/` conventions, parser leniency, collision handling, and trust checks for project-level skills.
+
+### Risk Decision
+
+Do not normalize the upstream specification into a local skill.
+
+The standard is useful as package-format guidance, but skill packages can include executable scripts, support files, network assumptions, and project-level instructions. A package can be format-compatible while still unsafe.
+
+### Queue Updates
+
+- Removed `review-agent-skills-standard-20260702` from `queues.review`.
+- Added `package-agent-skills-compatibility-review-20260702` to `queues.packaging`.
+- Kept catalog blockers unchanged; Agent Skills compatibility review should run only after generated catalog drift is resolved.
+
 ## Next Review Item
 
-Source Reviewer should next consume `review-agent-skills-standard-20260702` unless Risk Auditor or Cataloger queue pressure overrides the next run.
+Source Reviewer should next consume `review-swe-skills-bench-20260702` unless Cataloger or another gate has more concrete pressure.
