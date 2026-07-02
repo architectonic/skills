@@ -133,6 +133,49 @@ The standard is useful as package-format guidance, but skill packages can includ
 - Added `package-agent-skills-compatibility-review-20260702` to `queues.packaging`.
 - Kept catalog blockers unchanged; Agent Skills compatibility review should run only after generated catalog drift is resolved.
 
+## 18:01 Source Review - SWE-Skills-Bench
+
+### Selected Item
+
+Consumed `review-swe-skills-bench-20260702`.
+
+Target: `sources/candidates/swe-skills-bench.md`
+
+Reviewed source: SWE-Skills-Bench
+
+### Decision
+
+SWE-Skills-Bench is accepted as a reviewed reference-only source profile.
+
+Reviewed profile created at:
+
+```text
+sources/reviewed/swe-skills-bench.md
+```
+
+### Evidence Summary
+
+- Repository metadata shows `GeniusHTX/SWE-Skills-Bench` is public, not archived, and uses `main` as its default branch.
+- The README describes 49 real-world software-engineering tasks paired with curated skill documents to test whether skill injection improves agent outcomes.
+- The README and top-level `LICENSE` file declare MIT licensing.
+- The README documents two usage modes: Hugging Face dataset loading and a full Docker-based evaluation framework.
+- The evaluation framework requires Python, Docker, Claude Code CLI inside the container image, and an Anthropic API key.
+- The benchmark configuration defines task repositories, pinned commits, Docker images, resource limits, network mode, test commands, and evaluation thresholds.
+- Lifecycle code validates task files, starts containers, copies local skills into the Claude skills directory when enabled, clones configured repositories, runs Claude Code, and writes run reports.
+- The arXiv abstract reports limited average benefit from skill injection, with many skills showing no pass-rate improvement, a few specialized skills helping, and some version-mismatched skills hurting performance.
+
+### Risk Decision
+
+Do not normalize benchmark task prompts, skill documents, test code, Docker images, or evaluation scripts into local skills.
+
+This source is useful as validation evidence for local skill governance, but running it requires separate isolation, credentials, image review, cost controls, and benchmark execution planning. It should inform future Critic or maintenance work after catalog drift is resolved.
+
+### Queue Updates
+
+- Removed `review-swe-skills-bench-20260702` from `queues.review`.
+- Added `maintenance-swe-skills-bench-validation-policy-20260702` to `queues.maintenance` for later evidence-aware validation and pruning policy.
+- Kept catalog blockers unchanged; catalog drift remains the package/publication blocker.
+
 ## Next Review Item
 
-Source Reviewer should next consume `review-swe-skills-bench-20260702` unless Cataloger or another gate has more concrete pressure.
+Source Reviewer should next consume `review-agentskillos-20260702` unless Cataloger or another gate has more concrete pressure.
