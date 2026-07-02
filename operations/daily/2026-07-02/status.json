@@ -1,0 +1,60 @@
+{
+  "date": "2026-07-02",
+  "current_state": "persisted",
+  "repo": "architectonic/skills",
+  "package": {
+    "name": "architectonic-skills",
+    "version": "0.1.2",
+    "install_root": "dist/skills",
+    "catalog": "dist/catalog.json",
+    "install_manifest": "dist/install-manifest.json"
+  },
+  "metrics": {
+    "candidate_sources_discovered": 0,
+    "sources_reviewed": 0,
+    "sources_blocked": 0,
+    "normalized_entries_added": 0,
+    "skills_updated": 0,
+    "catalog_skill_count": 1170,
+    "high_risk_count": 1,
+    "requires_review_count": null,
+    "catalog_build_status": "present-not-rebuilt",
+    "publication_readiness": "not-ready-unreviewed-risk-metadata-remains"
+  },
+  "queues": {
+    "discovery": 0,
+    "review": 0,
+    "normalization": 0,
+    "catalog": 0,
+    "risk": 0,
+    "packaging": 0,
+    "publication": 0,
+    "maintenance": 0,
+    "critic": 0
+  },
+  "runs": [
+    {
+      "timestamp": "2026-07-02T00:00:30-03:00",
+      "role": "Reporter",
+      "selection_reason": "Default 00 cadence selected Reporter. Today's ledger was missing and no queue pressure existed yet, so the highest-value action was daily state initialization and first report.",
+      "queue_item": null,
+      "actions": [
+        "Read required entrypoint, doctrine, loop, ledger template, package, catalog, manifest, and operations log files.",
+        "Confirmed today's status.json and queues.json were missing.",
+        "Initialized daily state and report without ingesting third-party content."
+      ],
+      "files_changed": [
+        "operations/daily/2026-07-02/status.json",
+        "operations/daily/2026-07-02/queues.json",
+        "operations/daily/2026-07-02/report.md",
+        "operations/log.md"
+      ]
+    }
+  ],
+  "blockers": [
+    "requires_review_count was not available from the inspected catalog summary and should be computed by a future Cataloger pass.",
+    "No discovery/review queues existed at day start; Radar should seed concrete public source candidates next."
+  ],
+  "last_commit": null,
+  "next_action": "Radar: seed discovery with public skill, agent-loop, runtime-doc, slash-command, MCP, and benchmark/evaluation source candidates."
+}
