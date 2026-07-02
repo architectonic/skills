@@ -25,6 +25,10 @@ status: active
 - Consumed `review-mcp-20260702` and created reviewed reference-only profile `sources/reviewed/model-context-protocol.md`.
 - Verified official MCP documentation, official specification/documentation repository, MIT license for that repository, adoption signals, and high-risk tool/external-action surfaces.
 - Added Risk Auditor queue item `risk-mcp-security-checklist-20260702`; MCP remains blocked from normalization, packaging, or publication until risk review is complete.
+- Ran Packager pass.
+- Checked `package.json`, `bin/architectonic-skills.js`, `dist/install-manifest.json`, `dist/catalog.json`, `dist/catalog.md`, reports, README install instructions, and daily queue state.
+- Found install-facing catalog drift: `dist/catalog.md` reports 1173 skills, 2 high-risk entries, and 409 medium-risk entries while `dist/catalog.json` reports 1170 skills, 1 high-risk entry, and 407 medium-risk entries.
+- Added `operations/daily/2026-07-02/packaging-plan.md` and queued `catalog-reconcile-dist-catalog-surfaces-20260702` for Cataloger; no third-party content was ingested or copied.
 
 ## 2026-07-01
 
