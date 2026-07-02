@@ -18,14 +18,14 @@
     "catalog_skill_count": 1170,
     "high_risk_count": 1,
     "requires_review_count": null,
-    "catalog_build_status": "present-not-rebuilt",
-    "publication_readiness": "not-ready-unreviewed-candidates-and-risk-metadata-remain"
+    "catalog_build_status": "present-metric-drift-detected",
+    "publication_readiness": "not-ready-unreviewed-candidates-risk-review-and-catalog-drift-remain"
   },
   "queues": {
     "discovery": 0,
     "review": 4,
     "normalization": 0,
-    "catalog": 0,
+    "catalog": 1,
     "risk": 1,
     "packaging": 0,
     "publication": 0,
@@ -109,14 +109,33 @@
         "operations/log.md"
       ],
       "commit_sha": "6acef01f2307b30cca1e63306f7f969fd5db2f23"
+    },
+    {
+      "timestamp": "2026-07-02T06:58:24-03:00",
+      "role": "Packager",
+      "selection_reason": "Default 06 cadence selected Packager. Packaging queue was empty, but a bounded package-surface inspection was justified because installability and catalog coherence are Packager responsibilities.",
+      "queue_item": "created catalog-reconcile-dist-catalog-surfaces-20260702",
+      "actions": [
+        "Read required entrypoint, doctrine, loop, ledger, queue, package, bin, manifest, catalog, report, and operations context.",
+        "Verified package name, version, license, CLI binary surface, npm files list, install root, install manifest, README install instruction, and review-flag install note.",
+        "Found install-facing catalog drift between dist/catalog.md and dist/catalog.json and queued Cataloger reconciliation instead of rebuilding artifacts from the Packager role."
+      ],
+      "files_changed": [
+        "operations/daily/2026-07-02/packaging-plan.md",
+        "operations/daily/2026-07-02/queues.json",
+        "operations/daily/2026-07-02/status.json",
+        "operations/log.md"
+      ],
+      "commit_sha": "eb2182490ea9583721dd66a8bf8dd3e3443a342a"
     }
   ],
   "blockers": [
     "requires_review_count was not available from the inspected catalog summary and should be computed by a future Cataloger pass.",
     "Four public source candidates still require Source Reviewer inspection before normalization, catalog endorsement, package changes, or publication.",
     "MCP is reviewed only as reference-only and requires Risk Auditor checklist work before any MCP-derived normalization.",
-    "Agent skill security research remains high-priority review work."
+    "Agent skill security research remains high-priority review work.",
+    "Install-facing catalog drift detected: dist/catalog.md reports 1173 skills and 2 high-risk entries while dist/catalog.json reports 1170 skills and 1 high-risk entry."
   ],
-  "last_commit": "6acef01f2307b30cca1e63306f7f969fd5db2f23",
-  "next_action": "Risk Auditor: consume risk-mcp-security-checklist-20260702 before normalizing MCP-derived entries. Source Reviewer should then consume review-skill-security-20260702."
+  "last_commit": "eb2182490ea9583721dd66a8bf8dd3e3443a342a",
+  "next_action": "Risk Auditor should consume risk-mcp-security-checklist-20260702 before normalizing MCP-derived entries. Cataloger should consume catalog-reconcile-dist-catalog-surfaces-20260702 to reconcile catalog surfaces. Source Reviewer should then consume review-skill-security-20260702."
 }
