@@ -10,7 +10,7 @@
     "install_manifest": "dist/install-manifest.json"
   },
   "metrics": {
-    "candidate_sources_discovered": 0,
+    "candidate_sources_discovered": 5,
     "sources_reviewed": 0,
     "sources_blocked": 0,
     "normalized_entries_added": 0,
@@ -19,11 +19,11 @@
     "high_risk_count": 1,
     "requires_review_count": null,
     "catalog_build_status": "present-not-rebuilt",
-    "publication_readiness": "not-ready-unreviewed-risk-metadata-remains"
+    "publication_readiness": "not-ready-unreviewed-candidates-and-risk-metadata-remain"
   },
   "queues": {
     "discovery": 0,
-    "review": 0,
+    "review": 5,
     "normalization": 0,
     "catalog": 0,
     "risk": 0,
@@ -67,13 +67,36 @@
         "operations/log.md"
       ],
       "commit_sha": "e0bfa64d8898d5b6134c8b969ef43f2155027e3a"
+    },
+    {
+      "timestamp": "2026-07-02T01:58:19-03:00",
+      "role": "Radar",
+      "selection_reason": "Default 01 cadence selected Radar. The daily ledger had no queue pressure after two Reporter checkpoints and explicitly identified Radar as the next useful action, so discovery seeded concrete candidates for Source Reviewer rather than inventing normalization or catalog work.",
+      "queue_item": "created review queue items review-mcp-20260702, review-skill-security-20260702, review-agent-skills-standard-20260702, review-swe-skills-bench-20260702, review-agentskillos-20260702",
+      "actions": [
+        "Searched current public web and GitHub for public agent skills, skill directories, agent loops, slash-command/runbook/runtime sources, MCP procedures, and benchmark/evaluation repositories.",
+        "Created five candidate source profiles with URL, provenance clues, license status, runtime targets, risk level, ingestion status, and next action.",
+        "Queued five Source Reviewer items and avoided normalization because license, security, and usefulness review are not complete."
+      ],
+      "files_changed": [
+        "operations/daily/2026-07-02/radar.md",
+        "operations/daily/2026-07-02/queues.json",
+        "operations/daily/2026-07-02/status.json",
+        "operations/log.md",
+        "sources/candidates/swe-skills-bench.md",
+        "sources/candidates/agentskillos.md",
+        "sources/candidates/agent-skills-open-standard.md",
+        "sources/candidates/model-context-protocol.md",
+        "sources/candidates/agent-skill-security-research.md"
+      ],
+      "commit_sha": null
     }
   ],
   "blockers": [
     "requires_review_count was not available from the inspected catalog summary and should be computed by a future Cataloger pass.",
-    "No discovery/review queues existed at day start; Radar should seed concrete public source candidates next.",
-    "All queues remain empty after the Reporter checkpoint; no role other than Radar currently has concrete work to consume."
+    "Five new public source candidates require Source Reviewer inspection before normalization, catalog endorsement, package changes, or publication.",
+    "MCP and agent skill security candidates are high-risk and should not be normalized before license and security review."
   ],
-  "last_commit": "e0bfa64d8898d5b6134c8b969ef43f2155027e3a",
-  "next_action": "Radar: seed discovery with public skill, agent-loop, runtime-doc, slash-command, MCP, and benchmark/evaluation source candidates."
+  "last_commit": null,
+  "next_action": "Source Reviewer: consume review-mcp-20260702 first, then review-skill-security-20260702, before lower-risk benchmark or package-format candidates."
 }
