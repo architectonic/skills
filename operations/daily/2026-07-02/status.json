@@ -32,253 +32,36 @@
     "maintenance": 2,
     "critic": 0
   },
-  "runs": [
-    {
-      "timestamp": "2026-07-02T00:00:30-03:00",
-      "role": "Reporter",
-      "selection_reason": "Default 00 cadence selected Reporter. Today's ledger was missing and no queue pressure existed yet, so the highest-value action was daily state initialization and first report.",
-      "queue_item": null,
-      "actions": [
-        "Read required entrypoint, doctrine, loop, ledger template, package, catalog, manifest, and operations log files.",
-        "Confirmed today's status.json and queues.json were missing.",
-        "Initialized daily state and report without ingesting third-party content."
-      ],
-      "files_changed": [
-        "operations/daily/2026-07-02/status.json",
-        "operations/daily/2026-07-02/queues.json",
-        "operations/daily/2026-07-02/report.md",
-        "operations/log.md"
-      ],
-      "commit_sha": "baae013e6a766c13c1167063f04f78f8f7d30557"
-    },
-    {
-      "timestamp": "2026-07-02T00:58:42-03:00",
-      "role": "Reporter",
-      "selection_reason": "Default 00 cadence still selected Reporter. Existing daily ledger and empty queues showed no concrete queue pressure to override the cadence, so the bounded action was a clean Reporter checkpoint rather than inventing discovery, review, or normalization work.",
-      "queue_item": null,
-      "actions": [
-        "Read required entrypoint, doctrine, loop, ledger, queue, report, package, and manifest context.",
-        "Confirmed today's queues remain empty across discovery, review, normalization, catalog, risk, packaging, publication, maintenance, and critic.",
-        "Recorded a no-ingestion Reporter checkpoint and preserved next action for Radar."
-      ],
-      "files_changed": [
-        "operations/daily/2026-07-02/status.json",
-        "operations/daily/2026-07-02/report.md",
-        "operations/log.md"
-      ],
-      "commit_sha": "e0bfa64d8898d5b6134c8b969ef43f2155027e3a"
-    },
-    {
-      "timestamp": "2026-07-02T01:58:19-03:00",
-      "role": "Radar",
-      "selection_reason": "Default 01 cadence selected Radar. The daily ledger had no queue pressure after two Reporter checkpoints and explicitly identified Radar as the next useful action, so discovery seeded concrete candidates for Source Reviewer rather than inventing normalization or catalog work.",
-      "queue_item": "created review queue items review-mcp-20260702, review-skill-security-20260702, review-agent-skills-standard-20260702, review-swe-skills-bench-20260702, review-agentskillos-20260702",
-      "actions": [
-        "Searched current public web and GitHub for public agent skills, skill directories, agent loops, slash-command/runbook/runtime sources, MCP procedures, and benchmark/evaluation repositories.",
-        "Created five candidate source profiles with URL, provenance clues, license status, runtime targets, risk level, ingestion status, and next action.",
-        "Queued five Source Reviewer items and avoided normalization because license, security, and usefulness review are not complete."
-      ],
-      "files_changed": [
-        "operations/daily/2026-07-02/radar.md",
-        "operations/daily/2026-07-02/queues.json",
-        "operations/daily/2026-07-02/status.json",
-        "operations/log.md",
-        "sources/candidates/swe-skills-bench.md",
-        "sources/candidates/agentskillos.md",
-        "sources/candidates/agent-skills-open-standard.md",
-        "sources/candidates/model-context-protocol.md",
-        "sources/candidates/agent-skill-security-research.md"
-      ],
-      "commit_sha": "4dd741e2dc15af6721044eae224f6da3f0a54f8e"
-    },
-    {
-      "timestamp": "2026-07-02T04:59:54-03:00",
-      "role": "Source Reviewer",
-      "selection_reason": "Default 04 cadence selected Cataloger, but catalog queue pressure was zero while five review items were open. Review and safety outrank catalog growth, so Source Reviewer consumed the highest-priority MCP review item.",
-      "queue_item": "review-mcp-20260702",
-      "actions": [
-        "Read required entrypoint, doctrine, loop, ledger, queue, candidate source, and operations context.",
-        "Verified official MCP documentation and repository provenance, MIT license for the official specification/documentation repository, adoption signals, maintenance signals, and high-risk external-tool surfaces.",
-        "Created a reviewed reference-only source profile for MCP and queued Risk Auditor follow-up before any normalization or publication."
-      ],
-      "files_changed": [
-        "sources/reviewed/model-context-protocol.md",
-        "operations/daily/2026-07-02/review-plan.md",
-        "operations/daily/2026-07-02/queues.json",
-        "operations/daily/2026-07-02/status.json",
-        "operations/log.md"
-      ],
-      "commit_sha": "6acef01f2307b30cca1e63306f7f969fd5db2f23"
-    },
-    {
-      "timestamp": "2026-07-02T06:58:24-03:00",
-      "role": "Packager",
-      "selection_reason": "Default 06 cadence selected Packager. Packaging queue was empty, but a bounded package-surface inspection was justified because installability and catalog coherence are Packager responsibilities.",
-      "queue_item": "created catalog-reconcile-dist-catalog-surfaces-20260702",
-      "actions": [
-        "Read required entrypoint, doctrine, loop, ledger, queue, package, bin, manifest, catalog, report, and operations context.",
-        "Verified package name, version, license, CLI binary surface, npm files list, install root, install manifest, README install instruction, and review-flag install note.",
-        "Found install-facing catalog drift between dist/catalog.md and dist/catalog.json and queued Cataloger reconciliation instead of rebuilding artifacts from the Packager role."
-      ],
-      "files_changed": [
-        "operations/daily/2026-07-02/packaging-plan.md",
-        "operations/daily/2026-07-02/queues.json",
-        "operations/daily/2026-07-02/status.json",
-        "operations/log.md"
-      ],
-      "commit_sha": "eb2182490ea9583721dd66a8bf8dd3e3443a342a"
-    },
-    {
-      "timestamp": "2026-07-02T09:59:06-03:00",
-      "role": "Risk Auditor",
-      "selection_reason": "Default 09 cadence selected Normalizer, but normalization queue was empty while one high-priority MCP risk item was open. Review and safety outrank growth, so Risk Auditor consumed the MCP checklist item before normalization.",
-      "queue_item": "risk-mcp-security-checklist-20260702",
-      "actions": [
-        "Read required entrypoint, doctrine, loop, ledger, queue, reviewed MCP source profile, and operations log context.",
-        "Reviewed current public MCP security research and reporting for tool poisoning, prompt injection, STDIO/execution, cross-tool privacy disclosure, and multi-tool poisoning risks.",
-        "Created a durable MCP external-tool security checklist and updated the MCP source profile to reviewed-reference-only-risk-audited.",
-        "Removed the completed risk queue item and created Normalizer queue item normalize-mcp-external-tool-security-checklist-20260702."
-      ],
-      "files_changed": [
-        "operations/daily/2026-07-02/risk-audit.md",
-        "operations/daily/2026-07-02/queues.json",
-        "sources/reviewed/model-context-protocol.md",
-        "operations/log.md",
-        "operations/daily/2026-07-02/status.json"
-      ],
-      "commit_sha": "73c16393b69dfac4663c09e07b7bc0af77d4673c"
-    },
-    {
-      "timestamp": "2026-07-02T12:01:27-03:00",
-      "role": "Normalizer",
-      "selection_reason": "Default 12 cadence selected Publisher, but publication queue pressure was zero while a high-priority, risk-audited normalization item was open. Because publication must not endorse unreviewed or unsafe entries, Normalizer consumed the MCP checklist item first.",
-      "queue_item": "normalize-mcp-external-tool-security-checklist-20260702",
-      "actions": [
-        "Read required entrypoint, doctrine, loop, ledger, queue, MCP risk audit, reviewed MCP source profile, and operations log context.",
-        "Created skills/mcp-external-tool-security-review.md as a compact OKF-compatible local skill with trigger, inputs, procedure, verification, failure modes, attribution, high risk, and requires_review metadata.",
-        "Removed the completed normalization queue item and created catalog-mcp-security-skill-20260702 for Cataloger rebuild/reconciliation."
-      ],
-      "files_changed": [
-        "skills/mcp-external-tool-security-review.md",
-        "operations/daily/2026-07-02/normalization-plan.md",
-        "operations/daily/2026-07-02/queues.json",
-        "operations/log.md",
-        "operations/daily/2026-07-02/status.json"
-      ],
-      "commit_sha": "05a8c51ccf1818e80e61f5eb95c40a0ccea0e271"
-    },
-    {
-      "timestamp": "2026-07-02T13:00:02-03:00",
-      "role": "Source Reviewer",
-      "selection_reason": "Default 13 cadence selected Source Reviewer. Review queue still had three open source candidates and the highest-priority item was high-risk agent skill security research, so review and safety remained more concrete than catalog or publication work.",
-      "queue_item": "review-skill-security-20260702",
-      "actions": [
-        "Read required entrypoint, doctrine, loop, ledger, queue, candidate source, existing review plan, operations log, arXiv paper record, and public reproduction repository context.",
-        "Accepted agent skill security research as reviewed-reference-only because it directly informs defensive third-party skill review, but license and redistribution status remain unresolved.",
-        "Created reviewed source profile sources/reviewed/agent-skill-security-research.md without copying paper text, code, datasets, scanner prompts, payloads, or attack examples.",
-        "Removed the completed review queue item and created Risk Auditor queue item risk-third-party-skill-security-checklist-20260702."
-      ],
-      "files_changed": [
-        "sources/reviewed/agent-skill-security-research.md",
-        "operations/daily/2026-07-02/queues.json",
-        "operations/daily/2026-07-02/review-plan.md",
-        "operations/log.md",
-        "operations/daily/2026-07-02/status.json"
-      ],
-      "commit_sha": "8ed3ea6e3f61ffa46df4944b86cc0c4e531dbb11"
-    },
-    {
-      "timestamp": "2026-07-02T14:58:25-03:00",
-      "scheduled_role": "Cataloger",
-      "selected_role": "Risk Auditor",
-      "override_reason": "queues.risk contained risk-third-party-skill-security-checklist-20260702; safety review outranks catalog reconciliation and publication readiness.",
-      "role": "Risk Auditor",
-      "selection_reason": "Default 14 cadence selected Cataloger, but one high-priority risk item was open. The hard risk gate required Risk Auditor before catalog/package/publication endorsement.",
-      "queue_item": "risk-third-party-skill-security-checklist-20260702",
-      "actions": [
-        "Read required entrypoint, doctrine, loop, operator-stability, ledger, queue, reviewed source profile, and operations log context.",
-        "Verified the current arXiv record and repository-context framing for agent skill security research.",
-        "Extended operations/daily/2026-07-02/risk-audit.md with a defensive third-party agent-skill security checklist without copying paper text, code, datasets, scanner prompts, payloads, or attack examples.",
-        "Marked sources/reviewed/agent-skill-security-research.md as reviewed-reference-only-risk-audited and removed the completed risk queue item."
-      ],
-      "files_changed": [
-        "operations/daily/2026-07-02/risk-audit.md",
-        "sources/reviewed/agent-skill-security-research.md",
-        "operations/daily/2026-07-02/queues.json",
-        "operations/log.md",
-        "operations/daily/2026-07-02/status.json"
-      ],
-      "commit_sha": "a94c1b54fb713a6d351418d2b4a36c0fd301f938"
-    },
-    {
-      "timestamp": "2026-07-02T16:01:13-03:00",
-      "scheduled_role": "Risk Auditor",
-      "selected_role": "Cataloger",
-      "override_reason": "queues.risk was empty while priority-1 catalog drift and uncataloged-skill items remained open; catalog/package gates block Packager and Publisher until generated surfaces are reconciled.",
-      "role": "Cataloger",
-      "selection_reason": "Risk queue had no open items. Catalog queue had two priority-1 items and status already recorded catalog drift, so Cataloger was the highest-priority allowed role.",
-      "queue_item": "catalog-mcp-security-skill-20260702",
-      "actions": [
-        "Read required entrypoint, doctrine, loop, operator-stability, ledger, queue, package, catalog builder, local MCP skill, catalog summary, report summary, and operations log context.",
-        "Created operations/daily/2026-07-02/catalog-plan.md to record the generated-surface blocker and required next action.",
-        "Rejected hand-editing dist/catalog.json because it is generated from dist/skills and reports/dist-skills-enriched-inventory.json and has more than one thousand entries.",
-        "Marked catalog-mcp-security-skill-20260702 as blocked pending a checked-out repository or CI-backed npm run build:catalog, kept catalog-reconcile-dist-catalog-surfaces-20260702 open, and added maintenance-catalog-build-runner-20260702."
-      ],
-      "files_changed": [
-        "operations/daily/2026-07-02/catalog-plan.md",
-        "operations/daily/2026-07-02/queues.json",
-        "operations/log.md",
-        "operations/daily/2026-07-02/status.json"
-      ],
-      "commit_sha": "8ac1fd02cb81daa9f5ca098ffe94591b758a8412"
-    },
-    {
-      "timestamp": "2026-07-02T17:01:24-03:00",
-      "scheduled_role": "Radar",
-      "selected_role": "Source Reviewer",
-      "override_reason": "queues.review contained open source-review work and catalog blockers were already recorded; review gate blocks broad discovery until existing candidates are handled.",
-      "role": "Source Reviewer",
-      "selection_reason": "Default 17 cadence selected Radar, but review queue still had open candidates and broad discovery would increase review debt.",
-      "queue_item": "review-agent-skills-standard-20260702",
-      "actions": [
-        "Read required entrypoint, doctrine, loop, operator-stability, ledger, queue, candidate source, official documentation, repository README, specification, implementation guide, and operations log context.",
-        "Accepted Agent Skills Open Standard as reviewed-reference-only because it informs package compatibility but should not be normalized as a local skill.",
-        "Created reviewed source profile sources/reviewed/agent-skills-open-standard.md and added package-agent-skills-compatibility-review-20260702 for later Packager work after catalog drift is resolved."
-      ],
-      "files_changed": [
-        "sources/reviewed/agent-skills-open-standard.md",
-        "operations/daily/2026-07-02/queues.json",
-        "operations/daily/2026-07-02/review-plan.md",
-        "operations/log.md"
-      ],
-      "commit_sha": "cb5669537e380dd60e176b4d7a1e9b6ccf45d007"
-    },
-    {
-      "timestamp": "2026-07-02T18:01:00-03:00",
-      "scheduled_role": "Source Reviewer",
-      "selected_role": "Source Reviewer",
-      "override_reason": null,
-      "role": "Source Reviewer",
-      "selection_reason": "Default 18 cadence selected Source Reviewer. Risk queue was empty, catalog blockers were already recorded, and review-swe-skills-bench-20260702 was the highest-priority concrete review item.",
-      "inspected_ref": "main",
-      "inspected_commit_sha": "8ac1fd02cb81daa9f5ca098ffe94591b758a8412",
-      "queue_item": "review-swe-skills-bench-20260702",
-      "actions": [
-        "Read required entrypoint, doctrine, loop, operator-stability, ledger, queue, candidate source, operations log, upstream README, upstream MIT LICENSE, upstream requirements, upstream benchmark config, upstream lifecycle code, and arXiv record.",
-        "Accepted SWE-Skills-Bench as reviewed-reference-only because it provides benchmark evidence for skill utility, regression, and pruning without requiring local content ingestion.",
-        "Created reviewed source profile sources/reviewed/swe-skills-bench.md without copying benchmark prompts, skill documents, tests, datasets, Docker images, scripts, or paper text.",
-        "Removed the completed review queue item and added maintenance-swe-skills-bench-validation-policy-20260702 for later evidence-aware validation policy after catalog drift is resolved."
-      ],
-      "files_changed": [
-        "sources/reviewed/swe-skills-bench.md",
-        "operations/daily/2026-07-02/queues.json",
-        "operations/daily/2026-07-02/review-plan.md",
-        "operations/log.md",
-        "operations/daily/2026-07-02/status.json"
-      ],
-      "commit_sha": "db26a99d7905ffecc7849f2c7983f2b5e6ec89d7"
-    }
-  ],
+  "latest_run": {
+    "timestamp": "2026-07-02T18:58:13-03:00",
+    "scheduled_role": "Source Reviewer",
+    "selected_role": "Cataloger",
+    "override_reason": "Priority-1 catalog drift and generated install-surface mismatch block Packager and Publisher; the remaining review item is lower priority and broad discovery remains inappropriate while catalog/package gates are unresolved.",
+    "role": "Cataloger",
+    "selection_reason": "Risk queue was empty. Catalog queue contained priority-1 items, including catalog-reconcile-dist-catalog-surfaces-20260702. The builder must reconcile dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and reports together, so the safe Cataloger action was to mark the reconciliation item blocked rather than hand-edit generated files.",
+    "inspected_ref": "main",
+    "inspected_commit_sha": "db26a99d7905ffecc7849f2c7983f2b5e6ec89d7",
+    "queue_item": "catalog-reconcile-dist-catalog-surfaces-20260702",
+    "actions": [
+      "Read required entrypoint, doctrine, loop, operator-stability, daily ledger, queue, operations log, package, catalog builder, and existing catalog plan files by direct path fetch through the GitHub connector.",
+      "Verified package.json defines build:catalog as python scripts/build_distribution_catalog.py.",
+      "Verified the catalog builder reads reports/dist-skills-enriched-inventory.json and dist/skills/**/SKILL.md, then writes dist/catalog.json, dist/install-manifest.json, and dist/catalog.md as a coupled generated set.",
+      "Marked catalog-reconcile-dist-catalog-surfaces-20260702 blocked pending a checked-out repository or CI-backed npm run build:catalog execution.",
+      "Did not hand-edit dist/catalog.json, dist/catalog.md, dist/install-manifest.json, or reports."
+    ],
+    "files_changed": [
+      "operations/daily/2026-07-02/queues.json",
+      "operations/daily/2026-07-02/catalog-plan.md",
+      "operations/log.md",
+      "operations/daily/2026-07-02/status.json"
+    ],
+    "intermediate_commits": [
+      "651ed3eabd50715e966810a245067414a6cbbd19",
+      "64621751fdf21bc33b30305b9e79b8fc76ee51ea",
+      "987175545da70a38f2ffcca08e5cc04501fb1609"
+    ],
+    "commit_sha": "987175545da70a38f2ffcca08e5cc04501fb1609"
+  },
   "blockers": [
     "requires_review_count was not available from the inspected catalog summary and should be computed by a future checked-out Cataloger pass.",
     "One public source candidate still requires Source Reviewer inspection before catalog endorsement, package changes, or publication.",
@@ -286,9 +69,10 @@
     "Install-facing catalog drift detected: dist/catalog.md reports 1173 skills and 2 high-risk entries while dist/catalog.json reports 1170 skills and 1 high-risk entry.",
     "The new MCP security skill is not reflected in dist/catalog.json, dist/catalog.md, dist/install-manifest.json, or reports.",
     "Connector-only run could not execute scripts/build_distribution_catalog.py; hand-editing generated catalog files was rejected.",
+    "catalog-reconcile-dist-catalog-surfaces-20260702 is blocked pending checked-out or CI-backed catalog generation.",
     "Agent skill security research license and redistribution boundaries remain unresolved; it must stay reviewed-reference-only-risk-audited, not copied or normalized as source content.",
     "SWE-Skills-Bench is useful as validation evidence but should remain reviewed-reference-only until a separate isolated benchmark execution and credentials policy exists."
   ],
-  "last_commit": "db26a99d7905ffecc7849f2c7983f2b5e6ec89d7",
-  "next_action": "Run Cataloger from a checked-out repository or CI-backed build surface to execute npm run build:catalog, reconcile dist/catalog.json, dist/catalog.md, dist/install-manifest.json, reports, compute requires_review_count, and then clear or update catalog-reconcile-dist-catalog-surfaces-20260702 before Packager, Publisher, or further broad discovery. If Source Reviewer runs before that, consume only review-agentskillos-20260702 and avoid broad Radar expansion."
+  "last_commit": "987175545da70a38f2ffcca08e5cc04501fb1609",
+  "next_action": "Run Cataloger from a checked-out repository or CI-backed build surface to execute npm run build:catalog, reconcile dist/catalog.json, dist/catalog.md, dist/install-manifest.json, reports, compute requires_review_count, and then clear or update blocked catalog items before Packager, Publisher, or further broad discovery. If Source Reviewer runs before that, consume only review-agentskillos-20260702 and avoid broad Radar expansion."
 }
