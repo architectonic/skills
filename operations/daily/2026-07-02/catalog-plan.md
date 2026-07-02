@@ -84,9 +84,28 @@ Expected checks:
 - the MCP security skill is either represented in `dist/skills/` and catalog surfaces, or explicitly left canonical-only with a documented packaging decision;
 - Packager and Publisher remain blocked until these checks pass.
 
+## Follow-up Cataloger Checkpoint — 18:58
+
+Selected role: Cataloger.
+
+Scheduled role: Source Reviewer.
+
+Override reason: priority-1 catalog drift and install-surface mismatch block Packager and Publisher; broad discovery remains inappropriate while catalog/package gates are unresolved. The remaining review item is lower priority than generated-surface reconciliation.
+
+Queue item consumed: `catalog-reconcile-dist-catalog-surfaces-20260702`.
+
+Inspected ref: `main`.
+
+Inspected commit SHA: `db26a99d7905ffecc7849f2c7983f2b5e6ec89d7` from today's prior ledger; direct default-branch fetches for required files succeeded during this pass.
+
+Finding: `package.json` defines `npm run build:catalog` as `python scripts/build_distribution_catalog.py`. The builder reads `reports/dist-skills-enriched-inventory.json` and `dist/skills/**/SKILL.md`, then writes `dist/catalog.json`, `dist/install-manifest.json`, and `dist/catalog.md` as a coupled generated set. A connector-only pass cannot execute that builder or prove generated-surface parity.
+
+Decision: mark `catalog-reconcile-dist-catalog-surfaces-20260702` blocked with the same build-surface requirement. Do not hand-edit generated catalog files. Do not advance Packager or Publisher.
+
 ## Blockers
 
 - No checked-out repository or package execution surface was available in this connector-only run.
 - `dist/catalog.json` and `dist/catalog.md` already disagree.
 - The new high-risk MCP skill has not been distribution-cataloged.
+- `catalog-reconcile-dist-catalog-surfaces-20260702` is now blocked until a checked-out or CI-backed catalog build is run.
 - Publication remains not ready.
