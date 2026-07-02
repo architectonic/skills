@@ -55,22 +55,21 @@
       "created_at": "2026-07-02T01:58:19-03:00"
     }
   ],
-  "normalization": [
+  "normalization": [],
+  "catalog": [
     {
-      "id": "normalize-mcp-external-tool-security-checklist-20260702",
+      "id": "catalog-mcp-security-skill-20260702",
       "priority": 1,
-      "role": "Normalizer",
-      "target": "operations/daily/2026-07-02/risk-audit.md",
+      "role": "Cataloger",
+      "target": "skills/mcp-external-tool-security-review.md, dist/catalog.json, dist/catalog.md, dist/install-manifest.json, reports/dist-skills-report.md, reports/dist-skills-summary.json",
       "source_url": "https://modelcontextprotocol.io",
-      "reason": "Risk Auditor approved a narrow local MCP external-tool security checklist as the safe next step before any MCP-derived skill, runbook, package surface, or publication entry is endorsed.",
-      "action": "Create a compact OKF-compatible local Skill or Runbook from the risk audit checklist, preserving MCP as reference-only and avoiding copied third-party documentation.",
+      "reason": "Normalizer added a new high-risk reviewed local skill derived from the MCP risk audit; catalog and install surfaces need rebuild/reconciliation before package or publication endorsement.",
+      "action": "Run or reproduce npm run build:catalog and verify the new skill appears with high risk and requires_review metadata; reconcile with existing catalog drift item.",
       "risk_level": "high",
       "status": "open",
-      "created_by": "Risk Auditor",
-      "created_at": "2026-07-02T09:59:06-03:00"
-    }
-  ],
-  "catalog": [
+      "created_by": "Normalizer",
+      "created_at": "2026-07-02T12:01:27-03:00"
+    },
     {
       "id": "catalog-reconcile-dist-catalog-surfaces-20260702",
       "priority": 1,
