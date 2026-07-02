@@ -3,19 +3,6 @@
   "discovery": [],
   "review": [
     {
-      "id": "review-agent-skills-standard-20260702",
-      "priority": 3,
-      "role": "Source Reviewer",
-      "target": "sources/candidates/agent-skills-open-standard.md",
-      "source_url": "https://agentskills.io",
-      "reason": "The repository is installable; emerging Agent Skills package format may affect compatibility with Claude, GitHub, VS Code, Cursor, Goose, Amp, and OpenCode-style runtimes.",
-      "action": "Verify official specification URL, SDK repository, license, package layout expectations, and whether Packager or Cataloger follow-up is needed.",
-      "risk_level": "medium",
-      "status": "open",
-      "created_by": "Radar",
-      "created_at": "2026-07-02T01:58:19-03:00"
-    },
-    {
       "id": "review-swe-skills-bench-20260702",
       "priority": 4,
       "role": "Source Reviewer",
@@ -73,7 +60,21 @@
     }
   ],
   "risk": [],
-  "packaging": [],
+  "packaging": [
+    {
+      "id": "package-agent-skills-compatibility-review-20260702",
+      "priority": 3,
+      "role": "Packager",
+      "target": "dist/skills, package.json, README.md, reports/dist-skills-report.md",
+      "source_url": "https://agentskills.io/specification",
+      "reason": "Agent Skills is a reviewed open package format relevant to local skill distribution; compatibility should be checked after catalog drift is resolved.",
+      "action": "After catalog surfaces are reconciled, compare local skill export shape against Agent Skills expectations: SKILL.md directory layout, name/description metadata, license/compatibility fields, optional scripts/references/assets handling, and install location guidance.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Source Reviewer",
+      "created_at": "2026-07-02T17:01:24-03:00"
+    }
+  ],
   "publication": [],
   "maintenance": [
     {
