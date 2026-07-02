@@ -2,7 +2,7 @@
 type: Source Profile
 title: Model Context Protocol
 description: Reviewed source profile for MCP protocol documentation, SDKs, tool/server procedures, and high-risk external-tool integration patterns.
-tags: [source-profile, mcp, tools, agent-runtime, security, reviewed]
+tags: [source-profile, mcp, tools, agent-runtime, security, reviewed, audited]
 okf_version: "0.2"
 source_url: https://modelcontextprotocol.io
 source_name: Model Context Protocol
@@ -11,9 +11,11 @@ license: MIT for the official modelcontextprotocol/modelcontextprotocol reposito
 runtime_targets: [mcp, claude, chatgpt, vscode, cursor, ide-agents, tool-using-agent-runtimes]
 skill_format: protocol-docs-and-server-procedures
 risk_level: high
-ingestion_status: reviewed-reference-only
+ingestion_status: reviewed-reference-only-risk-audited
 reviewed_at: 2026-07-02
 reviewed_by: Source Reviewer
+risk_audited_at: 2026-07-02
+risk_audited_by: Risk Auditor
 ---
 
 # Model Context Protocol
@@ -22,7 +24,7 @@ reviewed_by: Source Reviewer
 
 MCP is accepted as a reviewed source profile for reference-only use.
 
-Do not normalize MCP behavior into endorsed local skills yet. MCP procedures involve external tools, local servers, transports, OAuth, filesystem access, network access, and potentially state-changing actions. The correct next step is Risk Auditor review before any MCP checklist, runbook, package, or publication surface is endorsed.
+Do not normalize MCP behavior into endorsed local skills yet. MCP procedures involve external tools, local servers, transports, OAuth, filesystem access, network access, and potentially state-changing actions. The correct next step is a narrow local checklist or runbook derived from the Risk Auditor checklist, not direct copying of MCP documentation or server setup instructions.
 
 ## Provenance
 
@@ -54,14 +56,16 @@ Acceptable local uses now:
 - risk taxonomy input;
 - future MCP server review checklist;
 - future tool permission and transport classification;
-- future OAuth and external-action verification procedure.
+- future OAuth and external-action verification procedure;
+- local checklist or runbook normalized from `operations/daily/2026-07-02/risk-audit.md`.
 
 Unacceptable local uses now:
 
 - copying MCP documentation into local skills;
 - endorsing MCP servers as safe because they use MCP;
 - normalizing server setup commands before license and security review;
-- publishing MCP-derived skills as approved package entries without Risk Auditor review.
+- publishing MCP-derived skills as approved package entries without catalog and package review;
+- treating protocol compliance as a security guarantee.
 
 ## Security Review Notes
 
@@ -80,14 +84,26 @@ Risk areas:
 - state-changing external actions;
 - supply-chain risk from registries and third-party servers.
 
-Recent public security research and reporting describe MCP-specific tool poisoning, prompt injection, descriptor mutation, governance, and transport/execution concerns. These are not reasons to block MCP as a source profile, but they require MCP-derived entries to pass Risk Auditor review before normalization.
+Recent public security research and reporting describe MCP-specific tool poisoning, prompt injection, descriptor mutation, governance, transport, execution, and multi-tool poisoning concerns. These are not reasons to block MCP as a source profile, but they require MCP-derived entries to pass Risk Auditor review before normalization.
+
+## Risk Auditor Decision
+
+Status: reviewed-reference-only-risk-audited.
+
+The Risk Auditor checklist was recorded in:
+
+```text
+operations/daily/2026-07-02/risk-audit.md
+```
+
+The checklist approves only a narrow local normalization target: an OKF-compatible MCP external-tool security checklist or runbook. That future entry must be derived from the local audit, cite MCP as a reference source, avoid copied third-party documentation, preserve the high-risk classification, and include trigger, inputs, procedure, verification, and failure modes.
 
 ## Ingestion Decision
 
-Status: reviewed-reference-only.
+Status: reviewed-reference-only-risk-audited.
 
-MCP should remain reference-only until a Risk Auditor creates or approves a durable MCP security checklist. After that, a Normalizer may create a local runbook or skill only if it has a narrow trigger, explicit inputs, bounded procedure, verification, and failure modes.
+MCP is not blocked as a source profile. MCP-derived operational entries remain blocked from publication or package endorsement until a Normalizer creates a narrow local checklist/runbook and a later Cataloger/Packager pass reconciles catalog and install-facing review flags.
 
 ## Follow-Up Queue
 
-Create a Risk Auditor queue item for an MCP external-tool security checklist before any normalization.
+Normalizer may consume `normalize-mcp-external-tool-security-checklist-20260702` to create the local checklist or runbook from the risk audit.
