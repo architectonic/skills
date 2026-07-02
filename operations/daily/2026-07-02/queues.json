@@ -3,19 +3,6 @@
   "discovery": [],
   "review": [
     {
-      "id": "review-swe-skills-bench-20260702",
-      "priority": 4,
-      "role": "Source Reviewer",
-      "target": "sources/candidates/swe-skills-bench.md",
-      "source_url": "https://github.com/GeniusHTX/SWE-Skills-Bench",
-      "reason": "Benchmark evidence can help determine which software engineering skills are useful, harmful, overbroad, or version-sensitive.",
-      "action": "Inspect README, license, task format, executable scripts, dependency behavior, and whether results can inform skill validation policy without copying benchmark content.",
-      "risk_level": "medium",
-      "status": "open",
-      "created_by": "Radar",
-      "created_at": "2026-07-02T01:58:19-03:00"
-    },
-    {
       "id": "review-agentskillos-20260702",
       "priority": 5,
       "role": "Source Reviewer",
@@ -89,6 +76,19 @@
       "status": "open",
       "created_by": "Cataloger",
       "created_at": "2026-07-02T16:01:13-03:00"
+    },
+    {
+      "id": "maintenance-swe-skills-bench-validation-policy-20260702",
+      "priority": 4,
+      "role": "Critic",
+      "target": "doctrine/normalization-pipeline.md, reports, skills catalog review criteria",
+      "source_url": "https://github.com/GeniusHTX/SWE-Skills-Bench",
+      "reason": "Reviewed benchmark evidence suggests many skills may provide little benefit or even harm when version-mismatched; the local skill library needs evidence-aware validation and pruning criteria.",
+      "action": "After catalog drift is resolved, derive local validation-policy and critic-check criteria from the reviewed source profile without copying benchmark task prompts, skill documents, code, tests, or datasets.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Source Reviewer",
+      "created_at": "2026-07-02T18:01:00-03:00"
     }
   ],
   "critic": []
