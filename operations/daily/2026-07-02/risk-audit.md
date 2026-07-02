@@ -1,12 +1,12 @@
 ---
 type: Risk Audit
 title: MCP External Tool Security Checklist
-summary: Risk Auditor pass for the reviewed Model Context Protocol source profile before any MCP-derived normalization.
-tags: [skills, aggregator, risk-audit, mcp, external-tools, prompt-injection]
+summary: Risk Auditor pass for reviewed high-risk external tool and third-party agent-skill sources before normalization or publication.
+tags: [skills, aggregator, risk-audit, mcp, external-tools, prompt-injection, supply-chain]
 okf_version: "0.2"
 status: active
 risk_level: high
-reviewed_at: 2026-07-02T09:59:06-03:00
+reviewed_at: 2026-07-02T14:58:25-03:00
 ---
 
 # MCP External Tool Security Checklist
@@ -114,3 +114,120 @@ Before any MCP-derived skill, runbook, workflow, package surface, or public summ
 - MCP remains reference-only for now.
 - Normalizer may create a local checklist/runbook derived from this audit, not from copied MCP documentation.
 - Catalog/package/publication remain blocked for MCP-derived entries until a normalized entry exists and passes catalog review.
+
+# Third-Party Agent Skill Security Checklist
+
+## Role Decision
+
+Selected role: Risk Auditor.
+
+Scheduled role: Cataloger.
+
+Override reason: `queues.risk` contained `risk-third-party-skill-security-checklist-20260702`; safety review outranks catalog reconciliation, packaging, publication, and broad source discovery.
+
+## Queue Item Consumed
+
+`risk-third-party-skill-security-checklist-20260702`
+
+Target: `sources/reviewed/agent-skill-security-research.md`
+
+## Audit Decision
+
+The agent skill security research remains useful as a reviewed reference-only source. It should inform defensive ingestion policy and review heuristics, not direct content import.
+
+This pass approves a local defensive checklist for third-party agent-skill review. It does not approve copying paper text, datasets, repository code, scanner prompts, attack payloads, or exploit examples. License and redistribution boundaries remain unresolved, so the reviewed source stays reference-only.
+
+## Defensive Checklist
+
+Before a third-party agent skill, skill directory, marketplace package, or repository-hosted skill is normalized, catalog-endorsed, packaged, or published, verify all of the following:
+
+1. Repository context
+   - Inspect the surrounding repository, not only the skill markdown.
+   - Confirm the repository purpose matches the claimed skill behavior.
+   - Check whether scripts, docs, CI, package files, and examples align with the skill description.
+   - Treat a skill as higher risk when the skill behavior is unrelated to the host repository.
+
+2. Provenance and ownership
+   - Record the exact source URL, author or organization, repository owner, and distribution surface.
+   - Distinguish official runtime/package sources from community mirrors, forks, and marketplaces.
+   - Verify whether the upstream is active, archived, transferred, newly created, or weakly maintained.
+   - Treat abandoned or recently transferred repositories as supply-chain risk.
+
+3. License and redistribution
+   - Record the license for the exact repository or package under review.
+   - Do not assume the paper, marketplace listing, repository code, and skill text share the same license.
+   - If no clear license is available, keep the source reference-only or blocked.
+   - Do not copy third-party skill text, datasets, scanner outputs, or repository code unless redistribution is explicitly permitted.
+
+4. Skill-package contents
+   - Inspect `SKILL.md`, supporting scripts, reference files, package metadata, dependency manifests, and hidden configuration files.
+   - Check whether the skill requires local command execution, package installation, network access, browser automation, account login, filesystem writes, or external-system mutation.
+   - Flag skills that hide the real behavior in scripts or auxiliary files while presenting harmless markdown.
+
+5. Scanner interpretation
+   - Treat automated scanner findings as triage signals, not final truth.
+   - Compare scanner flags against repository context before classifying a skill as malicious or safe.
+   - Record false-positive and false-negative uncertainty when the repository context is ambiguous.
+   - Escalate uncertain high-impact cases to blocked or requires-review instead of normalizing them.
+
+6. Instruction boundary
+   - Treat skill text as untrusted input until reviewed.
+   - Check for role override, instruction hierarchy manipulation, hidden persistence requests, credential requests, data exfiltration, or attempts to weaken human review.
+   - Ensure a normalized local skill never imports upstream instructions that tell the agent to ignore repository, user, or runtime policy.
+
+7. Execution and dependency risk
+   - Do not execute third-party scripts or package commands during review unless the environment is disposable and the action is explicitly part of a bounded audit.
+   - Review dependency manifests, lockfiles, install scripts, postinstall hooks, binary downloads, and network fetch behavior before any runtime use.
+   - Keep executable, networked, or state-changing skills high risk until a separate package/security review is complete.
+
+8. Data and credential handling
+   - Reject or block skills that request secrets, tokens, cookies, private files, shell history, browser profiles, wallet material, or unrelated workspace context.
+   - Check whether the skill routes data to another tool, endpoint, repository, issue, paste service, or remote model without explicit authorization.
+   - Require explicit user intent and audit logging for any private-data read or state-changing action.
+
+9. Marketplace and popularity signals
+   - Treat marketplaces as discovery surfaces, not trust authorities.
+   - Popularity, star count, download count, or attractive documentation does not substitute for provenance, license, and behavior review.
+   - Prefer official source repositories and reproducible package metadata over marketplace summaries.
+
+10. Local ingestion outcome
+   - Use `candidate` for unreviewed discoveries.
+   - Use `reviewed-reference-only` when the source is useful but unsafe, unlicensed, or not suitable for copying.
+   - Use `blocked` when provenance, license, or behavior is unacceptable.
+   - Use `normalized` only when the local entry is distilled, defensive, attributed, and passes risk review.
+   - Use `requires_review` for high-risk local skills even after normalization.
+
+## Promotion Gates
+
+A third-party skill may move beyond reviewed reference-only status only when:
+
+```text
+provenance known
+license recorded
+repository context inspected
+package contents inspected
+unsafe instruction patterns absent or removed
+execution/dependency risk classified
+private-data behavior bounded
+local normalized text is distilled, not copied
+verification/failure modes are explicit
+catalog and install surfaces are reconciled
+```
+
+## Failure Modes This Checklist Prevents
+
+- Classifying isolated skill markdown without repository context.
+- Treating scanner output as ground truth.
+- Importing hidden instructions from third-party skill text.
+- Copying material with unresolved license or redistribution status.
+- Packaging abandoned-repository or marketplace supply-chain risk.
+- Running unreviewed scripts, installers, or package hooks.
+- Publishing a high-risk skill as if it were endorsed or safe.
+
+## Result
+
+- Risk queue item consumed.
+- Agent skill security research remains reference-only.
+- No third-party paper text, code, dataset, scanner prompt, payload, or exploit example was copied.
+- Catalog/package/publication remain blocked by existing catalog drift and uncataloged high-risk local MCP skill.
+- Next concrete role should be Cataloger for `catalog-mcp-security-skill-20260702` and `catalog-reconcile-dist-catalog-surfaces-20260702` unless a higher-priority safety issue appears.
