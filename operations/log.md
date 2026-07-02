@@ -51,6 +51,10 @@ status: active
 - Consumed `review-agent-skills-standard-20260702` and created reviewed reference-only profile `sources/reviewed/agent-skills-open-standard.md`.
 - Verified the official Agent Skills documentation, repository provenance, Apache-2.0 code license, CC-BY-4.0 documentation license, `SKILL.md` directory format, progressive disclosure model, and cross-client `.agents/skills/` implementation guidance.
 - Added Packager queue item `package-agent-skills-compatibility-review-20260702`; no upstream specification text or examples were copied, and catalog blockers remain unchanged.
+- Ran Source Reviewer pass on SWE-Skills-Bench.
+- Consumed `review-swe-skills-bench-20260702` and created reviewed reference-only profile `sources/reviewed/swe-skills-bench.md`.
+- Verified public repository provenance, MIT license, 49-task benchmark framing, Docker/Claude Code/API-key execution requirements, pinned task repositories, and benchmark-value evidence for skill validation.
+- Added maintenance item `maintenance-swe-skills-bench-validation-policy-20260702` for later evidence-aware validation and pruning criteria; no benchmark prompts, skill documents, tests, datasets, Docker images, scripts, or paper text were copied.
 
 ## 2026-07-01
 
