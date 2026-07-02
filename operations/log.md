@@ -42,6 +42,11 @@ status: active
 - Ran Risk Auditor pass because an open high-priority risk item overrode the scheduled Cataloger slot.
 - Consumed `risk-third-party-skill-security-checklist-20260702`, extended `operations/daily/2026-07-02/risk-audit.md` with a third-party agent-skill security checklist, and marked `sources/reviewed/agent-skill-security-research.md` as reviewed-reference-only-risk-audited.
 - Removed the completed risk queue item. Catalog drift and the uncataloged high-risk MCP local skill remain the next concrete blockers.
+- Ran Cataloger pass because priority-1 catalog work overrode the scheduled Risk Auditor slot after risk queue reached zero.
+- Created `operations/daily/2026-07-02/catalog-plan.md` and inspected the MCP catalog queue item plus current catalog builder behavior.
+- Blocked hand-edits to generated catalog surfaces because `npm run build:catalog` could not be executed from the connector-only run and `dist/catalog.json`, `dist/catalog.md`, reports, and install manifest must be reconciled together.
+- Marked `catalog-mcp-security-skill-20260702` as blocked pending a checked-out repository or CI-backed catalog build, kept `catalog-reconcile-dist-catalog-surfaces-20260702` open, and added maintenance item `maintenance-catalog-build-runner-20260702`.
+- No third-party content was copied, no skill was packaged or published, and publication remains blocked.
 
 ## 2026-07-01
 
