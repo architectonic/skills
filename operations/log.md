@@ -55,6 +55,10 @@ status: active
 - Consumed `review-swe-skills-bench-20260702` and created reviewed reference-only profile `sources/reviewed/swe-skills-bench.md`.
 - Verified public repository provenance, MIT license, 49-task benchmark framing, Docker/Claude Code/API-key execution requirements, pinned task repositories, and benchmark-value evidence for skill validation.
 - Added maintenance item `maintenance-swe-skills-bench-validation-policy-20260702` for later evidence-aware validation and pruning criteria; no benchmark prompts, skill documents, tests, datasets, Docker images, scripts, or paper text were copied.
+- Ran Cataloger pass because priority-1 catalog drift and generated-surface mismatch remained the strongest package/publication blocker.
+- Consumed `catalog-reconcile-dist-catalog-surfaces-20260702` by marking it blocked pending a checked-out or CI-backed `npm run build:catalog` execution.
+- Verified `package.json` maps `build:catalog` to `python scripts/build_distribution_catalog.py`; the builder reads `reports/dist-skills-enriched-inventory.json` and `dist/skills/**/SKILL.md` and writes `dist/catalog.json`, `dist/install-manifest.json`, and `dist/catalog.md` together.
+- Did not hand-edit generated catalog or install files. Packager and Publisher remain blocked; one low-priority review candidate remains open.
 
 ## 2026-07-01
 
