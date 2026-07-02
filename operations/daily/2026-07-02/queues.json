@@ -55,7 +55,21 @@
       "created_at": "2026-07-02T01:58:19-03:00"
     }
   ],
-  "normalization": [],
+  "normalization": [
+    {
+      "id": "normalize-mcp-external-tool-security-checklist-20260702",
+      "priority": 1,
+      "role": "Normalizer",
+      "target": "operations/daily/2026-07-02/risk-audit.md",
+      "source_url": "https://modelcontextprotocol.io",
+      "reason": "Risk Auditor approved a narrow local MCP external-tool security checklist as the safe next step before any MCP-derived skill, runbook, package surface, or publication entry is endorsed.",
+      "action": "Create a compact OKF-compatible local Skill or Runbook from the risk audit checklist, preserving MCP as reference-only and avoiding copied third-party documentation.",
+      "risk_level": "high",
+      "status": "open",
+      "created_by": "Risk Auditor",
+      "created_at": "2026-07-02T09:59:06-03:00"
+    }
+  ],
   "catalog": [
     {
       "id": "catalog-reconcile-dist-catalog-surfaces-20260702",
@@ -71,21 +85,7 @@
       "created_at": "2026-07-02T06:58:24-03:00"
     }
   ],
-  "risk": [
-    {
-      "id": "risk-mcp-security-checklist-20260702",
-      "priority": 1,
-      "role": "Risk Auditor",
-      "target": "sources/reviewed/model-context-protocol.md",
-      "source_url": "https://modelcontextprotocol.io",
-      "reason": "MCP is reviewed as reference-only but exposes high-risk tool, transport, OAuth, filesystem, network, prompt-injection, and external-action surfaces that need a durable security checklist before normalization.",
-      "action": "Create or approve an MCP external-tool security checklist covering server trust, tool descriptors, permissions, transports, OAuth scopes, sandboxing, auditability, and state-changing actions.",
-      "risk_level": "high",
-      "status": "open",
-      "created_by": "Source Reviewer",
-      "created_at": "2026-07-02T04:59:54-03:00"
-    }
-  ],
+  "risk": [],
   "packaging": [],
   "publication": [],
   "maintenance": [],
