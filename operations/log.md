@@ -17,6 +17,10 @@ status: active
 - No external source was reviewed or ingested; next useful role is Radar.
 - Ran Reporter checkpoint later in the same hour because queue pressure remained empty and did not justify overriding the 00 Reporter cadence.
 - Updated daily status and report; no external sources were reviewed, no queue item was consumed, and no catalog rebuild was needed.
+- Ran Radar discovery pass.
+- Added five public source candidates under `sources/candidates/`: SWE-Skills-Bench, AgentSkillOS, Agent Skills Open Standard, Model Context Protocol, and Agent Skill Security Research.
+- Queued five Source Reviewer items; no source was normalized, packaged, or published because license and security review remain incomplete.
+- Prioritized MCP and agent skill security candidates for review before lower-risk benchmark or package-format candidates.
 
 ## 2026-07-01
 
