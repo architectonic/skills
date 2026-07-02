@@ -51,11 +51,12 @@
       "target": "skills/mcp-external-tool-security-review.md, dist/catalog.json, dist/catalog.md, dist/install-manifest.json, reports/dist-skills-report.md, reports/dist-skills-summary.json",
       "source_url": "https://modelcontextprotocol.io",
       "reason": "Normalizer added a new high-risk reviewed local skill derived from the MCP risk audit; catalog and install surfaces need rebuild/reconciliation before package or publication endorsement.",
-      "action": "Run or reproduce npm run build:catalog and verify the new skill appears with high risk and requires_review metadata; reconcile with existing catalog drift item.",
+      "action": "Blocked in connector-only run: run or reproduce npm run build:catalog from a checked-out repository, then verify the new skill appears with high risk and requires_review metadata or explicitly document why it remains canonical-only.",
       "risk_level": "high",
-      "status": "open",
+      "status": "blocked",
       "created_by": "Normalizer",
-      "created_at": "2026-07-02T12:01:27-03:00"
+      "created_at": "2026-07-02T12:01:27-03:00",
+      "blocked_by": "No checked-out repository or package execution surface was available to run scripts/build_distribution_catalog.py; hand-editing generated catalog files was rejected."
     },
     {
       "id": "catalog-reconcile-dist-catalog-surfaces-20260702",
@@ -74,6 +75,20 @@
   "risk": [],
   "packaging": [],
   "publication": [],
-  "maintenance": [],
+  "maintenance": [
+    {
+      "id": "maintenance-catalog-build-runner-20260702",
+      "priority": 2,
+      "role": "Cataloger",
+      "target": "scripts/build_distribution_catalog.py, package.json, operations/aggregator-loop.md",
+      "source_url": null,
+      "reason": "Connector-only operator runs can inspect and write repository files but cannot execute npm run build:catalog, which leaves generated catalog surfaces blocked when drift occurs.",
+      "action": "Add a CI-backed or locally executable catalog refresh path for future Cataloger passes, or run the current builder from a checked-out repository before package/publication endorsement.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Cataloger",
+      "created_at": "2026-07-02T16:01:13-03:00"
+    }
+  ],
   "critic": []
 }
