@@ -102,10 +102,30 @@ Finding: `package.json` defines `npm run build:catalog` as `python scripts/build
 
 Decision: mark `catalog-reconcile-dist-catalog-surfaces-20260702` blocked with the same build-surface requirement. Do not hand-edit generated catalog files. Do not advance Packager or Publisher.
 
+## Cataloger Checkpoint — 21:00
+
+Selected role: Cataloger.
+
+Scheduled role: Cataloger.
+
+Override reason: none.
+
+Queue item consumed: `maintenance-catalog-build-runner-20260702`.
+
+Inspected ref: `main`.
+
+Inspected commit SHA: `c296f24ee1b2659a11f8b1c5f56801032aff65b4`.
+
+Finding: the repository had no existing `.github/workflows/build-catalog.yml` file when fetched directly. `package.json` exposes `npm run build:catalog`, and `scripts/build_distribution_catalog.py` writes `dist/catalog.json`, `dist/install-manifest.json`, and `dist/catalog.md` as a coupled generated set.
+
+Action: added `.github/workflows/catalog-refresh.yml` with `workflow_dispatch` plus path triggers for `dist/skills/**`, `skills/**`, `reports/dist-skills-enriched-inventory.json`, `scripts/build_distribution_catalog.py`, and `package.json`. The workflow checks out the repository, installs `pyyaml`, runs `npm run build:catalog`, diffs the generated catalog surfaces, and commits refreshed `dist/catalog.json`, `dist/catalog.md`, and `dist/install-manifest.json` when changed.
+
+Decision: mark `maintenance-catalog-build-runner-20260702` done. Keep catalog and package blockers open because this connector pass created the execution path but did not execute the workflow or verify generated-surface parity.
+
 ## Blockers
 
-- No checked-out repository or package execution surface was available in this connector-only run.
 - `dist/catalog.json` and `dist/catalog.md` already disagree.
 - The new high-risk MCP skill has not been distribution-cataloged.
-- `catalog-reconcile-dist-catalog-surfaces-20260702` is now blocked until a checked-out or CI-backed catalog build is run.
+- `catalog-mcp-security-skill-20260702` remains blocked until the catalog refresh workflow or a checked-out build runs and verifies generated outputs.
+- `catalog-reconcile-dist-catalog-surfaces-20260702` remains blocked until the catalog refresh workflow or a checked-out build reconciles generated surfaces.
 - Publication remains not ready.
