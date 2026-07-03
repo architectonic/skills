@@ -1,6 +1,6 @@
 {
   "date": "2026-07-02",
-  "current_state": "catalog-refresh-workflow-added-catalog-still-blocked",
+  "current_state": "critic-validation-criteria-added-catalog-still-blocked",
   "repo": "architectonic/skills",
   "package": {
     "name": "architectonic-skills",
@@ -29,44 +29,41 @@
     "risk": 0,
     "packaging": 1,
     "publication": 0,
-    "maintenance": 1,
+    "maintenance": 0,
     "critic": 0
   },
   "latest_run": {
-    "timestamp": "2026-07-02T21:00:40-03:00",
-    "scheduled_role": "Cataloger",
-    "selected_role": "Cataloger",
+    "timestamp": "2026-07-02T22:00:42-03:00",
+    "scheduled_role": "Critic",
+    "selected_role": "Critic",
     "override_reason": null,
-    "role": "Cataloger",
-    "selection_reason": "The 21 cadence slot selected Cataloger. Risk queue was empty, catalog drift remained blocked pending a runnable build surface, and a concrete Cataloger maintenance item existed to add a CI-backed catalog refresh path.",
+    "role": "Critic",
+    "selection_reason": "The 22 cadence slot selected Critic. Risk queue was empty, review queue had only a lower-priority open item, catalog and package blockers were already explicitly recorded pending executed catalog generation, and a concrete Critic maintenance item existed for evidence-aware validation and pruning criteria.",
     "inspected_ref": "main",
-    "inspected_commit_sha": "c296f24ee1b2659a11f8b1c5f56801032aff65b4",
-    "queue_item": "maintenance-catalog-build-runner-20260702",
+    "inspected_commit_sha": "ec7f0820ca754f40368848f1befdd4ab1bc82005",
+    "queue_item": "maintenance-swe-skills-bench-validation-policy-20260702",
     "actions": [
       "Resolved architectonic/skills through the GitHub connector and fetched required files directly by path from main before selecting a role.",
-      "Verified package.json exposes npm run build:catalog as python scripts/build_distribution_catalog.py.",
-      "Verified scripts/build_distribution_catalog.py writes dist/catalog.json, dist/install-manifest.json, and dist/catalog.md as a coupled generated set.",
-      "Confirmed no .github/workflows/build-catalog.yml file existed by direct fetch.",
-      "Created .github/workflows/catalog-refresh.yml with workflow_dispatch and path triggers for catalog-relevant files.",
-      "Configured the workflow to check out the repo, set up Python 3.11, install pyyaml, run npm run build:catalog, show diffs for generated catalog surfaces, and auto-commit dist/catalog.json, dist/catalog.md, and dist/install-manifest.json when changed.",
-      "Marked maintenance-catalog-build-runner-20260702 done.",
-      "Kept catalog and package blockers open because this connector pass created a build path but did not execute the workflow or verify generated-surface parity.",
-      "Did not modify skills, dist/skills, generated catalog files, install manifest, reports, or third-party source content."
+      "Fetched the reviewed SWE-Skills-Bench source profile directly by path and used it only as a reference-only provenance boundary.",
+      "Created operations/daily/2026-07-02/critic.md with evidence-aware skill validation, demotion, pruning, and version-mismatch criteria.",
+      "Marked maintenance-swe-skills-bench-validation-policy-20260702 done in queues.json.",
+      "Logged the Critic pass in operations/log.md.",
+      "Did not copy benchmark tasks, skill documents, prompts, tests, datasets, Docker images, scripts, paper text, or third-party code.",
+      "Did not modify skills, dist/skills, generated catalog files, install manifest, reports, or third-party source content.",
+      "Did not create new queue items because the next concrete action is already represented by blocked Cataloger items."
     ],
     "files_changed": [
-      ".github/workflows/catalog-refresh.yml",
+      "operations/daily/2026-07-02/critic.md",
       "operations/daily/2026-07-02/queues.json",
-      "operations/daily/2026-07-02/catalog-plan.md",
       "operations/log.md",
       "operations/daily/2026-07-02/status.json"
     ],
     "intermediate_commits": [
-      "36943fff0a6780c0cff2ef1370d57348ebc353a0",
-      "f9a71b1d84d3402fded092b5902a7ee45406fc66",
-      "df25134aca5ead7d7250f24c8f760f12885e2516",
-      "df22f9b6d2b398590d633f3192a211faf1ea5a6d"
+      "eb35294facd86f248034f79cb9aa36f120c3a03c",
+      "6da2f915f7a2bad3d07b5fc40b563aee22c82886",
+      "eb87a07eddbc5d30f4ca68cd0756cc9877f27af7"
     ],
-    "commit_sha": "df22f9b6d2b398590d633f3192a211faf1ea5a6d"
+    "commit_sha": "pending-final-status-commit"
   },
   "blockers": [
     "requires_review_count was not available from the inspected catalog summary and should be computed by a future checked-out or CI-backed Cataloger pass.",
@@ -76,10 +73,8 @@
     "The new MCP security skill is not reflected in dist/catalog.json, dist/catalog.md, dist/install-manifest.json, or reports.",
     "catalog-mcp-security-skill-20260702 is blocked pending executed catalog generation and verification.",
     "catalog-reconcile-dist-catalog-surfaces-20260702 is blocked pending executed catalog generation and verification.",
-    "package-agent-skills-compatibility-review-20260702 is blocked pending catalog/install/report surface reconciliation.",
-    "Agent skill security research license and redistribution boundaries remain unresolved; it must stay reviewed-reference-only-risk-audited, not copied or normalized as source content.",
-    "SWE-Skills-Bench is useful as validation evidence but should remain reviewed-reference-only until a separate isolated benchmark execution and credentials policy exists."
+    "package-agent-skills-compatibility-review-20260702 is blocked pending catalog/install/report surface reconciliation."
   ],
-  "last_commit": "df22f9b6d2b398590d633f3192a211faf1ea5a6d",
-  "next_action": "Run the new catalog refresh workflow or run npm run build:catalog from a checked-out repository, then fetch generated surfaces directly, verify catalog.json, catalog.md, install-manifest.json, and reports agree, compute requires_review_count, and clear or update blocked catalog and packaging items before Publisher. If Source Reviewer runs before that, consume only review-agentskillos-20260702 and avoid broad Radar expansion."
+  "last_commit": "pending-final-status-commit",
+  "next_action": "Run the catalog refresh workflow or run npm run build:catalog from a checked-out repository, then fetch generated surfaces directly, verify catalog.json, catalog.md, install-manifest.json, and reports agree, compute requires_review_count, and clear or update blocked catalog and packaging items before Publisher. If Source Reviewer runs before that, consume only review-agentskillos-20260702 and avoid broad Radar expansion."
 }
