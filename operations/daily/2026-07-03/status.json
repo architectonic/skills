@@ -1,9 +1,9 @@
 {
   "date": "2026-07-03",
-  "current_state": "source_review_completed_repository_context_security_profile_created",
+  "current_state": "risk_audit_completed_repository_context_gate_added",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "1495a4c5493b85d4cca4dcfda84bbfae6da20583",
+  "inspected_sha": "cdf4e10243df5905483dd4db0866db3a73285486",
   "package": {
     "name": "architectonic-skills",
     "version": "0.1.3",
@@ -27,14 +27,14 @@
     "unspecified_risk_count_md": 759,
     "requires_review_count": null,
     "catalog_build_status": "verified_current_on_default_branch",
-    "publication_readiness": "catalog_package_parity_clear_risk_queue_open"
+    "publication_readiness": "catalog_package_parity_clear_review_queue_open"
   },
   "queues": {
     "discovery": 0,
     "review": 2,
     "normalization": 0,
     "catalog": 0,
-    "risk": 1,
+    "risk": 0,
     "packaging": 0,
     "publication": 0,
     "maintenance": 0,
@@ -159,9 +159,35 @@
       "package_status": "unchanged: package.json reports architectonic-skills 0.1.3 and dist/install-manifest.json points at README.md, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json",
       "npm_status": "not checked in this Source Reviewer pass; Publisher should verify registry state when publication readiness is evaluated",
       "resulting_commit_sha": "cdf4e10243df5905483dd4db0866db3a73285486"
+    },
+    {
+      "timestamp": "2026-07-03T19:12:32-03:00",
+      "scheduled_role": "Packager",
+      "selected_role": "Risk Auditor",
+      "override_reason": "The daily ledger had open priority-1 risk item risk-repository-context-skill-review-20260703; review and safety gates outrank package endorsement.",
+      "reason": "Direct connector fetches confirmed required repository instructions, daily status and queues, operations log, package metadata, catalog JSON, catalog Markdown, install manifest, MCP safety skill, and the reviewed repository-context security source profile. The risk item was consumed by adding a compact repository-context gate to ingestion doctrine instead of normalizing or copying the reviewed paper/code/data.",
+      "queue_item": "risk-repository-context-skill-review-20260703",
+      "queue_item_action": "closed_done_doctrine_updated",
+      "sources_reviewed": [
+        "sources/reviewed/repository-context-agent-skill-security.md"
+      ],
+      "discovery_candidates_processed": 0,
+      "files_changed": [
+        "doctrine/ingestion-policy.md",
+        "operations/daily/2026-07-03/risk-audit.md",
+        "operations/daily/2026-07-03/queues.json",
+        "operations/daily/2026-07-03/status.json"
+      ],
+      "inspected_ref": "main",
+      "inspected_sha": "cdf4e10243df5905483dd4db0866db3a73285486",
+      "risk_status": "closed repository-context risk item; queues.risk is now empty; no third-party content copied",
+      "catalog_status": "unchanged: dist/catalog.json and dist/catalog.md both report 1173 skills, 2 high-risk entries, 409 medium-risk entries, and 759 unspecified-risk entries",
+      "package_status": "unchanged: package.json reports architectonic-skills 0.1.3 and dist/install-manifest.json points at README.md, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json",
+      "npm_status": "not checked in this Risk Auditor pass; Publisher should verify registry state when publication readiness is evaluated",
+      "resulting_commit_sha": "782ed24eeb395527e914d30b17ad3ccd786d14ef"
     }
   ],
   "blockers": [],
-  "last_commit": "cdf4e10243df5905483dd4db0866db3a73285486",
-  "next_action": "Risk Auditor should consume risk-repository-context-skill-review-20260703 before further normalization because it can improve the global third-party skill review gate. After that, Source Reviewer should review skill-usage-realistic-settings and visualskill. Keep all three candidates reference-only until license, provenance, repository availability, and safety implications are verified."
+  "last_commit": "782ed24eeb395527e914d30b17ad3ccd786d14ef",
+  "next_action": "Source Reviewer should consume review-skill-usage-20260703 next. Keep skill-usage-realistic-settings and visualskill-multimodal-skills reference-only until repository context, license, provenance, and safety implications are verified."
 }
