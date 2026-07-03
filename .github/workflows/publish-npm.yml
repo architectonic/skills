@@ -5,8 +5,20 @@ name: Publish npm
 
 on:
   push:
+    branches:
+      - main
     tags:
       - 'v[0-9]*.[0-9]*.[0-9]*'
+    paths:
+      - 'package.json'
+      - 'README.md'
+      - 'index.md'
+      - 'bin/**'
+      - 'dist/**'
+      - 'scripts/**'
+      - 'doctrine/**'
+      - 'operations/**'
+      - '.github/workflows/publish-npm.yml'
   workflow_dispatch:
 
 concurrency:
@@ -38,6 +50,16 @@ jobs:
         with:
           node-version: '22'
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install catalog dependencies
+        run: python -m pip install --upgrade pyyaml
+
+      - name: Build catalog surfaces for package
+        run: npm run build:catalog
+
       - name: npm CLI (trusted publishing needs >= 11.5.1)
         run: npm install -g npm@latest
 
@@ -46,21 +68,39 @@ jobs:
           node-version: '22'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Check registry version
+        id: registry
+        run: |
+          PKG="$(node -p "require('./package.json').name")"
+          VER="$(node -p "require('./package.json').version")"
+          CURRENT="$(npm view "$PKG" version 2>/dev/null || true)"
+          echo "package_name=$PKG" >> "$GITHUB_OUTPUT"
+          echo "package_version=$VER" >> "$GITHUB_OUTPUT"
+          echo "registry_version=$CURRENT" >> "$GITHUB_OUTPUT"
+          if [ "$CURRENT" = "$VER" ]; then
+            echo "already_published=true" >> "$GITHUB_OUTPUT"
+            echo "$PKG@$VER is already published; skipping publish"
+          else
+            echo "already_published=false" >> "$GITHUB_OUTPUT"
+            echo "Publishing $PKG@$VER; registry currently has ${CURRENT:-none}"
+          fi
+
       - name: Publish
+        if: steps.registry.outputs.already_published != 'true'
         run: npm publish --access public
 
       - name: Verify registry
-        if: startsWith(github.ref, 'refs/tags/')
+        if: steps.registry.outputs.already_published != 'true'
         run: |
-          TAG="${GITHUB_REF#refs/tags/v}"
-          PKG="$(node -p "require('./package.json').name")"
+          PKG="${{ steps.registry.outputs.package_name }}"
+          VER="${{ steps.registry.outputs.package_version }}"
           for i in $(seq 1 12); do
             v="$(npm view "$PKG" version 2>/dev/null || true)"
-            if [ "$v" = "$TAG" ]; then
+            if [ "$v" = "$VER" ]; then
               echo "OK: $PKG@$v"
               exit 0
             fi
             sleep 5
           done
-          echo "npm view $PKG did not show $TAG (last: $v)"
+          echo "npm view $PKG did not show $VER (last: $v)"
           exit 1
