@@ -3,7 +3,7 @@
   "current_state": "cataloger_blocked_by_catalog_parity",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "d281aa6dbcde6a1bbba5085b7a1197f1e08be3f6",
+  "inspected_sha": "447904c5985c8aa01036173837007f3e77b45de4",
   "package": {
     "name": "architectonic-skills",
     "version": "0.1.2",
@@ -31,7 +31,7 @@
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 0,
+    "catalog": 1,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -199,6 +199,25 @@
       "inspected_sha": "d281aa6dbcde6a1bbba5085b7a1197f1e08be3f6",
       "catalog_status": "mismatch: dist/catalog.json reports 1170 skills / 1 high-risk / 407 medium-risk; dist/catalog.md reports 1173 skills / 2 high-risk / 409 medium-risk",
       "workflow_status": "catalog-refresh.yml execution remains required, but workflow dispatch/start is not available through the exposed connector action set in this pass"
+    },
+    {
+      "timestamp": "2026-07-03T08:59:34-03:00",
+      "scheduled_role": "Source Reviewer",
+      "selected_role": "Cataloger",
+      "override_reason": "Catalog/package drift remains the only priority blocker and broad review is not justified while catalog/install/report surfaces disagree.",
+      "reason": "Direct connector fetch confirmed the current default-branch commit and reverified package-facing catalog mismatch. The only concrete catalog queue item remains blocked because workflow dispatch/start is unavailable through the exposed connector action set; this run updated durable state without inventing Source Reviewer work or hand-editing generated surfaces.",
+      "queue_item": "catalog-execute-refresh-workflow-20260703",
+      "queue_item_action": "left_blocked",
+      "sources_reviewed": [],
+      "files_changed": [
+        "operations/log.md",
+        "operations/daily/2026-07-03/status.json"
+      ],
+      "inspected_ref": "main",
+      "inspected_sha": "447904c5985c8aa01036173837007f3e77b45de4",
+      "catalog_status": "mismatch: dist/catalog.json reports 1170 skills / 1 high-risk / 407 medium-risk; dist/catalog.md reports 1173 skills / 2 high-risk / 409 medium-risk",
+      "workflow_status": "catalog-refresh.yml execution remains required, but workflow dispatch/start is not available through the exposed connector action set in this pass",
+      "resulting_commit_sha": "82fbf7f1fc4fe321a7e1776a57ba63d5a6ae3a69"
     }
   ],
   "blockers": [
@@ -208,6 +227,6 @@
     "The GitHub connector action set exposes repository file reads/writes but no workflow_dispatch action for starting catalog-refresh.yml in this pass.",
     "Packager cannot endorse install/package readiness until generated catalog surfaces agree."
   ],
-  "last_commit": "df859e1de693d5979fc8cfce7f8846e8d31ca8f3",
+  "last_commit": "82fbf7f1fc4fe321a7e1776a57ba63d5a6ae3a69",
   "next_action": "Cataloger should execute catalog-refresh.yml through a workflow-dispatch-capable path, or run npm run build:catalog from a checked-out repository and commit generated catalog surfaces. After that, Cataloger should verify dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and reports agree before Packager endorsement."
 }
