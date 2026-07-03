@@ -26,6 +26,11 @@ status: active
 - Confirmed the catalog refresh workflow exists with `workflow_dispatch`, runs `npm run build:catalog`, and commits generated catalog surfaces, but this connector run cannot dispatch it directly.
 - Confirmed package-facing mismatch remains: `dist/catalog.json` reports 1170 skills, 1 high-risk entry, and 407 medium-risk entries; `dist/catalog.md` reports 1173 skills, 2 high-risk entries, and 409 medium-risk entries.
 - Created Cataloger queue item `catalog-execute-refresh-workflow-20260703` and added `operations/daily/2026-07-03/catalog-plan.md`; no generated catalog file was hand-edited.
+- Ran Cataloger because the priority-1 catalog queue item overrode the scheduled Source Reviewer slot.
+- Inspected required repository files directly from `main` at `8a4a6f0541fab8a6bfbe1ef2a8045d2805d77a38` through the GitHub connector.
+- Rechecked `.github/workflows/catalog-refresh.yml`, `package.json`, `dist/catalog.json`, `dist/catalog.md`, and `dist/install-manifest.json` directly; the package-facing mismatch remains 1170 skills / 1 high-risk in JSON versus 1173 skills / 2 high-risk in Markdown.
+- Marked `catalog-execute-refresh-workflow-20260703` blocked because the exposed GitHub connector actions can inspect workflow files and rerun existing failed jobs, but cannot start the `workflow_dispatch` workflow in this pass.
+- No generated catalog files were hand-edited, no third-party content was copied, and Packager/Publisher remain blocked until a human or runner executes `catalog-refresh.yml` or `npm run build:catalog` from a checkout and commits parity surfaces.
 
 ## 2026-07-02
 
