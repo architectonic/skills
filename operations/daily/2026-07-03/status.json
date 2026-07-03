@@ -1,9 +1,9 @@
 {
   "date": "2026-07-03",
-  "current_state": "normalizer_idle_catalog_parity_blocked",
+  "current_state": "cataloger_blocked_workflow_dispatch_unavailable",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "106cc0862149e6ff8c693425fbe354f55076239e",
+  "inspected_sha": "5af1cec411135a4c25abaf5a885452163161eb0e",
   "package": {
     "name": "architectonic-skills",
     "version": "0.1.2",
@@ -40,23 +40,23 @@
   },
   "runs": [
     {
-      "timestamp": "2026-07-03T09:58:16-03:00",
-      "scheduled_role": "Normalizer",
-      "selected_role": "Normalizer",
-      "override_reason": null,
-      "reason": "Normalizer cadence checkpoint; queues.normalization is empty, the only concrete queue item remains blocked under Cataloger, and no normalization work was justified.",
-      "queue_item": null,
-      "queue_item_action": null,
+      "timestamp": "2026-07-03T11:00:03-03:00",
+      "scheduled_role": "Radar",
+      "selected_role": "Cataloger",
+      "override_reason": "Catalog/package drift blocks Radar until generated catalog/install/report surfaces agree or a workflow-dispatch-capable path executes the existing catalog refresh.",
+      "reason": "Direct connector fetch confirmed the current default-branch commit, required operating files, daily status and queues, operations log, catalog surfaces, install manifest, and catalog refresh workflow. The only concrete queue item remains blocked because the exposed GitHub connector action set can read and write repository files but cannot dispatch .github/workflows/catalog-refresh.yml. No Radar discovery, third-party ingestion, skill changes, generated catalog edits, packaging endorsement, or publication work was justified.",
+      "queue_item": "catalog-execute-refresh-workflow-20260703",
+      "queue_item_action": "left_blocked",
       "sources_reviewed": [],
       "files_changed": [
         "operations/log.md",
         "operations/daily/2026-07-03/status.json"
       ],
       "inspected_ref": "main",
-      "inspected_sha": "106cc0862149e6ff8c693425fbe354f55076239e",
+      "inspected_sha": "5af1cec411135a4c25abaf5a885452163161eb0e",
       "catalog_status": "mismatch: dist/catalog.json reports 1170 skills / 1 high-risk / 407 medium-risk; dist/catalog.md reports 1173 skills / 2 high-risk / 409 medium-risk",
       "package_status": "blocked: generated catalog surfaces disagree; Packager and Publisher cannot endorse package readiness",
-      "log_commit_sha": "d39b61b07c6c52db8f4f0f697ae2a3fec1509d3d"
+      "workflow_status": "catalog-refresh.yml exists with workflow_dispatch and npm run build:catalog, but workflow dispatch/start is unavailable through the exposed connector action set in this pass"
     }
   ],
   "blockers": [
@@ -64,8 +64,9 @@
     "dist/catalog.json reports 1170 skills, 1 high-risk entry, and 407 medium-risk entries while dist/catalog.md reports 1173 skills, 2 high-risk entries, and 409 medium-risk entries.",
     "Generated catalog surfaces still need an executed catalog refresh and verification across dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and reports.",
     "The GitHub connector action set exposes repository file reads/writes but no workflow_dispatch action for starting catalog-refresh.yml in this pass.",
-    "Packager cannot endorse install/package readiness until generated catalog surfaces agree."
+    "Packager cannot endorse install/package readiness until generated catalog surfaces agree.",
+    "This hourly automation is now blocked on an action outside the exposed connector write/read surface and should not continue producing status-only commits until a workflow-dispatch-capable path or checkout run clears the blocker."
   ],
-  "last_commit": "d39b61b07c6c52db8f4f0f697ae2a3fec1509d3d",
+  "last_commit": null,
   "next_action": "Cataloger should execute catalog-refresh.yml through a workflow-dispatch-capable path, or run npm run build:catalog from a checked-out repository and commit generated catalog surfaces. After that, Cataloger should verify dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and reports agree before Packager endorsement."
 }
