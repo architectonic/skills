@@ -63,6 +63,11 @@ status: active
 - Inspected package surfaces directly from `main` at `987175545da70a38f2ffcca08e5cc04501fb1609`: `package.json`, `bin/architectonic-skills.js`, `dist/install-manifest.json`, `dist/catalog.json`, `dist/catalog.md`, `reports/dist-skills-report.md`, `reports/dist-skills-summary.json`, README install instructions, daily queues, and the existing packaging plan.
 - Marked `package-agent-skills-compatibility-review-20260702` blocked because Agent Skills compatibility cannot be endorsed until catalog/install surfaces are reconciled and the high-risk MCP skill is reflected across generated metadata.
 - No third-party content was copied; no `skills/`, `dist/skills/`, generated catalog, install manifest, or report artifact was modified.
+- Ran Cataloger pass at the 21 cadence slot.
+- Inspected required files directly from `main` at `c296f24ee1b2659a11f8b1c5f56801032aff65b4` through the GitHub connector.
+- Consumed `maintenance-catalog-build-runner-20260702` by adding `.github/workflows/catalog-refresh.yml`, a CI-backed `workflow_dispatch` and path-triggered catalog refresh path that runs `npm run build:catalog` and commits generated catalog surfaces when changed.
+- Marked the maintenance item done, but kept catalog and package blockers open because the workflow was created, not executed, and generated-surface parity was not verified in this connector-only pass.
+- No third-party content was copied; no generated catalog files, install manifest, reports, `skills/`, or `dist/skills/` files were modified.
 
 ## 2026-07-01
 
