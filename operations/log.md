@@ -63,6 +63,13 @@ status: active
 - Confirmed `queues.normalization` is empty and the only concrete queue item remains blocked under Cataloger; no normalization work was justified.
 - Reconfirmed generated catalog mismatch directly: `dist/catalog.json` reports 1170 skills, 1 high-risk entry, and 407 medium-risk entries; `dist/catalog.md` reports 1173 skills, 2 high-risk entries, and 409 medium-risk entries.
 - Updated durable status/log only; no external source was reviewed, no third-party content was copied, no skill or dist skill was changed, and no generated catalog surface was hand-edited.
+- Ran Cataloger because catalog/package drift overrode the scheduled Radar slot.
+- Inspected required repository files directly from `main` at `5af1cec411135a4c25abaf5a885452163161eb0e` through the GitHub connector.
+- Reconfirmed the blocked catalog queue item remains the only concrete queue item, and generated catalog parity is still unresolved: `dist/catalog.json` reports 1170 skills, 1 high-risk entry, and 407 medium-risk entries while `dist/catalog.md` reports 1173 skills, 2 high-risk entries, and 409 medium-risk entries.
+- Confirmed `.github/workflows/catalog-refresh.yml` exists with `workflow_dispatch` and runs `npm run build:catalog`, but the exposed connector action set still cannot start that workflow.
+- Updated durable log/status only; no Radar discovery, external source review, third-party ingestion, skill changes, generated catalog edits, packaging endorsement, or publication work was performed.
+- Status update commit for this pass: `2e6b7911e149738a5ceff5c4dfa4cc1fc1daff7b`.
+- This automation is now blocked on an action outside the exposed connector read/write surface; repeated hourly status-only commits are no longer useful until a workflow-dispatch-capable path or local checkout clears the catalog blocker.
 
 ## 2026-07-02
 
