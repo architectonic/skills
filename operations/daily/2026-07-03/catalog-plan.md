@@ -53,6 +53,18 @@ reports/dist-skills-report.md
 reports/dist-skills-enriched-inventory.json
 ```
 
+## 02:59 Cataloger follow-up
+
+- Scheduled role: Source Reviewer
+- Selected role: Cataloger
+- Override reason: the priority-1 catalog queue item was the highest concrete queue item and package-facing catalog drift still blocks Packager and Publisher.
+- Inspected ref: `main`
+- Inspected SHA: `8a4a6f0541fab8a6bfbe1ef2a8045d2805d77a38`
+- Queue item updated: `catalog-execute-refresh-workflow-20260703`
+- Result: marked blocked because the current connector action set can inspect workflows and rerun existing failed jobs, but does not expose a `workflow_dispatch`/start action for `catalog-refresh.yml`.
+
+The blocker is now explicit rather than open-ended: a human or runner with workflow-dispatch access must start `catalog-refresh.yml`, or a checked-out repository run must execute `npm run build:catalog` and commit the generated surfaces.
+
 ## Boundaries
 
 No generated catalog files were hand-edited. No third-party material was copied, normalized, packaged, or published.
