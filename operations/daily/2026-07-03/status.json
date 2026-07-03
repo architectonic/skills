@@ -1,9 +1,9 @@
 {
   "date": "2026-07-03",
-  "current_state": "cataloger_catalog_refresh_queued",
+  "current_state": "cataloger_catalog_refresh_blocked",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "c5344522887a9008a3f504fcec79afb22e0b42ad",
+  "inspected_sha": "8a4a6f0541fab8a6bfbe1ef2a8045d2805d77a38",
   "package": {
     "name": "architectonic-skills",
     "version": "0.1.2",
@@ -24,14 +24,14 @@
     "medium_risk_count": 407,
     "medium_risk_count_md": 409,
     "requires_review_count": null,
-    "catalog_build_status": "blocked_generated_surface_mismatch_refresh_queued",
+    "catalog_build_status": "blocked_workflow_dispatch_unavailable_through_connector",
     "publication_readiness": "blocked_catalog_package_parity_unverified"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 1,
+    "catalog": 0,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -94,6 +94,27 @@
       "catalog_status": "mismatch: dist/catalog.json reports 1170 skills / 1 high-risk / 407 medium-risk; dist/catalog.md reports 1173 skills / 2 high-risk / 409 medium-risk",
       "workflow_status": "catalog-refresh.yml exists with workflow_dispatch and npm run build:catalog, but execution was not available through the connector action set in this pass",
       "resulting_commit_sha_recorded_before_final_status_write": "f4d24056a5e678dd1654e86386d567e618b6feb3"
+    },
+    {
+      "timestamp": "2026-07-03T02:59:47-03:00",
+      "scheduled_role": "Source Reviewer",
+      "selected_role": "Cataloger",
+      "override_reason": "The priority-1 catalog queue item was the highest concrete queue item, and package-facing catalog drift still blocks Packager and Publisher.",
+      "reason": "Direct connector fetch confirmed the catalog refresh workflow and package-facing catalog mismatch, but the exposed GitHub connector action set cannot start workflow_dispatch for catalog-refresh.yml. The queue item was therefore marked blocked rather than hand-editing generated surfaces.",
+      "queue_item": "catalog-execute-refresh-workflow-20260703",
+      "queue_item_action": "marked_blocked",
+      "sources_reviewed": [],
+      "files_changed": [
+        "operations/daily/2026-07-03/queues.json",
+        "operations/daily/2026-07-03/catalog-plan.md",
+        "operations/log.md",
+        "operations/daily/2026-07-03/status.json"
+      ],
+      "inspected_ref": "main",
+      "inspected_sha": "8a4a6f0541fab8a6bfbe1ef2a8045d2805d77a38",
+      "catalog_status": "mismatch: dist/catalog.json reports 1170 skills / 1 high-risk / 407 medium-risk; dist/catalog.md reports 1173 skills / 2 high-risk / 409 medium-risk",
+      "workflow_status": "catalog-refresh.yml exists with workflow_dispatch and npm run build:catalog, but workflow dispatch/start was not available through the connector action set in this pass",
+      "resulting_commit_sha_recorded_before_final_status_write": "d874dea53e9ea0bf85feb73e795114237407b513"
     }
   ],
   "blockers": [
@@ -102,6 +123,6 @@
     "Generated catalog surfaces still need an executed catalog refresh and verification across dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and reports.",
     "The GitHub connector action set exposed workflow inspection and rerun tools, but no workflow_dispatch action for starting catalog-refresh.yml in this pass."
   ],
-  "last_commit": "f4d24056a5e678dd1654e86386d567e618b6feb3",
-  "next_action": "Cataloger should execute the catalog refresh workflow manually or run npm run build:catalog from a checked-out repository, then verify catalog/install/report parity and close catalog-execute-refresh-workflow-20260703."
+  "last_commit": "d874dea53e9ea0bf85feb73e795114237407b513",
+  "next_action": "A human or runner with workflow-dispatch access should execute catalog-refresh.yml, or a checked-out repository run should execute npm run build:catalog and commit generated catalog surfaces. After that, Cataloger should verify dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and reports agree."
 }
