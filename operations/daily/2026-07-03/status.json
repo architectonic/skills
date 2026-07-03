@@ -1,9 +1,9 @@
 {
   "date": "2026-07-03",
-  "current_state": "reporter_initialized_daily_ledger",
+  "current_state": "reporter_checkpoint_catalog_blocked",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "34d1c87703f0c38c189e981df0058e4a59a4140a",
+  "inspected_sha": "0c610a730fcbb7410be4dfda1c6df34077d45f4e",
   "package": {
     "name": "architectonic-skills",
     "version": null,
@@ -17,10 +17,12 @@
     "sources_blocked": 0,
     "normalized_entries_added": 0,
     "skills_updated": 0,
-    "catalog_skill_count": null,
-    "high_risk_count": null,
+    "catalog_skill_count": 1170,
+    "catalog_skill_count_md": 1173,
+    "high_risk_count": 1,
+    "high_risk_count_md": 2,
     "requires_review_count": null,
-    "catalog_build_status": "not_run_reporter_only",
+    "catalog_build_status": "blocked_generated_surface_mismatch",
     "publication_readiness": "blocked_catalog_package_parity_unverified"
   },
   "queues": {
@@ -51,12 +53,31 @@
       ],
       "inspected_ref": "main",
       "inspected_sha": "34d1c87703f0c38c189e981df0058e4a59a4140a"
+    },
+    {
+      "timestamp": "2026-07-03T00:58:33-03:00",
+      "scheduled_role": "Reporter",
+      "selected_role": "Reporter",
+      "override_reason": null,
+      "reason": "Reporter cadence checkpoint; queues were empty and catalog/package blocker remained already known but directly reverified.",
+      "queue_item": null,
+      "sources_reviewed": [],
+      "files_changed": [
+        "operations/daily/2026-07-03/report.md",
+        "operations/log.md",
+        "operations/daily/2026-07-03/status.json"
+      ],
+      "inspected_ref": "main",
+      "inspected_sha": "0c610a730fcbb7410be4dfda1c6df34077d45f4e",
+      "catalog_status": "mismatch: dist/catalog.json reports 1170 skills / 1 high-risk / 407 medium-risk; dist/catalog.md reports 1173 skills / 2 high-risk / 409 medium-risk",
+      "resulting_commit_sha_recorded_before_final_status_write": "aeab2b3c115486af6f81b35d9a2164d646efcb33"
     }
   ],
   "blockers": [
     "Catalog/package parity remains unresolved from the 2026-07-02 ledger.",
+    "dist/catalog.json reports 1170 skills, 1 high-risk entry, and 407 medium-risk entries while dist/catalog.md reports 1173 skills, 2 high-risk entries, and 409 medium-risk entries.",
     "Generated catalog surfaces still need an executed catalog refresh and verification across dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and reports."
   ],
-  "last_commit": "a4176318a284e9cb78df9acdc0e4d574a585f57b",
+  "last_commit": "aeab2b3c115486af6f81b35d9a2164d646efcb33",
   "next_action": "Cataloger should execute or verify the catalog refresh path, then reconcile generated catalog/install/report surfaces before Packager or Publisher endorsement."
 }
