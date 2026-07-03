@@ -30,7 +30,7 @@
       "status": "blocked",
       "created_by": "Normalizer",
       "created_at": "2026-07-02T12:01:27-03:00",
-      "blocked_by": "Generated catalog surfaces still require an executed catalog build. A CI-backed workflow was added in this run, but this connector pass did not execute it or verify generated-surface parity."
+      "blocked_by": "Generated catalog surfaces still require an executed catalog build. A CI-backed workflow was added, but generated-surface parity has not yet been verified."
     },
     {
       "id": "catalog-reconcile-dist-catalog-surfaces-20260702",
@@ -44,7 +44,7 @@
       "status": "blocked",
       "created_by": "Packager",
       "created_at": "2026-07-02T06:58:24-03:00",
-      "blocked_by": "The CI-backed catalog refresh path now exists, but the generated surfaces remain unreconciled until the workflow or a local checkout executes scripts/build_distribution_catalog.py and commits or verifies the generated files."
+      "blocked_by": "The CI-backed catalog refresh path exists, but the generated surfaces remain unreconciled until the workflow or a local checkout executes scripts/build_distribution_catalog.py and commits or verifies the generated files."
     }
   ],
   "risk": [],
@@ -85,14 +85,16 @@
       "id": "maintenance-swe-skills-bench-validation-policy-20260702",
       "priority": 4,
       "role": "Critic",
-      "target": "doctrine/normalization-pipeline.md, reports, skills catalog review criteria",
+      "target": "operations/daily/2026-07-02/critic.md, doctrine/normalization-pipeline.md, reports, skills catalog review criteria",
       "source_url": "https://github.com/GeniusHTX/SWE-Skills-Bench",
       "reason": "Reviewed benchmark evidence suggests many skills may provide little benefit or even harm when version-mismatched; the local skill library needs evidence-aware validation and pruning criteria.",
-      "action": "After catalog drift is resolved, derive local validation-policy and critic-check criteria from the reviewed source profile without copying benchmark task prompts, skill documents, code, tests, or datasets.",
+      "action": "Derived local evidence-aware validation and pruning criteria in operations/daily/2026-07-02/critic.md without copying benchmark task prompts, skill documents, code, tests, datasets, Docker images, scripts, or paper text.",
       "risk_level": "medium",
-      "status": "open",
+      "status": "done",
       "created_by": "Source Reviewer",
-      "created_at": "2026-07-02T18:01:00-03:00"
+      "created_at": "2026-07-02T18:01:00-03:00",
+      "completed_at": "2026-07-02T22:00:42-03:00",
+      "completed_by": "Critic"
     }
   ],
   "critic": []
