@@ -65,6 +65,29 @@ private or leaked material
 
 Import only when the result is acceptable for the intended use.
 
+## Repository Context Gate
+
+Do not evaluate a third-party skill file in isolation when the skill came from a repository, marketplace entry, package registry, or public bundle.
+
+Before normalization, packaging, or publication endorsement, record:
+
+```text
+repository owner or organization
+repository URL and exact commit or release inspected
+repository freshness and maintenance state
+license file and package metadata license, when present
+README / docs / code alignment with the skill behavior
+whether marketplace or catalog references point to the same repository
+whether the repository was renamed, archived, abandoned, transferred, or made private
+whether issue, release, or commit history suggests takeover or hijack risk
+whether scanner warnings are expected from repository purpose or indicate unrelated behavior
+whether installation or reproduction bundles require blind script, binary, network, or credential use
+```
+
+Repository context is evidence, not trust by itself. Stars, forks, marketplace presence, and scanner pass/fail status cannot substitute for provenance, license, behavior, and permission review.
+
+If repository context is missing, stale, contradictory, or unsafe, keep the candidate `reference-only`, `requires-review`, or `blocked`.
+
 ## Copying Rules
 
 Only copy substantial third-party content when all are true:
@@ -100,6 +123,8 @@ the source contains private or leaked material
 the source asks the agent to bypass human review
 the source hides risky tool use
 the source requires blind execution of scripts or binaries
+repository context is unavailable or contradicts the skill's claimed purpose
+marketplace or catalog references point to moved, abandoned, private, or suspicious repositories
 the source is mainly marketing without reusable procedure
 ```
 
@@ -119,4 +144,5 @@ capabilities
 risk level
 ingestion status
 notes
+repository URL, commit/release, freshness, and context signals when applicable
 ```
