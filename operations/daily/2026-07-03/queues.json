@@ -90,11 +90,14 @@
       "target": "sources/reviewed/repository-context-agent-skill-security.md",
       "source_url": "https://arxiv.org/abs/2603.16572",
       "reason": "The reviewed source shows that skill review should account for repository context, marketplace references, and abandoned-repository hijack risk rather than relying only on isolated SKILL.md scans.",
-      "action": "Decide whether to update Skill Safety Review or adjacent risk doctrine with a compact repository-context checklist: ownership, freshness, abandonment, README/code alignment, marketplace reference validity, scanner false-positive handling, and no blind execution of reproduction bundles.",
+      "action": "Updated doctrine/ingestion-policy.md with a compact Repository Context Gate covering ownership, freshness, abandonment, README/code alignment, marketplace reference validity, scanner false-positive handling, and no blind execution of reproduction bundles.",
       "risk_level": "high",
-      "status": "open",
+      "status": "done",
       "created_by": "Source Reviewer",
-      "created_at": "2026-07-03T18:14:39-03:00"
+      "created_at": "2026-07-03T18:14:39-03:00",
+      "resolved_by": "Risk Auditor",
+      "resolved_at": "2026-07-03T19:12:32-03:00",
+      "resolution": "Closed as a doctrine hardening item. No third-party paper/code/data/figure content was copied; the source remains reviewed-reference-only and is not normalized or package-endorsed."
     }
   ],
   "packaging": [],
