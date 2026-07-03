@@ -1,12 +1,12 @@
 {
   "date": "2026-07-03",
-  "current_state": "cataloger_blocked_workflow_dispatch_unavailable",
+  "current_state": "cataloger_verified_catalog_package_parity_restored",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "5af1cec411135a4c25abaf5a885452163161eb0e",
+  "inspected_sha": "df73293fa1032c1209f19cff8b8e74fa732a0bb1",
   "package": {
     "name": "architectonic-skills",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "install_root": "dist/skills",
     "catalog": "dist/catalog.json",
     "install_manifest": "dist/install-manifest.json"
@@ -17,21 +17,23 @@
     "sources_blocked": 0,
     "normalized_entries_added": 0,
     "skills_updated": 0,
-    "catalog_skill_count": 1170,
+    "catalog_skill_count": 1173,
     "catalog_skill_count_md": 1173,
-    "high_risk_count": 1,
+    "high_risk_count": 2,
     "high_risk_count_md": 2,
-    "medium_risk_count": 407,
+    "medium_risk_count": 409,
     "medium_risk_count_md": 409,
+    "unspecified_risk_count": 759,
+    "unspecified_risk_count_md": 759,
     "requires_review_count": null,
-    "catalog_build_status": "blocked_workflow_dispatch_unavailable_through_connector",
-    "publication_readiness": "blocked_catalog_package_parity_unverified"
+    "catalog_build_status": "verified_current_on_default_branch",
+    "publication_readiness": "catalog_package_parity_restored_packager_may_recheck"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 1,
+    "catalog": 0,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -58,16 +60,31 @@
       "package_status": "blocked: generated catalog surfaces disagree; Packager and Publisher cannot endorse package readiness",
       "workflow_status": "catalog-refresh.yml exists with workflow_dispatch and npm run build:catalog, but workflow dispatch/start is unavailable through the exposed connector action set in this pass",
       "resulting_commit_sha": "2e6b7911e149738a5ceff5c4dfa4cc1fc1daff7b"
+    },
+    {
+      "timestamp": "2026-07-03T15:11:56-03:00",
+      "scheduled_role": "Normalizer",
+      "selected_role": "Cataloger",
+      "override_reason": "The daily ledger still carried a priority-1 catalog blocker, so catalog/package health verification outranked Normalizer work.",
+      "reason": "Direct connector fetches confirmed the required operating files, package metadata, catalog JSON, catalog Markdown, install manifest, catalog-refresh workflow, daily ledger, queues, and operations log. The previous catalog mismatch is resolved on the default branch. The run closed the stale catalog blocker and updated durable state; no normalization was justified because the normalization queue is empty and no reviewed source was selected for promotion.",
+      "queue_item": "catalog-execute-refresh-workflow-20260703",
+      "queue_item_action": "closed_done",
+      "sources_reviewed": [],
+      "discovery_candidates_processed": 0,
+      "files_changed": [
+        "operations/daily/2026-07-03/queues.json",
+        "operations/log.md",
+        "operations/daily/2026-07-03/status.json"
+      ],
+      "inspected_ref": "main",
+      "inspected_sha": "df73293fa1032c1209f19cff8b8e74fa732a0bb1",
+      "catalog_status": "verified: dist/catalog.json and dist/catalog.md both report 1173 skills, 2 high-risk entries, 409 medium-risk entries, and 759 unspecified-risk entries",
+      "package_status": "verified: package.json reports architectonic-skills 0.1.3 and dist/install-manifest.json points at README.md, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json",
+      "npm_status": "not checked in this pass; Publisher should verify registry state when publication readiness is evaluated",
+      "resulting_commit_sha": "923dc9a8b2dcb2e4cebc8e5e37237a06b765c38c"
     }
   ],
-  "blockers": [
-    "Catalog/package parity remains unresolved from the 2026-07-02 ledger.",
-    "dist/catalog.json reports 1170 skills, 1 high-risk entry, and 407 medium-risk entries while dist/catalog.md reports 1173 skills, 2 high-risk entries, and 409 medium-risk entries.",
-    "Generated catalog surfaces still need an executed catalog refresh and verification across dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and reports.",
-    "The GitHub connector action set exposes repository file reads/writes but no workflow_dispatch action for starting catalog-refresh.yml in this pass.",
-    "Packager cannot endorse install/package readiness until generated catalog surfaces agree.",
-    "This hourly automation is now blocked on an action outside the exposed connector write/read surface and should not continue producing status-only commits until a workflow-dispatch-capable path or checkout run clears the blocker."
-  ],
-  "last_commit": "2e6b7911e149738a5ceff5c4dfa4cc1fc1daff7b",
-  "next_action": "Cataloger should execute catalog-refresh.yml through a workflow-dispatch-capable path, or run npm run build:catalog from a checked-out repository and commit generated catalog surfaces. After that, Cataloger should verify dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and reports agree before Packager endorsement."
+  "blockers": [],
+  "last_commit": "923dc9a8b2dcb2e4cebc8e5e37237a06b765c38c",
+  "next_action": "Source Reviewer should consume the next reviewed candidate if a review queue reappears; otherwise Radar should wait for or inspect the next discovery report before creating new review candidates. Packager may recheck package readiness now that catalog parity is restored."
 }
