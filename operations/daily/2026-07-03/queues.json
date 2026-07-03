@@ -3,7 +3,21 @@
   "discovery": [],
   "review": [],
   "normalization": [],
-  "catalog": [],
+  "catalog": [
+    {
+      "id": "catalog-execute-refresh-workflow-20260703",
+      "priority": 1,
+      "role": "Cataloger",
+      "target": ".github/workflows/catalog-refresh.yml",
+      "source_url": "https://github.com/architectonic/skills/actions/workflows/catalog-refresh.yml",
+      "reason": "Catalog/package parity is blocked because dist/catalog.json and dist/catalog.md disagree on skill and risk counts, and the CI-backed catalog refresh path exists but has not been executed or verified.",
+      "action": "Execute the catalog refresh workflow or run npm run build:catalog from a checked-out repository, then verify dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and reports agree before Packager or Publisher endorsement.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Cataloger",
+      "created_at": "2026-07-03T01:59:33-03:00"
+    }
+  ],
   "risk": [],
   "packaging": [],
   "publication": [],
