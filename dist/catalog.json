@@ -6,16 +6,16 @@
     "entrypoint": "README.md"
   },
   "summary": {
-    "skill_count": 1170,
+    "skill_count": 1173,
     "domain_counts": {
-      "agent-operations": 94,
+      "agent-operations": 96,
       "business": 45,
       "cloud-security": 41,
       "design": 40,
       "forensics": 22,
       "media": 1,
       "research": 89,
-      "runtime-tools": 33,
+      "runtime-tools": 34,
       "security-defensive": 51,
       "security-offensive": 5,
       "software-engineering": 146,
@@ -23,9 +23,9 @@
       "writing": 16
     },
     "risk_counts": {
-      "high": 1,
+      "high": 2,
       "low": 3,
-      "medium": 407,
+      "medium": 409,
       "unspecified": 759
     }
   },
@@ -120,6 +120,8 @@
       "skill-quality-gate",
       "skill-revision",
       "skillify",
+      "skills-catalog",
+      "skills-keep",
       "skills-upkeep",
       "teleagent-system-upkeep",
       "trace2skill",
@@ -409,7 +411,8 @@
       "Reverse Engineering iOS App with Frida",
       "Securing Remote Access to OT Environment",
       "Testing JWT Token Security",
-      "plugin-structure"
+      "plugin-structure",
+      "x-api-mcp"
     ],
     "security-defensive": [
       "Analyzing APT Group with MITRE ATT&CK Navigator",
@@ -28978,6 +28981,47 @@
       "type": "Playbook"
     },
     {
+      "slug": "skills-catalog",
+      "title": "Catalog and Categorize Agent Skills",
+      "description": "Use when inventorying, classifying, or recategorizing a skill library. Assigns domain tags, risk levels, source metadata, and catalog entries to skills at scale.",
+      "path": "dist/skills/skills-catalog/SKILL.md",
+      "directory": "dist/skills/skills-catalog",
+      "domain": "agent-operations",
+      "risk_level": "medium",
+      "requires_review": false,
+      "tags": [
+        "agent-operations",
+        "okf",
+        "catalog",
+        "categorization",
+        "metadata"
+      ],
+      "source_family": "",
+      "source_status": "native",
+      "type": "Playbook"
+    },
+    {
+      "slug": "skills-keep",
+      "title": "Keep Skills Healthy",
+      "description": "Use when maintaining a drifted skill library so reusable procedures stay normalized, categorized, packageable, and safe for progressive discovery. Prevents growth-without-quality.",
+      "path": "dist/skills/skills-keep/SKILL.md",
+      "directory": "dist/skills/skills-keep",
+      "domain": "agent-operations",
+      "risk_level": "medium",
+      "requires_review": false,
+      "tags": [
+        "agent-operations",
+        "okf",
+        "upkeep",
+        "maintenance",
+        "quality",
+        "distribution"
+      ],
+      "source_family": "",
+      "source_status": "native",
+      "type": "Playbook"
+    },
+    {
       "slug": "stripe-link-cli",
       "title": "Stripe Link CLI",
       "description": "Agent payments via Stripe Link — virtual cards, Shared Payment Tokens, in-app approval flow.",
@@ -29017,6 +29061,27 @@
       ],
       "source_family": "",
       "source_status": "",
+      "type": "Playbook"
+    },
+    {
+      "slug": "x-api-mcp",
+      "title": "X API via XMCP",
+      "description": "Use the official XMCP server to call X API endpoints (post, search, read, like, follow) from any MCP client. Run locally; connect any MCP-compatible agent.",
+      "path": "dist/skills/x-api-mcp/SKILL.md",
+      "directory": "dist/skills/x-api-mcp",
+      "domain": "runtime-tools",
+      "risk_level": "high",
+      "requires_review": true,
+      "tags": [
+        "runtime-tools",
+        "mcp",
+        "x",
+        "twitter",
+        "okf",
+        "api"
+      ],
+      "source_family": "",
+      "source_status": "distilled",
       "type": "Playbook"
     }
   ]
