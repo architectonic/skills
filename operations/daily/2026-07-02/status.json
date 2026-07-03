@@ -61,9 +61,10 @@
     "intermediate_commits": [
       "eb35294facd86f248034f79cb9aa36f120c3a03c",
       "6da2f915f7a2bad3d07b5fc40b563aee22c82886",
-      "eb87a07eddbc5d30f4ca68cd0756cc9877f27af7"
+      "eb87a07eddbc5d30f4ca68cd0756cc9877f27af7",
+      "fca621a19e7b533f1b894467b18f6d10c8ca33d5"
     ],
-    "commit_sha": "pending-final-status-commit"
+    "commit_sha": "fca621a19e7b533f1b894467b18f6d10c8ca33d5"
   },
   "blockers": [
     "requires_review_count was not available from the inspected catalog summary and should be computed by a future checked-out or CI-backed Cataloger pass.",
@@ -75,6 +76,6 @@
     "catalog-reconcile-dist-catalog-surfaces-20260702 is blocked pending executed catalog generation and verification.",
     "package-agent-skills-compatibility-review-20260702 is blocked pending catalog/install/report surface reconciliation."
   ],
-  "last_commit": "pending-final-status-commit",
+  "last_commit": "fca621a19e7b533f1b894467b18f6d10c8ca33d5",
   "next_action": "Run the catalog refresh workflow or run npm run build:catalog from a checked-out repository, then fetch generated surfaces directly, verify catalog.json, catalog.md, install-manifest.json, and reports agree, compute requires_review_count, and clear or update blocked catalog and packaging items before Publisher. If Source Reviewer runs before that, consume only review-agentskillos-20260702 and avoid broad Radar expansion."
 }
