@@ -1,0 +1,42 @@
+name: Catalog Refresh
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "dist/skills/**"
+      - "skills/**"
+      - "reports/dist-skills-enriched-inventory.json"
+      - "scripts/build_distribution_catalog.py"
+      - "package.json"
+
+permissions:
+  contents: write
+
+jobs:
+  build-catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install catalog dependencies
+        run: python -m pip install --upgrade pyyaml
+
+      - name: Build catalog surfaces
+        run: npm run build:catalog
+
+      - name: Verify generated surfaces are current
+        run: |
+          git diff -- dist/catalog.json dist/catalog.md dist/install-manifest.json
+
+      - name: Commit refreshed catalog surfaces
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh skills catalog surfaces"
+          file_pattern: "dist/catalog.json dist/catalog.md dist/install-manifest.json"
