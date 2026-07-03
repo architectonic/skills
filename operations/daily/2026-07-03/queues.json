@@ -1,7 +1,63 @@
 {
   "date": "2026-07-03",
-  "discovery": [],
-  "review": [],
+  "discovery": [
+    {
+      "id": "radar-research-candidates-20260703",
+      "priority": 2,
+      "role": "Radar",
+      "target": "sources/candidates/",
+      "source_url": null,
+      "reason": "No generated discovery report existed for 2026-07-03, so Radar performed a bounded fresh intake from current public research sources.",
+      "action": "Added three reference-only candidate source profiles and queued Source Reviewer follow-up.",
+      "risk_level": "medium",
+      "status": "done",
+      "created_by": "Radar",
+      "created_at": "2026-07-03T17:13:40-03:00",
+      "resolved_by": "Radar",
+      "resolved_at": "2026-07-03T17:13:40-03:00"
+    }
+  ],
+  "review": [
+    {
+      "id": "review-context-aware-skill-security-20260703",
+      "priority": 1,
+      "role": "Source Reviewer",
+      "target": "sources/candidates/context-aware-skill-security.md",
+      "source_url": "https://arxiv.org/abs/2603.16572",
+      "reason": "Repository-context-aware skill security analysis may improve the review gate for all future third-party skill candidates, especially abandoned-repository hijack risk and false-positive reduction.",
+      "action": "Verify license, code/data availability, concrete risk checklist implications, and whether this should become a reviewed source profile or Risk Auditor queue item.",
+      "risk_level": "high",
+      "status": "open",
+      "created_by": "Radar",
+      "created_at": "2026-07-03T17:13:40-03:00"
+    },
+    {
+      "id": "review-skill-usage-20260703",
+      "priority": 2,
+      "role": "Source Reviewer",
+      "target": "sources/candidates/skill-usage-realistic-settings.md",
+      "source_url": "https://arxiv.org/abs/2604.04323",
+      "reason": "Realistic skill retrieval and refinement evaluation may define a better value metric for this repository than raw skill count.",
+      "action": "Verify repository/license, evaluate whether retrieval/refinement findings should create a Critic or catalog-quality queue item, and decide whether to create a reviewed source profile.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Radar",
+      "created_at": "2026-07-03T17:13:40-03:00"
+    },
+    {
+      "id": "review-visualskill-20260703",
+      "priority": 3,
+      "role": "Source Reviewer",
+      "target": "sources/candidates/visualskill-multimodal-skills.md",
+      "source_url": "https://arxiv.org/abs/2606.18448",
+      "reason": "Multimodal GUI skill design may be a distinct reusable capability not represented by text-only skill formats.",
+      "action": "Verify repository/license, redistribution rights for figures, MCP retrieval safety, and whether to create a reviewed source profile or later normalization item.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Radar",
+      "created_at": "2026-07-03T17:13:40-03:00"
+    }
+  ],
   "normalization": [],
   "catalog": [
     {
