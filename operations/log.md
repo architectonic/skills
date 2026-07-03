@@ -92,6 +92,16 @@ status: active
 - Created reviewed reference-only profile `sources/reviewed/repository-context-agent-skill-security.md`; no paper/code/data/figure content was copied and license reuse remains unverified.
 - Closed `review-context-aware-skill-security-20260703` and opened Risk Auditor item `risk-repository-context-skill-review-20260703` to decide whether Skill Safety Review or adjacent doctrine should add repository-context checks.
 - No skill was normalized, no generated catalog artifact changed, and no package/publication endorsement was made.
+- Ran Risk Auditor because open risk queue item `risk-repository-context-skill-review-20260703` overrode the scheduled Packager slot.
+- Inspected required repository files directly from `main` at `cdf4e10243df5905483dd4db0866db3a73285486` through the GitHub connector.
+- Consumed the repository-context risk item by adding a compact Repository Context Gate to `doctrine/ingestion-policy.md`.
+- Closed the risk item; no third-party paper/code/data/figure content was copied and no skill/catalog/package artifact changed.
+- Ran Source Reviewer because an open review queue item blocked Publisher work.
+- Inspected required repository files directly from `main` at `c283d011a622504b08f30045e5ebceee82f5d6b3` through the GitHub connector.
+- Reviewed `sources/candidates/skill-usage-realistic-settings.md` against the arXiv record and `UCSB-NLP-Chang/Skill-Usage` repository at commit `03446d16f7b659ccc93ac5bd512f62e9b7fabb45`.
+- Created reviewed reference-only profile `sources/reviewed/skill-usage-realistic-settings.md`; no paper/code/data/table/benchmark content was copied, and repository/dataset/paper reuse terms remain unverified because no repository `LICENSE` or `LICENSE.md` file was found in this pass.
+- Closed `review-skill-usage-20260703` and opened Critic item `critic-skill-retrieval-quality-20260703` to define a local non-executing rubric for retrieval/selectability/refinement quality.
+- No skill was normalized, no generated catalog artifact changed, and no package/publication endorsement was made.
 
 ## 2026-07-02
 
@@ -108,7 +118,4 @@ status: active
 - Ran Source Reviewer pass because review queue pressure outweighed an empty Cataloger queue.
 - Consumed `review-mcp-20260702` and created reviewed reference-only profile `sources/reviewed/model-context-protocol.md`.
 - Verified official MCP documentation, official specification/documentation repository, MIT license for that repository, adoption signals, and high-risk tool/external-action surfaces.
-- Added Risk Auditor queue item `risk-mcp-security-checklist-20260702`; MCP remains blocked from normalization, packaging, or publication until risk review is complete.
-- Ran Packager pass.
-- Checked `package.json`, `bin/architectonic-skills.js`, `dist/install-manifest.json`, `dist/catalog.json`, `dist/catalog.md`, reports, README install instructions, and daily queue state.
-- Found install-facing catalog drift: `dist/catalog.md` reports 1173 skills, 2 high-risk entries, and 409 medium-risk entries while `dist/catalog.json` reports 1170 skills, 1 high-risk entry, and 407 medium-risk entries.
+- Added Risk Auditor queue item `risk-mcp-tool-permission-gate-20260702` before any MCP-normalized skill or publication endorsement.
