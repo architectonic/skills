@@ -41,11 +41,14 @@
       "target": "sources/candidates/skill-usage-realistic-settings.md",
       "source_url": "https://arxiv.org/abs/2604.04323",
       "reason": "Realistic skill retrieval and refinement evaluation may define a better value metric for this repository than raw skill count.",
-      "action": "Verify repository/license, evaluate whether retrieval/refinement findings should create a Critic or catalog-quality queue item, and decide whether to create a reviewed source profile.",
+      "action": "Created reviewed reference-only profile at sources/reviewed/skill-usage-realistic-settings.md and queued Critic follow-up for retrieval/selectability quality.",
       "risk_level": "medium",
-      "status": "open",
+      "status": "done",
       "created_by": "Radar",
-      "created_at": "2026-07-03T17:13:40-03:00"
+      "created_at": "2026-07-03T17:13:40-03:00",
+      "resolved_by": "Source Reviewer",
+      "resolved_at": "2026-07-03T20:13:16-03:00",
+      "resolution": "Accepted as reviewed-reference-only. Repository exists and README aligns with arXiv record, but repository LICENSE file was not found and dataset/paper reuse terms were not verified. No normalization, packaging, publication, or benchmark execution is allowed."
     },
     {
       "id": "review-visualskill-20260703",
@@ -103,5 +106,19 @@
   "packaging": [],
   "publication": [],
   "maintenance": [],
-  "critic": []
+  "critic": [
+    {
+      "id": "critic-skill-retrieval-quality-20260703",
+      "priority": 2,
+      "role": "Critic",
+      "target": "dist/catalog.json",
+      "source_url": "https://arxiv.org/abs/2604.04323",
+      "reason": "Reviewed skill-usage benchmark suggests raw catalog size is a weak value metric; local catalog quality should eventually include retrieval/selectability/refinement usefulness checks.",
+      "action": "Define a small non-executing quality rubric or report for sampling whether agents can retrieve and apply the right skills from the local catalog. Do not run the external benchmark or import datasets without separate license and execution-safety review.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Source Reviewer",
+      "created_at": "2026-07-03T20:13:16-03:00"
+    }
+  ]
 }
