@@ -1,6 +1,6 @@
 {
   "name": "architectonic-skills",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Runtime-neutral TeleAgent skills bundle with install, discovery manifests, and loop-engineered maintenance operations.",
   "license": "Apache-2.0",
   "type": "module",
