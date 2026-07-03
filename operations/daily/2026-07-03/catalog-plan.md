@@ -65,6 +65,16 @@ reports/dist-skills-enriched-inventory.json
 
 The blocker is now explicit rather than open-ended: a human or runner with workflow-dispatch access must start `catalog-refresh.yml`, or a checked-out repository run must execute `npm run build:catalog` and commit the generated surfaces.
 
+## 04:59 Cataloger checkpoint
+
+- Scheduled role: Cataloger
+- Selected role: Cataloger
+- Inspected ref: `main`
+- Inspected SHA: `f4d393ffccf562c304e1a3a7268198443dc5c019`
+- Queue item checked: `catalog-execute-refresh-workflow-20260703`
+- Result: left blocked. The workflow file is present and declares `workflow_dispatch`, but this connector run still has no workflow-dispatch/start action.
+- Direct parity check remains unchanged: `dist/catalog.json` reports 1170 skills while `dist/catalog.md` reports 1173 skills; JSON reports 1 high-risk entry while Markdown reports 2.
+
 ## Boundaries
 
 No generated catalog files were hand-edited. No third-party material was copied, normalized, packaged, or published.
