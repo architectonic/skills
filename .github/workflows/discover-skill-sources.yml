@@ -1,0 +1,38 @@
+name: Discover skill sources
+
+on:
+  schedule:
+    - cron: '23 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: discover-skill-sources
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Discover candidate skill sources
+        run: python scripts/discover_skill_sources.py
+
+      - name: Commit discovery reports
+        run: |
+          git config user.name "architectonic-bot"
+          git config user.email "architectonic-bot@users.noreply.github.com"
+          if git diff --quiet -- reports/discovery; then
+            echo "No discovery changes to commit."
+            exit 0
+          fi
+          git add reports/discovery
+          git commit -m "reports: update skill source discovery"
+          git push
