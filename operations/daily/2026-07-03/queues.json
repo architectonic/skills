@@ -57,11 +57,14 @@
       "target": "sources/candidates/visualskill-multimodal-skills.md",
       "source_url": "https://arxiv.org/abs/2606.18448",
       "reason": "Multimodal GUI skill design may be a distinct reusable capability not represented by text-only skill formats.",
-      "action": "Verify repository/license, redistribution rights for figures, MCP retrieval safety, and whether to create a reviewed source profile or later normalization item.",
+      "action": "Created reviewed reference-only profile at sources/reviewed/visualskill-multimodal-skills.md. Claimed repository returned 404 through the GitHub connector, so license, code, figure, benchmark, dataset, and MCP retrieval implementation reuse remain unverified.",
       "risk_level": "medium",
-      "status": "open",
+      "status": "done",
       "created_by": "Radar",
-      "created_at": "2026-07-03T17:13:40-03:00"
+      "created_at": "2026-07-03T17:13:40-03:00",
+      "resolved_by": "Source Reviewer",
+      "resolved_at": "2026-07-03T21:13:21-03:00",
+      "resolution": "Accepted as reviewed-reference-only. No normalization item was created because the claimed repository was unavailable and multimodal asset redistribution/safety policy is not yet defined."
     }
   ],
   "normalization": [],
