@@ -117,11 +117,14 @@
       "target": "dist/catalog.json",
       "source_url": "https://arxiv.org/abs/2604.04323",
       "reason": "Reviewed skill-usage benchmark suggests raw catalog size is a weak value metric; local catalog quality should eventually include retrieval/selectability/refinement usefulness checks.",
-      "action": "Define a small non-executing quality rubric or report for sampling whether agents can retrieve and apply the right skills from the local catalog. Do not run the external benchmark or import datasets without separate license and execution-safety review.",
+      "action": "Defined a local non-executing retrieval/selectability quality rubric at operations/daily/2026-07-03/critic.md. Did not run the external benchmark, import datasets, copy third-party content, or modify skills/dist skills.",
       "risk_level": "medium",
-      "status": "open",
+      "status": "done",
       "created_by": "Source Reviewer",
-      "created_at": "2026-07-03T20:13:16-03:00"
+      "created_at": "2026-07-03T20:13:16-03:00",
+      "resolved_by": "Critic",
+      "resolved_at": "2026-07-03T22:13:45-03:00",
+      "resolution": "Closed as a local rubric. Future work should sample local catalog entries and create concrete repair queue items only when weak retrieval/selectability is observed."
     }
   ]
 }
