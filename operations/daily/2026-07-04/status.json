@@ -113,14 +113,14 @@
     "queue_item": "verify-npm-publication-20260704",
     "queue_item_action": "kept_blocked_with_checkpoint",
     "inspected_ref": "main",
-    "inspected_sha": "1cd8473e3490b16bdcfd2843390c29ac8f0da0ab91204",
-    "resulting_commit": "3ed32f603bf4dddbdda90191114c24d7c1705f83",
+    "inspected_sha": "1cd8473e3490b16bdcfd2843390c29ac8d0e487b",
+    "resulting_commit": "c2ac47ebc2a7bb5ccf0dd24274334812b92f7dfc",
     "result": "Publication verification remains blocked pending a registry-capable verification path."
   },
   "blockers": [
     "npm registry/package state has not been current-day verified for architectonic-skills@0.1.3.",
     "Public web search returned no npm package evidence for architectonic-skills, and this run did not expose npm registry inspection or trusted-publisher workflow dispatch through the available connector surface."
   ],
-  "last_commit": "3ed32f603bf4dddbdda90191114c24d7c1705f83",
+  "last_commit": "c2ac47ebc2a7bb5ccf0dd24274334812b92f7dfc",
   "next_action": "Publisher should verify architectonic-skills@0.1.3 through npm CLI, npm registry API, or a workflow-run capable trusted-publisher path. If the package is unpublished, do not hand-publish; decide whether to run the approved trusted-publisher workflow."
 }
