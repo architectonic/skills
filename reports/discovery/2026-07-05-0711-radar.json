@@ -1,0 +1,88 @@
+{
+  "date": "2026-07-05",
+  "mode": "scheduler_manual_fallback",
+  "role": "Radar",
+  "observed_at_utc": "2026-07-05T10:11:21Z",
+  "inspected_repo": "architectonic/skills",
+  "inspected_ref": "main",
+  "inspected_commit_sha": "a5dfca6efa31f84b4638fb58d6762911d7a3a780",
+  "action_handoff_state": {
+    "path": "operations/action-runs/discover-skill-sources/latest.json",
+    "exists": false,
+    "reason": "The handoff README exists, but latest.json was not present on the default branch during this pass."
+  },
+  "searches": [
+    "Web search: GitHub Claude Code skills repository SKILL.md agent skills 2026",
+    "Web search: GitHub MCP servers agent workflows repository 2026",
+    "Web search: Vercel AI SDK agents examples GitHub repository",
+    "Web search: OpenAI Agents SDK examples GitHub repository",
+    "Web search: microsoft SkillOpt GitHub agent skills",
+    "Web search: Narwhal-Lab MagicSkills GitHub agent skills",
+    "Web search: GeniusHTX SWE-Skills-Bench GitHub SWE skills benchmark",
+    "GitHub repository search: SWE-Skills-Bench",
+    "GitHub repository search: agent skills SKILL.md",
+    "GitHub repository search: OpenAI Agents SDK examples agents"
+  ],
+  "candidates": [
+    {
+      "id": "geniushtx-swe-skills-bench-20260705-0711",
+      "name": "GeniusHTX/SWE-Skills-Bench",
+      "url": "https://github.com/GeniusHTX/SWE-Skills-Bench",
+      "source_family": "github_repository_and_research_paper",
+      "description": "Public benchmark repository associated with the 2026 SWE-Skills-Bench paper, focused on isolating whether agent skills improve real-world software-engineering outcomes.",
+      "observed_at_utc": "2026-07-05T10:11:21Z",
+      "license": "not_visible_in_metadata_pass",
+      "stars": null,
+      "forks": null,
+      "adoption_signal": "GitHub repository search result id 1182696299; public; default branch main; archived=false; size 7788. Web/arXiv result links the benchmark to this repository.",
+      "last_activity": "not_visible_in_connector_metadata_pass",
+      "complementarity": "Directly complements the skills repo validation gate by testing skill marginal utility, acceptance criteria, token overhead, and regression risk.",
+      "risk_level": "low",
+      "decision": "review_next",
+      "reason": "Benchmark/evaluation substrate can improve acceptance criteria without copying benchmark content; requires license and execution-surface review before any normalization.",
+      "review_boundary": "metadata_only_no_content_copy_no_code_execution"
+    },
+    {
+      "id": "microsoft-skillopt-20260705-0711",
+      "name": "microsoft/SkillOpt",
+      "url": "https://github.com/microsoft/SkillOpt",
+      "source_family": "github_repository_and_research_paper",
+      "description": "Microsoft public repository surfaced by GitHub search for agent skills; associated public paper describes bounded add/delete/replace optimization of skill documents using scored rollouts and held-out validation.",
+      "observed_at_utc": "2026-07-05T10:11:21Z",
+      "license": "not_visible_in_metadata_pass",
+      "stars": null,
+      "forks": null,
+      "adoption_signal": "Organization-owned public repository; GitHub metadata id 1232669890; default branch main; archived=false; size 22564. Public arXiv result describes the SkillOpt method.",
+      "last_activity": "not_visible_in_connector_metadata_pass",
+      "complementarity": "Strong fit for self-improving skill doctrine: bounded edits, rejected-edit buffers, validation scores, transfer checks, and rollback discipline.",
+      "risk_level": "medium",
+      "decision": "review_next",
+      "reason": "High relevance to loop-engineered skill improvement, but review must check license, evaluation claims, benchmark harnesses, and whether any method can be distilled without copying or running code.",
+      "review_boundary": "metadata_only_no_content_copy_no_code_execution"
+    },
+    {
+      "id": "narwhal-lab-magicskills-20260705-0711",
+      "name": "Narwhal-Lab/MagicSkills",
+      "url": "https://github.com/Narwhal-Lab/MagicSkills",
+      "source_family": "github_repository",
+      "description": "Public organization-owned repository surfaced by GitHub search for agent skill systems and SKILL.md-style repositories.",
+      "observed_at_utc": "2026-07-05T10:11:21Z",
+      "license": "not_visible_in_metadata_pass",
+      "stars": null,
+      "forks": null,
+      "adoption_signal": "Organization-owned public repository; GitHub metadata id 1124765513; default branch main; archived=false; size 155076.",
+      "last_activity": "not_visible_in_connector_metadata_pass",
+      "complementarity": "Potential source for large-scale skill corpus structure, skill metadata conventions, and skill-package review failure modes.",
+      "risk_level": "unknown",
+      "decision": "review_next",
+      "reason": "Large public skill repository may contain reusable corpus-management patterns, but requires license, provenance, content-safety, and redundancy review before any profile or normalization.",
+      "review_boundary": "metadata_only_no_content_copy_no_code_execution"
+    }
+  ],
+  "boundaries": [
+    "No repository was cloned.",
+    "No candidate code was executed.",
+    "No third-party content was copied.",
+    "No candidate was normalized into a skill."
+  ]
+}
