@@ -1,6 +1,6 @@
 {
   "date": "2026-07-05",
-  "current_state": "observe",
+  "current_state": "review-queued",
   "repo": "architectonic/skills",
   "package": {
     "name": "architectonic-skills",
@@ -10,7 +10,7 @@
     "install_manifest": "dist/install-manifest.json"
   },
   "metrics": {
-    "candidate_sources_discovered": 0,
+    "candidate_sources_discovered": 4,
     "sources_reviewed": 0,
     "sources_blocked": 0,
     "normalized_entries_added": 0,
@@ -19,14 +19,14 @@
     "high_risk_count": 2,
     "medium_risk_count": 409,
     "unspecified_risk_count": 759,
-    "requires_review_count": null,
+    "requires_review_count": 3,
     "catalog_build_status": "not_run_this_pass",
     "catalog_parity_status": "clean",
     "publication_readiness": "not_evaluated_this_pass"
   },
   "queues": {
     "discovery": 0,
-    "review": 0,
+    "review": 3,
     "normalization": 0,
     "catalog": 0,
     "risk": 0,
@@ -64,9 +64,73 @@
       ],
       "value_delta": "Initialized missing daily ledger and preserved package/catalog state without crossing review, normalization, catalog, package, or publication gates.",
       "blocked_work": []
+    },
+    {
+      "started_at": "2026-07-05T01:11:20-03:00",
+      "completed_at": "2026-07-05T01:18:00-03:00",
+      "scheduled_role": "Radar",
+      "selected_role": "Radar",
+      "override_reason": null,
+      "inspected_ref": "main",
+      "inspected_commit_sha": "0220069f1b343a0969018f1453a3ad67c508568c",
+      "action_handoff_state": {
+        "path": "operations/action-runs/discover-skill-sources/latest.json",
+        "exists": false,
+        "read_result": "404_not_found",
+        "interpretation": "Action handoff README exists but latest.json was not present, so the scheduler-side metadata-only scout fallback was allowed."
+      },
+      "role_reason": "No current Action handoff or 2026-07-05 review artifact existed and the scheduled role was Radar, so this pass created bounded metadata-only discovery/review fallback artifacts instead of status-only churn.",
+      "phase_exit_condition_advanced": "Discovery fallback produced durable candidate and review artifacts plus concrete Source Reviewer queue items.",
+      "online_searches_used": [
+        "GitHub AI agent skills repository Claude Code commands MCP server July 2026",
+        "site:github.com MCP servers agent skills workflows Claude Code commands",
+        "site:github.com cursor rules agent workflows AI agents MCP skills",
+        "Vercel AI SDK agents GitHub examples workflow agents",
+        "GitHub repository search: modelcontextprotocol servers",
+        "GitHub repository search: Claude Code skills SKILL.md",
+        "GitHub repository search: Vercel AI SDK agents examples",
+        "GitHub repository search: OpenAI Agents SDK examples"
+      ],
+      "queue_item_consumed": null,
+      "queue_items_created": [
+        "review-snyk-agent-scan-20260705",
+        "review-awslabs-mcp-20260705",
+        "review-gittaskbench-20260705"
+      ],
+      "sources_reviewed": [],
+      "sources_discovered": [
+        "snyk/agent-scan",
+        "awslabs/mcp",
+        "QuantaAlpha/GitTaskBench",
+        "carlyrichmond/context-engineering-ai-agent"
+      ],
+      "discovery_candidates_processed": 4,
+      "review_candidates_processed": 4,
+      "files_changed": [
+        "reports/discovery/2026-07-05-manual.json",
+        "reports/discovery/2026-07-05-manual.md",
+        "reports/review/2026-07-05-manual.json",
+        "reports/review/2026-07-05-manual.md",
+        "sources/candidates/2026-07-05-manual.json",
+        "operations/daily/2026-07-05/queues.json",
+        "operations/daily/2026-07-05/status.json",
+        "operations/log.md"
+      ],
+      "commit_shas": [
+        "cf9846e605d64888dee1f32c741519fb720922b2",
+        "30ee5e93563040edf9b1d5d054122043fa3fa897",
+        "f1ee8ea72bd633c5db3b1e52bb567a38cc67788b",
+        "78bc12ce2025d7cd6a32a8216e5e9d9868ce3aec",
+        "9ab52fde4f8568cb03232758d69c07960d7f4ebb",
+        "20ec10d76a09b9f960f28c11cdcf13b0d9bf2c3d"
+      ],
+      "value_delta": "Converted missing Action/review artifacts into a bounded metadata-only Radar fallback with four candidates and three concrete Source Reviewer queue items.",
+      "blocked_work": [
+        "No normalization, catalog rebuild, package edit, publication, repository clone, code execution, or third-party content copy occurred."
+      ]
     }
   ],
   "blockers": [],
-  "last_commit": "49311f33576be0917522d76fb6f6c310f42cbfce",
-  "next_action": "Run Radar or Source Reviewer only after queue pressure or workflow-produced discovery/review artifacts justify it; otherwise follow cadence and hard gates."
+  "last_commit": "20ec10d76a09b9f960f28c11cdcf13b0d9bf2c3d",
+  "next_action": "Run Source Reviewer against review-snyk-agent-scan-20260705, then review-awslabs-mcp-20260705 and review-gittaskbench-20260705. Keep all reviews metadata-first until license, provenance, behavior, risk, and usefulness are clear."
 }
