@@ -33,6 +33,45 @@
       "completed_by": "Source Reviewer",
       "completed_at": "2026-07-05T06:18:00-03:00",
       "outcome": "Reviewed as reference-only and blocked from normalization. Direct connector fetch found README, setup.py, and requirements.txt, but LICENSE returned 404. The benchmark can inform validation doctrine, but no benchmark content should be copied and no local install/evaluation should run in the scheduler."
+    },
+    {
+      "id": "review-swe-skills-bench-20260705-0711",
+      "priority": 1,
+      "role": "Source Reviewer",
+      "target": "GeniusHTX/SWE-Skills-Bench",
+      "source_url": "https://github.com/GeniusHTX/SWE-Skills-Bench",
+      "reason": "Skill-specific SWE evaluation can improve validation gates, token-cost checks, and regression detection for normalized skills.",
+      "action": "Review license, benchmark/task shape, acceptance-criteria structure, execution surface, and whether it can inform validation doctrine without copying benchmark content.",
+      "risk_level": "low",
+      "status": "open",
+      "created_by": "Radar",
+      "created_at": "2026-07-05T07:18:00-03:00"
+    },
+    {
+      "id": "review-skillopt-20260705-0711",
+      "priority": 2,
+      "role": "Source Reviewer",
+      "target": "microsoft/SkillOpt",
+      "source_url": "https://github.com/microsoft/SkillOpt",
+      "reason": "Bounded skill optimization is directly relevant to loop-engineered improvement, but claims, license, and execution surfaces need review.",
+      "action": "Review license, bounded edit method, held-out validation, rejected-edit buffer, rollback evidence, and whether a safe doctrine summary should be queued.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Radar",
+      "created_at": "2026-07-05T07:18:00-03:00"
+    },
+    {
+      "id": "review-magicskills-20260705-0711",
+      "priority": 3,
+      "role": "Source Reviewer",
+      "target": "Narwhal-Lab/MagicSkills",
+      "source_url": "https://github.com/Narwhal-Lab/MagicSkills",
+      "reason": "Large public skill corpus may expose reusable metadata/corpus patterns or skip-note evidence, but provenance and safety are unknown.",
+      "action": "Review license, provenance, prompt-injection/execution risk, hidden instructions, redundancy, and whether source-profile value exists.",
+      "risk_level": "unknown",
+      "status": "open",
+      "created_by": "Radar",
+      "created_at": "2026-07-05T07:18:00-03:00"
     }
   ],
   "normalization": [],
