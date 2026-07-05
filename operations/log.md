@@ -9,6 +9,15 @@ status: active
 
 # Skills Operations Log
 
+## 2026-07-04
+
+- Ran Cataloger checkpoint at the 21 cadence slot.
+- Inspected required repository files directly from `main` using durable default-branch state after status commit `c2ac47ebc2a7bb5ccf0dd24274334812b92f7dfc` and direct file fetches for package/catalog surfaces.
+- Verified catalog/package parity remains clean: `package.json` reports `architectonic-skills` version `0.1.3`; `dist/catalog.json` and `dist/catalog.md` both report 1173 skills, 2 high-risk entries, 409 medium-risk entries, and 759 unspecified-risk entries; `dist/install-manifest.json` points at the expected discovery files.
+- Confirmed `.github/workflows/publish-npm.yml` exists with trusted publishing, `workflow_dispatch`, registry version check, publish, and verify steps, but the exposed connector surface still cannot dispatch it.
+- Confirmed `reports/discovery/2026-07-04.md` is absent; no discovery, source review, normalization, package edit, generated catalog edit, publication, credential handling, or third-party content copying was performed.
+- Added `operations/daily/2026-07-04/catalog-plan.md` and updated `operations/daily/2026-07-04/status.json`; the remaining blocker is npm registry verification for `architectonic-skills@0.1.3` through a registry-capable or trusted-publisher-workflow-capable path.
+
 ## 2026-07-03
 
 - Ran Reporter because the 2026-07-03 daily ledger was missing on the default branch.
@@ -72,7 +81,7 @@ status: active
 - This automation is now blocked on an action outside the exposed connector read/write surface; repeated hourly status-only commits are no longer useful until a workflow-dispatch-capable path or local checkout clears the catalog blocker.
 - Ran Cataloger because the stale catalog blocker overrode the scheduled Normalizer slot.
 - Inspected required repository files directly from `main` at `df73293fa1032c1209f19cff8b8e74fa732a0bb1` through the GitHub connector.
-- Verified catalog/package parity is now restored: `package.json` reports `architectonic-skills` version `0.1.3`; `dist/catalog.json` and `dist/catalog.md` both report 1173 skills, 2 high-risk entries, 409 medium-risk entries, and 759 unspecified-risk entries; `dist/install-manifest.json` points at `README.md`, `dist/catalog.json`, `dist/catalog.md`, and `dist/install-manifest.json`.
+- Verified catalog/package parity is now restored: `package.json` reports `architectonic-skills` version `0.1.3`; `dist/catalog.json` and `dist/catalog.md` both report 1173 skills, 2 high-risk entries, 409 medium-risk entries, and 759 unspecified-risk entries; `dist/install-manifest.json` points at `README.md`, `dist/catalog.json`, and `dist/install-manifest.json`.
 - Closed `catalog-execute-refresh-workflow-20260703` as done. No external source was reviewed, no third-party content was copied, no skill was normalized, and no generated catalog file was hand-edited.
 - Next justified role is Source Reviewer or Radar depending on queue pressure after the next discovery report appears; Packager/Publisher are no longer blocked by catalog parity.
 - Ran Risk Auditor checkpoint at the 16 cadence slot.
