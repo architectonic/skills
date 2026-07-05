@@ -1,9 +1,16 @@
-name: Discover skill sources
+name: Discover and review skill sources
 
 on:
   schedule:
-    - cron: '23 */6 * * *'
+    - cron: '23 * * * *'
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/discover-skill-sources.yml'
+      - 'scripts/discover_skill_sources.py'
+      - 'scripts/review_discovery_candidates.py'
 
 permissions:
   contents: write
@@ -13,10 +20,12 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  discover:
+  discover-review:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -25,14 +34,18 @@ jobs:
       - name: Discover candidate skill sources
         run: python scripts/discover_skill_sources.py
 
-      - name: Commit discovery reports
+      - name: Review discovered candidates
+        run: python scripts/review_discovery_candidates.py
+
+      - name: Commit discovery and review reports
         run: |
           git config user.name "architectonic-bot"
           git config user.email "architectonic-bot@users.noreply.github.com"
-          if git diff --quiet -- reports/discovery; then
-            echo "No discovery changes to commit."
+          if git diff --quiet -- reports/discovery reports/review sources/candidates; then
+            echo "No discovery or review changes to commit."
             exit 0
           fi
-          git add reports/discovery
-          git commit -m "reports: update skill source discovery"
+          git add reports/discovery reports/review sources/candidates
+          git commit -m "reports: update skill source discovery and review"
+          git pull --rebase
           git push
