@@ -11,6 +11,11 @@ status: active
 
 ## 2026-07-04
 
+- Ran Reporter at the 23 cadence slot after npm verification had been completed.
+- Inspected `main` at `cc3780b3c0b320177a40bae52501ccf8886d576c` using direct GitHub connector fetches.
+- Rechecked package/catalog surfaces directly: `package.json` declares `architectonic-skills@0.1.3`; `dist/catalog.json` and `dist/catalog.md` both report 1173 skills, 2 high-risk entries, 409 medium-risk entries, and 759 unspecified-risk entries; `dist/install-manifest.json` points to the expected discovery files.
+- Confirmed no open queue items remain; the publication queue retains `verify-npm-publication-20260704` only as a done evidence record.
+- Updated the stale daily report so it no longer claims the npm verification item is open. No discovery, source ingestion, normalization, catalog generation, package edit, publication, credential handling, or third-party content copying occurred.
 - Ran Publisher with terminal npm CLI access to resolve the blocked publication verification item.
 - Inspected current durable state from `main` at `f10a0acc45e39b34b6eb623ec06ef35fa8d240cd` before writing.
 - Verified `architectonic-skills@0.1.3` through `npm view architectonic-skills@0.1.3 version name --json`; npm returned package name `architectonic-skills` and version `0.1.3`.
