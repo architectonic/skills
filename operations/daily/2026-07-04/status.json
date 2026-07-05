@@ -1,9 +1,9 @@
 {
   "date": "2026-07-04",
-  "current_state": "catalog_checkpoint_clean_publication_verification_blocked",
+  "current_state": "critic_checkpoint_clean_publication_verification_blocked",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "c2ac47ebc2a7bb5ccf0dd24274334812b92f7dfc",
+  "inspected_sha": "f10a0acc45e39b34b6eb623ec06ef35fa8d240cd",
   "package": {
     "name": "architectonic-skills",
     "version": "0.1.3",
@@ -130,24 +130,51 @@
       "inspected_sha": "c2ac47ebc2a7bb5ccf0dd24274334812b92f7dfc",
       "resulting_commit": "00f7b9420d0b39d017ee3fca2f68709c8c6546ae",
       "result": "Ran a Cataloger checkpoint. Catalog/package parity remains clean on the default branch and no discovery report exists for today. Publication verification remains blocked pending an npm-registry-capable or trusted-publisher-workflow-capable verification path. No source review, discovery, normalization, generated catalog edit, package publication, credential handling, or third-party content copying occurred."
+    },
+    {
+      "timestamp": "2026-07-04T22:11:49-03:00",
+      "scheduled_role": "Critic",
+      "selected_role": "Critic",
+      "override_reason": null,
+      "queue_item": "verify-npm-publication-20260704",
+      "queue_item_action": "kept_blocked_with_slop_control",
+      "sources_reviewed": [
+        "direct repository fetch: package.json architectonic-skills@0.1.3",
+        "direct repository fetch: dist/catalog.json skill_count=1173 high=2 medium=409 unspecified=759",
+        "direct repository fetch: dist/catalog.md skill_count=1173 high=2 medium=409 unspecified=759",
+        "direct repository fetch: dist/install-manifest.json discovery files",
+        "direct repository fetch: .github/workflows/publish-npm.yml trusted-publisher workflow present",
+        "public web search: npm architectonic-skills package returned no package result",
+        "public web search: site:npmjs.com/package/architectonic-skills architectonic-skills returned no package result"
+      ],
+      "discovery_candidates_processed": 0,
+      "files_changed": [
+        "operations/daily/2026-07-04/critic.md",
+        "operations/log.md",
+        "operations/daily/2026-07-04/status.json"
+      ],
+      "inspected_ref": "main",
+      "inspected_sha": "f10a0acc45e39b34b6eb623ec06ef35fa8d240cd",
+      "resulting_commit": "5d85dbc76aeb95d92f22b9b2f3f33c58ca72f576",
+      "result": "Ran the scheduled Critic checkpoint. Catalog/package parity remains clean, the publication verification queue item remains blocked, and repeated Publisher/Cataloger status-only checkpoints before registry-capable verification are now explicitly marked as low-value churn. No source review, discovery, normalization, package edit, catalog edit, publication, credential handling, or third-party content copying occurred."
     }
   ],
   "latest_run": {
-    "timestamp": "2026-07-04T21:11:09-03:00",
-    "scheduled_role": "Cataloger",
-    "selected_role": "Cataloger",
+    "timestamp": "2026-07-04T22:11:49-03:00",
+    "scheduled_role": "Critic",
+    "selected_role": "Critic",
     "override_reason": null,
-    "queue_item": null,
-    "queue_item_action": "none_catalog_parity_checkpoint",
+    "queue_item": "verify-npm-publication-20260704",
+    "queue_item_action": "kept_blocked_with_slop_control",
     "inspected_ref": "main",
-    "inspected_sha": "c2ac47ebc2a7bb5ccf0dd24274334812b92f7dfc",
-    "resulting_commit": "00f7b9420d0b39d017ee3fca2f68709c8c6546ae",
-    "result": "Catalog/package parity remains clean; publication verification remains blocked pending registry-capable evidence."
+    "inspected_sha": "f10a0acc45e39b34b6eb623ec06ef35fa8d240cd",
+    "resulting_commit": "5d85dbc76aeb95d92f22b9b2f3f33c58ca72f576",
+    "result": "Catalog/package parity remains clean; publication verification remains blocked; repeated status-only publication/catalog checkpoints are low-value until registry-capable evidence changes the state."
   },
   "blockers": [
     "npm registry/package state has not been current-day verified for architectonic-skills@0.1.3.",
     "Public web search returned no npm package evidence for architectonic-skills, and this run did not expose npm registry inspection or trusted-publisher workflow dispatch through the available connector surface."
   ],
-  "last_commit": "00f7b9420d0b39d017ee3fca2f68709c8c6546ae",
-  "next_action": "Publisher should verify architectonic-skills@0.1.3 through npm CLI, npm registry API, or a workflow-run capable trusted-publisher path. If the package is unpublished, do not hand-publish; decide whether to run the approved trusted-publisher workflow."
+  "last_commit": "5d85dbc76aeb95d92f22b9b2f3f33c58ca72f576",
+  "next_action": "Do not run another Publisher or Cataloger checkpoint for this blocker unless npm registry state can be verified through npm CLI, npm registry API, or a workflow-run capable trusted-publisher path. If no registry-capable path is available, wait for Radar/Source Reviewer cadence to perform real discovery/review work while keeping review/risk/catalog gates clean."
 }
