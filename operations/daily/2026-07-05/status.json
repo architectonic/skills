@@ -1,6 +1,6 @@
 {
   "date": "2026-07-05",
-  "current_state": "radar-fallback-review-queue-open",
+  "current_state": "source-review-queue-open",
   "repo": "architectonic/skills",
   "package": {
     "name": "architectonic-skills",
@@ -11,7 +11,7 @@
   },
   "metrics": {
     "candidate_sources_discovered": 7,
-    "sources_reviewed": 3,
+    "sources_reviewed": 4,
     "sources_blocked": 1,
     "risk_reviews_completed": 2,
     "normalized_entries_added": 0,
@@ -20,14 +20,14 @@
     "high_risk_count": 2,
     "medium_risk_count": 409,
     "unspecified_risk_count": 759,
-    "requires_review_count": 3,
+    "requires_review_count": 2,
     "catalog_build_status": "not_run_this_pass",
-    "catalog_parity_status": "clean_before_radar_pass_no_skills_or_dist_changes",
+    "catalog_parity_status": "clean_before_source_review_no_skills_or_dist_changes",
     "publication_readiness": "not_evaluated_this_pass"
   },
   "queues": {
     "discovery": 0,
-    "review": 3,
+    "review": 2,
     "normalization": 0,
     "catalog": 0,
     "risk": 0,
@@ -104,11 +104,63 @@
         "operations/action-runs/discover-skill-sources/latest.json is still absent on the default branch, so the Action handoff producer remains unverified.",
         "No repository clone, code execution, third-party content copy, skills/dist change, catalog rebuild, package edit, publication, credential handling, benchmark run, or npm action occurred."
       ]
+    },
+    {
+      "started_at": "2026-07-05T10:14:55-03:00",
+      "completed_at": "2026-07-05T10:30:00-03:00",
+      "scheduled_role": "Cataloger",
+      "selected_role": "Source Reviewer",
+      "override_reason": "Open priority-1 review item review-swe-skills-bench-20260705-0711 outranked Cataloger; review and safety gates outrank catalog/status work while concrete review queue pressure remains.",
+      "inspected_ref": "main",
+      "inspected_commit_sha": "a43cdfabdcd3f89dfbe73f299db0dffdbea7015d",
+      "action_handoff_state": {
+        "path": "operations/action-runs/discover-skill-sources/latest.json",
+        "exists": false,
+        "read_result": "404_not_found",
+        "interpretation": "Action handoff README exists but latest.json remains absent; this pass consumed the durable scheduler fallback review queue instead of relying on a fresh Action handoff."
+      },
+      "role_reason": "Source Reviewer was selected because review queue pressure existed and no risk/catalog/package blocker outranked it.",
+      "queue_item_consumed": "review-swe-skills-bench-20260705-0711",
+      "queue_items_created": [],
+      "sources_reviewed": [
+        "GeniusHTX/SWE-Skills-Bench"
+      ],
+      "discovery_candidates_processed": 0,
+      "review_candidates_processed": 1,
+      "online_searches_used": [],
+      "direct_source_files_inspected": [
+        "GeniusHTX/SWE-Skills-Bench repository metadata",
+        "GeniusHTX/SWE-Skills-Bench README.md",
+        "GeniusHTX/SWE-Skills-Bench LICENSE",
+        "GeniusHTX/SWE-Skills-Bench requirements.txt",
+        "GeniusHTX/SWE-Skills-Bench config/benchmark_config.yaml"
+      ],
+      "decision": "reviewed-reference-only-validation-doctrine-candidate",
+      "files_changed": [
+        "sources/reviewed/swe-skills-bench.md",
+        "reports/review/2026-07-05-1014-source-review.md",
+        "operations/daily/2026-07-05/queues.json",
+        "operations/daily/2026-07-05/report.md",
+        "operations/log.md",
+        "operations/daily/2026-07-05/status.json"
+      ],
+      "commit_shas_before_status_finalization": [
+        "5ad2e4455c2d500ed8bd42af975d839645347adb",
+        "1dc8e8500470e22f8fe5a1b15b92f1b841403922",
+        "36ddd10a7e6bc0892365199f2398c75639fdc2d9",
+        "500ae494908ac9e68c9504f670a1acd68cbc5166",
+        "87c2b024acd986c95e3a964a63d02e7bacbc8907"
+      ],
+      "value_delta": "Converted the priority-1 SWE-Skills-Bench candidate into a refreshed reviewed source profile and explicit provenance/risk/usefulness decision. Learned reusable validation doctrine: future normalized skills should be assessed by skill/no-skill baseline comparison, pass-rate deltas, failed-test overlap, token cost, duration, and environment assumptions, while keeping benchmark content and execution out of the scheduler.",
+      "blocked_work": [
+        "operations/action-runs/discover-skill-sources/latest.json is still absent on the default branch, so the Action handoff producer remains unverified.",
+        "No repository clone, Docker run, benchmark execution, HuggingFace dataset load, Anthropic credential handling, third-party content copy, skills/dist change, catalog rebuild, package edit, publication, or npm action occurred."
+      ]
     }
   ],
   "blockers": [
     "operations/action-runs/discover-skill-sources/latest.json is absent on the default branch; scheduler fallback artifacts remain necessary until the Action handoff producer is repaired or emits a current handoff."
   ],
-  "last_commit": "pending_status_commit",
-  "next_action": "Source Reviewer should process review-swe-skills-bench-20260705-0711, then review-skillopt-20260705-0711, then review-magicskills-20260705-0711."
+  "last_commit": "87c2b024acd986c95e3a964a63d02e7bacbc8907",
+  "next_action": "Source Reviewer should process review-skillopt-20260705-0711, then review-magicskills-20260705-0711."
 }
