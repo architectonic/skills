@@ -40,104 +40,6 @@
     "maintenance": 0,
     "critic": 0
   },
-  "runs": [
-    {
-      "timestamp": "2026-07-04T15:45:00-03:00",
-      "scheduled_role": "Daily Reporter",
-      "selected_role": "Portfolio Supervisor Repair",
-      "override_reason": "The 2026-07-04 daily ledger was missing and repeated supervisor passes identified the missing ledger as the blocker preventing normal worker operation.",
-      "queue_item": "verify-npm-publication-20260704",
-      "queue_item_action": "created_open",
-      "sources_reviewed": [],
-      "discovery_candidates_processed": 0,
-      "files_changed": ["operations/daily/2026-07-04/queues.json", "operations/daily/2026-07-04/status.json", "operations/daily/2026-07-04/report.md"],
-      "inspected_ref": "main",
-      "inspected_sha": "2d4b711f9eda17bba245ac4ef1a8f0da0ab91204",
-      "result": "Initialized the 2026-07-04 daily ledger from templates and carried forward the only unresolved value blocker from 2026-07-03: npm registry/package verification. No source review, discovery, normalization, generated catalog edit, package publication, or third-party content ingestion was performed."
-    },
-    {
-      "timestamp": "2026-07-04T16:30:00-03:00",
-      "scheduled_role": "Publisher",
-      "selected_role": "Portfolio Supervisor Repair",
-      "override_reason": "The standing supervisor quality floor requires same-pass repair or explicit blocker creation for sub-80 health states. The npm publication verification item was open but could not be resolved through available registry-capable surfaces.",
-      "queue_item": "verify-npm-publication-20260704",
-      "queue_item_action": "marked_blocked",
-      "sources_reviewed": ["web search: npm architectonic-skills 0.1.3 returned no results", "direct package page fetch: https://www.npmjs.com/package/architectonic-skills failed through the available browser surface"],
-      "discovery_candidates_processed": 0,
-      "files_changed": ["operations/daily/2026-07-04/queues.json", "operations/daily/2026-07-04/status.json"],
-      "inspected_ref": "main",
-      "inspected_sha": "077bfa13f9eb4acea0b0d594ea7949153221a022",
-      "resulting_commit": "9b11e5f9091efd1e8f212138a018b74da15f8648",
-      "result": "Converted npm verification from an open churn item into an explicit blocked publication queue item. No publication, package edit, catalog edit, source ingestion, or third-party content copying occurred."
-    },
-    {
-      "timestamp": "2026-07-04T20:12:20-03:00",
-      "scheduled_role": "Publisher",
-      "selected_role": "Publisher",
-      "override_reason": null,
-      "queue_item": "verify-npm-publication-20260704",
-      "queue_item_action": "kept_blocked_with_checkpoint",
-      "sources_reviewed": ["direct repository fetch: package.json architectonic-skills@0.1.3", "direct repository fetch: dist/catalog.json skill_count=1173 high=2 medium=409 unspecified=759", "direct repository fetch: dist/catalog.md skill_count=1173 high=2 medium=409 unspecified=759", "direct repository fetch: dist/install-manifest.json discovery files", "public web search: site:npmjs.com/package architectonic-skills npm returned no package result"],
-      "discovery_candidates_processed": 0,
-      "files_changed": ["operations/daily/2026-07-04/publication-plan.md", "operations/daily/2026-07-04/status.json"],
-      "inspected_ref": "main",
-      "inspected_sha": "1cd8473e3490b16bdcfd2843390c29ac8d0e487b",
-      "resulting_commit": "3ed32f603bf4dddbdda90191114c24d7c1705f83",
-      "result": "Ran the scheduled Publisher checkpoint against the existing publication queue item. Repository catalog/package parity is still clean, but npm registry verification remains blocked because no package evidence was found through public search and this run had no npm-registry-capable or workflow-dispatch-capable connector path. No hand-publication, package edit, catalog edit, source ingestion, normalization, or third-party content copying occurred."
-    },
-    {
-      "timestamp": "2026-07-04T21:11:09-03:00",
-      "scheduled_role": "Cataloger",
-      "selected_role": "Cataloger",
-      "override_reason": null,
-      "queue_item": null,
-      "queue_item_action": "none_catalog_parity_checkpoint",
-      "sources_reviewed": ["direct repository fetch: package.json architectonic-skills@0.1.3", "direct repository fetch: dist/catalog.json skill_count=1173 high=2 medium=409 unspecified=759", "direct repository fetch: dist/catalog.md skill_count=1173 high=2 medium=409 unspecified=759", "direct repository fetch: dist/install-manifest.json discovery files", "direct repository fetch: .github/workflows/publish-npm.yml trusted-publisher workflow present", "direct repository fetch: reports/discovery/2026-07-04.md returned 404", "public web search: npm architectonic-skills 0.1.3 and site:npmjs.com/package architectonic-skills returned no package result"],
-      "discovery_candidates_processed": 0,
-      "files_changed": ["operations/daily/2026-07-04/catalog-plan.md", "operations/daily/2026-07-04/status.json", "operations/log.md"],
-      "inspected_ref": "main",
-      "inspected_sha": "c2ac47ebc2a7bb5ccf0dd24274334812b92f7dfc",
-      "resulting_commit": "00f7b9420d0b39d017ee3fca2f68709c8c6546ae",
-      "result": "Ran a Cataloger checkpoint. Catalog/package parity remains clean on the default branch and no discovery report exists for today. Publication verification remains blocked pending an npm-registry-capable or trusted-publisher-workflow-capable verification path. No source review, discovery, normalization, generated catalog edit, package publication, credential handling, or third-party content copying occurred."
-    },
-    {
-      "timestamp": "2026-07-04T22:11:49-03:00",
-      "scheduled_role": "Critic",
-      "selected_role": "Critic",
-      "override_reason": null,
-      "queue_item": "verify-npm-publication-20260704",
-      "queue_item_action": "kept_blocked_with_slop_control",
-      "sources_reviewed": ["direct repository fetch: package.json architectonic-skills@0.1.3", "direct repository fetch: dist/catalog.json skill_count=1173 high=2 medium=409 unspecified=759", "direct repository fetch: dist/catalog.md skill_count=1173 high=2 medium=409 unspecified=759", "direct repository fetch: dist/install-manifest.json discovery files", "direct repository fetch: .github/workflows/publish-npm.yml trusted-publisher workflow present", "public web search: npm architectonic-skills package returned no package result", "public web search: site:npmjs.com/package/architectonic-skills architectonic-skills returned no package result"],
-      "discovery_candidates_processed": 0,
-      "files_changed": ["operations/daily/2026-07-04/critic.md", "operations/log.md", "operations/daily/2026-07-04/status.json"],
-      "inspected_ref": "main",
-      "inspected_sha": "f10a0acc45e39b34b6eb623ec06ef35fa8d240cd",
-      "resulting_commit": "5d85dbc76aeb95d92f22b9b2f3f33c58ca72f576",
-      "result": "Ran the scheduled Critic checkpoint. Catalog/package parity remains clean, the publication verification queue item remains blocked, and repeated Publisher/Cataloger status-only checkpoints before registry-capable verification are now explicitly marked as low-value churn. No source review, discovery, normalization, package edit, catalog edit, publication, credential handling, or third-party content copying occurred."
-    },
-    {
-      "timestamp": "2026-07-04T22:35:00-03:00",
-      "scheduled_role": "Publisher",
-      "selected_role": "Publisher",
-      "override_reason": "Manual operator pass supplied terminal npm CLI access, which is a registry-capable verification path and outranks further status-only churn.",
-      "queue_item": "verify-npm-publication-20260704",
-      "queue_item_action": "verified_done",
-      "sources_reviewed": [
-        "terminal npm CLI: npm view architectonic-skills@0.1.3 version name --json returned name architectonic-skills and version 0.1.3"
-      ],
-      "discovery_candidates_processed": 0,
-      "files_changed": [
-        "operations/daily/2026-07-04/npm-verification.md",
-        "operations/daily/2026-07-04/queues.json",
-        "operations/daily/2026-07-04/status.json",
-        "operations/log.md"
-      ],
-      "inspected_ref": "main",
-      "inspected_sha": "f10a0acc45e39b34b6eb623ec06ef35fa8d240cd",
-      "resulting_commit": "pending_log_commit",
-      "result": "Verified that architectonic-skills@0.1.3 resolves through npm CLI and closed the publication verification queue item. No publication, package edit, catalog edit, source ingestion, normalization, credential handling, or third-party content copying occurred."
-    }
-  ],
   "latest_run": {
     "timestamp": "2026-07-04T22:35:00-03:00",
     "scheduled_role": "Publisher",
@@ -147,10 +49,21 @@
     "queue_item_action": "verified_done",
     "inspected_ref": "main",
     "inspected_sha": "f10a0acc45e39b34b6eb623ec06ef35fa8d240cd",
-    "resulting_commit": "pending_log_commit",
+    "files_changed": [
+      "operations/daily/2026-07-04/npm-verification.md",
+      "operations/daily/2026-07-04/queues.json",
+      "operations/daily/2026-07-04/status.json",
+      "operations/log.md"
+    ],
+    "resulting_commits": [
+      "cff4fc5d8ba7c2b8429d4e45bff232a89f09a675",
+      "bd9d3215cdcd2b2e90f62c2de582bc11b0f95e58",
+      "1ff35289d6e6d6b18aedfd73ecbf1efea5445f36",
+      "73d41b8862fc20c14791860810ed037b8cf948b3"
+    ],
     "result": "architectonic-skills@0.1.3 was verified through npm CLI. Publication verification blocker is cleared."
   },
   "blockers": [],
-  "last_commit": "pending_log_commit",
+  "last_commit": "73d41b8862fc20c14791860810ed037b8cf948b3",
   "next_action": "Radar or Source Reviewer may resume normal value-producing work at the next cadence. Do not run additional publication/catalog checkpoints unless package/catalog state changes."
 }
