@@ -1,6 +1,6 @@
 {
   "date": "2026-07-05",
-  "current_state": "source-review-queued",
+  "current_state": "review-queue-clear-reference-only-sources",
   "repo": "architectonic/skills",
   "package": {
     "name": "architectonic-skills",
@@ -11,8 +11,8 @@
   },
   "metrics": {
     "candidate_sources_discovered": 4,
-    "sources_reviewed": 2,
-    "sources_blocked": 0,
+    "sources_reviewed": 3,
+    "sources_blocked": 1,
     "risk_reviews_completed": 2,
     "normalized_entries_added": 0,
     "skills_updated": 0,
@@ -27,7 +27,7 @@
   },
   "queues": {
     "discovery": 0,
-    "review": 1,
+    "review": 0,
     "normalization": 0,
     "catalog": 0,
     "risk": 0,
@@ -42,265 +42,120 @@
       "completed_at": "2026-07-05T00:13:58-03:00",
       "scheduled_role": "Reporter",
       "selected_role": "Reporter",
-      "override_reason": null,
-      "inspected_ref": "main",
       "inspected_commit_sha": "bac23fd685e3e1f3368e8b22b65fa4be62cecc39",
-      "role_reason": "Daily ledger was missing; initialized status and queues and ran Reporter only per the ledger-missing rule.",
       "queue_item_consumed": null,
-      "queue_items_created": [],
-      "sources_reviewed": [],
-      "discovery_candidates_processed": 0,
-      "review_candidates_processed": 0,
-      "files_changed": [
-        "operations/daily/2026-07-05/queues.json",
-        "operations/daily/2026-07-05/report.md",
-        "operations/daily/2026-07-05/status.json",
-        "operations/log.md"
-      ],
-      "commit_shas": [
-        "fbc1b850a96ad01c40f3866431cfaa8381f11413",
-        "35ac0e1972e42a146fa6ccfe37dd0d726d509865",
-        "cfac445d1af4648a301591c32ad8a0351c8963a9",
-        "49311f33576be0917522d76fb6f6c310f42cbfce"
-      ],
-      "value_delta": "Initialized missing daily ledger and preserved package/catalog state without crossing review, normalization, catalog, package, or publication gates.",
-      "blocked_work": []
+      "value_delta": "Initialized the daily ledger."
     },
     {
       "started_at": "2026-07-05T01:11:20-03:00",
       "completed_at": "2026-07-05T01:18:00-03:00",
       "scheduled_role": "Radar",
       "selected_role": "Radar",
-      "override_reason": null,
-      "inspected_ref": "main",
       "inspected_commit_sha": "0220069f1b343a0969018f1453a3ad67c508568c",
       "action_handoff_state": {
         "path": "operations/action-runs/discover-skill-sources/latest.json",
         "exists": false,
-        "read_result": "404_not_found",
-        "interpretation": "Action handoff README exists but latest.json was not present, so the scheduler-side metadata-only scout fallback was allowed."
+        "read_result": "404_not_found"
       },
-      "role_reason": "No current Action handoff or 2026-07-05 review artifact existed and the scheduled role was Radar, so this pass created bounded metadata-only discovery/review fallback artifacts instead of status-only churn.",
-      "phase_exit_condition_advanced": "Discovery fallback produced durable candidate and review artifacts plus concrete Source Reviewer queue items.",
-      "online_searches_used": [
-        "GitHub AI agent skills repository Claude Code commands MCP server July 2026",
-        "site:github.com MCP servers agent skills workflows Claude Code commands",
-        "site:github.com cursor rules agent workflows AI agents MCP skills",
-        "Vercel AI SDK agents GitHub examples workflow agents",
-        "GitHub repository search: modelcontextprotocol servers",
-        "GitHub repository search: Claude Code skills SKILL.md",
-        "GitHub repository search: Vercel AI SDK agents examples",
-        "GitHub repository search: OpenAI Agents SDK examples"
-      ],
-      "queue_item_consumed": null,
       "queue_items_created": [
         "review-snyk-agent-scan-20260705",
         "review-awslabs-mcp-20260705",
         "review-gittaskbench-20260705"
       ],
-      "sources_reviewed": [],
-      "sources_discovered": [
-        "snyk/agent-scan",
-        "awslabs/mcp",
-        "QuantaAlpha/GitTaskBench",
-        "carlyrichmond/context-engineering-ai-agent"
-      ],
       "discovery_candidates_processed": 4,
       "review_candidates_processed": 4,
-      "files_changed": [
-        "reports/discovery/2026-07-05-manual.json",
-        "reports/discovery/2026-07-05-manual.md",
-        "reports/review/2026-07-05-manual.json",
-        "reports/review/2026-07-05-manual.md",
-        "sources/candidates/2026-07-05-manual.json",
-        "operations/daily/2026-07-05/queues.json",
-        "operations/daily/2026-07-05/status.json",
-        "operations/log.md"
-      ],
-      "commit_shas": [
-        "cf9846e605d64888dee1f32c741519fb720922b2",
-        "30ee5e93563040edf9b1d5d054122043fa3fa897",
-        "f1ee8ea72bd633c5db3b1e52bb567a38cc67788b",
-        "78bc12ce2025d7cd6a32a8216e5e9d9868ce3aec",
-        "9ab52fde4f8568cb03232758d69c07960d7f4ebb",
-        "20ec10d76a09b9f960f28c11cdcf13b0d9bf2c3d"
-      ],
-      "value_delta": "Converted missing Action/review artifacts into a bounded metadata-only Radar fallback with four candidates and three concrete Source Reviewer queue items.",
-      "blocked_work": [
-        "No normalization, catalog rebuild, package edit, publication, repository clone, code execution, or third-party content copy occurred."
-      ]
+      "value_delta": "Created bounded metadata-only fallback discovery and review artifacts."
     },
     {
       "started_at": "2026-07-05T02:13:54-03:00",
       "completed_at": "2026-07-05T02:13:54-03:00",
       "scheduled_role": "Source Reviewer",
       "selected_role": "Source Reviewer",
-      "override_reason": null,
-      "inspected_ref": "main",
       "inspected_commit_sha": "5ff57c12c48610adce80ad914d780031fbed41fe",
-      "action_handoff_state": {
-        "path": "operations/action-runs/discover-skill-sources/latest.json",
-        "exists": false,
-        "read_result": "404_not_found",
-        "interpretation": "Action handoff latest.json was still absent; durable manual fallback review artifacts and queues from the prior Radar pass were used as source of truth."
-      },
-      "role_reason": "The cadence role was Source Reviewer and the highest-priority concrete queue item was review-snyk-agent-scan-20260705.",
       "queue_item_consumed": "review-snyk-agent-scan-20260705",
-      "queue_items_created": [
-        "risk-snyk-agent-scan-runtime-boundary-20260705"
-      ],
-      "sources_reviewed": [
-        "snyk/agent-scan"
-      ],
-      "discovery_candidates_processed": 0,
-      "review_candidates_processed": 1,
-      "online_searches_used": [],
-      "files_changed": [
-        "sources/reviewed/snyk-agent-scan.md",
-        "operations/daily/2026-07-05/review-plan.md",
-        "operations/daily/2026-07-05/queues.json",
-        "operations/daily/2026-07-05/status.json",
-        "operations/log.md"
-      ],
-      "commit_shas": [
-        "1fae30f43244ea47eca76e72f050c05ebf34a6d3",
-        "ae34d762c3bffbceff558f4f58ea0e254a36a25d",
-        "c121eec23c560f5ead5ed377814afc739375141c"
-      ],
-      "value_delta": "Converted the top review-next candidate into a reviewed reference-only source profile, closed one review item, and created a concrete Risk Auditor item for the high-risk runtime boundary.",
-      "blocked_work": [
-        "No normalization occurred because the source includes documented MCP command-execution behavior and requires risk review before any distilled checklist update."
-      ]
+      "queue_items_created": ["risk-snyk-agent-scan-runtime-boundary-20260705"],
+      "sources_reviewed": ["snyk/agent-scan"],
+      "value_delta": "Reviewed Snyk Agent Scan as reference-only and queued risk review."
     },
     {
       "started_at": "2026-07-05T03:11:29-03:00",
       "completed_at": "2026-07-05T03:18:00-03:00",
       "scheduled_role": "Normalizer",
       "selected_role": "Risk Auditor",
-      "override_reason": "Open high-risk queue item risk-snyk-agent-scan-runtime-boundary-20260705 blocked Normalizer work; risk review outranks growth and normalization.",
-      "inspected_ref": "main",
+      "override_reason": "Open high-risk queue item blocked Normalizer work; risk review outranks normalization.",
       "inspected_commit_sha": "1d1a1ee9ac37e96d9530a3d63b31af4a00561473",
-      "action_handoff_state": {
-        "path": "operations/action-runs/discover-skill-sources/latest.json",
-        "exists": false,
-        "read_result": "404_not_found",
-        "interpretation": "Action handoff latest.json remains absent; this pass used the existing reviewed source profile and risk queue item produced by the previous Source Reviewer pass."
-      },
-      "role_reason": "Risk Auditor consumed the only open high-risk queue item before any normalization, cataloging, packaging, or publication work.",
       "queue_item_consumed": "risk-snyk-agent-scan-runtime-boundary-20260705",
-      "queue_items_created": [],
-      "sources_reviewed": [
-        "snyk/agent-scan"
-      ],
-      "discovery_candidates_processed": 0,
-      "review_candidates_processed": 0,
+      "sources_reviewed": ["snyk/agent-scan"],
       "risk_items_processed": 1,
-      "online_searches_used": [],
-      "files_changed": [
-        "operations/daily/2026-07-05/risk-audit.md",
-        "operations/daily/2026-07-05/queues.json",
-        "operations/log.md",
-        "operations/daily/2026-07-05/status.json"
-      ],
-      "commit_shas": [
-        "b2a96a40fa673b819f2ea5a734f8466012c5011b",
-        "33e89d9c85fe9de2bf8d44c228cac0ab69ecc7a2",
-        "044e6d2f47e44f17ad525c59aaa1f5236c08d64d"
-      ],
-      "value_delta": "Closed the Snyk Agent Scan runtime-boundary risk item as reference-only: useful for review doctrine, but scanner execution, MCP server startup, token handling, API/network submission, control-server/background behavior, and package execution remain outside scheduler-safe defaults.",
-      "blocked_work": [
-        "No normalization queue item was created because the existing MCP external tool security review skill already covers the core trust, execution, prompt-injection, secret, and audit boundaries.",
-        "No repository clone, code execution, third-party content copy, skills/dist change, catalog rebuild, package edit, publication, credential handling, or npm action occurred."
-      ]
+      "value_delta": "Closed Snyk risk item as reference-only with no normalization queue item."
     },
     {
       "started_at": "2026-07-05T04:14:29-03:00",
       "completed_at": "2026-07-05T04:24:00-03:00",
       "scheduled_role": "Cataloger",
       "selected_role": "Source Reviewer",
-      "override_reason": "Open review-next item review-awslabs-mcp-20260705 outranked Cataloger because source review and safety gates precede catalog growth when catalog parity is clean.",
-      "inspected_ref": "main",
+      "override_reason": "Open review-next item outranked Cataloger because catalog parity was clean and source review gates precede catalog growth.",
       "inspected_commit_sha": "be8502185d53b74a3af1e0bc299f8ce6453ab918",
-      "action_handoff_state": {
-        "path": "operations/action-runs/discover-skill-sources/latest.json",
-        "exists": false,
-        "read_result": "404_not_found",
-        "interpretation": "Action handoff latest.json remains absent; this pass used durable manual fallback review artifacts and the open queue item from the prior Radar pass."
-      },
-      "role_reason": "Source Reviewer consumed the highest-priority open review queue item after confirming there was no risk, catalog, packaging, or publication gate ahead of it.",
       "queue_item_consumed": "review-awslabs-mcp-20260705",
-      "queue_items_created": [
-        "risk-awslabs-mcp-cloud-tool-boundary-20260705"
-      ],
-      "sources_reviewed": [
-        "awslabs/mcp"
-      ],
-      "discovery_candidates_processed": 0,
-      "review_candidates_processed": 1,
-      "online_searches_used": [],
-      "files_changed": [
-        "sources/reviewed/awslabs-mcp.md",
-        "operations/daily/2026-07-05/review-plan.md",
-        "operations/daily/2026-07-05/queues.json",
-        "operations/log.md",
-        "operations/daily/2026-07-05/status.json"
-      ],
-      "commit_shas": [
-        "85c2f897c22bd342f5629a32d26a449707979299",
-        "5c816a103734f83052f4c7bd02b58701a5cd05ce",
-        "1ccdd22fb90eb1a185d6964fdd733c15ff2ffa4e",
-        "72c52a8c38fba58e36eed07aa544c89c1469f1b1",
-        "0ace96faa5ac24efc659c46e5e875f85b0f622fd"
-      ],
-      "value_delta": "Converted awslabs/mcp from review-next candidate into a reviewed reference-only source profile and created a concrete high-risk cloud/MCP boundary audit before any normalization or install endorsement.",
-      "blocked_work": [
-        "No normalization occurred because the source includes AWS credentials, MCP package-runner installs, network access, local command execution, and possible cloud-resource mutation surfaces that require Risk Auditor review first.",
-        "No repository clone, code execution, third-party content copy, skills/dist change, catalog rebuild, package edit, publication, credential handling, or npm action occurred."
-      ]
+      "queue_items_created": ["risk-awslabs-mcp-cloud-tool-boundary-20260705"],
+      "sources_reviewed": ["awslabs/mcp"],
+      "value_delta": "Reviewed AWS Labs MCP as reference-only and queued cloud/MCP boundary risk audit."
     },
     {
       "started_at": "2026-07-05T05:12:44-03:00",
       "completed_at": "2026-07-05T05:18:00-03:00",
       "scheduled_role": "Risk Auditor",
       "selected_role": "Risk Auditor",
-      "override_reason": null,
-      "inspected_ref": "main",
       "inspected_commit_sha": "0ace96faa5ac24efc659c46e5e875f85b0f622fd",
+      "queue_item_consumed": "risk-awslabs-mcp-cloud-tool-boundary-20260705",
+      "sources_reviewed": ["awslabs/mcp"],
+      "risk_items_processed": 1,
+      "value_delta": "Closed AWS Labs MCP risk item as reference-only with no normalization queue item."
+    },
+    {
+      "started_at": "2026-07-05T06:13:56-03:00",
+      "completed_at": "2026-07-05T06:18:00-03:00",
+      "scheduled_role": "Packager",
+      "selected_role": "Source Reviewer",
+      "override_reason": "Open review-next item review-gittaskbench-20260705 outranked Packager because source review and safety gates precede packaging endorsement.",
+      "inspected_ref": "main",
+      "inspected_commit_sha": "2809e74f9ccc3a8fb992bc5f78e8e1efaa50c513",
       "action_handoff_state": {
         "path": "operations/action-runs/discover-skill-sources/latest.json",
         "exists": false,
         "read_result": "404_not_found",
-        "interpretation": "Action handoff latest.json remains absent; this pass used the existing reviewed source profile and risk queue item produced by the previous Source Reviewer pass."
+        "interpretation": "Action handoff README exists but latest.json remains absent; this pass used existing durable manual fallback review artifacts and the open review queue item."
       },
-      "role_reason": "The cadence role was Risk Auditor and the highest-priority concrete open queue item was risk-awslabs-mcp-cloud-tool-boundary-20260705.",
-      "queue_item_consumed": "risk-awslabs-mcp-cloud-tool-boundary-20260705",
+      "role_reason": "Source Reviewer consumed the last open review queue item after confirming no risk, catalog, packaging, or publication gate was ahead of it.",
+      "queue_item_consumed": "review-gittaskbench-20260705",
       "queue_items_created": [],
-      "sources_reviewed": [
-        "awslabs/mcp"
-      ],
+      "sources_reviewed": ["QuantaAlpha/GitTaskBench"],
       "discovery_candidates_processed": 0,
-      "review_candidates_processed": 0,
-      "risk_items_processed": 1,
+      "review_candidates_processed": 1,
       "online_searches_used": [],
       "files_changed": [
-        "operations/daily/2026-07-05/risk-audit.md",
+        "sources/reviewed/gittaskbench.md",
+        "operations/daily/2026-07-05/review-plan.md",
         "operations/daily/2026-07-05/queues.json",
         "operations/log.md",
         "operations/daily/2026-07-05/status.json"
       ],
       "commit_shas": [
-        "6ca200289c75cecadfdc75fc00761cebebbf8339",
-        "532a217debaad06a7112d07ccbef2fbe01ffca58",
-        "d2f8f131f1933e1f58930bd9b42923339d68b002"
+        "16f526bbe77bbb607b5cc13dc988cebbb6a8f9c4",
+        "65a85624ca311792f60fdf45ef73af0677007f9a",
+        "01dd89b3948e6ca9df29a999eda9c0dc9b065cef",
+        "7a527bef6224822ca170681224c82845421129da"
       ],
-      "value_delta": "Closed the AWS Labs MCP cloud-tool boundary risk item as reference-only. The source remains useful for MCP catalogue and cloud-tool review, but package-runner installs, editor MCP config changes, AWS credentials, remote MCP endpoints, write/sensitive-data flags, and cloud-resource mutation remain outside scheduler-safe defaults.",
+      "value_delta": "Converted the last open review-next candidate into a reviewed source profile. GitTaskBench is useful for validation-gate thinking but remains reference-only and blocked from normalization because direct LICENSE fetch returned 404 and runtime evaluation would require local install, heavy dependencies, framework runners, and benchmark execution.",
       "blocked_work": [
-        "No normalization queue item was created because the existing MCP external tool security review skill already covers the relevant trust, transport, execution, prompt-injection, credential, scope, cross-tool data-flow, state-change, and audit boundaries.",
-        "No repository clone, code execution, third-party content copy, skills/dist change, catalog rebuild, package edit, publication, credential handling, editor MCP configuration change, or npm action occurred."
+        "No normalization queue item was created because license and redistribution boundaries are unclear.",
+        "No repository clone, code execution, third-party content copy, skills/dist change, catalog rebuild, package edit, publication, credential handling, benchmark run, or npm action occurred."
       ]
     }
   ],
-  "blockers": [],
+  "blockers": [
+    "operations/action-runs/discover-skill-sources/latest.json is absent on the default branch; the manual fallback artifacts remain the source of truth until the Action handoff producer is repaired or emits a current handoff."
+  ],
   "last_commit": "pending_status_commit",
-  "next_action": "Run Source Reviewer on review-gittaskbench-20260705."
+  "next_action": "Review/risk queues are clear. Packager or Cataloger may verify surfaces on cadence; Radar can resume discovery if no package/catalog gate appears."
 }
