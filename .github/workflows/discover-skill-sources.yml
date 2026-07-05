@@ -11,6 +11,7 @@ on:
       - '.github/workflows/discover-skill-sources.yml'
       - 'scripts/discover_skill_sources.py'
       - 'scripts/review_discovery_candidates.py'
+      - 'operations/action-runs/discover-skill-sources/README.md'
 
 permissions:
   contents: write
@@ -32,20 +33,83 @@ jobs:
           python-version: '3.12'
 
       - name: Discover candidate skill sources
+        id: discover
+        continue-on-error: true
         run: python scripts/discover_skill_sources.py
 
       - name: Review discovered candidates
+        id: review
+        continue-on-error: true
         run: python scripts/review_discovery_candidates.py
 
-      - name: Commit discovery and review reports
+      - name: Write action handoff
+        if: always()
+        env:
+          DISCOVER_OUTCOME: ${{ steps.discover.outcome }}
+          REVIEW_OUTCOME: ${{ steps.review.outcome }}
+        run: |
+          mkdir -p operations/action-runs/discover-skill-sources
+          python - <<'PY'
+          import datetime as dt
+          import json
+          import os
+          from pathlib import Path
+
+          today = dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d')
+          discovery_json = Path(f'reports/discovery/{today}.json')
+          review_json = Path(f'reports/review/{today}.json')
+          candidates_json = Path(f'sources/candidates/{today}.json')
+          discovery_count = None
+          review_count = None
+          review_next_count = None
+          if discovery_json.exists():
+              try:
+                  payload = json.loads(discovery_json.read_text(encoding='utf-8'))
+                  discovery_count = len(payload.get('github', [])) + len(payload.get('hacker_news', []))
+              except Exception:
+                  discovery_count = None
+          if review_json.exists():
+              try:
+                  payload = json.loads(review_json.read_text(encoding='utf-8'))
+                  items = payload.get('items', [])
+                  review_count = len(items)
+                  review_next_count = sum(1 for item in items if item.get('decision') == 'review_next')
+              except Exception:
+                  review_count = None
+                  review_next_count = None
+          handoff = {
+              'workflow': 'discover-skill-sources',
+              'recorded_at_utc': dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z'),
+              'github_run_id': os.environ.get('GITHUB_RUN_ID'),
+              'github_sha': os.environ.get('GITHUB_SHA'),
+              'discover_outcome': os.environ.get('DISCOVER_OUTCOME'),
+              'review_outcome': os.environ.get('REVIEW_OUTCOME'),
+              'discovery_json_exists': discovery_json.exists(),
+              'review_json_exists': review_json.exists(),
+              'candidates_json_exists': candidates_json.exists(),
+              'discovery_candidate_count': discovery_count,
+              'review_candidate_count': review_count,
+              'review_next_count': review_next_count,
+              'next_chatgpt_action': 'Source Reviewer if review_next candidates exist; Radar/scout fallback if artifacts are missing; Risk Auditor if candidates expose high-risk runtime/account surfaces.'
+          }
+          out = Path('operations/action-runs/discover-skill-sources/latest.json')
+          out.write_text(json.dumps(handoff, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          PY
+
+      - name: Commit discovery, review, and handoff reports
+        if: always()
         run: |
           git config user.name "architectonic-bot"
           git config user.email "architectonic-bot@users.noreply.github.com"
-          if git diff --quiet -- reports/discovery reports/review sources/candidates; then
-            echo "No discovery or review changes to commit."
+          if git diff --quiet -- reports/discovery reports/review sources/candidates operations/action-runs/discover-skill-sources; then
+            echo "No discovery, review, candidate, or handoff changes to commit."
             exit 0
           fi
-          git add reports/discovery reports/review sources/candidates
-          git commit -m "reports: update skill source discovery and review"
+          git add reports/discovery reports/review sources/candidates operations/action-runs/discover-skill-sources
+          git commit -m "reports: update skill source discovery handoff"
           git pull --rebase
           git push
+
+      - name: Fail on discovery or review failure
+        if: steps.discover.outcome != 'success' || steps.review.outcome != 'success'
+        run: exit 1
