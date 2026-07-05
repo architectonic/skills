@@ -1,0 +1,48 @@
+{
+  "date": "2026-07-05",
+  "mode": "scheduler_manual_fallback",
+  "observed_at_utc": "2026-07-05T04:18:00Z",
+  "review_boundary": "metadata_only_no_content_copy_no_code_execution",
+  "items": [
+    {
+      "id": "snyk-agent-scan-20260705",
+      "name": "snyk/agent-scan",
+      "url": "https://github.com/snyk/agent-scan",
+      "source_family": "github_repository",
+      "decision": "review_next",
+      "risk_level": "medium",
+      "priority": 1,
+      "status": "candidate"
+    },
+    {
+      "id": "awslabs-mcp-20260705",
+      "name": "awslabs/mcp",
+      "url": "https://github.com/awslabs/mcp",
+      "source_family": "github_repository",
+      "decision": "review_next",
+      "risk_level": "medium",
+      "priority": 2,
+      "status": "candidate"
+    },
+    {
+      "id": "quantaalpha-gittaskbench-20260705",
+      "name": "QuantaAlpha/GitTaskBench",
+      "url": "https://github.com/QuantaAlpha/GitTaskBench",
+      "source_family": "github_repository_and_research_paper",
+      "decision": "review_next",
+      "risk_level": "low",
+      "priority": 3,
+      "status": "candidate"
+    },
+    {
+      "id": "carlyrichmond-context-engineering-ai-agent-20260705",
+      "name": "carlyrichmond/context-engineering-ai-agent",
+      "url": "https://github.com/carlyrichmond/context-engineering-ai-agent",
+      "source_family": "github_repository",
+      "decision": "watch",
+      "risk_level": "unknown",
+      "priority": 4,
+      "status": "candidate"
+    }
+  ]
+}
