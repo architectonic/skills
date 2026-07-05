@@ -1,0 +1,68 @@
+{
+  "date": "2026-07-05",
+  "mode": "scheduler_manual_fallback",
+  "role": "Radar",
+  "observed_at_utc": "2026-07-05T04:18:00Z",
+  "review_boundary": "metadata_only_no_content_copy_no_code_execution",
+  "items": [
+    {
+      "id": "review-snyk-agent-scan-20260705",
+      "name": "snyk/agent-scan",
+      "url": "https://github.com/snyk/agent-scan",
+      "decision": "review_next",
+      "risk_level": "medium",
+      "priority": 1,
+      "next_role": "Source Reviewer",
+      "review_questions": [
+        "What license governs reuse or summary?",
+        "Does the repository inspect agent/tool behavior without requiring blind execution?",
+        "Can it produce reusable safety review procedures rather than tool-specific instructions?",
+        "Does it identify prompt injection, setup-command, dependency, or MCP/tool execution failure modes relevant to this repo?"
+      ]
+    },
+    {
+      "id": "review-awslabs-mcp-20260705",
+      "name": "awslabs/mcp",
+      "url": "https://github.com/awslabs/mcp",
+      "decision": "review_next",
+      "risk_level": "medium",
+      "priority": 2,
+      "next_role": "Source Reviewer",
+      "review_questions": [
+        "What license and attribution requirements apply?",
+        "Which MCP server workflows are procedural enough to profile?",
+        "Which install or runtime steps involve network, credentials, filesystem writes, or external-system mutation?",
+        "Should this remain a source profile rather than normalized skill content?"
+      ]
+    },
+    {
+      "id": "review-gittaskbench-20260705",
+      "name": "QuantaAlpha/GitTaskBench",
+      "url": "https://github.com/QuantaAlpha/GitTaskBench",
+      "decision": "review_next",
+      "risk_level": "low",
+      "priority": 3,
+      "next_role": "Source Reviewer",
+      "review_questions": [
+        "What license governs benchmark use?",
+        "Can its task/evaluation structure define acceptance criteria for skills?",
+        "Does it provide reusable failure taxonomy around setup, dependencies, repo context, and tests?",
+        "Can it improve validation gates without copying benchmark content?"
+      ]
+    },
+    {
+      "id": "watch-context-engineering-ai-agent-20260705",
+      "name": "carlyrichmond/context-engineering-ai-agent",
+      "url": "https://github.com/carlyrichmond/context-engineering-ai-agent",
+      "decision": "watch",
+      "risk_level": "unknown",
+      "priority": 4,
+      "next_role": "Radar",
+      "review_questions": [
+        "Is the repository actively maintained and licensed?",
+        "Does it contain reusable context-engineering procedure beyond a single app example?",
+        "Does it require credentials or external integrations to evaluate?"
+      ]
+    }
+  ]
+}
