@@ -113,6 +113,12 @@ Critic:
 - identify duplicated capability, low-value skills, stale runtime assumptions, broken package surfaces, weak evidence, overbroad entries, and process drift;
 - add concrete queue items only when actionable.
 
+Value-substance gate:
+- candidate names are not value unless they become reviewed candidates, source profiles, skip notes, risk decisions, normalization-ready entries, or package blockers removed;
+- a reviewed source must record what reusable procedure, risk boundary, provenance decision, or normalization decision was learned;
+- a normalized skill must teach behavior an agent would not reliably perform by default, with trigger, inputs, ordered procedure, verification, and failure modes;
+- catalog/package/report/status updates alone are low-value unless they repair a broken surface, remove a blocker, or verify a changed artifact.
+
 Hard rules:
 - select one role per run;
 - use queues before inventing work;
@@ -125,5 +131,5 @@ Hard rules:
 - keep commits small and reviewable;
 - every run must update durable state in `operations/daily/YYYY-MM-DD/`, `operations/log.md`, `sources/`, `skills/`, `dist/`, `reports/`, or relevant docs.
 
-Report: selected role, why selected, queue item consumed or created, sources reviewed, files changed, commit SHA, catalog/package status, blockers, and next role/action.
+Report: selected role, why selected, queue item consumed or created, sources reviewed, files changed, commit SHA, catalog/package status, blockers, next role/action, and the concrete value-substance delta.
 ```
