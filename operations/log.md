@@ -11,6 +11,11 @@ status: active
 
 ## 2026-07-04
 
+- Ran Critic checkpoint at the 22 cadence slot.
+- Inspected required repository files directly from `main` at `f10a0acc45e39b34b6eb623ec06ef35fa8d240cd`.
+- Confirmed catalog/package parity remains clean: `package.json` declares `architectonic-skills@0.1.3`; `dist/catalog.json` and `dist/catalog.md` both report 1173 skills, 2 high-risk entries, 409 medium-risk entries, and 759 unspecified-risk entries.
+- Confirmed the remaining queue pressure is the blocked publication item `verify-npm-publication-20260704`; public web search again returned no npm package evidence and the connector surface can inspect but not dispatch the trusted-publisher workflow.
+- Added `operations/daily/2026-07-04/critic.md` to mark repeated publication/catalog checkpoints without registry-capable evidence as low-value churn and preserve the next unblock condition.
 - Ran Cataloger checkpoint at the 21 cadence slot.
 - Inspected required repository files directly from `main` using durable default-branch state after status commit `c2ac47ebc2a7bb5ccf0dd24274334812b92f7dfc` and direct file fetches for package/catalog surfaces.
 - Verified catalog/package parity remains clean: `package.json` reports `architectonic-skills` version `0.1.3`; `dist/catalog.json` and `dist/catalog.md` both report 1173 skills, 2 high-risk entries, 409 medium-risk entries, and 759 unspecified-risk entries; `dist/install-manifest.json` points at the expected discovery files.
@@ -78,69 +83,3 @@ status: active
 - Confirmed `.github/workflows/catalog-refresh.yml` exists with `workflow_dispatch` and runs `npm run build:catalog`, but the exposed connector action set still cannot start that workflow.
 - Updated durable log/status only; no Radar discovery, external source review, third-party ingestion, skill changes, generated catalog edits, packaging endorsement, or publication work was performed.
 - Status update commit for this pass: `2e6b7911e149738a5ceff5c4dfa4cc1fc1daff7b`.
-- This automation is now blocked on an action outside the exposed connector read/write surface; repeated hourly status-only commits are no longer useful until a workflow-dispatch-capable path or local checkout clears the catalog blocker.
-- Ran Cataloger because the stale catalog blocker overrode the scheduled Normalizer slot.
-- Inspected required repository files directly from `main` at `df73293fa1032c1209f19cff8b8e74fa732a0bb1` through the GitHub connector.
-- Verified catalog/package parity is now restored: `package.json` reports `architectonic-skills` version `0.1.3`; `dist/catalog.json` and `dist/catalog.md` both report 1173 skills, 2 high-risk entries, 409 medium-risk entries, and 759 unspecified-risk entries; `dist/install-manifest.json` points at `README.md`, `dist/catalog.json`, and `dist/install-manifest.json`.
-- Closed `catalog-execute-refresh-workflow-20260703` as done. No external source was reviewed, no third-party content was copied, no skill was normalized, and no generated catalog file was hand-edited.
-- Next justified role is Source Reviewer or Radar depending on queue pressure after the next discovery report appears; Packager/Publisher are no longer blocked by catalog parity.
-- Ran Risk Auditor checkpoint at the 16 cadence slot.
-- Inspected required repository files directly from `main` at `923dc9a8b2dcb2e4cebc8e5e37237a06b765c38c` through the GitHub connector.
-- Confirmed `queues.risk`, `queues.review`, and `queues.normalization` are empty; the stale catalog blocker remains closed as done.
-- Rechecked package/catalog surfaces directly: `package.json` reports `architectonic-skills` version `0.1.3`; `dist/catalog.json` and `dist/catalog.md` both report 1173 skills, 2 high-risk entries, 409 medium-risk entries, and 759 unspecified-risk entries; `dist/install-manifest.json` points at the expected discovery files.
-- Added `operations/daily/2026-07-03/risk-audit.md` as a checkpoint. No external source was reviewed, no third-party content was copied, no skill was changed, and no package/publication endorsement was made.
-- Next justified action: Radar or Source Reviewer should inspect the next discovery report/candidate intake; Packager may recheck installability but no package-health blocker is currently active.
-- Ran Radar because no higher-priority risk, review, catalog, package, or publication blocker was open at the 17 cadence slot.
-- Inspected required repository files directly from `main` at `8683b1ffdc149fd45fc16350da96a655a7f48d7c` through the GitHub connector.
-- No `reports/discovery/2026-07-03.md` existed, so Radar performed a bounded fresh public-source intake and created three reference-only candidates: `visualskill-multimodal-skills`, `skill-usage-realistic-settings`, and `context-aware-skill-security`.
-- Queued three Source Reviewer items, with context-aware skill security first because repository-context-aware review may improve the risk gate for future candidate intake.
-- No third-party content was copied beyond compact summaries/metadata; no skill was normalized; no generated catalog or install artifact was changed; no package/publication endorsement was made.
-- Ran Source Reviewer because the priority-1 review item overrode the scheduled Source Reviewer cadence without conflict.
-- Inspected required repository files directly from `main` at `1495a4c5493b85d4cca4dcfda84bbfae6da20583` through the GitHub connector.
-- Reviewed `sources/candidates/context-aware-skill-security.md` against the arXiv record and reproduction repository for "Context Matters: Repository-Aware Security Analysis of the Agent Skill Ecosystem".
-- Created reviewed reference-only profile `sources/reviewed/repository-context-agent-skill-security.md`; no paper/code/data/figure content was copied and license reuse remains unverified.
-- Closed `review-context-aware-skill-security-20260703` and opened Risk Auditor item `risk-repository-context-skill-review-20260703` to decide whether Skill Safety Review or adjacent doctrine should add repository-context checks.
-- No skill was normalized, no generated catalog artifact changed, and no package/publication endorsement was made.
-- Ran Risk Auditor because open risk queue item `risk-repository-context-skill-review-20260703` overrode the scheduled Packager slot.
-- Inspected required repository files directly from `main` at `cdf4e10243df5905483dd4db0866db3a73285486` through the GitHub connector.
-- Consumed the repository-context risk item by adding a compact Repository Context Gate to `doctrine/ingestion-policy.md`.
-- Closed the risk item; no third-party paper/code/data/figure content was copied and no skill/catalog/package artifact changed.
-- Ran Source Reviewer because an open review queue item blocked Publisher work.
-- Inspected required repository files directly from `main` at `c283d011a622504b08f30045e5ebceee82f5d6b3` through the GitHub connector.
-- Reviewed `sources/candidates/skill-usage-realistic-settings.md` against the arXiv record and `UCSB-NLP-Chang/Skill-Usage` repository at commit `03446d16f7b659ccc93ac5bd512f62e9b7fabb45`.
-- Created reviewed reference-only profile `sources/reviewed/skill-usage-realistic-settings.md`; no paper/code/data/table/benchmark content was copied, and repository/dataset/paper reuse terms remain unverified because no repository `LICENSE` or `LICENSE.md` file was found in this pass.
-- Closed `review-skill-usage-20260703` and opened Critic item `critic-skill-retrieval-quality-20260703` to define a local non-executing rubric for retrieval/selectability/refinement quality.
-- No skill was normalized, no generated catalog artifact changed, and no package/publication endorsement was made.
-- Ran Source Reviewer because open review item `review-visualskill-20260703` was the highest-priority concrete queue item and catalog parity was already clear.
-- Inspected required repository files directly from `main` using latest known durable commit `c5429f218eb894e4a6e3c8e1a9da944fc537c1c6` from today's status.
-- Reviewed `sources/candidates/visualskill-multimodal-skills.md` against the arXiv record for "VISUALSKILL: Multimodal Skills for Computer-Use Agents" and attempted to resolve the claimed `XMHZZ2018/VisualSkills` repository through the GitHub connector; the repository returned `404 Not Found`.
-- Created reviewed reference-only profile `sources/reviewed/visualskill-multimodal-skills.md`; no paper/code/data/figure/screenshot/MCP implementation content was copied, and no normalization item was created because provenance and asset rights are incomplete.
-- Closed `review-visualskill-20260703`; review, risk, normalization, catalog, packaging, and publication queues are now clear except for the existing Critic quality-rubric item.
-- No skill was normalized, no generated catalog artifact changed, and no package/publication endorsement was made.
-- Ran Critic because the only open concrete queue item was `critic-skill-retrieval-quality-20260703` at the 22 cadence slot.
-- Inspected required repository files directly from `main` using durable default-branch commit `483817d1a72fc754b41eca336b729860ae09b0f1` and current package/catalog surfaces.
-- Created `operations/daily/2026-07-03/critic.md` with a local non-executing rubric for retrieval fit, selectability, applicability, verification, risk clarity, and provenance clarity.
-- Closed `critic-skill-retrieval-quality-20260703`; no external benchmark was run, no dataset or third-party content was imported, no skill was normalized, and no catalog/package/publication artifact was changed.
-- Next justified action: Reporter should summarize the day or Radar should wait for the next discovery report/candidate intake.
-- Ran Reporter because all queues were clear and the 23 cadence slot allowed Reporter or Critic.
-- Inspected required repository files directly from `main` at `73952649d690a2ae5ad2859796f6b3c36f8aa8ee` through the GitHub connector, then verified package/catalog surfaces on the default branch.
-- Updated `operations/daily/2026-07-03/report.md` with an end-of-day summary covering catalog parity recovery, three reference-only candidate reviews, the repository-context ingestion gate, and the retrieval/selectability critic rubric.
-- No discovery, source review, normalization, catalog generation, package publication, benchmark execution, dataset import, MCP/tool execution, or third-party content copying was performed in this Reporter pass.
-- Next justified action: wait for the next discovery report/candidate intake; if new candidates appear, Source Reviewer should process them before normalization, package endorsement, or publication.
-
-## 2026-07-02
-
-- Ran Reporter as the first daily operator pass.
-- Initialized `operations/daily/2026-07-02/status.json` and `operations/daily/2026-07-02/queues.json`.
-- Added `operations/daily/2026-07-02/report.md` with catalog/package baseline, blockers, and next action.
-- No external source was reviewed or ingested; next useful role is Radar.
-- Ran Reporter checkpoint later in the same hour because queue pressure remained empty and did not justify overriding the 00 Reporter cadence.
-- Updated daily status and report; no external sources were reviewed, no queue item was consumed, and no catalog rebuild was needed.
-- Ran Radar discovery pass.
-- Added five public source candidates under `sources/candidates/`: SWE-Skills-Bench, AgentSkillOS, Agent Skills Open Standard, Model Context Protocol, and Agent Skill Security Research.
-- Queued five Source Reviewer items; no source was normalized, packaged, or published because license and security review remain incomplete.
-- Prioritized MCP and agent skill security candidates for review before lower-risk benchmark or package-format candidates.
-- Ran Source Reviewer pass because review queue pressure outweighed an empty Cataloger queue.
-- Consumed `review-mcp-20260702` and created reviewed reference-only profile `sources/reviewed/model-context-protocol.md`.
-- Verified official MCP documentation, official specification/documentation repository, MIT license for that repository, adoption signals, and high-risk tool/external-action surfaces.
-- Added Risk Auditor queue item `risk-mcp-tool-permission-gate-20260702` before any MCP-normalized skill or publication endorsement.
