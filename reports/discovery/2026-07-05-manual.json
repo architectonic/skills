@@ -1,0 +1,100 @@
+{
+  "date": "2026-07-05",
+  "mode": "scheduler_manual_fallback",
+  "role": "Radar",
+  "observed_at_utc": "2026-07-05T04:18:00Z",
+  "inspected_repo": "architectonic/skills",
+  "inspected_ref": "main",
+  "inspected_commit_sha": "0220069f1b343a0969018f1453a3ad67c508568c",
+  "action_handoff_state": {
+    "path": "operations/action-runs/discover-skill-sources/latest.json",
+    "exists": false,
+    "reason": "The handoff README exists, but latest.json was not present on the default branch during this pass."
+  },
+  "searches": [
+    "GitHub AI agent skills repository Claude Code commands MCP server July 2026",
+    "site:github.com MCP servers agent skills workflows Claude Code commands",
+    "site:github.com cursor rules agent workflows AI agents MCP skills",
+    "Vercel AI SDK agents GitHub examples workflow agents",
+    "GitHub repository search: modelcontextprotocol servers",
+    "GitHub repository search: Claude Code skills SKILL.md",
+    "GitHub repository search: Vercel AI SDK agents examples",
+    "GitHub repository search: OpenAI Agents SDK examples"
+  ],
+  "candidates": [
+    {
+      "name": "snyk/agent-scan",
+      "url": "https://github.com/snyk/agent-scan",
+      "source_family": "github_repository",
+      "description": "Public Snyk repository surfaced by GitHub search for agent-scan. Candidate is relevant as an AI-agent security scanning or review source, especially given current public reporting about agent supply-chain and MCP execution risks.",
+      "observed_at_utc": "2026-07-05T04:18:00Z",
+      "license": "not_visible_in_metadata_pass",
+      "stars": null,
+      "forks": null,
+      "adoption_signal": "Organization-owned public repository; GitHub metadata id 962024783; repository size 4391; default branch main; archived=false.",
+      "last_activity": "not_visible_in_connector_metadata_pass",
+      "complementarity": "Security-review source for skills that involve code agents, MCP/tool execution, dependency setup, repository trust, and prompt/tool injection risk.",
+      "risk_level": "medium",
+      "decision": "review_next",
+      "reason": "High complementarity to the Defensive Import Gate and Risk Auditor role; review should remain metadata-only until license and behavior are inspected.",
+      "review_boundary": "metadata_only_no_content_copy_no_code_execution"
+    },
+    {
+      "name": "awslabs/mcp",
+      "url": "https://github.com/awslabs/mcp",
+      "source_family": "github_repository",
+      "description": "AWS Labs public MCP repository surfaced by GitHub search for modelcontextprotocol servers. Candidate may provide MCP server patterns, connector boundaries, and tool/runtime procedures.",
+      "observed_at_utc": "2026-07-05T04:18:00Z",
+      "license": "not_visible_in_metadata_pass",
+      "stars": null,
+      "forks": null,
+      "adoption_signal": "Organization-owned public repository; GitHub metadata id 952238700; repository size 105483; default branch main; archived=false.",
+      "last_activity": "not_visible_in_connector_metadata_pass",
+      "complementarity": "MCP source profile candidate for connector/server workflows, risk boundaries, install surfaces, and runtime-specific procedures.",
+      "risk_level": "medium",
+      "decision": "review_next",
+      "reason": "MCP tools introduce network/tool/runtime risk and should be profiled before any normalization; strong relevance to current aggregator target surfaces.",
+      "review_boundary": "metadata_only_no_content_copy_no_code_execution"
+    },
+    {
+      "name": "QuantaAlpha/GitTaskBench",
+      "url": "https://github.com/QuantaAlpha/GitTaskBench",
+      "source_family": "github_repository_and_research_paper",
+      "description": "Benchmark repository associated with GitTaskBench, a real-world code-agent task benchmark referenced by the 2025 arXiv paper surfaced during web search.",
+      "observed_at_utc": "2026-07-05T04:18:00Z",
+      "license": "not_visible_in_metadata_pass",
+      "stars": null,
+      "forks": null,
+      "adoption_signal": "Organization-owned public repository; GitHub metadata id 1039484080; repository size 782717; default branch main; archived=false; linked from arXiv search result.",
+      "last_activity": "not_visible_in_connector_metadata_pass",
+      "complementarity": "Evaluation-harness candidate for measuring whether skills and workflow procedures improve real repository-agent outcomes.",
+      "risk_level": "low",
+      "decision": "review_next",
+      "reason": "Useful as validation/evaluation substrate rather than skill content; next review should inspect license, benchmark task shape, and whether it can inform acceptance criteria.",
+      "review_boundary": "metadata_only_no_content_copy_no_code_execution"
+    },
+    {
+      "name": "carlyrichmond/context-engineering-ai-agent",
+      "url": "https://github.com/carlyrichmond/context-engineering-ai-agent",
+      "source_family": "github_repository",
+      "description": "Public Vercel AI SDK agent example surfaced by GitHub repository search for Vercel AI SDK agent examples.",
+      "observed_at_utc": "2026-07-05T04:18:00Z",
+      "license": "not_visible_in_metadata_pass",
+      "stars": null,
+      "forks": null,
+      "adoption_signal": "Public repository; GitHub metadata id 1134297224; repository size 118984; default branch main; archived=false.",
+      "last_activity": "not_visible_in_connector_metadata_pass",
+      "complementarity": "Watch candidate for context-engineering, agent UI/runtime, and Vercel AI SDK workflow patterns.",
+      "risk_level": "unknown",
+      "decision": "watch",
+      "reason": "Potentially useful, but it is an individual example repository; review only after higher-priority security/MCP/evaluation candidates.",
+      "review_boundary": "metadata_only_no_content_copy_no_code_execution"
+    }
+  ],
+  "boundaries": [
+    "No repository was cloned.",
+    "No candidate code was executed.",
+    "No third-party content was copied.",
+    "No candidate was normalized into a skill."
+  ]
+}
