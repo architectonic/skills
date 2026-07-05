@@ -1,6 +1,6 @@
 {
   "date": "2026-07-05",
-  "current_state": "risk-cleared-source-review-queued",
+  "current_state": "risk-queued-source-review-queued",
   "repo": "architectonic/skills",
   "package": {
     "name": "architectonic-skills",
@@ -11,7 +11,7 @@
   },
   "metrics": {
     "candidate_sources_discovered": 4,
-    "sources_reviewed": 1,
+    "sources_reviewed": 2,
     "sources_blocked": 0,
     "risk_reviews_completed": 1,
     "normalized_entries_added": 0,
@@ -27,10 +27,10 @@
   },
   "queues": {
     "discovery": 0,
-    "review": 2,
+    "review": 1,
     "normalization": 0,
     "catalog": 0,
-    "risk": 0,
+    "risk": 1,
     "packaging": 0,
     "publication": 0,
     "maintenance": 0,
@@ -212,9 +212,53 @@
         "No normalization queue item was created because the existing MCP external tool security review skill already covers the core trust, execution, prompt-injection, secret, and audit boundaries.",
         "No repository clone, code execution, third-party content copy, skills/dist change, catalog rebuild, package edit, publication, credential handling, or npm action occurred."
       ]
+    },
+    {
+      "started_at": "2026-07-05T04:14:29-03:00",
+      "completed_at": "2026-07-05T04:24:00-03:00",
+      "scheduled_role": "Cataloger",
+      "selected_role": "Source Reviewer",
+      "override_reason": "Open review-next item review-awslabs-mcp-20260705 outranked Cataloger because source review and safety gates precede catalog growth when catalog parity is clean.",
+      "inspected_ref": "main",
+      "inspected_commit_sha": "be8502185d53b74a3af1e0bc299f8ce6453ab918",
+      "action_handoff_state": {
+        "path": "operations/action-runs/discover-skill-sources/latest.json",
+        "exists": false,
+        "read_result": "404_not_found",
+        "interpretation": "Action handoff latest.json remains absent; this pass used durable manual fallback review artifacts and the open queue item from the prior Radar pass."
+      },
+      "role_reason": "Source Reviewer consumed the highest-priority open review queue item after confirming there was no risk, catalog, packaging, or publication gate ahead of it.",
+      "queue_item_consumed": "review-awslabs-mcp-20260705",
+      "queue_items_created": [
+        "risk-awslabs-mcp-cloud-tool-boundary-20260705"
+      ],
+      "sources_reviewed": [
+        "awslabs/mcp"
+      ],
+      "discovery_candidates_processed": 0,
+      "review_candidates_processed": 1,
+      "online_searches_used": [],
+      "files_changed": [
+        "sources/reviewed/awslabs-mcp.md",
+        "operations/daily/2026-07-05/review-plan.md",
+        "operations/daily/2026-07-05/queues.json",
+        "operations/log.md",
+        "operations/daily/2026-07-05/status.json"
+      ],
+      "commit_shas": [
+        "85c2f897c22bd342f5629a32d26a449707979299",
+        "5c816a103734f83052f4c7bd02b58701a5cd05ce",
+        "1ccdd22fb90eb1a185d6964fdd733c15ff2ffa4e",
+        "72c52a8c38fba58e36eed07aa544c89c1469f1b1"
+      ],
+      "value_delta": "Converted awslabs/mcp from review-next candidate into a reviewed reference-only source profile and created a concrete high-risk cloud/MCP boundary audit before any normalization or install endorsement.",
+      "blocked_work": [
+        "No normalization occurred because the source includes AWS credentials, MCP package-runner installs, network access, local command execution, and possible cloud-resource mutation surfaces that require Risk Auditor review first.",
+        "No repository clone, code execution, third-party content copy, skills/dist change, catalog rebuild, package edit, publication, credential handling, or npm action occurred."
+      ]
     }
   ],
   "blockers": [],
   "last_commit": "pending_status_commit",
-  "next_action": "Run Source Reviewer on review-awslabs-mcp-20260705, then review-gittaskbench-20260705."
+  "next_action": "Run Risk Auditor on risk-awslabs-mcp-cloud-tool-boundary-20260705 before normalizing any AWS MCP-derived procedure. Then continue Source Reviewer with review-gittaskbench-20260705."
 }
