@@ -249,7 +249,8 @@
         "85c2f897c22bd342f5629a32d26a449707979299",
         "5c816a103734f83052f4c7bd02b58701a5cd05ce",
         "1ccdd22fb90eb1a185d6964fdd733c15ff2ffa4e",
-        "72c52a8c38fba58e36eed07aa544c89c1469f1b1"
+        "72c52a8c38fba58e36eed07aa544c89c1469f1b1",
+        "0ace96faa5ac24efc659c46e5e875f85b0f622fd"
       ],
       "value_delta": "Converted awslabs/mcp from review-next candidate into a reviewed reference-only source profile and created a concrete high-risk cloud/MCP boundary audit before any normalization or install endorsement.",
       "blocked_work": [
@@ -259,6 +260,6 @@
     }
   ],
   "blockers": [],
-  "last_commit": "pending_status_commit",
+  "last_commit": "0ace96faa5ac24efc659c46e5e875f85b0f622fd",
   "next_action": "Run Risk Auditor on risk-awslabs-mcp-cloud-tool-boundary-20260705 before normalizing any AWS MCP-derived procedure. Then continue Source Reviewer with review-gittaskbench-20260705."
 }
