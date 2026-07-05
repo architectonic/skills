@@ -41,9 +41,12 @@
       "reason": "Source is useful for agent-supply-chain review, but its documented MCP scanning mode may execute commands from MCP configs and can involve tokens, network/API analysis, and local discovery across agent runtimes.",
       "action": "Decide whether to distill only a safe review checklist into existing security doctrine, preserving no-clone, no-execute, no-token, no-network-default scheduler boundaries.",
       "risk_level": "high",
-      "status": "open",
+      "status": "done",
       "created_by": "Source Reviewer",
-      "created_at": "2026-07-05T02:13:54-03:00"
+      "created_at": "2026-07-05T02:13:54-03:00",
+      "completed_by": "Risk Auditor",
+      "completed_at": "2026-07-05T03:18:00-03:00",
+      "outcome": "Closed as reference-only. No scanner execution, token handling, MCP server startup, network/API submission, background monitoring, or package recommendation is allowed in the scheduler. No normalization item was created because the existing MCP external tool security skill already covers the core boundary."
     }
   ],
   "packaging": [],
