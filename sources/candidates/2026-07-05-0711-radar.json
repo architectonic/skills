@@ -1,0 +1,38 @@
+{
+  "date": "2026-07-05",
+  "mode": "scheduler_manual_fallback",
+  "observed_at_utc": "2026-07-05T10:11:21Z",
+  "review_boundary": "metadata_only_no_content_copy_no_code_execution",
+  "items": [
+    {
+      "id": "geniushtx-swe-skills-bench-20260705-0711",
+      "name": "GeniusHTX/SWE-Skills-Bench",
+      "url": "https://github.com/GeniusHTX/SWE-Skills-Bench",
+      "source_family": "github_repository_and_research_paper",
+      "decision": "review_next",
+      "risk_level": "low",
+      "priority": 1,
+      "status": "candidate"
+    },
+    {
+      "id": "microsoft-skillopt-20260705-0711",
+      "name": "microsoft/SkillOpt",
+      "url": "https://github.com/microsoft/SkillOpt",
+      "source_family": "github_repository_and_research_paper",
+      "decision": "review_next",
+      "risk_level": "medium",
+      "priority": 2,
+      "status": "candidate"
+    },
+    {
+      "id": "narwhal-lab-magicskills-20260705-0711",
+      "name": "Narwhal-Lab/MagicSkills",
+      "url": "https://github.com/Narwhal-Lab/MagicSkills",
+      "source_family": "github_repository",
+      "decision": "review_next",
+      "risk_level": "unknown",
+      "priority": 3,
+      "status": "candidate"
+    }
+  ]
+}
