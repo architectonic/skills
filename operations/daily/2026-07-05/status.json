@@ -1,6 +1,6 @@
 {
   "date": "2026-07-05",
-  "current_state": "review-queued",
+  "current_state": "risk-queued",
   "repo": "architectonic/skills",
   "package": {
     "name": "architectonic-skills",
@@ -11,7 +11,7 @@
   },
   "metrics": {
     "candidate_sources_discovered": 4,
-    "sources_reviewed": 0,
+    "sources_reviewed": 1,
     "sources_blocked": 0,
     "normalized_entries_added": 0,
     "skills_updated": 0,
@@ -26,10 +26,10 @@
   },
   "queues": {
     "discovery": 0,
-    "review": 3,
+    "review": 2,
     "normalization": 0,
     "catalog": 0,
-    "risk": 0,
+    "risk": 1,
     "packaging": 0,
     "publication": 0,
     "maintenance": 0,
@@ -128,9 +128,51 @@
       "blocked_work": [
         "No normalization, catalog rebuild, package edit, publication, repository clone, code execution, or third-party content copy occurred."
       ]
+    },
+    {
+      "started_at": "2026-07-05T02:13:54-03:00",
+      "completed_at": "2026-07-05T02:13:54-03:00",
+      "scheduled_role": "Source Reviewer",
+      "selected_role": "Source Reviewer",
+      "override_reason": null,
+      "inspected_ref": "main",
+      "inspected_commit_sha": "5ff57c12c48610adce80ad914d780031fbed41fe",
+      "action_handoff_state": {
+        "path": "operations/action-runs/discover-skill-sources/latest.json",
+        "exists": false,
+        "read_result": "404_not_found",
+        "interpretation": "Action handoff latest.json was still absent; durable manual fallback review artifacts and queues from the prior Radar pass were used as source of truth."
+      },
+      "role_reason": "The cadence role was Source Reviewer and the highest-priority concrete queue item was review-snyk-agent-scan-20260705.",
+      "queue_item_consumed": "review-snyk-agent-scan-20260705",
+      "queue_items_created": [
+        "risk-snyk-agent-scan-runtime-boundary-20260705"
+      ],
+      "sources_reviewed": [
+        "snyk/agent-scan"
+      ],
+      "discovery_candidates_processed": 0,
+      "review_candidates_processed": 1,
+      "online_searches_used": [],
+      "files_changed": [
+        "sources/reviewed/snyk-agent-scan.md",
+        "operations/daily/2026-07-05/review-plan.md",
+        "operations/daily/2026-07-05/queues.json",
+        "operations/daily/2026-07-05/status.json",
+        "operations/log.md"
+      ],
+      "commit_shas": [
+        "1fae30f43244ea47eca76e72f050c05ebf34a6d3",
+        "ae34d762c3bffbceff558f4f58ea0e254a36a25d",
+        "c121eec23c560f5ead5ed377814afc739375141c"
+      ],
+      "value_delta": "Converted the top review-next candidate into a reviewed reference-only source profile, closed one review item, and created a concrete Risk Auditor item for the high-risk runtime boundary.",
+      "blocked_work": [
+        "No normalization occurred because the source includes documented MCP command-execution behavior and requires risk review before any distilled checklist update."
+      ]
     }
   ],
   "blockers": [],
-  "last_commit": "20ec10d76a09b9f960f28c11cdcf13b0d9bf2c3d",
-  "next_action": "Run Source Reviewer against review-snyk-agent-scan-20260705, then review-awslabs-mcp-20260705 and review-gittaskbench-20260705. Keep all reviews metadata-first until license, provenance, behavior, risk, and usefulness are clear."
+  "last_commit": "c121eec23c560f5ead5ed377814afc739375141c",
+  "next_action": "Run Risk Auditor on risk-snyk-agent-scan-runtime-boundary-20260705 before normalizing any Snyk Agent Scan-derived procedure. Then continue Source Reviewer with review-awslabs-mcp-20260705 and review-gittaskbench-20260705."
 }
