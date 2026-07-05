@@ -1,15 +1,17 @@
 ---
 type: Risk Audit
-title: Snyk Agent Scan Runtime Boundary Audit
-description: Risk Auditor decision for whether snyk/agent-scan can inform Skills repository doctrine without adopting unsafe scanner execution behavior.
-tags: [skills, risk-audit, agent-supply-chain, mcp, prompt-injection, snyk-agent-scan]
+title: Skills Risk Audits — 2026-07-05
+description: Risk Auditor decisions for reviewed public sources that may inform Skills doctrine without importing unsafe runtime behavior.
+tags: [skills, risk-audit, agent-supply-chain, mcp, prompt-injection, snyk-agent-scan, awslabs-mcp]
 okf_version: "0.2"
 status: active
 ---
 
-# Snyk Agent Scan Runtime Boundary Audit
+# Skills Risk Audits — 2026-07-05
 
-## Decision
+## Snyk Agent Scan Runtime Boundary Audit
+
+### Decision
 
 `Snyk Agent Scan` remains a reviewed `reference-only` source profile.
 
@@ -27,7 +29,7 @@ A future Normalizer may create a narrow checklist-only update only if it preserv
 - no copied third-party prose;
 - source remains attributed as `Snyk Agent Scan`, Apache-2.0, reference-only.
 
-## Evidence inspected
+### Evidence inspected
 
 - Existing source profile: `sources/reviewed/snyk-agent-scan.md`.
 - Repository metadata through the GitHub connector: `snyk/agent-scan`, public, default branch `main`, not archived.
@@ -35,7 +37,7 @@ A future Normalizer may create a narrow checklist-only update only if it preserv
 - `LICENSE` directly fetched from `snyk/agent-scan` on `main`.
 - `pyproject.toml` directly fetched from `snyk/agent-scan` on `main`.
 
-## Risk findings
+### Risk findings
 
 The source is useful but operationally high risk for this repository's scheduler.
 
@@ -49,7 +51,7 @@ The package metadata declares a Python CLI package, `snyk-agent-scan`, with runt
 
 Apache-2.0 licensing is compatible with summarized/source-profile treatment, but license compatibility does not lower the runtime risk.
 
-## Safe extraction boundary
+### Safe extraction boundary
 
 Allowed for this repo:
 
@@ -68,17 +70,86 @@ Blocked unless a separate explicit operator run is scoped for local security too
 - enabling control-server or background-monitoring behavior;
 - recommending package installation as part of the Skills scheduler loop.
 
-## Queue outcome
+### Queue outcome
 
 - Consumed risk queue item: `risk-snyk-agent-scan-runtime-boundary-20260705`.
 - Closed the high-risk scheduler boundary blocker.
 - Created no normalization queue item in this pass because the existing `skills/mcp-external-tool-security-review.md` already covers the core MCP trust, execution, prompt-injection, secret, and audit boundaries.
 - Future Critic or Source Reviewer may later propose a small checklist refinement if it identifies a concrete gap not already covered.
 
-## Verification
+### Verification
 
 - No third-party content was copied into `skills/` or `dist/skills/`.
 - No external code was executed.
 - No package, catalog, or npm surface changed.
 - The Snyk source remains `reference-only`.
 - Risk queue pressure is cleared so Source Reviewer can continue with the remaining review-next candidates.
+
+## AWS Labs MCP Cloud Tool Boundary Audit
+
+### Decision
+
+`awslabs/mcp` remains a reviewed `reference-only` source profile.
+
+Do not normalize any AWS MCP server workflow into a reusable skill in this pass. Do not recommend package-runner installation, editor MCP configuration, remote MCP enrollment, AWS credential configuration, local MCP server startup, MCP Inspector usage, or cloud-resource mutation from the scheduled Skills operator.
+
+No normalization queue item is created. The existing `skills/mcp-external-tool-security-review.md` already covers the required MCP trust, transport, execution, prompt-injection, credential, scope, cross-tool data-flow, state-change, and audit boundaries. A future update should only occur if a concrete gap is found after reviewing a specific narrow MCP server, not the broad catalogue.
+
+### Evidence inspected
+
+- Existing source profile: `sources/reviewed/awslabs-mcp.md`.
+- Repository metadata through the GitHub connector: `awslabs/mcp`, public, default branch `main`, not archived.
+- `README.md` directly fetched from `awslabs/mcp` on `main`.
+- `LICENSE` directly fetched from `awslabs/mcp` on `main`.
+- `DEVELOPER_GUIDE.md` directly fetched from `awslabs/mcp` on `main`.
+- Existing local security skill: `skills/mcp-external-tool-security-review.md`.
+
+### Risk findings
+
+The source is useful for MCP and cloud-tool boundary doctrine but operationally high risk for this repository's scheduler.
+
+The upstream README describes a suite of AWS-focused MCP servers and states that MCP servers can connect LLM clients to local data sources and remote services. It also says the AWS servers currently use stdio transport and that users are responsible for legal, policy, and standards compliance.
+
+The README includes install flows for Kiro, Cursor, and VS Code. The visible examples include package-runner command configurations such as `uvx`, remote AWS MCP endpoints, environment variables, AWS profile settings, write-enabling flags, sensitive-data-access flags, and auto-approval arrays. Those are not inert documentation from a scheduler perspective; they are executable client configuration surfaces.
+
+The README also distinguishes remote managed AWS MCP and local/package-backed server entries. Some entries expose AWS API and infrastructure workflows, while the catalogue spans documentation, infrastructure, containers, serverless, databases, analytics, integration, messaging, cost, operations, and other AWS surfaces.
+
+The developer guide requires local development tooling such as `uv`, Python, Git, optional AWS CLI credentials, local virtual environments, package synchronization, client JSON configuration, MCP Inspector through `npx`, local server execution, tests, integration tests, and secret-scanner baseline remediation.
+
+Apache-2.0 licensing is compatible with summarized/source-profile treatment, but license compatibility does not lower the runtime, credential, package-runner, or cloud-mutation risk.
+
+### Safe extraction boundary
+
+Allowed for this repo:
+
+- keep `sources/reviewed/awslabs-mcp.md` as reference-only evidence for MCP catalogue and cloud-tool review;
+- use the source profile to remind future reviewers to separate broad vendor catalogues from single-server procedures;
+- preserve local doctrine that each MCP server must be reviewed by exact source, transport, runtime target, credential scope, network scope, filesystem scope, and state-changing capability;
+- prefer read-only or documentation-only classification only after inspecting the exact server, not by assuming safety from the catalogue.
+
+Blocked in the scheduled Skills operator unless a separate explicit risk-scoped run authorizes it:
+
+- cloning `awslabs/mcp`;
+- executing `uv`, `uvx`, `npx`, package-manager, shell, test, or inspector commands;
+- starting local MCP servers;
+- modifying Kiro, Cursor, VS Code, Windsurf, Claude Code, or other MCP client configuration;
+- configuring, reading, or persisting AWS profiles, credentials, regions, environment variables, or tokens;
+- enabling write or sensitive-data-access flags;
+- invoking remote managed AWS MCP endpoints;
+- mutating AWS resources, deployments, databases, accounts, costs, logs, queues, buckets, clusters, or support/operations systems;
+- copying upstream server instructions into `skills/` or `dist/skills/`.
+
+### Queue outcome
+
+- Consumed risk queue item: `risk-awslabs-mcp-cloud-tool-boundary-20260705`.
+- Closed the high-risk cloud/MCP scheduler boundary blocker.
+- Created no normalization queue item because the current MCP external tool security review skill already covers the relevant boundary.
+- Left `review-gittaskbench-20260705` as the next open Source Reviewer queue item.
+
+### Verification
+
+- No third-party content was copied into `skills/` or `dist/skills/`.
+- No external repository was cloned.
+- No external code, package runner, MCP server, MCP Inspector, test command, or AWS CLI command was executed.
+- No credential, token, profile, cloud account, editor configuration, package, catalog, npm, or publication surface changed.
+- The AWS Labs MCP source remains `reference-only`.
