@@ -11,8 +11,11 @@ license: MIT
 runtime_targets: [agent-skills, software-engineering-agents, benchmark-evaluation]
 skill_format: benchmark-corpus
 risk_level: medium
-ingestion_status: reviewed-reference-only
-reviewed_at: 2026-07-02
+ingestion_status: reviewed-reference-only-validation-doctrine-candidate
+reviewed_at: 2026-07-05T10:14:55-03:00
+reviewed_by: Source Reviewer
+review_boundary: metadata_and_repository_file_review_no_clone_no_execution_no_content_copy
+status: reviewed
 ---
 
 # SWE-Skills-Bench
@@ -21,13 +24,15 @@ reviewed_at: 2026-07-02
 
 SWE-Skills-Bench is a public benchmark repository and paper for testing whether injected skill documents improve software-engineering agent performance on real repository tasks.
 
-The repository README describes 49 real-world software-engineering tasks paired with curated skill documents. The arXiv record describes the benchmark as requirement-driven and designed to isolate the marginal utility of agent skills in real-world software engineering.
+The repository README describes 49 real-world software-engineering tasks paired with curated skill documents. It frames the benchmark question as whether giving an agent a skill document actually helps.
 
-## Review Decision
+## Current Review Decision
 
-Accepted as `reviewed-reference-only`.
+Accepted as `reviewed-reference-only-validation-doctrine-candidate`.
 
 This source should inform local validation doctrine, catalog pruning criteria, and future benchmark-backed skill evaluation. It should not be copied into local skills, bundled into `dist/skills`, or run automatically by the connector-only aggregator.
+
+The 2026-07-05 review closes queue item `review-swe-skills-bench-20260705-0711` as a refreshed source review rather than a new normalization path.
 
 ## Provenance
 
@@ -36,22 +41,19 @@ This source should inform local validation doctrine, catalog pruning criteria, a
 - Repository owner: GeniusHTX
 - Repository status at review: public, not archived
 - Default branch at review: `main`
-- Review date: 2026-07-02
+- Review date: 2026-07-05
 
-## License
+## Directly Inspected Evidence
 
-The repository declares MIT in the README and includes a top-level MIT `LICENSE` file with copyright assigned to Yi Zhang.
-
-MIT licensing permits reuse under its terms, but this local review still defaults to reference-only because benchmark tasks, skill documents, evaluation scripts, third-party repositories, Docker images, and agent-run traces carry separate operational and review burdens.
-
-## Evidence Summary
-
-- The README states the benchmark contains 49 real-world software-engineering tasks paired with curated skill documents.
-- The repository exposes a Hugging Face loading path and a full evaluation framework.
-- The full evaluation framework requires Python, Docker, Claude Code CLI inside the container image, and an Anthropic API key.
-- The configuration file defines task repositories, pinned commits, Docker images, resource limits, network mode, test commands, and evaluation thresholds.
-- The lifecycle code validates task files, starts Docker containers, copies local skills into `/home/dev/.claude/skills` when enabled, clones configured repositories, runs Claude Code, preserves or cleans containers, and writes reports.
-- The arXiv abstract reports that many evaluated skills yield little or no pass-rate improvement, while specialized skills can help and version-mismatched guidance can degrade outcomes.
+- Repository metadata was read through the GitHub connector.
+- `README.md` describes the project as a benchmark dataset for evaluating whether injected skill documents improve agent performance on real-world software-engineering tasks.
+- `README.md` states the dataset contains 49 tasks and lists domains including TDD workflow, security review, MCP server builder, CI analysis, Python packaging, GitOps, observability, performance optimization, RAG, and LLM evaluation.
+- `README.md` documents two use paths: loading a HuggingFace dataset or running a full Docker-based evaluation framework.
+- `README.md` documents full-evaluation prerequisites: Python, Docker, Claude Code CLI inside the container image, and an Anthropic API key.
+- `README.md` describes experiment/control commands with `--use-skill` and `--no-use-skill`, plus post-processing scripts for pass-rate comparison, failed-test extraction, token analysis, and duration analysis.
+- `LICENSE` is present and is MIT, copyright Yi Zhang, 2026.
+- `requirements.txt` lists the harness dependency surface: `pyyaml`, `docker`, `python-dotenv`, `click`, and `rich`.
+- `config/benchmark_config.yaml` shows task execution is container-oriented, may use Docker images, can use network mode `bridge` for setup, and includes resource limits and build/test commands.
 
 ## Usefulness
 
@@ -66,7 +68,9 @@ catalog pruning and demotion decisions
 benchmark-informed critic checks
 ```
 
-The main local lesson is negative as much as positive: skill inclusion should not be treated as inherently useful. Skills need task-context fit, evidence, and validation against real acceptance criteria.
+The main local lesson is negative as much as positive: skill inclusion should not be treated as inherently useful. Skills need task-context fit, experiment/control comparison, cost visibility, runtime safety, and validation against real acceptance criteria.
+
+The reusable procedure learned is not an upstream skill. It is a review boundary for future local doctrine: a normalized skill should eventually be judged by whether it improves task outcomes compared with a no-skill baseline, while also tracking failed tests, token cost, wall-clock duration, and environment assumptions.
 
 ## Risks
 
@@ -86,7 +90,7 @@ unit-test and build-command execution
 benchmark task prompts and skill documents that should not be blindly imported
 ```
 
-Do not run benchmark scripts without an isolated environment, explicit credentials policy, Docker image review, and cost controls.
+Do not run benchmark scripts without an isolated environment, explicit credentials policy, Docker image review, dependency review, network policy, and cost controls.
 
 ## Ingestion Boundary
 
@@ -114,6 +118,6 @@ publishing benchmark-derived claims as local validation without reproducing or c
 
 ## Queue Decision
 
-`review-swe-skills-bench-20260702` is complete.
+`review-swe-skills-bench-20260705-0711` is complete.
 
-Create or keep downstream work only as maintenance/critic work after catalog drift is resolved: derive local skill-validation criteria from the benchmark's evaluation pattern without copying benchmark content.
+No normalization queue item was created. No risk queue item was created because the scheduler boundary already blocks the execution and credential surfaces for this source. Future work, if needed, should be critic/maintenance work that derives internal validation criteria from the benchmark's evaluation pattern without copying benchmark content.
