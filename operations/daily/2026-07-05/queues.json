@@ -11,9 +11,12 @@
       "reason": "MCP server and connector workflows are high-value but require explicit network, filesystem, credential, and external-system mutation boundary review.",
       "action": "Review as source-profile candidate and identify whether any procedure should remain reference-only, require risk audit, or enter normalization queue.",
       "risk_level": "medium",
-      "status": "open",
+      "status": "done",
       "created_by": "Radar",
-      "created_at": "2026-07-05T01:18:00-03:00"
+      "created_at": "2026-07-05T01:18:00-03:00",
+      "completed_by": "Source Reviewer",
+      "completed_at": "2026-07-05T04:24:00-03:00",
+      "outcome": "Reviewed as reference-only source profile. Created risk item for AWS/cloud MCP boundary before any normalization or install endorsement."
     },
     {
       "id": "review-gittaskbench-20260705",
@@ -47,6 +50,19 @@
       "completed_by": "Risk Auditor",
       "completed_at": "2026-07-05T03:18:00-03:00",
       "outcome": "Closed as reference-only. No scanner execution, token handling, MCP server startup, network/API submission, background monitoring, or package recommendation is allowed in the scheduler. No normalization item was created because the existing MCP external tool security skill already covers the core boundary."
+    },
+    {
+      "id": "risk-awslabs-mcp-cloud-tool-boundary-20260705",
+      "priority": 1,
+      "role": "Risk Auditor",
+      "target": "sources/reviewed/awslabs-mcp.md",
+      "source_url": "https://github.com/awslabs/mcp",
+      "reason": "Source is a high-value MCP catalogue, but individual servers can involve package-runner installation, AWS credentials, network access, local command execution, and cloud infrastructure mutation.",
+      "action": "Decide whether to distill only a safe MCP catalogue/cloud-tool boundary checklist into existing security doctrine, preserving no-clone, no-execute, no-credential, no-cloud-mutation scheduler boundaries.",
+      "risk_level": "high",
+      "status": "open",
+      "created_by": "Source Reviewer",
+      "created_at": "2026-07-05T04:24:00-03:00"
     }
   ],
   "packaging": [],
