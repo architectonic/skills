@@ -79,8 +79,9 @@
         "source_profile": "f9c955c113297ee00508034f27fb8b8e0fe6ac4f",
         "review_report": "ddb9f3d2014d1614f4b05b72e9cdfcb5f54ad46e",
         "queues": "7bcb2727c0d6a11c224b90550377d17189dd21f4",
-        "status": "this_commit",
-        "log": "pending"
+        "status_initial": "73fec30fe78aabb1997b5cb02f482a67eafc6d71",
+        "log": "c7bf2a6f41569108e2132f401fce075c81acf7b1",
+        "status_final": "this_commit"
       },
       "value_delta": "Moved SkillOpt from candidate name to reviewed MIT-licensed reference-only source profile, recorded execution/data boundaries, and created a concrete Normalizer queue for an original validation-gated skill-improvement playbook. No third-party code, docs, benchmark tasks, result tables, transcripts, packages, or CLIs were ingested or executed.",
       "blocked_work": [
