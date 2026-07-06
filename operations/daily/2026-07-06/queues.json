@@ -1,0 +1,64 @@
+{
+  "date": "2026-07-06",
+  "initialized_by": "Portfolio Supervisor repair",
+  "inspected_ref": "main",
+  "inspected_commit": "fcc4bff87bc2f0b679833794c9fc4d3308e73879",
+  "template_source": "operations/daily/queues-template.json",
+  "carried_from": "operations/daily/2026-07-05/queues.json",
+  "discovery": [],
+  "review": [
+    {
+      "id": "review-skillopt-20260705-0711",
+      "priority": 2,
+      "role": "Source Reviewer",
+      "target": "microsoft/SkillOpt",
+      "source_url": "https://github.com/microsoft/SkillOpt",
+      "reason": "Bounded skill optimization is directly relevant to loop-engineered improvement, but claims, license, and execution surfaces need review.",
+      "action": "Review license, bounded edit method, held-out validation, rejected-edit buffer, rollback evidence, and whether a safe doctrine summary should be queued.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Radar",
+      "created_at": "2026-07-05T07:18:00-03:00",
+      "carried_forward_by": "Portfolio Supervisor repair",
+      "carried_forward_at": "2026-07-06T10:58:00-03:00"
+    },
+    {
+      "id": "review-magicskills-20260705-0711",
+      "priority": 3,
+      "role": "Source Reviewer",
+      "target": "Narwhal-Lab/MagicSkills",
+      "source_url": "https://github.com/Narwhal-Lab/MagicSkills",
+      "reason": "Large public skill corpus may expose reusable metadata/corpus patterns or skip-note evidence, but provenance and safety are unknown.",
+      "action": "Review license, provenance, prompt-injection/execution risk, hidden instructions, redundancy, and whether source-profile value exists.",
+      "risk_level": "unknown",
+      "status": "open",
+      "created_by": "Radar",
+      "created_at": "2026-07-05T07:18:00-03:00",
+      "carried_forward_by": "Portfolio Supervisor repair",
+      "carried_forward_at": "2026-07-06T10:58:00-03:00"
+    }
+  ],
+  "normalization": [],
+  "catalog": [],
+  "risk": [],
+  "packaging": [],
+  "publication": [],
+  "maintenance": [
+    {
+      "id": "daily-ledger-auto-init-invariant-20260706",
+      "priority": 1,
+      "role": "Reporter",
+      "target": "operations/daily/2026-07-06/status.json",
+      "reason": "Portfolio Supervisor found today's Skills daily ledger missing while the Skills hourly task was enabled. Daily ledgers must be initialized automatically or repaired by the supervisor when safe.",
+      "action": "Confirm the supervisor-created ledger and continue with the highest-priority review queue item before catalog/status work.",
+      "status": "done",
+      "created_by": "Portfolio Supervisor",
+      "created_at": "2026-07-06T10:58:00-03:00",
+      "completed_by": "Portfolio Supervisor",
+      "completed_at": "2026-07-06T10:58:00-03:00",
+      "source": "missing operations/daily/2026-07-06/status.json and queues.json by direct GitHub fetch",
+      "result": "Initialized the missing 2026-07-06 queues ledger from template and carried forward open Source Reviewer work for SkillOpt and MagicSkills."
+    }
+  ],
+  "critic": []
+}
