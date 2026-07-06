@@ -59,7 +59,7 @@
       "review_boundary": "metadata_only_no_content_copy_no_code_execution",
       "completed_by": "Source Reviewer",
       "completed_at": "2026-07-06T17:11:00-03:00",
-      "result": "Reviewed as MIT-licensed reference-only source profile. Created normalizer follow-up for mission-grounded learning workspace doctrine: learner mission, durable learning records, short lesson artifacts, reference artifacts, reusable lesson components, cited-current-source requirement, wisdom/community boundary, and explicit workspace write boundary. No upstream prose, templates, examples, assets, component files, or skill bodies were copied."
+      "result": "Reviewed as MIT-licensed reference-only source profile. Created normalizer follow-up for mission-grounded learning workspace doctrine: learner mission, durable learning records, short lesson artifacts, reference artifacts, reusable lesson components, cited sources, explicit workspace write boundaries, wisdom/community boundary, and explicit workspace write boundary. No upstream prose, templates, examples, assets, component files, or skill bodies were copied."
     }
   ],
   "normalization": [
@@ -88,9 +88,12 @@
       "reason": "Matt Pocock teach review found a reusable original doctrine for mission-grounded, stateful learning workspaces: learner mission, durable learning records, short lessons, reference artifacts, reusable lesson components, cited sources, explicit workspace write boundaries, and wisdom/community separation.",
       "action": "Create an original Architectonic playbook for mission-grounded learning workspaces without copying upstream prose, format files, lesson examples, asset/component files, command documentation, or skill bodies.",
       "risk_level": "medium",
-      "status": "open",
+      "status": "done",
       "created_by": "Source Reviewer",
-      "created_at": "2026-07-06T17:11:00-03:00"
+      "created_at": "2026-07-06T17:11:00-03:00",
+      "completed_by": "Normalizer",
+      "completed_at": "2026-07-06T18:11:00-03:00",
+      "result": "Created original skill skills/mission-grounded-learning-workspace.md and normalization report reports/normalization/2026-07-06-1811-mission-grounded-learning-workspace.md. No upstream prose, code, examples, lesson files, format templates, assets, component files, command documentation, or skill bodies were copied."
     },
     {
       "id": "normalize-shared-skill-library-governance-20260706",
@@ -155,6 +158,18 @@
       "completed_by": "Cataloger",
       "completed_at": "2026-07-06T16:11:00-03:00",
       "result": "Verified rebuilt distribution catalog surfaces directly on main. No manual catalog JSON replacement was required."
+    },
+    {
+      "id": "catalog-refresh-after-mission-grounded-learning-workspace-20260706",
+      "priority": 1,
+      "role": "Cataloger",
+      "target": "skills/mission-grounded-learning-workspace.md",
+      "reason": "A new skill file was added; catalog, dist skill, and install manifest surfaces must be rebuilt or verified before publication/package endorsement.",
+      "action": "Create dist/skills/mission-grounded-learning-workspace/SKILL.md, run or request catalog refresh for dist/catalog.json, dist/catalog.md, and dist/install-manifest.json, then verify counts and risk metadata after rebuild.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Normalizer",
+      "created_at": "2026-07-06T18:11:00-03:00"
     }
   ],
   "risk": [],
