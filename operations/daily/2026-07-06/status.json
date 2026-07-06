@@ -1,6 +1,6 @@
 {
   "date": "2026-07-06",
-  "current_state": "normalization_open_catalog_current",
+  "current_state": "normalization_clear_catalog_refresh_open",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
   "model_requirement_status": "model_setting_unverified",
@@ -16,8 +16,8 @@
     "sources_reviewed": 7,
     "sources_blocked": 1,
     "risk_reviews_completed": 2,
-    "normalized_entries_added": 2,
-    "skills_updated": 2,
+    "normalized_entries_added": 3,
+    "skills_updated": 3,
     "dist_skills_added": 2,
     "catalog_md_skill_count": 1175,
     "catalog_json_skill_count": 1175,
@@ -25,17 +25,17 @@
     "medium_risk_count_catalog_md": 411,
     "medium_risk_count_catalog_json": 411,
     "requires_review_count_catalog_json": 4,
-    "catalog_build_status": "current_after_mission_grounded_skill_refresh",
-    "catalog_parity_status": "dist_catalog_json_and_md_summary_counts_match_after_mission_grounded_skill_refresh",
-    "publication_readiness": "not_requested_and_not_endorsed; package catalog surfaces current for reviewed normalized skills",
+    "catalog_build_status": "stale_after_shared_skill_library_governance_normalization",
+    "catalog_parity_status": "stale_until_cataloger_refreshes_shared_skill_library_governance",
+    "publication_readiness": "blocked_by_new_uncataloged_skill; package publication not endorsed",
     "watched_sources_configured": 2,
     "watched_repository_review_items_open": 0
   },
   "queues": {
     "discovery": 0,
     "review": 0,
-    "normalization": 1,
-    "catalog": 0,
+    "normalization": 0,
+    "catalog": 1,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -43,6 +43,43 @@
     "critic": 0
   },
   "runs": [
+    {
+      "started_at": "2026-07-06T20:13:00-03:00",
+      "completed_at": "2026-07-06T20:13:00-03:00",
+      "scheduled_role": "Publisher",
+      "selected_role": "Normalizer",
+      "override_reason": "Publisher is blocked because publication requires reviewed sources and current catalog/install surfaces. The review queue was clear, catalog surfaces were current before this pass, and normalize-shared-skill-library-governance-20260706 was the only concrete open work item; queue pressure overrode the cadence role.",
+      "inspected_ref": "main",
+      "missing_ledger_initialization_performed": false,
+      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json absent on default branch; no discovery Action handoff available.",
+      "online_searches_used": [],
+      "queue_item_consumed_or_advanced": "normalize-shared-skill-library-governance-20260706",
+      "queue_items_closed": [
+        "normalize-shared-skill-library-governance-20260706"
+      ],
+      "queue_items_created": [
+        "catalog-refresh-after-shared-skill-library-governance-20260706"
+      ],
+      "sources_reviewed": [
+        "sources/reviewed/magicskills.md"
+      ],
+      "candidates_processed": 1,
+      "files_changed": [
+        "skills/shared-skill-library-governance.md",
+        "reports/normalization/2026-07-06-2013-shared-skill-library-governance.md",
+        "operations/daily/2026-07-06/queues.json",
+        "operations/daily/2026-07-06/status.json",
+        "operations/log.md"
+      ],
+      "commit_shas": {
+        "skill": "7a2d114719c91717a62a9ac91337ab3b1606dd8e",
+        "normalization_report": "bcb1f3848962f4f46692314fc7eab566152b8729",
+        "queues": "cd5882d9b070859d41dfcdf6c91e7f8c7539beee",
+        "status_final": "this_commit"
+      },
+      "catalog_package_npm_status": "A new skill was added under skills/shared-skill-library-governance.md. dist/skills, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json are stale until Cataloger refreshes or verifies package surfaces. No npm publish was requested or performed.",
+      "value_delta": "Converted the reviewed MagicSkills source profile into an original Architectonic skill for shared skill-library governance, including canonical skill pool control, named collections, runtime-specific exposure surfaces, registry references, collision handling, and separate trust levels for listing, reading, syncing, installing, and executing."
+    },
     {
       "started_at": "2026-07-06T19:11:00-03:00",
       "completed_at": "2026-07-06T19:11:00-03:00",
@@ -74,7 +111,7 @@
         "catalog_report_initial": "87e1e1be96f20e02c432e5b487942a105b6a7c8d",
         "catalog_report_verified": "1682ebef908e626b38608a29d7c607dc062dc268",
         "queues": "9c7e3402eded68f2898e9ae280b83a34d1e596e0",
-        "status_final": "this_commit"
+        "status_final": "f8b95c932e97ef112460c410ddde8b5193b60e2d"
       },
       "catalog_package_npm_status": "dist/skills now includes mission-grounded-learning-workspace. dist/catalog.json and dist/catalog.md report 1175 skills, 98 agent-operations entries, and 411 medium-risk entries. dist/install-manifest.json still points to canonical discovery files. No npm publish was requested or performed.",
       "value_delta": "Removed the catalog/package drift introduced by the new mission-grounded learning workspace skill. Runtime installers can now discover the skill from dist/skills and generated catalog summaries agree on updated counts."
@@ -115,50 +152,12 @@
       },
       "catalog_package_npm_status": "A new skill was added under skills/, so dist/skills, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json are stale until Cataloger refreshes or verifies them. Package publication is not endorsed.",
       "value_delta": "Converted the reviewed Matt Pocock teach source profile into an original Architectonic skill for mission-grounded learning workspaces, with explicit learner mission, workspace write boundary, learning ledger, source-aware factual teaching, practice-backed lesson verification, reusable artifact boundaries, and failure modes."
-    },
-    {
-      "started_at": "2026-07-06T17:11:00-03:00",
-      "completed_at": "2026-07-06T17:11:00-03:00",
-      "scheduled_role": "Radar",
-      "selected_role": "Source Reviewer",
-      "override_reason": "Open watched-source review queue item review-mattpocock-teach-delta-20260706 outranked broad discovery under the review gate.",
-      "inspected_ref": "main",
-      "missing_ledger_initialization_performed": false,
-      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json absent on default branch; no discovery Action handoff available.",
-      "online_searches_used": [],
-      "queue_item_consumed_or_advanced": "review-mattpocock-teach-delta-20260706",
-      "queue_items_closed": [
-        "review-mattpocock-teach-delta-20260706"
-      ],
-      "queue_items_created": [
-        "normalize-mission-grounded-learning-workspace-20260706"
-      ],
-      "sources_reviewed": [
-        "mattpocock/skills teach"
-      ],
-      "candidates_processed": 1,
-      "files_changed": [
-        "sources/reviewed/mattpocock-teach.md",
-        "reports/review/2026-07-06-1711-mattpocock-teach-source-review.md",
-        "operations/daily/2026-07-06/queues.json",
-        "operations/daily/2026-07-06/status.json",
-        "operations/log.md"
-      ],
-      "commit_shas": {
-        "source_profile": "66b3103d7a9ac1103ad5664414a11628b96cb6a0",
-        "review_report": "31a483c159ed02b4d3ee04bc18cf9198e3303d99",
-        "queues": "ddabec71d882d3f07bce340b398d3d3a9f6d4c0e",
-        "status_initial": "0ec9c37bda17c6ce318f6e0bdf7f149a3acb6f11",
-        "log": "ca6b8782f7a8753c911646b2609cbb066a503597",
-        "status_final": "0570974fc1fae115234873b28c73718c1263f8ea"
-      },
-      "catalog_package_npm_status": "dist/catalog.json and dist/catalog.md remain verified at 1174 skills from the prior Cataloger pass. No skills or dist files changed in this Source Reviewer pass, so catalog/package/npm surfaces were not changed.",
-      "value_delta": "Converted the watched Matt Pocock teach delta into a reviewed reference-only source profile with MIT provenance, explicit filesystem/asset/citation risk boundaries, and a bounded Normalizer queue item for an original mission-grounded learning workspace playbook."
     }
   ],
   "blockers": [
-    "operations/action-runs/discover-skill-sources/latest.json is absent on the default branch; scheduler fallback artifacts remain necessary until the Action handoff producer is repaired or emits a current handoff."
+    "operations/action-runs/discover-skill-sources/latest.json is absent on the default branch; scheduler fallback artifacts remain necessary until the Action handoff producer is repaired or emits a current handoff.",
+    "New normalized skill skills/shared-skill-library-governance.md is not yet present under dist/skills or regenerated catalog surfaces."
   ],
   "last_commit": "this_commit",
-  "next_action": "Normalizer can process normalize-shared-skill-library-governance-20260706."
+  "next_action": "Cataloger should process catalog-refresh-after-shared-skill-library-governance-20260706 before any Publisher or Packager endorsement."
 }
