@@ -167,9 +167,12 @@
       "reason": "A new skill file was added; catalog, dist skill, and install manifest surfaces must be rebuilt or verified before publication/package endorsement.",
       "action": "Create dist/skills/mission-grounded-learning-workspace/SKILL.md, run or request catalog refresh for dist/catalog.json, dist/catalog.md, and dist/install-manifest.json, then verify counts and risk metadata after rebuild.",
       "risk_level": "medium",
-      "status": "open",
+      "status": "done",
       "created_by": "Normalizer",
-      "created_at": "2026-07-06T18:11:00-03:00"
+      "created_at": "2026-07-06T18:11:00-03:00",
+      "completed_by": "Cataloger",
+      "completed_at": "2026-07-06T19:11:00-03:00",
+      "result": "Created dist/skills/mission-grounded-learning-workspace/SKILL.md and verified regenerated catalog surfaces at 1175 skills, 98 agent-operations entries, and 411 medium-risk entries. dist/install-manifest.json still points installers to the canonical catalog files."
     }
   ],
   "risk": [],
