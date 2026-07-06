@@ -6,9 +6,9 @@
     "entrypoint": "README.md"
   },
   "summary": {
-    "skill_count": 1174,
+    "skill_count": 1175,
     "domain_counts": {
-      "agent-operations": 97,
+      "agent-operations": 98,
       "business": 45,
       "cloud-security": 41,
       "design": 40,
@@ -25,7 +25,7 @@
     "risk_counts": {
       "high": 2,
       "low": 3,
-      "medium": 410,
+      "medium": 411,
       "unspecified": 759
     }
   },
@@ -102,6 +102,7 @@
       "llm-cost-optimizer",
       "loop-me",
       "managed-agent-launch-cma",
+      "mission-grounded-learning-workspace",
       "office-hours",
       "open-gstack-browser",
       "pair-agent",
@@ -28959,6 +28960,27 @@
       "source_family": "",
       "source_status": "",
       "type": "Playbook"
+    },
+    {
+      "slug": "mission-grounded-learning-workspace",
+      "title": "Mission-Grounded Learning Workspace",
+      "description": "Use when turning a learner's goal into a durable, workspace-scoped learning loop with explicit artifacts, source checks, lesson records, and safe file-write boundaries.",
+      "path": "dist/skills/mission-grounded-learning-workspace/SKILL.md",
+      "directory": "dist/skills/mission-grounded-learning-workspace",
+      "domain": "agent-operations",
+      "risk_level": "medium",
+      "requires_review": true,
+      "tags": [
+        "skill",
+        "teaching",
+        "learning-workspace",
+        "pedagogy",
+        "knowledge-work",
+        "agent-operations"
+      ],
+      "source_family": "",
+      "source_status": "normalized",
+      "type": "Skill"
     },
     {
       "slug": "mpp-agent",
