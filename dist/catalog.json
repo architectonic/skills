@@ -6,7 +6,7 @@
     "entrypoint": "README.md"
   },
   "summary": {
-    "skill_count": 1173,
+    "skill_count": 1174,
     "domain_counts": {
       "agent-operations": 96,
       "business": 45,
@@ -19,13 +19,13 @@
       "security-defensive": 51,
       "security-offensive": 5,
       "software-engineering": 146,
-      "uncategorized": 587,
+      "uncategorized": 588,
       "writing": 16
     },
     "risk_counts": {
       "high": 2,
       "low": 3,
-      "medium": 409,
+      "medium": 410,
       "unspecified": 759
     }
   },
@@ -1204,6 +1204,7 @@
       "tdd",
       "terraform-patterns",
       "theme-factory",
+      "validation-gated-skill-improvement",
       "vendor-skill-packaging",
       "video-generation",
       "web-artifacts-builder",
@@ -29062,6 +29063,27 @@
       "source_family": "",
       "source_status": "",
       "type": "Playbook"
+    },
+    {
+      "slug": "validation-gated-skill-improvement",
+      "title": "Validation-Gated Skill Improvement",
+      "description": "Use when improving an existing skill, playbook, runbook, or workflow entry so edits are bounded, tested against held-out tasks, and adopted only after evidence improves.",
+      "path": "dist/skills/validation-gated-skill-improvement/SKILL.md",
+      "directory": "dist/skills/validation-gated-skill-improvement",
+      "domain": "",
+      "risk_level": "medium",
+      "requires_review": true,
+      "tags": [
+        "skill",
+        "skill-improvement",
+        "validation",
+        "self-improvement",
+        "review-gates",
+        "okf"
+      ],
+      "source_family": "",
+      "source_status": "normalized",
+      "type": "Skill"
     },
     {
       "slug": "x-api-mcp",
