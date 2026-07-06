@@ -1,7 +1,7 @@
 ---
 type: Catalog Report
 title: Mission-Grounded Learning Workspace Catalog Refresh
-status: complete_with_follow_up
+status: complete
 created_at: 2026-07-06T19:11:00-03:00
 role: Cataloger
 queue_item: catalog-refresh-after-mission-grounded-learning-workspace-20260706
@@ -45,7 +45,7 @@ Created:
 dist/skills/mission-grounded-learning-workspace/SKILL.md
 ```
 
-Updated human-readable catalog summary counts:
+The Catalog Refresh producer then regenerated catalog surfaces on `main`. Verified summary counts:
 
 ```text
 skill_count: 1175
@@ -53,7 +53,16 @@ agent-operations: 98
 medium risk: 411
 ```
 
-The machine-readable catalog was not hand-edited in this connector pass. It should be rebuilt by the catalog producer (`npm run build:catalog` or the Catalog Refresh workflow) so entry ordering, domain arrays, risk counts, and generated metadata stay canonical.
+Verified surfaces:
+
+```text
+dist/skills/mission-grounded-learning-workspace/SKILL.md
+dist/catalog.json
+dist/catalog.md
+dist/install-manifest.json
+```
+
+`dist/install-manifest.json` still points installers to `README.md`, `dist/catalog.json`, `dist/catalog.md`, and `dist/install-manifest.json`.
 
 ## Queue Changes
 
@@ -63,11 +72,7 @@ Closed:
 catalog-refresh-after-mission-grounded-learning-workspace-20260706
 ```
 
-Created:
-
-```text
-verify-catalog-refresh-after-mission-grounded-learning-dist-copy-20260706
-```
+No additional catalog verification queue was needed because regenerated catalog surfaces were observed in the same pass after the dist skill commit.
 
 ## Boundary Check
 
@@ -77,4 +82,4 @@ verify-catalog-refresh-after-mission-grounded-learning-dist-copy-20260706
 
 ## Value Delta
 
-The normalized mission-grounded learning workspace skill is now visible to install-facing runtime consumers under `dist/skills/`, not only to repository readers under `skills/`. Catalog/package endorsement remains blocked until generated catalog surfaces are verified.
+The normalized mission-grounded learning workspace skill is now visible to install-facing runtime consumers under `dist/skills/`, and generated catalog surfaces agree on updated package counts. The catalog/package blocker for this skill is closed.
