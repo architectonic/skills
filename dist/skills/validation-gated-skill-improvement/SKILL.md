@@ -1,8 +1,10 @@
 ---
 type: Skill
+name: validation-gated-skill-improvement
 title: Validation-Gated Skill Improvement
 description: Use when improving an existing skill, playbook, runbook, or workflow entry so edits are bounded, tested against held-out tasks, and adopted only after evidence improves.
-tags: [skill, skill-improvement, validation, self-improvement, review-gates, okf]
+tags: [skill, skill-improvement, validation, self-improvement, review-gates, okf, agent-operations]
+domain: agent-operations
 timestamp: 2026-07-06T13:13:00-03:00
 okf_version: "0.2"
 source_status: normalized
