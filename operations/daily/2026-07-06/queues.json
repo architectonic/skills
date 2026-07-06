@@ -53,10 +53,13 @@
       "reason": "Known upstream source mattpocock/skills has a recently visible teach skill and changelog activity. Since prior Matt Pocock skills were already distilled, new or materially changed skills must be reviewed as deltas instead of missed by broad discovery.",
       "action": "Review license, changelog, teach skill boundary, asset/component reuse pattern, invocation surface, overlap with existing Architectonic skills, and whether to create a source profile, skip/watch note, risk item, or original normalization queue. Do not copy upstream prose, templates, lesson examples, or assets.",
       "risk_level": "medium",
-      "status": "open",
+      "status": "done",
       "created_by": "Operator request",
       "created_at": "2026-07-06T13:30:00-03:00",
-      "review_boundary": "metadata_only_no_content_copy_no_code_execution"
+      "review_boundary": "metadata_only_no_content_copy_no_code_execution",
+      "completed_by": "Source Reviewer",
+      "completed_at": "2026-07-06T17:11:00-03:00",
+      "result": "Reviewed as MIT-licensed reference-only source profile. Created normalizer follow-up for mission-grounded learning workspace doctrine: learner mission, durable learning records, short lesson artifacts, reference artifacts, reusable lesson components, cited-current-source requirement, wisdom/community boundary, and explicit workspace write boundary. No upstream prose, templates, examples, assets, component files, or skill bodies were copied."
     }
   ],
   "normalization": [
@@ -75,6 +78,19 @@
       "completed_by": "Normalizer",
       "completed_at": "2026-07-06T13:13:00-03:00",
       "result": "Created original skill skills/validation-gated-skill-improvement.md and normalization report reports/normalization/2026-07-06-1313-validation-gated-skill-improvement.md. No upstream prose, code, examples, benchmark tasks, result tables, package metadata, command references, transcripts, or docs were copied."
+    },
+    {
+      "id": "normalize-mission-grounded-learning-workspace-20260706",
+      "priority": 2,
+      "role": "Normalizer",
+      "target": "sources/reviewed/mattpocock-teach.md",
+      "source_url": "https://github.com/mattpocock/skills/tree/main/skills/productivity/teach",
+      "reason": "Matt Pocock teach review found a reusable original doctrine for mission-grounded, stateful learning workspaces: learner mission, durable learning records, short lessons, reference artifacts, reusable lesson components, cited sources, explicit workspace write boundaries, and wisdom/community separation.",
+      "action": "Create an original Architectonic playbook for mission-grounded learning workspaces without copying upstream prose, format files, lesson examples, asset/component files, command documentation, or skill bodies.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Source Reviewer",
+      "created_at": "2026-07-06T17:11:00-03:00"
     },
     {
       "id": "normalize-shared-skill-library-governance-20260706",
