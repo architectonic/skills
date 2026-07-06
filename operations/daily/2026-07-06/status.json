@@ -66,8 +66,9 @@
       ],
       "commit_shas": {
         "queues": "0d7fd0f8049fd7ddfc19009216c879a46a5d31a3",
-        "status": "this_commit",
-        "report": "pending"
+        "status_initial": "ca1da696a828e4bb214c221f1f9af566441ac93d",
+        "report": "ec40067a5ce663b0506b5d3d72b69f2696b716a4",
+        "status_final": "this_commit"
       },
       "value_delta": "Removed the missing-ledger blocker and preserved concrete review queue pressure so the next Skills operator can perform Source Reviewer work instead of status-only recovery.",
       "blocked_work": [
