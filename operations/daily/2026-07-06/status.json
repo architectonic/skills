@@ -1,9 +1,9 @@
 {
   "date": "2026-07-06",
-  "current_state": "one_normalization_item_closed_one_normalization_item_and_catalog_refresh_open",
+  "current_state": "distribution_copy_created_human_catalog_updated_machine_catalog_rebuild_open",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_commit_sha": "885a4a96839048d5849ade0f89ccd6b611ddadef",
+  "inspected_commit_sha": "aa97ed5eb6ffc1d4c0d13f0e1345df2b7c1744bb",
   "model_requirement_status": "model_setting_unverified",
   "package": {
     "name": "architectonic-skills",
@@ -19,14 +19,16 @@
     "risk_reviews_completed": 2,
     "normalized_entries_added": 1,
     "skills_updated": 1,
-    "catalog_skill_count": 1173,
+    "dist_skills_added": 1,
+    "catalog_md_skill_count": 1174,
+    "catalog_json_skill_count": 1173,
     "high_risk_count": 2,
-    "medium_risk_count": 409,
-    "unspecified_risk_count": 759,
-    "requires_review_count": 2,
-    "catalog_build_status": "stale_after_new_skill_requires_cataloger",
-    "catalog_parity_status": "catalog_refresh_required_after_skills_change",
-    "publication_readiness": "blocked_until_catalog_refresh_for_new_skill"
+    "medium_risk_count_catalog_md": 410,
+    "medium_risk_count_catalog_json": 409,
+    "requires_review_count_catalog_json": 2,
+    "catalog_build_status": "partial_repair_catalog_json_rebuild_required",
+    "catalog_parity_status": "blocked_until_build_catalog_runs",
+    "publication_readiness": "blocked_until_machine_catalog_rebuild"
   },
   "queues": {
     "discovery": 0,
@@ -41,45 +43,44 @@
   },
   "runs": [
     {
-      "started_at": "2026-07-06T13:13:00-03:00",
-      "completed_at": "2026-07-06T13:13:00-03:00",
-      "scheduled_role": "Source Reviewer",
-      "selected_role": "Normalizer",
-      "override_reason": "Review queue was clear and the highest-priority concrete queue item was normalization item normalize-validation-gated-skill-improvement-20260706.",
+      "started_at": "2026-07-06T14:13:00-03:00",
+      "completed_at": "2026-07-06T14:13:00-03:00",
+      "scheduled_role": "Cataloger",
+      "selected_role": "Cataloger",
+      "override_reason": null,
       "inspected_ref": "main",
-      "inspected_commit_sha": "885a4a96839048d5849ade0f89ccd6b611ddadef",
+      "inspected_commit_sha": "aa97ed5eb6ffc1d4c0d13f0e1345df2b7c1744bb",
       "missing_ledger_initialization_performed": false,
       "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json absent on default branch; no Action handoff available.",
       "online_searches_used": [],
-      "queue_item_consumed": "normalize-validation-gated-skill-improvement-20260706",
-      "queue_items_created": ["catalog-refresh-after-validation-gated-skill-20260706"],
+      "queue_item_consumed_or_advanced": "catalog-refresh-after-validation-gated-skill-20260706",
+      "queue_items_created": ["catalog-json-rebuild-after-validation-gated-dist-copy-20260706"],
       "sources_reviewed": [],
       "candidates_processed": 0,
-      "normalized_entries_added": ["skills/validation-gated-skill-improvement.md"],
-      "normalization_source_profile": "sources/reviewed/skillopt.md",
+      "dist_entries_added": ["dist/skills/validation-gated-skill-improvement/SKILL.md"],
       "files_changed": [
-        "skills/validation-gated-skill-improvement.md",
-        "reports/normalization/2026-07-06-1313-validation-gated-skill-improvement.md",
+        "dist/skills/validation-gated-skill-improvement/SKILL.md",
+        "dist/catalog.md",
+        "reports/catalog/2026-07-06-1413-validation-gated-skill-catalog.md",
         "operations/daily/2026-07-06/queues.json",
         "operations/daily/2026-07-06/status.json",
         "operations/log.md"
       ],
       "commit_shas": {
-        "skill": "baf1fb2bb1381dd3bfd5edcdf0760eef71f0b4bc",
-        "normalization_report": "944427424b2b50188e94023b02021d12c17f32f2",
-        "queues": "89ae8792f31ab265dd18149552d4bbb9fc41b061",
-        "status_initial": "a0826327c2e8db6580cc8b2352f6ac5df3628c40",
-        "log": "32b963e53ca6e4b9b7785c5c87e4325290212ec3",
+        "dist_skill": "abb237587cf9887ac4a45997a548b6b2c80fa02c",
+        "catalog_md": "1c230a881de698b4074cc2f4e9b1282d75f61da5",
+        "catalog_report": "8c93548facc1ba95855d29929ae180c4b39a0623",
+        "queues": "e0ce47f51b841b1f50cff5817c4dede51de7d851",
         "status_final": "this_commit"
       },
-      "catalog_package_npm_status": "catalog and install surfaces stale after new skills/ file; npm/package unchanged; cataloger queue created before publication or package endorsement.",
-      "value_delta": "Converted a reviewed reference-only source profile into an original reusable skill for validation-gated skill improvement, with bounded edit gates, held-out checks, rejected-edit memory, staged adoption, rollback context, and catalog follow-up."
+      "catalog_package_npm_status": "Package visibility partially repaired by adding the dist/skills entry and updating dist/catalog.md counts. dist/catalog.json remains stale at 1173 entries and blocks publication/package endorsement until npm run build:catalog runs in a checkout or CI-capable surface.",
+      "value_delta": "Removed the immediate package visibility defect for the normalized validation-gated skill by exposing it under dist/skills, where installers copy from. Preserved an explicit machine-catalog rebuild queue instead of falsely claiming full catalog parity."
     }
   ],
   "blockers": [
     "operations/action-runs/discover-skill-sources/latest.json is absent on the default branch; scheduler fallback artifacts remain necessary until the Action handoff producer is repaired or emits a current handoff.",
-    "Catalog surfaces are stale after adding skills/validation-gated-skill-improvement.md; Cataloger must rebuild or verify dist/catalog.json, dist/catalog.md, and dist/install-manifest.json."
+    "dist/catalog.json is stale after adding dist/skills/validation-gated-skill-improvement/SKILL.md; run npm run build:catalog in a checkout or CI-capable surface before publication/package endorsement."
   ],
   "last_commit": "this_commit",
-  "next_action": "Cataloger should process catalog-refresh-after-validation-gated-skill-20260706 before further normalization or publication/package endorsement. Then Normalizer can process normalize-shared-skill-library-governance-20260706."
+  "next_action": "Cataloger or Packager should run npm run build:catalog and verify dist/catalog.json, dist/catalog.md, and dist/install-manifest.json parity. Then Normalizer can process normalize-shared-skill-library-governance-20260706."
 }
