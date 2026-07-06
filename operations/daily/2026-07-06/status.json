@@ -1,6 +1,6 @@
 {
   "date": "2026-07-06",
-  "current_state": "distribution_copy_created_human_catalog_updated_machine_catalog_rebuild_open",
+  "current_state": "watchlist_scanning_added_catalog_json_rebuild_open_teach_delta_review_queued",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
   "inspected_commit_sha": "aa97ed5eb6ffc1d4c0d13f0e1345df2b7c1744bb",
@@ -13,7 +13,7 @@
     "install_manifest": "dist/install-manifest.json"
   },
   "metrics": {
-    "candidate_sources_discovered": 7,
+    "candidate_sources_discovered": 8,
     "sources_reviewed": 6,
     "sources_blocked": 1,
     "risk_reviews_completed": 2,
@@ -28,11 +28,13 @@
     "requires_review_count_catalog_json": 2,
     "catalog_build_status": "partial_repair_catalog_json_rebuild_required",
     "catalog_parity_status": "blocked_until_build_catalog_runs",
-    "publication_readiness": "blocked_until_machine_catalog_rebuild"
+    "publication_readiness": "blocked_until_machine_catalog_rebuild",
+    "watched_sources_configured": 2,
+    "watched_repository_review_items_open": 1
   },
   "queues": {
     "discovery": 0,
-    "review": 0,
+    "review": 1,
     "normalization": 1,
     "catalog": 1,
     "risk": 0,
@@ -75,6 +77,42 @@
       },
       "catalog_package_npm_status": "Package visibility partially repaired by adding the dist/skills entry and updating dist/catalog.md counts. dist/catalog.json remains stale at 1173 entries and blocks publication/package endorsement until npm run build:catalog runs in a checkout or CI-capable surface.",
       "value_delta": "Removed the immediate package visibility defect for the normalized validation-gated skill by exposing it under dist/skills, where installers copy from. Preserved an explicit machine-catalog rebuild queue instead of falsely claiming full catalog parity."
+    },
+    {
+      "started_at": "2026-07-06T14:30:00-03:00",
+      "completed_at": "2026-07-06T14:30:00-03:00",
+      "scheduled_role": "Cataloger",
+      "selected_role": "Radar",
+      "override_reason": "Operator request identified missed upstream delta scanning for known high-signal skill sources such as mattpocock/skills and skills.sh.",
+      "inspected_ref": "main",
+      "inspected_commit_sha": "aa97ed5eb6ffc1d4c0d13f0e1345df2b7c1744bb",
+      "action_handoff_state": "Discovery Action handoff remains absent on default branch; repaired producer inputs so future Action runs include watched-source candidates in discovery and review artifacts.",
+      "online_searches_used": ["GitHub repository search: user:mattpocock skills", "GitHub code search: mattpocock/skills teach"],
+      "queue_item_consumed_or_advanced": null,
+      "queue_items_created": ["review-mattpocock-teach-delta-20260706"],
+      "sources_reviewed": [],
+      "candidates_processed": 1,
+      "files_changed": [
+        "operations/source-watchlist.json",
+        "scripts/discover_skill_sources.py",
+        "scripts/review_discovery_candidates.py",
+        ".github/workflows/discover-skill-sources.yml",
+        "sources/candidates/mattpocock-teach.md",
+        "operations/daily/2026-07-06/queues.json",
+        "operations/daily/2026-07-06/status.json",
+        "operations/log.md"
+      ],
+      "commit_shas": {
+        "watchlist": "b82c796e7d748d61322444a0522943d5c8e5e09e",
+        "discover_script": "e24e1e4eb86a585c506df7a9d6427a9d64362248",
+        "review_script": "e48e9dade57839a4cbee2c37ce93cd1527f45078",
+        "workflow": "7b9c6be5dbc6e3c9bd22b9f8ef654c565ab20abe",
+        "candidate": "8b28f3f82bc1e733495d60beae19f73d30f8eb99",
+        "queues": "532592cfede2e123a87d1668dfbc59a7e00991e3",
+        "status_final": "this_commit"
+      },
+      "catalog_package_npm_status": "Package/catalog blocker unchanged: dist/catalog.json still requires build:catalog. Discovery workflow now includes operations/source-watchlist.json and watched-source counts in the handoff.",
+      "value_delta": "Known upstream skill sources are now first-class watchlist inputs, and the mattpocock/skills teach delta is queued for metadata-only Source Reviewer triage instead of relying on broad search to rediscover it."
     }
   ],
   "blockers": [
@@ -82,5 +120,5 @@
     "dist/catalog.json is stale after adding dist/skills/validation-gated-skill-improvement/SKILL.md; run npm run build:catalog in a checkout or CI-capable surface before publication/package endorsement."
   ],
   "last_commit": "this_commit",
-  "next_action": "Cataloger or Packager should run npm run build:catalog and verify dist/catalog.json, dist/catalog.md, and dist/install-manifest.json parity. Then Normalizer can process normalize-shared-skill-library-governance-20260706."
+  "next_action": "Cataloger or Packager should run npm run build:catalog and verify dist/catalog.json, dist/catalog.md, and dist/install-manifest.json parity. Then Source Reviewer should review review-mattpocock-teach-delta-20260706 before any Matt Pocock teach normalization."
 }
