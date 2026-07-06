@@ -71,7 +71,9 @@
       "commit_shas": {
         "catalog_verification_report": "2a41a3e6dac23b804c0221f3a88a69513523334f",
         "queues": "a49d7e583dd9509726253befcada0176216e150b",
-        "status_initial": "this_commit"
+        "status_initial": "4027ba513e62038be3a8f45781ce0a520ef5d03b",
+        "log": "f8945770fb494d0d2c38d7cddbf86b85625e5434",
+        "status_final": "this_commit"
       },
       "catalog_package_npm_status": "dist/catalog.json and dist/catalog.md now both report 1174 skills, 97 agent-operations entries, and 410 medium-risk entries. dist/install-manifest.json still points installers to README.md, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. npm publication was not changed; no publication queue item is open.",
       "value_delta": "Closed the machine-catalog drift blocker by verifying that the Catalog Refresh output reached main and that the new validation-gated skill is now install-facing through rebuilt catalog surfaces."
