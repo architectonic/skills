@@ -16,11 +16,14 @@
       "reason": "Bounded skill optimization is directly relevant to loop-engineered improvement, but claims, license, and execution surfaces need review.",
       "action": "Review license, bounded edit method, held-out validation, rejected-edit buffer, rollback evidence, and whether a safe doctrine summary should be queued.",
       "risk_level": "medium",
-      "status": "open",
+      "status": "done",
       "created_by": "Radar",
       "created_at": "2026-07-05T07:18:00-03:00",
       "carried_forward_by": "Portfolio Supervisor repair",
-      "carried_forward_at": "2026-07-06T10:58:00-03:00"
+      "carried_forward_at": "2026-07-06T10:58:00-03:00",
+      "completed_by": "Source Reviewer",
+      "completed_at": "2026-07-06T11:11:00-03:00",
+      "result": "Reviewed as MIT-licensed reference-only source profile. Created normalizer follow-up for validation-gated skill-improvement doctrine. No upstream content, code, benchmark, transcript, package, or CLI surface ingested."
     },
     {
       "id": "review-magicskills-20260705-0711",
@@ -38,7 +41,21 @@
       "carried_forward_at": "2026-07-06T10:58:00-03:00"
     }
   ],
-  "normalization": [],
+  "normalization": [
+    {
+      "id": "normalize-validation-gated-skill-improvement-20260706",
+      "priority": 2,
+      "role": "Normalizer",
+      "target": "sources/reviewed/skillopt.md",
+      "source_url": "https://github.com/microsoft/SkillOpt",
+      "reason": "SkillOpt review found a reusable original doctrine for safe skill-improvement loops: bounded edits, held-out validation, rejected-edit memory, staged adoption, and no inference-time runtime mutation.",
+      "action": "Create an original Architectonic skill or playbook for validation-gated skill improvement without copying upstream prose, code, examples, benchmark tasks, or result tables.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Source Reviewer",
+      "created_at": "2026-07-06T11:11:00-03:00"
+    }
+  ],
   "catalog": [],
   "risk": [],
   "packaging": [],
