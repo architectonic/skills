@@ -70,6 +70,8 @@
         "dist_skill_metadata": "d42219c10338aa953c8178797db24fb014df7a55",
         "catalog_report": "ca8207788967a4d18688feb64b3906ee9b44414e",
         "queues": "a2bc0e83bb02bbee5dfadc3de9aae2862fb60a52",
+        "status_initial": "e16d0444cbd69db017005ae0e33d4a283f06eb11",
+        "log": "85d84b13dd586e4e34fe04195cf2358c23e0e9d9",
         "status_final": "this_commit"
       },
       "catalog_package_npm_status": "Source and dist copies of validation-gated-skill-improvement now have explicit name, domain, and agent-operations catalog tags. Existing Catalog Refresh workflow is configured to rebuild machine catalog surfaces from dist/skills changes, but dist/catalog.json and dist/install-manifest.json still require verification after workflow or checkout build. npm publication remains blocked.",
