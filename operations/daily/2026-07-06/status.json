@@ -1,9 +1,9 @@
 {
   "date": "2026-07-06",
-  "current_state": "review_queue_clear_two_normalization_items_open",
+  "current_state": "one_normalization_item_closed_one_normalization_item_and_catalog_refresh_open",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_commit_sha": "1da500056c8849e0fa17d5b4d2eef467c79f90c7",
+  "inspected_commit_sha": "885a4a96839048d5849ade0f89ccd6b611ddadef",
   "model_requirement_status": "model_setting_unverified",
   "package": {
     "name": "architectonic-skills",
@@ -17,22 +17,22 @@
     "sources_reviewed": 6,
     "sources_blocked": 1,
     "risk_reviews_completed": 2,
-    "normalized_entries_added": 0,
-    "skills_updated": 0,
+    "normalized_entries_added": 1,
+    "skills_updated": 1,
     "catalog_skill_count": 1173,
     "high_risk_count": 2,
     "medium_risk_count": 409,
     "unspecified_risk_count": 759,
     "requires_review_count": 2,
-    "catalog_build_status": "not_run_no_skills_or_dist_changes",
-    "catalog_parity_status": "carried_forward_clean_no_skills_or_dist_changes",
-    "publication_readiness": "previously_verified_architectonic-skills_0.1.3"
+    "catalog_build_status": "stale_after_new_skill_requires_cataloger",
+    "catalog_parity_status": "catalog_refresh_required_after_skills_change",
+    "publication_readiness": "blocked_until_catalog_refresh_for_new_skill"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
-    "normalization": 2,
-    "catalog": 0,
+    "normalization": 1,
+    "catalog": 1,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -43,25 +43,10 @@
     {
       "started_at": "2026-07-06T11:11:00-03:00",
       "completed_at": "2026-07-06T11:11:00-03:00",
-      "scheduled_role": "Radar",
       "selected_role": "Source Reviewer",
-      "override_reason": "Open review queue item review-skillopt-20260705-0711 outranked broad discovery under the review/safety gate.",
-      "inspected_ref": "main",
-      "inspected_commit_sha": "eda67ae56ee66ab3828d02cd4c01698cb4a625a4",
-      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json absent on default branch; used carried-forward review queue from supervisor-initialized ledger.",
       "queue_item_consumed": "review-skillopt-20260705-0711",
       "queue_items_created": ["normalize-validation-gated-skill-improvement-20260706"],
       "sources_reviewed": ["microsoft/SkillOpt"],
-      "review_candidates_processed": 1,
-      "files_changed": ["sources/reviewed/skillopt.md", "reports/review/2026-07-06-1111-skillopt-source-review.md", "operations/daily/2026-07-06/queues.json", "operations/daily/2026-07-06/status.json", "operations/log.md"],
-      "commit_shas": {
-        "source_profile": "f9c955c113297ee00508034f27fb8b8e0fe6ac4f",
-        "review_report": "ddb9f3d2014d1614f4b05b72e9cdfcb5f54ad46e",
-        "queues": "7bcb2727c0d6a11c224b90550377d17189dd21f4",
-        "status_initial": "73fec30fe78aabb1997b5cb02f482a67eafc6d71",
-        "log": "c7bf2a6f41569108e2132f401fce075c81acf7b1",
-        "status_final": "1da500056c8849e0fa17d5b4d2eef467c79f90c7"
-      },
       "value_delta": "Moved SkillOpt from candidate name to reviewed MIT-licensed reference-only source profile and concrete Normalizer queue."
     },
     {
@@ -69,32 +54,50 @@
       "completed_at": "2026-07-06T12:14:00-03:00",
       "scheduled_role": "Publisher",
       "selected_role": "Source Reviewer",
-      "override_reason": "Open review queue item review-magicskills-20260705-0711 outranked Publisher under the review/safety gate.",
-      "inspected_ref": "main",
-      "inspected_commit_sha": "1da500056c8849e0fa17d5b4d2eef467c79f90c7",
-      "missing_ledger_initialization_performed": false,
-      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json absent on default branch; used carried-forward review queue from supervisor-initialized ledger.",
       "queue_item_consumed": "review-magicskills-20260705-0711",
       "queue_items_created": ["normalize-shared-skill-library-governance-20260706"],
       "sources_reviewed": ["Narwhal-Lab/MagicSkills"],
-      "review_candidates_processed": 1,
-      "online_searches_used": ["web search for Narwhal-Lab MagicSkills GitHub license stars PyPI MagicSkills returned no useful generic search results", "direct GitHub connector reads of Narwhal-Lab/MagicSkills files"],
-      "source_evidence_inspected": ["README.md", "LICENSE", "pyproject.toml", "doc/cli.md", "doc/python-api.md", "src/magicskills/cli.py"],
       "review_decision": "reference-only_with_normalizer_follow_up",
-      "files_changed": ["sources/reviewed/magicskills.md", "reports/review/2026-07-06-1214-magicskills-source-review.md", "operations/daily/2026-07-06/queues.json", "operations/daily/2026-07-06/status.json", "operations/log.md"],
+      "value_delta": "Moved MagicSkills from candidate name to reviewed MIT-licensed reference-only source profile and concrete Normalizer queue."
+    },
+    {
+      "started_at": "2026-07-06T13:13:00-03:00",
+      "completed_at": "2026-07-06T13:13:00-03:00",
+      "scheduled_role": "Source Reviewer",
+      "selected_role": "Normalizer",
+      "override_reason": "Review queue was clear and the highest-priority concrete queue item was normalization item normalize-validation-gated-skill-improvement-20260706.",
+      "inspected_ref": "main",
+      "inspected_commit_sha": "885a4a96839048d5849ade0f89ccd6b611ddadef",
+      "missing_ledger_initialization_performed": false,
+      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json absent on default branch; no Action handoff available.",
+      "online_searches_used": [],
+      "queue_item_consumed": "normalize-validation-gated-skill-improvement-20260706",
+      "queue_items_created": ["catalog-refresh-after-validation-gated-skill-20260706"],
+      "sources_reviewed": [],
+      "candidates_processed": 0,
+      "normalized_entries_added": ["skills/validation-gated-skill-improvement.md"],
+      "normalization_source_profile": "sources/reviewed/skillopt.md",
+      "files_changed": [
+        "skills/validation-gated-skill-improvement.md",
+        "reports/normalization/2026-07-06-1313-validation-gated-skill-improvement.md",
+        "operations/daily/2026-07-06/queues.json",
+        "operations/daily/2026-07-06/status.json",
+        "operations/log.md"
+      ],
       "commit_shas": {
-        "source_profile": "db8bf549a62afb50cb0d5ea6cf7cbc7619d48a51",
-        "review_report": "9d9d0d80855a7dd227e028f2bf806e3e5e8460a7",
-        "queues": "12b3da463c0a5b13f2bc28683cc42b64a210e926",
-        "status_initial": "d96d7189da3ad4bdea947fbad823555bea94435c",
-        "log": "24812c2f75e26d64b6f700bd5c5c98b42d087d4e",
-        "status_final": "this_commit"
+        "skill": "baf1fb2bb1381dd3bfd5edcdf0760eef71f0b4bc",
+        "normalization_report": "944427424b2b50188e94023b02021d12c17f32f2",
+        "queues": "89ae8792f31ab265dd18149552d4bbb9fc41b061",
+        "status_initial": "this_commit"
       },
-      "value_delta": "Moved MagicSkills from candidate name to reviewed MIT-licensed reference-only source profile, recorded execution/install/upload/context-mutation boundaries, and created a concrete Normalizer queue for an original shared skill-library governance playbook. No third-party code, docs, examples, command reference, templates, packages, or skill bodies were ingested or executed.",
-      "blocked_work": ["Do not install or run MagicSkills from scheduler runs.", "Do not execute magicskills CLI, skill-tool, execskill, uploadskill, install, scanskill, or scanskills from this source in scheduler runs.", "Do not copy upstream MagicSkills docs, code, examples, templates, images, package metadata, or command reference into packaged skills."]
+      "catalog_package_npm_status": "catalog and install surfaces stale after new skills/ file; npm/package unchanged; cataloger queue created before publication or package endorsement.",
+      "value_delta": "Converted a reviewed reference-only source profile into an original reusable skill for validation-gated skill improvement, with bounded edit gates, held-out checks, rejected-edit memory, staged adoption, rollback context, and catalog follow-up."
     }
   ],
-  "blockers": ["operations/action-runs/discover-skill-sources/latest.json is absent on the default branch; scheduler fallback artifacts remain necessary until the Action handoff producer is repaired or emits a current handoff."],
+  "blockers": [
+    "operations/action-runs/discover-skill-sources/latest.json is absent on the default branch; scheduler fallback artifacts remain necessary until the Action handoff producer is repaired or emits a current handoff.",
+    "Catalog surfaces are stale after adding skills/validation-gated-skill-improvement.md; Cataloger must rebuild or verify dist/catalog.json, dist/catalog.md, and dist/install-manifest.json."
+  ],
   "last_commit": "this_commit",
-  "next_action": "Normalizer should process normalize-validation-gated-skill-improvement-20260706 before normalize-shared-skill-library-governance-20260706; Radar may resume only after normalization/review pressure is intentionally deferred or cleared."
+  "next_action": "Cataloger should process catalog-refresh-after-validation-gated-skill-20260706 before further normalization or publication/package endorsement. Then Normalizer can process normalize-shared-skill-library-governance-20260706."
 }
