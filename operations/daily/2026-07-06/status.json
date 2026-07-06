@@ -53,13 +53,7 @@
       "queue_items_created": ["normalize-validation-gated-skill-improvement-20260706"],
       "sources_reviewed": ["microsoft/SkillOpt"],
       "review_candidates_processed": 1,
-      "files_changed": [
-        "sources/reviewed/skillopt.md",
-        "reports/review/2026-07-06-1111-skillopt-source-review.md",
-        "operations/daily/2026-07-06/queues.json",
-        "operations/daily/2026-07-06/status.json",
-        "operations/log.md"
-      ],
+      "files_changed": ["sources/reviewed/skillopt.md", "reports/review/2026-07-06-1111-skillopt-source-review.md", "operations/daily/2026-07-06/queues.json", "operations/daily/2026-07-06/status.json", "operations/log.md"],
       "commit_shas": {
         "source_profile": "f9c955c113297ee00508034f27fb8b8e0fe6ac4f",
         "review_report": "ddb9f3d2014d1614f4b05b72e9cdfcb5f54ad46e",
@@ -84,45 +78,23 @@
       "queue_items_created": ["normalize-shared-skill-library-governance-20260706"],
       "sources_reviewed": ["Narwhal-Lab/MagicSkills"],
       "review_candidates_processed": 1,
-      "online_searches_used": [
-        "web search for Narwhal-Lab MagicSkills GitHub license stars PyPI MagicSkills returned no useful generic search results",
-        "direct GitHub connector reads of Narwhal-Lab/MagicSkills files"
-      ],
-      "source_evidence_inspected": [
-        "README.md",
-        "LICENSE",
-        "pyproject.toml",
-        "doc/cli.md",
-        "doc/python-api.md",
-        "src/magicskills/cli.py"
-      ],
+      "online_searches_used": ["web search for Narwhal-Lab MagicSkills GitHub license stars PyPI MagicSkills returned no useful generic search results", "direct GitHub connector reads of Narwhal-Lab/MagicSkills files"],
+      "source_evidence_inspected": ["README.md", "LICENSE", "pyproject.toml", "doc/cli.md", "doc/python-api.md", "src/magicskills/cli.py"],
       "review_decision": "reference-only_with_normalizer_follow_up",
-      "files_changed": [
-        "sources/reviewed/magicskills.md",
-        "reports/review/2026-07-06-1214-magicskills-source-review.md",
-        "operations/daily/2026-07-06/queues.json",
-        "operations/daily/2026-07-06/status.json",
-        "operations/log.md"
-      ],
+      "files_changed": ["sources/reviewed/magicskills.md", "reports/review/2026-07-06-1214-magicskills-source-review.md", "operations/daily/2026-07-06/queues.json", "operations/daily/2026-07-06/status.json", "operations/log.md"],
       "commit_shas": {
         "source_profile": "db8bf549a62afb50cb0d5ea6cf7cbc7619d48a51",
         "review_report": "9d9d0d80855a7dd227e028f2bf806e3e5e8460a7",
         "queues": "12b3da463c0a5b13f2bc28683cc42b64a210e926",
-        "status_initial": "this_commit",
-        "log": "pending",
-        "status_final": "pending"
+        "status_initial": "d96d7189da3ad4bdea947fbad823555bea94435c",
+        "log": "24812c2f75e26d64b6f700bd5c5c98b42d087d4e",
+        "status_final": "this_commit"
       },
       "value_delta": "Moved MagicSkills from candidate name to reviewed MIT-licensed reference-only source profile, recorded execution/install/upload/context-mutation boundaries, and created a concrete Normalizer queue for an original shared skill-library governance playbook. No third-party code, docs, examples, command reference, templates, packages, or skill bodies were ingested or executed.",
-      "blocked_work": [
-        "Do not install or run MagicSkills from scheduler runs.",
-        "Do not execute magicskills CLI, skill-tool, execskill, uploadskill, install, scanskill, or scanskills from this source in scheduler runs.",
-        "Do not copy upstream MagicSkills docs, code, examples, templates, images, package metadata, or command reference into packaged skills."
-      ]
+      "blocked_work": ["Do not install or run MagicSkills from scheduler runs.", "Do not execute magicskills CLI, skill-tool, execskill, uploadskill, install, scanskill, or scanskills from this source in scheduler runs.", "Do not copy upstream MagicSkills docs, code, examples, templates, images, package metadata, or command reference into packaged skills."]
     }
   ],
-  "blockers": [
-    "operations/action-runs/discover-skill-sources/latest.json is absent on the default branch; scheduler fallback artifacts remain necessary until the Action handoff producer is repaired or emits a current handoff."
-  ],
+  "blockers": ["operations/action-runs/discover-skill-sources/latest.json is absent on the default branch; scheduler fallback artifacts remain necessary until the Action handoff producer is repaired or emits a current handoff."],
   "last_commit": "this_commit",
   "next_action": "Normalizer should process normalize-validation-gated-skill-improvement-20260706 before normalize-shared-skill-library-governance-20260706; Radar may resume only after normalization/review pressure is intentionally deferred or cleared."
 }
