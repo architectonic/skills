@@ -1,6 +1,6 @@
 {
   "date": "2026-07-06",
-  "current_state": "catalog_refresh_verified_review_and_normalization_open",
+  "current_state": "review_queue_clear_normalization_open",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
   "model_requirement_status": "model_setting_unverified",
@@ -13,7 +13,7 @@
   },
   "metrics": {
     "candidate_sources_discovered": 8,
-    "sources_reviewed": 6,
+    "sources_reviewed": 7,
     "sources_blocked": 1,
     "risk_reviews_completed": 2,
     "normalized_entries_added": 1,
@@ -27,14 +27,14 @@
     "requires_review_count_catalog_json": 3,
     "catalog_build_status": "verified_current_after_catalog_refresh",
     "catalog_parity_status": "verified_dist_catalog_json_and_catalog_md_counts_match",
-    "publication_readiness": "catalog_drift_resolved_but_publication_queue_empty_and_source_review_still_open",
+    "publication_readiness": "catalog_current_but_normalization_queue_open_and_publication_queue_empty",
     "watched_sources_configured": 2,
-    "watched_repository_review_items_open": 1
+    "watched_repository_review_items_open": 0
   },
   "queues": {
     "discovery": 0,
-    "review": 1,
-    "normalization": 1,
+    "review": 0,
+    "normalization": 2,
     "catalog": 0,
     "risk": 0,
     "packaging": 0,
@@ -44,44 +44,46 @@
   },
   "runs": [
     {
-      "started_at": "2026-07-06T16:11:00-03:00",
-      "completed_at": "2026-07-06T16:11:00-03:00",
-      "scheduled_role": "Risk Auditor",
-      "selected_role": "Cataloger",
-      "override_reason": "Catalog/package health gate overrode the cadence role because a verification queue item remained open for dist/catalog.json, dist/catalog.md, and dist/install-manifest.json after the validation-gated skill metadata repair.",
+      "started_at": "2026-07-06T17:11:00-03:00",
+      "completed_at": "2026-07-06T17:11:00-03:00",
+      "scheduled_role": "Radar",
+      "selected_role": "Source Reviewer",
+      "override_reason": "Open watched-source review queue item review-mattpocock-teach-delta-20260706 outranked broad discovery under the review gate.",
       "inspected_ref": "main",
       "missing_ledger_initialization_performed": false,
       "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json absent on default branch; no discovery Action handoff available.",
       "online_searches_used": [],
-      "queue_item_consumed_or_advanced": "verify-catalog-refresh-after-validation-gated-metadata-20260706",
+      "queue_item_consumed_or_advanced": "review-mattpocock-teach-delta-20260706",
       "queue_items_closed": [
-        "catalog-refresh-after-validation-gated-skill-20260706",
-        "catalog-json-rebuild-after-validation-gated-dist-copy-20260706",
-        "verify-catalog-refresh-after-validation-gated-metadata-20260706"
+        "review-mattpocock-teach-delta-20260706"
       ],
-      "queue_items_created": [],
-      "sources_reviewed": [],
-      "candidates_processed": 0,
+      "queue_items_created": [
+        "normalize-mission-grounded-learning-workspace-20260706"
+      ],
+      "sources_reviewed": [
+        "mattpocock/skills teach"
+      ],
+      "candidates_processed": 1,
       "files_changed": [
-        "reports/catalog/2026-07-06-1611-validation-gated-catalog-verification.md",
+        "sources/reviewed/mattpocock-teach.md",
+        "reports/review/2026-07-06-1711-mattpocock-teach-source-review.md",
         "operations/daily/2026-07-06/queues.json",
         "operations/daily/2026-07-06/status.json",
         "operations/log.md"
       ],
       "commit_shas": {
-        "catalog_verification_report": "2a41a3e6dac23b804c0221f3a88a69513523334f",
-        "queues": "a49d7e583dd9509726253befcada0176216e150b",
-        "status_initial": "4027ba513e62038be3a8f45781ce0a520ef5d03b",
-        "log": "f8945770fb494d0d2c38d7cddbf86b85625e5434",
+        "source_profile": "66b3103d7a9ac1103ad5664414a11628b96cb6a0",
+        "review_report": "31a483c159ed02b4d3ee04bc18cf9198e3303d99",
+        "queues": "ddabec71d882d3f07bce340b398d3d3a9f6d4c0e",
         "status_final": "this_commit"
       },
-      "catalog_package_npm_status": "dist/catalog.json and dist/catalog.md now both report 1174 skills, 97 agent-operations entries, and 410 medium-risk entries. dist/install-manifest.json still points installers to README.md, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. npm publication was not changed; no publication queue item is open.",
-      "value_delta": "Closed the machine-catalog drift blocker by verifying that the Catalog Refresh output reached main and that the new validation-gated skill is now install-facing through rebuilt catalog surfaces."
+      "catalog_package_npm_status": "dist/catalog.json and dist/catalog.md remain verified at 1174 skills from the prior Cataloger pass. No skills or dist files changed in this Source Reviewer pass, so catalog/package/npm surfaces were not changed.",
+      "value_delta": "Converted the watched Matt Pocock teach delta into a reviewed reference-only source profile with MIT provenance, explicit filesystem/asset/citation risk boundaries, and a bounded Normalizer queue item for an original mission-grounded learning workspace playbook."
     }
   ],
   "blockers": [
     "operations/action-runs/discover-skill-sources/latest.json is absent on the default branch; scheduler fallback artifacts remain necessary until the Action handoff producer is repaired or emits a current handoff."
   ],
   "last_commit": "this_commit",
-  "next_action": "Source Reviewer should review review-mattpocock-teach-delta-20260706 before any Matt Pocock teach normalization. After that, Normalizer can process normalize-shared-skill-library-governance-20260706."
+  "next_action": "Normalizer should process normalize-mission-grounded-learning-workspace-20260706, then normalize-shared-skill-library-governance-20260706."
 }
