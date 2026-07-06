@@ -8,7 +8,7 @@
   "summary": {
     "skill_count": 1174,
     "domain_counts": {
-      "agent-operations": 96,
+      "agent-operations": 97,
       "business": 45,
       "cloud-security": 41,
       "design": 40,
@@ -19,7 +19,7 @@
       "security-defensive": 51,
       "security-offensive": 5,
       "software-engineering": 146,
-      "uncategorized": 588,
+      "uncategorized": 587,
       "writing": 16
     },
     "risk_counts": {
@@ -125,6 +125,7 @@
       "skills-upkeep",
       "teleagent-system-upkeep",
       "trace2skill",
+      "validation-gated-skill-improvement",
       "vertical-slice-issues",
       "writing-great-skills"
     ],
@@ -1204,7 +1205,6 @@
       "tdd",
       "terraform-patterns",
       "theme-factory",
-      "validation-gated-skill-improvement",
       "vendor-skill-packaging",
       "video-generation",
       "web-artifacts-builder",
@@ -29070,7 +29070,7 @@
       "description": "Use when improving an existing skill, playbook, runbook, or workflow entry so edits are bounded, tested against held-out tasks, and adopted only after evidence improves.",
       "path": "dist/skills/validation-gated-skill-improvement/SKILL.md",
       "directory": "dist/skills/validation-gated-skill-improvement",
-      "domain": "",
+      "domain": "agent-operations",
       "risk_level": "medium",
       "requires_review": true,
       "tags": [
@@ -29079,7 +29079,8 @@
         "validation",
         "self-improvement",
         "review-gates",
-        "okf"
+        "okf",
+        "agent-operations"
       ],
       "source_family": "",
       "source_status": "normalized",
