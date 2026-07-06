@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1",
+  "purpose": "High-signal upstream skill sources that should be checked for additions, removals, renamed skills, and material behavioral changes before broad discovery churn.",
+  "review_boundary": "metadata_only_no_content_copy_no_code_execution",
+  "repositories": [
+    {
+      "full_name": "mattpocock/skills",
+      "priority": "high",
+      "source_family": "personal_skill_repository",
+      "url": "https://github.com/mattpocock/skills",
+      "reason": "Known high-signal personal skill repository already distilled in part; new or renamed skills should become explicit review candidates instead of being missed by broad keyword search.",
+      "watch_paths": [
+        {
+          "path": "skills",
+          "max_depth": 4,
+          "include_extensions": [".md"],
+          "include_path_regex": "/SKILL\\.md$"
+        },
+        {
+          "path": "docs",
+          "max_depth": 3,
+          "include_extensions": [".md"]
+        },
+        {
+          "path": "CHANGELOG.md",
+          "max_depth": 0,
+          "include_extensions": [".md"]
+        }
+      ],
+      "known_reviewed_or_distilled_slugs": [
+        "ask-matt",
+        "codebase-design",
+        "domain-modeling",
+        "diagnosing-bugs",
+        "grilling",
+        "resolving-merge-conflicts",
+        "review",
+        "tdd",
+        "writing-great-skills"
+      ],
+      "watch_for": [
+        "new skill directory under skills/",
+        "new SKILL.md path",
+        "skill rename/removal in CHANGELOG.md",
+        "material behavior change that changes dependency, invocation, reusable asset, or safety boundary"
+      ]
+    }
+  ],
+  "registries": [
+    {
+      "name": "skills.sh",
+      "url": "https://skills.sh",
+      "priority": "high",
+      "source_family": "public_skill_registry",
+      "reason": "Large public registry of AI agent skills; should be sampled for new high-signal entries and registry/category changes, but not mirrored or copied.",
+      "watch_for": [
+        "new registry categories",
+        "new high-adoption or high-relevance skill entries",
+        "links to upstream source repositories",
+        "license/provenance signals"
+      ],
+      "review_boundary": "metadata_only_no_content_copy_no_bulk_registry_scrape"
+    }
+  ]
+}
