@@ -99,12 +99,14 @@
       "reason": "A new skill file was added; catalog and install manifest surfaces must be rebuilt or verified before publication/package endorsement.",
       "action": "Run or request catalog refresh for dist/catalog.json, dist/catalog.md, and dist/install-manifest.json; verify skill count and review/risk metadata after rebuild.",
       "risk_level": "medium",
-      "status": "partial_blocked",
+      "status": "done",
       "created_by": "Normalizer",
       "created_at": "2026-07-06T13:13:00-03:00",
       "advanced_by": "Cataloger",
       "advanced_at": "2026-07-06T14:13:00-03:00",
-      "result": "Created dist/skills/validation-gated-skill-improvement/SKILL.md and updated dist/catalog.md summary to 1174 skills, 97 agent-operations, and 410 medium-risk entries. dist/catalog.json remains stale until npm run build:catalog is executed in a checkout or CI-capable surface."
+      "completed_by": "Cataloger",
+      "completed_at": "2026-07-06T16:11:00-03:00",
+      "result": "Created dist/skills/validation-gated-skill-improvement/SKILL.md, verified dist/catalog.json and dist/catalog.md at 1174 skills, 97 agent-operations entries, and 410 medium-risk entries, and verified dist/install-manifest.json still points installers to the rebuilt catalog surfaces."
     },
     {
       "id": "catalog-json-rebuild-after-validation-gated-dist-copy-20260706",
@@ -114,12 +116,14 @@
       "reason": "The connector pass safely repaired package visibility and human catalog counts, but the machine-readable catalog is too large for safe manual replacement without running the catalog builder.",
       "action": "Run npm run build:catalog in a local checkout or CI-capable surface, then verify dist/catalog.json, dist/catalog.md, and dist/install-manifest.json agree on the validation-gated skill entry and counts.",
       "risk_level": "medium",
-      "status": "advanced_pending_workflow_or_ci_rebuild",
+      "status": "done",
       "created_by": "Cataloger",
       "created_at": "2026-07-06T14:13:00-03:00",
       "advanced_by": "Cataloger",
       "advanced_at": "2026-07-06T15:12:00-03:00",
-      "result": "Added explicit name/domain/catalog tags to skills/validation-gated-skill-improvement.md and dist/skills/validation-gated-skill-improvement/SKILL.md. This removes catalog-builder ambiguity and changes a workflow-watched path so the existing Catalog Refresh Action can rebuild machine surfaces. Verification is still required."
+      "completed_by": "Cataloger",
+      "completed_at": "2026-07-06T16:11:00-03:00",
+      "result": "Catalog Refresh rebuilt dist/catalog.json to 1174 entries. The machine catalog now matches dist/catalog.md summary counts and preserves install-manifest discovery pointers."
     },
     {
       "id": "verify-catalog-refresh-after-validation-gated-metadata-20260706",
@@ -129,9 +133,12 @@
       "reason": "A workflow-watched dist skill path changed to trigger catalog rebuild, but the scheduler cannot observe or wait for the resulting workflow commit in the same connector pass.",
       "action": "Verify whether the Catalog Refresh workflow regenerated dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. If not, run npm run build:catalog in a checkout or CI-capable surface and commit the generated surfaces.",
       "risk_level": "medium",
-      "status": "open",
+      "status": "done",
       "created_by": "Cataloger",
-      "created_at": "2026-07-06T15:12:00-03:00"
+      "created_at": "2026-07-06T15:12:00-03:00",
+      "completed_by": "Cataloger",
+      "completed_at": "2026-07-06T16:11:00-03:00",
+      "result": "Verified rebuilt distribution catalog surfaces directly on main. No manual catalog JSON replacement was required."
     }
   ],
   "risk": [],
