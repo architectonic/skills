@@ -1,6 +1,6 @@
 {
   "date": "2026-07-06",
-  "current_state": "normalization_open_catalog_refresh_required",
+  "current_state": "normalization_open_catalog_current",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
   "model_requirement_status": "model_setting_unverified",
@@ -18,16 +18,16 @@
     "risk_reviews_completed": 2,
     "normalized_entries_added": 2,
     "skills_updated": 2,
-    "dist_skills_added": 1,
-    "catalog_md_skill_count": 1174,
-    "catalog_json_skill_count": 1174,
+    "dist_skills_added": 2,
+    "catalog_md_skill_count": 1175,
+    "catalog_json_skill_count": 1175,
     "high_risk_count": 2,
-    "medium_risk_count_catalog_md": 410,
-    "medium_risk_count_catalog_json": 410,
-    "requires_review_count_catalog_json": 3,
-    "catalog_build_status": "stale_after_new_skill_added",
-    "catalog_parity_status": "prior_catalog_surfaces_still_match_each_other_but_do_not_include_new_skill",
-    "publication_readiness": "blocked_catalog_refresh_required_after_new_skill",
+    "medium_risk_count_catalog_md": 411,
+    "medium_risk_count_catalog_json": 411,
+    "requires_review_count_catalog_json": 4,
+    "catalog_build_status": "current_after_mission_grounded_skill_refresh",
+    "catalog_parity_status": "dist_catalog_json_and_md_summary_counts_match_after_mission_grounded_skill_refresh",
+    "publication_readiness": "not_requested_and_not_endorsed; package catalog surfaces current for reviewed normalized skills",
     "watched_sources_configured": 2,
     "watched_repository_review_items_open": 0
   },
@@ -35,7 +35,7 @@
     "discovery": 0,
     "review": 0,
     "normalization": 1,
-    "catalog": 1,
+    "catalog": 0,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -43,6 +43,42 @@
     "critic": 0
   },
   "runs": [
+    {
+      "started_at": "2026-07-06T19:11:00-03:00",
+      "completed_at": "2026-07-06T19:11:00-03:00",
+      "scheduled_role": "Packager",
+      "selected_role": "Cataloger",
+      "override_reason": "The catalog/package health gate was active because skills/mission-grounded-learning-workspace.md had been added under skills/ while dist/skills, dist/catalog.json, and dist/catalog.md did not yet expose it. Cataloger overrides Packager until install-facing surfaces agree.",
+      "inspected_ref": "main",
+      "missing_ledger_initialization_performed": false,
+      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json absent on default branch; no discovery Action handoff available.",
+      "online_searches_used": [],
+      "queue_item_consumed_or_advanced": "catalog-refresh-after-mission-grounded-learning-workspace-20260706",
+      "queue_items_closed": [
+        "catalog-refresh-after-mission-grounded-learning-workspace-20260706"
+      ],
+      "queue_items_created": [],
+      "sources_reviewed": [],
+      "candidates_processed": 0,
+      "files_changed": [
+        "dist/skills/mission-grounded-learning-workspace/SKILL.md",
+        "dist/catalog.json",
+        "dist/catalog.md",
+        "reports/catalog/2026-07-06-1911-mission-grounded-learning-catalog.md",
+        "operations/daily/2026-07-06/queues.json",
+        "operations/daily/2026-07-06/status.json",
+        "operations/log.md"
+      ],
+      "commit_shas": {
+        "dist_skill": "ca4ff002a39c5207cbb52839c421549c7734b5c2",
+        "catalog_report_initial": "87e1e1be96f20e02c432e5b487942a105b6a7c8d",
+        "catalog_report_verified": "1682ebef908e626b38608a29d7c607dc062dc268",
+        "queues": "9c7e3402eded68f2898e9ae280b83a34d1e596e0",
+        "status_final": "this_commit"
+      },
+      "catalog_package_npm_status": "dist/skills now includes mission-grounded-learning-workspace. dist/catalog.json and dist/catalog.md report 1175 skills, 98 agent-operations entries, and 411 medium-risk entries. dist/install-manifest.json still points to canonical discovery files. No npm publish was requested or performed.",
+      "value_delta": "Removed the catalog/package drift introduced by the new mission-grounded learning workspace skill. Runtime installers can now discover the skill from dist/skills and generated catalog summaries agree on updated counts."
+    },
     {
       "started_at": "2026-07-06T18:11:00-03:00",
       "completed_at": "2026-07-06T18:11:00-03:00",
@@ -75,7 +111,7 @@
         "skill": "908acef5d83d239471fe9b1ac6c28e59796909ae",
         "normalization_report": "217cd714b4edba377e67cbe8eb5770ba5926984b",
         "queues": "09eafe081ff838d30c5fbb127a57f1eac773249c",
-        "status_final": "this_commit"
+        "status_final": "13b5b644f274ad93a1e312cdf3a3fed8762d20c1"
       },
       "catalog_package_npm_status": "A new skill was added under skills/, so dist/skills, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json are stale until Cataloger refreshes or verifies them. Package publication is not endorsed.",
       "value_delta": "Converted the reviewed Matt Pocock teach source profile into an original Architectonic skill for mission-grounded learning workspaces, with explicit learner mission, workspace write boundary, learning ledger, source-aware factual teaching, practice-backed lesson verification, reusable artifact boundaries, and failure modes."
@@ -121,9 +157,8 @@
     }
   ],
   "blockers": [
-    "operations/action-runs/discover-skill-sources/latest.json is absent on the default branch; scheduler fallback artifacts remain necessary until the Action handoff producer is repaired or emits a current handoff.",
-    "Catalog refresh is required after adding skills/mission-grounded-learning-workspace.md."
+    "operations/action-runs/discover-skill-sources/latest.json is absent on the default branch; scheduler fallback artifacts remain necessary until the Action handoff producer is repaired or emits a current handoff."
   ],
   "last_commit": "this_commit",
-  "next_action": "Cataloger should process catalog-refresh-after-mission-grounded-learning-workspace-20260706 before additional normalization or publication. Then Normalizer can process normalize-shared-skill-library-governance-20260706."
+  "next_action": "Normalizer can process normalize-shared-skill-library-governance-20260706."
 }
