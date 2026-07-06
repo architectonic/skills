@@ -100,7 +100,7 @@
         "sources/candidates/mattpocock-teach.md",
         "operations/daily/2026-07-06/queues.json",
         "operations/daily/2026-07-06/status.json",
-        "operations/log.md"
+        "operations/daily/2026-07-06/watchlist-scanning-repair.md"
       ],
       "commit_shas": {
         "watchlist": "b82c796e7d748d61322444a0522943d5c8e5e09e",
@@ -109,6 +109,8 @@
         "workflow": "7b9c6be5dbc6e3c9bd22b9f8ef654c565ab20abe",
         "candidate": "8b28f3f82bc1e733495d60beae19f73d30f8eb99",
         "queues": "532592cfede2e123a87d1668dfbc59a7e00991e3",
+        "status_initial": "0048e6dc9c352ed2b19fc30627ac62f4cd2fc5a3",
+        "repair_report": "240dd38341fa54f1f033d3001377067f6f16d012",
         "status_final": "this_commit"
       },
       "catalog_package_npm_status": "Package/catalog blocker unchanged: dist/catalog.json still requires build:catalog. Discovery workflow now includes operations/source-watchlist.json and watched-source counts in the handoff.",
