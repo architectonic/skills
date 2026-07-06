@@ -75,8 +75,11 @@ def text_blob(item: dict[str, Any]) -> str:
         str(item.get("name") or ""),
         str(item.get("title") or ""),
         str(item.get("description") or ""),
+        str(item.get("path") or ""),
+        str(item.get("skill_slug") or ""),
         " ".join(str(topic) for topic in item.get("topics", []) if isinstance(topic, str)),
         str(item.get("query") or ""),
+        str(item.get("watch_status") or ""),
     ]
     return " ".join(parts).lower()
 
@@ -105,6 +108,19 @@ def score_item(item: dict[str, Any]) -> tuple[int, list[str], str]:
     elif source == "hacker_news_algolia":
         score += 1
         reasons.append("discussion_source")
+    elif source == "github_watchlist":
+        score += 5
+        reasons.append("watched_upstream_source")
+    elif source == "registry_watchlist":
+        score += 3
+        reasons.append("watched_registry_source")
+
+    if item.get("watch_status") == "needs_delta_review":
+        score += 3
+        reasons.append("watchlist_delta_needs_review")
+    elif item.get("watch_status") == "known_reviewed_or_distilled":
+        score -= 1
+        reasons.append("known_source_watch_only")
 
     if topics & ALLOW_TOPICS:
         score += 3
@@ -171,8 +187,13 @@ def review_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "name": item.get("name") or item.get("title"),
                 "url": item.get("url"),
                 "source": item.get("source"),
+                "source_family": item.get("source_family"),
                 "query": item.get("query"),
                 "description": item.get("description"),
+                "repo": item.get("repo"),
+                "path": item.get("path"),
+                "skill_slug": item.get("skill_slug"),
+                "watch_status": item.get("watch_status"),
                 "stars": item.get("stars"),
                 "license": item.get("license"),
                 "pushed_at": item.get("pushed_at"),
@@ -180,7 +201,7 @@ def review_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "reasons": reasons,
                 "decision": decision,
                 "risk_level": risk_level(item),
-                "review_boundary": "metadata_triage_only_no_content_copy_no_code_execution",
+                "review_boundary": item.get("review_boundary") or "metadata_triage_only_no_content_copy_no_code_execution",
             }
         )
     return sorted(reviewed, key=lambda row: (-int(row["score"]), str(row.get("name") or "")))
@@ -239,10 +260,12 @@ def write_outputs(source_path: Path, reviewed: list[dict[str, Any]]) -> None:
         "",
     ]
     for item in [row for row in reviewed if row["decision"] == "review_next"][:25]:
-        lines.append(f"- [{item.get('name')}]({item.get('url')}) — score={item['score']}; risk={item['risk_level']}; license={item.get('license')}; reasons={', '.join(item['reasons'])}")
+        path_note = f"; path={item.get('path')}" if item.get("path") else ""
+        lines.append(f"- [{item.get('name')}]({item.get('url')}) — score={item['score']}; risk={item['risk_level']}; license={item.get('license')}; reasons={', '.join(item['reasons'])}{path_note}")
     lines += ["", "## Watch candidates", ""]
     for item in [row for row in reviewed if row["decision"] == "watch"][:25]:
-        lines.append(f"- [{item.get('name')}]({item.get('url')}) — score={item['score']}; risk={item['risk_level']}; license={item.get('license')}; reasons={', '.join(item['reasons'])}")
+        path_note = f"; path={item.get('path')}" if item.get("path") else ""
+        lines.append(f"- [{item.get('name')}]({item.get('url')}) — score={item['score']}; risk={item['risk_level']}; license={item.get('license')}; reasons={', '.join(item['reasons'])}{path_note}")
     lines += ["", "## Next action", "", "Source Reviewer should inspect only `review_next` candidates first, verify license and security/runtime surfaces, then create either source profiles, skip notes, or normalization queue items. Do not copy third-party content directly into skills.", ""]
     md_path.write_text("\n".join(lines), encoding="utf-8")
 
@@ -254,6 +277,10 @@ def main() -> int:
         return 0
     payload = json.loads(source_path.read_text(encoding="utf-8"))
     items: list[dict[str, Any]] = []
+    if isinstance(payload.get("watched_repositories"), list):
+        items.extend(payload["watched_repositories"])
+    if isinstance(payload.get("registries"), list):
+        items.extend(payload["registries"])
     if isinstance(payload.get("github"), list):
         items.extend(payload["github"])
     if isinstance(payload.get("hacker_news"), list):
