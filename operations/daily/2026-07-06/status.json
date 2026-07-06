@@ -75,6 +75,8 @@
         "source_profile": "66b3103d7a9ac1103ad5664414a11628b96cb6a0",
         "review_report": "31a483c159ed02b4d3ee04bc18cf9198e3303d99",
         "queues": "ddabec71d882d3f07bce340b398d3d3a9f6d4c0e",
+        "status_initial": "0ec9c37bda17c6ce318f6e0bdf7f149a3acb6f11",
+        "log": "ca6b8782f7a8753c911646b2609cbb066a503597",
         "status_final": "this_commit"
       },
       "catalog_package_npm_status": "dist/catalog.json and dist/catalog.md remain verified at 1174 skills from the prior Cataloger pass. No skills or dist files changed in this Source Reviewer pass, so catalog/package/npm surfaces were not changed.",
