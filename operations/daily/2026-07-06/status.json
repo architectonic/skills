@@ -41,26 +41,6 @@
   },
   "runs": [
     {
-      "started_at": "2026-07-06T11:11:00-03:00",
-      "completed_at": "2026-07-06T11:11:00-03:00",
-      "selected_role": "Source Reviewer",
-      "queue_item_consumed": "review-skillopt-20260705-0711",
-      "queue_items_created": ["normalize-validation-gated-skill-improvement-20260706"],
-      "sources_reviewed": ["microsoft/SkillOpt"],
-      "value_delta": "Moved SkillOpt from candidate name to reviewed MIT-licensed reference-only source profile and concrete Normalizer queue."
-    },
-    {
-      "started_at": "2026-07-06T12:14:00-03:00",
-      "completed_at": "2026-07-06T12:14:00-03:00",
-      "scheduled_role": "Publisher",
-      "selected_role": "Source Reviewer",
-      "queue_item_consumed": "review-magicskills-20260705-0711",
-      "queue_items_created": ["normalize-shared-skill-library-governance-20260706"],
-      "sources_reviewed": ["Narwhal-Lab/MagicSkills"],
-      "review_decision": "reference-only_with_normalizer_follow_up",
-      "value_delta": "Moved MagicSkills from candidate name to reviewed MIT-licensed reference-only source profile and concrete Normalizer queue."
-    },
-    {
       "started_at": "2026-07-06T13:13:00-03:00",
       "completed_at": "2026-07-06T13:13:00-03:00",
       "scheduled_role": "Source Reviewer",
@@ -88,7 +68,9 @@
         "skill": "baf1fb2bb1381dd3bfd5edcdf0760eef71f0b4bc",
         "normalization_report": "944427424b2b50188e94023b02021d12c17f32f2",
         "queues": "89ae8792f31ab265dd18149552d4bbb9fc41b061",
-        "status_initial": "this_commit"
+        "status_initial": "a0826327c2e8db6580cc8b2352f6ac5df3628c40",
+        "log": "32b963e53ca6e4b9b7785c5c87e4325290212ec3",
+        "status_final": "this_commit"
       },
       "catalog_package_npm_status": "catalog and install surfaces stale after new skills/ file; npm/package unchanged; cataloger queue created before publication or package endorsement.",
       "value_delta": "Converted a reviewed reference-only source profile into an original reusable skill for validation-gated skill improvement, with bounded edit gates, held-out checks, rejected-edit memory, staged adoption, rollback context, and catalog follow-up."
