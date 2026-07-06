@@ -11,6 +11,7 @@ on:
       - '.github/workflows/discover-skill-sources.yml'
       - 'scripts/discover_skill_sources.py'
       - 'scripts/review_discovery_candidates.py'
+      - 'operations/source-watchlist.json'
       - 'operations/action-runs/discover-skill-sources/README.md'
 
 permissions:
@@ -62,12 +63,23 @@ jobs:
           discovery_count = None
           review_count = None
           review_next_count = None
+          watched_repository_count = None
+          registry_watch_count = None
           if discovery_json.exists():
               try:
                   payload = json.loads(discovery_json.read_text(encoding='utf-8'))
-                  discovery_count = len(payload.get('github', [])) + len(payload.get('hacker_news', []))
+                  discovery_count = (
+                      len(payload.get('github', []))
+                      + len(payload.get('hacker_news', []))
+                      + len(payload.get('watched_repositories', []))
+                      + len(payload.get('registries', []))
+                  )
+                  watched_repository_count = len(payload.get('watched_repositories', []))
+                  registry_watch_count = len(payload.get('registries', []))
               except Exception:
                   discovery_count = None
+                  watched_repository_count = None
+                  registry_watch_count = None
           if review_json.exists():
               try:
                   payload = json.loads(review_json.read_text(encoding='utf-8'))
@@ -88,6 +100,8 @@ jobs:
               'review_json_exists': review_json.exists(),
               'candidates_json_exists': candidates_json.exists(),
               'discovery_candidate_count': discovery_count,
+              'watched_repository_candidate_count': watched_repository_count,
+              'registry_watch_candidate_count': registry_watch_count,
               'review_candidate_count': review_count,
               'review_next_count': review_next_count,
               'next_chatgpt_action': 'Source Reviewer if review_next candidates exist; Radar/scout fallback if artifacts are missing; Risk Auditor if candidates expose high-risk runtime/account surfaces.'
