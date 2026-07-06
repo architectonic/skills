@@ -1,9 +1,8 @@
 {
   "date": "2026-07-06",
-  "current_state": "watchlist_scanning_added_catalog_json_rebuild_open_teach_delta_review_queued",
+  "current_state": "catalog_metadata_repaired_catalog_refresh_verification_open",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_commit_sha": "aa97ed5eb6ffc1d4c0d13f0e1345df2b7c1744bb",
   "model_requirement_status": "model_setting_unverified",
   "package": {
     "name": "architectonic-skills",
@@ -26,9 +25,9 @@
     "medium_risk_count_catalog_md": 410,
     "medium_risk_count_catalog_json": 409,
     "requires_review_count_catalog_json": 2,
-    "catalog_build_status": "partial_repair_catalog_json_rebuild_required",
-    "catalog_parity_status": "blocked_until_build_catalog_runs",
-    "publication_readiness": "blocked_until_machine_catalog_rebuild",
+    "catalog_build_status": "catalog_metadata_repaired_rebuild_verification_required",
+    "catalog_parity_status": "blocked_until_catalog_refresh_workflow_or_build_catalog_runs",
+    "publication_readiness": "blocked_until_machine_catalog_rebuild_verified",
     "watched_sources_configured": 2,
     "watched_repository_review_items_open": 1
   },
@@ -36,7 +35,7 @@
     "discovery": 0,
     "review": 1,
     "normalization": 1,
-    "catalog": 1,
+    "catalog": 2,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -45,82 +44,42 @@
   },
   "runs": [
     {
-      "started_at": "2026-07-06T14:13:00-03:00",
-      "completed_at": "2026-07-06T14:13:00-03:00",
-      "scheduled_role": "Cataloger",
+      "started_at": "2026-07-06T15:12:00-03:00",
+      "completed_at": "2026-07-06T15:12:00-03:00",
+      "scheduled_role": "Normalizer",
       "selected_role": "Cataloger",
-      "override_reason": null,
+      "override_reason": "Catalog/package health gate overrode normalization because dist/catalog.json remained stale after the validation-gated skill was copied into dist/skills.",
       "inspected_ref": "main",
-      "inspected_commit_sha": "aa97ed5eb6ffc1d4c0d13f0e1345df2b7c1744bb",
       "missing_ledger_initialization_performed": false,
-      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json absent on default branch; no Action handoff available.",
+      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json absent on default branch; no discovery Action handoff available.",
       "online_searches_used": [],
-      "queue_item_consumed_or_advanced": "catalog-refresh-after-validation-gated-skill-20260706",
-      "queue_items_created": ["catalog-json-rebuild-after-validation-gated-dist-copy-20260706"],
+      "queue_item_consumed_or_advanced": "catalog-json-rebuild-after-validation-gated-dist-copy-20260706",
+      "queue_items_created": ["verify-catalog-refresh-after-validation-gated-metadata-20260706"],
       "sources_reviewed": [],
       "candidates_processed": 0,
-      "dist_entries_added": ["dist/skills/validation-gated-skill-improvement/SKILL.md"],
       "files_changed": [
+        "skills/validation-gated-skill-improvement.md",
         "dist/skills/validation-gated-skill-improvement/SKILL.md",
-        "dist/catalog.md",
-        "reports/catalog/2026-07-06-1413-validation-gated-skill-catalog.md",
+        "reports/catalog/2026-07-06-1512-validation-gated-catalog-producer-repair.md",
         "operations/daily/2026-07-06/queues.json",
         "operations/daily/2026-07-06/status.json",
         "operations/log.md"
       ],
       "commit_shas": {
-        "dist_skill": "abb237587cf9887ac4a45997a548b6b2c80fa02c",
-        "catalog_md": "1c230a881de698b4074cc2f4e9b1282d75f61da5",
-        "catalog_report": "8c93548facc1ba95855d29929ae180c4b39a0623",
-        "queues": "e0ce47f51b841b1f50cff5817c4dede51de7d851",
+        "source_skill_metadata": "6f8532e759545a1016d4ff815ca72521115fe266",
+        "dist_skill_metadata": "d42219c10338aa953c8178797db24fb014df7a55",
+        "catalog_report": "ca8207788967a4d18688feb64b3906ee9b44414e",
+        "queues": "a2bc0e83bb02bbee5dfadc3de9aae2862fb60a52",
         "status_final": "this_commit"
       },
-      "catalog_package_npm_status": "Package visibility partially repaired by adding the dist/skills entry and updating dist/catalog.md counts. dist/catalog.json remains stale at 1173 entries and blocks publication/package endorsement until npm run build:catalog runs in a checkout or CI-capable surface.",
-      "value_delta": "Removed the immediate package visibility defect for the normalized validation-gated skill by exposing it under dist/skills, where installers copy from. Preserved an explicit machine-catalog rebuild queue instead of falsely claiming full catalog parity."
-    },
-    {
-      "started_at": "2026-07-06T14:30:00-03:00",
-      "completed_at": "2026-07-06T14:30:00-03:00",
-      "scheduled_role": "Cataloger",
-      "selected_role": "Radar",
-      "override_reason": "Operator request identified missed upstream delta scanning for known high-signal skill sources such as mattpocock/skills and skills.sh.",
-      "inspected_ref": "main",
-      "inspected_commit_sha": "aa97ed5eb6ffc1d4c0d13f0e1345df2b7c1744bb",
-      "action_handoff_state": "Discovery Action handoff remains absent on default branch; repaired producer inputs so future Action runs include watched-source candidates in discovery and review artifacts.",
-      "online_searches_used": ["GitHub repository search: user:mattpocock skills", "GitHub code search: mattpocock/skills teach"],
-      "queue_item_consumed_or_advanced": null,
-      "queue_items_created": ["review-mattpocock-teach-delta-20260706"],
-      "sources_reviewed": [],
-      "candidates_processed": 1,
-      "files_changed": [
-        "operations/source-watchlist.json",
-        "scripts/discover_skill_sources.py",
-        "scripts/review_discovery_candidates.py",
-        ".github/workflows/discover-skill-sources.yml",
-        "sources/candidates/mattpocock-teach.md",
-        "operations/daily/2026-07-06/queues.json",
-        "operations/daily/2026-07-06/status.json",
-        "operations/daily/2026-07-06/watchlist-scanning-repair.md"
-      ],
-      "commit_shas": {
-        "watchlist": "b82c796e7d748d61322444a0522943d5c8e5e09e",
-        "discover_script": "e24e1e4eb86a585c506df7a9d6427a9d64362248",
-        "review_script": "e48e9dade57839a4cbee2c37ce93cd1527f45078",
-        "workflow": "7b9c6be5dbc6e3c9bd22b9f8ef654c565ab20abe",
-        "candidate": "8b28f3f82bc1e733495d60beae19f73d30f8eb99",
-        "queues": "532592cfede2e123a87d1668dfbc59a7e00991e3",
-        "status_initial": "0048e6dc9c352ed2b19fc30627ac62f4cd2fc5a3",
-        "repair_report": "240dd38341fa54f1f033d3001377067f6f16d012",
-        "status_final": "this_commit"
-      },
-      "catalog_package_npm_status": "Package/catalog blocker unchanged: dist/catalog.json still requires build:catalog. Discovery workflow now includes operations/source-watchlist.json and watched-source counts in the handoff.",
-      "value_delta": "Known upstream skill sources are now first-class watchlist inputs, and the mattpocock/skills teach delta is queued for metadata-only Source Reviewer triage instead of relying on broad search to rediscover it."
+      "catalog_package_npm_status": "Source and dist copies of validation-gated-skill-improvement now have explicit name, domain, and agent-operations catalog tags. Existing Catalog Refresh workflow is configured to rebuild machine catalog surfaces from dist/skills changes, but dist/catalog.json and dist/install-manifest.json still require verification after workflow or checkout build. npm publication remains blocked.",
+      "value_delta": "Removed catalog-builder ambiguity for the new install-facing skill and advanced the stale machine-catalog blocker into a concrete verification queue item instead of claiming unsafe manual parity for a large generated catalog."
     }
   ],
   "blockers": [
     "operations/action-runs/discover-skill-sources/latest.json is absent on the default branch; scheduler fallback artifacts remain necessary until the Action handoff producer is repaired or emits a current handoff.",
-    "dist/catalog.json is stale after adding dist/skills/validation-gated-skill-improvement/SKILL.md; run npm run build:catalog in a checkout or CI-capable surface before publication/package endorsement."
+    "dist/catalog.json is stale at 1173 entries after adding dist/skills/validation-gated-skill-improvement/SKILL.md; verify whether Catalog Refresh regenerated machine surfaces or run npm run build:catalog in a checkout/CI-capable surface before publication/package endorsement."
   ],
   "last_commit": "this_commit",
-  "next_action": "Cataloger or Packager should run npm run build:catalog and verify dist/catalog.json, dist/catalog.md, and dist/install-manifest.json parity. Then Source Reviewer should review review-mattpocock-teach-delta-20260706 before any Matt Pocock teach normalization."
+  "next_action": "Cataloger or Packager should verify the Catalog Refresh workflow result for dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. If no generated commit appears, run npm run build:catalog in a checkout or CI-capable surface. Then Source Reviewer should review review-mattpocock-teach-delta-20260706 before any Matt Pocock teach normalization."
 }
