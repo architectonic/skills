@@ -104,9 +104,12 @@
       "reason": "MagicSkills review found a reusable governance pattern for shared skill pools, named collections, runtime-specific exposure, registry persistence, collision handling, and execution/install/upload risk separation.",
       "action": "Create an original Architectonic playbook for shared skill-library governance without copying upstream prose, code, examples, templates, command documentation, package metadata, or skill bodies.",
       "risk_level": "medium",
-      "status": "open",
+      "status": "done",
       "created_by": "Source Reviewer",
-      "created_at": "2026-07-06T12:14:00-03:00"
+      "created_at": "2026-07-06T12:14:00-03:00",
+      "completed_by": "Normalizer",
+      "completed_at": "2026-07-06T20:13:00-03:00",
+      "result": "Created original skill skills/shared-skill-library-governance.md and normalization report reports/normalization/2026-07-06-2013-shared-skill-library-governance.md. No upstream prose, code, examples, templates, command documentation, package metadata, screenshots, skill bodies, or CLI behavior were copied."
     }
   ],
   "catalog": [
@@ -173,6 +176,18 @@
       "completed_by": "Cataloger",
       "completed_at": "2026-07-06T19:11:00-03:00",
       "result": "Created dist/skills/mission-grounded-learning-workspace/SKILL.md and verified regenerated catalog surfaces at 1175 skills, 98 agent-operations entries, and 411 medium-risk entries. dist/install-manifest.json still points installers to the canonical catalog files."
+    },
+    {
+      "id": "catalog-refresh-after-shared-skill-library-governance-20260706",
+      "priority": 1,
+      "role": "Cataloger",
+      "target": "skills/shared-skill-library-governance.md",
+      "reason": "A new skill file was added; dist skill, catalog, and install manifest surfaces must be rebuilt or verified before publication/package endorsement.",
+      "action": "Create dist/skills/shared-skill-library-governance/SKILL.md, run or request catalog refresh for dist/catalog.json, dist/catalog.md, and dist/install-manifest.json, then verify counts and risk metadata after rebuild.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Normalizer",
+      "created_at": "2026-07-06T20:13:00-03:00"
     }
   ],
   "risk": [],
