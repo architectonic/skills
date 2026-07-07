@@ -1,9 +1,9 @@
 {
   "date": "2026-07-07",
-  "current_state": "metadata_backfilled_agent_ops_cli_batch_catalog_refresh_required",
+  "current_state": "agent_ops_cli_metadata_backfill_catalog_verified",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "7dafe234d8d76d9fd1064387864b664f6c78756b",
+  "inspected_sha": "89367a7409aecb3ec28983a8ac9305f5e2620cde",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -18,22 +18,24 @@
     "sources_reviewed": 0,
     "sources_blocked": 0,
     "normalized_entries_added": 0,
-    "skills_updated": 4,
+    "skills_updated": 0,
     "catalog_skill_count": 1182,
+    "agent_operations_count": 105,
+    "security_defensive_count": 58,
     "security_offensive_count": 12,
     "high_risk_count": 9,
-    "medium_risk_count": 427,
-    "unspecified_risk_count": 737,
-    "uncategorized_domain_count": 572,
+    "medium_risk_count": 431,
+    "unspecified_risk_count": 733,
+    "uncategorized_domain_count": 571,
     "requires_review_count": null,
-    "catalog_build_status": "stale_after_agent_ops_cli_metadata_backfill",
-    "publication_readiness": "blocked_by_open_catalog_refresh_metadata_backlog_and_absent_discovery_action_handoff"
+    "catalog_build_status": "verified_after_agent_ops_cli_metadata_backfill",
+    "publication_readiness": "blocked_by_metadata_backlog_and_absent_discovery_action_handoff"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 1,
+    "catalog": 0,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -41,44 +43,37 @@
     "critic": 1
   },
   "latest_run": {
-    "started_at": "2026-07-07T19:13:01-03:00",
-    "completed_at": "2026-07-07T19:13:01-03:00",
-    "scheduled_role": "Packager",
-    "selected_role": "Critic",
-    "override_reason": "The hour cadence selected Packager, but packaging endorsement remains premature while metadata-backfill-uncategorized-and-unspecified-risk-20260707 is open and discovery Action handoff is still absent. The concrete Critic metadata backlog outranks Packager until catalog/package surfaces are clean and metadata quality improves.",
+    "started_at": "2026-07-07T20:14:54-03:00",
+    "completed_at": "2026-07-07T20:14:54-03:00",
+    "scheduled_role": "Publisher",
+    "selected_role": "Cataloger",
+    "override_reason": "The hour cadence selected Publisher, but catalog-refresh-after-metadata-backfill-agent-ops-cli-batch-20260707 was an open catalog/package-health queue item after four package-facing dist/skills metadata edits. Catalog/package-health gates override Publisher until generated catalog and install surfaces are verified.",
     "inspected_ref": "main",
-    "inspected_sha": "7dafe234d8d76d9fd1064387864b664f6c78756b",
+    "inspected_sha": "89367a7409aecb3ec28983a8ac9305f5e2620cde",
     "missing_ledger_initialization_performed": false,
-    "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json returned 404 on the default branch; no discovery Action handoff was available. This Critic pass did not run manual discovery because the scheduled role was Packager and the open metadata backlog had priority.",
+    "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json returned 404 on the default branch; no discovery Action handoff was available. This Cataloger pass did not run manual discovery because Publisher cadence was overridden by an open catalog/package-health gate.",
     "online_searches_used": [],
-    "queue_item_consumed_or_created": "Advanced metadata-backfill-uncategorized-and-unspecified-risk-20260707; created catalog-refresh-after-metadata-backfill-agent-ops-cli-batch-20260707.",
+    "queue_item_consumed_or_created": "Closed catalog-refresh-after-metadata-backfill-agent-ops-cli-batch-20260707; left metadata-backfill-uncategorized-and-unspecified-risk-20260707 open.",
     "sources_reviewed": [],
     "candidates_processed": 4,
     "files_changed": [
-      "dist/skills/agent-operating-loop/SKILL.md",
-      "dist/skills/agentic-actions-auditor/SKILL.md",
-      "dist/skills/agents-md-improver/SKILL.md",
-      "dist/skills/ai-native-cli/SKILL.md",
-      "reports/critic/2026-07-07-1913-metadata-backfill-agent-ops-cli-batch.md",
-      "operations/daily/2026-07-07/critic.md",
+      "reports/catalog/2026-07-07-2014-agent-ops-cli-catalog-verification.md",
       "operations/daily/2026-07-07/queues.json",
       "operations/daily/2026-07-07/status.json"
     ],
-    "catalog_package_npm_status": "No catalog files were hand-edited and no npm publish was performed. dist/catalog.json, dist/catalog.md, and dist/install-manifest.json are stale until Cataloger refreshes or verifies them after four dist/skills metadata edits.",
+    "catalog_package_npm_status": "Verified dist/catalog.json and dist/catalog.md agree at 1182 skills, 105 agent-operations, 58 security-defensive, 571 uncategorized, 9 high, 431 medium, and 733 unspecified. Verified dist/install-manifest.json remains coherent. No npm publish was performed.",
     "blockers": [
-      "Open Cataloger queue item: catalog-refresh-after-metadata-backfill-agent-ops-cli-batch-20260707.",
       "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
       "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch.",
       "Publication endorsement remains blocked until metadata quality backlog improves and discovery Action handoff is restored or replaced by bounded fallback when cadence permits."
     ],
-    "value_delta": "Four package-facing agent-operations/security-defensive CLI and instruction skills now carry explicit domain, medium risk, requires_review, source family/status, and source-license metadata. No procedure bodies were broadened; ai-native-cli remains review-gated with source_license unknown."
+    "value_delta": "Closed the catalog/package-health blocker created by the agent-ops/CLI metadata batch. Generated catalog and install surfaces now consistently expose the four backfilled entries with domain, risk, review-gate, and source metadata; ai-native-cli remains review-gated with unknown source license."
   },
   "blockers": [
-    "Open Cataloger queue item: catalog-refresh-after-metadata-backfill-agent-ops-cli-batch-20260707.",
     "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
     "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch.",
     "Publication endorsement remains blocked until metadata quality backlog improves and discovery Action handoff is restored or replaced by bounded fallback when cadence permits."
   ],
   "last_commit": "this_commit",
-  "next_action": "Cataloger should refresh/verify generated surfaces for catalog-refresh-after-metadata-backfill-agent-ops-cli-batch-20260707 before any Packager or Publisher endorsement."
+  "next_action": "Critic should continue metadata-backfill-uncategorized-and-unspecified-risk-20260707 with a bounded metadata batch unless a new risk or catalog queue appears first."
 }
