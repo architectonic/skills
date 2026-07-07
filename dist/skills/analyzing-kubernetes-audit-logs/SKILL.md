@@ -1,6 +1,12 @@
 ---
-name: Analyzing Kubernetes Audit Logs
-description: Parses Kubernetes API server audit logs (JSON lines) to detect exec-into-pod,
+name: analyzing-kubernetes-audit-logs
+description: Analyzes Kubernetes API server audit logs when defenders need to detect pod exec activity, secret access, RBAC escalation, privileged pod creation, or unauthenticated API use.
+domain: cloud-security
+risk_level: medium
+requires_review: true
+source_family: okf-security-playbook
+source_license: Apache-2.0
+source_status: package_metadata_backfill
 tags: [devops, agent-skill, okf, kubernetes-security, container-security, audit-log-analysis, rbac, privilege-escalation, k8s-api-server, threat-detection, security]
 license: Apache-2.0
 type: Playbook
