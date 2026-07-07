@@ -10,16 +10,16 @@
 |---|---:|
 | `agent-operations` | 105 |
 | `business` | 46 |
-| `cloud-security` | 41 |
+| `cloud-security` | 42 |
 | `design` | 40 |
 | `forensics` | 24 |
 | `media` | 1 |
 | `research` | 85 |
-| `runtime-tools` | 34 |
+| `runtime-tools` | 35 |
 | `security-defensive` | 53 |
 | `security-offensive` | 6 |
 | `software-engineering` | 146 |
-| `uncategorized` | 585 |
+| `uncategorized` | 583 |
 | `writing` | 16 |
 
 ## Risk Levels
@@ -28,8 +28,8 @@
 |---|---:|
 | `high` | 3 |
 | `low` | 9 |
-| `medium` | 420 |
-| `unspecified` | 750 |
+| `medium` | 422 |
+| `unspecified` | 748 |
 
 ## Install Notes
 
