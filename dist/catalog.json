@@ -8,7 +8,7 @@
   "summary": {
     "skill_count": 1182,
     "domain_counts": {
-      "agent-operations": 105,
+      "agent-operations": 104,
       "business": 46,
       "cloud-security": 42,
       "design": 40,
@@ -16,7 +16,7 @@
       "media": 1,
       "research": 85,
       "runtime-tools": 35,
-      "security-defensive": 57,
+      "security-defensive": 58,
       "security-offensive": 12,
       "software-engineering": 146,
       "uncategorized": 572,
@@ -25,13 +25,12 @@
     "risk_counts": {
       "high": 9,
       "low": 9,
-      "medium": 428,
-      "unspecified": 736
+      "medium": 429,
+      "unspecified": 735
     }
   },
   "domains": {
     "agent-operations": [
-      "Agentic Actions Auditor",
       "Authority Model",
       "Bash Defensive Patterns",
       "Canonicalization",
@@ -479,6 +478,7 @@
       "Performing User Behavior Analytics",
       "Performing Web Application Vulnerability Triage",
       "Scanning Infrastructure with Nessus",
+      "agentic-actions-auditor",
       "automating-ioc-enrichment",
       "building-detection-rules-with-sigma",
       "building-threat-feed-aggregation-with-misp",
@@ -1536,14 +1536,14 @@
       "type": "Playbook"
     },
     {
-      "slug": "Agentic Actions Auditor",
+      "slug": "agentic-actions-auditor",
       "title": "Agentic Actions Auditor",
       "description": "Audits GitHub Actions workflows for security vulnerabilities in AI agent integrations (Claude Code Action, Gemini CLI, OpenAI Codex, GitHub AI Inference). Detects 9 attack vectors where attacker-controlled input reaches AI agents in CI/CD pipelines. Use when reviewing workflow files that invoke AI coding agents, auditing CI/CD pipeline security for prompt injection risks, or evaluating agentic action configurations.",
       "path": "dist/skills/agentic-actions-auditor/SKILL.md",
       "directory": "dist/skills/agentic-actions-auditor",
-      "domain": "agent-operations",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-defensive",
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [
         "agent-operations",
         "security",
@@ -1553,8 +1553,8 @@
         "prompt-injection",
         "static-analysis"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "trailofbits-skills",
+      "source_status": "adapted",
       "type": "Playbook"
     },
     {

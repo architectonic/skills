@@ -8,7 +8,7 @@
 
 | Domain | Count |
 |---|---:|
-| `agent-operations` | 105 |
+| `agent-operations` | 104 |
 | `business` | 46 |
 | `cloud-security` | 42 |
 | `design` | 40 |
@@ -16,7 +16,7 @@
 | `media` | 1 |
 | `research` | 85 |
 | `runtime-tools` | 35 |
-| `security-defensive` | 57 |
+| `security-defensive` | 58 |
 | `security-offensive` | 12 |
 | `software-engineering` | 146 |
 | `uncategorized` | 572 |
@@ -28,8 +28,8 @@
 |---|---:|
 | `high` | 9 |
 | `low` | 9 |
-| `medium` | 428 |
-| `unspecified` | 736 |
+| `medium` | 429 |
+| `unspecified` | 735 |
 
 ## Install Notes
 
