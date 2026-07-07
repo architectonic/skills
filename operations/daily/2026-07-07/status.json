@@ -87,8 +87,7 @@
       "files_changed": [
         "reports/catalog/2026-07-07-1014-identity-cloud-risk-redaction-catalog-verification.md",
         "operations/daily/2026-07-07/queues.json",
-        "operations/daily/2026-07-07/status.json",
-        "operations/log.md"
+        "operations/daily/2026-07-07/status.json"
       ],
       "catalog_package_npm_status": "Catalog surfaces are verified fresh for the identity-cloud redaction queue: dist/catalog.json and dist/catalog.md report 1182 skills, 9 security-offensive, 579 uncategorized, 6 high, 423 medium, and 744 unspecified; dist/install-manifest.json remains coherent. No npm publish was performed.",
       "blockers": [
