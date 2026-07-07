@@ -6,6 +6,7 @@ description: Use when designing or operating a shared repository of agent skills
 tags: [skill, skill-library, governance, agent-runtime, collections, registry, agent-operations]
 domain: agent-operations
 timestamp: 2026-07-06T20:13:00-03:00
+last_reviewed: 2026-07-07
 okf_version: "0.2"
 source_status: normalized
 source_name: MagicSkills source-profile synthesis
