@@ -1,8 +1,14 @@
 ---
-name: Agent Operating Loop
+name: agent-operating-loop
 description: The canonical Read → Classify → Inspect → Plan → Act → Verify → Reconcile → Handoff cycle that governs how an agent should approach any task. Use as the default procedure before starting work.
 tags: [loops, agent-operations, operating-loop, modus-operandi, safety]
 type: Playbook
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: architectonic-curated
+source_license: internal-curated
+source_status: adapted
 ---
 
 # Agent Operating Loop
@@ -120,7 +126,6 @@ Update memory only when the information is durable and useful. Most task-local d
 If work remains, write a compact handoff.
 
 A handoff should let the next agent continue without guessing. It should include:
-
 ```
 task
 current state
