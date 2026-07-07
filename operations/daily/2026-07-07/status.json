@@ -1,9 +1,9 @@
 {
   "date": "2026-07-07",
-  "current_state": "metadata_backfill_batch_applied_catalog_refresh_pending",
+  "current_state": "metadata_backfill_catalog_verified_critic_backlog_open",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "03840c8e70ec165fb3ae81673ebe4288ff7d008f",
+  "inspected_sha": "bd372c86c4be375f71cd701d71778e3ce0d42442",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -22,14 +22,14 @@
     "catalog_skill_count": 1182,
     "high_risk_count": 2,
     "requires_review_count": null,
-    "catalog_build_status": "stale_after_dist_metadata_backfill",
-    "publication_readiness": "blocked_by_catalog_refresh_and_metadata_backfill"
+    "catalog_build_status": "verified_after_metadata_backfill",
+    "publication_readiness": "blocked_by_metadata_backfill_quality_backlog"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 1,
+    "catalog": 0,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -147,14 +147,41 @@
       },
       "catalog_package_npm_status": "Catalog surfaces are stale after direct dist/skills metadata changes. No npm publish performed. Cataloger must rebuild or verify dist/catalog.json, dist/catalog.md, and dist/install-manifest.json.",
       "value_delta": "Removed four concrete metadata gaps from package-facing skills without changing behavior bodies: two security-defensive entries and two forensics entries now carry domain, medium risk, requires_review, and source metadata. This converts anonymous catalog entries into review-gated package entries and creates a precise Cataloger refresh item."
+    },
+    {
+      "started_at": "2026-07-07T03:12:22-03:00",
+      "completed_at": "2026-07-07T03:12:22-03:00",
+      "scheduled_role": "Normalizer",
+      "selected_role": "Cataloger",
+      "override_reason": "Catalog/package gate overrides Normalizer while catalog-refresh-after-metadata-backfill-security-forensics-batch-20260707 is open after package-facing dist/skills metadata edits.",
+      "inspected_ref": "main",
+      "inspected_sha": "bd372c86c4be375f71cd701d71778e3ce0d42442",
+      "missing_ledger_initialization_performed": false,
+      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent on default branch; no discovery Action handoff was available. This Cataloger pass did not run manual discovery because an existing package-surface verification queue had priority.",
+      "online_searches_used": [],
+      "queue_item_consumed_or_created": "Closed catalog-refresh-after-metadata-backfill-security-forensics-batch-20260707 after direct verification of dist/catalog.json, dist/catalog.md, and dist/install-manifest.json; left metadata-backfill-uncategorized-and-unspecified-risk-20260707 open.",
+      "sources_reviewed": [],
+      "candidates_processed": 0,
+      "files_changed": [
+        "reports/catalog/2026-07-07-0312-metadata-backfill-security-forensics-catalog-verification.md",
+        "operations/daily/2026-07-07/queues.json",
+        "operations/daily/2026-07-07/status.json",
+        "operations/log.md"
+      ],
+      "commit_shas": {
+        "report": "5ca7c5903c732249ff18939d6678af47428d5f63",
+        "queues": "ee43c6b211251208c1eddb26f6c0232c29334f57",
+        "status_final": "this_commit"
+      },
+      "catalog_package_npm_status": "Catalog verified: dist/catalog.json and dist/catalog.md both report 1182 skills, 24 forensics, 53 security-defensive, 587 uncategorized, 416 medium risk, and 755 unspecified risk. dist/install-manifest.json still points to README.md, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. No npm publish performed.",
+      "value_delta": "Removed the stale package-surface blocker created by the previous Critic metadata batch and exposed the remaining actionable queue as the Critic metadata-backfill backlog. No generated catalog file was hand-edited."
     }
   ],
   "blockers": [
-    "Catalog refresh queue item remains open after metadata backfill: catalog-refresh-after-metadata-backfill-security-forensics-batch-20260707.",
-    "Open critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707. Catalog previously showed 587 uncategorized-domain and 759 unspecified-risk skills; this pass backfilled four files, but generated catalog surfaces have not yet been refreshed.",
+    "Open critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707. Catalog shows 587 uncategorized-domain and 755 unspecified-risk skills after the security/forensics batch was catalog-verified.",
     "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch.",
     "Publication endorsement remains blocked until metadata backfill/risk-domain quality improves and a Publisher pass directly verifies package readiness."
   ],
   "last_commit": "this_commit",
-  "next_action": "Cataloger should process catalog-refresh-after-metadata-backfill-security-forensics-batch-20260707 before more metadata backfill, then Critic can continue the uncategorized/unspecified-risk batch backlog."
+  "next_action": "Critic should continue metadata-backfill-uncategorized-and-unspecified-risk-20260707 with another bounded metadata batch; if dist/skills metadata changes again, create a Cataloger refresh/verification item before packaging or publication."
 }
