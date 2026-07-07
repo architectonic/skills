@@ -3,6 +3,12 @@ name: ai-native-cli
 description: Design spec with 98 rules for building CLI tools that AI agents can safely use. Covers structured JSON output, error handling, input contracts, safety guardrails, exit codes, and agent self-description.
 tags: [agent-operations, cli, agent-safety, json-output, error-handling, spec]
 type: Playbook
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: antigravity-awesome-skills
+source_license: unknown
+source_status: adapted
 ---
 
 # Agent-Friendly CLI Spec
