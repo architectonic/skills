@@ -16,17 +16,17 @@
       "media": 1,
       "research": 85,
       "runtime-tools": 35,
-      "security-defensive": 53,
+      "security-defensive": 54,
       "security-offensive": 9,
       "software-engineering": 146,
-      "uncategorized": 579,
+      "uncategorized": 578,
       "writing": 16
     },
     "risk_counts": {
       "high": 6,
       "low": 9,
-      "medium": 423,
-      "unspecified": 744
+      "medium": 424,
+      "unspecified": 743
     }
   },
   "domains": {
@@ -478,7 +478,8 @@
       "Performing Threat Modeling with OWASP Threat Dragon",
       "Performing User Behavior Analytics",
       "Performing Web Application Vulnerability Triage",
-      "Scanning Infrastructure with Nessus"
+      "Scanning Infrastructure with Nessus",
+      "automating-ioc-enrichment"
     ],
     "security-offensive": [
       "Abusing DPAPI for Credential Access",
@@ -644,7 +645,6 @@
       "Auditing Foundry Smart Contract Security",
       "Auditing MCP Servers for Tool Poisoning",
       "Auditing TLS Certificate Transparency Logs",
-      "Automating IOC Enrichment",
       "Autonomy Loop",
       "Autoresearch Loop",
       "Browser Trace",
@@ -4033,14 +4033,14 @@
       "type": "Playbook"
     },
     {
-      "slug": "Automating IOC Enrichment",
+      "slug": "automating-ioc-enrichment",
       "title": "Automating IOC Enrichment",
       "description": "Automates the enrichment of raw indicators of compromise with multi-source",
       "path": "dist/skills/automating-ioc-enrichment/SKILL.md",
       "directory": "dist/skills/automating-ioc-enrichment",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-defensive",
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [
         "software-development",
         "software-development",
@@ -4057,8 +4057,8 @@
         "nist-csf",
         "security"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "packaged-skill-backfill",
+      "source_status": "metadata-backfilled",
       "type": "Playbook"
     },
     {
