@@ -2,6 +2,12 @@
 name: agents-md-improver
 description: Audit and improve AGENTS.md / CLAUDE.md / SOUL.md files in repositories. Use when the user asks to check, audit, update, improve, or fix agent instruction files. Scans for all agent instruction files, evaluates quality against a rubric, outputs quality report, then makes targeted updates. Also use when the user mentions "agent instruction maintenance", "project memory optimization", or "rules file audit". Adapted from anthropic-claude-plugins-official/claude-md-improver.
 type: Playbook
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: anthropic-claude-plugins-official
+source_license: MIT
+source_status: adapted
 ---
 
 # Agent Instruction File Improver
