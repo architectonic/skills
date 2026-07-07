@@ -16,17 +16,17 @@
       "media": 1,
       "research": 85,
       "runtime-tools": 35,
-      "security-defensive": 56,
+      "security-defensive": 57,
       "security-offensive": 9,
       "software-engineering": 146,
-      "uncategorized": 576,
+      "uncategorized": 575,
       "writing": 16
     },
     "risk_counts": {
       "high": 6,
       "low": 9,
-      "medium": 426,
-      "unspecified": 741
+      "medium": 427,
+      "unspecified": 740
     }
   },
   "domains": {
@@ -481,7 +481,8 @@
       "Scanning Infrastructure with Nessus",
       "automating-ioc-enrichment",
       "building-detection-rules-with-sigma",
-      "building-threat-feed-aggregation-with-misp"
+      "building-threat-feed-aggregation-with-misp",
+      "building-threat-hunt-hypothesis-framework"
     ],
     "security-offensive": [
       "Abusing DPAPI for Credential Access",
@@ -668,7 +669,6 @@
       "Building SOC Metrics and KPI Tracking",
       "Building SOC Playbook for Ransomware",
       "Building Threat Actor Profile from OSINT",
-      "Building Threat Hunt Hypothesis Framework",
       "Building Threat Intelligence Enrichment in Splunk",
       "Building Threat Intelligence Feed Integration",
       "Code Complexity Scanner",
@@ -5041,14 +5041,14 @@
       "type": "Playbook"
     },
     {
-      "slug": "Building Threat Hunt Hypothesis Framework",
+      "slug": "building-threat-hunt-hypothesis-framework",
       "title": "Building Threat Hunt Hypothesis Framework",
       "description": "Build a systematic threat hunt hypothesis framework that transforms threat",
       "path": "dist/skills/building-threat-hunt-hypothesis-framework/SKILL.md",
       "directory": "dist/skills/building-threat-hunt-hypothesis-framework",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-defensive",
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [
         "software-development",
         "software-development",
@@ -5062,8 +5062,8 @@
         "proactive-detection",
         "security"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "packaged-skill-backfill",
+      "source_status": "metadata-backfilled",
       "type": "Playbook"
     },
     {
