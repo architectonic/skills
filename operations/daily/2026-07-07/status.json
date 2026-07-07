@@ -1,9 +1,9 @@
 {
   "date": "2026-07-07",
-  "current_state": "high_risk_security_entries_redacted_catalog_refresh_required",
+  "current_state": "catalog_surfaces_verified_after_c2_red_team_redaction",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "7eba28f61caabbfd8e22ef694387c8bb0050e1f0",
+  "inspected_sha": "20052968ab0a76bdf99ff1df7d0616b480f8d3dc",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -18,21 +18,22 @@
     "sources_reviewed": 0,
     "sources_blocked": 0,
     "normalized_entries_added": 0,
-    "skills_updated": 3,
+    "skills_updated": 0,
     "catalog_skill_count": 1182,
-    "high_risk_count": 6,
+    "security_offensive_count": 12,
+    "high_risk_count": 9,
     "medium_risk_count": 427,
-    "unspecified_risk_count": 740,
-    "uncategorized_domain_count": 575,
+    "unspecified_risk_count": 737,
+    "uncategorized_domain_count": 572,
     "requires_review_count": null,
-    "catalog_build_status": "stale_after_high_risk_redaction",
-    "publication_readiness": "blocked_by_open_catalog_refresh_metadata_backlog_and_absent_discovery_action_handoff"
+    "catalog_build_status": "verified_after_c2_red_team_redaction",
+    "publication_readiness": "blocked_by_metadata_backlog_and_absent_discovery_action_handoff"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 1,
+    "catalog": 0,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -40,42 +41,37 @@
     "critic": 1
   },
   "latest_run": {
-    "started_at": "2026-07-07T17:12:15-03:00",
-    "completed_at": "2026-07-07T17:12:15-03:00",
-    "scheduled_role": "Radar",
-    "selected_role": "Risk Auditor",
-    "override_reason": "The hour cadence selected Radar, but queues.risk had an open high-priority safety item. Safety review outranks discovery and growth work under the operator stability rules.",
+    "started_at": "2026-07-07T18:12:29-03:00",
+    "completed_at": "2026-07-07T18:12:29-03:00",
+    "scheduled_role": "Source Reviewer",
+    "selected_role": "Cataloger",
+    "override_reason": "The hour cadence selected Source Reviewer, but queues.catalog had the open high-priority package-health item catalog-refresh-after-c2-red-team-redaction-20260707. Catalog/package-health gates override source review until generated catalog and install surfaces are verified.",
     "inspected_ref": "main",
-    "inspected_sha": "7eba28f61caabbfd8e22ef694387c8bb0050e1f0",
+    "inspected_sha": "20052968ab0a76bdf99ff1df7d0616b480f8d3dc",
     "missing_ledger_initialization_performed": false,
-    "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json returned 404 on the default branch; no discovery Action handoff was available. This Risk Auditor pass did not run manual discovery because an open high-priority risk queue had priority.",
+    "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json returned 404 on the default branch; no discovery Action handoff was available. This Cataloger pass did not run manual discovery because an open catalog/package-health queue had priority.",
     "online_searches_used": [],
-    "queue_item_consumed_or_created": "Resolved risk-review-c2-red-team-infrastructure-skills-20260707 and created catalog-refresh-after-c2-red-team-redaction-20260707.",
+    "queue_item_consumed_or_created": "Resolved catalog-refresh-after-c2-red-team-redaction-20260707. No new queue was created.",
     "sources_reviewed": [],
     "candidates_processed": 3,
     "files_changed": [
-      "dist/skills/building-c2-infrastructure-with-sliver-framework/SKILL.md",
-      "dist/skills/building-c2-redirector-infrastructure/SKILL.md",
-      "dist/skills/building-red-team-c2-infrastructure-with-havoc/SKILL.md",
-      "reports/risk/2026-07-07-1712-c2-red-team-redaction.md",
+      "reports/catalog/2026-07-07-1812-c2-red-team-catalog-verification.md",
       "operations/daily/2026-07-07/queues.json",
       "operations/daily/2026-07-07/status.json"
     ],
-    "catalog_package_npm_status": "Generated catalog surfaces are stale after three dist/skills edits. No generated catalog files were hand-edited and no npm publish was performed.",
+    "catalog_package_npm_status": "Verified dist/catalog.json and dist/catalog.md at 1182 skills, 12 security-offensive, 572 uncategorized, 9 high, 427 medium, and 737 unspecified. Verified dist/install-manifest.json remains coherent. No npm publish was performed.",
     "blockers": [
-      "Open Cataloger queue item: catalog-refresh-after-c2-red-team-redaction-20260707.",
       "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
-      "operations/action-runs/discover-skill-sources/latest.json remains absent.",
-      "Publication endorsement remains blocked until catalog refresh verifies generated surfaces and metadata quality backlog improves."
+      "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch.",
+      "Publication endorsement remains blocked until metadata quality backlog improves and discovery Action handoff is restored or replaced by a bounded fallback when cadence permits."
     ],
-    "value_delta": "Removed high-risk operational procedure bodies from three default installed package-facing security entries and replaced them with review-gated safety placeholders pending catalog refresh."
+    "value_delta": "Verified and unblocked the package catalog surface after high-risk C2/red-team redactions. The installed bundle now preserves safety-placeholder metadata in catalog-facing surfaces while keeping operational C2 procedure bodies out of the default package surface."
   },
   "blockers": [
-    "Open Cataloger queue item: catalog-refresh-after-c2-red-team-redaction-20260707.",
     "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
     "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch.",
-    "Publication endorsement remains blocked until catalog refresh verifies generated surfaces and metadata quality backlog improves."
+    "Publication endorsement remains blocked until metadata quality backlog improves and discovery Action handoff is restored or replaced by a bounded fallback when cadence permits."
   ],
   "last_commit": "this_commit",
-  "next_action": "Cataloger should refresh or verify generated catalog and install surfaces for catalog-refresh-after-c2-red-team-redaction-20260707 before Critic resumes metadata backfill."
+  "next_action": "Critic should continue metadata-backfill-uncategorized-and-unspecified-risk-20260707 with a bounded metadata batch; if dist/skills metadata changes, create the next Cataloger refresh queue before packaging or publication endorsement."
 }
