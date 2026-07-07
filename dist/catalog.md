@@ -2,13 +2,13 @@
 
 - Package: `architectonic-skills`
 - Install root: `dist/skills`
-- Skill count: **1176**
+- Skill count: **1182**
 
 ## Domains
 
 | Domain | Count |
 |---|---:|
-| `agent-operations` | 99 |
+| `agent-operations` | 105 |
 | `business` | 45 |
 | `cloud-security` | 41 |
 | `design` | 40 |
@@ -27,7 +27,7 @@
 | Risk | Count |
 |---|---:|
 | `high` | 2 |
-| `low` | 3 |
+| `low` | 9 |
 | `medium` | 412 |
 | `unspecified` | 759 |
 

@@ -6,9 +6,9 @@
     "entrypoint": "README.md"
   },
   "summary": {
-    "skill_count": 1176,
+    "skill_count": 1182,
     "domain_counts": {
-      "agent-operations": 99,
+      "agent-operations": 105,
       "business": 45,
       "cloud-security": 41,
       "design": 40,
@@ -24,7 +24,7 @@
     },
     "risk_counts": {
       "high": 2,
-      "low": 3,
+      "low": 9,
       "medium": 412,
       "unspecified": 759
     }
@@ -80,6 +80,7 @@
       "agent-skill-configuration",
       "agent-skill-portability",
       "ai-native-cli",
+      "authoring-agent-skills",
       "browse",
       "clarity-gate",
       "codex",
@@ -90,8 +91,13 @@
       "context-window-management",
       "cross-session-handoff",
       "doctrine-upkeep",
+      "engineering-agent-harnesses",
+      "engineering-context-windows",
+      "engineering-loop-contracts",
+      "evaluating-skills-before-authoring",
       "external system mutation",
       "full-output-enforcement",
+      "gating-work-with-verification-loops",
       "gstack",
       "gui-skill-action-graph",
       "handoff",
@@ -28956,6 +28962,130 @@
       "requires_review": true,
       "tags": [
         "software-engineering",
+        "okf"
+      ],
+      "source_family": "",
+      "source_status": "",
+      "type": "Playbook"
+    },
+    {
+      "slug": "authoring-agent-skills",
+      "title": "Authoring Agent Skills",
+      "description": "Author portable SKILL.md agent skills that trigger reliably and spend context wisely — frontmatter discipline, progressive disclosure, degrees of freedom, and a pre-publish checklist. Use when creating a new skill, reviewing or normalizing an existing skill, or deciding what belongs in a skill versus always-loaded instructions.",
+      "path": "dist/skills/authoring-agent-skills/SKILL.md",
+      "directory": "dist/skills/authoring-agent-skills",
+      "domain": "agent-operations",
+      "risk_level": "low",
+      "requires_review": false,
+      "tags": [
+        "skills",
+        "skill-authoring",
+        "progressive-disclosure",
+        "agent-operations",
+        "okf"
+      ],
+      "source_family": "",
+      "source_status": "",
+      "type": "Playbook"
+    },
+    {
+      "slug": "engineering-agent-harnesses",
+      "title": "Engineering Agent Harnesses",
+      "description": "Improve agent reliability by shaping the software around the model — repo instructions, tool budgets, permission tiers, schema-validated tool calls, and compaction-safe context placement. Use when an agent underperforms despite good prompts, when configuring a repo or workspace for agents, or when designing the runtime that hosts them.",
+      "path": "dist/skills/engineering-agent-harnesses/SKILL.md",
+      "directory": "dist/skills/engineering-agent-harnesses",
+      "domain": "agent-operations",
+      "risk_level": "low",
+      "requires_review": false,
+      "tags": [
+        "harness-engineering",
+        "agent-operations",
+        "context",
+        "permissions",
+        "tooling",
+        "okf"
+      ],
+      "source_family": "",
+      "source_status": "",
+      "type": "Playbook"
+    },
+    {
+      "slug": "engineering-context-windows",
+      "title": "Engineering Context Windows",
+      "description": "Manage the agent context window as a scarce shared resource — decide what lives in always-loaded instructions, skills, memory, or the filesystem, and survive compaction without losing critical rules. Use when instructions bloat, agents forget mid-session rules, context overflows on long tasks, or when designing memory and retrieval for an agent system.",
+      "path": "dist/skills/engineering-context-windows/SKILL.md",
+      "directory": "dist/skills/engineering-context-windows",
+      "domain": "agent-operations",
+      "risk_level": "low",
+      "requires_review": false,
+      "tags": [
+        "context-engineering",
+        "memory",
+        "compaction",
+        "agent-operations",
+        "okf"
+      ],
+      "source_family": "",
+      "source_status": "",
+      "type": "Playbook"
+    },
+    {
+      "slug": "engineering-loop-contracts",
+      "title": "Engineering Loop Contracts",
+      "description": "Design safe recurring agent loops with explicit triggers, context, actions, verification, state, stopping conditions, and human checkpoints — the loop contract that replaces turn-by-turn prompting. Use when creating a scheduled or autonomous agent loop, reviewing an existing loop for runaway or staleness risk, or converting repeated manual work into automation.",
+      "path": "dist/skills/engineering-loop-contracts/SKILL.md",
+      "directory": "dist/skills/engineering-loop-contracts",
+      "domain": "agent-operations",
+      "risk_level": "low",
+      "requires_review": false,
+      "tags": [
+        "loops",
+        "loop-engineering",
+        "agent-operations",
+        "scheduling",
+        "verification",
+        "okf"
+      ],
+      "source_family": "",
+      "source_status": "",
+      "type": "Playbook"
+    },
+    {
+      "slug": "evaluating-skills-before-authoring",
+      "title": "Evaluating Skills Before Authoring",
+      "description": "Build evaluations before writing skill documentation — baseline the agent without the skill, write minimal instructions to close observed gaps, and iterate from watched behavior using an author/consumer two-agent loop. Use when creating or improving a skill, deciding whether a skill is needed at all, or when a skill exists but agents ignore or misuse it.",
+      "path": "dist/skills/evaluating-skills-before-authoring/SKILL.md",
+      "directory": "dist/skills/evaluating-skills-before-authoring",
+      "domain": "agent-operations",
+      "risk_level": "low",
+      "requires_review": false,
+      "tags": [
+        "skills",
+        "evaluation",
+        "skill-authoring",
+        "iteration",
+        "agent-operations",
+        "okf"
+      ],
+      "source_family": "",
+      "source_status": "",
+      "type": "Playbook"
+    },
+    {
+      "slug": "gating-work-with-verification-loops",
+      "title": "Gating Work With Verification Loops",
+      "description": "Gate agent work with validator loops and plan-validate-execute — draft, check against a deterministic validator, fix, and only proceed on pass; emit machine-checkable plan artifacts before batch or destructive operations. Use when output quality is critical, when a task mutates many files or records at once, or when an agent claims success without evidence.",
+      "path": "dist/skills/gating-work-with-verification-loops/SKILL.md",
+      "directory": "dist/skills/gating-work-with-verification-loops",
+      "domain": "agent-operations",
+      "risk_level": "low",
+      "requires_review": false,
+      "tags": [
+        "verification",
+        "validation",
+        "feedback-loops",
+        "quality-gates",
+        "agent-operations",
         "okf"
       ],
       "source_family": "",

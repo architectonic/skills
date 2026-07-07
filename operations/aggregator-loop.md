@@ -228,6 +228,23 @@ Do not claim a source is useful, safe, adopted, maintained, or installable unles
 
 When evidence is insufficient, mark the item as candidate, partial, blocked, or needs-review.
 
+## Quality Gate (2026-07-07)
+
+Any skill added to or updated under `dist/skills/` must pass the `authoring-agent-skills` checklist (`dist/skills/authoring-agent-skills/SKILL.md`) before its queue item closes:
+
+```text
+description = what + when, third person, trigger terms present
+name lowercase-hyphen, action-oriented
+frontmatter carries domain and risk_level (no new uncategorized/unspecified entries)
+body < 500 lines, references one level deep
+```
+
+The Critic should treat the existing uncategorized-domain and unspecified-risk backlogs as standing maintenance queue material: batch metadata backfill outranks new discovery when those counts grow.
+
+## Stopping Conditions (2026-07-07)
+
+Each operator run is bounded: one role, one queue item (or one small batch of the same kind). Cap repair retries at two per run; after the cap, record a blocker in the ledger and stop rather than looping. An empty relevant queue is a valid no-op run — record it honestly and exit. Never let a run rewrite state it did not inspect this run.
+
 ## Distribution Rule
 
 Any change that modifies `dist/skills/` or install-facing metadata should be followed by a catalog refresh or a queue item for Cataloger.

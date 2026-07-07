@@ -14,26 +14,35 @@
       "priority": 1,
       "role": "Cataloger",
       "target": "dist/catalog.json",
-      "reason": "A workflow-watched dist skill path changed to expose shared-skill-library-governance under dist/skills, but generated catalog surfaces still need direct verification after catalog refresh.",
+      "reason": "A workflow-watched dist skill path changed to expose shared-skill-library-governance under dist/skills, but the scheduler could not observe or wait for the resulting workflow commit in the same connector pass.",
       "action": "Verify whether Catalog Refresh regenerated dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Expected counts: 1176 skills, 99 agent-operations entries, and 412 medium-risk entries. If not, run npm run build:catalog in a checkout or CI-capable surface and commit the generated surfaces.",
       "risk_level": "medium",
-      "status": "open",
+      "status": "resolved",
       "created_by": "Cataloger",
       "created_at": "2026-07-06T21:11:00-03:00",
       "carried_forward_by": "Reporter",
       "carried_forward_at": "2026-07-07T00:11:00-03:00",
-      "repaired_by": "Cataloger",
-      "repaired_at": "2026-07-07T01:14:49-03:00",
-      "repair_commits": [
-        "5349ed9204afa741d0f886afc0dc9074f24e7923",
-        "9fc91d2eaab600b3e332d1991fc05262f9f1306f"
-      ],
-      "verification_status": "awaiting_catalog_refresh_commit_or_later_direct_verification"
+      "resolved_by": "Fable 5 (Claude, external maintainer session)",
+      "resolved_at": "2026-07-07T00:00:00-03:00",
+      "resolution": "Ran npm run build:catalog in local checkout. Regenerated dist/catalog.json, dist/catalog.md, dist/install-manifest.json. Counts now 1182 skills (1176 expected + 6 new agent-operations skills added this session: authoring-agent-skills, engineering-loop-contracts, engineering-agent-harnesses, engineering-context-windows, evaluating-skills-before-authoring, gating-work-with-verification-loops). shared-skill-library-governance present in catalog. agent-operations now 105."
     }
   ],
   "risk": [],
   "packaging": [],
   "publication": [],
   "maintenance": [],
-  "critic": []
+  "critic": [
+    {
+      "id": "metadata-backfill-uncategorized-and-unspecified-risk-20260707",
+      "priority": 2,
+      "role": "Critic",
+      "target": "dist/skills/**",
+      "reason": "Catalog shows 587 uncategorized-domain and 759 unspecified-risk skills; the new Quality Gate in operations/aggregator-loop.md forbids new entries without domain/risk_level and names this backlog standing maintenance material.",
+      "action": "Batch metadata backfill: assign domain and risk_level frontmatter in batches (e.g. 50/run) using classify_dist_skills.py plus review; prioritize over new discovery while counts grow.",
+      "risk_level": "low",
+      "status": "open",
+      "created_by": "Fable 5 (Claude, external maintainer session)",
+      "created_at": "2026-07-07T00:00:00-03:00"
+    }
+  ]
 }
