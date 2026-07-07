@@ -25,6 +25,18 @@
       "resolved_by": "Fable 5 (Claude, external maintainer session)",
       "resolved_at": "2026-07-07T00:00:00-03:00",
       "resolution": "Ran npm run build:catalog in local checkout. Regenerated dist/catalog.json, dist/catalog.md, dist/install-manifest.json. Counts now 1182 skills (1176 expected + 6 new agent-operations skills added this session: authoring-agent-skills, engineering-loop-contracts, engineering-agent-harnesses, engineering-context-windows, evaluating-skills-before-authoring, gating-work-with-verification-loops). shared-skill-library-governance present in catalog. agent-operations now 105."
+    },
+    {
+      "id": "catalog-refresh-after-metadata-backfill-security-forensics-batch-20260707",
+      "priority": 1,
+      "role": "Cataloger",
+      "target": "dist/catalog.json",
+      "reason": "Critic backfilled domain/risk/source metadata on four dist skill files, so generated catalog surfaces are stale until rebuilt or verified.",
+      "action": "Run or verify npm run build:catalog, then check dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Expected batch movement if no concurrent changes: uncategorized -4, unspecified risk -4, forensics +2, security-defensive +2, medium +4.",
+      "risk_level": "low",
+      "status": "open",
+      "created_by": "Critic",
+      "created_at": "2026-07-07T02:13:20-03:00"
     }
   ],
   "risk": [],
@@ -42,7 +54,21 @@
       "risk_level": "low",
       "status": "open",
       "created_by": "Fable 5 (Claude, external maintainer session)",
-      "created_at": "2026-07-07T00:00:00-03:00"
+      "created_at": "2026-07-07T00:00:00-03:00",
+      "progress": [
+        {
+          "at": "2026-07-07T02:13:20-03:00",
+          "by": "Skills Loop Operator",
+          "batch": "security-forensics-metadata-backfill",
+          "files": [
+            "dist/skills/analyzing-active-directory-acl-abuse/SKILL.md",
+            "dist/skills/analyzing-android-malware-with-apktool/SKILL.md",
+            "dist/skills/analyzing-bootkit-and-rootkit-samples/SKILL.md",
+            "dist/skills/analyzing-command-and-control-communication/SKILL.md"
+          ],
+          "result": "Added domain, risk_level, requires_review, source_family, source_license, and source_status metadata. Left critic item open because backlog remains large; created catalog refresh queue item for generated surfaces."
+        }
+      ]
     }
   ]
 }
