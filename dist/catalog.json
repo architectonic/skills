@@ -17,16 +17,16 @@
       "research": 85,
       "runtime-tools": 35,
       "security-defensive": 57,
-      "security-offensive": 10,
+      "security-offensive": 12,
       "software-engineering": 146,
-      "uncategorized": 574,
+      "uncategorized": 572,
       "writing": 16
     },
     "risk_counts": {
-      "high": 7,
+      "high": 9,
       "low": 9,
       "medium": 427,
-      "unspecified": 739
+      "unspecified": 737
     }
   },
   "domains": {
@@ -494,7 +494,9 @@
       "attacking-entra-id-with-roadtools",
       "attacking-oauth-with-device-code-phishing",
       "auditing-entra-id-with-aadinternals",
-      "building-c2-infrastructure-with-sliver-framework"
+      "building-c2-infrastructure-with-sliver-framework",
+      "building-c2-redirector-infrastructure",
+      "building-red-team-c2-infrastructure-with-havoc"
     ],
     "software-engineering": [
       "API Design Reviewer — Linting, Breaking Change Detection, and Scorecards",
@@ -654,7 +656,6 @@
       "Browser Trace",
       "Building Attack Pattern Library from CTI Reports",
       "Building Automated Malware Submission Pipeline",
-      "Building C2 Redirector Infrastructure",
       "Building Cloud SIEM with Sentinel",
       "Building Detection Rules with Splunk SPL",
       "Building IOC Defanging and Sharing Pipeline",
@@ -664,7 +665,6 @@
       "Building Malware Incident Communication Template",
       "Building Phishing Reporting Button Workflow",
       "Building Ransomware Playbook with CISA Framework",
-      "Building Red Team C2 Infrastructure with Havoc",
       "Building SOC Escalation Matrix",
       "Building SOC Metrics and KPI Tracking",
       "Building SOC Playbook for Ransomware",
@@ -4407,31 +4407,23 @@
       "type": "Playbook"
     },
     {
-      "slug": "Building C2 Redirector Infrastructure",
+      "slug": "building-c2-redirector-infrastructure",
       "title": "Building C2 Redirector Infrastructure",
-      "description": "Architect redirectors with nginx and Apache, malleable profiles, and OPSEC",
+      "description": "Safety placeholder for a removed high-risk security entry. Use only to record review status, authorization boundaries, and defensive remediation planning.",
       "path": "dist/skills/building-c2-redirector-infrastructure/SKILL.md",
       "directory": "dist/skills/building-c2-redirector-infrastructure",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-offensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
         "agent-skill",
         "okf",
-        "red-team",
-        "c2-infrastructure",
-        "redirector",
-        "nginx",
-        "apache-mod-rewrite",
-        "malleable-c2",
-        "opsec",
-        "traffic-filtering",
-        "security"
+        "security",
+        "review-gated",
+        "safety-placeholder"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "anthropic-cybersecurity-skills",
+      "source_status": "blocked-redacted",
       "type": "Playbook"
     },
     {
@@ -4811,29 +4803,23 @@
       "type": "Playbook"
     },
     {
-      "slug": "Building Red Team C2 Infrastructure with Havoc",
+      "slug": "building-red-team-c2-infrastructure-with-havoc",
       "title": "Building Red Team C2 Infrastructure with Havoc",
-      "description": "Deploy and configure the Havoc C2 framework with teamserver, HTTPS listeners,",
+      "description": "Safety placeholder for a removed high-risk security entry. Use only to record review status, authorization boundaries, and defensive remediation planning.",
       "path": "dist/skills/building-red-team-c2-infrastructure-with-havoc/SKILL.md",
       "directory": "dist/skills/building-red-team-c2-infrastructure-with-havoc",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-offensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
         "agent-skill",
         "okf",
-        "havoc-c2",
-        "command-and-control",
-        "red-team-infrastructure",
-        "post-exploitation",
-        "adversary-emulation",
-        "demon-agent",
-        "security"
+        "security",
+        "review-gated",
+        "safety-placeholder"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "anthropic-cybersecurity-skills",
+      "source_status": "blocked-redacted",
       "type": "Playbook"
     },
     {

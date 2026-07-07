@@ -17,19 +17,19 @@
 | `research` | 85 |
 | `runtime-tools` | 35 |
 | `security-defensive` | 57 |
-| `security-offensive` | 10 |
+| `security-offensive` | 12 |
 | `software-engineering` | 146 |
-| `uncategorized` | 574 |
+| `uncategorized` | 572 |
 | `writing` | 16 |
 
 ## Risk Levels
 
 | Risk | Count |
 |---|---:|
-| `high` | 7 |
+| `high` | 9 |
 | `low` | 9 |
 | `medium` | 427 |
-| `unspecified` | 739 |
+| `unspecified` | 737 |
 
 ## Install Notes
 
