@@ -12,9 +12,9 @@
       "business": 45,
       "cloud-security": 41,
       "design": 40,
-      "forensics": 23,
+      "forensics": 24,
       "media": 1,
-      "research": 87,
+      "research": 86,
       "runtime-tools": 34,
       "security-defensive": 52,
       "security-offensive": 5,
@@ -25,8 +25,8 @@
     "risk_counts": {
       "high": 2,
       "low": 9,
-      "medium": 414,
-      "unspecified": 757
+      "medium": 415,
+      "unspecified": 756
     }
   },
   "domains": {
@@ -272,6 +272,7 @@
     "forensics": [
       "Acquiring Disk Image with dd and dcfldd",
       "Analyzing Android Malware with Apktool",
+      "Analyzing Bootkit and Rootkit Samples",
       "Analyzing Memory Forensics with LiME and Volatility",
       "Building Super Timelines with Plaso",
       "Collecting Volatile Evidence from Compromised Hosts",
@@ -298,7 +299,6 @@
       "music-audio-tools"
     ],
     "research": [
-      "Analyzing Bootkit and Rootkit Samples",
       "Analyzing Campaign Attribution Evidence",
       "Analyzing Certificate Transparency for Phishing",
       "Analyzing Cobalt Strike Beacon Configuration",
@@ -1797,9 +1797,9 @@
       "description": "Analyzes bootkit and advanced rootkit malware that infects the Master",
       "path": "dist/skills/analyzing-bootkit-and-rootkit-samples/SKILL.md",
       "directory": "dist/skills/analyzing-bootkit-and-rootkit-samples",
-      "domain": "research",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "forensics",
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [
         "research",
         "agent-skill",
@@ -1811,8 +1811,8 @@
         "mbr-analysis",
         "security"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "agent-skills-standard",
+      "source_status": "adapted",
       "type": "Playbook"
     },
     {
