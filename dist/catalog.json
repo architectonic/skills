@@ -17,16 +17,16 @@
       "research": 85,
       "runtime-tools": 35,
       "security-defensive": 53,
-      "security-offensive": 6,
+      "security-offensive": 7,
       "software-engineering": 146,
-      "uncategorized": 582,
+      "uncategorized": 581,
       "writing": 16
     },
     "risk_counts": {
-      "high": 3,
+      "high": 4,
       "low": 9,
       "medium": 423,
-      "unspecified": 747
+      "unspecified": 746
     }
   },
   "domains": {
@@ -486,7 +486,8 @@
       "Implementing Memory Protection with DEP and ASLR",
       "Implementing Patch Management Workflow",
       "Performing Privilege Escalation on Linux",
-      "abusing-shadow-credentials-for-privesc"
+      "abusing-shadow-credentials-for-privesc",
+      "attacking-entra-id-with-roadtools"
     ],
     "software-engineering": [
       "API Design Reviewer — Linting, Breaking Change Detection, and Scorecards",
@@ -638,7 +639,6 @@
     ],
     "uncategorized": [
       "Assessing Vector and Embedding Weaknesses",
-      "Attacking Entra ID with ROADtools",
       "Attacking OAuth with Device-Code Phishing",
       "Auditing Entra ID with AADInternals",
       "Auditing Foundry Smart Contract Security",
@@ -3640,31 +3640,26 @@
       "type": "Playbook"
     },
     {
-      "slug": "Attacking Entra ID with ROADtools",
+      "slug": "attacking-entra-id-with-roadtools",
       "title": "Attacking Entra ID with ROADtools",
-      "description": "Enumerate Entra ID with ROADrecon and acquire and exchange tokens with roadtx.",
+      "description": "Review-gated defensive assessment wrapper for ROADtools-based Entra ID security validation. Use only for authorized identity-security planning, evidence boundaries, and remediation mapping.",
       "path": "dist/skills/attacking-entra-id-with-roadtools/SKILL.md",
       "directory": "dist/skills/attacking-entra-id-with-roadtools",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-offensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
         "agent-skill",
         "okf",
-        "red-team",
         "entra-id",
         "azure-ad",
         "roadtools",
-        "token-manipulation",
-        "cloud-enumeration",
-        "primary-refresh-token",
-        "identity-attack",
-        "security"
+        "cloud-identity",
+        "security",
+        "review-gated"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "public-security-tooling",
+      "source_status": "blocked-pending-redaction",
       "type": "Playbook"
     },
     {
