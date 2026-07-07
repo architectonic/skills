@@ -1,8 +1,14 @@
 ---
-name: Building Threat Feed Aggregation with MISP
+name: building-threat-feed-aggregation-with-misp
 description: Deploy MISP (Malware Information Sharing Platform) to aggregate, correlate,
+domain: security-defensive
+risk_level: medium
+requires_review: true
 tags: [software-development, software-development, agent-skill, okf, misp, threat-feed, aggregation, indicator, sharing, correlation, siem-integration, threat-intelligence, security]
 license: Apache-2.0
+source_family: packaged-skill-backfill
+source_license: Apache-2.0
+source_status: metadata-backfilled
 type: Playbook
 ---
 
