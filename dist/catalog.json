@@ -17,16 +17,16 @@
       "research": 85,
       "runtime-tools": 35,
       "security-defensive": 53,
-      "security-offensive": 7,
+      "security-offensive": 9,
       "software-engineering": 146,
-      "uncategorized": 581,
+      "uncategorized": 579,
       "writing": 16
     },
     "risk_counts": {
-      "high": 4,
+      "high": 6,
       "low": 9,
       "medium": 423,
-      "unspecified": 746
+      "unspecified": 744
     }
   },
   "domains": {
@@ -487,7 +487,9 @@
       "Implementing Patch Management Workflow",
       "Performing Privilege Escalation on Linux",
       "abusing-shadow-credentials-for-privesc",
-      "attacking-entra-id-with-roadtools"
+      "attacking-entra-id-with-roadtools",
+      "attacking-oauth-with-device-code-phishing",
+      "auditing-entra-id-with-aadinternals"
     ],
     "software-engineering": [
       "API Design Reviewer — Linting, Breaking Change Detection, and Scorecards",
@@ -639,8 +641,6 @@
     ],
     "uncategorized": [
       "Assessing Vector and Embedding Weaknesses",
-      "Attacking OAuth with Device-Code Phishing",
-      "Auditing Entra ID with AADInternals",
       "Auditing Foundry Smart Contract Security",
       "Auditing MCP Servers for Tool Poisoning",
       "Auditing TLS Certificate Transparency Logs",
@@ -3663,31 +3663,25 @@
       "type": "Playbook"
     },
     {
-      "slug": "Attacking OAuth with Device-Code Phishing",
+      "slug": "attacking-oauth-with-device-code-phishing",
       "title": "Attacking OAuth with Device-Code Phishing",
-      "description": "Run OAuth 2.0 device-code and illicit-consent phishing against Microsoft Entra ID to steal access and refresh tokens, bypass MFA, and pivot across Microsoft 365 services.",
+      "description": "Review-gated defensive wrapper for OAuth identity-risk validation. Use only for authorized planning, control review, detection design, and remediation mapping.",
       "path": "dist/skills/attacking-oauth-with-device-code-phishing/SKILL.md",
       "directory": "dist/skills/attacking-oauth-with-device-code-phishing",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-offensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
         "agent-skill",
         "okf",
-        "device-code-phishing",
         "oauth",
         "entra-id",
-        "token-theft",
-        "mfa-bypass",
-        "illicit-consent",
-        "tokentactics",
-        "red-team",
-        "security"
+        "cloud-identity",
+        "security",
+        "review-gated"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "public-security-tooling",
+      "source_status": "blocked-pending-redaction",
       "type": "Playbook"
     },
     {
@@ -3767,31 +3761,26 @@
       "type": "Playbook"
     },
     {
-      "slug": "Auditing Entra ID with AADInternals",
+      "slug": "auditing-entra-id-with-aadinternals",
       "title": "Auditing Entra ID with AADInternals",
-      "description": "Run Microsoft Entra ID tenant reconnaissance, token acquisition and manipulation, and federation backdoor testing with the AADInternals PowerShell toolkit to validate identity-attack resilience.",
+      "description": "Review-gated defensive assessment wrapper for AADInternals-based Entra ID security validation. Use only for authorized identity-security planning, evidence boundaries, detection design, and remediation mapping.",
       "path": "dist/skills/auditing-entra-id-with-aadinternals/SKILL.md",
       "directory": "dist/skills/auditing-entra-id-with-aadinternals",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-offensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
         "agent-skill",
         "okf",
         "aadinternals",
         "entra-id",
         "azure-ad",
-        "saml-token-forgery",
-        "federation-backdoor",
-        "token-manipulation",
-        "adfs",
-        "red-team",
-        "security"
+        "cloud-identity",
+        "security",
+        "review-gated"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "public-security-tooling",
+      "source_status": "blocked-pending-redaction",
       "type": "Playbook"
     },
     {
