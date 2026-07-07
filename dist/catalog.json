@@ -25,8 +25,8 @@
     "risk_counts": {
       "high": 9,
       "low": 9,
-      "medium": 430,
-      "unspecified": 734
+      "medium": 431,
+      "unspecified": 733
     }
   },
   "domains": {
@@ -1578,8 +1578,8 @@
       "path": "dist/skills/ai-native-cli/SKILL.md",
       "directory": "dist/skills/ai-native-cli",
       "domain": "agent-operations",
-      "risk_level": "",
-      "requires_review": false,
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [
         "agent-operations",
         "cli",
@@ -1588,8 +1588,8 @@
         "error-handling",
         "spec"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "antigravity-awesome-skills",
+      "source_status": "adapted",
       "type": "Playbook"
     },
     {
