@@ -1,8 +1,14 @@
 ---
 name: agent-memory-system
 description: Design and maintain agent memory systems. Use when setting up agent memory, designing memory schemas, implementing memory lifecycle management, or reconciling memory across sessions. Covers memory classes, lifecycle states, demotion rules, and canonicalization.
-tags: [agent-operations, agent-operations, memory, self-improvement]
+tags: [agent-operations, memory, self-improvement]
 type: Playbook
+title: agent-memory-system
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: architectonic-curator
+source_status: adapted
 ---
 
 # agent-memory-system
