@@ -1,6 +1,6 @@
 {
   "date": "2026-07-07",
-  "current_state": "catalog_refresh_trigger_repaired_awaiting_verification",
+  "current_state": "catalog_refresh_verified_metadata_backfill_open",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
   "inspected_sha": "03840c8e70ec165fb3ae81673ebe4288ff7d008f",
@@ -19,22 +19,22 @@
     "sources_blocked": 0,
     "normalized_entries_added": 0,
     "skills_updated": 1,
-    "catalog_skill_count": 1175,
+    "catalog_skill_count": 1182,
     "high_risk_count": 2,
     "requires_review_count": null,
-    "catalog_build_status": "trigger_repaired_retriggered_awaiting_verification",
-    "publication_readiness": "blocked_by_pending_catalog_refresh_verification"
+    "catalog_build_status": "verified_from_dist_catalog_json_by_portfolio_supervisor",
+    "publication_readiness": "blocked_by_metadata_backfill_and_publication_review"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 1,
+    "catalog": 0,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
     "maintenance": 0,
-    "critic": 0
+    "critic": 1
   },
   "runs": [
     {
@@ -95,14 +95,29 @@
         "queues": "f4eb3b2a1e051c4e80836b79ef3a3ded7784963e",
         "status_final": "this_commit"
       },
-      "catalog_package_npm_status": "Blocked until a later pass verifies dist/catalog.json and dist/catalog.md at 1176 skills, 99 agent-operations entries, and 412 medium-risk entries, and verifies dist/install-manifest.json still points to canonical discovery files. No npm publish performed.",
+      "catalog_package_npm_status": "Catalog surfaces were later resolved outside this operator status: operations/daily/2026-07-07/queues.json records catalog item resolved after npm run build:catalog in a local checkout. Portfolio Supervisor directly verified dist/catalog.json now reports 1182 skills, 105 agent-operations entries, and 412 medium-risk entries, and dist/install-manifest.json still points to canonical discovery files.",
       "value_delta": "Changed the stale catalog blocker from passive diagnosis into an active trigger repair: Catalog Refresh now includes its own workflow file in watched paths, and the canonical shared-skill-library-governance skill records last_reviewed while retriggering the existing skills/** path. Generated catalog files were not hand-edited."
+    },
+    {
+      "started_at": "2026-07-07T01:28:25-03:00",
+      "completed_at": "2026-07-07T01:28:25-03:00",
+      "scheduled_role": "Portfolio Supervisor repair",
+      "selected_role": "Portfolio Supervisor repair",
+      "override_reason": "Supervisor detected obvious stale status queue counts: operations/daily/2026-07-07/queues.json marks the catalog item resolved and opens one critic item, while status.json still reported catalog=1 and critic=0.",
+      "missing_ledger_initialization_performed": false,
+      "queue_item_consumed_or_created": "No skill queue item consumed or created; status was reconciled to existing queues.json evidence.",
+      "files_changed": [
+        "operations/daily/2026-07-07/status.json"
+      ],
+      "catalog_package_npm_status": "Portfolio Supervisor directly fetched dist/catalog.json and verified 1182 skills, 105 agent-operations entries, and 412 medium-risk entries; fetched dist/install-manifest.json and verified discovery files still include README.md, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json.",
+      "value_delta": "Removed stale catalog-blocker status churn and exposed the real next queue: metadata backfill for uncategorized-domain and unspecified-risk skills. No discovery, review, normalization, packaging, publication, or skill content generation was performed."
     }
   ],
   "blockers": [
-    "Open catalog queue item remains: verify-catalog-refresh-after-shared-skill-library-governance-20260706. Generated catalog surfaces require post-refresh verification before publication endorsement.",
-    "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch."
+    "Open critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707. Catalog shows 587 uncategorized-domain and 759 unspecified-risk skills; batch metadata backfill is required before new discovery should outrank cleanup.",
+    "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch.",
+    "Publication endorsement remains blocked until metadata backfill/risk-domain quality improves and a Publisher pass directly verifies package readiness."
   ],
   "last_commit": "this_commit",
-  "next_action": "Cataloger should verify whether Catalog Refresh committed regenerated dist/catalog.json, dist/catalog.md, and dist/install-manifest.json after commit 9fc91d2eaab600b3e332d1991fc05262f9f1306f. If counts remain stale, run npm run build:catalog in a checkout-capable or CI surface and commit generated surfaces."
+  "next_action": "Critic should consume metadata-backfill-uncategorized-and-unspecified-risk-20260707 and batch backfill domain/risk_level metadata using classify_dist_skills.py plus review, prioritizing cleanup over new discovery while uncategorized and unspecified-risk counts remain high."
 }
