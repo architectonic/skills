@@ -4,6 +4,13 @@ description: Analyzes bootkit and advanced rootkit malware that infects the Mast
 tags: [research, agent-skill, okf, malware, bootkit, rootkit, uefi, mbr-analysis, security]
 license: Apache-2.0
 type: Playbook
+title: Analyzing Bootkit and Rootkit Samples
+domain: forensics
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 
