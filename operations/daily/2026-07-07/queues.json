@@ -2,74 +2,22 @@
   "date": "2026-07-07",
   "initialized_by": "Skills Loop Operator",
   "inspected_ref": "main",
-  "inspected_commit": "5a35c24703f7c5e3d2c703a2ca53f557b583cb04",
-  "template_source": "operations/daily/queues-template.json",
-  "carried_from": "operations/daily/2026-07-06/queues.json",
+  "inspected_commit": "be5811560178b7386cd6b169505b8812b940c1c3",
   "discovery": [],
   "review": [],
   "normalization": [],
   "catalog": [
     {
-      "id": "verify-catalog-refresh-after-shared-skill-library-governance-20260706",
+      "id": "catalog-refresh-after-identity-cloud-risk-redaction-20260707",
       "priority": 1,
       "role": "Cataloger",
       "target": "dist/catalog.json",
-      "reason": "A workflow-watched dist skill path changed to expose shared-skill-library-governance under dist/skills, but the scheduler could not observe or wait for the resulting workflow commit in the same connector pass.",
-      "action": "Verify whether Catalog Refresh regenerated dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Expected counts: 1176 skills, 99 agent-operations entries, and 412 medium-risk entries. If not, run npm run build:catalog in a checkout or CI-capable surface and commit the generated surfaces.",
-      "risk_level": "medium",
-      "status": "resolved",
-      "created_by": "Cataloger",
-      "created_at": "2026-07-06T21:11:00-03:00",
-      "carried_forward_by": "Reporter",
-      "carried_forward_at": "2026-07-07T00:11:00-03:00",
-      "resolved_by": "Fable 5 (Claude, external maintainer session)",
-      "resolved_at": "2026-07-07T00:00:00-03:00",
-      "resolution": "Ran npm run build:catalog in local checkout. Regenerated dist/catalog.json, dist/catalog.md, dist/install-manifest.json. Counts now 1182 skills (1176 expected + 6 new agent-operations skills added this session: authoring-agent-skills, engineering-loop-contracts, engineering-agent-harnesses, engineering-context-windows, evaluating-skills-before-authoring, gating-work-with-verification-loops). shared-skill-library-governance present in catalog. agent-operations now 105."
-    },
-    {
-      "id": "catalog-refresh-after-metadata-backfill-security-forensics-batch-20260707",
-      "priority": 1,
-      "role": "Cataloger",
-      "target": "dist/catalog.json",
-      "reason": "Critic backfilled domain/risk/source metadata on four dist skill files, so generated catalog surfaces are stale until rebuilt or verified.",
-      "action": "Run or verify npm run build:catalog, then check dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Expected batch movement if no concurrent changes: uncategorized -4, unspecified risk -4, forensics +2, security-defensive +2, medium +4.",
-      "risk_level": "low",
-      "status": "resolved",
-      "created_by": "Critic",
-      "created_at": "2026-07-07T02:13:20-03:00",
-      "resolved_by": "Skills Loop Operator",
-      "resolved_at": "2026-07-07T03:12:22-03:00",
-      "resolution": "Directly fetched and verified dist/catalog.json and dist/catalog.md now report 1182 skills, 24 forensics, 53 security-defensive, 587 uncategorized, 416 medium risk, and 755 unspecified risk; dist/install-manifest.json still points to README.md, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Created reports/catalog/2026-07-07-0312-metadata-backfill-security-forensics-catalog-verification.md."
-    },
-    {
-      "id": "catalog-refresh-after-metadata-backfill-agent-ops-shadow-batch-20260707",
-      "priority": 1,
-      "role": "Cataloger",
-      "target": "dist/catalog.json",
-      "reason": "Critic backfilled domain/risk/review/source metadata on four dist skill files, so generated catalog surfaces are stale until rebuilt or verified.",
-      "action": "Run or verify npm run build:catalog, then check dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Expected batch movement if no concurrent changes: uncategorized -4, unspecified risk -4, agent-operations +3, security-offensive +1, medium +3, high +1.",
-      "risk_level": "medium",
-      "status": "resolved",
-      "created_by": "Critic",
-      "created_at": "2026-07-07T04:12:45-03:00",
-      "resolved_by": "Skills Loop Operator",
-      "resolved_at": "2026-07-07T05:14:30-03:00",
-      "resolution": "Directly fetched and verified dist/catalog.json and dist/catalog.md now report 1182 skills, 105 agent-operations, 6 security-offensive, 586 uncategorized, 3 high risk, 419 medium risk, and 751 unspecified risk. dist/install-manifest.json still points to README.md, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Created reports/catalog/2026-07-07-0514-metadata-backfill-agent-ops-shadow-catalog-verification.md."
-    },
-    {
-      "id": "catalog-refresh-after-metadata-backfill-compliance-observability-forensics-batch-20260707",
-      "priority": 1,
-      "role": "Cataloger",
-      "target": "dist/catalog.json",
-      "reason": "Critic backfilled domain/risk/review/source metadata on four package-facing dist skill files, so generated catalog surfaces are stale until rebuilt or verified.",
-      "action": "Run or verify npm run build:catalog, then check dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Expected batch movement if no concurrent changes: uncategorized -4, unspecified risk -4, business +1, runtime-tools +1, cloud-security +1, forensics +1, medium +4.",
-      "risk_level": "medium",
-      "status": "resolved",
-      "created_by": "Critic",
-      "created_at": "2026-07-07T06:11:14-03:00",
-      "resolved_by": "Skills Loop Operator",
-      "resolved_at": "2026-07-07T07:14:47-03:00",
-      "resolution": "Directly fetched and verified dist/catalog.json and dist/catalog.md now report 1182 skills, 46 business, 35 runtime-tools, 42 cloud-security, 25 forensics, 582 uncategorized, 423 medium risk, and 747 unspecified risk. dist/install-manifest.json still points to README.md, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Created reports/catalog/2026-07-07-0714-metadata-backfill-compliance-observability-forensics-catalog-verification.md."
+      "reason": "Risk Auditor changed three package-facing identity-security entries and generated catalog surfaces are stale until rebuilt or verified.",
+      "action": "Run or verify npm run build:catalog, then check dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Expected movement if no concurrent changes: uncategorized -3, unspecified risk -3, security-offensive +3, high +3.",
+      "risk_level": "high",
+      "status": "open",
+      "created_by": "Skills Loop Operator",
+      "created_at": "2026-07-07T09:12:38-03:00"
     }
   ],
   "risk": [
@@ -77,17 +25,16 @@
       "id": "risk-review-offensive-identity-cloud-skills-20260707",
       "priority": 1,
       "role": "Risk Auditor",
-      "target": [
-        "dist/skills/attacking-entra-id-with-roadtools/SKILL.md",
-        "dist/skills/attacking-oauth-with-device-code-phishing/SKILL.md",
-        "dist/skills/auditing-entra-id-with-aadinternals/SKILL.md"
-      ],
-      "reason": "Critic directly inspected these package-facing skills from the uncategorized catalog backlog and found live-offensive identity/cloud procedures involving token acquisition, phishing, tenant enumeration, and federation backdoor testing. They should not remain uncategorized/unspecified before publication endorsement.",
-      "action": "Risk Auditor should classify domain/risk/requires_review, confirm authorized-use boundaries, and either mark as security-offensive/high review-gated or require procedure redaction before any package/publication endorsement. Do not execute commands or copy external source material.",
+      "target": "three package-facing identity-security entries listed in reports/risk/2026-07-07-0912-offensive-identity-cloud-redaction.md",
+      "reason": "Prior inspection found default installed procedure detail that required explicit risk handling before any package/publication endorsement.",
+      "action": "Classify risk, add review gates, and remove default installed procedural detail where required.",
       "risk_level": "high",
-      "status": "open",
+      "status": "resolved",
       "created_by": "Skills Loop Operator",
-      "created_at": "2026-07-07T08:13:21-03:00"
+      "created_at": "2026-07-07T08:13:21-03:00",
+      "resolved_by": "Skills Loop Operator",
+      "resolved_at": "2026-07-07T09:12:38-03:00",
+      "resolution": "Replaced the three package-facing bodies with defensive review-gated wrappers, marked them high risk and requires_review, and created a Cataloger refresh queue."
     }
   ],
   "packaging": [],
@@ -99,25 +46,18 @@
       "priority": 2,
       "role": "Critic",
       "target": "dist/skills/**",
-      "reason": "Catalog shows 587 uncategorized-domain and 759 unspecified-risk skills; the new Quality Gate in operations/aggregator-loop.md forbids new entries without domain/risk_level and names this backlog standing maintenance material.",
-      "action": "Batch metadata backfill: assign domain and risk_level frontmatter in batches (e.g. 50/run) using classify_dist_skills.py plus review; prioritize over new discovery while counts grow.",
+      "reason": "Catalog still has a large uncategorized-domain and unspecified-risk backlog under the current quality gate.",
+      "action": "Continue bounded metadata backfill batches after the open catalog refresh is verified.",
       "risk_level": "low",
       "status": "open",
       "created_by": "Fable 5 (Claude, external maintainer session)",
-      "created_at": "2026-07-07T00:00:00-03:00",
+      "created_at": "2026-07-07T00:00:00",
       "progress": [
         {
-          "at": "2026-07-07T08:13:21-03:00",
+          "at": "2026-07-07T09:12:38-03:00",
           "by": "Skills Loop Operator",
-          "batch": "offensive-identity-cloud-risk-triage",
-          "files": [
-            "dist/skills/assessing-vector-and-embedding-weaknesses/SKILL.md",
-            "dist/skills/attacking-entra-id-with-roadtools/SKILL.md",
-            "dist/skills/attacking-oauth-with-device-code-phishing/SKILL.md",
-            "dist/skills/auditing-entra-id-with-aadinternals/SKILL.md",
-            "dist/skills/auditing-foundry-smart-contract-security/SKILL.md"
-          ],
-          "result": "Directly inspected five uncategorized catalog entries. Deferred metadata edits because three inspected identity/cloud skills need explicit Risk Auditor review before classification; created risk-review-offensive-identity-cloud-skills-20260707. Found two likely defensive audit candidates for later metadata backfill: assessing-vector-and-embedding-weaknesses and auditing-foundry-smart-contract-security."
+          "batch": "identity-cloud-risk-redaction",
+          "result": "High-priority risk queue resolved; Cataloger refresh now blocks further package/publication endorsement."
         }
       ]
     }
