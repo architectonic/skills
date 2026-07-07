@@ -1,8 +1,14 @@
 ---
-name: Building Threat Hunt Hypothesis Framework
+name: building-threat-hunt-hypothesis-framework
 description: Build a systematic threat hunt hypothesis framework that transforms threat
+domain: security-defensive
+risk_level: medium
+requires_review: true
 tags: [software-development, software-development, agent-skill, okf, threat-hunting, methodology, hypothesis, threat-intelligence, hunting-framework, proactive-detection, security]
 license: Apache-2.0
+source_family: packaged-skill-backfill
+source_license: Apache-2.0
+source_status: metadata-backfilled
 type: Playbook
 ---
 
