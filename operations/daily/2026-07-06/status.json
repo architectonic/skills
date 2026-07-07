@@ -27,7 +27,7 @@
     "medium_risk_count_catalog_json": 411,
     "expected_post_refresh_medium_risk_count": 412,
     "requires_review_count_catalog_json": 4,
-    "catalog_build_status": "stale_after_shared_skill_library_governance_dist_copy_verified_not_refreshed",
+    "catalog_build_status": "blocked_pending_real_build_catalog_execution_for_shared_skill_library_governance",
     "catalog_parity_status": "dist_skill_present_generated_catalogs_stale",
     "publication_readiness": "blocked_by_pending_catalog_refresh; package publication not endorsed",
     "watched_sources_configured": 2,
@@ -45,6 +45,33 @@
     "critic": 0
   },
   "runs": [
+    {
+      "started_at": "2026-07-06T23:11:00-03:00",
+      "completed_at": "2026-07-06T23:11:00-03:00",
+      "scheduled_role": "Reporter or Critic",
+      "selected_role": "Cataloger",
+      "override_reason": "The only open queue item is verify-catalog-refresh-after-shared-skill-library-governance-20260706, and the catalog/package health gate remains active because generated catalog surfaces still lag the new dist skill.",
+      "inspected_ref": "main",
+      "inspected_sha": "8e2984ea0d5fccbf0c35a416d9f65c3bf1c141a6",
+      "missing_ledger_initialization_performed": false,
+      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json absent on default branch; no discovery Action handoff available.",
+      "online_searches_used": [],
+      "queue_item_consumed_or_advanced": "verify-catalog-refresh-after-shared-skill-library-governance-20260706 inspected; left open because generated catalogs remain stale and a real npm run build:catalog execution is required.",
+      "queue_items_closed": [],
+      "queue_items_created": [],
+      "sources_reviewed": [],
+      "candidates_processed": 0,
+      "files_changed": [
+        "reports/catalog/2026-07-06-2311-shared-skill-library-governance-catalog-retrigger-diagnosis.md",
+        "operations/daily/2026-07-06/status.json"
+      ],
+      "commit_shas": {
+        "catalog_blocker_report": "c07ea6921ae5334ea64bc36695ba12e781dacb9b",
+        "status_final": "this_commit"
+      },
+      "catalog_package_npm_status": "dist/skills/shared-skill-library-governance/SKILL.md exists with expected metadata, but dist/catalog.json and dist/catalog.md still report 1175 skills, 98 agent-operations entries, and 411 medium-risk entries instead of expected 1176, 99, and 412. No npm publish was requested or performed.",
+      "value_delta": "Prevented false catalog/package endorsement and recorded the precise blocker: install-root visibility is repaired, but generated catalog execution has not produced refreshed machine and human catalog surfaces. The correct next action is a real npm run build:catalog run in CI or a checkout-capable surface, followed by direct verification."
+    },
     {
       "started_at": "2026-07-06T22:12:00-03:00",
       "completed_at": "2026-07-06T22:12:00-03:00",
@@ -66,7 +93,7 @@
       ],
       "commit_shas": {
         "catalog_verification_report": "717303c9b97d49927dc3005b3ddef8ef36907949",
-        "status_final": "this_commit"
+        "status_final": "8e2984ea0d5fccbf0c35a416d9f65c3bf1c141a6"
       },
       "catalog_package_npm_status": "dist/skills/shared-skill-library-governance/SKILL.md exists and carries expected install metadata, but dist/catalog.json and dist/catalog.md still report 1175 skills, 98 agent-operations entries, and 411 medium-risk entries instead of expected 1176, 99, and 412. dist/install-manifest.json remains structurally valid. No npm publish was requested or performed.",
       "value_delta": "Verified the package state after the prior dist copy. Prevented a false package/publication endorsement by confirming generated catalog surfaces remain stale while the install-root skill copy exists. The queue remains open for a real catalog rebuild or workflow verification."
@@ -107,49 +134,13 @@
       },
       "catalog_package_npm_status": "dist/skills now includes shared-skill-library-governance. dist/install-manifest.json still points to canonical discovery files. dist/catalog.json and dist/catalog.md still report 1175 skills, 98 agent-operations entries, and 411 medium-risk entries until Catalog Refresh or npm run build:catalog verifies expected counts of 1176, 99, and 412. No npm publish was requested or performed.",
       "value_delta": "Removed the install-root visibility gap for shared-skill-library-governance by adding the generated dist skill copy with preserved metadata. Remaining catalog drift is narrowed to generated summary surfaces and has a concrete verification queue item."
-    },
-    {
-      "started_at": "2026-07-06T20:13:00-03:00",
-      "completed_at": "2026-07-06T20:13:00-03:00",
-      "scheduled_role": "Publisher",
-      "selected_role": "Normalizer",
-      "override_reason": "Publisher is blocked because publication requires reviewed sources and current catalog/install surfaces. The review queue was clear, catalog surfaces were current before this pass, and normalize-shared-skill-library-governance-20260706 was the only concrete open work item; queue pressure overrode the cadence role.",
-      "inspected_ref": "main",
-      "missing_ledger_initialization_performed": false,
-      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json absent on default branch; no discovery Action handoff available.",
-      "online_searches_used": [],
-      "queue_item_consumed_or_advanced": "normalize-shared-skill-library-governance-20260706",
-      "queue_items_closed": [
-        "normalize-shared-skill-library-governance-20260706"
-      ],
-      "queue_items_created": [
-        "catalog-refresh-after-shared-skill-library-governance-20260706"
-      ],
-      "sources_reviewed": [
-        "sources/reviewed/magicskills.md"
-      ],
-      "candidates_processed": 1,
-      "files_changed": [
-        "skills/shared-skill-library-governance.md",
-        "reports/normalization/2026-07-06-2013-shared-skill-library-governance.md",
-        "operations/daily/2026-07-06/queues.json",
-        "operations/daily/2026-07-06/status.json",
-        "operations/log.md"
-      ],
-      "commit_shas": {
-        "skill": "7a2d114719c91717a62a9ac91337ab3b1606dd8e",
-        "normalization_report": "bcb1f3848962f4f46692314fc7eab566152b8729",
-        "queues": "cd5882d9b070859d41dfcdf6c91e7f8c7539beee",
-        "status_final": "1abd311b815f6d791926cf8c1c1fa236201da311"
-      },
-      "catalog_package_npm_status": "A new skill was added under skills/shared-skill-library-governance.md. dist/skills, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json are stale until Cataloger refreshes or verifies package surfaces. No npm publish was requested or performed.",
-      "value_delta": "Converted the reviewed MagicSkills source profile into an original Architectonic skill for shared skill-library governance, including canonical skill pool control, named collections, runtime-specific exposure surfaces, registry references, collision handling, and separate trust levels for listing, reading, syncing, installing, and executing."
     }
   ],
   "blockers": [
     "operations/action-runs/discover-skill-sources/latest.json is absent on the default branch; scheduler fallback artifacts remain necessary until the Action handoff producer is repaired or emits a current handoff.",
-    "dist/catalog.json and dist/catalog.md still need regeneration after adding dist/skills/shared-skill-library-governance/SKILL.md; both generated catalog surfaces still report 1175 skills, 98 agent-operations entries, and 411 medium-risk entries instead of expected 1176, 99, and 412."
+    "dist/catalog.json and dist/catalog.md still need regeneration after adding dist/skills/shared-skill-library-governance/SKILL.md; both generated catalog surfaces still report 1175 skills, 98 agent-operations entries, and 411 medium-risk entries instead of expected 1176, 99, and 412.",
+    "The connector workflow-run lookup for the relevant catalog trigger commits returned no associated workflow runs, so this scheduler surface cannot verify that Catalog Refresh ran successfully. A real npm run build:catalog execution in CI or a checkout-capable surface is required before Packager or Publisher endorsement."
   ],
   "last_commit": "this_commit",
-  "next_action": "Cataloger should keep verify-catalog-refresh-after-shared-skill-library-governance-20260706 open and either verify a workflow-generated catalog refresh on main or run npm run build:catalog in a checkout/CI-capable surface before any Packager or Publisher endorsement."
+  "next_action": "Cataloger should keep verify-catalog-refresh-after-shared-skill-library-governance-20260706 open and run npm run build:catalog in CI or a checkout-capable surface, then verify dist/catalog.json, dist/catalog.md, and dist/install-manifest.json before any Packager or Publisher endorsement."
 }
