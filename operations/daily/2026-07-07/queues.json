@@ -53,6 +53,18 @@
       "resolved_by": "Skills Loop Operator",
       "resolved_at": "2026-07-07T09:12:38-03:00",
       "resolution": "Replaced the three package-facing bodies with defensive review-gated wrappers, marked them high risk and requires_review, and created a Cataloger refresh queue."
+    },
+    {
+      "id": "risk-review-dpapi-credential-access-skill-20260707",
+      "priority": 1,
+      "role": "Risk Auditor",
+      "target": "dist/skills/abusing-dpapi-for-credential-access/SKILL.md",
+      "reason": "Critic inspection found that the package-facing DPAPI credential-access skill is marked high risk and requires review, but still contains default installed operational credential-access procedure detail.",
+      "action": "Inspect and decide whether to redact into a defensive review-gated wrapper, preserve only detection/authorization/audit guidance, make the source reference-only, or block package endorsement.",
+      "risk_level": "high",
+      "status": "open",
+      "created_by": "Skills Loop Operator",
+      "created_at": "2026-07-07T13:11:04-03:00"
     }
   ],
   "packaging": [],
@@ -94,6 +106,12 @@
           "by": "Skills Loop Operator",
           "batch": "threat-intel-detection-catalog-verification",
           "result": "Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, and dist/install-manifest.json; Critic backlog is unblocked for the next bounded metadata batch."
+        },
+        {
+          "at": "2026-07-07T13:11:04-03:00",
+          "by": "Skills Loop Operator",
+          "batch": "dpapi-risk-triage",
+          "result": "Stopped routine metadata backfill on a high-risk package-facing DPAPI credential-access skill and created risk queue risk-review-dpapi-credential-access-skill-20260707 before further package/publication endorsement."
         }
       ]
     }
