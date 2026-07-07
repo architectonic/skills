@@ -25,13 +25,12 @@
     "risk_counts": {
       "high": 9,
       "low": 9,
-      "medium": 427,
-      "unspecified": 737
+      "medium": 428,
+      "unspecified": 736
     }
   },
   "domains": {
     "agent-operations": [
-      "Agent Operating Loop",
       "Agentic Actions Auditor",
       "Authority Model",
       "Bash Defensive Patterns",
@@ -77,6 +76,7 @@
       "agent-context-validation",
       "agent-handoff",
       "agent-memory-system",
+      "agent-operating-loop",
       "agent-skill-configuration",
       "agent-skill-portability",
       "ai-native-cli",
@@ -1471,14 +1471,14 @@
       "type": "Playbook"
     },
     {
-      "slug": "Agent Operating Loop",
+      "slug": "agent-operating-loop",
       "title": "Agent Operating Loop",
       "description": "The canonical Read → Classify → Inspect → Plan → Act → Verify → Reconcile → Handoff cycle that governs how an agent should approach any task. Use as the default procedure before starting work.",
       "path": "dist/skills/agent-operating-loop/SKILL.md",
       "directory": "dist/skills/agent-operating-loop",
       "domain": "agent-operations",
-      "risk_level": "",
-      "requires_review": false,
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [
         "loops",
         "agent-operations",
@@ -1486,8 +1486,8 @@
         "modus-operandi",
         "safety"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "architectonic-curated",
+      "source_status": "adapted",
       "type": "Playbook"
     },
     {
