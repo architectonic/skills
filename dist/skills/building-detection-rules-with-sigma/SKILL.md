@@ -1,8 +1,14 @@
 ---
-name: Building Detection Rules with Sigma
+name: building-detection-rules-with-sigma
 description: Builds vendor-agnostic detection rules using the Sigma rule format for
+domain: security-defensive
+risk_level: medium
+requires_review: true
 tags: [software-development, software-development, agent-skill, okf, soc, sigma, detection-rules, siem, mitre-attack, splunk, elastic, sentinel, security]
 license: Apache-2.0
+source_family: packaged-skill-backfill
+source_license: Apache-2.0
+source_status: metadata-backfilled
 type: Playbook
 ---
 
