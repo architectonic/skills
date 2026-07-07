@@ -1,9 +1,9 @@
 {
   "date": "2026-07-07",
-  "current_state": "metadata_backfill_compliance_observability_forensics_batch_done_catalog_open",
+  "current_state": "metadata_backfill_compliance_observability_forensics_catalog_verified_critic_backlog_open",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "ce901181cc7666d8a19b25aad454ee82aceae157",
+  "inspected_sha": "707397fd38432e30ccc5b18110bc141faa46c6bd",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -18,18 +18,21 @@
     "sources_reviewed": 0,
     "sources_blocked": 0,
     "normalized_entries_added": 0,
-    "skills_updated": 4,
+    "skills_updated": 0,
     "catalog_skill_count": 1182,
     "high_risk_count": 3,
+    "medium_risk_count": 423,
+    "unspecified_risk_count": 747,
+    "uncategorized_domain_count": 582,
     "requires_review_count": null,
-    "catalog_build_status": "stale_after_metadata_backfill_compliance_observability_forensics_batch",
-    "publication_readiness": "blocked_by_open_catalog_refresh_queue_metadata_backfill_quality_backlog_and_missing_discovery_action_handoff"
+    "catalog_build_status": "verified_after_metadata_backfill_compliance_observability_forensics_batch",
+    "publication_readiness": "blocked_by_metadata_quality_backlog_and_missing_discovery_action_handoff"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 1,
+    "catalog": 0,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -37,6 +40,34 @@
     "critic": 1
   },
   "runs": [
+    {
+      "started_at": "2026-07-07T07:14:47-03:00",
+      "completed_at": "2026-07-07T07:14:47-03:00",
+      "scheduled_role": "Radar",
+      "selected_role": "Cataloger",
+      "override_reason": "The catalog/package health gate overrides Radar while catalog-refresh-after-metadata-backfill-compliance-observability-forensics-batch-20260707 is open after package-facing dist/skills metadata edits.",
+      "inspected_ref": "main",
+      "inspected_sha": "707397fd38432e30ccc5b18110bc141faa46c6bd",
+      "missing_ledger_initialization_performed": false,
+      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch; no discovery Action handoff was available. This Cataloger pass did not run manual discovery because an existing catalog/package health gate had priority.",
+      "online_searches_used": [],
+      "queue_item_consumed_or_created": "Closed catalog-refresh-after-metadata-backfill-compliance-observability-forensics-batch-20260707 after direct verification of dist/catalog.json, dist/catalog.md, and dist/install-manifest.json; left metadata-backfill-uncategorized-and-unspecified-risk-20260707 open.",
+      "sources_reviewed": [],
+      "candidates_processed": 0,
+      "files_changed": [
+        "reports/catalog/2026-07-07-0714-metadata-backfill-compliance-observability-forensics-catalog-verification.md",
+        "operations/daily/2026-07-07/queues.json",
+        "operations/daily/2026-07-07/status.json",
+        "operations/log.md"
+      ],
+      "commit_shas": {
+        "report": "c151c0f7e6e046b9d8f5e57776483e21ad870ec6",
+        "queues": "dfcbfb3ec70cf62e43d11cdcfdcbd619204d5ef7",
+        "status_final": "this_commit"
+      },
+      "catalog_package_npm_status": "Catalog verified: dist/catalog.json and dist/catalog.md both report 1182 skills, 46 business, 35 runtime-tools, 42 cloud-security, 25 forensics, 582 uncategorized, 3 high risk, 423 medium risk, and 747 unspecified risk. dist/install-manifest.json still points to README.md, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. No npm publish performed.",
+      "value_delta": "Removed the stale package-surface blocker created by the previous Critic metadata batch and confirmed the four edited package-facing skills are represented in generated catalog counts with domain/risk metadata. No generated catalog file was hand-edited."
+    },
     {
       "started_at": "2026-07-07T06:11:14-03:00",
       "completed_at": "2026-07-07T06:11:14-03:00",
@@ -61,53 +92,15 @@
         "operations/daily/2026-07-07/status.json",
         "operations/log.md"
       ],
-      "commit_shas": {
-        "cmmc_metadata": "76fb9f122339e8e4e6661644b8e4586e073caef3",
-        "alert_optimizer_metadata": "f9ab7f261f0e8aa67b3ecb0a504341471e60166d",
-        "kubernetes_audit_metadata": "ca468d70b7041c8d4275aec3aa9a1b93ce3be88d",
-        "mft_recovery_metadata": "b96e698785287b279e8b9574ac10a6d9beff8884",
-        "report": "6fea894a88f45cde0916c85b2b921b9fdbda37f3",
-        "queues": "1d88ab84990ff3e4dc82aeaee99c7c713bb0da4d",
-        "status_final": "this_commit"
-      },
-      "catalog_package_npm_status": "Catalog surfaces are stale after direct dist/skills metadata changes. No npm publish performed. Cataloger must rebuild or verify dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Expected movement if no concurrent changes: uncategorized -4, unspecified risk -4, business +1, runtime-tools +1, cloud-security +1, forensics +1, medium +4.",
-      "value_delta": "Converted four package-facing skills from uncategorized/unspecified catalog entries into review-gated, domain-classified package entries without broad procedure rewrites: one regulated compliance skill, one observability/on-call skill, one cloud-security audit-log skill, and one forensics skill. Also repaired weak frontmatter names/descriptions needed by the quality gate."
-    },
-    {
-      "started_at": "2026-07-07T05:14:30-03:00",
-      "completed_at": "2026-07-07T05:14:30-03:00",
-      "scheduled_role": "Risk Auditor",
-      "selected_role": "Cataloger",
-      "override_reason": "Catalog/package health gate overrides Risk Auditor while catalog-refresh-after-metadata-backfill-agent-ops-shadow-batch-20260707 is open after package-facing dist/skills metadata edits.",
-      "inspected_ref": "main",
-      "inspected_sha": "19e020297bc4af0f2c19e2a08262a8d0483a7d16",
-      "missing_ledger_initialization_performed": false,
-      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent on default branch; no discovery Action handoff was available. This Cataloger pass did not run manual discovery because an existing package-surface verification queue had priority.",
-      "online_searches_used": [],
-      "queue_item_consumed_or_created": "Closed catalog-refresh-after-metadata-backfill-agent-ops-shadow-batch-20260707 after direct verification of dist/catalog.json, dist/catalog.md, and dist/install-manifest.json; left metadata-backfill-uncategorized-and-unspecified-risk-20260707 open.",
-      "sources_reviewed": [],
-      "candidates_processed": 0,
-      "files_changed": [
-        "reports/catalog/2026-07-07-0514-metadata-backfill-agent-ops-shadow-catalog-verification.md",
-        "operations/daily/2026-07-07/queues.json",
-        "operations/daily/2026-07-07/status.json",
-        "operations/log.md"
-      ],
-      "commit_shas": {
-        "report": "9638795c305534e0754ca8263a93f991610877f9",
-        "queues": "66dd7d4112fa6bf1468272d0bf7d1264a05ad922",
-        "status_final": "ce901181cc7666d8a19b25aad454ee82aceae157"
-      },
-      "catalog_package_npm_status": "Catalog verified: dist/catalog.json and dist/catalog.md both report 1182 skills, 105 agent-operations, 6 security-offensive, 586 uncategorized, 3 high risk, 419 medium risk, and 751 unspecified risk. dist/install-manifest.json still points to README.md, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. No npm publish performed.",
-      "value_delta": "Removed the stale package-surface blocker created by the previous Critic metadata batch and exposed the remaining actionable queue as the Critic metadata-backfill backlog. No generated catalog file was hand-edited."
+      "catalog_package_npm_status": "Catalog surfaces were stale after direct dist/skills metadata changes. No npm publish performed. Cataloger needed to verify dist/catalog.json, dist/catalog.md, and dist/install-manifest.json.",
+      "value_delta": "Converted four package-facing skills from uncategorized/unspecified catalog entries into review-gated, domain-classified package entries without broad procedure rewrites."
     }
   ],
   "blockers": [
-    "Open catalog queue item: catalog-refresh-after-metadata-backfill-compliance-observability-forensics-batch-20260707. Catalog surfaces are stale after this pass until Cataloger refreshes or verifies generated outputs.",
-    "Open critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707. Catalog counts before this pass were 586 uncategorized-domain and 751 unspecified-risk skills; expected movement after catalog refresh is -4 for each.",
+    "Open critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707. Catalog counts after this pass show 582 uncategorized-domain and 747 unspecified-risk skills.",
     "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch.",
-    "Publication endorsement remains blocked until metadata backfill/risk-domain quality improves, catalog surfaces are refreshed, and discovery Action handoff is restored or intentionally replaced by bounded fallback during an eligible Radar/Source Reviewer cadence."
+    "Publication endorsement remains blocked until metadata backfill/risk-domain quality improves and discovery Action handoff is restored or intentionally replaced by bounded fallback during an eligible Radar/Source Reviewer cadence."
   ],
   "last_commit": "this_commit",
-  "next_action": "Cataloger should refresh or verify generated surfaces for catalog-refresh-after-metadata-backfill-compliance-observability-forensics-batch-20260707; Critic can then continue metadata-backfill-uncategorized-and-unspecified-risk-20260707."
+  "next_action": "Critic should continue metadata-backfill-uncategorized-and-unspecified-risk-20260707 with another bounded metadata batch; Cataloger should verify generated surfaces after the next package-facing metadata batch."
 }
