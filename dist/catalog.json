@@ -12,9 +12,9 @@
       "business": 45,
       "cloud-security": 41,
       "design": 40,
-      "forensics": 22,
+      "forensics": 23,
       "media": 1,
-      "research": 88,
+      "research": 87,
       "runtime-tools": 34,
       "security-defensive": 52,
       "security-offensive": 5,
@@ -25,8 +25,8 @@
     "risk_counts": {
       "high": 2,
       "low": 9,
-      "medium": 413,
-      "unspecified": 758
+      "medium": 414,
+      "unspecified": 757
     }
   },
   "domains": {
@@ -271,6 +271,7 @@
     ],
     "forensics": [
       "Acquiring Disk Image with dd and dcfldd",
+      "Analyzing Android Malware with Apktool",
       "Analyzing Memory Forensics with LiME and Volatility",
       "Building Super Timelines with Plaso",
       "Collecting Volatile Evidence from Compromised Hosts",
@@ -297,7 +298,6 @@
       "music-audio-tools"
     ],
     "research": [
-      "Analyzing Android Malware with Apktool",
       "Analyzing Bootkit and Rootkit Samples",
       "Analyzing Campaign Attribution Evidence",
       "Analyzing Certificate Transparency for Phishing",
@@ -1689,9 +1689,9 @@
       "description": "Perform static analysis of Android APK malware samples using apktool",
       "path": "dist/skills/analyzing-android-malware-with-apktool/SKILL.md",
       "directory": "dist/skills/analyzing-android-malware-with-apktool",
-      "domain": "research",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "forensics",
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [
         "research",
         "agent-skill",
@@ -1706,8 +1706,8 @@
         "reverse-engineering",
         "security"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "agent-skills-standard",
+      "source_status": "adapted",
       "type": "Playbook"
     },
     {
