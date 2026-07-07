@@ -17,16 +17,16 @@
       "research": 85,
       "runtime-tools": 35,
       "security-defensive": 57,
-      "security-offensive": 9,
+      "security-offensive": 10,
       "software-engineering": 146,
-      "uncategorized": 575,
+      "uncategorized": 574,
       "writing": 16
     },
     "risk_counts": {
-      "high": 6,
+      "high": 7,
       "low": 9,
       "medium": 427,
-      "unspecified": 740
+      "unspecified": 739
     }
   },
   "domains": {
@@ -493,7 +493,8 @@
       "abusing-shadow-credentials-for-privesc",
       "attacking-entra-id-with-roadtools",
       "attacking-oauth-with-device-code-phishing",
-      "auditing-entra-id-with-aadinternals"
+      "auditing-entra-id-with-aadinternals",
+      "building-c2-infrastructure-with-sliver-framework"
     ],
     "software-engineering": [
       "API Design Reviewer — Linting, Breaking Change Detection, and Scorecards",
@@ -653,7 +654,6 @@
       "Browser Trace",
       "Building Attack Pattern Library from CTI Reports",
       "Building Automated Malware Submission Pipeline",
-      "Building C2 Infrastructure with Sliver Framework",
       "Building C2 Redirector Infrastructure",
       "Building Cloud SIEM with Sentinel",
       "Building Detection Rules with Splunk SPL",
@@ -4387,30 +4387,23 @@
       "type": "Playbook"
     },
     {
-      "slug": "Building C2 Infrastructure with Sliver Framework",
+      "slug": "building-c2-infrastructure-with-sliver-framework",
       "title": "Building C2 Infrastructure with Sliver Framework",
-      "description": "Build and configure a resilient command-and-control infrastructure using",
+      "description": "Safety placeholder for a removed high-risk security entry. Use only to record review status, authorization boundaries, and defensive remediation planning.",
       "path": "dist/skills/building-c2-infrastructure-with-sliver-framework/SKILL.md",
       "directory": "dist/skills/building-c2-infrastructure-with-sliver-framework",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-offensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
         "agent-skill",
         "okf",
-        "red-team",
-        "c2-framework",
-        "sliver",
-        "command-and-control",
-        "adversary-simulation",
-        "infrastructure",
-        "post-exploitation",
-        "security"
+        "security",
+        "review-gated",
+        "safety-placeholder"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "anthropic-cybersecurity-skills",
+      "source_status": "blocked-redacted",
       "type": "Playbook"
     },
     {
