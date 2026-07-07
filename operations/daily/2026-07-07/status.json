@@ -1,11 +1,11 @@
 {
   "date": "2026-07-07",
-  "current_state": "daily_ledger_initialized_catalog_blocker_carried_forward",
+  "current_state": "catalog_refresh_trigger_repaired_awaiting_verification",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "5a35c24703f7c5e3d2c703a2ca53f557b583cb04",
+  "inspected_sha": "03840c8e70ec165fb3ae81673ebe4288ff7d008f",
   "model_requirement_status": "model_setting_unverified",
-  "missing_ledger_initialization_performed": true,
+  "missing_ledger_initialization_performed": false,
   "package": {
     "name": "architectonic-skills",
     "version": "0.1.3",
@@ -18,12 +18,12 @@
     "sources_reviewed": 0,
     "sources_blocked": 0,
     "normalized_entries_added": 0,
-    "skills_updated": 0,
-    "catalog_skill_count": null,
-    "high_risk_count": null,
+    "skills_updated": 1,
+    "catalog_skill_count": 1175,
+    "high_risk_count": 2,
     "requires_review_count": null,
-    "catalog_build_status": "not_checked_initialization_only",
-    "publication_readiness": "blocked_by_pending_catalog_refresh"
+    "catalog_build_status": "trigger_repaired_retriggered_awaiting_verification",
+    "publication_readiness": "blocked_by_pending_catalog_refresh_verification"
   },
   "queues": {
     "discovery": 0,
@@ -62,16 +62,47 @@
         "status_initial": "17c55d1f3d55cbae62e510a30c923f7ffa0a8ae2",
         "report": "14feb7764c18cee1bbab4e4d73bef19e9a7932a3",
         "log": "4b1eff01e4e686ca6b2b735ca09889be43ef71fe",
-        "status_final": "this_commit"
+        "status_final": "03840c8e70ec165fb3ae81673ebe4288ff7d008f"
       },
       "catalog_package_npm_status": "Not checked in this initialization-only pass. Prior state says dist/skills/shared-skill-library-governance/SKILL.md exists but generated catalog surfaces remain stale until npm run build:catalog or Catalog Refresh verifies expected counts.",
       "value_delta": "Repaired the missing 2026-07-07 daily ledger and preserved the unresolved catalog blocker without running discovery, review, normalization, packaging, or publication work."
+    },
+    {
+      "started_at": "2026-07-07T01:14:49-03:00",
+      "completed_at": "2026-07-07T01:14:49-03:00",
+      "scheduled_role": "Radar",
+      "selected_role": "Cataloger",
+      "override_reason": "Catalog/package gate overrides Radar while verify-catalog-refresh-after-shared-skill-library-governance-20260706 is open and generated catalog surfaces remain stale.",
+      "inspected_ref": "main",
+      "inspected_sha": "03840c8e70ec165fb3ae81673ebe4288ff7d008f",
+      "missing_ledger_initialization_performed": false,
+      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent on default branch; discovery Action handoff unavailable. Catalog Refresh workflow exists and was hardened to include its own workflow file in push path filters.",
+      "online_searches_used": [],
+      "queue_item_consumed_or_created": "Updated open catalog queue item verify-catalog-refresh-after-shared-skill-library-governance-20260706 with trigger-repair commits and left it open for post-refresh verification.",
+      "sources_reviewed": [],
+      "candidates_processed": 0,
+      "files_changed": [
+        ".github/workflows/catalog-refresh.yml",
+        "skills/shared-skill-library-governance.md",
+        "reports/catalog/2026-07-07-0114-shared-skill-library-governance-catalog-trigger-repair.md",
+        "operations/daily/2026-07-07/queues.json",
+        "operations/daily/2026-07-07/status.json"
+      ],
+      "commit_shas": {
+        "workflow_trigger_hardening": "5349ed9204afa741d0f886afc0dc9074f24e7923",
+        "skill_retrigger": "9fc91d2eaab600b3e332d1991fc05262f9f1306f",
+        "report": "23165dc60111d58be4211b82eb6b72b5317945d5",
+        "queues": "f4eb3b2a1e051c4e80836b79ef3a3ded7784963e",
+        "status_final": "this_commit"
+      },
+      "catalog_package_npm_status": "Blocked until a later pass verifies dist/catalog.json and dist/catalog.md at 1176 skills, 99 agent-operations entries, and 412 medium-risk entries, and verifies dist/install-manifest.json still points to canonical discovery files. No npm publish performed.",
+      "value_delta": "Changed the stale catalog blocker from passive diagnosis into an active trigger repair: Catalog Refresh now includes its own workflow file in watched paths, and the canonical shared-skill-library-governance skill records last_reviewed while retriggering the existing skills/** path. Generated catalog files were not hand-edited."
     }
   ],
   "blockers": [
-    "Daily ledger was missing at the start of this pass and has been initialized from templates.",
-    "Open catalog queue item remains: verify-catalog-refresh-after-shared-skill-library-governance-20260706. Generated catalog surfaces still require rebuild/verification before publication endorsement."
+    "Open catalog queue item remains: verify-catalog-refresh-after-shared-skill-library-governance-20260706. Generated catalog surfaces require post-refresh verification before publication endorsement.",
+    "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch."
   ],
   "last_commit": "this_commit",
-  "next_action": "Cataloger should process verify-catalog-refresh-after-shared-skill-library-governance-20260706 by running or verifying npm run build:catalog in a checkout-capable or CI surface, then checking dist/catalog.json, dist/catalog.md, and dist/install-manifest.json before Packager or Publisher endorsement."
+  "next_action": "Cataloger should verify whether Catalog Refresh committed regenerated dist/catalog.json, dist/catalog.md, and dist/install-manifest.json after commit 9fc91d2eaab600b3e332d1991fc05262f9f1306f. If counts remain stale, run npm run build:catalog in a checkout-capable or CI surface and commit generated surfaces."
 }
