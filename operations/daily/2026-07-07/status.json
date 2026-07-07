@@ -1,9 +1,9 @@
 {
   "date": "2026-07-07",
-  "current_state": "identity_cloud_risk_redaction_catalog_verified",
+  "current_state": "threat_intel_detection_metadata_backfilled_catalog_stale",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "56b0fb06b4db80c7a895906c67c7cc12bfc0470b",
+  "inspected_sha": "f9109c55aa38300c9e409d0913f7f7b19b2faa05",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -18,21 +18,21 @@
     "sources_reviewed": 0,
     "sources_blocked": 0,
     "normalized_entries_added": 0,
-    "skills_updated": 0,
+    "skills_updated": 4,
     "catalog_skill_count": 1182,
     "high_risk_count": 6,
     "medium_risk_count": 423,
     "unspecified_risk_count": 744,
     "uncategorized_domain_count": 579,
     "requires_review_count": null,
-    "catalog_build_status": "verified_after_identity_cloud_risk_redaction",
-    "publication_readiness": "blocked_by_metadata_quality_backlog_and_absent_discovery_action_handoff"
+    "catalog_build_status": "stale_after_threat_intel_detection_metadata_backfill",
+    "publication_readiness": "blocked_by_open_catalog_refresh_and_metadata_quality_backlog"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 0,
+    "catalog": 1,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -96,13 +96,46 @@
         "Publication endorsement remains blocked until metadata quality backlog improves and discovery Action handoff is repaired or replaced by bounded fallback."
       ],
       "value_delta": "Removed a package blocker by verifying generated catalog surfaces after the high-risk identity-cloud defensive redaction and unblocked the next bounded Critic metadata-backfill batch."
+    },
+    {
+      "started_at": "2026-07-07T11:12:44-03:00",
+      "completed_at": "2026-07-07T11:12:44-03:00",
+      "scheduled_role": "Radar",
+      "selected_role": "Critic",
+      "override_reason": "The hour cadence selected Radar, but the concrete metadata-backfill queue remained open, catalog surfaces were verified at run start, and metadata quality cleanup outranked broad discovery under the queue-first and package-health rules.",
+      "inspected_ref": "main",
+      "inspected_sha": "f9109c55aa38300c9e409d0913f7f7b19b2faa05",
+      "missing_ledger_initialization_performed": false,
+      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch; no discovery Action handoff was available. This Critic pass did not run manual discovery because a concrete metadata-quality queue had priority over Radar.",
+      "online_searches_used": [],
+      "queue_item_consumed_or_created": "Advanced metadata-backfill-uncategorized-and-unspecified-risk-20260707 and created catalog-refresh-after-metadata-backfill-threat-intel-detection-batch-20260707.",
+      "sources_reviewed": [],
+      "candidates_processed": 0,
+      "files_changed": [
+        "dist/skills/automating-ioc-enrichment/SKILL.md",
+        "dist/skills/building-detection-rules-with-sigma/SKILL.md",
+        "dist/skills/building-threat-feed-aggregation-with-misp/SKILL.md",
+        "dist/skills/building-threat-hunt-hypothesis-framework/SKILL.md",
+        "reports/critic/2026-07-07-1112-metadata-backfill-threat-intel-detection-batch.md",
+        "operations/daily/2026-07-07/queues.json",
+        "operations/daily/2026-07-07/status.json"
+      ],
+      "catalog_package_npm_status": "Generated catalog surfaces are stale after four dist/skills edits. Expected post-refresh movement if no concurrent changes: security-defensive 53 to 57, uncategorized 579 to 575, medium 423 to 427, unspecified 744 to 740. No catalog files were hand-edited and no npm publish was performed.",
+      "blockers": [
+        "Open Cataloger queue item: catalog-refresh-after-metadata-backfill-threat-intel-detection-batch-20260707.",
+        "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
+        "operations/action-runs/discover-skill-sources/latest.json remains absent.",
+        "Publication endorsement remains blocked until catalog refresh verifies generated surfaces and metadata quality backlog improves."
+      ],
+      "value_delta": "Four installed threat-intelligence and detection skills now have explicit lowercase names, security-defensive domains, medium risk, review gates, and source-status metadata instead of remaining uncategorized and unspecified-risk package entries."
     }
   ],
   "blockers": [
+    "Open Cataloger queue item: catalog-refresh-after-metadata-backfill-threat-intel-detection-batch-20260707.",
     "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
     "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch.",
-    "Publication endorsement remains blocked until metadata quality backlog improves and discovery Action handoff is repaired or replaced by bounded fallback."
+    "Publication endorsement remains blocked until catalog refresh verifies generated surfaces and metadata quality backlog improves."
   ],
   "last_commit": "this_commit",
-  "next_action": "Critic should continue metadata-backfill-uncategorized-and-unspecified-risk-20260707 with a small package-facing metadata batch, then create a Cataloger queue item if dist/skills changes again."
+  "next_action": "Cataloger should refresh/verify generated surfaces for catalog-refresh-after-metadata-backfill-threat-intel-detection-batch-20260707, then Critic can continue metadata-backfill-uncategorized-and-unspecified-risk-20260707 with another small package-facing metadata batch."
 }
