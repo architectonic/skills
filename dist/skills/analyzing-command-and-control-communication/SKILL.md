@@ -13,6 +13,13 @@ tags:
 - security
 license: Apache-2.0
 type: Playbook
+title: Analyzing Command-and-Control Communication
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Analyzing Command-and-Control Communication
@@ -197,7 +204,6 @@ PoshC2:
 python3 << 'PYEOF'
 # Using CobaltStrikeParser (pip install cobalt-strike-parser)
 from cobalt_strike_parser import BeaconConfig
-
 try:
     config = BeaconConfig.from_file("suspect.exe")
     print("Cobalt Strike Beacon Configuration:")
