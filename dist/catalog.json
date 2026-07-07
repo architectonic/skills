@@ -17,16 +17,16 @@
       "research": 85,
       "runtime-tools": 34,
       "security-defensive": 53,
-      "security-offensive": 5,
+      "security-offensive": 6,
       "software-engineering": 146,
-      "uncategorized": 587,
+      "uncategorized": 586,
       "writing": 16
     },
     "risk_counts": {
-      "high": 2,
+      "high": 3,
       "low": 9,
       "medium": 416,
-      "unspecified": 755
+      "unspecified": 754
     }
   },
   "domains": {
@@ -481,7 +481,8 @@
       "Analyzing Persistence Mechanisms in Linux",
       "Implementing Memory Protection with DEP and ASLR",
       "Implementing Patch Management Workflow",
-      "Performing Privilege Escalation on Linux"
+      "Performing Privilege Escalation on Linux",
+      "abusing-shadow-credentials-for-privesc"
     ],
     "software-engineering": [
       "API Design Reviewer — Linting, Breaking Change Detection, and Scorecards",
@@ -632,7 +633,6 @@
       "xurl"
     ],
     "uncategorized": [
-      "Abusing Shadow Credentials for Privilege Escalation",
       "Achieving CMMC Level 2 Compliance",
       "Alert Optimizer",
       "Analyzing Kubernetes Audit Logs",
@@ -1286,18 +1286,18 @@
       "type": "Playbook"
     },
     {
-      "slug": "Abusing Shadow Credentials for Privilege Escalation",
+      "slug": "abusing-shadow-credentials-for-privesc",
       "title": "Abusing Shadow Credentials for Privilege Escalation",
-      "description": "Take over Active Directory user and computer accounts by writing alternate certificate keys to msDS-KeyCredentialLink (Shadow Credentials) with pyWhisker, Whisker, and Certipy, then authenticate via PKINIT.",
+      "description": "Take over Active Directory user and computer accounts by writing alternate certificate keys to msDS-KeyCredentialLink (Shadow Credentials) with pyWhisker, Whisker, and Certipy, then authenticate via PKINIT. Use only for authorized security testing, red-team engagements, and purple-team validation.",
       "path": "dist/skills/abusing-shadow-credentials-for-privesc/SKILL.md",
       "directory": "dist/skills/abusing-shadow-credentials-for-privesc",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-offensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
-        "agent-skill",
+        "security-offensive",
+        "software-engineering",
+        "skill",
         "okf",
         "red-team",
         "active-directory",
@@ -1309,8 +1309,8 @@
         "privilege-escalation",
         "security"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "anthropic-cybersecurity-skills",
+      "source_status": "adapted",
       "type": "Playbook"
     },
     {
