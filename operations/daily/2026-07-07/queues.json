@@ -2,7 +2,7 @@
   "date": "2026-07-07",
   "initialized_by": "Skills Loop Operator",
   "inspected_ref": "main",
-  "inspected_commit": "20052968ab0a76bdf99ff1df7d0616b480f8d3dc",
+  "inspected_commit": "7dafe234d8d76d9fd1064387864b664f6c78756b",
   "discovery": [],
   "review": [],
   "normalization": [],
@@ -67,6 +67,19 @@
       "resolved_by": "Skills Loop Operator",
       "resolved_at": "2026-07-07T18:12:29-03:00",
       "resolution": "Verified dist/catalog.json and dist/catalog.md at 1182 skills, 12 security-offensive, 572 uncategorized, 9 high, 427 medium, and 737 unspecified. Verified dist/install-manifest.json remains coherent and the three C2/red-team package-facing entries are high-risk review-gated safety placeholders. Created reports/catalog/2026-07-07-1812-c2-red-team-catalog-verification.md."
+    },
+    {
+      "id": "catalog-refresh-after-metadata-backfill-agent-ops-cli-batch-20260707",
+      "priority": 1,
+      "role": "Cataloger",
+      "target": "dist/catalog.json",
+      "reason": "Critic changed four package-facing agent-operations/security-defensive CLI and agent-instruction entries and generated catalog surfaces are stale until rebuilt or verified.",
+      "action": "Run or verify npm run build:catalog, then check dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Expected movement if no concurrent changes: agent-operations +3 net, security-defensive +1, uncategorized -4, medium +4, unspecified -4.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Skills Loop Operator",
+      "created_at": "2026-07-07T19:13:01-03:00",
+      "source_report": "reports/critic/2026-07-07-1913-metadata-backfill-agent-ops-cli-batch.md"
     }
   ],
   "risk": [
@@ -142,7 +155,8 @@
         {"at":"2026-07-07T15:14:25-03:00","by":"Skills Loop Operator","batch":"dpapi-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the package-facing DPAPI wrapper; Critic backlog is unblocked for the next bounded metadata batch."},
         {"at":"2026-07-07T16:14:47-03:00","by":"Skills Loop Operator","batch":"c2-red-team-risk-triage","result":"Stopped routine metadata backfill on three uncategorized/unspecified-risk C2 and red-team infrastructure skills and created risk queue risk-review-c2-red-team-infrastructure-skills-20260707 before further package/publication endorsement."},
         {"at":"2026-07-07T17:12:15-03:00","by":"Skills Loop Operator","batch":"c2-red-team-redaction","result":"Resolved the high-risk review by replacing three package-facing security entries with review-gated safety placeholders; Cataloger refresh now blocks further package/publication endorsement."},
-        {"at":"2026-07-07T18:12:29-03:00","by":"Skills Loop Operator","batch":"c2-red-team-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the three package-facing C2/red-team safety placeholders; Critic backlog is unblocked for the next bounded metadata batch."}
+        {"at":"2026-07-07T18:12:29-03:00","by":"Skills Loop Operator","batch":"c2-red-team-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the three package-facing C2/red-team safety placeholders; Critic backlog is unblocked for the next bounded metadata batch."},
+        {"at":"2026-07-07T19:13:01-03:00","by":"Skills Loop Operator","batch":"agent-ops-cli-metadata-backfill","result":"Backfilled four package-facing agent-operations/security-defensive CLI and agent-instruction skills with explicit domain, medium risk, requires_review, and source status metadata; created Cataloger refresh queue catalog-refresh-after-metadata-backfill-agent-ops-cli-batch-20260707."}
       ]
     }
   ]
