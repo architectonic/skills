@@ -1,8 +1,14 @@
 ---
-name: Agent Context Validation
+name: agent-context-validation
 description: Validate any artifact that changes what an agent reads, installs, executes, or treats as authority. Use when reviewing skills, prompts, MCP configs, hooks, subagent definitions, or runtime adapters before promotion.
-tags: [agent-operations, agent-operations, validation, safety, linting, skills, mcp]
+tags: [agent-operations, validation, safety, linting, skills, mcp]
 type: Playbook
+title: Agent Context Validation
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: architectonic-curator
+source_status: adapted
 ---
 
 # Agent Context Validation
