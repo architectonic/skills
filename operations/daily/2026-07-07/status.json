@@ -1,9 +1,9 @@
 {
   "date": "2026-07-07",
-  "current_state": "dpapi_credential_access_redacted_catalog_refresh_required",
+  "current_state": "dpapi_credential_access_redaction_catalog_verified",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "a15690770541a05fea6e3070025a25f4ec9a28d4",
+  "inspected_sha": "c2487f92125c20be8b106d2833c0fbd61796b8c9",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -18,21 +18,21 @@
     "sources_reviewed": 0,
     "sources_blocked": 0,
     "normalized_entries_added": 0,
-    "skills_updated": 1,
+    "skills_updated": 0,
     "catalog_skill_count": 1182,
     "high_risk_count": 6,
     "medium_risk_count": 427,
     "unspecified_risk_count": 740,
     "uncategorized_domain_count": 575,
     "requires_review_count": null,
-    "catalog_build_status": "stale_after_dpapi_credential_access_redaction",
-    "publication_readiness": "blocked_by_open_catalog_refresh_metadata_backlog_and_absent_discovery_action_handoff"
+    "catalog_build_status": "verified_after_dpapi_credential_access_redaction",
+    "publication_readiness": "blocked_by_metadata_backlog_and_absent_discovery_action_handoff"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 1,
+    "catalog": 0,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -213,14 +213,40 @@
         "Publication endorsement remains blocked until catalog refresh verifies generated surfaces and metadata quality backlog improves."
       ],
       "value_delta": "Removed default installed DPAPI credential-access procedure detail and converted the package-facing entry into a high-risk review-gated defensive wrapper pending catalog refresh."
+    },
+    {
+      "started_at": "2026-07-07T15:14:25-03:00",
+      "completed_at": "2026-07-07T15:14:25-03:00",
+      "scheduled_role": "Normalizer",
+      "selected_role": "Cataloger",
+      "override_reason": "The hour cadence selected Normalizer, but queues.catalog had an open package-health item after the DPAPI redaction. The catalog/package gate overrides Normalizer until generated catalog and install surfaces are verified.",
+      "inspected_ref": "main",
+      "inspected_sha": "c2487f92125c20be8b106d2833c0fbd61796b8c9",
+      "missing_ledger_initialization_performed": false,
+      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json returned 404 on the default branch; no discovery Action handoff was available. This Cataloger pass did not run manual discovery because the open catalog queue had priority.",
+      "online_searches_used": [],
+      "queue_item_consumed_or_created": "Resolved catalog-refresh-after-dpapi-credential-access-redaction-20260707 after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the package-facing DPAPI wrapper.",
+      "sources_reviewed": [],
+      "candidates_processed": 0,
+      "files_changed": [
+        "reports/catalog/2026-07-07-1514-dpapi-credential-access-catalog-verification.md",
+        "operations/daily/2026-07-07/queues.json",
+        "operations/daily/2026-07-07/status.json"
+      ],
+      "catalog_package_npm_status": "Catalog surfaces are verified after the DPAPI redaction: dist/catalog.json and dist/catalog.md report 1182 skills, 9 security-offensive, 575 uncategorized, 6 high, 427 medium, and 740 unspecified; dist/install-manifest.json remains coherent. No npm publish was performed.",
+      "blockers": [
+        "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
+        "operations/action-runs/discover-skill-sources/latest.json remains absent.",
+        "Publication endorsement remains blocked until metadata quality backlog improves and discovery Action handoff is repaired or replaced by bounded fallback."
+      ],
+      "value_delta": "Removed a package-health blocker by verifying that the high-risk DPAPI credential-access redaction is reflected by the package-facing skill and compatible catalog/install surfaces."
     }
   ],
   "blockers": [
-    "Open Cataloger queue item: catalog-refresh-after-dpapi-credential-access-redaction-20260707.",
     "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
     "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch.",
-    "Publication endorsement remains blocked until catalog refresh verifies generated surfaces, metadata quality backlog improves, and discovery Action handoff is repaired or replaced by bounded fallback."
+    "Publication endorsement remains blocked until metadata quality backlog improves and discovery Action handoff is repaired or replaced by bounded fallback."
   ],
   "last_commit": "this_commit",
-  "next_action": "Cataloger should process catalog-refresh-after-dpapi-credential-access-redaction-20260707 before the next Critic metadata backfill or any package/publication endorsement."
+  "next_action": "Critic should continue metadata-backfill-uncategorized-and-unspecified-risk-20260707 with a bounded package-facing metadata batch; if dist/skills changes, create a Cataloger refresh queue before any package/publication endorsement."
 }
