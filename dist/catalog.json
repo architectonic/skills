@@ -6,9 +6,9 @@
     "entrypoint": "README.md"
   },
   "summary": {
-    "skill_count": 1175,
+    "skill_count": 1176,
     "domain_counts": {
-      "agent-operations": 98,
+      "agent-operations": 99,
       "business": 45,
       "cloud-security": 41,
       "design": 40,
@@ -25,7 +25,7 @@
     "risk_counts": {
       "high": 2,
       "low": 3,
-      "medium": 411,
+      "medium": 412,
       "unspecified": 759
     }
   },
@@ -114,6 +114,7 @@
       "retro",
       "scaffold-exercises",
       "setup-browser-cookies",
+      "shared-skill-library-governance",
       "skill-authoring-doctrine",
       "skill-creation",
       "skill-distillation",
@@ -29002,6 +29003,28 @@
       "source_family": "",
       "source_status": "",
       "type": "Playbook"
+    },
+    {
+      "slug": "shared-skill-library-governance",
+      "title": "Shared Skill Library Governance",
+      "description": "Use when designing or operating a shared repository of agent skills so reusable skills stay canonical, reviewed, scoped to named collections, and exposed safely to each runtime.",
+      "path": "dist/skills/shared-skill-library-governance/SKILL.md",
+      "directory": "dist/skills/shared-skill-library-governance",
+      "domain": "agent-operations",
+      "risk_level": "medium",
+      "requires_review": true,
+      "tags": [
+        "skill",
+        "skill-library",
+        "governance",
+        "agent-runtime",
+        "collections",
+        "registry",
+        "agent-operations"
+      ],
+      "source_family": "",
+      "source_status": "normalized",
+      "type": "Skill"
     },
     {
       "slug": "skills-catalog",
