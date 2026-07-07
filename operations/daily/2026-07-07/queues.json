@@ -72,7 +72,24 @@
       "resolution": "Directly fetched and verified dist/catalog.json and dist/catalog.md now report 1182 skills, 46 business, 35 runtime-tools, 42 cloud-security, 25 forensics, 582 uncategorized, 423 medium risk, and 747 unspecified risk. dist/install-manifest.json still points to README.md, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Created reports/catalog/2026-07-07-0714-metadata-backfill-compliance-observability-forensics-catalog-verification.md."
     }
   ],
-  "risk": [],
+  "risk": [
+    {
+      "id": "risk-review-offensive-identity-cloud-skills-20260707",
+      "priority": 1,
+      "role": "Risk Auditor",
+      "target": [
+        "dist/skills/attacking-entra-id-with-roadtools/SKILL.md",
+        "dist/skills/attacking-oauth-with-device-code-phishing/SKILL.md",
+        "dist/skills/auditing-entra-id-with-aadinternals/SKILL.md"
+      ],
+      "reason": "Critic directly inspected these package-facing skills from the uncategorized catalog backlog and found live-offensive identity/cloud procedures involving token acquisition, phishing, tenant enumeration, and federation backdoor testing. They should not remain uncategorized/unspecified before publication endorsement.",
+      "action": "Risk Auditor should classify domain/risk/requires_review, confirm authorized-use boundaries, and either mark as security-offensive/high review-gated or require procedure redaction before any package/publication endorsement. Do not execute commands or copy external source material.",
+      "risk_level": "high",
+      "status": "open",
+      "created_by": "Skills Loop Operator",
+      "created_at": "2026-07-07T08:13:21-03:00"
+    }
+  ],
   "packaging": [],
   "publication": [],
   "maintenance": [],
@@ -90,73 +107,17 @@
       "created_at": "2026-07-07T00:00:00-03:00",
       "progress": [
         {
-          "at": "2026-07-07T02:13:20-03:00",
+          "at": "2026-07-07T08:13:21-03:00",
           "by": "Skills Loop Operator",
-          "batch": "security-forensics-metadata-backfill",
+          "batch": "offensive-identity-cloud-risk-triage",
           "files": [
-            "dist/skills/analyzing-active-directory-acl-abuse/SKILL.md",
-            "dist/skills/analyzing-android-malware-with-apktool/SKILL.md",
-            "dist/skills/analyzing-bootkit-and-rootkit-samples/SKILL.md",
-            "dist/skills/analyzing-command-and-control-communication/SKILL.md"
+            "dist/skills/assessing-vector-and-embedding-weaknesses/SKILL.md",
+            "dist/skills/attacking-entra-id-with-roadtools/SKILL.md",
+            "dist/skills/attacking-oauth-with-device-code-phishing/SKILL.md",
+            "dist/skills/auditing-entra-id-with-aadinternals/SKILL.md",
+            "dist/skills/auditing-foundry-smart-contract-security/SKILL.md"
           ],
-          "result": "Added domain, risk_level, requires_review, source_family, source_license, and source_status metadata. Left critic item open because backlog remains large; created catalog refresh queue item for generated surfaces."
-        },
-        {
-          "at": "2026-07-07T03:12:22-03:00",
-          "by": "Skills Loop Operator",
-          "batch": "security-forensics-catalog-verification",
-          "files": [
-            "dist/catalog.json",
-            "dist/catalog.md",
-            "dist/install-manifest.json"
-          ],
-          "result": "Verified generated catalog surfaces now include the expected movement from the four-file metadata batch; closed catalog-refresh-after-metadata-backfill-security-forensics-batch-20260707. Broader metadata backlog remains open."
-        },
-        {
-          "at": "2026-07-07T04:12:45-03:00",
-          "by": "Skills Loop Operator",
-          "batch": "agent-ops-shadow-metadata-backfill",
-          "files": [
-            "dist/skills/abusing-shadow-credentials-for-privesc/SKILL.md",
-            "dist/skills/agent-context-validation/SKILL.md",
-            "dist/skills/agent-handoff/SKILL.md",
-            "dist/skills/agent-memory-system/SKILL.md"
-          ],
-          "result": "Added or corrected lowercase-hyphen name, domain, risk_level, requires_review, source_family/source_license where supported, and source_status metadata. Left critic item open because backlog remains large; created catalog refresh queue item catalog-refresh-after-metadata-backfill-agent-ops-shadow-batch-20260707."
-        },
-        {
-          "at": "2026-07-07T05:14:30-03:00",
-          "by": "Skills Loop Operator",
-          "batch": "agent-ops-shadow-catalog-verification",
-          "files": [
-            "dist/catalog.json",
-            "dist/catalog.md",
-            "dist/install-manifest.json"
-          ],
-          "result": "Verified generated catalog surfaces now include the expected movement from the agent-ops/shadow four-file metadata batch; closed catalog-refresh-after-metadata-backfill-agent-ops-shadow-batch-20260707. Broader metadata backlog remains open."
-        },
-        {
-          "at": "2026-07-07T06:11:14-03:00",
-          "by": "Skills Loop Operator",
-          "batch": "compliance-observability-forensics-metadata-backfill",
-          "files": [
-            "dist/skills/achieving-cmmc-level-2-compliance/SKILL.md",
-            "dist/skills/alert-optimizer/SKILL.md",
-            "dist/skills/analyzing-kubernetes-audit-logs/SKILL.md",
-            "dist/skills/analyzing-mft-for-deleted-file-recovery/SKILL.md"
-          ],
-          "result": "Added or corrected lowercase-hyphen name, domain, risk_level, requires_review, source_family/source_license where supported, and source_status metadata. Repaired weak descriptions where required by the quality gate. Left critic item open because backlog remains large; created catalog refresh queue item catalog-refresh-after-metadata-backfill-compliance-observability-forensics-batch-20260707."
-        },
-        {
-          "at": "2026-07-07T07:14:47-03:00",
-          "by": "Skills Loop Operator",
-          "batch": "compliance-observability-forensics-catalog-verification",
-          "files": [
-            "dist/catalog.json",
-            "dist/catalog.md",
-            "dist/install-manifest.json"
-          ],
-          "result": "Verified generated catalog surfaces now include the expected movement from the compliance/observability/cloud-security/forensics four-file metadata batch; closed catalog-refresh-after-metadata-backfill-compliance-observability-forensics-batch-20260707. Broader metadata backlog remains open."
+          "result": "Directly inspected five uncategorized catalog entries. Deferred metadata edits because three inspected identity/cloud skills need explicit Risk Auditor review before classification; created risk-review-offensive-identity-cloud-skills-20260707. Found two likely defensive audit candidates for later metadata backfill: assessing-vector-and-embedding-weaknesses and auditing-foundry-smart-contract-security."
         }
       ]
     }
