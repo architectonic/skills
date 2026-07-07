@@ -1,0 +1,32 @@
+{
+  "date": "2026-07-07",
+  "initialized_by": "Skills Loop Operator",
+  "inspected_ref": "main",
+  "inspected_commit": "5a35c24703f7c5e3d2c703a2ca53f557b583cb04",
+  "template_source": "operations/daily/queues-template.json",
+  "carried_from": "operations/daily/2026-07-06/queues.json",
+  "discovery": [],
+  "review": [],
+  "normalization": [],
+  "catalog": [
+    {
+      "id": "verify-catalog-refresh-after-shared-skill-library-governance-20260706",
+      "priority": 1,
+      "role": "Cataloger",
+      "target": "dist/catalog.json",
+      "reason": "A workflow-watched dist skill path changed to expose shared-skill-library-governance under dist/skills, but the scheduler could not observe or wait for the resulting workflow commit in the same connector pass.",
+      "action": "Verify whether Catalog Refresh regenerated dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Expected counts: 1176 skills, 99 agent-operations entries, and 412 medium-risk entries. If not, run npm run build:catalog in a checkout or CI-capable surface and commit the generated surfaces.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Cataloger",
+      "created_at": "2026-07-06T21:11:00-03:00",
+      "carried_forward_by": "Reporter",
+      "carried_forward_at": "2026-07-07T00:11:00-03:00"
+    }
+  ],
+  "risk": [],
+  "packaging": [],
+  "publication": [],
+  "maintenance": [],
+  "critic": []
+}
