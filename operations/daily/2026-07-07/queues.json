@@ -34,9 +34,12 @@
       "reason": "Critic backfilled domain/risk/source metadata on four dist skill files, so generated catalog surfaces are stale until rebuilt or verified.",
       "action": "Run or verify npm run build:catalog, then check dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Expected batch movement if no concurrent changes: uncategorized -4, unspecified risk -4, forensics +2, security-defensive +2, medium +4.",
       "risk_level": "low",
-      "status": "open",
+      "status": "resolved",
       "created_by": "Critic",
-      "created_at": "2026-07-07T02:13:20-03:00"
+      "created_at": "2026-07-07T02:13:20-03:00",
+      "resolved_by": "Skills Loop Operator",
+      "resolved_at": "2026-07-07T03:12:22-03:00",
+      "resolution": "Directly fetched and verified dist/catalog.json and dist/catalog.md now report 1182 skills, 24 forensics, 53 security-defensive, 587 uncategorized, 416 medium risk, and 755 unspecified risk; dist/install-manifest.json still points to README.md, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Created reports/catalog/2026-07-07-0312-metadata-backfill-security-forensics-catalog-verification.md."
     }
   ],
   "risk": [],
@@ -67,6 +70,17 @@
             "dist/skills/analyzing-command-and-control-communication/SKILL.md"
           ],
           "result": "Added domain, risk_level, requires_review, source_family, source_license, and source_status metadata. Left critic item open because backlog remains large; created catalog refresh queue item for generated surfaces."
+        },
+        {
+          "at": "2026-07-07T03:12:22-03:00",
+          "by": "Skills Loop Operator",
+          "batch": "security-forensics-catalog-verification",
+          "files": [
+            "dist/catalog.json",
+            "dist/catalog.md",
+            "dist/install-manifest.json"
+          ],
+          "result": "Verified generated catalog surfaces now include the expected movement from the four-file metadata batch; closed catalog-refresh-after-metadata-backfill-security-forensics-batch-20260707. Broader metadata backlog remains open."
         }
       ]
     }
