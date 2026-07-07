@@ -8,7 +8,7 @@
   "summary": {
     "skill_count": 1182,
     "domain_counts": {
-      "agent-operations": 104,
+      "agent-operations": 105,
       "business": 46,
       "cloud-security": 42,
       "design": 40,
@@ -19,14 +19,14 @@
       "security-defensive": 58,
       "security-offensive": 12,
       "software-engineering": 146,
-      "uncategorized": 572,
+      "uncategorized": 571,
       "writing": 16
     },
     "risk_counts": {
       "high": 9,
       "low": 9,
-      "medium": 429,
-      "unspecified": 735
+      "medium": 430,
+      "unspecified": 734
     }
   },
   "domains": {
@@ -78,6 +78,7 @@
       "agent-operating-loop",
       "agent-skill-configuration",
       "agent-skill-portability",
+      "agents-md-improver",
       "ai-native-cli",
       "authoring-agent-skills",
       "browse",
@@ -1062,7 +1063,6 @@
       "Validating Backup Integrity for Recovery",
       "Validating TPM Measured Boot and Attestation",
       "agent-development",
-      "agents-md-improver",
       "ai-seo",
       "algorithmic-art",
       "anti-sycophancy",
@@ -1563,12 +1563,12 @@
       "description": "Audit and improve AGENTS.md / CLAUDE.md / SOUL.md files in repositories. Use when the user asks to check, audit, update, improve, or fix agent instruction files. Scans for all agent instruction files, evaluates quality against a rubric, outputs quality report, then makes targeted updates. Also use when the user mentions \"agent instruction maintenance\", \"project memory optimization\", or \"rules file audit\". Adapted from anthropic-claude-plugins-official/claude-md-improver.",
       "path": "dist/skills/agents-md-improver/SKILL.md",
       "directory": "dist/skills/agents-md-improver",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "agent-operations",
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "anthropic-claude-plugins-official",
+      "source_status": "adapted",
       "type": "Playbook"
     },
     {
