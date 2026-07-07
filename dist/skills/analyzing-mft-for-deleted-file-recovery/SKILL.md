@@ -1,6 +1,12 @@
 ---
-name: Analyzing MFT for Deleted File Recovery
-description: Analyze the NTFS Master File Table ($MFT) to recover metadata and content
+name: analyzing-mft-for-deleted-file-recovery
+description: Analyzes NTFS Master File Table evidence when forensic responders need to recover deleted-file metadata, reconstruct timelines, correlate journal artifacts, or detect timestomping.
+domain: forensics
+risk_level: medium
+requires_review: true
+source_family: okf-security-playbook
+source_license: Apache-2.0
+source_status: package_metadata_backfill
 tags: [devops, agent-skill, okf, mft, ntfs, deleted-files, file-recovery, mftecmd, usn-journal, logfile, mft-slack-space, file-system-forensics, dfir, security]
 license: Apache-2.0
 type: Playbook
@@ -217,7 +223,7 @@ Deleted Files:          149,432
 MFT Entry | Filename                          | Path                               | Size      | Deleted (UTC)         | Recoverable
 ----------|-----------------------------------|------------------------------------|-----------|-----------------------|------------
 148923    | exfil_tool.exe                    | C:\ProgramData\Updates\            | 1,258,496 | 2024-01-17 02:45:12   | YES
-148924    | exfil_tool.log                    | C:\ProgramData\Updates\            | 45,312    | 2024-01-17 02:45:14   | YES
+148924    | exfil_tool.log                    | C:\ProgramData\Updates\            | 45,312 | 2024-01-17 02:45:14   | YES
 149001    | passwords.txt                     | C:\Users\jsmith\Desktop\           | 2,048     | 2024-01-17 02:50:33   | YES
 149150    | scan_results.csv                  | C:\Users\jsmith\AppData\Local\Temp | 892,416   | 2024-01-17 03:00:01   | PARTIAL
 149200    | mimikatz.exe                      | C:\Windows\Temp\                   | 1,250,816 | 2024-01-18 01:15:22   | YES
