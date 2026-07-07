@@ -1,9 +1,9 @@
 {
   "date": "2026-07-07",
-  "current_state": "offensive_identity_cloud_risk_triage_created_risk_gate_open",
+  "current_state": "identity_cloud_risk_redacted_catalog_refresh_open",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "81a4e02f457cd86eec8518e0d4dcd93bbd33d14b",
+  "inspected_sha": "be5811560178b7386cd6b169505b8812b940c1c3",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -18,22 +18,22 @@
     "sources_reviewed": 0,
     "sources_blocked": 0,
     "normalized_entries_added": 0,
-    "skills_updated": 0,
+    "skills_updated": 3,
     "catalog_skill_count": 1182,
     "high_risk_count": 3,
     "medium_risk_count": 423,
     "unspecified_risk_count": 747,
     "uncategorized_domain_count": 582,
     "requires_review_count": null,
-    "catalog_build_status": "verified_before_this_pass_no_dist_change",
-    "publication_readiness": "blocked_by_open_high_priority_risk_queue_and_metadata_quality_backlog"
+    "catalog_build_status": "stale_after_identity_cloud_risk_redaction",
+    "publication_readiness": "blocked_by_catalog_refresh_and_metadata_quality_backlog"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 0,
-    "risk": 1,
+    "catalog": 1,
+    "risk": 0,
     "packaging": 0,
     "publication": 0,
     "maintenance": 0,
@@ -41,39 +41,42 @@
   },
   "runs": [
     {
-      "started_at": "2026-07-07T08:13:21-03:00",
-      "completed_at": "2026-07-07T08:13:21-03:00",
-      "scheduled_role": "Source Reviewer",
-      "selected_role": "Critic",
-      "override_reason": "The scheduled Source Reviewer queue was empty, while the open critic metadata backlog was concrete and the directly inspected identity/cloud entries introduced a safety gate that outranks routine source review or growth.",
+      "started_at": "2026-07-07T09:12:38-03:00",
+      "completed_at": "2026-07-07T09:12:38-03:00",
+      "scheduled_role": "Normalizer",
+      "selected_role": "Risk Auditor",
+      "override_reason": "The hour cadence selected Normalizer, but the open high-priority risk queue outranked normalization, discovery, packaging, and publication under the operator stability rules.",
       "inspected_ref": "main",
-      "inspected_sha": "81a4e02f457cd86eec8518e0d4dcd93bbd33d14b",
+      "inspected_sha": "be5811560178b7386cd6b169505b8812b940c1c3",
       "missing_ledger_initialization_performed": false,
-      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch; no discovery Action handoff was available. This Critic pass did not run manual discovery because an open metadata/risk quality gate had priority.",
+      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch; no discovery Action handoff was available. This Risk Auditor pass did not run manual discovery because an open high-priority risk queue had priority.",
       "online_searches_used": [],
-      "queue_item_consumed_or_created": "Advanced metadata-backfill-uncategorized-and-unspecified-risk-20260707 by directly inspecting five uncategorized dist skills; created risk-review-offensive-identity-cloud-skills-20260707 for three identity/cloud offensive entries.",
+      "queue_item_consumed_or_created": "Resolved risk-review-offensive-identity-cloud-skills-20260707 and created catalog-refresh-after-identity-cloud-risk-redaction-20260707.",
       "sources_reviewed": [],
       "candidates_processed": 0,
       "files_changed": [
-        "reports/critic/2026-07-07-0813-offensive-identity-cloud-risk-triage.md",
+        "dist/skills/attacking-entra-id-with-roadtools/SKILL.md",
+        "dist/skills/attacking-oauth-with-device-code-phishing/SKILL.md",
+        "dist/skills/auditing-entra-id-with-aadinternals/SKILL.md",
+        "reports/risk/2026-07-07-0912-offensive-identity-cloud-redaction.md",
         "operations/daily/2026-07-07/queues.json",
         "operations/daily/2026-07-07/status.json"
       ],
-      "catalog_package_npm_status": "No dist/skills or generated catalog files were changed in this pass. Existing verified catalog state remains 1182 skills, 582 uncategorized domains, 3 high risk, 423 medium risk, and 747 unspecified risk. No npm publish performed.",
+      "catalog_package_npm_status": "Generated catalog surfaces are stale after three dist/skills edits. No catalog files were hand-edited and no npm publish was performed.",
       "blockers": [
-        "High-priority risk queue now open for offensive identity/cloud skills.",
-        "metadata-backfill-uncategorized-and-unspecified-risk-20260707 remains open.",
+        "Open Cataloger queue item: catalog-refresh-after-identity-cloud-risk-redaction-20260707.",
+        "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
         "operations/action-runs/discover-skill-sources/latest.json remains absent."
       ],
-      "value_delta": "Converted an unsafe routine metadata-backfill target into an explicit high-priority risk-review gate, preventing three live-offensive identity/cloud procedure skills from being silently catalog-classified or publication-endorsed without safety review."
+      "value_delta": "Removed default installed operational procedure detail from three high-risk identity-security package entries and converted them into high-risk review-gated defensive wrappers pending catalog refresh."
     }
   ],
   "blockers": [
-    "Open risk queue item: risk-review-offensive-identity-cloud-skills-20260707.",
-    "Open critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
+    "Open Cataloger queue item: catalog-refresh-after-identity-cloud-risk-redaction-20260707.",
+    "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
     "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch.",
-    "Publication endorsement remains blocked until risk review and metadata quality backlog improve."
+    "Publication endorsement remains blocked until catalog refresh and metadata quality backlog improve."
   ],
   "last_commit": "this_commit",
-  "next_action": "Risk Auditor should process risk-review-offensive-identity-cloud-skills-20260707 before Critic continues routine metadata backfill."
+  "next_action": "Cataloger should process catalog-refresh-after-identity-cloud-risk-redaction-20260707 before Critic continues routine metadata backfill."
 }
