@@ -16,17 +16,17 @@
       "media": 1,
       "research": 85,
       "runtime-tools": 35,
-      "security-defensive": 54,
+      "security-defensive": 55,
       "security-offensive": 9,
       "software-engineering": 146,
-      "uncategorized": 578,
+      "uncategorized": 577,
       "writing": 16
     },
     "risk_counts": {
       "high": 6,
       "low": 9,
-      "medium": 424,
-      "unspecified": 743
+      "medium": 425,
+      "unspecified": 742
     }
   },
   "domains": {
@@ -479,7 +479,8 @@
       "Performing User Behavior Analytics",
       "Performing Web Application Vulnerability Triage",
       "Scanning Infrastructure with Nessus",
-      "automating-ioc-enrichment"
+      "automating-ioc-enrichment",
+      "building-detection-rules-with-sigma"
     ],
     "security-offensive": [
       "Abusing DPAPI for Credential Access",
@@ -653,7 +654,6 @@
       "Building C2 Infrastructure with Sliver Framework",
       "Building C2 Redirector Infrastructure",
       "Building Cloud SIEM with Sentinel",
-      "Building Detection Rules with Sigma",
       "Building Detection Rules with Splunk SPL",
       "Building IOC Defanging and Sharing Pipeline",
       "Building Identity Federation with SAML Azure AD",
@@ -4500,14 +4500,14 @@
       "type": "Playbook"
     },
     {
-      "slug": "Building Detection Rules with Sigma",
+      "slug": "building-detection-rules-with-sigma",
       "title": "Building Detection Rules with Sigma",
       "description": "Builds vendor-agnostic detection rules using the Sigma rule format for",
       "path": "dist/skills/building-detection-rules-with-sigma/SKILL.md",
       "directory": "dist/skills/building-detection-rules-with-sigma",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-defensive",
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [
         "software-development",
         "software-development",
@@ -4523,8 +4523,8 @@
         "sentinel",
         "security"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "packaged-skill-backfill",
+      "source_status": "metadata-backfilled",
       "type": "Playbook"
     },
     {
