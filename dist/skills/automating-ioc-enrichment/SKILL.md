@@ -1,8 +1,14 @@
 ---
-name: Automating IOC Enrichment
+name: automating-ioc-enrichment
 description: Automates the enrichment of raw indicators of compromise with multi-source
+domain: security-defensive
+risk_level: medium
+requires_review: true
 tags: [software-development, software-development, agent-skill, okf, soar, enrichment, ioc, cortex-xsoar, splunk-soar, virustotal, automation, cti, nist-csf, security]
 license: Apache-2.0
+source_family: packaged-skill-backfill
+source_license: Apache-2.0
+source_status: metadata-backfilled
 type: Playbook
 ---
 
