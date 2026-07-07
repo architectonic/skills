@@ -25,14 +25,12 @@
     "risk_counts": {
       "high": 3,
       "low": 9,
-      "medium": 416,
-      "unspecified": 754
+      "medium": 419,
+      "unspecified": 751
     }
   },
   "domains": {
     "agent-operations": [
-      "Agent Context Validation",
-      "Agent Handoff",
       "Agent Operating Loop",
       "Agentic Actions Auditor",
       "Authority Model",
@@ -76,6 +74,8 @@
       "Source Hierarchy",
       "Tool Use Guardrails",
       "Trace2Skill — Skill Evolution from Execution Trajectories",
+      "agent-context-validation",
+      "agent-handoff",
       "agent-memory-system",
       "agent-skill-configuration",
       "agent-skill-portability",
@@ -1404,16 +1404,15 @@
       "type": "Playbook"
     },
     {
-      "slug": "Agent Context Validation",
+      "slug": "agent-context-validation",
       "title": "Agent Context Validation",
       "description": "Validate any artifact that changes what an agent reads, installs, executes, or treats as authority. Use when reviewing skills, prompts, MCP configs, hooks, subagent definitions, or runtime adapters before promotion.",
       "path": "dist/skills/agent-context-validation/SKILL.md",
       "directory": "dist/skills/agent-context-validation",
       "domain": "agent-operations",
-      "risk_level": "",
-      "requires_review": false,
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [
-        "agent-operations",
         "agent-operations",
         "validation",
         "safety",
@@ -1421,8 +1420,8 @@
         "skills",
         "mcp"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "architectonic-curator",
+      "source_status": "adapted",
       "type": "Playbook"
     },
     {
@@ -1440,23 +1439,22 @@
       "type": "Playbook"
     },
     {
-      "slug": "Agent Handoff",
+      "slug": "agent-handoff",
       "title": "Agent Handoff",
-      "description": "Compact the current conversation into a handoff document for another agent to pick up. Use when work must be transferred to a fresh session or a different agent. Covers summarization, context preservation, and redaction of sensitive information.",
+      "description": "Compact the current conversation into a handoff document for another agent to pick up. Use when work must be transferred to a fresh session or a different agent, with context preserved and sensitive information redacted.",
       "path": "dist/skills/agent-handoff/SKILL.md",
       "directory": "dist/skills/agent-handoff",
       "domain": "agent-operations",
-      "risk_level": "",
-      "requires_review": false,
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [
-        "agent-operations",
         "agent-operations",
         "handoff",
         "context",
         "cross-session"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "architectonic-curator",
+      "source_status": "adapted",
       "type": "Playbook"
     },
     {
@@ -1466,16 +1464,15 @@
       "path": "dist/skills/agent-memory-system/SKILL.md",
       "directory": "dist/skills/agent-memory-system",
       "domain": "agent-operations",
-      "risk_level": "",
-      "requires_review": false,
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [
-        "agent-operations",
         "agent-operations",
         "memory",
         "self-improvement"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "architectonic-curator",
+      "source_status": "adapted",
       "type": "Playbook"
     },
     {

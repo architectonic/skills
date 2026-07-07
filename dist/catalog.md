@@ -28,8 +28,8 @@
 |---|---:|
 | `high` | 3 |
 | `low` | 9 |
-| `medium` | 416 |
-| `unspecified` | 754 |
+| `medium` | 419 |
+| `unspecified` | 751 |
 
 ## Install Notes
 
