@@ -16,17 +16,17 @@
       "media": 1,
       "research": 85,
       "runtime-tools": 35,
-      "security-defensive": 55,
+      "security-defensive": 56,
       "security-offensive": 9,
       "software-engineering": 146,
-      "uncategorized": 577,
+      "uncategorized": 576,
       "writing": 16
     },
     "risk_counts": {
       "high": 6,
       "low": 9,
-      "medium": 425,
-      "unspecified": 742
+      "medium": 426,
+      "unspecified": 741
     }
   },
   "domains": {
@@ -480,7 +480,8 @@
       "Performing Web Application Vulnerability Triage",
       "Scanning Infrastructure with Nessus",
       "automating-ioc-enrichment",
-      "building-detection-rules-with-sigma"
+      "building-detection-rules-with-sigma",
+      "building-threat-feed-aggregation-with-misp"
     ],
     "security-offensive": [
       "Abusing DPAPI for Credential Access",
@@ -667,7 +668,6 @@
       "Building SOC Metrics and KPI Tracking",
       "Building SOC Playbook for Ransomware",
       "Building Threat Actor Profile from OSINT",
-      "Building Threat Feed Aggregation with MISP",
       "Building Threat Hunt Hypothesis Framework",
       "Building Threat Intelligence Enrichment in Splunk",
       "Building Threat Intelligence Feed Integration",
@@ -5013,14 +5013,14 @@
       "type": "Playbook"
     },
     {
-      "slug": "Building Threat Feed Aggregation with MISP",
+      "slug": "building-threat-feed-aggregation-with-misp",
       "title": "Building Threat Feed Aggregation with MISP",
       "description": "Deploy MISP (Malware Information Sharing Platform) to aggregate, correlate,",
       "path": "dist/skills/building-threat-feed-aggregation-with-misp/SKILL.md",
       "directory": "dist/skills/building-threat-feed-aggregation-with-misp",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-defensive",
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [
         "software-development",
         "software-development",
@@ -5036,8 +5036,8 @@
         "threat-intelligence",
         "security"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "packaged-skill-backfill",
+      "source_status": "metadata-backfilled",
       "type": "Playbook"
     },
     {
