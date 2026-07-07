@@ -1,9 +1,9 @@
 {
   "date": "2026-07-07",
-  "current_state": "threat_intel_detection_catalog_verified",
+  "current_state": "dpapi_credential_access_risk_triaged",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "d32bc6447f1a3687639f010fd218b1d12a3a047e",
+  "inspected_sha": "faec7f531fa5236ed2298f7cf47c5ef91bc6915f",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -25,15 +25,15 @@
     "unspecified_risk_count": 740,
     "uncategorized_domain_count": 575,
     "requires_review_count": null,
-    "catalog_build_status": "verified_after_threat_intel_detection_metadata_backfill",
-    "publication_readiness": "blocked_by_metadata_quality_backlog_and_absent_discovery_action_handoff"
+    "catalog_build_status": "verified_before_dpapi_risk_triage_no_dist_skill_edits_this_pass",
+    "publication_readiness": "blocked_by_open_high_risk_dpapi_review_and_absent_discovery_action_handoff"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
     "catalog": 0,
-    "risk": 0,
+    "risk": 1,
     "packaging": 0,
     "publication": 0,
     "maintenance": 0,
@@ -155,13 +155,42 @@
         "Publication endorsement remains blocked until metadata quality backlog improves and discovery Action handoff is repaired or replaced by bounded fallback."
       ],
       "value_delta": "Removed a package-health blocker by verifying generated catalog surfaces after the threat-intelligence/detection metadata backfill and unblocked the next bounded Critic metadata-backfill batch."
+    },
+    {
+      "started_at": "2026-07-07T13:11:04-03:00",
+      "completed_at": "2026-07-07T13:11:04-03:00",
+      "scheduled_role": "Source Reviewer",
+      "selected_role": "Critic",
+      "override_reason": "The hour cadence selected Source Reviewer, but queues.review was empty and the concrete Critic metadata-quality backlog remained open with catalog surfaces unblocked. Critic inspection found a high-risk package-facing offensive skill that required risk triage before any routine metadata backfill or package/publication endorsement.",
+      "inspected_ref": "main",
+      "inspected_sha": "faec7f531fa5236ed2298f7cf47c5ef91bc6915f",
+      "missing_ledger_initialization_performed": false,
+      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json returned 404 on the default branch; no discovery Action handoff was available. This pass did not run manual discovery because the open Critic queue had priority and produced a high-priority risk queue.",
+      "online_searches_used": [],
+      "queue_item_consumed_or_created": "Advanced metadata-backfill-uncategorized-and-unspecified-risk-20260707 by adding progress and created risk-review-dpapi-credential-access-skill-20260707.",
+      "sources_reviewed": [],
+      "candidates_processed": 0,
+      "files_changed": [
+        "reports/critic/2026-07-07-1311-dpapi-risk-triage.md",
+        "operations/daily/2026-07-07/queues.json",
+        "operations/daily/2026-07-07/status.json"
+      ],
+      "catalog_package_npm_status": "Catalog surfaces remain verified from the preceding Cataloger pass because no dist/skills files were edited in this pass. No generated catalog files were hand-edited and no npm publish was performed. Package/publication endorsement is blocked by the new high-risk DPAPI review queue.",
+      "blockers": [
+        "Open Risk Auditor queue item: risk-review-dpapi-credential-access-skill-20260707.",
+        "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
+        "operations/action-runs/discover-skill-sources/latest.json remains absent.",
+        "Publication endorsement remains blocked until high-risk DPAPI review is resolved and metadata quality backlog improves."
+      ],
+      "value_delta": "Stopped routine metadata backfill on a high-risk package-facing DPAPI credential-access skill and converted the finding into an explicit Risk Auditor queue before further package/publication endorsement."
     }
   ],
   "blockers": [
+    "Open Risk Auditor queue item: risk-review-dpapi-credential-access-skill-20260707.",
     "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
     "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch.",
-    "Publication endorsement remains blocked until metadata quality backlog improves and discovery Action handoff is repaired or replaced by bounded fallback."
+    "Publication endorsement remains blocked until high-risk DPAPI review is resolved, metadata quality backlog improves, and discovery Action handoff is repaired or replaced by bounded fallback."
   ],
   "last_commit": "this_commit",
-  "next_action": "Critic should continue metadata-backfill-uncategorized-and-unspecified-risk-20260707 with another small package-facing metadata batch, then create a Cataloger queue item if dist/skills changes again."
+  "next_action": "Risk Auditor should process risk-review-dpapi-credential-access-skill-20260707 before the next Critic metadata backfill or any package/publication endorsement."
 }
