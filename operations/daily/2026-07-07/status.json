@@ -1,6 +1,6 @@
 {
   "date": "2026-07-07",
-  "current_state": "catalog_refresh_verified_metadata_backfill_open",
+  "current_state": "metadata_backfill_batch_applied_catalog_refresh_pending",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
   "inspected_sha": "03840c8e70ec165fb3ae81673ebe4288ff7d008f",
@@ -18,18 +18,18 @@
     "sources_reviewed": 0,
     "sources_blocked": 0,
     "normalized_entries_added": 0,
-    "skills_updated": 1,
+    "skills_updated": 4,
     "catalog_skill_count": 1182,
     "high_risk_count": 2,
     "requires_review_count": null,
-    "catalog_build_status": "verified_from_dist_catalog_json_by_portfolio_supervisor",
-    "publication_readiness": "blocked_by_metadata_backfill_and_publication_review"
+    "catalog_build_status": "stale_after_dist_metadata_backfill",
+    "publication_readiness": "blocked_by_catalog_refresh_and_metadata_backfill"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 0,
+    "catalog": 1,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -111,13 +111,50 @@
       ],
       "catalog_package_npm_status": "Portfolio Supervisor directly fetched dist/catalog.json and verified 1182 skills, 105 agent-operations entries, and 412 medium-risk entries; fetched dist/install-manifest.json and verified discovery files still include README.md, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json.",
       "value_delta": "Removed stale catalog-blocker status churn and exposed the real next queue: metadata backfill for uncategorized-domain and unspecified-risk skills. No discovery, review, normalization, packaging, publication, or skill content generation was performed."
+    },
+    {
+      "started_at": "2026-07-07T02:13:20-03:00",
+      "completed_at": "2026-07-07T02:13:20-03:00",
+      "scheduled_role": "Source Reviewer",
+      "selected_role": "Critic",
+      "override_reason": "Open Critic queue item metadata-backfill-uncategorized-and-unspecified-risk-20260707 is a concrete quality gate cleanup item; metadata hygiene and safety review outrank Source Reviewer when review queue is empty and catalog has 587 uncategorized-domain plus 759 unspecified-risk entries.",
+      "inspected_ref": "main",
+      "inspected_sha": "03840c8e70ec165fb3ae81673ebe4288ff7d008f",
+      "missing_ledger_initialization_performed": false,
+      "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent on default branch; no discovery Action handoff was available. This Critic pass did not run manual discovery because an existing cleanup queue had priority.",
+      "online_searches_used": [],
+      "queue_item_consumed_or_created": "Advanced metadata-backfill-uncategorized-and-unspecified-risk-20260707 with a four-file security/forensics metadata batch; created catalog-refresh-after-metadata-backfill-security-forensics-batch-20260707.",
+      "sources_reviewed": [],
+      "candidates_processed": 0,
+      "files_changed": [
+        "dist/skills/analyzing-active-directory-acl-abuse/SKILL.md",
+        "dist/skills/analyzing-android-malware-with-apktool/SKILL.md",
+        "dist/skills/analyzing-bootkit-and-rootkit-samples/SKILL.md",
+        "dist/skills/analyzing-command-and-control-communication/SKILL.md",
+        "reports/critic/2026-07-07-0213-metadata-backfill-security-forensics-batch.md",
+        "operations/daily/2026-07-07/queues.json",
+        "operations/daily/2026-07-07/status.json",
+        "operations/log.md"
+      ],
+      "commit_shas": {
+        "ad_acl_metadata": "ab0f57f14b4a416cf0e17887020777d86e5525ba",
+        "android_malware_metadata": "07cdd3321c2ebf362810fff829f44039c10c3f50",
+        "bootkit_rootkit_metadata": "a8689e6e29ced564d7f1514d199a15e5d97ce228",
+        "c2_metadata": "6abf69e93efef34f32f7d178bf5d8f5e5ed734bb",
+        "report": "57767c975f403f24d10340186431e3b7cb95b24b",
+        "queues": "bd146139b7ec22c346d8837824f485fd72b0f2a9",
+        "status_final": "this_commit"
+      },
+      "catalog_package_npm_status": "Catalog surfaces are stale after direct dist/skills metadata changes. No npm publish performed. Cataloger must rebuild or verify dist/catalog.json, dist/catalog.md, and dist/install-manifest.json.",
+      "value_delta": "Removed four concrete metadata gaps from package-facing skills without changing behavior bodies: two security-defensive entries and two forensics entries now carry domain, medium risk, requires_review, and source metadata. This converts anonymous catalog entries into review-gated package entries and creates a precise Cataloger refresh item."
     }
   ],
   "blockers": [
-    "Open critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707. Catalog shows 587 uncategorized-domain and 759 unspecified-risk skills; batch metadata backfill is required before new discovery should outrank cleanup.",
+    "Catalog refresh queue item remains open after metadata backfill: catalog-refresh-after-metadata-backfill-security-forensics-batch-20260707.",
+    "Open critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707. Catalog previously showed 587 uncategorized-domain and 759 unspecified-risk skills; this pass backfilled four files, but generated catalog surfaces have not yet been refreshed.",
     "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch.",
     "Publication endorsement remains blocked until metadata backfill/risk-domain quality improves and a Publisher pass directly verifies package readiness."
   ],
   "last_commit": "this_commit",
-  "next_action": "Critic should consume metadata-backfill-uncategorized-and-unspecified-risk-20260707 and batch backfill domain/risk_level metadata using classify_dist_skills.py plus review, prioritizing cleanup over new discovery while uncategorized and unspecified-risk counts remain high."
+  "next_action": "Cataloger should process catalog-refresh-after-metadata-backfill-security-forensics-batch-20260707 before more metadata backfill, then Critic can continue the uncategorized/unspecified-risk batch backlog."
 }
