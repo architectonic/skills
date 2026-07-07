@@ -1,8 +1,12 @@
 ---
-name: Achieving CMMC Level 2 Compliance
-description: Confirm the contract requires CMMC Level 2 (CUI present, not just FCI).
-  FCI-only contracts are **Level 1** (the 15 FAR 52.204-21 requirements). Identify
-  CUI categories from the contract and the DoD CUI Registry.
+name: achieving-cmmc-level-2-compliance
+description: Guides CMMC Level 2 readiness work when a Defense Industrial Base organization must scope CUI, score NIST SP 800-171 controls, prepare POA&Ms, and plan assessment evidence.
+domain: business
+risk_level: medium
+requires_review: true
+source_family: okf-security-compliance
+source_license: Apache-2.0
+source_status: package_metadata_backfill
 tags:
 - software-development
 - software-development
