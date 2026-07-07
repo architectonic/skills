@@ -1,9 +1,16 @@
 ---
-name: Abusing Shadow Credentials for Privilege Escalation
-description: Take over Active Directory user and computer accounts by writing alternate certificate keys to msDS-KeyCredentialLink (Shadow Credentials) with pyWhisker, Whisker, and Certipy, then authenticate via PKINIT.
-tags: [software-development, software-development, agent-skill, okf, red-team, active-directory, shadow-credentials, pywhisker, certipy, pkinit, key-credential-link, privilege-escalation, security]
+name: abusing-shadow-credentials-for-privesc
+description: Take over Active Directory user and computer accounts by writing alternate certificate keys to msDS-KeyCredentialLink (Shadow Credentials) with pyWhisker, Whisker, and Certipy, then authenticate via PKINIT. Use only for authorized security testing, red-team engagements, and purple-team validation.
+tags: [security-offensive, software-engineering, skill, okf, red-team, active-directory, shadow-credentials, pywhisker, certipy, pkinit, key-credential-link, privilege-escalation, security]
 license: Apache-2.0
 type: Playbook
+title: Abusing Shadow Credentials for Privilege Escalation
+domain: security-offensive
+risk_level: high
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 # Abusing Shadow Credentials for Privilege Escalation
