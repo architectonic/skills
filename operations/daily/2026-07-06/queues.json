@@ -185,9 +185,24 @@
       "reason": "A new skill file was added; dist skill, catalog, and install manifest surfaces must be rebuilt or verified before publication/package endorsement.",
       "action": "Create dist/skills/shared-skill-library-governance/SKILL.md, run or request catalog refresh for dist/catalog.json, dist/catalog.md, and dist/install-manifest.json, then verify counts and risk metadata after rebuild.",
       "risk_level": "medium",
-      "status": "open",
+      "status": "done",
       "created_by": "Normalizer",
-      "created_at": "2026-07-06T20:13:00-03:00"
+      "created_at": "2026-07-06T20:13:00-03:00",
+      "completed_by": "Cataloger",
+      "completed_at": "2026-07-06T21:11:00-03:00",
+      "result": "Created dist/skills/shared-skill-library-governance/SKILL.md and verified dist/install-manifest.json still points installers to the canonical discovery files. Generated catalogs remain stale until Catalog Refresh or npm run build:catalog verifies dist/catalog.json and dist/catalog.md at expected counts."
+    },
+    {
+      "id": "verify-catalog-refresh-after-shared-skill-library-governance-20260706",
+      "priority": 1,
+      "role": "Cataloger",
+      "target": "dist/catalog.json",
+      "reason": "A workflow-watched dist skill path changed to expose shared-skill-library-governance under dist/skills, but the scheduler cannot observe or wait for the resulting workflow commit in the same connector pass.",
+      "action": "Verify whether Catalog Refresh regenerated dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Expected counts: 1176 skills, 99 agent-operations entries, and 412 medium-risk entries. If not, run npm run build:catalog in a checkout or CI-capable surface and commit the generated surfaces.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Cataloger",
+      "created_at": "2026-07-06T21:11:00-03:00"
     }
   ],
   "risk": [],
