@@ -1,10 +1,15 @@
 ---
-name: Alert Optimizer
-description: Restructure and optimize alert rules for monitoring platforms (Sentry, PagerDuty, Datadog, OpsGenie). Use when reducing alert noise, fixing alert fatigue, creating alert rules, setting up escalation policies, tuning alerting thresholds, or creating on-call runbooks.
-tags: [devops, alerting, on-call, pagerduty, datadog, sentry, incident-response, observability, devops]
+name: alert-optimizer
+description: Restructures monitoring alerts when teams need to reduce alert fatigue, define severity tiers, tune notification thresholds, build escalation policies, or write on-call runbooks.
+domain: runtime-tools
+risk_level: medium
+requires_review: true
+source_family: terminal-skills
 source_repo: terminal-skills
 source_path: skills/alert-optimizer/SKILL.md
+source_status: package_metadata_backfill
 distilled_at: 2026-08-03
+tags: [devops, alerting, on-call, pagerduty, datadog, sentry, incident-response, observability, devops]
 type: Playbook
 ---
 
