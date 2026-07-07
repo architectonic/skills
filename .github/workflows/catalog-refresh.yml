@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - ".github/workflows/catalog-refresh.yml"
       - "dist/skills/**"
       - "skills/**"
       - "reports/dist-skills-enriched-inventory.json"
