@@ -75,6 +75,8 @@
         "dist_skill": "e07a5e35037869c802bf28948eeda066dcc3e7a9",
         "catalog_report": "ad28c88faf2c7979a51f639e37db88db08a851bb",
         "queues": "ff620604450d367b360d8adbf883abfee46cd837",
+        "status_initial": "3a7244f36fcaaba4cd1b9b8c2d1d4e2a46edeefa",
+        "log": "2997f065e0e11fa3d98eb4c7aa3643c60aca10c6",
         "status_final": "this_commit"
       },
       "catalog_package_npm_status": "dist/skills now includes shared-skill-library-governance. dist/install-manifest.json still points to canonical discovery files. dist/catalog.json and dist/catalog.md still report 1175 skills, 98 agent-operations entries, and 411 medium-risk entries until Catalog Refresh or npm run build:catalog verifies expected counts of 1176, 99, and 412. No npm publish was requested or performed.",
