@@ -2,7 +2,7 @@
   "date": "2026-07-07",
   "initialized_by": "Skills Loop Operator",
   "inspected_ref": "main",
-  "inspected_commit": "56b0fb06b4db80c7a895906c67c7cc12bfc0470b",
+  "inspected_commit": "7eba28f61caabbfd8e22ef694387c8bb0050e1f0",
   "discovery": [],
   "review": [],
   "normalization": [],
@@ -51,6 +51,19 @@
       "resolved_by": "Skills Loop Operator",
       "resolved_at": "2026-07-07T15:14:25-03:00",
       "resolution": "Verified dist/catalog.json and dist/catalog.md at 1182 skills, 9 security-offensive, 575 uncategorized, 6 high, 427 medium, and 740 unspecified. Verified dist/install-manifest.json remains coherent and dist/skills/abusing-dpapi-for-credential-access/SKILL.md is a high-risk review-gated defensive wrapper. Created reports/catalog/2026-07-07-1514-dpapi-credential-access-catalog-verification.md."
+    },
+    {
+      "id": "catalog-refresh-after-c2-red-team-redaction-20260707",
+      "priority": 1,
+      "role": "Cataloger",
+      "target": "dist/catalog.json",
+      "reason": "Risk Auditor replaced three high-risk package-facing security entries with review-gated safety placeholders and generated catalog surfaces are stale until rebuilt or verified.",
+      "action": "Run or verify npm run build:catalog, then check dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Confirm the three changed entries remain high risk, require review, and expose only safety-placeholder package-facing bodies.",
+      "risk_level": "high",
+      "status": "open",
+      "created_by": "Skills Loop Operator",
+      "created_at": "2026-07-07T17:12:15-03:00",
+      "source_report": "reports/risk/2026-07-07-1712-c2-red-team-redaction.md"
     }
   ],
   "risk": [
@@ -92,10 +105,13 @@
       "reason": "Critic inspection found uncategorized/unspecified-risk package-facing C2 and red-team infrastructure entries with concrete listener, redirector, implant generation, post-exploitation, credential-access, lateral-movement, and pivoting procedure detail.",
       "action": "Inspect and decide whether to redact these entries into high-risk review-gated defensive wrappers, keep only detection/authorization/audit guidance, mark source reference-only, or block package endorsement.",
       "risk_level": "high",
-      "status": "open",
+      "status": "resolved",
       "created_by": "Skills Loop Operator",
       "created_at": "2026-07-07T16:14:47-03:00",
-      "source_report": "reports/critic/2026-07-07-1614-c2-red-team-risk-triage.md"
+      "source_report": "reports/critic/2026-07-07-1614-c2-red-team-risk-triage.md",
+      "resolved_by": "Skills Loop Operator",
+      "resolved_at": "2026-07-07T17:12:15-03:00",
+      "resolution": "Replaced the three package-facing bodies with high-risk review-gated safety placeholders and created catalog-refresh-after-c2-red-team-redaction-20260707."
     }
   ],
   "packaging": [],
@@ -108,7 +124,7 @@
       "role": "Critic",
       "target": "dist/skills/**",
       "reason": "Catalog still has a large uncategorized-domain and unspecified-risk backlog under the current quality gate.",
-      "action": "Continue bounded metadata backfill batches after the open catalog refresh is verified.",
+      "action": "Continue bounded metadata backfill batches after open risk and catalog refresh queues are resolved.",
       "risk_level": "low",
       "status": "open",
       "created_by": "Fable 5 (Claude, external maintainer session)",
@@ -121,7 +137,8 @@
         {"at":"2026-07-07T13:11:04-03:00","by":"Skills Loop Operator","batch":"dpapi-risk-triage","result":"Stopped routine metadata backfill on a high-risk package-facing DPAPI credential-access skill and created risk queue risk-review-dpapi-credential-access-skill-20260707 before further package/publication endorsement."},
         {"at":"2026-07-07T14:13:01-03:00","by":"Skills Loop Operator","batch":"dpapi-risk-redaction","result":"Resolved the high-risk DPAPI review by replacing default credential-access procedure detail with a defensive review-gated wrapper; Cataloger refresh now blocks further package/publication endorsement."},
         {"at":"2026-07-07T15:14:25-03:00","by":"Skills Loop Operator","batch":"dpapi-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the package-facing DPAPI wrapper; Critic backlog is unblocked for the next bounded metadata batch."},
-        {"at":"2026-07-07T16:14:47-03:00","by":"Skills Loop Operator","batch":"c2-red-team-risk-triage","result":"Stopped routine metadata backfill on three uncategorized/unspecified-risk C2 and red-team infrastructure skills and created risk queue risk-review-c2-red-team-infrastructure-skills-20260707 before further package/publication endorsement."}
+        {"at":"2026-07-07T16:14:47-03:00","by":"Skills Loop Operator","batch":"c2-red-team-risk-triage","result":"Stopped routine metadata backfill on three uncategorized/unspecified-risk C2 and red-team infrastructure skills and created risk queue risk-review-c2-red-team-infrastructure-skills-20260707 before further package/publication endorsement."},
+        {"at":"2026-07-07T17:12:15-03:00","by":"Skills Loop Operator","batch":"c2-red-team-redaction","result":"Resolved the high-risk review by replacing three package-facing security entries with review-gated safety placeholders; Cataloger refresh now blocks further package/publication endorsement."}
       ]
     }
   ]
