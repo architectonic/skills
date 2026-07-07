@@ -12,21 +12,21 @@
       "business": 46,
       "cloud-security": 42,
       "design": 40,
-      "forensics": 24,
+      "forensics": 25,
       "media": 1,
       "research": 85,
       "runtime-tools": 35,
       "security-defensive": 53,
       "security-offensive": 6,
       "software-engineering": 146,
-      "uncategorized": 583,
+      "uncategorized": 582,
       "writing": 16
     },
     "risk_counts": {
       "high": 3,
       "low": 9,
-      "medium": 422,
-      "unspecified": 748
+      "medium": 423,
+      "unspecified": 747
     }
   },
   "domains": {
@@ -295,6 +295,7 @@
       "Performing Timeline Reconstruction with Plaso",
       "Recovering Deleted Files with PhotoRec",
       "Triaging Windows with KAPE",
+      "analyzing-mft-for-deleted-file-recovery",
       "triage"
     ],
     "media": [
@@ -636,7 +637,6 @@
       "xurl"
     ],
     "uncategorized": [
-      "Analyzing MFT for Deleted File Recovery",
       "Assessing Vector and Embedding Weaknesses",
       "Attacking Entra ID with ROADtools",
       "Attacking OAuth with Device-Code Phishing",
@@ -2644,14 +2644,14 @@
       "type": "Playbook"
     },
     {
-      "slug": "Analyzing MFT for Deleted File Recovery",
+      "slug": "analyzing-mft-for-deleted-file-recovery",
       "title": "Analyzing MFT for Deleted File Recovery",
-      "description": "Analyze the NTFS Master File Table ($MFT) to recover metadata and content",
+      "description": "Analyzes NTFS Master File Table evidence when forensic responders need to recover deleted-file metadata, reconstruct timelines, correlate journal artifacts, or detect timestomping.",
       "path": "dist/skills/analyzing-mft-for-deleted-file-recovery/SKILL.md",
       "directory": "dist/skills/analyzing-mft-for-deleted-file-recovery",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "forensics",
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [
         "devops",
         "agent-skill",
@@ -2668,8 +2668,8 @@
         "dfir",
         "security"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "okf-security-playbook",
+      "source_status": "package_metadata_backfill",
       "type": "Playbook"
     },
     {
