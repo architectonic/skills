@@ -9,7 +9,7 @@
 | Domain | Count |
 |---|---:|
 | `agent-operations` | 105 |
-| `business` | 45 |
+| `business` | 46 |
 | `cloud-security` | 41 |
 | `design` | 40 |
 | `forensics` | 24 |
@@ -19,7 +19,7 @@
 | `security-defensive` | 53 |
 | `security-offensive` | 6 |
 | `software-engineering` | 146 |
-| `uncategorized` | 586 |
+| `uncategorized` | 585 |
 | `writing` | 16 |
 
 ## Risk Levels
@@ -28,8 +28,8 @@
 |---|---:|
 | `high` | 3 |
 | `low` | 9 |
-| `medium` | 419 |
-| `unspecified` | 751 |
+| `medium` | 420 |
+| `unspecified` | 750 |
 
 ## Install Notes
 
