@@ -14,9 +14,9 @@
       "design": 40,
       "forensics": 24,
       "media": 1,
-      "research": 86,
+      "research": 85,
       "runtime-tools": 34,
-      "security-defensive": 52,
+      "security-defensive": 53,
       "security-offensive": 5,
       "software-engineering": 146,
       "uncategorized": 587,
@@ -25,8 +25,8 @@
     "risk_counts": {
       "high": 2,
       "low": 9,
-      "medium": 415,
-      "unspecified": 756
+      "medium": 416,
+      "unspecified": 755
     }
   },
   "domains": {
@@ -303,7 +303,6 @@
       "Analyzing Certificate Transparency for Phishing",
       "Analyzing Cobalt Strike Beacon Configuration",
       "Analyzing CobaltStrike Malleable C2 Profiles",
-      "Analyzing Command-and-Control Communication",
       "Analyzing Cyber Kill Chain",
       "Analyzing DNS Logs for Exfiltration",
       "Analyzing Disk Image with Autopsy",
@@ -425,6 +424,7 @@
     "security-defensive": [
       "Analyzing APT Group with MITRE ATT&CK Navigator",
       "Analyzing Active Directory ACL Abuse",
+      "Analyzing Command-and-Control Communication",
       "Analyzing Office 365 Audit Logs for Compromise",
       "Analyzing Threat Actor TTPs with MITRE ATT&CK",
       "Analyzing Web Server Logs for Intrusion",
@@ -1982,9 +1982,9 @@
       "description": "Analyzes malware command-and-control (C2) communication protocols to",
       "path": "dist/skills/analyzing-command-and-control-communication/SKILL.md",
       "directory": "dist/skills/analyzing-command-and-control-communication",
-      "domain": "research",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-defensive",
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [
         "research",
         "agent-skill",
@@ -1996,8 +1996,8 @@
         "protocol-analysis",
         "security"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "agent-skills-standard",
+      "source_status": "adapted",
       "type": "Playbook"
     },
     {
