@@ -1,8 +1,14 @@
 ---
-name: Agent Handoff
-description: Compact the current conversation into a handoff document for another agent to pick up. Use when work must be transferred to a fresh session or a different agent. Covers summarization, context preservation, and redaction of sensitive information.
-tags: [agent-operations, agent-operations, handoff, context, cross-session]
+name: agent-handoff
+description: Compact the current conversation into a handoff document for another agent to pick up. Use when work must be transferred to a fresh session or a different agent, with context preserved and sensitive information redacted.
+tags: [agent-operations, handoff, context, cross-session]
 type: Playbook
+title: Agent Handoff
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: architectonic-curator
+source_status: adapted
 ---
 
 # Agent Handoff
