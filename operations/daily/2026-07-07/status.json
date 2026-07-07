@@ -1,0 +1,77 @@
+{
+  "date": "2026-07-07",
+  "current_state": "daily_ledger_initialized_catalog_blocker_carried_forward",
+  "repo": "architectonic/skills",
+  "inspected_ref": "main",
+  "inspected_sha": "5a35c24703f7c5e3d2c703a2ca53f557b583cb04",
+  "model_requirement_status": "model_setting_unverified",
+  "missing_ledger_initialization_performed": true,
+  "package": {
+    "name": "architectonic-skills",
+    "version": "0.1.3",
+    "install_root": "dist/skills",
+    "catalog": "dist/catalog.json",
+    "install_manifest": "dist/install-manifest.json"
+  },
+  "metrics": {
+    "candidate_sources_discovered": 0,
+    "sources_reviewed": 0,
+    "sources_blocked": 0,
+    "normalized_entries_added": 0,
+    "skills_updated": 0,
+    "catalog_skill_count": null,
+    "high_risk_count": null,
+    "requires_review_count": null,
+    "catalog_build_status": "not_checked_initialization_only",
+    "publication_readiness": "blocked_by_pending_catalog_refresh"
+  },
+  "queues": {
+    "discovery": 0,
+    "review": 0,
+    "normalization": 0,
+    "catalog": 1,
+    "risk": 0,
+    "packaging": 0,
+    "publication": 0,
+    "maintenance": 0,
+    "critic": 0
+  },
+  "runs": [
+    {
+      "started_at": "2026-07-07T00:11:00-03:00",
+      "completed_at": "2026-07-07T00:11:00-03:00",
+      "scheduled_role": "Reporter",
+      "selected_role": "Reporter",
+      "override_reason": null,
+      "inspected_ref": "main",
+      "inspected_sha": "5a35c24703f7c5e3d2c703a2ca53f557b583cb04",
+      "missing_ledger_initialization_performed": true,
+      "action_handoff_state": "Not inspected beyond mandatory initialization boundary; prior-day status recorded operations/action-runs/discover-skill-sources/latest.json absent on default branch.",
+      "online_searches_used": [],
+      "queue_item_consumed_or_created": "Carried forward open catalog queue item verify-catalog-refresh-after-shared-skill-library-governance-20260706 from operations/daily/2026-07-06/queues.json.",
+      "sources_reviewed": [],
+      "candidates_processed": 0,
+      "files_changed": [
+        "operations/daily/2026-07-07/queues.json",
+        "operations/daily/2026-07-07/status.json",
+        "operations/daily/2026-07-07/report.md",
+        "operations/log.md"
+      ],
+      "commit_shas": {
+        "queues": "554624d92e2a3121e5f99b0188a55a2d7a32b12b",
+        "status_initial": "this_commit",
+        "report": null,
+        "log": null,
+        "status_final": null
+      },
+      "catalog_package_npm_status": "Not checked in this initialization-only pass. Prior state says dist/skills/shared-skill-library-governance/SKILL.md exists but generated catalog surfaces remain stale until npm run build:catalog or Catalog Refresh verifies expected counts.",
+      "value_delta": "Repaired the missing 2026-07-07 daily ledger and preserved the unresolved catalog blocker without running discovery, review, normalization, packaging, or publication work."
+    }
+  ],
+  "blockers": [
+    "Daily ledger was missing at the start of this pass and has been initialized from templates.",
+    "Open catalog queue item remains: verify-catalog-refresh-after-shared-skill-library-governance-20260706. Generated catalog surfaces still require rebuild/verification before publication endorsement."
+  ],
+  "last_commit": "this_commit",
+  "next_action": "Cataloger should process verify-catalog-refresh-after-shared-skill-library-governance-20260706 by running or verifying npm run build:catalog in a checkout-capable or CI surface, then checking dist/catalog.json, dist/catalog.md, and dist/install-manifest.json before Packager or Publisher endorsement."
+}
