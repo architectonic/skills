@@ -14,9 +14,9 @@
       "design": 40,
       "forensics": 22,
       "media": 1,
-      "research": 89,
+      "research": 88,
       "runtime-tools": 34,
-      "security-defensive": 51,
+      "security-defensive": 52,
       "security-offensive": 5,
       "software-engineering": 146,
       "uncategorized": 587,
@@ -25,8 +25,8 @@
     "risk_counts": {
       "high": 2,
       "low": 9,
-      "medium": 412,
-      "unspecified": 759
+      "medium": 413,
+      "unspecified": 758
     }
   },
   "domains": {
@@ -297,7 +297,6 @@
       "music-audio-tools"
     ],
     "research": [
-      "Analyzing Active Directory ACL Abuse",
       "Analyzing Android Malware with Apktool",
       "Analyzing Bootkit and Rootkit Samples",
       "Analyzing Campaign Attribution Evidence",
@@ -425,6 +424,7 @@
     ],
     "security-defensive": [
       "Analyzing APT Group with MITRE ATT&CK Navigator",
+      "Analyzing Active Directory ACL Abuse",
       "Analyzing Office 365 Audit Logs for Compromise",
       "Analyzing Threat Actor TTPs with MITRE ATT&CK",
       "Analyzing Web Server Logs for Intrusion",
@@ -1666,9 +1666,9 @@
       "description": "Detect dangerous ACL misconfigurations in Active Directory using ldap3",
       "path": "dist/skills/analyzing-active-directory-acl-abuse/SKILL.md",
       "directory": "dist/skills/analyzing-active-directory-acl-abuse",
-      "domain": "research",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-defensive",
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [
         "research",
         "agent-skill",
@@ -1679,8 +1679,8 @@
         "privilege-escalation",
         "security"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "agent-skills-standard",
+      "source_status": "adapted",
       "type": "Playbook"
     },
     {

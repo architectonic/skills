@@ -14,9 +14,9 @@
 | `design` | 40 |
 | `forensics` | 22 |
 | `media` | 1 |
-| `research` | 89 |
+| `research` | 88 |
 | `runtime-tools` | 34 |
-| `security-defensive` | 51 |
+| `security-defensive` | 52 |
 | `security-offensive` | 5 |
 | `software-engineering` | 146 |
 | `uncategorized` | 587 |
@@ -28,8 +28,8 @@
 |---|---:|
 | `high` | 2 |
 | `low` | 9 |
-| `medium` | 412 |
-| `unspecified` | 759 |
+| `medium` | 413 |
+| `unspecified` | 758 |
 
 ## Install Notes
 
