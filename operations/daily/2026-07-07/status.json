@@ -59,10 +59,10 @@
       ],
       "commit_shas": {
         "queues": "554624d92e2a3121e5f99b0188a55a2d7a32b12b",
-        "status_initial": "this_commit",
-        "report": null,
-        "log": null,
-        "status_final": null
+        "status_initial": "17c55d1f3d55cbae62e510a30c923f7ffa0a8ae2",
+        "report": "14feb7764c18cee1bbab4e4d73bef19e9a7932a3",
+        "log": "4b1eff01e4e686ca6b2b735ca09889be43ef71fe",
+        "status_final": "this_commit"
       },
       "catalog_package_npm_status": "Not checked in this initialization-only pass. Prior state says dist/skills/shared-skill-library-governance/SKILL.md exists but generated catalog surfaces remain stale until npm run build:catalog or Catalog Refresh verifies expected counts.",
       "value_delta": "Repaired the missing 2026-07-07 daily ledger and preserved the unresolved catalog blocker without running discovery, review, normalization, packaging, or publication work."
