@@ -485,11 +485,11 @@
       "building-threat-hunt-hypothesis-framework"
     ],
     "security-offensive": [
-      "Abusing DPAPI for Credential Access",
       "Analyzing Persistence Mechanisms in Linux",
       "Implementing Memory Protection with DEP and ASLR",
       "Implementing Patch Management Workflow",
       "Performing Privilege Escalation on Linux",
+      "abusing-dpapi-for-credential-access",
       "abusing-shadow-credentials-for-privesc",
       "attacking-entra-id-with-roadtools",
       "attacking-oauth-with-device-code-phishing",
@@ -1258,31 +1258,26 @@
       "type": "Playbook"
     },
     {
-      "slug": "Abusing DPAPI for Credential Access",
+      "slug": "abusing-dpapi-for-credential-access",
       "title": "Abusing DPAPI for Credential Access",
-      "description": "Extract DPAPI-protected secrets such as credentials and browser data offline and online.",
+      "description": "Review-gated defensive assessment wrapper for DPAPI credential-access risk. Use only for authorized Windows security planning, evidence boundaries, detection mapping, and remediation.",
       "path": "dist/skills/abusing-dpapi-for-credential-access/SKILL.md",
       "directory": "dist/skills/abusing-dpapi-for-credential-access",
       "domain": "security-offensive",
       "risk_level": "high",
       "requires_review": true,
       "tags": [
-        "security-offensive",
-        "software-engineering",
-        "skill",
+        "agent-skill",
         "okf",
-        "red-team",
-        "credential-access",
         "dpapi",
-        "sharpdpapi",
-        "post-exploitation",
-        "active-directory",
+        "credential-access",
         "windows",
-        "mimikatz",
-        "security"
+        "active-directory",
+        "security",
+        "review-gated"
       ],
       "source_family": "anthropic-cybersecurity-skills",
-      "source_status": "adapted",
+      "source_status": "blocked-pending-redaction",
       "type": "Playbook"
     },
     {
