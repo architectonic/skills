@@ -4,6 +4,13 @@ description: Detect dangerous ACL misconfigurations in Active Directory using ld
 tags: [research, agent-skill, okf, active-directory, acl-abuse, ldap, privilege-escalation, security]
 license: Apache-2.0
 type: Playbook
+title: Analyzing Active Directory ACL Abuse
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: agent-skills-standard
+source_license: Apache-2.0
+source_status: adapted
 ---
 
 
