@@ -1,16 +1,21 @@
 ---
-name: Auditing Foundry Smart Contract Security
-description: 'Deployed smart contracts are **immutable** and custody **real funds**,
-  so a bug shipped to mainnet cannot be patched — it can only be exploited. Most catastrophic
-  DeFi losses come from a small set of recurring classes: reentrancy, broken access'
+name: auditing-foundry-smart-contract-security
+title: Auditing Foundry Smart Contract Security
+description: Audits Foundry Solidity projects with static analysis, fuzzing, invariants, coverage, key hygiene, and deployment gates. Use before deploying or reviewing EVM smart contracts, triaging Slither/Aderyn/Mythril findings, or validating value-moving contract test coverage.
 tags:
-- software-development
-- software-development
-- agent-skill
+- solidity
+- foundry
+- smart-contract-security
+- security-defensive
+- software-engineering
 - okf
-- security
 license: Apache-2.0
 type: Playbook
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: internal-skill-bundle
+source_status: adapted
 ---
 
 # Auditing Foundry Smart Contract Security
