@@ -103,31 +103,16 @@
       "board": "37df668bec4549fb0503b34c48afe5da1889f589",
       "queues": "928cf365054b2e6416a2e8a4ac754299959d588e",
       "value_ledger": "1e41f9605206c52371c93b9e4281caa39b5571de",
-      "status_initial_update": "pending_final_connector_response",
-      "daily_report": "pending_next_write",
-      "log": "pending_next_write"
+      "status_initial_update": "d6cc0cc95f86054d1b347b3ffa658a12398a799f",
+      "daily_report": "70c0e3d7460d0ae0da172032b051cbf2eebcbf5b",
+      "log": "0847f26d408fcfb19bc76215a6ad0b43965532a0",
+      "status_final": "pending_final_connector_response"
     },
     "acceptance_tests": [
-      {
-        "test": "verifies license/redistribution boundary for each review_next candidate",
-        "result": "pass",
-        "evidence": "modelcontextprotocol/servers, vercel/ai, and openclaw/openclaw license files were directly fetched; GitTaskBench LICENSE returned 404 and was left watch/license-blocked."
-      },
-      {
-        "test": "classifies safety/runtime surface, including OpenClaw high-risk messaging/browser/cron/account surfaces",
-        "result": "pass",
-        "evidence": "OpenClaw was classified high risk due to real messaging/account/channel integrations, browser/canvas/nodes/cron tools, gateway exposure, host tool access, daemon/onboarding flow, and sandbox policy surfaces."
-      },
-      {
-        "test": "creates source profiles, skip/watch notes, risk items, or normalization queues only when justified",
-        "result": "pass",
-        "evidence": "Created source profiles for MCP servers, Vercel AI SDK, and OpenClaw; created a GitTaskBench license-blocked watch note; opened OpenClaw high-risk source-runtime review; opened a bounded Vercel AI SDK normalization queue."
-      },
-      {
-        "test": "does not copy third-party content, clone repositories, execute code, publish, or package candidates",
-        "result": "pass",
-        "evidence": "No repositories were cloned; no candidate code was executed; no third-party implementation content was copied; no skill, catalog, package, npm, or publication action occurred."
-      }
+      {"test": "verifies license/redistribution boundary for each review_next candidate", "result": "pass", "evidence": "modelcontextprotocol/servers, vercel/ai, and openclaw/openclaw license files were directly fetched; GitTaskBench LICENSE returned 404 and was left watch/license-blocked."},
+      {"test": "classifies safety/runtime surface, including OpenClaw high-risk messaging/browser/cron/account surfaces", "result": "pass", "evidence": "OpenClaw was classified high risk due to real messaging/account/channel integrations, browser/canvas/nodes/cron tools, gateway exposure, host tool access, daemon/onboarding flow, and sandbox policy surfaces."},
+      {"test": "creates source profiles, skip/watch notes, risk items, or normalization queues only when justified", "result": "pass", "evidence": "Created source profiles for MCP servers, Vercel AI SDK, and OpenClaw; created a GitTaskBench license-blocked watch note; opened OpenClaw high-risk source-runtime review; opened a bounded Vercel AI SDK normalization queue."},
+      {"test": "does not copy third-party content, clone repositories, execute code, publish, or package candidates", "result": "pass", "evidence": "No repositories were cloned; no candidate code was executed; no third-party implementation content was copied; no skill, catalog, package, npm, or publication action occurred."}
     ],
     "catalog_package_npm_status": "Catalog/install-manifest unchanged after metadata-only source review. No generated catalog surface was hand-edited. No npm publication attempted. Package/publication endorsement remains blocked until high-risk source review, normalization/catalog parity, discovery Action, and backlog gates are clean.",
     "blockers": [
@@ -148,6 +133,6 @@
     "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
     "Package/publication endorsement remains blocked until source-risk, normalization/catalog parity, discovery, and backlog gates are clean."
   ],
-  "last_commit": "pending_final_connector_response",
+  "last_commit": "0847f26d408fcfb19bc76215a6ad0b43965532a0",
   "next_action": "Risk Auditor should consume skills-risk-review-openclaw-source-runtime-surfaces-001 / risk-review-openclaw-source-runtime-surfaces-20260708 before any OpenClaw-derived normalization or package-facing endorsement."
 }
