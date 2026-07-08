@@ -1,88 +1,56 @@
 ---
-name: Performing Kerberoasting Attack
-description: Kerberoasting is a post-exploitation technique that targets service accounts
-tags: [software-development, software-development, agent-skill, okf, red-team, adversary-simulation, mitre-attack, exploitation, post-exploitation, kerberoasting, active-directory, credential-access, security]
+name: performing-kerberoasting-attack
+description: Review-gated defensive assessment wrapper for Kerberoasting risk. Use only for authorized Active Directory security planning, detection mapping, evidence boundaries, and remediation.
+tags: [agent-skill, okf, kerberoasting, active-directory, credential-access, kerberos, identity-security, security, review-gated]
 license: Apache-2.0
 type: Playbook
+title: Performing Kerberoasting Attack
+domain: security-offensive
+risk_level: high
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: blocked-pending-redaction
 ---
 
 # Performing Kerberoasting Attack
 
+This package-facing entry is blocked pending redaction and safety review.
 
-> **Legal Notice:** This skill is for authorized security testing and educational purposes only. Unauthorized use against systems you do not own or have written permission to test is illegal and may violate computer fraud laws.
+Kerberoasting workflows can request service tickets, extract crackable material, and enable offline password recovery against Active Directory service accounts. This repository must not expose a default executable procedure for ticket extraction, hash formatting, cracking, credential validation, or follow-on privilege escalation. Treat the upstream technique as reference-only unless an approved defensive assessment workspace has written scope, evidence-handling rules, and human review controls.
 
-## Overview
+## Allowed use in this repository
 
-Kerberoasting is a post-exploitation technique that targets service accounts in Active Directory by requesting Kerberos TGS (Ticket Granting Service) tickets for accounts with Service Principal Names (SPNs) set. These tickets are encrypted with the service account's NTLM hash, allowing offline brute-force cracking without generating failed login events. It is one of the most common privilege escalation paths in AD environments because any domain user can request TGS tickets.
+- Record authorization requirements, domain-scope boundaries, account classes, and rules of engagement.
+- Plan defensive assessment scope for service-account hygiene, Kerberos telemetry, password policy, and privilege review.
+- Map Kerberoasting exposure to detections, controls, and remediation.
+- Preserve provenance, risk classification, review status, and package-safety rationale.
+- Help reviewers decide whether a future defensive-only workflow is safe to publish.
 
+## Disallowed use in this repository
 
-## When to Use
+- Do not provide copyable live-operation commands, ticket-request procedures, hash-extraction steps, cracking guidance, or credential-validation workflows.
+- Do not include instructions for requesting tickets for abuse, extracting crackable material, tuning cracking jobs, validating recovered credentials, or using recovered access.
+- Do not request, paste, store, transform, summarize, or enrich tickets, hashes, passwords, account secrets, or recovered credential artifacts.
+- Do not perform live domain, directory, identity-provider, host, network, account, or credential actions from this skill.
+- Do not package this entry as publication-ready until a reviewer replaces it with a defensive-only workflow.
 
-- When conducting security assessments that involve performing kerberoasting attack
-- When following incident response procedures for related security events
-- When performing scheduled security testing or auditing activities
-- When validating security controls through hands-on testing
+## Safe reviewer checklist
 
-## Prerequisites
+1. Confirm written authorization, Active Directory scope, account classes, and evidence-retention rules.
+2. Confirm the task is defensive validation, detection engineering, identity-control review, incident-response scoping, or remediation planning.
+3. Keep procedural ticket extraction, cracking, credential-validation, and privilege-escalation detail out of the package-facing skill.
+4. Move any operational references to a controlled, non-default review artifact if they are retained at all.
+5. Verify that the final skill teaches defensive planning, detection, evidence handling, and remediation rather than execution.
+6. Require explicit human approval before any installer, catalog, or publisher surface presents this as usable automation.
 
-- Familiarity with red teaming concepts and tools
-- Access to a test or lab environment for safe execution
-- Python 3.8+ with required dependencies installed
-- Appropriate authorization for any testing activities
+## Defensive review prompts
 
-## MITRE ATT&CK Mapping
+- Which service accounts, SPN-bearing accounts, and privilege tiers are in scope for defensive review?
+- Which logs, identity events, Kerberos service-ticket patterns, encryption-type signals, and honeypot-account alerts should be inspected?
+- Which controls reduce exposure: strong service-account passwords, gMSA adoption, least privilege, RC4 reduction, account rotation, and SPN hygiene?
+- What remediation evidence can be collected without exposing or reproducing tickets, hashes, passwords, or recovered credentials?
 
-- **T1558.003** - Steal or Forge Kerberos Tickets: Kerberoasting
-- **T1087.002** - Account Discovery: Domain Account
-- **T1069.002** - Permission Groups Discovery: Domain Groups
+## Status
 
-## Workflow
-
-### Phase 1: SPN Enumeration
-1. Enumerate accounts with SPNs using LDAP queries
-2. Filter for user accounts (not computer accounts)
-3. Identify accounts with elevated privileges (adminCount=1)
-4. Prioritize accounts with weak password policies
-
-### Phase 2: TGS Ticket Request
-1. Request TGS tickets for identified SPN accounts
-2. Extract ticket data in crackable format (hashcat/john compatible)
-3. Ensure RC4 encryption is requested when possible (easier to crack)
-4. Document all requested tickets
-
-### Phase 3: Offline Cracking
-1. Use hashcat mode 13100 (Kerberos 5 TGS-REP etype 23) for RC4 tickets
-2. Use hashcat mode 19700 (Kerberos 5 TGS-REP etype 17) for AES-128
-3. Use hashcat mode 19800 (Kerberos 5 TGS-REP etype 18) for AES-256
-4. Apply targeted wordlists and rules based on password policy
-
-### Phase 4: Credential Validation
-1. Validate cracked credentials against domain
-2. Assess access level of compromised accounts
-3. Map accounts to BloodHound attack paths
-4. Document for engagement report
-
-## Tools and Resources
-
-| Tool | Purpose | Platform |
-|------|---------|----------|
-| Rubeus | Kerberoasting and ticket manipulation | Windows (.NET) |
-| Impacket GetUserSPNs.py | Remote Kerberoasting | Linux/Python |
-| PowerView | SPN enumeration | Windows (PowerShell) |
-| hashcat | Offline password cracking | Cross-platform |
-| John the Ripper | Offline password cracking | Cross-platform |
-
-## Detection Indicators
-
-- Event ID 4769: Kerberos Service Ticket Request with RC4 encryption (0x17)
-- Anomalous TGS requests from a single account in short timeframe
-- TGS requests for services the user normally does not access
-- Honeypot SPN accounts with alerting on ticket requests
-
-## Validation Criteria
-
-- [ ] SPN accounts enumerated and documented
-- [ ] TGS tickets extracted in crackable format
-- [ ] Offline cracking attempted with appropriate wordlists
-- [ ] Cracked credentials validated
-- [ ] Access level of compromised accounts assessed
+Risk decision: high risk, requires review, blocked pending redaction.
