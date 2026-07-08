@@ -2,7 +2,7 @@
   "date": "2026-07-07",
   "initialized_by": "Skills Loop Operator",
   "inspected_ref": "main",
-  "inspected_commit": "89367a7409aecb3ec28983a8ac9305f5e2620cde",
+  "inspected_commit": "b51304f08329d1349412c3b7d39666657dc15857",
   "discovery": [],
   "review": [],
   "normalization": [],
@@ -131,6 +131,19 @@
       "resolved_by": "Skills Loop Operator",
       "resolved_at": "2026-07-07T17:12:15-03:00",
       "resolution": "Replaced the three package-facing bodies with high-risk review-gated safety placeholders and created catalog-refresh-after-c2-red-team-redaction-20260707."
+    },
+    {
+      "id": "risk-review-credential-access-phishing-lateral-movement-skills-20260707",
+      "priority": 1,
+      "role": "Risk Auditor",
+      "target": "dist/skills/performing-credential-access-with-lazagne/SKILL.md; dist/skills/performing-initial-access-with-evilginx3/SKILL.md; dist/skills/performing-kerberoasting-attack/SKILL.md; dist/skills/moving-laterally-with-netexec/SKILL.md",
+      "reason": "Critic inspection found installed package-facing procedure detail for credential extraction, adversary-in-the-middle phishing/session capture, Kerberoasting/offline cracking, password spraying, pass-the-hash, command execution, credential dumping, and lateral movement.",
+      "action": "Inspect and decide whether to redact these entries into high-risk review-gated defensive wrappers, preserve only detection/authorization/audit guidance, mark source reference-only, or block package endorsement.",
+      "risk_level": "high",
+      "status": "open",
+      "created_by": "Skills Loop Operator",
+      "created_at": "2026-07-07T21:11:43-03:00",
+      "source_report": "reports/critic/2026-07-07-2111-credential-access-phishing-lateral-risk-triage.md"
     }
   ],
   "packaging": [],
@@ -160,7 +173,8 @@
         {"at":"2026-07-07T17:12:15-03:00","by":"Skills Loop Operator","batch":"c2-red-team-redaction","result":"Resolved the high-risk review by replacing three package-facing security entries with review-gated safety placeholders; Cataloger refresh now blocks further package/publication endorsement."},
         {"at":"2026-07-07T18:12:29-03:00","by":"Skills Loop Operator","batch":"c2-red-team-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the three package-facing C2/red-team safety placeholders; Critic backlog is unblocked for the next bounded metadata batch."},
         {"at":"2026-07-07T19:13:01-03:00","by":"Skills Loop Operator","batch":"agent-ops-cli-metadata-backfill","result":"Backfilled four package-facing agent-operations/security-defensive CLI and agent-instruction skills with explicit domain, medium risk, requires_review, and source status metadata; created Cataloger refresh queue catalog-refresh-after-metadata-backfill-agent-ops-cli-batch-20260707."},
-        {"at":"2026-07-07T20:14:54-03:00","by":"Skills Loop Operator","batch":"agent-ops-cli-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the four package-facing agent-ops/CLI metadata entries; Critic backlog is unblocked for the next bounded metadata batch."}
+        {"at":"2026-07-07T20:14:54-03:00","by":"Skills Loop Operator","batch":"agent-ops-cli-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the four package-facing agent-ops/CLI metadata entries; Critic backlog is unblocked for the next bounded metadata batch."},
+        {"at":"2026-07-07T21:11:43-03:00","by":"Skills Loop Operator","batch":"credential-access-phishing-lateral-risk-triage","result":"Stopped routine metadata backfill on four high-risk package-facing credential-access, phishing/session-hijack, Kerberoasting, and lateral-movement entries; created risk queue risk-review-credential-access-phishing-lateral-movement-skills-20260707 before further package/publication endorsement."}
       ]
     }
   ]
