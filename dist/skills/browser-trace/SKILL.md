@@ -1,108 +1,106 @@
 ---
 name: Browser Trace
-description: Capture a full DevTools-protocol trace of any browser automation — CDP firehose, screenshots, and DOM dumps — then bisect into per-page searchable buckets. Use when debugging failed browser automation runs, auditing network/console/DOM activity, or feeding structured per-page summaries back into agent loops.
-tags: [software-development, debugging, browser, cdevtools, cdp, tracing, automation, o11y]
+description: Review-gated guidance for collecting and inspecting browser automation traces in authorized debugging contexts. Use only for read-only defensive investigation of owned or explicitly authorized browser sessions; do not use for account/session surveillance, credential capture, or unapproved browser attachment.
+tags: [software-development, debugging, browser, cdp, tracing, automation, observability, security-review]
+domain: software-engineering
+risk_level: high
+requires_review: true
+review_gate: authorized-read-only-browser-debugging-only
 source: mxyhi/ok-skills (MIT)
+source_status: distilled-reviewed
 distilled: 2026-06-22
 type: Playbook
 ---
 
 # Browser Trace
 
-Attach a **second, read-only CDP client** to a browser session that is already being driven by your main automation. The trace records the full DevTools firehose to NDJSON, polls for screenshots and DOM dumps in parallel, and slices everything into a directory tree that bash tools can search.
+Browser Trace is a review-gated defensive debugging playbook for inspecting browser automation failures from traces that were collected from owned or explicitly authorized sessions.
 
-This skill does **not** drive pages — it only listens. Pair it with the `browser` skill, Playwright, or anything else that speaks CDP.
+The safe package-facing use case is narrow: a reviewer may use already-approved trace artifacts to understand navigation failures, JavaScript errors, network failures, DOM state, or timing issues in a controlled debugging environment. This skill must not be used to attach to another user's live browser, inspect private sessions, collect credentials, bypass account controls, or monitor activity without authorization.
 
-## When to Use
+## Review Gate
 
-- Debug a browser-automation run (failing form, missing element, hung navigation, JS exception)
-- Attach a trace mid-flight to a running automation without restarting
-- Split a CDP firehose into network / console / DOM / page buckets
-- Get screenshots + DOM snapshots over time, joined to CDP events by timestamp
+Before using this skill, confirm all of the following:
 
-If the user just wants to **drive** the browser, use the `browser` skill instead.
+1. The browser session, test environment, account, and data are owned by the operator or explicitly authorized by the owner.
+2. The trace capture plan is read-only and does not drive pages, submit forms, mutate accounts, bypass authentication, or change remote state.
+3. The data classification is known before screenshots, DOM snapshots, console logs, network metadata, or runtime traces are collected.
+4. Secrets, cookies, bearer tokens, session identifiers, personal data, and proprietary page contents are either absent, minimized, or redacted before sharing.
+5. Any remote-browser provider credentials are handled outside the skill text and are never pasted into prompts, logs, reports, or shared artifacts.
+6. Retention is bounded: trace artifacts are stored only as long as needed for the debugging task and are deleted or archived according to the project policy.
 
-## Requirements
+If any item is uncertain, stop and perform a security/privacy review before collecting or analyzing trace data.
 
-- Node 18+
-- `browse` CLI (`npm install -g browse`) with `browse cdp` subcommand
-- `jq` optional — for ad-hoc querying of bisected JSONL files
-- For remote Browserbase sessions: `BROWSERBASE_API_KEY`
+## Allowed Uses
 
-## How It Works
+Use this skill for defensive debugging when the operator is authorized to inspect the browser session:
 
-Every Chrome DevTools target accepts **multiple concurrent CDP clients**. Your main automation is one client; this skill adds a second that only enables observation domains (Network, Console, Runtime, Log, Page) and never sends action commands.
+- diagnose failed browser automation runs;
+- correlate page navigation, console errors, network failures, and DOM state;
+- inspect screenshots or DOM snapshots that are known to be safe to store;
+- summarize trace artifacts for a bug report or regression investigation;
+- identify whether failures come from selectors, timing, navigation, server responses, client-side exceptions, or test-environment instability.
 
-Three pieces:
-1. **Firehose**: streams every CDP event as one JSON object per line to `cdp/raw.ndjson`
-2. **Sampler**: polling loop takes screenshots and DOM dumps at intervals (default 2s)
-3. **Bisector**: after the run, slices `raw.ndjson` into per-bucket JSONL files keyed by CDP method, and per-page using `Page.frameNavigated` events
+## Disallowed Uses
 
-## Quickstart (Local Chrome)
+Do not use this skill for:
 
-```bash
-# 1. Launch Chrome with debugger port
-"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
-  --remote-debugging-port=9222 \
-  --user-data-dir=/tmp/chrome-o11y \
-  about:blank &
+- attaching to a live browser session without explicit authorization;
+- monitoring a human user's browsing activity;
+- capturing credentials, cookies, session tokens, private messages, payment information, or personal data;
+- using browser traces to bypass access controls or account protections;
+- collecting screenshots or DOM dumps from third-party accounts without permission;
+- publishing raw trace artifacts that may contain secrets, proprietary content, or personal data;
+- running command snippets copied from package-facing documentation against production sessions without review.
 
-# 2. Start the tracer
-node scripts/start-capture.mjs 9222 my-run
+## Safe Workflow
 
-# 3. Run your main automation against port 9222
-browse open https://example.com --cdp 9222
+1. **Scope the trace.** Define the authorized target, owner, purpose, expected data sensitivity, and retention limit.
+2. **Collect minimally.** Capture only the domains and time window needed for the debugging question. Avoid broad runtime or DOM collection when network or console metadata is enough.
+3. **Separate raw and shareable artifacts.** Keep raw traces in a restricted workspace. Create a separate redacted summary for tickets, reports, or agent context.
+4. **Inspect locally or in a controlled environment.** Do not upload raw traces to external tools unless the data owner has approved that transfer.
+5. **Redact before reuse.** Remove secrets, cookies, authorization headers, user identifiers, sensitive DOM content, and private screenshots before using trace output as model context.
+6. **Delete or archive deliberately.** Apply the retention plan after the debugging task is complete.
 
-# 4. Stop and bisect
-node scripts/stop-capture.mjs my-run
-node scripts/bisect-cdp.mjs my-run
-```
+## Trace Review Checklist
 
-## Filesystem Layout
+When reviewing a trace, look for:
 
-```
-.o11y/<run-id>/
-  manifest.json                 run metadata
-  index.jsonl                   one line per sample: {ts, screenshot, dom, url}
-  cdp/
-    raw.ndjson                  full CDP firehose
-    summary.json                {sessionId, duration, totalEvents, pages[]}
-    network/{requests,responses,finished,failed,websocket}.jsonl
-    console/{logs,exceptions}.jsonl
-    runtime/all.jsonl
-    page/{navigations,lifecycle,frames,dialogs,all}.jsonl
-    pages/                      per-page slices
-      000/                      first concrete page (navigation order)
-        url.txt, summary.json, raw.jsonl
-        network/, console/, page/  (only non-empty files)
-  screenshots/<iso-ts>.png
-  dom/<iso-ts>.html
-```
+- page load and navigation sequence;
+- failed requests, status codes, retries, and timing gaps;
+- client-side exceptions and console errors;
+- selector or DOM-state mismatch at the failure point;
+- modal, dialog, redirect, or cross-origin transitions;
+- test-environment instability such as blocked resources, throttling, or session expiry;
+- evidence that raw artifacts contain secrets or private data that must be redacted.
 
-## Querying the Trace
+## Redaction Requirements
 
-```bash
-# Use the query helper
-node scripts/query.mjs my-run list                    # pages table
-node scripts/query.mjs my-run page 1                  # page 1 summary
-node scripts/query.mjs my-run page 1 network/failed   # failed requests
-node scripts/query.mjs my-run errors                  # all errors
-node scripts/query.mjs my-run hosts                   # top hosts
-node scripts/query.mjs my-run host api.example.com    # requests for host
+Before trace data leaves the restricted debugging context, remove or mask:
 
-# Or raw jq
-jq -c '.params' .o11y/<run>/cdp/network/failed.jsonl
-jq -c 'select(.params.response.status >= 400)' .o11y/<run>/cdp/network/responses.jsonl
-jq -c 'select(.params.type == "error")' .o11y/<run>/cdp/console/logs.jsonl
-jq -r '.params.frame.url' .o11y/<run>/cdp/page/navigations.jsonl
-```
+- cookies, tokens, API keys, authorization headers, and session identifiers;
+- email addresses, names, account IDs, payment data, and private messages;
+- screenshots containing private or proprietary content;
+- DOM sections containing user data, hidden tokens, or proprietary application state;
+- raw network bodies unless they are necessary and approved for the review.
 
-## Best Practices
+Prefer summaries over raw artifacts. A good report states the failure, the observed evidence, the affected page or request class, and the recommended fix without exposing sensitive trace content.
 
-1. Use `bb-capture.mjs` on Browserbase (enforces `--keep-alive`, captures debugger URL)
-2. Don't `--release` a session you don't own
-3. On Browserbase: attach automation client before/with the tracer
-4. Don't poll faster than ~1s (2s default)
-5. Pick domains deliberately: `Network Console Runtime Log Page` covers most debugging
-6. Always run `stop-capture.mjs` even after crashes
-7. `bisect-cdp.mjs` is idempotent — safe to re-run
+## Output Format
+
+A safe Browser Trace report should include:
+
+- authorization scope and data classification;
+- trace time window and environment;
+- failure summary;
+- relevant navigation, network, console, and DOM observations;
+- redactions applied;
+- likely root cause;
+- recommended next debugging or code action;
+- retention/deletion status for raw artifacts.
+
+## Package Boundary
+
+This skill intentionally does not include browser-launch commands, debugger-port setup, remote-provider setup, API-key handling, capture scripts, or raw query commands. Those details are environment-specific and may expose browser sessions, credentials, private DOM data, or sensitive trace artifacts if reused without review.
+
+Operational capture instructions belong in a private, project-authorized runbook with explicit owner approval, credential handling, data-retention rules, and redaction requirements.
