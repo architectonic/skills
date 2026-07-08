@@ -2,7 +2,7 @@
   "date": "2026-07-08",
   "initialized_by": "Skills Loop Operator",
   "inspected_ref": "main",
-  "inspected_commit": "5c9593ee6fc2e2c9542f610fbf74605fd2eb460c",
+  "inspected_commit": "89590689366ba99b4cb8827063183b6df3d6067c",
   "discovery": [
     {
       "id": "manual-discovery-fallback-20260708",
@@ -15,8 +15,6 @@
       "status": "closed",
       "created_by": "Skills Value Operator",
       "created_at": "2026-07-08T10:13:04-03:00",
-      "reprioritized_by": "Skills Value Operator",
-      "reprioritized_at": "2026-07-08T15:13:05-03:00",
       "closed_by": "Skills Value Operator",
       "closed_at": "2026-07-08T18:20:00Z",
       "closure_artifacts": ["reports/discovery/2026-07-08-manual.md", "reports/discovery/2026-07-08-manual.json", "sources/candidates/2026-07-08-manual.json"],
@@ -47,14 +45,15 @@
       "priority": 1,
       "role": "Normalizer",
       "target": "sources/profiles/2026-07-08/vercel-ai.json",
-      "reason": "Vercel AI SDK source review found Apache-2.0 license, high usefulness, and direct package-facing value for provider abstraction and sandbox/tool safety guidance. Normalization must be original and must not copy examples or implementation content. This queue became the next eligible value path after the OpenClaw runtime-surface risk review was closed.",
-      "action": "Create original package-facing guidance from the reviewed source profile only. Do not copy README examples, code snippets, prompts, or implementation. Classify risk and create catalog parity queue if a dist skill changes.",
+      "reason": "Vercel AI SDK source review found Apache-2.0 license, high usefulness, and direct package-facing value for provider abstraction and sandbox/tool safety guidance. Normalization had to be original and could not copy examples or implementation content.",
+      "action": "Closed after creating original package-facing provider/tool/sandbox boundary guidance at dist/skills/ai-sdk-provider-tool-safety/SKILL.md and normalization report reports/normalization/2026-07-08-vercel-ai-sdk-profile-normalization.md.",
       "risk_level": "medium",
-      "status": "open",
+      "status": "closed",
       "created_by": "Skills Value Operator",
       "created_at": "2026-07-08T18:40:00Z",
-      "reprioritized_by": "Skills Value Operator",
-      "reprioritized_at": "2026-07-08T18:12:00-03:00",
+      "closed_by": "Skills Value Operator",
+      "closed_at": "2026-07-08T16:12:59-03:00",
+      "closure_artifacts": ["dist/skills/ai-sdk-provider-tool-safety/SKILL.md", "reports/normalization/2026-07-08-vercel-ai-sdk-profile-normalization.md"],
       "source_ticket": "skills-source-review-batch-001"
     }
   ],
@@ -74,6 +73,19 @@
       "closed_at": "2026-07-08T15:13:05-03:00",
       "closure_artifacts": ["reports/catalog/2026-07-08-risk-review-catalog-parity.md"],
       "source_ticket": "skills-risk-review-mcp-tool-poisoning-001"
+    },
+    {
+      "id": "catalog-refresh-after-vercel-ai-sdk-normalization-20260708",
+      "priority": 1,
+      "role": "Cataloger",
+      "target": "dist/catalog.json, dist/catalog.md, dist/install-manifest.json, dist/skills/ai-sdk-provider-tool-safety/SKILL.md",
+      "reason": "A new normalized dist skill was added from the reviewed Vercel AI SDK source profile. Catalog/install-manifest parity must be verified before metadata backlog cleanup, package endorsement, npm publication, registry publication, or installable-surface claims.",
+      "action": "Verify or refresh generated catalog surfaces and record whether skill count, software-engineering count, medium-risk count, requires_review metadata, and installer selection fields are coherent. Do not publish to npm.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Skills Value Operator",
+      "created_at": "2026-07-08T16:12:59-03:00",
+      "source_ticket": "skills-normalize-vercel-ai-sdk-profile-001"
     }
   ],
   "risk": [
@@ -120,7 +132,7 @@
       "role": "Critic",
       "target": "dist/skills/**",
       "reason": "Catalog still has a large uncategorized-domain and unspecified-risk backlog under the current quality gate.",
-      "action": "Continue bounded metadata backfill batches only after discovery/source-review and higher-priority risk/normalization gates allow it.",
+      "action": "Continue bounded metadata backfill batches only after discovery/source-review and higher-priority risk/normalization/catalog gates allow it.",
       "risk_level": "low",
       "status": "open",
       "created_by": "Fable 5 (Claude, external maintainer session)",
@@ -135,7 +147,8 @@
         {"at":"2026-07-08T15:13:05-03:00","by":"Skills Value Operator","batch":"mcp-ssrf-catalog-parity","result":"Closed catalog parity after verifying dist/catalog.json, dist/catalog.md, and dist/install-manifest.json reflect the MCP/SSRF risk-review metadata. Manual discovery fallback is now the next open value queue."},
         {"at":"2026-07-08T18:20:00Z","by":"Skills Value Operator","batch":"manual-discovery-fallback","result":"Closed manual discovery fallback after recording four metadata-only public candidates and opening source-review-manual-discovery-20260708. Metadata backlog remains lower priority until source review resolves license/risk boundaries."},
         {"at":"2026-07-08T18:40:00Z","by":"Skills Value Operator","batch":"manual-source-review","result":"Closed manual source review after creating three source profiles, one license-blocked watch note, one high-risk OpenClaw source-runtime review queue, and one bounded Vercel AI SDK normalization queue. No candidate code/content was copied or executed."},
-        {"at":"2026-07-08T18:12:00-03:00","by":"Skills Value Operator","batch":"openclaw-runtime-risk-review","result":"Closed OpenClaw high-risk source-runtime review. OpenClaw remains source-profile/watch-only except for future generic original runtime-surface safety guidance; operational account/browser/cron/gateway/channel/setup detail remains blocked. Vercel AI SDK normalization is now the next eligible ticket."}
+        {"at":"2026-07-08T18:12:00-03:00","by":"Skills Value Operator","batch":"openclaw-runtime-risk-review","result":"Closed OpenClaw high-risk source-runtime review. OpenClaw remains source-profile/watch-only except for future generic original runtime-surface safety guidance; operational account/browser/cron/gateway/channel/setup detail remains blocked. Vercel AI SDK normalization is now the next eligible ticket."},
+        {"at":"2026-07-08T16:12:59-03:00","by":"Skills Value Operator","batch":"vercel-ai-sdk-normalization","result":"Closed Vercel AI SDK normalization by creating original medium-risk provider/tool/sandbox safety guidance at dist/skills/ai-sdk-provider-tool-safety/SKILL.md. Catalog parity after the new skill is now the next gate."}
       ]
     }
   ]
