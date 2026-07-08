@@ -2,7 +2,7 @@
   "date": "2026-07-08",
   "initialized_by": "Skills Loop Operator",
   "inspected_ref": "main",
-  "inspected_commit": "89590689366ba99b4cb8827063183b6df3d6067c",
+  "inspected_commit": "f102482c8f76097af7a9c993a6e614b0b4da0de8",
   "discovery": [
     {
       "id": "manual-discovery-fallback-20260708",
@@ -79,12 +79,15 @@
       "priority": 1,
       "role": "Cataloger",
       "target": "dist/catalog.json, dist/catalog.md, dist/install-manifest.json, dist/skills/ai-sdk-provider-tool-safety/SKILL.md",
-      "reason": "A new normalized dist skill was added from the reviewed Vercel AI SDK source profile. Catalog/install-manifest parity must be verified before metadata backlog cleanup, package endorsement, npm publication, registry publication, or installable-surface claims.",
-      "action": "Verify or refresh generated catalog surfaces and record whether skill count, software-engineering count, medium-risk count, requires_review metadata, and installer selection fields are coherent. Do not publish to npm.",
+      "reason": "A new normalized dist skill was added from the reviewed Vercel AI SDK source profile. Catalog/install-manifest parity had to be verified before metadata backlog cleanup, package endorsement, npm publication, registry publication, or installable-surface claims.",
+      "action": "Closed after reports/catalog/2026-07-08-ai-sdk-provider-tool-safety-catalog-parity.md verified skill count 1183, software-engineering count 147, medium-risk count 434, the ai-sdk-provider-tool-safety catalog entry, and coherent installer selection fields. No generated catalog surface was hand-edited and no npm publication occurred.",
       "risk_level": "medium",
-      "status": "open",
+      "status": "closed",
       "created_by": "Skills Value Operator",
       "created_at": "2026-07-08T16:12:59-03:00",
+      "closed_by": "Skills Value Operator",
+      "closed_at": "2026-07-08T17:12:46-03:00",
+      "closure_artifacts": ["reports/catalog/2026-07-08-ai-sdk-provider-tool-safety-catalog-parity.md"],
       "source_ticket": "skills-normalize-vercel-ai-sdk-profile-001"
     }
   ],
@@ -132,7 +135,7 @@
       "role": "Critic",
       "target": "dist/skills/**",
       "reason": "Catalog still has a large uncategorized-domain and unspecified-risk backlog under the current quality gate.",
-      "action": "Continue bounded metadata backfill batches only after discovery/source-review and higher-priority risk/normalization/catalog gates allow it.",
+      "action": "Continue a bounded metadata backfill batch now that discovery/source-review, higher-priority risk, normalization, and catalog parity gates are closed. Stop immediately on high-risk executable, credential, offensive, account, browser, or external-mutation surfaces.",
       "risk_level": "low",
       "status": "open",
       "created_by": "Fable 5 (Claude, external maintainer session)",
@@ -148,7 +151,8 @@
         {"at":"2026-07-08T18:20:00Z","by":"Skills Value Operator","batch":"manual-discovery-fallback","result":"Closed manual discovery fallback after recording four metadata-only public candidates and opening source-review-manual-discovery-20260708. Metadata backlog remains lower priority until source review resolves license/risk boundaries."},
         {"at":"2026-07-08T18:40:00Z","by":"Skills Value Operator","batch":"manual-source-review","result":"Closed manual source review after creating three source profiles, one license-blocked watch note, one high-risk OpenClaw source-runtime review queue, and one bounded Vercel AI SDK normalization queue. No candidate code/content was copied or executed."},
         {"at":"2026-07-08T18:12:00-03:00","by":"Skills Value Operator","batch":"openclaw-runtime-risk-review","result":"Closed OpenClaw high-risk source-runtime review. OpenClaw remains source-profile/watch-only except for future generic original runtime-surface safety guidance; operational account/browser/cron/gateway/channel/setup detail remains blocked. Vercel AI SDK normalization is now the next eligible ticket."},
-        {"at":"2026-07-08T16:12:59-03:00","by":"Skills Value Operator","batch":"vercel-ai-sdk-normalization","result":"Closed Vercel AI SDK normalization by creating original medium-risk provider/tool/sandbox safety guidance at dist/skills/ai-sdk-provider-tool-safety/SKILL.md. Catalog parity after the new skill is now the next gate."}
+        {"at":"2026-07-08T16:12:59-03:00","by":"Skills Value Operator","batch":"vercel-ai-sdk-normalization","result":"Closed Vercel AI SDK normalization by creating original medium-risk provider/tool/sandbox safety guidance at dist/skills/ai-sdk-provider-tool-safety/SKILL.md. Catalog parity after the new skill is now the next gate."},
+        {"at":"2026-07-08T17:12:46-03:00","by":"Skills Value Operator","batch":"ai-sdk-catalog-parity","result":"Closed catalog parity after verifying dist/catalog.json, dist/catalog.md, and dist/install-manifest.json reflect ai-sdk-provider-tool-safety and installer selection fields. Metadata backlog is now the next bounded Critic ticket."}
       ]
     }
   ]
