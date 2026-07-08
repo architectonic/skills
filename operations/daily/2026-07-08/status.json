@@ -76,7 +76,9 @@
       "queues": "a003b0afa3763811aa1c01ce9910dede9113d5f5",
       "value_ledger": "8e4fc84870a96fae25881995a05111d31bf3d8e7",
       "daily_report": "a589d018ae715561b1e607354b76d707efc6ce94",
-      "status_initial_update": "pending_final_connector_response"
+      "status_initial_update": "7adc2727b165f77acb76265cf695379ff182d2f9",
+      "log": "0cc4d7d9aaa67adb6944043f678c4612ba691484",
+      "status_final": "pending_final_connector_response"
     },
     "acceptance_tests": [
       {
@@ -113,6 +115,6 @@
     "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
     "Package/publication endorsement remains blocked until discovery and backlog gates are clean."
   ],
-  "last_commit": "pending_final_connector_response",
+  "last_commit": "0cc4d7d9aaa67adb6944043f678c4612ba691484",
   "next_action": "Radar should consume skills-manual-discovery-fallback-001 / manual-discovery-fallback-20260708 and produce metadata-only public candidate sources or exact searches/blockers without cloning, executing, copying, importing, normalizing, publishing, or packaging candidate content."
 }
