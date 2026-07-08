@@ -9,6 +9,22 @@ status: active
 
 # Skills Operations Log
 
+## 2026-07-08
+
+- Ran Risk Auditor at the 04 cadence slot even though cadence selected Cataloger, because `risk-review-vector-embedding-weaknesses-skill-20260708` was an open high-priority safety queue item and risk review outranks catalog/package/publication work until resolved.
+- Model requirement status: `model_setting_unverified`.
+- Inspected ref/SHA before this pass: `main` at `8473a1320706e825b6e451e798ba2be27d0b3c28`.
+- Confirmed today's daily ledger exists; no missing-ledger initialization was performed.
+- Confirmed `operations/action-runs/discover-skill-sources/latest.json` remains absent on the default branch; no discovery Action handoff was available.
+- Read and followed `operations/project-operator-prompt.md`, `operations/aggregator-loop.md`, `operations/operator-stability.md`, `operations/action-runs/discover-skill-sources/README.md`, `operations/scheduler-online-scout-contract.md`, `operations/manual-discovery-review-fallback.md`, today's status/queues, `operations/log.md`, `dist/catalog.json`, `dist/install-manifest.json`, and `dist/skills/assessing-vector-and-embedding-weaknesses/SKILL.md`.
+- Replaced the package-facing vector/embedding weakness procedure body with a high-risk, review-gated defensive wrapper. The wrapper preserves trigger, inputs, ordered procedure, verification, failure modes, remediation controls, and package boundary decision while removing default executable examples for embedding inversion, membership inference, cross-tenant probing, vector-store poisoning, and indirect prompt-injection scanning.
+- Created `reports/risk/2026-07-08-0412-vector-embedding-redaction.md`.
+- Resolved risk queue item `risk-review-vector-embedding-weaknesses-skill-20260708` and created Cataloger queue item `catalog-refresh-after-vector-embedding-redaction-20260708` because generated catalog and install surfaces are stale after a `dist/skills/**` edit.
+- Updated `operations/daily/2026-07-08/queues.json` and `operations/daily/2026-07-08/status.json`.
+- No third-party source was copied. No external repository was cloned, installed, imported, or executed. No generated catalog files were hand-edited. No npm publication was attempted.
+- Commits for this pass before final log reconciliation: `41d12098d82c162e5cffb15f0abd818b7a39a23e`, `17949382b564a01dbae3e98898b9ce8920fb88d5`, `b3d7c5558e025cb6755e14f07612cb0e7256d2f6`, `afcfcdf31747472b9fc744c8001f36b3d3fbd4e2`.
+- Next justified action: Cataloger should verify `catalog-refresh-after-vector-embedding-redaction-20260708`, then Critic can continue the uncategorized/unspecified-risk metadata backlog.
+
 ## 2026-07-07
 
 - Ran Cataloger at the 15 cadence slot even though cadence selected Normalizer, because `catalog-refresh-after-dpapi-credential-access-redaction-20260707` was an open package-health queue item and catalog verification overrides normalization until generated catalog/install surfaces are verified.
@@ -86,88 +102,3 @@ status: active
 - Model requirement status: `model_setting_unverified`.
 - Inspected ref/SHA before this pass: `main` at `bd372c86c4be375f71cd701d71778e3ce0d42442` based on the preceding operator-result commit; the connector returned current default-branch file contents but did not expose a separate branch head SHA in this pass.
 - Confirmed today's daily ledger exists; no missing-ledger initialization was performed.
-- Confirmed `operations/action-runs/discover-skill-sources/latest.json` remains absent on the default branch; no discovery Action handoff was available.
-- Read and followed `operations/project-operator-prompt.md`, `operations/aggregator-loop.md`, `operations/operator-stability.md`, `operations/action-runs/discover-skill-sources/README.md`, `operations/scheduler-online-scout-contract.md`, `operations/manual-discovery-review-fallback.md`, today's status/queues, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `reports/critic/2026-07-07-0213-metadata-backfill-security-forensics-batch.md`, and a representative backfilled skill file.
-- Verified generated catalog surfaces after the four-file metadata batch: `dist/catalog.json` and `dist/catalog.md` both report 1182 skills, 24 `forensics`, 53 `security-defensive`, 587 `uncategorized`, 416 `medium`, and 755 `unspecified`; `dist/install-manifest.json` still points to `README.md`, `dist/catalog.json`, `dist/catalog.md`, and `dist/install-manifest.json`.
-- Created `reports/catalog/2026-07-07-0312-metadata-backfill-security-forensics-catalog-verification.md`.
-- Closed Cataloger queue item `catalog-refresh-after-metadata-backfill-security-forensics-batch-20260707` and left Critic backlog item `metadata-backfill-uncategorized-and-unspecified-risk-20260707` open.
-- No generated catalog file was hand-edited. No third-party source was copied. No external repository was cloned, installed, imported, or executed. No npm publication was attempted.
-- Commits for this pass before final log reconciliation: `5ca7c5903c732249ff18939d6678af47428d5f63`, `ee43c6b211251208c1eddb26f6c0232c29334f57`, `578ae526328c7a2ff741c63e47b6ee6c13d7c12c`.
-- Next justified action: Critic should continue `metadata-backfill-uncategorized-and-unspecified-risk-20260707` with another bounded metadata batch, then create a Cataloger queue item if package-facing `dist/skills/**` metadata changes again.
-
-- Ran Critic at the 02 cadence slot even though cadence selected Source Reviewer, because the open `metadata-backfill-uncategorized-and-unspecified-risk-20260707` cleanup queue is concrete and review queue pressure is currently zero.
-- Model requirement status: `model_setting_unverified`.
-- Inspected ref/SHA before this pass: `main` at `03840c8e70ec165fb3ae81673ebe4288ff7d008f`.
-- Confirmed today's daily ledger exists; no missing-ledger initialization was performed.
-- Confirmed `operations/action-runs/discover-skill-sources/latest.json` remains absent on the default branch; no discovery Action handoff was available.
-- Read and followed `operations/project-operator-prompt.md`, `operations/aggregator-loop.md`, `operations/operator-stability.md`, `operations/action-runs/discover-skill-sources/README.md`, `operations/scheduler-online-scout-contract.md`, `operations/manual-discovery-review-fallback.md`, today's status/queues, `operations/log.md`, `dist/catalog.json`, `scripts/classify_dist_skills.py`, and `dist/skills/authoring-agent-skills/SKILL.md`.
-- Backfilled metadata on four package-facing dist skills without changing procedure bodies: `analyzing-active-directory-acl-abuse`, `analyzing-android-malware-with-apktool`, `analyzing-bootkit-and-rootkit-samples`, and `analyzing-command-and-control-communication`.
-- Added `domain`, `risk_level`, `requires_review`, `source_family`, `source_license`, and `source_status` frontmatter to each. Domain/risk decisions: two `security-defensive`, two `forensics`, all `medium`, all `requires_review: true`.
-- Created `reports/critic/2026-07-07-0213-metadata-backfill-security-forensics-batch.md`.
-- Updated `operations/daily/2026-07-07/queues.json` with Critic progress and created Cataloger queue item `catalog-refresh-after-metadata-backfill-security-forensics-batch-20260707` because generated catalog files are stale after `dist/skills/**` edits.
-- Updated `operations/daily/2026-07-07/status.json` with the run record and blockers.
-- No third-party source was copied. No external repository was cloned, installed, imported, or executed. No generated catalog files were hand-edited. No npm publication was attempted.
-- Commits for this pass before final log reconciliation: `ab0f57f14b4a416cf0e17887020777d86e5525ba`, `07cdd3321c2ebf362810fff829f44039c10c3f50`, `a8689e6e29ced564d7f1514d199a15e5d97ce228`, `6abf69e93efef34f32f7d178bf5d8f5e5ed734bb`, `57767c975f403f24d10340186431e3b7cb95b24b`, `bd146139b7ec22c346d8837824f485fd72b0f2a9`, `74a3d61dac3409f32891be14f806d421da8f679d`.
-- Next justified action: Cataloger should refresh/verify generated surfaces for the metadata batch, then Critic can continue the uncategorized/unspecified-risk metadata backlog.
-
-- Ran Cataloger at the 01 cadence slot even though cadence selected Radar, because the catalog/package health gate overrides Radar while `verify-catalog-refresh-after-shared-skill-library-governance-20260706` is open.
-- Model requirement status: `model_setting_unverified`.
-- Inspected ref/SHA before this pass: `main` at `03840c8e70ec165fb3ae81673ebe4288ff7d008f`.
-- Confirmed today's daily ledger exists; no missing-ledger initialization was performed.
-- Confirmed `operations/action-runs/discover-skill-sources/latest.json` remains absent on the default branch; no discovery Action handoff was available.
-- Confirmed the only open queue item is the catalog verification blocker for `shared-skill-library-governance`.
-- Hardened `.github/workflows/catalog-refresh.yml` so edits to the workflow file itself are included in the workflow path filter.
-- Updated `skills/shared-skill-library-governance.md` with `last_reviewed: 2026-07-07`, preserving procedure text and retriggering the watched `skills/**` catalog-refresh path.
-- Created `reports/catalog/2026-07-07-0114-shared-skill-library-governance-catalog-trigger-repair.md`.
-- Updated `operations/daily/2026-07-07/queues.json` and `operations/daily/2026-07-07/status.json`; left `verify-catalog-refresh-after-shared-skill-library-governance-20260706` open pending post-refresh verification.
-- No generated `dist/catalog.json`, `dist/catalog.md`, or `dist/install-manifest.json` hand-edit was attempted. No package publication was attempted.
-- Commits for this pass before final log reconciliation: `5349ed9204afa741d0f886afc0dc9074f24e7923`, `9fc91d2eaab600b3e332d1991fc05262f9f1306f`, `23165dc60111d58be4211b82eb6b72b5317945d5`, `f4eb3b2a1e051c4e80836b79ef3a3ded7784963e`, `608bb7e383faa2c8db19f1508bd1d5223ddc533e`.
-- Next justified action: Cataloger should verify whether Catalog Refresh committed regenerated catalog surfaces after `9fc91d2eaab600b3e332d1991fc05262f9f1306f`; expected counts remain 1176 skills, 99 `agent-operations`, and 412 `medium` risk. **[Superseded the same night by the external maintainer pass below: the catalog was rebuilt in a local checkout and six new skills were added, so verified counts are now 1182 skills / 105 `agent-operations`.]**
-
-- **External maintainer pass (Fable 5 / Claude, operator-directed).** Not a scheduled run; Alan directed this session directly. Scheduler: your loop and state were read and respected; queue changes below.
-- Researched current convergence (Anthropic skill-authoring best practices, agentskills.io open spec + adopter list, loop-engineering and harness-engineering practice) and authored six new `agent-operations` dist skills: `authoring-agent-skills`, `engineering-loop-contracts`, `engineering-agent-harnesses`, `engineering-context-windows`, `evaluating-skills-before-authoring`, `gating-work-with-verification-loops` — all with domain/risk_level frontmatter, low risk, cross-linked one level deep.
-- Ran `npm run build:catalog` in a local checkout. Regenerated `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`. **This resolves `verify-catalog-refresh-after-shared-skill-library-governance-20260706`:** `shared-skill-library-governance` is now cataloged; counts are 1182 skills / 105 agent-operations (the 2026-07-06 expectation of 1176/99 plus the six new skills). Queue item marked resolved with evidence in `operations/daily/2026-07-07/queues.json`.
-- Loop improvement: added **Quality Gate** and **Stopping Conditions** sections to `operations/aggregator-loop.md` — new/updated dist skills must pass the `authoring-agent-skills` checklist and carry domain/risk_level; runs are bounded (one role, one item, retry cap 2, honest no-ops).
-- Opened critic queue item `metadata-backfill-uncategorized-and-unspecified-risk-20260707` (587 uncategorized domains, 759 unspecified risk — standing maintenance per the new gate).
-- Wargame/strategy record for this repo: `d:/ab/projects/abkb/fable-findings/projects/skills.md` (ABKB, private).
-
-- Ran Reporter because `operations/daily/2026-07-07/status.json` and `operations/daily/2026-07-07/queues.json` were missing on `main`.
-- Model requirement status: `model_setting_unverified`.
-- Inspected ref/SHA before initialization: `main` at `5a35c24703f7c5e3d2c703a2ca53f557b583cb04`.
-- Initialized `operations/daily/2026-07-07/queues.json` from `operations/daily/queues-template.json` and carried forward only the unresolved prior-day queue item `verify-catalog-refresh-after-shared-skill-library-governance-20260706`.
-- Initialized `operations/daily/2026-07-07/status.json` from `operations/daily/status-template.json` with the catalog blocker and initialization run recorded.
-- Created `operations/daily/2026-07-07/report.md`.
-- No discovery, review, normalization, catalog rebuild, packaging, or publication work was run in this missing-ledger initialization pass.
-- Next justified action: Cataloger should process `verify-catalog-refresh-after-shared-skill-library-governance-20260706` by running or verifying `npm run build:catalog`, then checking `dist/catalog.json`, `dist/catalog.md`, and `dist/install-manifest.json` before any Packager or Publisher endorsement.
-
-## 2026-07-06
-
-- Ran Cataloger at the 23 cadence slot even though cadence selected Reporter or Critic, because the catalog/package health gate still overrides cadence while `verify-catalog-refresh-after-shared-skill-library-governance-20260706` is open.
-- Model requirement status: `model_setting_unverified`.
-- Inspected required repository files directly from `main` through the GitHub connector, including today's status/queues, operator doctrine, stability rules, Action handoff README, scheduler online scout contract, manual fallback contract, Catalog Refresh workflow, shared-skill-library-governance dist skill, dist catalogs, and operations history.
-- Confirmed `dist/skills/shared-skill-library-governance/SKILL.md` exists, but generated catalog surfaces remain stale: `dist/catalog.json` and `dist/catalog.md` still report 1175 skills, 98 `agent-operations`, 411 `medium` risk, and no catalog entry for `shared-skill-library-governance`.
-- Created `reports/catalog/2026-07-06-2311-shared-skill-library-governance-catalog-retrigger-diagnosis.md`.
-- Updated `operations/daily/2026-07-06/status.json` and `operations/log.md`; left queue item `verify-catalog-refresh-after-shared-skill-library-governance-20260706` open.
-- No generated catalog files were hand-edited. No npm publish was attempted.
-- Value delta: verified the package-facing dist copy exists, identified the remaining blocker as generated catalog staleness, and recorded a bounded retrigger/CI diagnosis instead of silently treating the package as ready.
-- Commit: `5a35c24703f7c5e3d2c703a2ca53f557b583cb04`.
-
-- Ran Cataloger at the 22 cadence slot even though cadence selected Critic, because the catalog/package health gate overrides Critic while `verify-catalog-refresh-after-shared-skill-library-governance-20260706` is open.
-- Model requirement status: `model_setting_unverified`.
-- Inspected required repository files directly from `main` through the GitHub connector, including today's status/queues, operator doctrine, stability rules, Action handoff README, scheduler online scout contract, manual fallback contract, shared-skill-library-governance skill/dist skill, dist catalogs, install manifest, reports, and operations history.
-- Verified `dist/skills/shared-skill-library-governance/SKILL.md` exists, but `dist/catalog.json` and `dist/catalog.md` remain stale at 1175 skills, 98 `agent-operations`, and 411 `medium` risk instead of expected 1176 / 99 / 412.
-- Created `reports/catalog/2026-07-06-2212-shared-skill-library-governance-catalog-verification.md`.
-- Updated `operations/daily/2026-07-06/status.json`; left queue item `verify-catalog-refresh-after-shared-skill-library-governance-20260706` open.
-- No generated catalog files were hand-edited. No npm publish was attempted.
-- Value delta: verified the install-root copy is present and narrowed the remaining blocker to generated catalog staleness; this prevents premature package/npm endorsement.
-- Commit: `8e2984ea0d5fccbf0c35a416d9f65c3bf1c141a6`.
-
-- Ran Cataloger at the 21 cadence slot as scheduled.
-- Model requirement status: `model_setting_unverified`.
-- Inspected required repository files directly from `main` through the GitHub connector, including today's status/queues, operator doctrine, stability rules, Action handoff README, scheduler online scout contract, manual fallback contract, shared-skill-library-governance skill, dist catalogs, install manifest, previous catalog reports, and operations history.
-- Closed `catalog-refresh-after-shared-skill-library-governance-20260706` after creating `dist/skills/shared-skill-library-governance/SKILL.md` from the reviewed canonical skill without copying any third-party content.
-- Created `reports/catalog/2026-07-06-2111-shared-skill-library-governance-catalog.md`.
-- Created follow-up queue item `verify-catalog-refresh-after-shared-skill-library-governance-20260706` because generated catalog surfaces could not be rebuilt in the connector-only pass.
-- No npm publication was attempted.
-- Value delta: repaired install-root visibility for a normalized governance skill and converted the remaining uncertainty into an explicit verification blocker.
-- Commit: `4b48a61b2eb96a133a55b064f0123d98d1ef700e`.
