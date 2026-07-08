@@ -8,12 +8,7 @@
       "timestamp": "2026-07-08T20:00:00-03:00",
       "type": "governance_upgrade",
       "source": "manual GitHub connector pass",
-      "artifact_paths": [
-        "operations/board.json",
-        "operations/gates.md",
-        "operations/heartbeat.md",
-        "operations/value-ledger.json"
-      ],
+      "artifact_paths": ["operations/board.json", "operations/gates.md", "operations/heartbeat.md", "operations/value-ledger.json"],
       "summary": "Installed board-driven heartbeat protocol so Skills operators prioritize discovery restoration, risk review, package-facing skill quality, and catalog parity over status-only churn."
     },
     {
@@ -21,13 +16,7 @@
       "timestamp": "2026-07-08T10:13:04-03:00",
       "type": "discovery_pipeline_repair",
       "source": "Skills Value Operator board ticket skills-restore-discovery-handoff-001",
-      "artifact_paths": [
-        "reports/discovery/2026-07-08-discovery-handoff-repair.md",
-        "operations/board.json",
-        "operations/daily/2026-07-08/status.json",
-        "operations/daily/2026-07-08/queues.json",
-        "operations/log.md"
-      ],
+      "artifact_paths": ["reports/discovery/2026-07-08-discovery-handoff-repair.md", "operations/board.json", "operations/daily/2026-07-08/status.json", "operations/daily/2026-07-08/queues.json", "operations/log.md"],
       "summary": "Consumed the discovery handoff repair ticket, confirmed canonical latest.json is absent while producer workflow/scripts exist, documented the connector-visible blocker, queued a metadata-only manual discovery fallback, and preserved package/risk gates."
     },
     {
@@ -35,15 +24,7 @@
       "timestamp": "2026-07-08T14:14:42-03:00",
       "type": "risk_blocker_removed",
       "source": "Skills Value Operator board ticket skills-risk-review-mcp-tool-poisoning-001",
-      "artifact_paths": [
-        "dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md",
-        "reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md",
-        "operations/board.json",
-        "operations/daily/2026-07-08/queues.json",
-        "operations/daily/2026-07-08/status.json",
-        "operations/daily/2026-07-08/report.md",
-        "operations/log.md"
-      ],
+      "artifact_paths": ["dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md", "reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md", "operations/board.json", "operations/daily/2026-07-08/queues.json", "operations/daily/2026-07-08/status.json", "operations/daily/2026-07-08/report.md", "operations/log.md"],
       "summary": "Removed a package-facing risk blocker by converting the MCP/tool-poisoning and SSRF audit skill into a high-risk, requires_review defensive wrapper. Default executable probing, SSRF target lists, unauthenticated endpoint probe commands, and MCP tool-call snippets were removed while preserving authorized static review, fingerprinting, severity scoring, and remediation workflow. Catalog parity is now the next gate."
     },
     {
@@ -51,14 +32,7 @@
       "timestamp": "2026-07-08T15:13:05-03:00",
       "type": "catalog_parity_repair",
       "source": "Skills Value Operator board ticket skills-catalog-refresh-after-risk-review-001",
-      "artifact_paths": [
-        "reports/catalog/2026-07-08-risk-review-catalog-parity.md",
-        "operations/board.json",
-        "operations/daily/2026-07-08/queues.json",
-        "operations/daily/2026-07-08/status.json",
-        "operations/daily/2026-07-08/report.md",
-        "operations/log.md"
-      ],
+      "artifact_paths": ["reports/catalog/2026-07-08-risk-review-catalog-parity.md", "operations/board.json", "operations/daily/2026-07-08/queues.json", "operations/daily/2026-07-08/status.json", "operations/daily/2026-07-08/report.md", "operations/log.md"],
       "summary": "Verified catalog/install-manifest parity after the MCP/tool-poisoning and SSRF risk review. dist/catalog.json and dist/catalog.md reflect security-defensive/high/requires_review metadata for the skill, and dist/install-manifest.json remains coherent for installer selection. No generated catalog surface was hand-edited and no npm publication was attempted. Manual discovery fallback is now the next value ticket."
     },
     {
@@ -66,17 +40,28 @@
       "timestamp": "2026-07-08T18:20:00Z",
       "type": "discovery_candidate_metadata",
       "source": "Skills Value Operator board ticket skills-manual-discovery-fallback-001",
+      "artifact_paths": ["reports/discovery/2026-07-08-manual.md", "reports/discovery/2026-07-08-manual.json", "sources/candidates/2026-07-08-manual.json", "operations/board.json", "operations/daily/2026-07-08/queues.json", "operations/daily/2026-07-08/status.json", "operations/daily/2026-07-08/report.md", "operations/log.md"],
+      "summary": "Consumed the manual discovery fallback ticket after the canonical discovery Action handoff remained absent. Recorded four real public metadata-only candidates: modelcontextprotocol/servers, vercel/ai, QuantaAlpha/GitTaskBench, and openclaw/openclaw. Classified three as review_next and one as watch, opened a source-review queue, and preserved no-clone/no-execute/no-copy/no-normalize/no-package/no-publication boundaries."
+    },
+    {
+      "id": "skills-manual-source-review-20260708-1840z",
+      "timestamp": "2026-07-08T18:40:00Z",
+      "type": "source_review",
+      "source": "Skills Value Operator board ticket skills-source-review-batch-001",
       "artifact_paths": [
-        "reports/discovery/2026-07-08-manual.md",
-        "reports/discovery/2026-07-08-manual.json",
-        "sources/candidates/2026-07-08-manual.json",
+        "reports/review/2026-07-08-manual-source-review.md",
+        "reports/review/2026-07-08-manual-source-review.json",
+        "sources/profiles/2026-07-08/modelcontextprotocol-servers.json",
+        "sources/profiles/2026-07-08/vercel-ai.json",
+        "sources/profiles/2026-07-08/openclaw-openclaw.json",
+        "sources/watch/2026-07-08-gittaskbench-license-blocked.json",
         "operations/board.json",
         "operations/daily/2026-07-08/queues.json",
         "operations/daily/2026-07-08/status.json",
         "operations/daily/2026-07-08/report.md",
         "operations/log.md"
       ],
-      "summary": "Consumed the manual discovery fallback ticket after the canonical discovery Action handoff remained absent. Recorded four real public metadata-only candidates: modelcontextprotocol/servers, vercel/ai, QuantaAlpha/GitTaskBench, and openclaw/openclaw. Classified three as review_next and one as watch, opened a source-review queue, and preserved no-clone/no-execute/no-copy/no-normalize/no-package/no-publication boundaries."
+      "summary": "Consumed the manual source-review ticket. Verified license/redistribution boundaries for modelcontextprotocol/servers, vercel/ai, and openclaw/openclaw; kept QuantaAlpha/GitTaskBench on watch because LICENSE returned 404; created three source profiles, one license-blocked watch note, one high-risk OpenClaw source-runtime review queue, and one bounded Vercel AI SDK normalization queue. No clone, execution, implementation copy, normalization, catalog, package, npm, or publication action occurred."
     }
   ]
 }
