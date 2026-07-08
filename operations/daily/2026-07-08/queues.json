@@ -2,11 +2,25 @@
   "date": "2026-07-08",
   "initialized_by": "Skills Loop Operator",
   "inspected_ref": "main",
-  "inspected_commit": "ca1c7917cf5e9e920ad59f780a3ffe0504ada331",
+  "inspected_commit": "12cdead96d69ba0a026a13f615bd502c80b8a4d7",
   "discovery": [],
   "review": [],
   "normalization": [],
-  "catalog": [],
+  "catalog": [
+    {
+      "id": "catalog-refresh-after-agent-development-metadata-backfill-20260708",
+      "priority": 1,
+      "role": "Cataloger",
+      "target": "dist/catalog.json, dist/catalog.md, dist/install-manifest.json",
+      "reason": "Package-facing dist skill metadata changed for dist/skills/agent-development/SKILL.md; generated catalog/install surfaces must be refreshed or verified before package/publication endorsement.",
+      "action": "Run or verify catalog generation and confirm agent-development is indexed as agent-operations, medium risk, requires_review true, source_status adapted.",
+      "risk_level": "low",
+      "status": "open",
+      "created_by": "Skills Loop Operator",
+      "created_at": "2026-07-08T01:12:08-03:00",
+      "source_queue": "metadata-backfill-uncategorized-and-unspecified-risk-20260707"
+    }
+  ],
   "risk": [],
   "packaging": [],
   "publication": [],
@@ -42,7 +56,8 @@
         {"at":"2026-07-07T21:11:43-03:00","by":"Skills Loop Operator","batch":"credential-access-phishing-lateral-risk-triage","result":"Stopped routine metadata backfill on four high-risk package-facing credential-access, phishing/session-hijack, Kerberoasting, and lateral-movement entries; created risk queue risk-review-credential-access-phishing-lateral-movement-skills-20260707 before further package/publication endorsement."},
         {"at":"2026-07-07T22:13:35-03:00","by":"Skills Loop Operator","batch":"credential-access-phishing-lateral-redaction","result":"Resolved the high-risk review by replacing four package-facing credential-access, AiTM phishing, Kerberoasting, and lateral-movement entries with review-gated defensive wrappers; Cataloger refresh now blocks further package/publication endorsement."},
         {"at":"2026-07-07T23:12:27-03:00","by":"Skills Loop Operator","batch":"credential-access-phishing-lateral-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the four package-facing credential-access/phishing/Kerberoasting/lateral-movement wrappers; Critic backlog is unblocked for the next bounded metadata batch."},
-        {"at":"2026-07-08T00:13:31-03:00","by":"Skills Loop Operator","batch":"daily-ledger-initialization","result":"Carried this unresolved queue item forward from 2026-07-07 during initialization-only Reporter pass. No discovery/review/normalization/package work was performed."}
+        {"at":"2026-07-08T00:13:31-03:00","by":"Skills Loop Operator","batch":"daily-ledger-initialization","result":"Carried this unresolved queue item forward from 2026-07-07 during initialization-only Reporter pass. No discovery, review, normalization, package work was performed."},
+        {"at":"2026-07-08T01:12:08-03:00","by":"Skills Loop Operator","batch":"agent-development-metadata-backfill","result":"Backfilled dist/skills/agent-development/SKILL.md with agent-operations, medium-risk, requires_review, source_family, source_status, and tags; created Cataloger queue catalog-refresh-after-agent-development-metadata-backfill-20260708 before any package/publication endorsement."}
       ]
     }
   ]
