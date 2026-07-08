@@ -1,9 +1,9 @@
 {
   "date": "2026-07-08",
-  "current_state": "critic_metadata_backlog_unblocked_after_catalog_verification",
+  "current_state": "risk_review_blocks_metadata_backfill_for_vector_embedding_skill",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "19b408304e9e5dd75faaa8931d7bf79cbbf6c5f0",
+  "inspected_sha": "e5b7f5f6c73a699c4cddc1e207a20215029ca9dc",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -22,50 +22,53 @@
     "catalog_skill_count": 1182,
     "high_risk_count": 13,
     "requires_review_count": null,
-    "catalog_build_status": "verified_after_agent_development_metadata_backfill",
-    "publication_readiness": "blocked_by_open_critic_metadata_backlog_and_missing_discovery_action_handoff"
+    "catalog_build_status": "verified_before_vector_embedding_risk_triage_no_catalog_change_this_run",
+    "publication_readiness": "blocked_by_open_risk_queue_open_critic_metadata_backlog_and_missing_discovery_action_handoff"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
     "catalog": 0,
-    "risk": 0,
+    "risk": 1,
     "packaging": 0,
     "publication": 0,
     "maintenance": 0,
     "critic": 1
   },
   "latest_run": {
-    "started_at": "2026-07-08T02:14:05-03:00",
-    "completed_at": "2026-07-08T02:14:05-03:00",
-    "scheduled_role": "Source Reviewer",
-    "selected_role": "Cataloger",
-    "override_reason": "The open catalog queue item catalog-refresh-after-agent-development-metadata-backfill-20260708 was a package-health gate created after a package-facing dist/skills metadata edit; catalog/package-health verification overrides Source Reviewer until generated catalog and install surfaces are verified.",
+    "started_at": "2026-07-08T03:11:19-03:00",
+    "completed_at": "2026-07-08T03:11:19-03:00",
+    "scheduled_role": "Normalizer",
+    "selected_role": "Critic",
+    "override_reason": "The carried-forward metadata backlog metadata-backfill-uncategorized-and-unspecified-risk-20260707 is a concrete queue item; the first inspected uncategorized/unspecified package-facing entry contained AI-security exfiltration-adjacent assessment procedures, so Critic triage and Risk Auditor routing outweighed Normalizer work.",
     "inspected_ref": "main",
-    "inspected_sha": "19b408304e9e5dd75faaa8931d7bf79cbbf6c5f0",
+    "inspected_sha": "e5b7f5f6c73a699c4cddc1e207a20215029ca9dc",
     "missing_ledger_initialization_performed": false,
     "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch; no deterministic discovery Action handoff was available.",
     "online_searches_used": [],
-    "queue_item_consumed_or_created": "Closed Cataloger queue catalog-refresh-after-agent-development-metadata-backfill-20260708; left Critic queue metadata-backfill-uncategorized-and-unspecified-risk-20260707 open and unblocked.",
+    "queue_item_consumed_or_created": "Advanced Critic queue metadata-backfill-uncategorized-and-unspecified-risk-20260707 and created Risk Auditor queue risk-review-vector-embedding-weaknesses-skill-20260708.",
     "sources_reviewed": [],
     "candidates_processed": 1,
     "files_changed": [
-      "reports/catalog/2026-07-08-0214-agent-development-catalog-verification.md",
+      "reports/critic/2026-07-08-0311-vector-embedding-risk-triage.md",
+      "operations/daily/2026-07-08/critic.md",
       "operations/daily/2026-07-08/queues.json",
       "operations/daily/2026-07-08/status.json"
     ],
-    "catalog_package_npm_status": "Verified dist/catalog.json and dist/catalog.md agree on 1182 skills, 106 agent-operations, 58 security-defensive, 16 security-offensive, 566 uncategorized, 13 high, 432 medium, and 728 unspecified; dist/install-manifest.json remains coherent. No npm publish was performed.",
+    "catalog_package_npm_status": "No catalog, install-manifest, package, or npm surfaces were changed. dist/catalog.json still reports 1182 skills, 566 uncategorized, 13 high, 432 medium, and 728 unspecified at run start; npm publish was not attempted.",
     "blockers": [
-      "operations/action-runs/discover-skill-sources/latest.json remains absent, so deterministic discovery Action handoff is still missing.",
-      "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707."
+      "Open Risk Auditor queue: risk-review-vector-embedding-weaknesses-skill-20260708.",
+      "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
+      "operations/action-runs/discover-skill-sources/latest.json remains absent, so deterministic discovery Action handoff is still missing."
     ],
-    "value_delta": "Removed the package-health blocker created by the agent-development metadata backfill by verifying the generated catalog/install surfaces and package-facing skill metadata. This unblocks the next bounded Critic metadata batch while avoiding publication endorsement because broader metadata and discovery-handoff blockers remain."
+    "value_delta": "Prevented routine metadata backfill from classifying or endorsing an AI-security exfiltration-adjacent installed skill without explicit risk review; created a concrete Risk Auditor queue and report with the decision boundary."
   },
   "blockers": [
-    "operations/action-runs/discover-skill-sources/latest.json remains absent, so deterministic discovery Action handoff is still missing.",
-    "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707."
+    "Open Risk Auditor queue: risk-review-vector-embedding-weaknesses-skill-20260708.",
+    "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
+    "operations/action-runs/discover-skill-sources/latest.json remains absent, so deterministic discovery Action handoff is still missing."
   ],
   "last_commit": "pending_final_commit",
-  "next_action": "Critic should continue metadata-backfill-uncategorized-and-unspecified-risk-20260707 unless a higher-priority risk, review, or catalog gate appears."
+  "next_action": "Risk Auditor should process risk-review-vector-embedding-weaknesses-skill-20260708 before Critic continues routine metadata backfill."
 }
