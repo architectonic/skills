@@ -18,15 +18,15 @@
       "runtime-tools": 35,
       "security-defensive": 61,
       "security-offensive": 16,
-      "software-engineering": 147,
-      "uncategorized": 561,
+      "software-engineering": 148,
+      "uncategorized": 560,
       "writing": 16
     },
     "risk_counts": {
-      "high": 15,
+      "high": 16,
       "low": 9,
       "medium": 436,
-      "unspecified": 723
+      "unspecified": 722
     }
   },
   "domains": {
@@ -516,6 +516,7 @@
       "Auditing Terraform Infrastructure for Security",
       "Auditing UEFI Firmware with CHIPSEC",
       "Benchmarking Kubernetes with kube-bench",
+      "Browser Trace",
       "Building DevSecOps Pipeline with GitLab CI",
       "Building IOC Enrichment Pipeline with OpenCTI",
       "Building Identity Governance Lifecycle Process",
@@ -660,7 +661,6 @@
     ],
     "uncategorized": [
       "Auditing TLS Certificate Transparency Logs",
-      "Browser Trace",
       "Building Attack Pattern Library from CTI Reports",
       "Building Automated Malware Submission Pipeline",
       "Building Cloud SIEM with Sentinel",
@@ -4242,24 +4242,24 @@
     {
       "slug": "Browser Trace",
       "title": "Browser Trace",
-      "description": "Capture a full DevTools-protocol trace of any browser automation — CDP firehose, screenshots, and DOM dumps — then bisect into per-page searchable buckets. Use when debugging failed browser automation runs, auditing network/console/DOM activity, or feeding structured per-page summaries back into agent loops.",
+      "description": "Review-gated guidance for collecting and inspecting browser automation traces in authorized debugging contexts. Use only for read-only defensive investigation of owned or explicitly authorized browser sessions; do not use for account/session surveillance, credential capture, or unapproved browser attachment.",
       "path": "dist/skills/browser-trace/SKILL.md",
       "directory": "dist/skills/browser-trace",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "software-engineering",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
         "software-development",
         "debugging",
         "browser",
-        "cdevtools",
         "cdp",
         "tracing",
         "automation",
-        "o11y"
+        "observability",
+        "security-review"
       ],
       "source_family": "",
-      "source_status": "",
+      "source_status": "distilled-reviewed",
       "type": "Playbook"
     },
     {
