@@ -1,0 +1,67 @@
+{
+  "schema_version": "0.1",
+  "date": "2026-07-08",
+  "generated_by": "Skills Value Operator",
+  "ticket": "skills-manual-discovery-fallback-001",
+  "source": "manual metadata-only public web/GitHub discovery fallback",
+  "observed_at_utc": "2026-07-08T18:20:00Z",
+  "review_boundary": "metadata_only_no_content_copy_no_code_execution",
+  "candidates": [
+    {
+      "name": "modelcontextprotocol/servers",
+      "url": "https://github.com/modelcontextprotocol/servers",
+      "source": "GitHub public repository",
+      "source_family": "mcp-reference-servers",
+      "description": "Reference implementations for Model Context Protocol servers plus community references and resources; educational reference implementations, not production-ready solutions.",
+      "license": "Apache-2.0 for new contributions with existing code under MIT, per visible README license section",
+      "adoption_signal": "88.2k stars, 11.2k forks visible on GitHub page",
+      "last_activity": "Latest release visible as 2026.7.4 on Jul 4, 2026",
+      "risk_level": "medium",
+      "decision": "review_next",
+      "reason": "Official high-adoption MCP source with explicit threat-model warning; should be reviewed for boundary and catalog-risk patterns before any normalization.",
+      "review_boundary": "metadata_only_no_content_copy_no_code_execution"
+    },
+    {
+      "name": "vercel/ai",
+      "url": "https://github.com/vercel/ai",
+      "source": "GitHub public repository",
+      "source_family": "ai-sdk-agent-toolkit",
+      "description": "Provider-agnostic TypeScript toolkit for building AI-powered applications and agents across frameworks and runtimes.",
+      "license": "license file visible; exact license text not extracted in this metadata-only pass",
+      "adoption_signal": "25.4k stars, 4.7k forks visible on GitHub page",
+      "last_activity": "Latest package release visible as @ai-sdk/xai@3.0.104 on Jul 7, 2026",
+      "risk_level": "low",
+      "decision": "review_next",
+      "reason": "Current high-adoption agent/application toolkit; source review can inspect provider abstraction and templates without copying implementation content.",
+      "review_boundary": "metadata_only_no_content_copy_no_code_execution"
+    },
+    {
+      "name": "QuantaAlpha/GitTaskBench",
+      "url": "https://github.com/QuantaAlpha/GitTaskBench",
+      "source": "GitHub public repository and arXiv metadata",
+      "source_family": "agent-benchmark-evaluation-harness",
+      "description": "Repo-level benchmark and tooling suite for real-world code-agent tasks with cost-aware alpha metric.",
+      "license": "not visible in connector-opened GitHub page during this metadata-only pass",
+      "adoption_signal": "256 stars, 20 forks visible on GitHub page; arXiv paper result present",
+      "last_activity": "README news states open-sourced on 2025-08-26",
+      "risk_level": "low",
+      "decision": "watch",
+      "reason": "Useful evaluation/value metric patterns, but license requires verification before source profile or normalization.",
+      "review_boundary": "metadata_only_no_content_copy_no_code_execution"
+    },
+    {
+      "name": "openclaw/openclaw",
+      "url": "https://github.com/openclaw/openclaw",
+      "source": "GitHub public repository",
+      "source_family": "local-first-personal-agent-runtime",
+      "description": "Personal AI assistant runtime with multi-channel messaging, agent routing, tools, cron, browser/canvas/nodes surfaces, onboarding, and workspace skills.",
+      "license": "MIT license badge visible on GitHub README area",
+      "adoption_signal": "382k stars, 80.2k forks visible on GitHub page",
+      "last_activity": "GitHub page shows active repository with 65,219 commits; exact latest commit date not extracted in this pass",
+      "risk_level": "high",
+      "decision": "review_next",
+      "reason": "High-signal runtime but includes real messaging, browser, cron, node, and account/channel surfaces; review-gated before any normalization.",
+      "review_boundary": "metadata_only_no_content_copy_no_code_execution"
+    }
+  ]
+}
