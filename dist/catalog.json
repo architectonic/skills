@@ -16,17 +16,17 @@
       "media": 1,
       "research": 85,
       "runtime-tools": 35,
-      "security-defensive": 60,
+      "security-defensive": 61,
       "security-offensive": 16,
       "software-engineering": 146,
-      "uncategorized": 564,
+      "uncategorized": 563,
       "writing": 16
     },
     "risk_counts": {
-      "high": 14,
+      "high": 15,
       "low": 9,
       "medium": 433,
-      "unspecified": 726
+      "unspecified": 725
     }
   },
   "domains": {
@@ -434,6 +434,7 @@
       "Analyzing Threat Actor TTPs with MITRE ATT&CK",
       "Analyzing Web Server Logs for Intrusion",
       "Auditing Cloud with CIS Benchmarks",
+      "Auditing MCP Servers for Tool Poisoning",
       "Building Vulnerability Aging and SLA Tracking",
       "Building Vulnerability Exception Tracking System",
       "Building Vulnerability Scanning Workflow",
@@ -655,7 +656,6 @@
       "xurl"
     ],
     "uncategorized": [
-      "Auditing MCP Servers for Tool Poisoning",
       "Auditing TLS Certificate Transparency Logs",
       "Autonomy Loop",
       "Autoresearch Loop",
@@ -3883,14 +3883,13 @@
     {
       "slug": "Auditing MCP Servers for Tool Poisoning",
       "title": "Auditing MCP Servers for Tool Poisoning",
-      "description": "Scan Model Context Protocol servers and tool metadata for poisoning, SSRF, and unauthenticated exposure.",
+      "description": "Review Model Context Protocol servers and tool metadata for poisoning, SSRF, unauthenticated exposure, and unsafe agent-supply-chain behavior using authorized, non-exploitative evidence collection.",
       "path": "dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md",
       "directory": "dist/skills/auditing-mcp-servers-for-tool-poisoning",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-defensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
         "software-development",
         "agent-skill",
         "okf",
@@ -3898,11 +3897,10 @@
         "mcp",
         "tool-poisoning",
         "agent-security",
-        "mcp-scan",
         "ssrf",
         "supply-chain",
-        "rug-pull",
-        "security"
+        "security",
+        "defensive-review"
       ],
       "source_family": "",
       "source_status": "",
