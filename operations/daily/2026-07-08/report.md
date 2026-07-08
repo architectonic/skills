@@ -9,13 +9,13 @@ status: active
 
 ## Latest board-driven heartbeat
 
-Ran `Risk Auditor` for board ticket `skills-risk-review-openclaw-source-runtime-surfaces-001`.
+Ran `Normalizer` for board ticket `skills-normalize-vercel-ai-sdk-profile-001`.
 
 ## Inspected state
 
 - Repository: `architectonic/skills`
 - Inspected ref: `main`
-- Inspected SHA before this ticket's first content write: `5c9593ee6fc2e2c9542f610fbf74605fd2eb460c`
+- Inspected SHA before this ticket's first content write: `89590689366ba99b4cb8827063183b6df3d6067c`
 - Model requirement status: `model_setting_unverified`
 - Daily ledger present: yes
 - Missing-ledger initialization: no
@@ -36,56 +36,49 @@ Ran `Risk Auditor` for board ticket `skills-risk-review-openclaw-source-runtime-
 - `dist/catalog.json`
 - `dist/catalog.md`
 - `dist/install-manifest.json`
+- `sources/profiles/2026-07-08/vercel-ai.json`
 - `reports/review/2026-07-08-manual-source-review.md`
-- `sources/profiles/2026-07-08/openclaw-openclaw.json`
 
 ## Work performed
 
-Closed the OpenClaw source-runtime risk-review ticket by defining safe abstraction boundaries before any OpenClaw-derived normalization.
+Closed the Vercel AI SDK normalization ticket by creating original package-facing guidance for provider abstraction and tool/sandbox safety.
 
 Created:
 
-- `reports/risk/2026-07-08-openclaw-source-runtime-surfaces-risk-review.md`
+- `dist/skills/ai-sdk-provider-tool-safety/SKILL.md`
+- `reports/normalization/2026-07-08-vercel-ai-sdk-profile-normalization.md`
 
-## Risk review decision
+## Normalization decision
 
-Decision: `conditional_allow_abstract_safety_patterns_only`.
+Decision: `normalized_original_review_gated_skill`.
 
-OpenClaw remains a high-risk reviewed source profile. It may support future original package-facing guidance only as generic high-risk agent-runtime surface review material. It must not expose operational OpenClaw setup, command snippets, account/channel mutation, browser automation, cron execution, gateway setup, daemon/onboarding detail, or copied implementation content.
-
-## Runtime surfaces classified
-
-| Surface | Risk | Decision |
-|---|---:|---|
-| Real messaging/account/channel integrations | High | Block operational channel/account setup details. |
-| Gateway exposure and remote access surfaces | High | Block gateway setup and remote-access operational detail. |
-| Browser/canvas/nodes/cron tools | High | Block executable browser automation, cron execution, and node/tool orchestration detail. |
-| Host tool access in main session | High | Block host-tool enablement and command snippets. |
-| DM pairing, allowlist, and sandbox policy configuration | High | Permit only non-operational policy checklist language. |
-| Daemon/onboarding install flow | High | Block install/onboarding flow detail. |
+The normalized skill attributes `vercel/ai` as source metadata and uses the reviewed source profile boundary. It does not copy README examples, code snippets, prompts, or implementation content. It is classified as `domain: software-engineering`, `risk_level: medium`, and `requires_review: true` because it discusses provider, tool, sandbox, approval, and runtime-effect boundaries.
 
 ## Queue changes
 
 Closed:
 
-- `risk-review-openclaw-source-runtime-surfaces-20260708`
-
-Reprioritized as next eligible path:
-
 - `normalize-vercel-ai-sdk-source-profile-20260708`
+
+Created / promoted as next:
+
+- `catalog-refresh-after-vercel-ai-sdk-normalization-20260708`
+- board ticket `skills-catalog-refresh-after-normalization-001`
 
 ## Acceptance tests
 
 | Test | Result | Evidence |
 |---|---|---|
-| Classifies account/browser/cron/gateway/host-tool risk surfaces | Pass | All OpenClaw messaging/account/channel, gateway, browser/canvas/nodes/cron, host-tool, pairing, sandbox, daemon, and onboarding surfaces remain high-risk. |
-| Defines allowed abstraction boundaries for any future OpenClaw-derived skill | Pass | Boundary is limited to generic, original, source-attributed review/checklist patterns. |
-| Blocks command snippets, account setup, browser automation, cron execution, and operational channel mutation detail unless explicitly safe | Pass | Commands, setup flows, browser/cron/gateway/account/channel operational detail, daemon/onboarding detail, and implementation content are explicitly blocked. |
-| Updates board and queues with either normalization, watch, or quarantine state | Pass | OpenClaw risk queue closed; OpenClaw remains source-profile/watch-only for now; Vercel AI SDK normalization is next eligible. |
+| Writes original content only | Pass | `dist/skills/ai-sdk-provider-tool-safety/SKILL.md` contains original boundary/checklist guidance and no copied source examples, prompts, code, or implementation content. |
+| Attributes Vercel AI SDK as source metadata | Pass | Skill frontmatter records `source_profile: sources/profiles/2026-07-08/vercel-ai.json` and source attribution for `vercel/ai`, Apache-2.0. |
+| Does not copy README examples, code snippets, prompts, or implementation | Pass | No third-party examples or implementation snippets were copied; no repository clone or code execution occurred. |
+| Classifies risk and `requires_review` based on tool/sandbox surface | Pass | Skill frontmatter sets `risk_level: medium` and `requires_review: true`; body defines provider/tool/sandbox/UI/approval/failure gates. |
+| Creates catalog parity queue if dist skill content changes | Pass | Because a new dist skill was added, `skills-catalog-refresh-after-normalization-001` and `catalog-refresh-after-vercel-ai-sdk-normalization-20260708` are now next. |
 
 ## Files changed
 
-- `reports/risk/2026-07-08-openclaw-source-runtime-surfaces-risk-review.md`
+- `dist/skills/ai-sdk-provider-tool-safety/SKILL.md`
+- `reports/normalization/2026-07-08-vercel-ai-sdk-profile-normalization.md`
 - `operations/board.json`
 - `operations/daily/2026-07-08/queues.json`
 - `operations/value-ledger.json`
@@ -95,17 +88,16 @@ Reprioritized as next eligible path:
 
 ## Boundaries preserved
 
-- No third-party implementation content was copied.
+- No online discovery was performed.
 - No repository was cloned.
 - No candidate code was executed.
-- No command snippets, setup flows, browser automation, cron execution, gateway setup, account/channel mutation, daemon/onboarding detail, or implementation content was normalized.
-- No skill was normalized.
-- No generated catalog surface was hand-edited.
-- No catalog/package/publication action was attempted.
+- No third-party README examples, prompts, code snippets, or implementation content were copied.
+- No generated catalog surface was intentionally hand-edited by this heartbeat.
+- No package, npm, registry, or publication action was attempted.
 
 ## Value delta
 
-The OpenClaw high-risk source-runtime blocker is resolved without operationalizing OpenClaw. The repo now has a safe boundary for any future OpenClaw-derived work and can proceed to lower-risk Vercel AI SDK normalization.
+The reviewed Vercel AI SDK source profile is now an original normalized skill candidate with explicit provider/tool/sandbox safety value. This is package-facing improvement, not status churn. Catalog parity after the new skill is now the blocking gate.
 
 ## Risk and publication state
 
@@ -114,24 +106,26 @@ The OpenClaw high-risk source-runtime blocker is resolved without operationalizi
 - Manual discovery fallback: done.
 - Manual source review: done.
 - OpenClaw source-runtime risk review: done.
-- Vercel AI SDK normalization: open and next.
+- Vercel AI SDK normalization: done.
+- Catalog parity after AI SDK normalization: open and next.
 - GitTaskBench: watch/license-blocked.
 - Metadata backlog: still open, lower priority.
 - Discovery Action handoff: still absent.
-- Package/publication endorsement: still blocked until normalization/catalog parity, discovery Action, and backlog gates are clean.
+- Package/publication endorsement: still blocked until catalog parity, discovery Action, and backlog gates are clean.
 
 ## Commit SHAs
 
 | Change | Commit |
 |---|---|
-| OpenClaw risk report | `b63c1b909f36d2a74b18bc7520bc2c8e962bd6c3` |
-| Board update | `a53b5ad15c3be44b80d27087e800d39d5d8f4d44` |
-| Daily queues update | `aa54f62ac8f0aa638cfce7a44d547e8a0a25142d` |
-| Value ledger update | `7a31be8fda92904f44a90cf1f09907f31e4b8710` |
+| AI SDK skill | `c8fd9806f71f67ef20a94a020bc66f1f395704b3` |
+| Normalization report | `450eb46b850f516cbd68863e7aa242b4fe0d0fa4` |
+| Board update | `2076ced24311f55ae636722643cd3657dbae9d3f` |
+| Daily queues update | `e383ccb35b6221829c8c51e9806dd57685b3e714` |
+| Value ledger update | `154e3dd88e75df520d304eb14c20d3a3caec60d3` |
 | Daily report update | `pending_final_connector_response` |
 | Daily status update | `pending_next_write` |
 | Operations log update | `pending_next_write` |
 
 ## Next action
 
-Normalizer should consume `skills-normalize-vercel-ai-sdk-profile-001` / `normalize-vercel-ai-sdk-source-profile-20260708` and create only original provider/tool/sandbox guidance from the reviewed Vercel AI SDK source profile. Any later OpenClaw-derived work must remain generic high-risk runtime-surface safety guidance and must not include operational OpenClaw details.
+Cataloger should consume `skills-catalog-refresh-after-normalization-001` / `catalog-refresh-after-vercel-ai-sdk-normalization-20260708` and verify or refresh `dist/catalog.json`, `dist/catalog.md`, and `dist/install-manifest.json` after the new AI SDK Provider Tool Safety skill. No package/publication action should occur before that parity gate.
