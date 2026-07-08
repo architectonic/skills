@@ -1,9 +1,9 @@
 {
   "date": "2026-07-08",
-  "current_state": "mcp_tool_poisoning_ssrf_risk_triage_created",
+  "current_state": "discovery_handoff_repair_path_queued",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "a00d179bc21fbe8b4761367dae05c93b07a991b9",
+  "inspected_sha": "8a223c7ace9b73a0102fcf5a54701b9ae5b86b74",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -28,10 +28,10 @@
     "unspecified_risk_count": 726,
     "requires_review_count": null,
     "catalog_build_status": "unchanged_no_dist_skill_metadata_or_catalog_edit_this_pass",
-    "publication_readiness": "blocked_by_open_mcp_tool_poisoning_ssrf_risk_queue_open_critic_metadata_backlog_and_missing_discovery_action_handoff"
+    "publication_readiness": "blocked_by_absent_discovery_action_handoff_open_manual_fallback_open_mcp_tool_poisoning_ssrf_risk_queue_and_open_critic_metadata_backlog"
   },
   "queues": {
-    "discovery": 0,
+    "discovery": 1,
     "review": 0,
     "normalization": 0,
     "catalog": 0,
@@ -42,39 +42,65 @@
     "critic": 1
   },
   "latest_run": {
-    "started_at": "2026-07-08T09:12:59-03:00",
-    "completed_at": "2026-07-08T09:12:59-03:00",
-    "scheduled_role": "Normalizer",
-    "selected_role": "Critic",
-    "override_reason": "The 09 cadence selects Normalizer, but no normalization queue was open and the concrete queue pressure was the carried-forward Critic backlog for uncategorized/unspecified package-facing skills. The next directly inspected uncategorized skill included live MCP probing, SSRF target testing, unauthenticated endpoint checks, and prompt-injection/tool-description inspection, so Critic created a Risk Auditor queue instead of routine metadata classification.",
+    "started_at": "2026-07-08T10:13:04-03:00",
+    "completed_at": "2026-07-08T10:13:04-03:00",
+    "scheduled_role": "Board Value Operator",
+    "selected_role": "Tool Builder",
+    "board_ticket_consumed": "skills-restore-discovery-handoff-001",
+    "override_reason": "Board-first protocol selects the highest-priority ready ticket. Discovery handoff restoration was priority 1 and allowed by gates.md; routine metadata cleanup remains lower priority.",
     "inspected_ref": "main",
-    "inspected_sha": "a00d179bc21fbe8b4761367dae05c93b07a991b9",
+    "inspected_sha": "8a223c7ace9b73a0102fcf5a54701b9ae5b86b74",
     "missing_ledger_initialization_performed": false,
-    "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch; no deterministic discovery Action handoff was available.",
+    "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json returned 404 Not Found on the default branch during this run. The producer workflow and scripts exist, but no successful producer commit containing the canonical handoff is visible on main.",
     "online_searches_used": [],
-    "queue_item_consumed_or_created": "Advanced metadata-backfill-uncategorized-and-unspecified-risk-20260707 by creating risk-review-mcp-tool-poisoning-ssrf-skill-20260708; left the Critic backlog open for future bounded metadata batches after the risk gate is resolved.",
+    "queue_item_consumed_or_created": "Consumed skills-restore-discovery-handoff-001 by creating reports/discovery/2026-07-08-discovery-handoff-repair.md, marking the board ticket done, and opening manual-discovery-fallback-20260708 / skills-manual-discovery-fallback-001 as the next discovery value path.",
     "sources_reviewed": [],
-    "candidates_processed": 1,
+    "candidates_processed": 0,
     "files_changed": [
-      "reports/critic/2026-07-08-0912-mcp-tool-poisoning-ssrf-risk-triage.md",
-      "operations/daily/2026-07-08/critic.md",
+      "reports/discovery/2026-07-08-discovery-handoff-repair.md",
+      "operations/board.json",
+      "operations/value-ledger.json",
       "operations/daily/2026-07-08/queues.json",
       "operations/daily/2026-07-08/status.json",
       "operations/log.md"
     ],
-    "catalog_package_npm_status": "No npm publication attempted. Catalog/package surfaces unchanged because this pass did not edit dist/skills or generated catalog files. Package/publication endorsement is blocked until Risk Auditor resolves risk-review-mcp-tool-poisoning-ssrf-skill-20260708.",
+    "acceptance_tests": [
+      {
+        "test": "explains why latest discovery handoff is absent",
+        "result": "pass",
+        "evidence": "The repair report records that latest.json is absent while the producer workflow/scripts exist and that connector-visible state cannot prove the exact runtime failure stage."
+      },
+      {
+        "test": "creates or queues a deterministic repair path",
+        "result": "pass",
+        "evidence": "Board and queues now contain a manual metadata-only fallback plus a blocked producer-verification ticket."
+      },
+      {
+        "test": "does not mirror third-party content",
+        "result": "pass",
+        "evidence": "No external candidate content was copied, cloned, executed, imported, normalized, packaged, or published."
+      },
+      {
+        "test": "updates board and daily state with next source-review action",
+        "result": "pass",
+        "evidence": "operations/board.json and operations/daily/2026-07-08/queues.json now point to the manual discovery fallback as the next discovery step."
+      }
+    ],
+    "catalog_package_npm_status": "No npm publication attempted. Catalog/package surfaces unchanged because this pass did not edit dist/skills or generated catalog files. Package/publication endorsement is blocked until discovery fallback or Action handoff is current and Risk Auditor resolves risk-review-mcp-tool-poisoning-ssrf-skill-20260708.",
     "blockers": [
+      "Manual discovery fallback open: manual-discovery-fallback-20260708 / skills-manual-discovery-fallback-001.",
       "Risk Auditor queue open: risk-review-mcp-tool-poisoning-ssrf-skill-20260708.",
       "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
       "operations/action-runs/discover-skill-sources/latest.json remains absent, so deterministic discovery Action handoff is still missing."
     ],
-    "value_delta": "Prevented routine metadata endorsement of a package-facing MCP/tool-poisoning skill that includes SSRF and live endpoint probing detail. The concrete reusable decision is a risk boundary: MCP audit skills with live server probing, SSRF testing, unauthenticated endpoint checks, or prompt-injection/tool-description payload inspection go to Risk Auditor before catalog/package endorsement."
+    "value_delta": "Converted absent discovery handoff from a repeated passive blocker into an explicit board-controlled repair path: documented the exact connector-visible state, queued manual metadata-only discovery, and preserved risk/package gates. This is value because it restores forward motion toward reviewed candidate sources without copying or executing third-party material."
   },
   "blockers": [
+    "Manual discovery fallback open: manual-discovery-fallback-20260708 / skills-manual-discovery-fallback-001.",
     "Risk Auditor queue open: risk-review-mcp-tool-poisoning-ssrf-skill-20260708.",
     "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
     "operations/action-runs/discover-skill-sources/latest.json remains absent, so deterministic discovery Action handoff is still missing."
   ],
   "last_commit": "pending_final_commit",
-  "next_action": "Risk Auditor should resolve risk-review-mcp-tool-poisoning-ssrf-skill-20260708 before further metadata backfill, catalog/package endorsement, or publication work."
+  "next_action": "Radar should consume skills-manual-discovery-fallback-001 to produce metadata-only public candidate sources, then Source Reviewer can inspect review_next candidates. Risk Auditor should still resolve risk-review-mcp-tool-poisoning-ssrf-skill-20260708 before package/catalog endorsement."
 }
