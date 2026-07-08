@@ -2,7 +2,7 @@
   "date": "2026-07-07",
   "initialized_by": "Skills Loop Operator",
   "inspected_ref": "main",
-  "inspected_commit": "50015279a56cf1ee7c5f075ccf4703e48cfe0768",
+  "inspected_commit": "0c7ecc51e98a58332d698566aab0e564a0017b67",
   "discovery": [],
   "review": [],
   "normalization": [],
@@ -92,10 +92,13 @@
       "reason": "Risk Auditor replaced four high-risk package-facing credential-access, AiTM phishing/session-capture, Kerberoasting, and lateral-movement entries with review-gated defensive wrappers; generated catalog surfaces are stale until rebuilt or verified.",
       "action": "Run or verify npm run build:catalog, then check dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Confirm the four changed entries remain high risk, require review, and expose only defensive review-gated package-facing bodies.",
       "risk_level": "high",
-      "status": "open",
+      "status": "resolved",
       "created_by": "Skills Loop Operator",
       "created_at": "2026-07-07T22:13:35-03:00",
-      "source_report": "reports/risk/2026-07-07-2213-credential-access-phishing-lateral-redaction.md"
+      "source_report": "reports/risk/2026-07-07-2213-credential-access-phishing-lateral-redaction.md",
+      "resolved_by": "Skills Loop Operator",
+      "resolved_at": "2026-07-07T23:12:27-03:00",
+      "resolution": "Verified dist/catalog.json and dist/catalog.md at 1182 skills, 16 security-offensive, 567 uncategorized, 13 high, 431 medium, and 729 unspecified. Verified dist/install-manifest.json remains coherent and the four package-facing entries are high-risk review-gated defensive wrappers. Created reports/catalog/2026-07-07-2312-credential-access-phishing-lateral-catalog-verification.md."
     }
   ],
   "risk": [
@@ -191,7 +194,8 @@
         {"at":"2026-07-07T19:13:01-03:00","by":"Skills Loop Operator","batch":"agent-ops-cli-metadata-backfill","result":"Backfilled four package-facing agent-operations/security-defensive CLI and agent-instruction skills with explicit domain, medium risk, requires_review, and source status metadata; created Cataloger refresh queue catalog-refresh-after-metadata-backfill-agent-ops-cli-batch-20260707."},
         {"at":"2026-07-07T20:14:54-03:00","by":"Skills Loop Operator","batch":"agent-ops-cli-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the four package-facing agent-ops/CLI metadata entries; Critic backlog is unblocked for the next bounded metadata batch."},
         {"at":"2026-07-07T21:11:43-03:00","by":"Skills Loop Operator","batch":"credential-access-phishing-lateral-risk-triage","result":"Stopped routine metadata backfill on four high-risk package-facing credential-access, phishing/session-hijack, Kerberoasting, and lateral-movement entries; created risk queue risk-review-credential-access-phishing-lateral-movement-skills-20260707 before further package/publication endorsement."},
-        {"at":"2026-07-07T22:13:35-03:00","by":"Skills Loop Operator","batch":"credential-access-phishing-lateral-redaction","result":"Resolved the high-risk review by replacing four package-facing credential-access, AiTM phishing, Kerberoasting, and lateral-movement entries with review-gated defensive wrappers; Cataloger refresh now blocks further package/publication endorsement."}
+        {"at":"2026-07-07T22:13:35-03:00","by":"Skills Loop Operator","batch":"credential-access-phishing-lateral-redaction","result":"Resolved the high-risk review by replacing four package-facing credential-access, AiTM phishing, Kerberoasting, and lateral-movement entries with review-gated defensive wrappers; Cataloger refresh now blocks further package/publication endorsement."},
+        {"at":"2026-07-07T23:12:27-03:00","by":"Skills Loop Operator","batch":"credential-access-phishing-lateral-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the four package-facing credential-access/phishing/Kerberoasting/lateral-movement wrappers; Critic backlog is unblocked for the next bounded metadata batch."}
       ]
     }
   ]
