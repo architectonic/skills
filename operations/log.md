@@ -11,26 +11,25 @@ status: active
 
 ## 2026-07-08
 
-- Ran board-driven Critic for `skills-metadata-backfill-batch-001`.
+- Ran board-driven Risk Auditor for `skills-risk-review-browser-trace-001`.
 - Model requirement status: `model_setting_unverified`.
-- Inspected ref/SHA before this ticket's first content write: `main` at `d780540a46e35ac1d8b614ec6efc5a8850428399`.
+- Inspected ref/SHA before this ticket's first content write: `main` at `99c4a6e5ef90b4555e938ac364109ade2d4af264`.
 - Confirmed today's daily ledger exists; no missing-ledger initialization was performed.
 - Confirmed `operations/action-runs/discover-skill-sources/latest.json` returned `404 Not Found` on the default branch during this run.
-- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `dist/skills/autonomy-loop/SKILL.md`, `dist/skills/autoresearch-loop/SKILL.md`, and `dist/skills/browser-trace/SKILL.md`.
-- No online/source discovery was used because the selected board ticket was an internal metadata-backfill Critic pass.
-- Updated `dist/skills/autonomy-loop/SKILL.md` with `domain: agent-operations`, `risk_level: medium`, `requires_review: true`, `source_status: internal-normalized`, and a review note requiring human approval before protected production mutation, deployment, publication, or unbounded autonomous loops.
-- Updated `dist/skills/autoresearch-loop/SKILL.md` with `domain: agent-operations`, `risk_level: medium`, `requires_review: true`, `source_status: distilled-reviewed`, and a review note requiring human approval before push, publish, deploy, irreversible mutation, out-of-scope security testing, or unbounded iteration.
-- Created `reports/critic/2026-07-08-metadata-backfill-batch.md`.
-- Stopped at `dist/skills/browser-trace/SKILL.md` because it includes browser/CDP session attachment, screenshots, DOM dumps, Browserbase API key mention, local debugger command snippets, and raw network/console/runtime filesystem traces.
-- Opened `skills-risk-review-browser-trace-001` / `risk-review-browser-trace-20260708` as the next high-priority risk gate.
-- Created `skills-catalog-refresh-after-metadata-backfill-001` / `catalog-refresh-after-metadata-backfill-20260708`, blocked behind Browser Trace risk review.
-- Closed `metadata-backfill-uncategorized-and-unspecified-risk-20260707` and board ticket `skills-metadata-backfill-batch-001`.
-- Preserved boundaries: no online discovery, no clone, no execution, no browser attachment, no third-party content copy, no generated catalog surface hand-edit, no package publication, no npm publication, and no registry publication.
-- Acceptance tests passed: bounded batch, justified domain/risk/requires_review/source status, stop/risk-ticket creation on browser trace surfaces, and catalog refresh ticket after metadata changes.
-- Value delta: classified two agent-loop skills and prevented a browser/CDP trace skill from moving through routine cleanup without high-risk review.
-- Next justified action: Risk Auditor should consume `skills-risk-review-browser-trace-001` before catalog parity, further metadata cleanup, package endorsement, or publication.
+- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `dist/skills/browser-trace/SKILL.md`, and `reports/critic/2026-07-08-metadata-backfill-batch.md`.
+- No online/source discovery was used because the selected board ticket was an internal package-facing risk-review pass.
+- Updated `dist/skills/browser-trace/SKILL.md` with `domain: software-engineering`, `risk_level: high`, `requires_review: true`, `review_gate: authorized-read-only-browser-debugging-only`, and `source_status: distilled-reviewed`.
+- Removed package-facing local browser debugger launch commands, trace capture/query command snippets, Browserbase/API-key operational handling, and reusable browser-session attachment details.
+- Preserved Browser Trace as authorized read-only defensive debugging guidance with authorization, minimization, redaction, retention, and safe report requirements.
+- Created `reports/risk/2026-07-08-browser-trace-risk-review.md`.
+- Closed `risk-review-browser-trace-20260708` and board ticket `skills-risk-review-browser-trace-001`.
+- Unblocked `catalog-refresh-after-metadata-backfill-20260708` and board ticket `skills-catalog-refresh-after-metadata-backfill-001` as the next ready gate.
+- Preserved boundaries: no online discovery, no clone, no execution, no browser session opened or attached, no trace tooling executed, no third-party content copy, no generated catalog surface hand-edit, no package publication, no npm publication, and no registry publication.
+- Acceptance tests passed: browser/CDP/session/API-key/DOM/screenshot/filesystem trace surfaces classified; read-only defensive debugging package boundary defined; command/API-key/session operational snippets removed or gated; package/publication remains blocked until catalog parity.
+- Value delta: removed a high-risk package-facing browser/CDP risk blocker while preserving useful defensive debugging guidance.
+- Next justified action: Cataloger should consume `skills-catalog-refresh-after-metadata-backfill-001` before further metadata cleanup, package endorsement, or publication.
 
-- Earlier 2026-07-08 state: discovery handoff repair ticket `skills-restore-discovery-handoff-001` was completed, manual discovery fallback was queued, Portfolio Supervisor repaired board priority so high-risk MCP/SSRF review outranked manual discovery fallback, risk review ticket `skills-risk-review-mcp-tool-poisoning-001` was completed, catalog parity ticket `skills-catalog-refresh-after-risk-review-001` was completed, manual discovery fallback ticket `skills-manual-discovery-fallback-001` was completed, source review ticket `skills-source-review-batch-001` was completed, OpenClaw risk ticket `skills-risk-review-openclaw-source-runtime-surfaces-001` was completed, Vercel AI SDK normalization ticket `skills-normalize-vercel-ai-sdk-profile-001` was completed, AI SDK catalog parity ticket `skills-catalog-refresh-after-normalization-001` was completed, GitTaskBench remained license-blocked/watch, Browser Trace risk review is open, metadata-backfill catalog parity is blocked, and publication remained blocked.
+- Earlier 2026-07-08 state: discovery handoff repair ticket `skills-restore-discovery-handoff-001` was completed, manual discovery fallback was queued, Portfolio Supervisor repaired board priority so high-risk MCP/SSRF review outranked manual discovery fallback, risk review ticket `skills-risk-review-mcp-tool-poisoning-001` was completed, catalog parity ticket `skills-catalog-refresh-after-risk-review-001` was completed, manual discovery fallback ticket `skills-manual-discovery-fallback-001` was completed, source review ticket `skills-source-review-batch-001` was completed, OpenClaw risk ticket `skills-risk-review-openclaw-source-runtime-surfaces-001` was completed, Vercel AI SDK normalization ticket `skills-normalize-vercel-ai-sdk-profile-001` was completed, AI SDK catalog parity ticket `skills-catalog-refresh-after-normalization-001` was completed, metadata backfill ticket `skills-metadata-backfill-batch-001` was completed, GitTaskBench remained license-blocked/watch, Browser Trace risk review is now complete, metadata-backfill catalog parity is open, and publication remains blocked.
 
 ## 2026-07-07
 
