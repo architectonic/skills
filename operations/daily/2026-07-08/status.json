@@ -75,8 +75,9 @@
       "queues": "ecd1f2ac5eed54cad29af188037f18adaf6350ee",
       "value_ledger": "07edd3bfc47ddbabbcf5bc03e3cf482b819cc526",
       "daily_report": "a7b886760d4425ccfbbc1d67f91fbc27f9314b8b",
-      "status": "pending_final_connector_response",
-      "log": "pending_next_write"
+      "status_initial_update": "b938f1572a85c7b1dcd968dd920564aaf328276a",
+      "log": "89e72e23358fe8abc3145784cf34176c6ed432be",
+      "status_final": "pending_final_connector_response"
     },
     "acceptance_tests": [
       {
@@ -115,6 +116,6 @@
     "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
     "Package/publication endorsement remains blocked until catalog parity, discovery, and review gates are clean."
   ],
-  "last_commit": "pending_final_connector_response",
+  "last_commit": "89e72e23358fe8abc3145784cf34176c6ed432be",
   "next_action": "Cataloger should consume skills-catalog-refresh-after-risk-review-001 / catalog-refresh-after-mcp-ssrf-risk-review-20260708 and refresh or verify dist/catalog.json, dist/catalog.md, and dist/install-manifest.json after the MCP/SSRF risk-review change."
 }
