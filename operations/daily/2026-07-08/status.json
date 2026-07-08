@@ -1,11 +1,11 @@
 {
   "date": "2026-07-08",
-  "current_state": "daily_initialized",
+  "current_state": "catalog_refresh_required_after_metadata_backfill",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "ca1c7917cf5e9e920ad59f780a3ffe0504ada331",
+  "inspected_sha": "12cdead96d69ba0a026a13f615bd502c80b8a4d7",
   "model_requirement_status": "model_setting_unverified",
-  "missing_ledger_initialization_performed": true,
+  "missing_ledger_initialization_performed": false,
   "package": {
     "name": "architectonic-skills",
     "version": "0.1.3",
@@ -18,18 +18,18 @@
     "sources_reviewed": 0,
     "sources_blocked": 0,
     "normalized_entries_added": 0,
-    "skills_updated": 0,
-    "catalog_skill_count": null,
-    "high_risk_count": null,
+    "skills_updated": 1,
+    "catalog_skill_count": 1182,
+    "high_risk_count": 13,
     "requires_review_count": null,
-    "catalog_build_status": null,
-    "publication_readiness": "blocked_until_post_initialization_pass"
+    "catalog_build_status": "stale_after_dist_skill_metadata_change",
+    "publication_readiness": "blocked_until_catalog_refresh_after_agent_development_metadata_backfill"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 0,
+    "catalog": 1,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -37,37 +37,39 @@
     "critic": 1
   },
   "latest_run": {
-    "started_at": "2026-07-08T00:13:31-03:00",
-    "completed_at": "2026-07-08T00:13:31-03:00",
-    "scheduled_role": "Reporter",
-    "selected_role": "Reporter",
-    "override_reason": null,
+    "started_at": "2026-07-08T01:12:08-03:00",
+    "completed_at": "2026-07-08T01:12:08-03:00",
+    "scheduled_role": "Radar",
+    "selected_role": "Critic",
+    "override_reason": "The carried-forward Critic queue item metadata-backfill-uncategorized-and-unspecified-risk-20260707 is a concrete metadata-quality backlog; queue pressure outranks broad Radar discovery while risk and catalog queues were empty at run start.",
     "inspected_ref": "main",
-    "inspected_sha": "ca1c7917cf5e9e920ad59f780a3ffe0504ada331",
-    "missing_ledger_initialization_performed": true,
-    "action_handoff_state": "Not inspected in this initialization-only pass because today's required daily status/queues were missing; doctrine requires Reporter-only initialization and stop.",
+    "inspected_sha": "12cdead96d69ba0a026a13f615bd502c80b8a4d7",
+    "missing_ledger_initialization_performed": false,
+    "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch; no deterministic discovery Action handoff was available.",
     "online_searches_used": [],
-    "queue_item_consumed_or_created": "Carried forward open Critic queue item metadata-backfill-uncategorized-and-unspecified-risk-20260707 from 2026-07-07. No discovery, review, normalization, package, or publication work was performed.",
+    "queue_item_consumed_or_created": "Advanced Critic queue metadata-backfill-uncategorized-and-unspecified-risk-20260707 with one bounded file; created Cataloger queue catalog-refresh-after-agent-development-metadata-backfill-20260708.",
     "sources_reviewed": [],
-    "candidates_processed": 0,
+    "candidates_processed": 1,
     "files_changed": [
-      "operations/daily/2026-07-08/status.json",
+      "dist/skills/agent-development/SKILL.md",
+      "reports/critic/2026-07-08-0112-metadata-backfill-agent-development.md",
+      "operations/daily/2026-07-08/critic.md",
       "operations/daily/2026-07-08/queues.json",
-      "operations/daily/2026-07-08/report.md"
+      "operations/daily/2026-07-08/status.json"
     ],
-    "catalog_package_npm_status": "Not inspected or changed in initialization-only pass. No npm publish was performed.",
+    "catalog_package_npm_status": "dist/catalog.md was inspected before the metadata edit and reported 1182 skills, 16 security-offensive, 567 uncategorized, 13 high, 431 medium, and 729 unspecified. The metadata edit makes generated catalog/install surfaces stale; no npm publish was performed.",
     "blockers": [
-      "Daily ledger was missing at run start and required initialization-only Reporter pass.",
-      "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
-      "Publication remains blocked until a non-initialization pass verifies current catalog/package state and queue pressure."
+      "Cataloger must refresh or verify generated catalog/install surfaces after dist/skills/agent-development/SKILL.md metadata changed.",
+      "operations/action-runs/discover-skill-sources/latest.json remains absent, so deterministic discovery Action handoff is still missing.",
+      "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707."
     ],
-    "value_delta": "Initialized 2026-07-08 durable daily state from templates and carried forward only the unresolved prior-day Critic metadata backlog, preserving queue continuity without mixing initialization with substantive aggregator work."
+    "value_delta": "Converted the package-facing agent-development entry from a metadata-incomplete skill into an agent-operations, medium-risk, review-gated adapted entry without rewriting its procedure body. This removes one quality-gate metadata blocker and preserves safety by forcing Cataloger verification before package/publication endorsement."
   },
   "blockers": [
-    "Daily ledger was missing at run start and required initialization-only Reporter pass.",
-    "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
-    "Publication remains blocked until a non-initialization pass verifies current catalog/package state and queue pressure."
+    "Cataloger must refresh or verify generated catalog/install surfaces after dist/skills/agent-development/SKILL.md metadata changed.",
+    "operations/action-runs/discover-skill-sources/latest.json remains absent, so deterministic discovery Action handoff is still missing.",
+    "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707."
   ],
-  "last_commit": "pending_initialization_commit",
-  "next_action": "Next run should perform a non-initialization role selection from the carried-forward queues; likely Critic metadata backfill unless a higher-priority risk or catalog gate appears."
+  "last_commit": "pending_final_commit",
+  "next_action": "Cataloger should consume catalog-refresh-after-agent-development-metadata-backfill-20260708, then Critic can continue metadata backfill unless a higher-priority risk gate appears."
 }
