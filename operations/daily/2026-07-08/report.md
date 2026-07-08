@@ -9,19 +9,19 @@ status: active
 
 ## Latest board-driven heartbeat
 
-Ran `Cataloger` for board ticket `skills-catalog-refresh-after-risk-review-001`.
+Ran `Radar` for board ticket `skills-manual-discovery-fallback-001`.
 
 ## Inspected state
 
 - Repository: `architectonic/skills`
 - Inspected ref: `main`
-- Inspected SHA before this ticket's first content write: `2ff32ec74b69a66b12749591bc64fde13e7451ab`
+- Inspected SHA before this ticket's first content write: `661d73a66b302fa30988d84b83d993ff873429c5`
 - Model requirement status: `model_setting_unverified`
 - Daily ledger present: yes
 - Missing-ledger initialization: no
 - Discovery Action handoff: `operations/action-runs/discover-skill-sources/latest.json` absent on default branch
-- Online searches used: none
-- External connector used: GitHub only
+- Online searches used: yes, only for the board ticket's manual discovery requirement
+- External connector used: GitHub plus public web/GitHub search metadata
 
 ## Files reviewed directly
 
@@ -34,39 +34,49 @@ Ran `Cataloger` for board ticket `skills-catalog-refresh-after-risk-review-001`.
 - `operations/daily/2026-07-08/report.md`
 - `operations/log.md`
 - `dist/catalog.json`
-- `dist/catalog.md`
 - `dist/install-manifest.json`
-- `dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md`
-- `reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md`
+- `operations/scheduler-online-scout-contract.md`
+- `operations/manual-discovery-review-fallback.md`
+- `reports/discovery/2026-07-08-discovery-handoff-repair.md`
+- Public metadata pages for `modelcontextprotocol/servers`, `vercel/ai`, `QuantaAlpha/GitTaskBench`, and `openclaw/openclaw`
 
 ## Work performed
 
-Verified catalog/install-manifest parity after the MCP/tool-poisoning and SSRF risk review.
+The manual discovery fallback produced metadata-only artifacts because the canonical discovery Action handoff remains absent.
 
-No generated catalog surface was hand-edited because the connector-visible generated surfaces already reflected the risk-review metadata change:
+Created:
 
-- `dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md` records `domain: security-defensive`, `risk_level: high`, `requires_review: true`, and `review_gate: authorized-security-review-only`.
-- `dist/catalog.json` entry for `Auditing MCP Servers for Tool Poisoning` points to the correct skill path and records `domain: security-defensive`, `risk_level: high`, and `requires_review: true`.
-- `dist/catalog.json` summary counts are coherent: `security-defensive: 61`, `uncategorized: 563`, `high: 15`, `unspecified: 725`, total `skill_count: 1182`.
-- `dist/catalog.md` mirrors the same summary counts.
-- `dist/install-manifest.json` remains coherent and includes installer selection fields for `domain`, `risk_level`, and `requires_review`.
+- `reports/discovery/2026-07-08-manual.md`
+- `reports/discovery/2026-07-08-manual.json`
+- `sources/candidates/2026-07-08-manual.json`
 
-Created catalog parity report:
+Recorded four candidates:
 
-- `reports/catalog/2026-07-08-risk-review-catalog-parity.md`
+| Candidate | Decision | Risk | Note |
+|---|---|---:|---|
+| `modelcontextprotocol/servers` | `review_next` | medium | Official MCP reference server repository with explicit educational/non-production and security/threat-model warnings. |
+| `vercel/ai` | `review_next` | low | Current high-adoption TypeScript toolkit for AI applications and agents. |
+| `QuantaAlpha/GitTaskBench` | `watch` | low | Useful benchmark/value-metric candidate; license not visible in this connector-opened pass. |
+| `openclaw/openclaw` | `review_next` | high | High-signal personal agent runtime; includes messaging, browser, cron, node, and account/channel surfaces, so review-gated before normalization. |
+
+Opened daily review queue:
+
+- `source-review-manual-discovery-20260708`
 
 ## Acceptance tests
 
 | Test | Result | Evidence |
 |---|---|---|
-| Catalog reflects changed risk/domain/review metadata | Pass | Catalog entry and summary reflect `security-defensive`, `high`, and `requires_review: true` for the MCP/tool-poisoning skill. |
-| Install manifest is coherent | Pass | Install manifest retains discovery files and selection fields needed by installers, including risk and review fields. |
-| No npm publish attempted | Pass | No package publication, registry action, or npm workflow was invoked. |
-| Board next ticket is updated | Pass | `skills-catalog-refresh-after-risk-review-001` is done; `skills-manual-discovery-fallback-001` is the next ready value ticket. |
+| Records at least three real public candidate sources or exact searches/blockers | Pass | Four real public candidates were recorded; noisy/no-result Matt Pocock `/teach` searches were recorded rather than invented. |
+| Classifies each candidate as `review_next`, `watch`, or `skip_or_low_priority` | Pass | Three candidates are `review_next`; one is `watch`; none were invented. |
+| Does not clone, execute, copy, import, normalize, publish, or package candidate content | Pass | Only metadata artifacts were written; no repository clone, execution, content copy, import, normalization, catalog edit, package, or publication occurred. |
+| Creates review-next, watch, skip, risk, or source-review queue state | Pass | Created `source-review-manual-discovery-20260708`; high-risk OpenClaw is explicitly review-gated. |
 
 ## Files changed
 
-- `reports/catalog/2026-07-08-risk-review-catalog-parity.md`
+- `reports/discovery/2026-07-08-manual.md`
+- `reports/discovery/2026-07-08-manual.json`
+- `sources/candidates/2026-07-08-manual.json`
 - `operations/board.json`
 - `operations/daily/2026-07-08/queues.json`
 - `operations/value-ledger.json`
@@ -78,33 +88,36 @@ Created catalog parity report:
 
 - No third-party source was copied.
 - No repository was cloned.
-- No code, MCP server, scanner, curl command, or endpoint probe was executed.
-- No online search was used.
-- No generated catalog surface was hand-edited.
-- No npm publication was attempted.
+- No candidate code was executed.
+- No skill was normalized.
+- No catalog/package/publication action was attempted.
+- Online search was used only for metadata-only public discovery, as allowed by the selected board ticket.
 
 ## Value delta
 
-Removed the post-risk-review catalog parity blocker by verifying that the generated catalog and install manifest already expose the MCP/tool-poisoning skill as high-risk, review-gated, and security-defensive. This is package-safety/catalog value, not status/report churn.
+The absent discovery Action handoff now has a concrete metadata-only fallback output with four public candidates and a bounded source-review queue. This is discovery value, not status/report churn.
 
 ## Risk and publication state
 
 - High-risk MCP/SSRF review ticket: done.
 - Catalog parity after the risk review: done by verification.
-- Manual discovery fallback: open and now the next value ticket.
+- Manual discovery fallback: done.
+- Source review: open and now next.
 - Metadata backlog: still open, lower priority.
-- Package/publication endorsement: still blocked until discovery and backlog gates are clean.
+- Package/publication endorsement: still blocked until discovery/source-review and backlog gates are clean.
 
 ## Commit SHAs
 
 | Change | Commit |
 |---|---|
-| Catalog parity report | `59ac7acd7f7dd68d2f6c93fdbbfeddce7189eecf` |
-| Board update | `504930401f259a3cce9c79298f39a8cedacf9fa3` |
-| Daily queues update | `a003b0afa3763811aa1c01ce9910dede9113d5f5` |
-| Value ledger update | `8e4fc84870a96fae25881995a05111d31bf3d8e7` |
+| Manual discovery JSON report | `f257d9148d20b651a8b65d8300e80b447d6ce6f7` |
+| Manual source candidates JSON | `88d21b4df12f67ab576fd7465a70caea07a1cee8` |
+| Manual discovery Markdown report | `45f6a7a8a2fb180378245d2e27a7086aa604ef6c` |
+| Board update | `a20ad6dcc87014030853fe1cb84ea3e4bde83479` |
+| Daily queues update | `7b4a062d978d670e40cfd46769cbe08d0aed432d` |
+| Value ledger update | `8eb258b135e3a301ead60a66ad52d7919a9b8c29` |
 | Daily report update | `pending_final_connector_response` |
 
 ## Next action
 
-Radar should consume `skills-manual-discovery-fallback-001` / `manual-discovery-fallback-20260708` to produce metadata-only public candidate sources or exact searches/blockers. Do not clone, execute, copy, import, normalize, publish, or package candidate content.
+Source Reviewer should consume `skills-source-review-batch-001` / `source-review-manual-discovery-20260708`, starting with metadata/license/risk review only. Do not clone, execute, copy, import, normalize, publish, or package candidate content.
