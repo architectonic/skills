@@ -16,17 +16,17 @@
       "media": 1,
       "research": 85,
       "runtime-tools": 35,
-      "security-defensive": 58,
+      "security-defensive": 59,
       "security-offensive": 16,
       "software-engineering": 146,
-      "uncategorized": 566,
+      "uncategorized": 565,
       "writing": 16
     },
     "risk_counts": {
-      "high": 13,
+      "high": 14,
       "low": 9,
       "medium": 432,
-      "unspecified": 728
+      "unspecified": 727
     }
   },
   "domains": {
@@ -481,6 +481,7 @@
       "Performing Web Application Vulnerability Triage",
       "Scanning Infrastructure with Nessus",
       "agentic-actions-auditor",
+      "assessing-vector-and-embedding-weaknesses",
       "automating-ioc-enrichment",
       "building-detection-rules-with-sigma",
       "building-threat-feed-aggregation-with-misp",
@@ -653,7 +654,6 @@
       "xurl"
     ],
     "uncategorized": [
-      "Assessing Vector and Embedding Weaknesses",
       "Auditing Foundry Smart Contract Security",
       "Auditing MCP Servers for Tool Poisoning",
       "Auditing TLS Certificate Transparency Logs",
@@ -3613,31 +3613,26 @@
       "type": "Playbook"
     },
     {
-      "slug": "Assessing Vector and Embedding Weaknesses",
+      "slug": "assessing-vector-and-embedding-weaknesses",
       "title": "Assessing Vector and Embedding Weaknesses",
-      "description": "Test vector stores for embedding inversion, cross-tenant leakage, and poisoning.",
+      "description": "Review RAG/vector-store exposure to inversion, membership inference, tenant leakage, retrieval poisoning, and indirect prompt injection without providing default executable attack procedures.",
       "path": "dist/skills/assessing-vector-and-embedding-weaknesses/SKILL.md",
       "directory": "dist/skills/assessing-vector-and-embedding-weaknesses",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-defensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
-        "agent-skill",
-        "okf",
         "ai-security",
-        "vector-database",
-        "embedding-inversion",
         "rag-security",
-        "owasp-llm08",
-        "multi-tenant-isolation",
-        "data-poisoning",
+        "vector-database",
+        "embedding-security",
+        "tenant-isolation",
         "retrieval-augmented-generation",
-        "security"
+        "prompt-injection",
+        "defensive-review"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "okf-security",
+      "source_status": "review-gated-redacted",
       "type": "Playbook"
     },
     {
