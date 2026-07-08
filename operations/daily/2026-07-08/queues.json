@@ -2,7 +2,7 @@
   "date": "2026-07-08",
   "initialized_by": "Skills Loop Operator",
   "inspected_ref": "main",
-  "inspected_commit": "7cc1606cb14137314ab354d83769f62fe709875a",
+  "inspected_commit": "5c9593ee6fc2e2c9542f610fbf74605fd2eb460c",
   "discovery": [
     {
       "id": "manual-discovery-fallback-20260708",
@@ -37,29 +37,24 @@
       "created_at": "2026-07-08T18:20:00Z",
       "closed_by": "Skills Value Operator",
       "closed_at": "2026-07-08T18:40:00Z",
-      "closure_artifacts": [
-        "reports/review/2026-07-08-manual-source-review.md",
-        "reports/review/2026-07-08-manual-source-review.json",
-        "sources/profiles/2026-07-08/modelcontextprotocol-servers.json",
-        "sources/profiles/2026-07-08/vercel-ai.json",
-        "sources/profiles/2026-07-08/openclaw-openclaw.json",
-        "sources/watch/2026-07-08-gittaskbench-license-blocked.json"
-      ],
+      "closure_artifacts": ["reports/review/2026-07-08-manual-source-review.md", "reports/review/2026-07-08-manual-source-review.json", "sources/profiles/2026-07-08/modelcontextprotocol-servers.json", "sources/profiles/2026-07-08/vercel-ai.json", "sources/profiles/2026-07-08/openclaw-openclaw.json", "sources/watch/2026-07-08-gittaskbench-license-blocked.json"],
       "source_ticket": "skills-manual-discovery-fallback-001"
     }
   ],
   "normalization": [
     {
       "id": "normalize-vercel-ai-sdk-source-profile-20260708",
-      "priority": 2,
+      "priority": 1,
       "role": "Normalizer",
       "target": "sources/profiles/2026-07-08/vercel-ai.json",
-      "reason": "Vercel AI SDK source review found Apache-2.0 license, high usefulness, and direct package-facing value for provider abstraction and sandbox/tool safety guidance. Normalization must be original and must not copy examples or implementation content.",
+      "reason": "Vercel AI SDK source review found Apache-2.0 license, high usefulness, and direct package-facing value for provider abstraction and sandbox/tool safety guidance. Normalization must be original and must not copy examples or implementation content. This queue became the next eligible value path after the OpenClaw runtime-surface risk review was closed.",
       "action": "Create original package-facing guidance from the reviewed source profile only. Do not copy README examples, code snippets, prompts, or implementation. Classify risk and create catalog parity queue if a dist skill changes.",
       "risk_level": "medium",
       "status": "open",
       "created_by": "Skills Value Operator",
       "created_at": "2026-07-08T18:40:00Z",
+      "reprioritized_by": "Skills Value Operator",
+      "reprioritized_at": "2026-07-08T18:12:00-03:00",
       "source_ticket": "skills-source-review-batch-001"
     }
   ],
@@ -103,12 +98,15 @@
       "priority": 1,
       "role": "Risk Auditor",
       "target": "sources/profiles/2026-07-08/openclaw-openclaw.json",
-      "reason": "OpenClaw has MIT license and high usefulness, but source review found high-risk real messaging/account/channel integrations, browser/canvas/nodes/cron tools, gateway exposure, host tool access, daemon/onboarding flow, and sandbox policy surfaces. Safe abstraction boundaries must be reviewed before any OpenClaw-derived normalization.",
-      "action": "Review the source profile and decide whether any abstract safety patterns can be normalized without command snippets, account setup, browser automation, cron execution, or operational channel mutation detail.",
+      "reason": "OpenClaw has MIT license and high usefulness, but source review found high-risk real messaging/account/channel integrations, browser/canvas/nodes/cron tools, gateway exposure, host tool access, daemon/onboarding flow, and sandbox policy surfaces. Safe abstraction boundaries had to be reviewed before any OpenClaw-derived normalization.",
+      "action": "Closed after defining a conditional safe boundary: OpenClaw may only inform generic original runtime-surface safety review patterns. Commands, account setup, channel mutation, browser automation, cron execution, gateway setup, daemon/onboarding detail, and implementation content remain blocked.",
       "risk_level": "high",
-      "status": "open",
+      "status": "closed",
       "created_by": "Skills Value Operator",
       "created_at": "2026-07-08T18:40:00Z",
+      "closed_by": "Skills Value Operator",
+      "closed_at": "2026-07-08T18:12:00-03:00",
+      "closure_artifacts": ["reports/risk/2026-07-08-openclaw-source-runtime-surfaces-risk-review.md"],
       "source_ticket": "skills-source-review-batch-001"
     }
   ],
@@ -136,7 +134,8 @@
         {"at":"2026-07-08T14:14:42-03:00","by":"Skills Value Operator","batch":"mcp-ssrf-risk-review","result":"Closed high-risk MCP/SSRF review after converting the package-facing skill to an authorized-use defensive wrapper; metadata/body changes now require catalog parity refresh before backlog cleanup."},
         {"at":"2026-07-08T15:13:05-03:00","by":"Skills Value Operator","batch":"mcp-ssrf-catalog-parity","result":"Closed catalog parity after verifying dist/catalog.json, dist/catalog.md, and dist/install-manifest.json reflect the MCP/SSRF risk-review metadata. Manual discovery fallback is now the next open value queue."},
         {"at":"2026-07-08T18:20:00Z","by":"Skills Value Operator","batch":"manual-discovery-fallback","result":"Closed manual discovery fallback after recording four metadata-only public candidates and opening source-review-manual-discovery-20260708. Metadata backlog remains lower priority until source review resolves license/risk boundaries."},
-        {"at":"2026-07-08T18:40:00Z","by":"Skills Value Operator","batch":"manual-source-review","result":"Closed manual source review after creating three source profiles, one license-blocked watch note, one high-risk OpenClaw source-runtime review queue, and one bounded Vercel AI SDK normalization queue. No candidate code/content was copied or executed."}
+        {"at":"2026-07-08T18:40:00Z","by":"Skills Value Operator","batch":"manual-source-review","result":"Closed manual source review after creating three source profiles, one license-blocked watch note, one high-risk OpenClaw source-runtime review queue, and one bounded Vercel AI SDK normalization queue. No candidate code/content was copied or executed."},
+        {"at":"2026-07-08T18:12:00-03:00","by":"Skills Value Operator","batch":"openclaw-runtime-risk-review","result":"Closed OpenClaw high-risk source-runtime review. OpenClaw remains source-profile/watch-only except for future generic original runtime-surface safety guidance; operational account/browser/cron/gateway/channel/setup detail remains blocked. Vercel AI SDK normalization is now the next eligible ticket."}
       ]
     }
   ]
