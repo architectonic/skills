@@ -1,9 +1,9 @@
 {
   "date": "2026-07-08",
-  "current_state": "vercel_ai_sdk_normalization_done_catalog_parity_next",
+  "current_state": "ai_sdk_catalog_parity_done_metadata_backfill_next",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "89590689366ba99b4cb8827063183b6df3d6067c",
+  "inspected_sha": "f102482c8f76097af7a9c993a6e614b0b4da0de8",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -31,14 +31,14 @@
     "medium_risk_count": 434,
     "unspecified_risk_count": 725,
     "requires_review_count": null,
-    "catalog_build_status": "catalog_surfaces_observed_updated_to_1183_after_new_skill_but_dedicated_catalog_parity_report_still_required",
-    "publication_readiness": "blocked_by_open_catalog_parity_after_ai_sdk_normalization_open_metadata_backlog_and_absent_discovery_action_handoff"
+    "catalog_build_status": "catalog_parity_verified_after_ai_sdk_provider_tool_safety_normalization_no_generated_surface_edit_required",
+    "publication_readiness": "blocked_by_absent_discovery_action_handoff_and_open_metadata_backlog"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 1,
+    "catalog": 0,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -46,17 +46,17 @@
     "critic": 1
   },
   "latest_run": {
-    "started_at": "2026-07-08T16:12:59-03:00",
-    "completed_at": "2026-07-08T16:12:59-03:00",
+    "started_at": "2026-07-08T17:12:46-03:00",
+    "completed_at": "2026-07-08T17:12:46-03:00",
     "scheduled_role": "Skills Value Operator",
-    "selected_role": "Normalizer",
-    "board_ticket_consumed": "skills-normalize-vercel-ai-sdk-profile-001",
+    "selected_role": "Cataloger",
+    "board_ticket_consumed": "skills-catalog-refresh-after-normalization-001",
     "override_reason": null,
     "inspected_ref": "main",
-    "inspected_sha": "89590689366ba99b4cb8827063183b6df3d6067c",
+    "inspected_sha": "f102482c8f76097af7a9c993a6e614b0b4da0de8",
     "missing_ledger_initialization_performed": false,
-    "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent from the default branch; manual fallback, source review, and Vercel AI SDK normalization artifacts now exist.",
-    "queue_item_consumed_or_created": "Closed normalize-vercel-ai-sdk-source-profile-20260708 and opened catalog-refresh-after-vercel-ai-sdk-normalization-20260708 / skills-catalog-refresh-after-normalization-001.",
+    "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent from the default branch; manual fallback, source review, risk review, normalization, and AI SDK catalog parity artifacts now exist.",
+    "queue_item_consumed_or_created": "Closed catalog-refresh-after-vercel-ai-sdk-normalization-20260708 and board ticket skills-catalog-refresh-after-normalization-001. Promoted skills-metadata-backfill-batch-001 as the next bounded Critic ticket.",
     "sources_reviewed": [
       "operations/heartbeat.md",
       "operations/board.json",
@@ -69,13 +69,12 @@
       "dist/catalog.json",
       "dist/catalog.md",
       "dist/install-manifest.json",
-      "sources/profiles/2026-07-08/vercel-ai.json",
-      "reports/review/2026-07-08-manual-source-review.md"
+      "dist/skills/ai-sdk-provider-tool-safety/SKILL.md",
+      "reports/normalization/2026-07-08-vercel-ai-sdk-profile-normalization.md"
     ],
     "candidates_processed": 1,
     "files_changed": [
-      "dist/skills/ai-sdk-provider-tool-safety/SKILL.md",
-      "reports/normalization/2026-07-08-vercel-ai-sdk-profile-normalization.md",
+      "reports/catalog/2026-07-08-ai-sdk-provider-tool-safety-catalog-parity.md",
       "operations/board.json",
       "operations/daily/2026-07-08/queues.json",
       "operations/value-ledger.json",
@@ -84,40 +83,35 @@
       "operations/log.md"
     ],
     "commit_shas": {
-      "ai_sdk_skill": "c8fd9806f71f67ef20a94a020bc66f1f395704b3",
-      "normalization_report": "450eb46b850f516cbd68863e7aa242b4fe0d0fa4",
-      "board": "2076ced24311f55ae636722643cd3657dbae9d3f",
-      "queues": "e383ccb35b6221829c8c51e9806dd57685b3e714",
-      "value_ledger": "154e3dd88e75df520d304eb14c20d3a3caec60d3",
-      "daily_report": "53d8e0ac390eebaad9bf75d09ce6460d7ff7052e",
-      "status_initial_update": "2ec40027b7cfb02fc0f86c7ef4227191716dba2e",
-      "log": "d09a421fe344b2511967cf365d7a6a5af6183b23",
-      "status_final": "pending_final_connector_response"
+      "ai_sdk_catalog_parity_report": "a7b533e4d88b488919666f098a058be52c34859f",
+      "board": "69e8bb0657c98a9ebde2e719e9ab9866c180096e",
+      "queues": "178498d3d11cf8b96c7cb4e53df88b9ddbd9296d",
+      "value_ledger": "aaab7ab7e35c4a8a390a2a3092c90b1cc3962f88",
+      "daily_report": "dc39cee2c4539318d476927cc794fe3d746a1f14",
+      "status_final": "pending_final_connector_response",
+      "log": "pending_next_write"
     },
     "acceptance_tests": [
-      {"test": "writes original content only", "result": "pass", "evidence": "dist/skills/ai-sdk-provider-tool-safety/SKILL.md contains original boundary/checklist guidance and no copied source examples, prompts, code, or implementation content."},
-      {"test": "attributes Vercel AI SDK as source metadata", "result": "pass", "evidence": "Skill frontmatter records source_profile sources/profiles/2026-07-08/vercel-ai.json and source_attribution for vercel/ai, Apache-2.0."},
-      {"test": "does not copy README examples, code snippets, prompts, or implementation", "result": "pass", "evidence": "No third-party examples or implementation snippets were copied; no repository clone or code execution occurred."},
-      {"test": "classifies risk and requires_review based on tool/sandbox surface", "result": "pass", "evidence": "Skill frontmatter sets risk_level medium and requires_review true; body defines provider/tool/sandbox/UI/approval/failure gates."},
-      {"test": "creates catalog parity queue if dist skill content changes", "result": "pass", "evidence": "Added skills-catalog-refresh-after-normalization-001 and catalog-refresh-after-vercel-ai-sdk-normalization-20260708 as the next gate."}
+      {"test": "catalog reflects the new AI SDK Provider Tool Safety skill and updated software-engineering/medium counts", "result": "pass", "evidence": "dist/catalog.json shows skill_count 1183, software-engineering 147, medium 434, and software-engineering includes ai-sdk-provider-tool-safety."},
+      {"test": "install manifest remains coherent for installer selection fields", "result": "pass", "evidence": "dist/install-manifest.json lists README.md, dist/catalog.json, dist/catalog.md, and dist/install-manifest.json as discovery files; selection fields remain slug, title, domain, risk_level, tags, and requires_review."},
+      {"test": "no npm publish attempted", "result": "pass", "evidence": "Only GitHub content reads/writes were used. No package, npm, registry, or publication action occurred."},
+      {"test": "board next ticket is updated", "result": "pass", "evidence": "skills-catalog-refresh-after-normalization-001 is done; skills-metadata-backfill-batch-001 is ready."}
     ],
-    "catalog_package_npm_status": "A new dist skill was added. Catalog surfaces are observed at skill_count 1183 / software-engineering 147 / medium 434, but a dedicated catalog parity report is still required before package/publication endorsement. No npm publication attempted.",
+    "catalog_package_npm_status": "Catalog parity after AI SDK Provider Tool Safety normalization is verified. No generated catalog surface was hand-edited. No npm publication attempted. Package/publication endorsement remains blocked until discovery Action handoff and backlog gates are clean.",
     "blockers": [
-      "Catalog parity after AI SDK normalization is open and next: catalog-refresh-after-vercel-ai-sdk-normalization-20260708 / skills-catalog-refresh-after-normalization-001.",
       "Discovery Action handoff remains absent; manual fallback and source review artifacts exist but producer verification remains blocked.",
       "GitTaskBench remains watch/license-blocked because LICENSE returned 404 during source review.",
       "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
-      "Package/publication endorsement remains blocked until catalog parity, discovery Action, and backlog gates are clean."
+      "Package/publication endorsement remains blocked until discovery Action and backlog gates are clean."
     ],
-    "value_delta": "Converted the reviewed Vercel AI SDK source profile into one original, medium-risk, requires_review package-facing skill for provider abstraction and tool/sandbox safety. This adds normalized skill value while preserving no-copy/no-execute boundaries and creating the required catalog parity gate."
+    "value_delta": "Verified catalog/install-manifest parity after adding AI SDK Provider Tool Safety. The normalized skill is now discoverable through the catalog and coherent for installer selection; this removes the immediate post-normalization catalog blocker without hand-editing generated surfaces or attempting publication."
   },
   "blockers": [
-    "Catalog parity after AI SDK normalization is open and next: catalog-refresh-after-vercel-ai-sdk-normalization-20260708 / skills-catalog-refresh-after-normalization-001.",
     "Discovery Action handoff remains absent; manual fallback and source review artifacts exist but producer verification remains blocked.",
     "GitTaskBench remains watch/license-blocked because LICENSE returned 404 during source review.",
     "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
-    "Package/publication endorsement remains blocked until catalog parity, discovery Action, and backlog gates are clean."
+    "Package/publication endorsement remains blocked until discovery Action and backlog gates are clean."
   ],
-  "last_commit": "d09a421fe344b2511967cf365d7a6a5af6183b23",
-  "next_action": "Cataloger should consume skills-catalog-refresh-after-normalization-001 / catalog-refresh-after-vercel-ai-sdk-normalization-20260708 and verify or refresh dist/catalog.json, dist/catalog.md, and dist/install-manifest.json after the new AI SDK Provider Tool Safety skill."
+  "last_commit": "pending_final_connector_response",
+  "next_action": "Critic should consume skills-metadata-backfill-batch-001 as one bounded metadata-backfill batch, stopping immediately on high-risk executable, credential, offensive, account, browser, or external-mutation surfaces."
 }
