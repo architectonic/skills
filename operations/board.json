@@ -1,0 +1,122 @@
+{
+  "schema_version": "0.1",
+  "repo": "architectonic/skills",
+  "board_type": "repo_native_value_board",
+  "updated_at": "2026-07-08T20:00:00-03:00",
+  "purpose": "Force skills heartbeats to produce reviewed, installable, discoverable skill value instead of unbounded catalog/status churn.",
+  "selection_rule": "Operators must consume the highest-priority ready ticket allowed by gates.md. Safety and discovery restoration outrank routine metadata cleanup.",
+  "definition_of_done": "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done.",
+  "tickets": [
+    {
+      "id": "skills-restore-discovery-handoff-001",
+      "status": "ready",
+      "priority": 1,
+      "role": "Tool Builder",
+      "mission": "Restore deterministic discovery handoff production for public skill/source scouting or document the exact connector/runtime blocker and create the smallest repair path.",
+      "value_type": "discovery_pipeline_repair",
+      "input_artifacts": [
+        "operations/action-runs/discover-skill-sources/README.md",
+        "operations/scheduler-online-scout-contract.md",
+        "operations/manual-discovery-review-fallback.md",
+        ".github/workflows"
+      ],
+      "output_artifacts": [
+        "reports/discovery/2026-07-08-discovery-handoff-repair.md"
+      ],
+      "external_action_allowed": false,
+      "required_connector": "GitHub/web only; no copying third-party content",
+      "acceptance_tests": [
+        "explains why latest discovery handoff is absent",
+        "creates or queues a deterministic repair path",
+        "does not mirror third-party content",
+        "updates board and daily state with next source-review action"
+      ],
+      "supervisor_gate": "Supervisor should keep publication/readiness blocked until deterministic discovery or a bounded manual fallback is working.",
+      "kill_condition": "If connector cannot inspect workflow/action state, create a precise local-agent/CI repair ticket instead of pretending discovery is active.",
+      "next_ticket_on_success": "skills-source-review-batch-001",
+      "next_ticket_on_failure": "skills-manual-discovery-fallback-001"
+    },
+    {
+      "id": "skills-risk-review-mcp-tool-poisoning-001",
+      "status": "ready",
+      "priority": 2,
+      "role": "Risk Auditor",
+      "mission": "Review and safely wrap or redact the MCP tool-poisoning/SSRF skill so package-facing surfaces preserve defensive audit value without default executable probing detail.",
+      "value_type": "risk_blocker_removed",
+      "input_artifacts": [
+        "dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md",
+        "operations/daily/2026-07-08/queues.json"
+      ],
+      "output_artifacts": [
+        "reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md"
+      ],
+      "external_action_allowed": false,
+      "required_connector": null,
+      "acceptance_tests": [
+        "classifies risk level and requires_review",
+        "removes default executable SSRF/probing detail if unsafe",
+        "preserves defensive audit framing",
+        "creates catalog-refresh ticket if package-facing metadata changed"
+      ],
+      "supervisor_gate": "Routine metadata backlog must remain blocked while this high-risk ticket is open.",
+      "kill_condition": "If the skill cannot be made safe as a defensive wrapper, remove from installable catalog or mark non-publishable.",
+      "next_ticket_on_success": "skills-catalog-refresh-after-risk-review-001",
+      "next_ticket_on_failure": "skills-quarantine-mcp-tool-poisoning-001"
+    },
+    {
+      "id": "skills-catalog-refresh-after-risk-review-001",
+      "status": "blocked",
+      "priority": 3,
+      "role": "Cataloger",
+      "mission": "Regenerate or verify catalog/install-manifest parity after risk or metadata changes.",
+      "value_type": "catalog_parity_repair",
+      "input_artifacts": [
+        "dist/catalog.json",
+        "dist/install-manifest.json",
+        "dist/catalog.md"
+      ],
+      "output_artifacts": [
+        "reports/catalog/2026-07-08-risk-review-catalog-parity.md"
+      ],
+      "external_action_allowed": false,
+      "required_connector": null,
+      "acceptance_tests": [
+        "catalog reflects changed risk/domain/review metadata",
+        "install manifest is coherent",
+        "no npm publish attempted",
+        "board next ticket is updated"
+      ],
+      "supervisor_gate": "Publication remains blocked until catalog parity is verified.",
+      "kill_condition": "Block if generated surfaces cannot be updated via connector and require local script execution.",
+      "next_ticket_on_success": "skills-metadata-backfill-batch-001",
+      "next_ticket_on_failure": "skills-local-catalog-build-required-001"
+    },
+    {
+      "id": "skills-metadata-backfill-batch-001",
+      "status": "blocked",
+      "priority": 4,
+      "role": "Critic",
+      "mission": "Process one bounded batch from the uncategorized/unspecified-risk backlog, stopping immediately on any high-risk executable, credential, offensive, account, or external-mutation surface.",
+      "value_type": "catalog_quality_improvement",
+      "input_artifacts": [
+        "dist/catalog.json",
+        "dist/skills/**"
+      ],
+      "output_artifacts": [
+        "reports/critic/2026-07-08-metadata-backfill-batch.md"
+      ],
+      "external_action_allowed": false,
+      "required_connector": null,
+      "acceptance_tests": [
+        "processes a bounded batch, not the entire catalog",
+        "adds domain/risk/requires_review/source status when justified",
+        "stops and creates risk ticket on unsafe material",
+        "creates catalog refresh ticket after metadata changes"
+      ],
+      "supervisor_gate": "Backlog cleanup is lower priority than discovery restoration and high-risk review.",
+      "kill_condition": "Stop if the batch becomes generic metadata churn with no package-facing value.",
+      "next_ticket_on_success": "skills-catalog-refresh-after-risk-review-001",
+      "next_ticket_on_failure": "skills-risk-review-generated-001"
+    }
+  ]
+}
