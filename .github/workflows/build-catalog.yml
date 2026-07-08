@@ -1,0 +1,86 @@
+name: Build distribution catalog
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/build-catalog.yml'
+      - 'scripts/build_distribution_catalog.py'
+      - 'dist/skills/**'
+      - 'reports/dist-skills-enriched-inventory.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-distribution-catalog
+  cancel-in-progress: false
+
+jobs:
+  build-catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install catalog build dependencies
+        run: python -m pip install --upgrade pyyaml
+
+      - name: Build catalog surfaces
+        run: npm run build:catalog
+
+      - name: Validate Foundry catalog metadata while queue is open
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          catalog = json.loads(Path('dist/catalog.json').read_text(encoding='utf-8'))
+          entries = [entry for entry in catalog.get('skills', []) if entry.get('path') == 'dist/skills/auditing-foundry-smart-contract-security/SKILL.md']
+          if len(entries) != 1:
+              raise SystemExit(f'Expected one Foundry catalog entry, found {len(entries)}')
+          entry = entries[0]
+          expected = {
+              'slug': 'auditing-foundry-smart-contract-security',
+              'domain': 'security-defensive',
+              'risk_level': 'medium',
+              'requires_review': True,
+              'source_family': 'internal-skill-bundle',
+              'source_status': 'adapted',
+          }
+          for key, value in expected.items():
+              if entry.get(key) != value:
+                  raise SystemExit(f'Foundry catalog metadata mismatch for {key}: expected {value!r}, got {entry.get(key)!r}')
+
+          summary = catalog.get('summary', {})
+          domain_counts = summary.get('domain_counts', {})
+          risk_counts = summary.get('risk_counts', {})
+          if domain_counts.get('security-defensive', 0) < 60:
+              raise SystemExit('security-defensive count did not increase after Foundry metadata backfill')
+          if domain_counts.get('uncategorized', 10**9) > 564:
+              raise SystemExit('uncategorized count did not decrease after Foundry metadata backfill')
+          if risk_counts.get('medium', 0) < 433:
+              raise SystemExit('medium risk count did not increase after Foundry metadata backfill')
+          if risk_counts.get('unspecified', 10**9) > 726:
+              raise SystemExit('unspecified risk count did not decrease after Foundry metadata backfill')
+          PY
+
+      - name: Commit refreshed catalog surfaces
+        run: |
+          git config user.name "architectonic-bot"
+          git config user.email "architectonic-bot@users.noreply.github.com"
+          if git diff --quiet -- dist/catalog.json dist/catalog.md dist/install-manifest.json; then
+            echo "Catalog surfaces already current."
+            exit 0
+          fi
+          git add dist/catalog.json dist/catalog.md dist/install-manifest.json
+          git commit -m "dist: refresh skill distribution catalog"
+          git pull --rebase
+          git push
