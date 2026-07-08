@@ -116,7 +116,10 @@ The absent discovery Action handoff now has a concrete metadata-only fallback ou
 | Board update | `a20ad6dcc87014030853fe1cb84ea3e4bde83479` |
 | Daily queues update | `7b4a062d978d670e40cfd46769cbe08d0aed432d` |
 | Value ledger update | `8eb258b135e3a301ead60a66ad52d7919a9b8c29` |
-| Daily report update | `pending_final_connector_response` |
+| Daily report update | `5d9d2089d7fc34342d6b970f7db19dccf099b864` |
+| Daily status final update | `f7b4365b3ed36232af87cb56e64e1d0f20c199c2` |
+| Operations log update | `240c092ee115ecee6f23f700b3c50bc853bcd0d5` |
+| Daily report final update | `pending_final_connector_response` |
 
 ## Next action
 
