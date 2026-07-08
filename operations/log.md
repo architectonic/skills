@@ -11,25 +11,23 @@ status: active
 
 ## 2026-07-08
 
-- Ran board-driven Risk Auditor for `skills-risk-review-openclaw-source-runtime-surfaces-001`.
+- Ran board-driven Normalizer for `skills-normalize-vercel-ai-sdk-profile-001`.
 - Model requirement status: `model_setting_unverified`.
-- Inspected ref/SHA before this ticket's first content write: `main` at `5c9593ee6fc2e2c9542f610fbf74605fd2eb460c`.
+- Inspected ref/SHA before this ticket's first content write: `main` at `89590689366ba99b4cb8827063183b6df3d6067c`.
 - Confirmed today's daily ledger exists; no missing-ledger initialization was performed.
 - Confirmed `operations/action-runs/discover-skill-sources/latest.json` returned `404 Not Found` on the default branch during this run.
-- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `reports/review/2026-07-08-manual-source-review.md`, and `sources/profiles/2026-07-08/openclaw-openclaw.json`.
-- No online/source discovery was used because the selected board ticket was an internal source-profile risk review.
-- Created `reports/risk/2026-07-08-openclaw-source-runtime-surfaces-risk-review.md`.
-- Classified OpenClaw real messaging/account/channel integrations, gateway exposure, browser/canvas/nodes/cron tools, host-tool access, DM pairing/allowlist/sandbox policy configuration, and daemon/onboarding install flow as high-risk runtime surfaces.
-- Closed risk queue `risk-review-openclaw-source-runtime-surfaces-20260708` and board ticket `skills-risk-review-openclaw-source-runtime-surfaces-001`.
-- Allowed only generic original runtime-surface safety patterns for any future OpenClaw-derived work.
-- Blocked command snippets, account setup, channel mutation, browser automation, cron execution, gateway setup, daemon/onboarding detail, implementation copy, OpenClaw normalization, catalog/package endorsement, npm publication, and registry publication.
-- Reprioritized `normalize-vercel-ai-sdk-source-profile-20260708` / `skills-normalize-vercel-ai-sdk-profile-001` as the next eligible board path.
-- Updated `operations/board.json`, `operations/value-ledger.json`, today's `queues.json`, today's `status.json`, today's `report.md`, and this log.
-- Acceptance tests passed: account/browser/cron/gateway/host-tool surfaces classified; allowed abstraction boundaries defined; operational snippets/setup/browser/cron/channel details blocked; board and queues updated with safe next state.
-- Value delta: resolved the OpenClaw high-risk source-runtime blocker without normalizing or operationalizing OpenClaw, while preserving a narrow future path for generic original agent-runtime surface safety guidance.
-- Next justified action: Normalizer should consume `skills-normalize-vercel-ai-sdk-profile-001` / `normalize-vercel-ai-sdk-source-profile-20260708` and create only original provider/tool/sandbox guidance from the reviewed Vercel AI SDK source profile.
+- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `sources/profiles/2026-07-08/vercel-ai.json`, and `reports/review/2026-07-08-manual-source-review.md`.
+- No online/source discovery was used because the selected board ticket was an internal normalization from an already reviewed source profile.
+- Created `dist/skills/ai-sdk-provider-tool-safety/SKILL.md` as original provider/tool/sandbox safety guidance with `domain: software-engineering`, `risk_level: medium`, and `requires_review: true`.
+- Created `reports/normalization/2026-07-08-vercel-ai-sdk-profile-normalization.md`.
+- Closed queue item `normalize-vercel-ai-sdk-source-profile-20260708` and board ticket `skills-normalize-vercel-ai-sdk-profile-001`.
+- Opened `catalog-refresh-after-vercel-ai-sdk-normalization-20260708` and board ticket `skills-catalog-refresh-after-normalization-001` because a new dist skill was added.
+- Preserved boundaries: no repository clone, no candidate execution, no third-party examples/prompts/code/implementation copied, no package publication, no npm publication, and no registry publication.
+- Acceptance tests passed: original content only; Vercel AI SDK source attribution; no copied README/examples/snippets/prompts/implementation; medium risk and requires_review classification; catalog parity queue created.
+- Value delta: converted the reviewed Vercel AI SDK source profile into one original package-facing normalized skill for provider abstraction and tool/sandbox safety.
+- Next justified action: Cataloger should consume `skills-catalog-refresh-after-normalization-001` / `catalog-refresh-after-vercel-ai-sdk-normalization-20260708` before metadata backlog cleanup or package/publication endorsement.
 
-- Earlier 2026-07-08 state: discovery handoff repair ticket `skills-restore-discovery-handoff-001` was completed, manual discovery fallback was queued, Portfolio Supervisor repaired board priority so high-risk MCP/SSRF review outranked manual discovery fallback, risk review ticket `skills-risk-review-mcp-tool-poisoning-001` was completed, catalog parity ticket `skills-catalog-refresh-after-risk-review-001` was completed, manual discovery fallback ticket `skills-manual-discovery-fallback-001` was completed, source review ticket `skills-source-review-batch-001` was completed, and metadata backlog `metadata-backfill-uncategorized-and-unspecified-risk-20260707` remained open.
+- Earlier 2026-07-08 state: discovery handoff repair ticket `skills-restore-discovery-handoff-001` was completed, manual discovery fallback was queued, Portfolio Supervisor repaired board priority so high-risk MCP/SSRF review outranked manual discovery fallback, risk review ticket `skills-risk-review-mcp-tool-poisoning-001` was completed, catalog parity ticket `skills-catalog-refresh-after-risk-review-001` was completed, manual discovery fallback ticket `skills-manual-discovery-fallback-001` was completed, source review ticket `skills-source-review-batch-001` was completed, OpenClaw risk ticket `skills-risk-review-openclaw-source-runtime-surfaces-001` was completed, GitTaskBench remained license-blocked/watch, metadata backlog `metadata-backfill-uncategorized-and-unspecified-risk-20260707` remained open, and publication remained blocked.
 
 ## 2026-07-07
 
