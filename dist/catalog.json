@@ -17,16 +17,16 @@
       "research": 85,
       "runtime-tools": 35,
       "security-defensive": 58,
-      "security-offensive": 15,
+      "security-offensive": 16,
       "software-engineering": 146,
-      "uncategorized": 568,
+      "uncategorized": 567,
       "writing": 16
     },
     "risk_counts": {
-      "high": 12,
+      "high": 13,
       "low": 9,
       "medium": 431,
-      "unspecified": 730
+      "unspecified": 729
     }
   },
   "domains": {
@@ -498,6 +498,7 @@
       "building-c2-infrastructure-with-sliver-framework",
       "building-c2-redirector-infrastructure",
       "building-red-team-c2-infrastructure-with-havoc",
+      "moving-laterally-with-netexec",
       "performing-credential-access-with-lazagne",
       "performing-initial-access-with-evilginx3",
       "performing-kerberoasting-attack"
@@ -941,7 +942,6 @@
       "Migrating to Post-Quantum Cryptography",
       "Modeling Threats with OpenCTI",
       "Monitoring Dark Web Sources",
-      "Moving Laterally with NetExec",
       "Multi-Agent Workflow Orchestration",
       "Operating Havoc C2",
       "Operating Sliver C2",
@@ -19560,31 +19560,28 @@
       "type": "Playbook"
     },
     {
-      "slug": "Moving Laterally with NetExec",
+      "slug": "moving-laterally-with-netexec",
       "title": "Moving Laterally with NetExec",
-      "description": "Use NetExec for SMB, WinRM, LDAP, and MSSQL enumeration, password spraying,",
+      "description": "Review-gated defensive assessment wrapper for NetExec lateral-movement and credential-abuse risk. Use only for authorized network security planning, detection mapping, evidence boundaries, and remediation.",
       "path": "dist/skills/moving-laterally-with-netexec/SKILL.md",
       "directory": "dist/skills/moving-laterally-with-netexec",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-offensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
         "agent-skill",
         "okf",
         "netexec",
         "lateral-movement",
-        "smb",
-        "password-spraying",
-        "credential-access",
         "active-directory",
-        "winrm",
-        "post-exploitation",
-        "security"
+        "credential-access",
+        "smb",
+        "identity-security",
+        "security",
+        "review-gated"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "anthropic-cybersecurity-skills",
+      "source_status": "blocked-pending-redaction",
       "type": "Playbook"
     },
     {
