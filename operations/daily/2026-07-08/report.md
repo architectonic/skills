@@ -9,13 +9,13 @@ status: active
 
 ## Latest board-driven heartbeat
 
-Ran `Critic` for board ticket `skills-metadata-backfill-batch-001`.
+Ran `Risk Auditor` for board ticket `skills-risk-review-browser-trace-001`.
 
 ## Inspected state
 
 - Repository: `architectonic/skills`
 - Inspected ref: `main`
-- Inspected SHA before this ticket's first content write: `d780540a46e35ac1d8b614ec6efc5a8850428399`
+- Inspected SHA before this ticket's first content write: `99c4a6e5ef90b4555e938ac364109ade2d4af264`
 - Model requirement status: `model_setting_unverified`
 - Daily ledger present: yes
 - Missing-ledger initialization: no
@@ -36,65 +36,59 @@ Ran `Critic` for board ticket `skills-metadata-backfill-batch-001`.
 - `dist/catalog.json`
 - `dist/catalog.md`
 - `dist/install-manifest.json`
-- `dist/skills/autonomy-loop/SKILL.md`
-- `dist/skills/autoresearch-loop/SKILL.md`
+- `operations/action-runs/discover-skill-sources/latest.json` attempted and returned 404
 - `dist/skills/browser-trace/SKILL.md`
+- `reports/critic/2026-07-08-metadata-backfill-batch.md`
 
 ## Work performed
 
-Closed one bounded metadata-backfill batch.
+Closed the high-priority Browser Trace risk review.
 
-Updated package-facing metadata for:
-
-- `dist/skills/autonomy-loop/SKILL.md`
-- `dist/skills/autoresearch-loop/SKILL.md`
+Updated package-facing Browser Trace from an operational CDP capture playbook into a high-risk, review-gated read-only defensive debugging wrapper.
 
 Created:
 
-- `reports/critic/2026-07-08-metadata-backfill-batch.md`
+- `reports/risk/2026-07-08-browser-trace-risk-review.md`
 
-Opened and promoted next:
+Updated:
 
-- `skills-risk-review-browser-trace-001`
+- `dist/skills/browser-trace/SKILL.md`
 
-Created but blocked behind the risk review:
+Unblocked and promoted next:
 
 - `skills-catalog-refresh-after-metadata-backfill-001`
 
-## Metadata decisions
+## Risk decision
 
-### Autonomy Loop
+Decision: `conditional_allow_review_gated_read_only_defensive_debugging`.
 
-Decision: `agent_operations_medium_requires_review`.
+Browser Trace may remain package-facing only for authorized defensive debugging of owned or explicitly approved browser sessions. The skill now requires review and does not include reusable browser-launch, debugger-port, capture, query, API-key, remote-provider, or browser-session operational snippets.
 
-Reason: useful agent-operations loop material, but it coordinates autonomous repository mutation through builder/reviewer worktrees and test gates. It now requires explicit review before protected production mutation, deployment, publication, or unbounded autonomous loops.
+## Browser Trace changes
 
-### Autoresearch Loop
-
-Decision: `agent_operations_medium_requires_review`.
-
-Reason: useful agent-operations loop material, but it includes autonomous modify/verify cycles, security-audit modes, and a ship flow. It now requires explicit review before push, publish, deploy, irreversible mutation, out-of-scope security testing, or unbounded iteration.
-
-### Browser Trace
-
-Decision: `risk_review_required_before_metadata_or_catalog_endorsement`.
-
-The batch stopped at Browser Trace after direct review found browser/CDP session attachment, screenshots, DOM dumps, Browserbase API key mention, local debugger command snippets, and raw network/console/runtime filesystem traces. The skill was not edited in this pass.
+- Added `domain: software-engineering`.
+- Added `risk_level: high`.
+- Added `requires_review: true`.
+- Added `review_gate: authorized-read-only-browser-debugging-only`.
+- Added `source_status: distilled-reviewed`.
+- Removed local Chrome debugger launch commands.
+- Removed trace capture/query command snippets.
+- Removed remote-provider/API-key operational handling detail.
+- Preserved defensive debugging value through authorization, minimization, redaction, retention, and safe report guidance.
 
 ## Acceptance tests
 
 | Test | Result | Evidence |
 |---|---|---|
-| Processes a bounded batch, not the entire catalog | Pass | Processed two metadata targets and stopped at the third candidate on risk grounds. |
-| Adds domain/risk/requires_review/source status when justified | Pass | `autonomy-loop` and `autoresearch-loop` now have `domain`, `risk_level`, `requires_review`, and `source_status` metadata. |
-| Stops and creates risk ticket on unsafe material | Pass | `browser-trace` was not edited; `skills-risk-review-browser-trace-001` / `risk-review-browser-trace-20260708` is open. |
-| Creates catalog refresh ticket after metadata changes | Pass | `skills-catalog-refresh-after-metadata-backfill-001` / `catalog-refresh-after-metadata-backfill-20260708` was created and blocked behind risk review. |
+| Classifies browser/CDP/session/API-key/DOM/screenshot/filesystem trace surfaces | Pass | `reports/risk/2026-07-08-browser-trace-risk-review.md` classifies all listed surfaces, and the skill now has `risk_level: high` and `requires_review: true`. |
+| Defines whether Browser Trace can remain package-facing as a read-only defensive debugging skill | Pass | Decision is `conditional_allow_review_gated_read_only_defensive_debugging`. |
+| Redacts or gates command snippets and API-key/browser-session handling if needed | Pass | Package-facing launch/capture/query commands and API-key/provider setup details were removed; review gate and credential-handling boundaries were added. |
+| Keeps catalog/package/publication endorsement blocked until review and catalog parity are complete | Pass | Risk review is done, but catalog parity is now the next gate. No package, npm, registry, or publication action was attempted. |
 
 ## Files changed
 
-- `dist/skills/autonomy-loop/SKILL.md`
-- `dist/skills/autoresearch-loop/SKILL.md`
-- `reports/critic/2026-07-08-metadata-backfill-batch.md`
+- `dist/skills/browser-trace/SKILL.md`
+- `reports/risk/2026-07-08-browser-trace-risk-review.md`
 - `operations/board.json`
 - `operations/value-ledger.json`
 - `operations/daily/2026-07-08/queues.json`
@@ -106,15 +100,15 @@ The batch stopped at Browser Trace after direct review found browser/CDP session
 
 - No online discovery was performed.
 - No repository was cloned.
-- No candidate code was executed.
-- No third-party content was copied.
 - No browser session was opened or attached.
+- No trace tooling was executed.
+- No third-party content was copied.
 - No generated catalog surface was hand-edited.
 - No package, npm, registry, or publication action was attempted.
 
 ## Value delta
 
-Two agent-loop skills are no longer uncategorized/unspecified-risk in their package-facing metadata, and a browser/CDP trace skill was blocked from routine catalog endorsement until high-risk review. This is package-facing value because it improves discoverability/reviewability while preventing browser/session/data-capture workflows from slipping through routine metadata cleanup.
+Removed a high-risk package-facing blocker by converting Browser Trace from an executable browser/CDP tracing workflow into review-gated read-only defensive debugging guidance. This preserved debugging value while eliminating default operational snippets for debugger attachment, trace capture, query commands, remote-provider/API-key handling, and browser-session access.
 
 ## Risk and publication state
 
@@ -126,8 +120,8 @@ Two agent-loop skills are no longer uncategorized/unspecified-risk in their pack
 - Vercel AI SDK normalization: done.
 - Catalog parity after AI SDK normalization: done.
 - Metadata backfill batch 001: done.
-- Browser Trace risk review: open and next.
-- Catalog parity after metadata backfill: blocked until Browser Trace risk review completes.
+- Browser Trace risk review: done.
+- Catalog parity after metadata backfill and Browser Trace review: open and next.
 - GitTaskBench: watch/license-blocked.
 - Discovery Action handoff: still absent.
 - Package/publication endorsement: still blocked.
@@ -136,16 +130,15 @@ Two agent-loop skills are no longer uncategorized/unspecified-risk in their pack
 
 | Change | Commit |
 |---|---|
-| Autonomy Loop metadata | `8094766f4e058f3e921b960d56d57656d3617058` |
-| Autoresearch Loop metadata | `f24a66208a990b3fac130d2b6b9fbb002d809f37` |
-| Metadata backfill report | `75ac7f401c6efe25e79aba4e771a4adf5477d34d` |
-| Board update | `fa6dfcc1e920a13df28da929aa591d239f5d418a` |
-| Value ledger update | `f7a25bbc8df0e1e1d95ead4179b2cfe157da0750` |
-| Daily queues update | `f8e2420e3c8ae6e3156131bbc39160b9e69342b2` |
+| Browser Trace skill risk wrapper | `32ebcf3e90ce760909dd3752bb012403585523a9` |
+| Browser Trace risk report | `bb4f71c9b14f4d0d60896a792ebc511a7f14c1cb` |
+| Board update | `69c4002ba2c08e51e92702419dd989e0ce987be9` |
+| Value ledger update | `65a17e9fb1720e6352705c212aac7a948b7d1a92` |
+| Daily queues update | `f927fbb850c313807fb401f3f10cfadd409c04ec` |
 | Daily report update | `pending_final_connector_response` |
 | Daily status update | `pending_next_write` |
 | Operations log update | `pending_next_write` |
 
 ## Next action
 
-Risk Auditor should consume `skills-risk-review-browser-trace-001`. Further metadata cleanup and catalog/package/publication endorsement remain blocked until Browser Trace risk review and metadata-backfill catalog parity are complete.
+Cataloger should consume `skills-catalog-refresh-after-metadata-backfill-001`. Further metadata cleanup and package/publication endorsement remain blocked until catalog parity is verified. Discovery Action handoff remains absent.
