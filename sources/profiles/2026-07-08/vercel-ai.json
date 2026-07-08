@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1",
+  "name": "vercel/ai",
+  "url": "https://github.com/vercel/ai",
+  "source_family": "ai-sdk-agent-toolkit",
+  "reviewed_at_utc": "2026-07-08T18:40:00Z",
+  "review_ticket": "skills-source-review-batch-001",
+  "decision": "source_profile_created_review_gated",
+  "license_status": "usable_with_attribution_and_license_tracking",
+  "license_summary": "Apache-2.0 license file directly fetched.",
+  "usefulness": "high",
+  "risk_level": "medium",
+  "requires_review_before_normalization": false,
+  "why_relevant": [
+    "Provider-agnostic TypeScript toolkit for AI-powered applications and agents.",
+    "Directly relevant to Skills guidance for agent application construction, provider abstraction, streaming, tools, UI, and sandbox boundaries.",
+    "Includes coding-agent skill surface that can be reviewed for original package-facing guidance without copying third-party content."
+  ],
+  "runtime_security_surface": [
+    "model-provider abstraction and gateway usage",
+    "tool-loop agent examples",
+    "local shell and sandbox integration examples",
+    "framework-specific UI hooks and application patterns"
+  ],
+  "redistribution_boundary": "Do not copy README examples, code snippets, prompts, or implementation content. Future normalization may write original guidance about provider abstraction, sandboxed tool loops, and package-safe coding-agent use with attribution.",
+  "evidence_files": [
+    "vercel/ai packages/ai/README.md",
+    "vercel/ai LICENSE",
+    "reports/review/2026-07-08-manual-source-review.md"
+  ],
+  "next_allowed_action": "Create a bounded original normalization ticket for AI SDK provider/tool/sandbox guidance."
+}
