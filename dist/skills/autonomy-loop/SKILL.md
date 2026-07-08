@@ -2,6 +2,11 @@
 name: Autonomy Loop
 description: Implement a builder-reviewer autonomy loop where two agents pass a git baton between worktrees and prove each new test catches its fix. Use when a repository has deterministic test, build, and lint gates plus a task suited to repeated builder-reviewer handoffs.
 tags: [loops, autonomy, builder-reviewer, worktrees, testing]
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_status: internal-normalized
+review_note: Requires explicit human approval before protected production mutation, deployment, publication, or unbounded autonomous loops.
 type: Playbook
 ---
 
