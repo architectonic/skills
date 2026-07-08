@@ -6,15 +6,17 @@
   "discovery": [
     {
       "id": "manual-discovery-fallback-20260708",
-      "priority": 1,
+      "priority": 2,
       "role": "Radar",
       "target": "public web/GitHub metadata-only candidate search",
-      "reason": "Canonical operations/action-runs/discover-skill-sources/latest.json is absent from the default branch while the discovery producer workflow and scripts exist. A bounded fallback is needed so the loop produces reviewable candidate metadata instead of status-only churn.",
-      "action": "Create reports/discovery/2026-07-08-manual.md, reports/discovery/2026-07-08-manual.json, and sources/candidates/2026-07-08-manual.json with at least three real public candidate sources or exact searches/blockers. Do not clone, execute, copy, import, normalize, publish, or package candidate content.",
+      "reason": "Canonical operations/action-runs/discover-skill-sources/latest.json is absent from the default branch while the discovery producer workflow and scripts exist. A bounded fallback is needed so the loop produces reviewable candidate metadata instead of status-only churn. Portfolio Supervisor lowered this behind the open high-risk package-facing MCP/SSRF review because operations/gates.md prioritizes high-risk review before manual discovery fallback.",
+      "action": "After the high-risk MCP/SSRF review is resolved or explicitly blocked by a human, create reports/discovery/2026-07-08-manual.md, reports/discovery/2026-07-08-manual.json, and sources/candidates/2026-07-08-manual.json with at least three real public candidate sources or exact searches/blockers. Do not clone, execute, copy, import, normalize, publish, or package candidate content.",
       "risk_level": "medium",
       "status": "open",
       "created_by": "Skills Value Operator",
       "created_at": "2026-07-08T10:13:04-03:00",
+      "reprioritized_by": "Portfolio Supervisor",
+      "reprioritized_at": "2026-07-08T13:30:00Z",
       "source_ticket": "skills-restore-discovery-handoff-001"
     }
   ],
@@ -27,12 +29,14 @@
       "priority": 1,
       "role": "Risk Auditor",
       "target": "dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md",
-      "reason": "Package-facing uncategorized skill includes live MCP server probing, SSRF testing against internal targets, unauthenticated endpoint checks, and tool-description prompt-injection handling. It must be reviewed/redacted before routine metadata classification or package/publication endorsement.",
+      "reason": "Package-facing uncategorized skill includes live MCP server probing, SSRF testing against internal targets, unauthenticated endpoint checks, and tool-description prompt-injection handling. It must be reviewed/redacted before routine metadata classification, manual discovery expansion, catalog endorsement, package endorsement, or publication endorsement.",
       "action": "Inspect and convert to a high-risk review-gated defensive wrapper if needed; preserve defensive audit value while removing default executable probing detail.",
       "risk_level": "high",
       "status": "open",
       "created_by": "Skills Loop Operator",
       "created_at": "2026-07-08T09:12:59-03:00",
+      "reprioritized_by": "Portfolio Supervisor",
+      "reprioritized_at": "2026-07-08T13:30:00Z",
       "source_queue": "metadata-backfill-uncategorized-and-unspecified-risk-20260707"
     }
   ],
@@ -42,7 +46,7 @@
   "critic": [
     {
       "id": "metadata-backfill-uncategorized-and-unspecified-risk-20260707",
-      "priority": 2,
+      "priority": 3,
       "role": "Critic",
       "target": "dist/skills/**",
       "reason": "Catalog still has a large uncategorized-domain and unspecified-risk backlog under the current quality gate.",
@@ -55,31 +59,8 @@
       "carried_forward_at": "2026-07-08T00:13:31-03:00",
       "carried_forward_from": "operations/daily/2026-07-07/queues.json",
       "progress": [
-        {"at":"2026-07-07T09:12:38-03:00","by":"Skills Loop Operator","batch":"identity-cloud-risk-redaction","result":"High-priority risk queue resolved; Cataloger refresh now blocks further package/publication endorsement."},
-        {"at":"2026-07-07T10:14:41-03:00","by":"Skills Loop Operator","batch":"identity-cloud-risk-redaction-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, and dist/install-manifest.json; Critic backlog is unblocked for the next bounded metadata batch."},
-        {"at":"2026-07-07T11:12:44-03:00","by":"Skills Loop Operator","batch":"threat-intel-detection-metadata-backfill","result":"Backfilled four package-facing threat-intelligence and detection skills with security-defensive, medium-risk, requires_review metadata; created Cataloger refresh queue before any package/publication endorsement."},
-        {"at":"2026-07-07T12:11:17-03:00","by":"Skills Loop Operator","batch":"threat-intel-detection-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, and dist/install-manifest.json; Critic backlog is unblocked for the next bounded metadata batch."},
-        {"at":"2026-07-07T13:11:04-03:00","by":"Skills Loop Operator","batch":"dpapi-risk-triage","result":"Stopped routine metadata backfill on a high-risk package-facing DPAPI credential-access skill and created risk queue risk-review-dpapi-credential-access-skill-20260707 before further package/publication endorsement."},
-        {"at":"2026-07-07T14:13:01-03:00","by":"Skills Loop Operator","batch":"dpapi-risk-redaction","result":"Resolved the high-risk DPAPI review by replacing default credential-access procedure detail with a defensive review-gated wrapper; Cataloger refresh now blocks further package/publication endorsement."},
-        {"at":"2026-07-07T15:14:25-03:00","by":"Skills Loop Operator","batch":"dpapi-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the package-facing DPAPI wrapper; Critic backlog is unblocked for the next bounded metadata batch."},
-        {"at":"2026-07-07T16:14:47-03:00","by":"Skills Loop Operator","batch":"c2-red-team-risk-triage","result":"Stopped routine metadata backfill on three uncategorized/unspecified-risk C2 and red-team infrastructure skills and created risk queue risk-review-c2-red-team-infrastructure-skills-20260707 before further package/publication endorsement."},
-        {"at":"2026-07-07T17:12:15-03:00","by":"Skills Loop Operator","batch":"c2-red-team-redaction","result":"Resolved the high-risk review by replacing three package-facing security entries with review-gated safety placeholders; Cataloger refresh now blocks further package/publication endorsement."},
-        {"at":"2026-07-07T18:12:29-03:00","by":"Skills Loop Operator","batch":"c2-red-team-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the three package-facing C2/red-team safety placeholders; Critic backlog is unblocked for the next bounded metadata batch."},
-        {"at":"2026-07-07T19:13:01-03:00","by":"Skills Loop Operator","batch":"agent-ops-cli-metadata-backfill","result":"Backfilled four package-facing agent-operations/security-defensive CLI and agent-instruction skills with explicit domain, medium risk, requires_review, and source status metadata; created Cataloger refresh queue catalog-refresh-after-metadata-backfill-agent-ops-cli-batch-20260707."},
-        {"at":"2026-07-07T20:14:54-03:00","by":"Skills Loop Operator","batch":"agent-ops-cli-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the four package-facing agent-ops/CLI metadata entries; Critic backlog is unblocked for the next bounded metadata batch."},
-        {"at":"2026-07-07T21:11:43-03:00","by":"Skills Loop Operator","batch":"credential-access-phishing-lateral-risk-triage","result":"Stopped routine metadata backfill on four high-risk package-facing credential-access, phishing/session-hijack, Kerberoasting, and lateral-movement entries; created risk queue risk-review-credential-access-phishing-lateral-movement-skills-20260707 before further package/publication endorsement."},
-        {"at":"2026-07-07T22:13:35-03:00","by":"Skills Loop Operator","batch":"credential-access-phishing-lateral-redaction","result":"Resolved the high-risk review by replacing four package-facing credential-access, AiTM phishing, Kerberoasting, and lateral-movement entries with review-gated defensive wrappers; Cataloger refresh now blocks further package/publication endorsement."},
-        {"at":"2026-07-07T23:12:27-03:00","by":"Skills Loop Operator","batch":"credential-access-phishing-lateral-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the four package-facing credential-access/phishing/Kerberoasting/lateral-movement wrappers; Critic backlog is unblocked for the next bounded metadata batch."},
-        {"at":"2026-07-08T00:13:31-03:00","by":"Skills Loop Operator","batch":"daily-ledger-initialization","result":"Carried this unresolved queue item forward from 2026-07-07 during initialization-only Reporter pass. No discovery, review, normalization, package work was performed."},
-        {"at":"2026-07-08T01:12:08-03:00","by":"Skills Loop Operator","batch":"agent-development-metadata-backfill","result":"Backfilled dist/skills/agent-development/SKILL.md with agent-operations, medium-risk, requires_review, source_family, source_status, and tags; created Cataloger queue catalog-refresh-after-agent-development-metadata-backfill-20260708 before any package/publication endorsement."},
-        {"at":"2026-07-08T02:14:05-03:00","by":"Skills Loop Operator","batch":"agent-development-catalog-verification","result":"Closed catalog-refresh-after-agent-development-metadata-backfill-20260708 after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the package-facing agent-development metadata; Critic backlog is unblocked for the next bounded metadata batch."},
-        {"at":"2026-07-08T03:11:19-03:00","by":"Skills Loop Operator","batch":"vector-embedding-risk-triage","result":"Stopped routine metadata backfill on dist/skills/assessing-vector-and-embedding-weaknesses/SKILL.md and created risk queue risk-review-vector-embedding-weaknesses-skill-20260708 before classification, catalog endorsement, or package/publication endorsement."},
-        {"at":"2026-07-08T04:12:31-03:00","by":"Skills Loop Operator","batch":"vector-embedding-risk-redaction","result":"Resolved vector/embedding risk queue by replacing default executable RAG data-exfiltration-adjacent procedures with a high-risk review-gated defensive wrapper; Cataloger refresh now blocks further package/publication endorsement."},
-        {"at":"2026-07-08T05:13:11-03:00","by":"Skills Loop Operator","batch":"vector-embedding-catalog-verification","result":"Closed catalog-refresh-after-vector-embedding-redaction-20260708 after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the high-risk review-gated vector/embedding package wrapper; Critic backlog is unblocked for the next bounded metadata batch."},
-        {"at":"2026-07-08T06:11:12-03:00","by":"Skills Loop Operator","batch":"foundry-smart-contract-metadata-backfill","result":"Backfilled dist/skills/auditing-foundry-smart-contract-security/SKILL.md with security-defensive, medium-risk, requires_review, source status, normalized name/title/description/tags; created Cataloger queue catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708 before package/publication endorsement."},
-        {"at":"2026-07-08T08:11:46-03:00","by":"Skills Loop Operator","batch":"foundry-smart-contract-catalog-verification-after-workflow-repair","result":"Closed catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708 after adding the catalog build workflow and directly verifying dist/catalog.json, dist/catalog.md, and dist/install-manifest.json reflect the Foundry metadata on main."},
-        {"at":"2026-07-08T09:12:59-03:00","by":"Skills Loop Operator","batch":"mcp-tool-poisoning-ssrf-risk-triage","result":"Stopped routine metadata backfill on dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md and created risk queue risk-review-mcp-tool-poisoning-ssrf-skill-20260708 before classification, catalog endorsement, or package/publication endorsement."},
-        {"at":"2026-07-08T10:13:04-03:00","by":"Skills Value Operator","batch":"discovery-handoff-repair","result":"Consumed board ticket skills-restore-discovery-handoff-001; documented that canonical latest.json is absent while producer workflow/scripts exist; queued manual-discovery-fallback-20260708 and preserved the MCP tool-poisoning/SSRF risk queue."}
+        {"at":"2026-07-08T10:13:04-03:00","by":"Skills Value Operator","batch":"discovery-handoff-repair","result":"Consumed board ticket skills-restore-discovery-handoff-001; documented that canonical latest.json is absent while producer workflow/scripts exist; queued manual-discovery-fallback-20260708 and preserved the MCP tool-poisoning/SSRF risk queue."},
+        {"at":"2026-07-08T13:30:00Z","by":"Portfolio Supervisor","batch":"board-queue-priority-repair","result":"Aligned daily queues with operations/gates.md: high-risk MCP/SSRF package-facing review now outranks manual discovery fallback; publication and metadata backfill remain blocked."}
       ]
     }
   ]
