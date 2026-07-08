@@ -90,8 +90,9 @@
       "queues": "e383ccb35b6221829c8c51e9806dd57685b3e714",
       "value_ledger": "154e3dd88e75df520d304eb14c20d3a3caec60d3",
       "daily_report": "53d8e0ac390eebaad9bf75d09ce6460d7ff7052e",
-      "status_final": "pending_final_connector_response",
-      "log": "pending_next_write"
+      "status_initial_update": "2ec40027b7cfb02fc0f86c7ef4227191716dba2e",
+      "log": "d09a421fe344b2511967cf365d7a6a5af6183b23",
+      "status_final": "pending_final_connector_response"
     },
     "acceptance_tests": [
       {"test": "writes original content only", "result": "pass", "evidence": "dist/skills/ai-sdk-provider-tool-safety/SKILL.md contains original boundary/checklist guidance and no copied source examples, prompts, code, or implementation content."},
@@ -117,6 +118,6 @@
     "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
     "Package/publication endorsement remains blocked until catalog parity, discovery Action, and backlog gates are clean."
   ],
-  "last_commit": "pending_final_connector_response",
+  "last_commit": "d09a421fe344b2511967cf365d7a6a5af6183b23",
   "next_action": "Cataloger should consume skills-catalog-refresh-after-normalization-001 / catalog-refresh-after-vercel-ai-sdk-normalization-20260708 and verify or refresh dist/catalog.json, dist/catalog.md, and dist/install-manifest.json after the new AI SDK Provider Tool Safety skill."
 }
