@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1",
+  "name": "modelcontextprotocol/servers",
+  "url": "https://github.com/modelcontextprotocol/servers",
+  "source_family": "mcp-reference-servers",
+  "reviewed_at_utc": "2026-07-08T18:40:00Z",
+  "review_ticket": "skills-source-review-batch-001",
+  "decision": "source_profile_created_review_gated",
+  "license_status": "usable_with_attribution_and_license_tracking",
+  "license_summary": "Project is in an MIT-to-Apache-2.0 transition; documentation contributions excluding specifications are CC-BY-4.0.",
+  "usefulness": "high",
+  "risk_level": "medium",
+  "requires_review_before_normalization": true,
+  "why_relevant": [
+    "Official high-signal MCP reference implementation source.",
+    "Useful for Skills catalog/risk metadata around reference-server disclaimers and threat-model boundaries.",
+    "Useful as a source for original defensive guidance on MCP server review without copying implementation content."
+  ],
+  "runtime_security_surface": [
+    "MCP server execution",
+    "filesystem and git access examples",
+    "fetch/web data access examples",
+    "memory and tool/data access patterns",
+    "explicit non-production and threat-model warnings"
+  ],
+  "redistribution_boundary": "Do not copy server implementation code, executable snippets, or configuration examples into package-facing skills. Future normalization may create original safety heuristics and review checklists with attribution.",
+  "evidence_files": [
+    "modelcontextprotocol/servers README.md",
+    "modelcontextprotocol/servers LICENSE",
+    "reports/review/2026-07-08-manual-source-review.md"
+  ],
+  "next_allowed_action": "Create a bounded normalization ticket for original MCP source-review and threat-model patterns only if it outranks backlog cleanup."
+}
