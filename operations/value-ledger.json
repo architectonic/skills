@@ -62,6 +62,21 @@
         "operations/log.md"
       ],
       "summary": "Consumed the manual source-review ticket. Verified license/redistribution boundaries for modelcontextprotocol/servers, vercel/ai, and openclaw/openclaw; kept QuantaAlpha/GitTaskBench on watch because LICENSE returned 404; created three source profiles, one license-blocked watch note, one high-risk OpenClaw source-runtime review queue, and one bounded Vercel AI SDK normalization queue. No clone, execution, implementation copy, normalization, catalog, package, npm, or publication action occurred."
+    },
+    {
+      "id": "skills-risk-review-openclaw-runtime-surfaces-20260708-1812b",
+      "timestamp": "2026-07-08T18:12:00-03:00",
+      "type": "risk_blocker_removed",
+      "source": "Skills Value Operator board ticket skills-risk-review-openclaw-source-runtime-surfaces-001",
+      "artifact_paths": [
+        "reports/risk/2026-07-08-openclaw-source-runtime-surfaces-risk-review.md",
+        "operations/board.json",
+        "operations/daily/2026-07-08/queues.json",
+        "operations/daily/2026-07-08/status.json",
+        "operations/daily/2026-07-08/report.md",
+        "operations/log.md"
+      ],
+      "summary": "Consumed the OpenClaw source-runtime risk-review ticket. Classified messaging/account/channel, gateway, browser/canvas/nodes/cron, host-tool, pairing/allowlist/sandbox, daemon, and onboarding surfaces as high-risk; allowed only generic original runtime-surface safety patterns; blocked command snippets, account setup, browser automation, cron execution, operational channel mutation, gateway setup, daemon/onboarding detail, implementation copy, normalization, catalog, package, npm, and publication. Vercel AI SDK normalization is now the next eligible ticket."
     }
   ]
 }
