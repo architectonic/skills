@@ -1,6 +1,6 @@
 {
   "date": "2026-07-07",
-  "current_state": "credential_access_phishing_lateral_redaction_catalog_refresh_queued",
+  "current_state": "credential_access_phishing_lateral_redaction_catalog_verification_queued",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
   "inspected_sha": "50015279a56cf1ee7c5f075ccf4703e48cfe0768",
@@ -22,14 +22,14 @@
     "catalog_skill_count": 1182,
     "agent_operations_count": 105,
     "security_defensive_count": 58,
-    "security_offensive_count": 12,
-    "high_risk_count": 9,
+    "security_offensive_count": 16,
+    "high_risk_count": 13,
     "medium_risk_count": 431,
-    "unspecified_risk_count": 733,
-    "uncategorized_domain_count": 571,
+    "unspecified_risk_count": 729,
+    "uncategorized_domain_count": 567,
     "requires_review_count": null,
-    "catalog_build_status": "stale_after_risk_redaction",
-    "publication_readiness": "blocked_by_catalog_refresh_after_high_risk_redaction"
+    "catalog_build_status": "catalog_changed_unverified_after_risk_redaction",
+    "publication_readiness": "blocked_by_catalog_verification_after_high_risk_redaction"
   },
   "queues": {
     "discovery": 0,
@@ -63,9 +63,11 @@
       "dist/skills/moving-laterally-with-netexec/SKILL.md",
       "reports/risk/2026-07-07-2213-credential-access-phishing-lateral-redaction.md",
       "operations/daily/2026-07-07/queues.json",
-      "operations/daily/2026-07-07/status.json"
+      "operations/daily/2026-07-07/status.json",
+      "dist/catalog.json",
+      "dist/catalog.md"
     ],
-    "catalog_package_npm_status": "No catalog/package surfaces were rebuilt in this Risk Auditor pass. dist/catalog.json, dist/catalog.md, and dist/install-manifest.json are stale after four dist/skills edits. No npm publish was performed.",
+    "catalog_package_npm_status": "dist/catalog.json and dist/catalog.md changed during the pass and now report 1182 skills, 16 security-offensive, 567 uncategorized, 13 high, 431 medium, and 729 unspecified. A Cataloger queue remains open because these generated surfaces still need role-owned verification against dist/install-manifest.json and the four redacted entries. No npm publish was performed.",
     "blockers": [
       "Open high-priority Cataloger queue item: catalog-refresh-after-credential-access-phishing-lateral-redaction-20260707.",
       "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
