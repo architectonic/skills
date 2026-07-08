@@ -2,7 +2,7 @@
   "date": "2026-07-08",
   "initialized_by": "Skills Loop Operator",
   "inspected_ref": "main",
-  "inspected_commit": "afb311029679a14644febdd72e6c65f2aebf3c15",
+  "inspected_commit": "9c8e254a440e6164e0ec77f634e145f70ce59572",
   "discovery": [],
   "review": [],
   "normalization": [],
@@ -24,6 +24,12 @@
           "by": "Skills Loop Operator",
           "batch": "foundry-smart-contract-catalog-blocker-verification",
           "result": "Cataloger verified the package-facing Foundry skill metadata is updated, but dist/catalog.json and dist/catalog.md are still stale: the entry remains under uncategorized and summary counts have not changed. Queue remains open until build:catalog regenerates the catalog surfaces."
+        },
+        {
+          "at": "2026-07-08T08:11:46-03:00",
+          "by": "Skills Loop Operator",
+          "batch": "catalog-builder-workflow-repair",
+          "result": "Cataloger added .github/workflows/build-catalog.yml as a deterministic repository-side producer for npm run build:catalog, with Foundry metadata validation and commit-only-if-changed behavior for dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Queue remains open until a later Cataloger pass verifies refreshed generated surfaces on the default branch."
         }
       ]
     }
