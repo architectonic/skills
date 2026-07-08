@@ -17,16 +17,16 @@
       "research": 85,
       "runtime-tools": 35,
       "security-defensive": 58,
-      "security-offensive": 14,
+      "security-offensive": 15,
       "software-engineering": 146,
-      "uncategorized": 569,
+      "uncategorized": 568,
       "writing": 16
     },
     "risk_counts": {
-      "high": 11,
+      "high": 12,
       "low": 9,
       "medium": 431,
-      "unspecified": 731
+      "unspecified": 730
     }
   },
   "domains": {
@@ -499,7 +499,8 @@
       "building-c2-redirector-infrastructure",
       "building-red-team-c2-infrastructure-with-havoc",
       "performing-credential-access-with-lazagne",
-      "performing-initial-access-with-evilginx3"
+      "performing-initial-access-with-evilginx3",
+      "performing-kerberoasting-attack"
     ],
     "software-engineering": [
       "API Design Reviewer — Linting, Breaking Change Detection, and Scorecards",
@@ -973,7 +974,6 @@
       "Performing IOC Enrichment Automation",
       "Performing IP Reputation Analysis with Shodan",
       "Performing Indicator Lifecycle Management",
-      "Performing Kerberoasting Attack",
       "Performing Kubernetes CIS Benchmark with kube-bench",
       "Performing Kubernetes Penetration Testing",
       "Performing Lateral Movement Detection",
@@ -22189,31 +22189,27 @@
       "type": "Playbook"
     },
     {
-      "slug": "Performing Kerberoasting Attack",
+      "slug": "performing-kerberoasting-attack",
       "title": "Performing Kerberoasting Attack",
-      "description": "Kerberoasting is a post-exploitation technique that targets service accounts",
+      "description": "Review-gated defensive assessment wrapper for Kerberoasting risk. Use only for authorized Active Directory security planning, detection mapping, evidence boundaries, and remediation.",
       "path": "dist/skills/performing-kerberoasting-attack/SKILL.md",
       "directory": "dist/skills/performing-kerberoasting-attack",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-offensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
         "agent-skill",
         "okf",
-        "red-team",
-        "adversary-simulation",
-        "mitre-attack",
-        "exploitation",
-        "post-exploitation",
         "kerberoasting",
         "active-directory",
         "credential-access",
-        "security"
+        "kerberos",
+        "identity-security",
+        "security",
+        "review-gated"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "anthropic-cybersecurity-skills",
+      "source_status": "blocked-pending-redaction",
       "type": "Playbook"
     },
     {
