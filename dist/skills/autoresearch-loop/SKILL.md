@@ -2,7 +2,12 @@
 name: Autoresearch Loop
 description: Autonomous iteration loop — modify, verify, keep/discard against any metric. Use when the user wants to iteratively improve code, hunt bugs, audit security, or optimize against a measurable goal without manual step-by-step guidance.
 tags: [loops, autonomous, iteration, optimization, debugging, security, evaluation]
+domain: agent-operations
+risk_level: medium
+requires_review: true
 source_license: Apache-2.0 with skill-specific notices
+source_status: distilled-reviewed
+review_note: Requires explicit human approval before push, publish, deploy, irreversible mutation, security testing outside authorized scope, or unbounded iteration.
 distilled_at: 2026-06-22
 type: Metric
 ---
