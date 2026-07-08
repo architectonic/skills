@@ -8,7 +8,7 @@
   "summary": {
     "skill_count": 1182,
     "domain_counts": {
-      "agent-operations": 105,
+      "agent-operations": 106,
       "business": 46,
       "cloud-security": 42,
       "design": 40,
@@ -19,14 +19,14 @@
       "security-defensive": 58,
       "security-offensive": 16,
       "software-engineering": 146,
-      "uncategorized": 567,
+      "uncategorized": 566,
       "writing": 16
     },
     "risk_counts": {
       "high": 13,
       "low": 9,
-      "medium": 431,
-      "unspecified": 729
+      "medium": 432,
+      "unspecified": 728
     }
   },
   "domains": {
@@ -73,6 +73,7 @@
       "Tool Use Guardrails",
       "Trace2Skill — Skill Evolution from Execution Trajectories",
       "agent-context-validation",
+      "agent-development",
       "agent-handoff",
       "agent-memory-system",
       "agent-operating-loop",
@@ -1062,7 +1063,6 @@
       "Testing for XSS Vulnerabilities with Burp Suite",
       "Validating Backup Integrity for Recovery",
       "Validating TPM Measured Boot and Attestation",
-      "agent-development",
       "ai-seo",
       "algorithmic-art",
       "anti-sycophancy",
@@ -1425,12 +1425,18 @@
       "description": "Create autonomous agent configurations for Claude Code plugins. Use when building subagents, designing agent frontmatter, writing system prompts, defining triggering conditions, or structuring agent files. Covers agent file format, description writing, tool restriction, model selection, and validation rules.",
       "path": "dist/skills/agent-development/SKILL.md",
       "directory": "dist/skills/agent-development",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
-      "tags": [],
-      "source_family": "",
-      "source_status": "",
+      "domain": "agent-operations",
+      "risk_level": "medium",
+      "requires_review": true,
+      "tags": [
+        "agent-operations",
+        "subagents",
+        "claude-code",
+        "plugin-development",
+        "okf"
+      ],
+      "source_family": "claude-code-plugin",
+      "source_status": "adapted",
       "type": "Playbook"
     },
     {
