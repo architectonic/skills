@@ -1,9 +1,9 @@
 {
   "date": "2026-07-08",
-  "current_state": "vector_embedding_catalog_blocker_closed_critic_metadata_backlog_open",
+  "current_state": "foundry_smart_contract_metadata_backfilled_catalog_refresh_open",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "4d692bae72e1d6235cf85127839fd6773a15dc4f",
+  "inspected_sha": "fb85140b3c09735027c74b38297385ae141a4d12",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -18,7 +18,7 @@
     "sources_reviewed": 0,
     "sources_blocked": 0,
     "normalized_entries_added": 0,
-    "skills_updated": 0,
+    "skills_updated": 1,
     "catalog_skill_count": 1182,
     "security_defensive_count": 59,
     "security_offensive_count": 16,
@@ -27,14 +27,14 @@
     "medium_risk_count": 432,
     "unspecified_risk_count": 727,
     "requires_review_count": null,
-    "catalog_build_status": "verified_after_vector_embedding_redaction",
-    "publication_readiness": "blocked_by_open_critic_metadata_backlog_and_missing_discovery_action_handoff"
+    "catalog_build_status": "stale_after_foundry_smart_contract_metadata_backfill",
+    "publication_readiness": "blocked_by_open_catalog_refresh_and_open_critic_metadata_backlog_and_missing_discovery_action_handoff"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 0,
+    "catalog": 1,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -42,36 +42,39 @@
     "critic": 1
   },
   "latest_run": {
-    "started_at": "2026-07-08T05:13:11-03:00",
-    "completed_at": "2026-07-08T05:13:11-03:00",
-    "scheduled_role": "Risk Auditor",
-    "selected_role": "Cataloger",
-    "override_reason": "The open catalog queue catalog-refresh-after-vector-embedding-redaction-20260708 was a package-health gate created by the prior dist/skills redaction; catalog verification overrides new Risk Auditor, Radar, Packager, Publisher, or Critic work until the package-facing surfaces agree.",
+    "started_at": "2026-07-08T06:11:12-03:00",
+    "completed_at": "2026-07-08T06:11:12-03:00",
+    "scheduled_role": "Packager",
+    "selected_role": "Critic",
+    "override_reason": "The 06 cadence selects Packager, but package/catalog surfaces were already verified and no packaging queue was open. The only concrete queue pressure was the carried-forward Critic metadata backlog, so a bounded metadata backfill was selected before any package/publication endorsement.",
     "inspected_ref": "main",
-    "inspected_sha": "4d692bae72e1d6235cf85127839fd6773a15dc4f",
+    "inspected_sha": "fb85140b3c09735027c74b38297385ae141a4d12",
     "missing_ledger_initialization_performed": false,
     "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch; no deterministic discovery Action handoff was available.",
     "online_searches_used": [],
-    "queue_item_consumed_or_created": "Closed catalog-refresh-after-vector-embedding-redaction-20260708; left metadata-backfill-uncategorized-and-unspecified-risk-20260707 open.",
+    "queue_item_consumed_or_created": "Advanced metadata-backfill-uncategorized-and-unspecified-risk-20260707 by one file; created catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708.",
     "sources_reviewed": [],
     "candidates_processed": 1,
     "files_changed": [
-      "reports/catalog/2026-07-08-0513-vector-embedding-catalog-verification.md",
+      "dist/skills/auditing-foundry-smart-contract-security/SKILL.md",
+      "reports/critic/2026-07-08-0611-foundry-smart-contract-metadata-backfill.md",
+      "operations/daily/2026-07-08/critic.md",
       "operations/daily/2026-07-08/queues.json",
-      "operations/daily/2026-07-08/status.json",
-      "operations/log.md"
+      "operations/daily/2026-07-08/status.json"
     ],
-    "catalog_package_npm_status": "Verified dist/catalog.json and dist/catalog.md agree at 1182 skills, 59 security-defensive, 16 security-offensive, 565 uncategorized, 14 high, 432 medium, and 727 unspecified. dist/install-manifest.json remains coherent. No npm publication was attempted.",
+    "catalog_package_npm_status": "No npm publication attempted. dist/catalog.json and dist/catalog.md are intentionally stale until Cataloger verifies/regenerates after the dist/skills metadata edit.",
     "blockers": [
+      "Open Cataloger queue: catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708.",
       "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
       "operations/action-runs/discover-skill-sources/latest.json remains absent, so deterministic discovery Action handoff is still missing."
     ],
-    "value_delta": "Removed the catalog/package blocker created by the vector/embedding redaction by verifying catalog and install surfaces and the high-risk review-gated package wrapper."
+    "value_delta": "Removed one package-facing uncategorized/unspecified-risk entry from the metadata backlog by adding explicit security-defensive domain, medium risk, review gate, source status, normalized name/title/description, and tags to the Foundry smart-contract audit skill."
   },
   "blockers": [
+    "Open Cataloger queue: catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708.",
     "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
     "operations/action-runs/discover-skill-sources/latest.json remains absent, so deterministic discovery Action handoff is still missing."
   ],
   "last_commit": "pending_final_commit",
-  "next_action": "Critic should continue metadata-backfill-uncategorized-and-unspecified-risk-20260707 unless a higher-priority risk, review, or catalog gate appears."
+  "next_action": "Cataloger should verify catalog/install surfaces for catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708 before further metadata backfill, packaging, or publication work."
 }
