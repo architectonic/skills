@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "repo": "architectonic/skills",
   "board_type": "repo_native_value_board",
-  "updated_at": "2026-07-08T13:30:00Z",
+  "updated_at": "2026-07-08T14:14:42-03:00",
   "purpose": "Force skills heartbeats to produce reviewed, installable, discoverable skill value instead of unbounded catalog/status churn.",
   "selection_rule": "Operators must consume the highest-priority ready ticket allowed by gates.md. High-risk package-facing review outranks manual discovery fallback; discovery restoration outranks routine metadata cleanup.",
   "definition_of_done": "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done.",
@@ -22,9 +22,7 @@
         "scripts/discover_skill_sources.py",
         "scripts/review_discovery_candidates.py"
       ],
-      "output_artifacts": [
-        "reports/discovery/2026-07-08-discovery-handoff-repair.md"
-      ],
+      "output_artifacts": ["reports/discovery/2026-07-08-discovery-handoff-repair.md"],
       "external_action_allowed": false,
       "required_connector": "GitHub/web only; no copying third-party content",
       "acceptance_tests": [
@@ -45,7 +43,7 @@
     },
     {
       "id": "skills-risk-review-mcp-tool-poisoning-001",
-      "status": "ready",
+      "status": "done",
       "priority": 1,
       "role": "Risk Auditor",
       "mission": "Review and safely wrap or redact the MCP tool-poisoning/SSRF skill so package-facing surfaces preserve defensive audit value without default executable probing detail.",
@@ -54,9 +52,7 @@
         "dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md",
         "operations/daily/2026-07-08/queues.json"
       ],
-      "output_artifacts": [
-        "reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md"
-      ],
+      "output_artifacts": ["reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md"],
       "external_action_allowed": false,
       "required_connector": null,
       "acceptance_tests": [
@@ -65,7 +61,12 @@
         "preserves defensive audit framing",
         "creates catalog-refresh ticket if package-facing metadata changed"
       ],
-      "supervisor_gate": "Routine metadata backlog and publication/package endorsement must remain blocked while this high-risk ticket is open.",
+      "acceptance_result": {
+        "passed": true,
+        "checked_at": "2026-07-08T14:14:42-03:00",
+        "evidence": "dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md now has risk_level high, requires_review true, authorization gate, and no package-facing default SSRF target list or executable probing snippets. reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md records the review."
+      },
+      "supervisor_gate": "Routine metadata backlog and publication/package endorsement must remain blocked while catalog parity after this risk review is unresolved.",
       "kill_condition": "If the skill cannot be made safe as a defensive wrapper, remove from installable catalog or mark non-publishable.",
       "next_ticket_on_success": "skills-catalog-refresh-after-risk-review-001",
       "next_ticket_on_failure": "skills-quarantine-mcp-tool-poisoning-001"
@@ -95,7 +96,7 @@
         "does not clone, execute, copy, import, normalize, publish, or package candidate content",
         "creates review-next, watch, skip, risk, or source-review queue state"
       ],
-      "supervisor_gate": "Manual fallback output is discovery metadata only and cannot be treated as normalized skill content. Run after the open high-risk package-facing review unless a human explicitly overrides.",
+      "supervisor_gate": "Manual fallback output is discovery metadata only and cannot be treated as normalized skill content. It is lower priority than catalog parity after the completed MCP/SSRF risk review.",
       "kill_condition": "If fewer than three real candidates can be found after explicit public searches, record exact searches and blockers; do not invent candidates.",
       "next_ticket_on_success": "skills-source-review-batch-001",
       "next_ticket_on_failure": "skills-action-handoff-producer-verification-001"
@@ -113,9 +114,7 @@
         "scripts/review_discovery_candidates.py",
         "operations/action-runs/discover-skill-sources/README.md"
       ],
-      "output_artifacts": [
-        "reports/discovery/2026-07-08-action-handoff-producer-verification.md"
-      ],
+      "output_artifacts": ["reports/discovery/2026-07-08-action-handoff-producer-verification.md"],
       "external_action_allowed": false,
       "required_connector": "GitHub Actions logs or safe local/CI execution surface",
       "acceptance_tests": [
@@ -131,19 +130,19 @@
     },
     {
       "id": "skills-catalog-refresh-after-risk-review-001",
-      "status": "blocked",
-      "priority": 4,
+      "status": "ready",
+      "priority": 1,
       "role": "Cataloger",
-      "mission": "Regenerate or verify catalog/install-manifest parity after risk or metadata changes.",
+      "mission": "Regenerate or verify catalog/install-manifest parity after MCP/SSRF risk-review metadata and body changes.",
       "value_type": "catalog_parity_repair",
       "input_artifacts": [
         "dist/catalog.json",
+        "dist/catalog.md",
         "dist/install-manifest.json",
-        "dist/catalog.md"
+        "dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md",
+        "reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md"
       ],
-      "output_artifacts": [
-        "reports/catalog/2026-07-08-risk-review-catalog-parity.md"
-      ],
+      "output_artifacts": ["reports/catalog/2026-07-08-risk-review-catalog-parity.md"],
       "external_action_allowed": false,
       "required_connector": null,
       "acceptance_tests": [
@@ -152,9 +151,9 @@
         "no npm publish attempted",
         "board next ticket is updated"
       ],
-      "supervisor_gate": "Publication remains blocked until catalog parity is verified.",
+      "supervisor_gate": "Publication remains blocked until catalog parity is verified after the risk-review change.",
       "kill_condition": "Block if generated surfaces cannot be updated via connector and require local script execution.",
-      "next_ticket_on_success": "skills-metadata-backfill-batch-001",
+      "next_ticket_on_success": "skills-manual-discovery-fallback-001",
       "next_ticket_on_failure": "skills-local-catalog-build-required-001"
     },
     {
@@ -164,13 +163,8 @@
       "role": "Critic",
       "mission": "Process one bounded batch from the uncategorized/unspecified-risk backlog, stopping immediately on any high-risk executable, credential, offensive, account, or external-mutation surface.",
       "value_type": "catalog_quality_improvement",
-      "input_artifacts": [
-        "dist/catalog.json",
-        "dist/skills/**"
-      ],
-      "output_artifacts": [
-        "reports/critic/2026-07-08-metadata-backfill-batch.md"
-      ],
+      "input_artifacts": ["dist/catalog.json", "dist/skills/**"],
+      "output_artifacts": ["reports/critic/2026-07-08-metadata-backfill-batch.md"],
       "external_action_allowed": false,
       "required_connector": null,
       "acceptance_tests": [
@@ -179,7 +173,7 @@
         "stops and creates risk ticket on unsafe material",
         "creates catalog refresh ticket after metadata changes"
       ],
-      "supervisor_gate": "Backlog cleanup is lower priority than discovery restoration and high-risk review.",
+      "supervisor_gate": "Backlog cleanup is lower priority than discovery restoration, high-risk review, and catalog parity after risk changes.",
       "kill_condition": "Stop if the batch becomes generic metadata churn with no package-facing value.",
       "next_ticket_on_success": "skills-catalog-refresh-after-risk-review-001",
       "next_ticket_on_failure": "skills-risk-review-generated-001"
