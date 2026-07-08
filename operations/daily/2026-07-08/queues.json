@@ -1,0 +1,49 @@
+{
+  "date": "2026-07-08",
+  "initialized_by": "Skills Loop Operator",
+  "inspected_ref": "main",
+  "inspected_commit": "ca1c7917cf5e9e920ad59f780a3ffe0504ada331",
+  "discovery": [],
+  "review": [],
+  "normalization": [],
+  "catalog": [],
+  "risk": [],
+  "packaging": [],
+  "publication": [],
+  "maintenance": [],
+  "critic": [
+    {
+      "id": "metadata-backfill-uncategorized-and-unspecified-risk-20260707",
+      "priority": 2,
+      "role": "Critic",
+      "target": "dist/skills/**",
+      "reason": "Catalog still has a large uncategorized-domain and unspecified-risk backlog under the current quality gate.",
+      "action": "Continue bounded metadata backfill batches after open risk and catalog refresh queues are resolved.",
+      "risk_level": "low",
+      "status": "open",
+      "created_by": "Fable 5 (Claude, external maintainer session)",
+      "created_at": "2026-07-07T00:00:00",
+      "carried_forward_by": "Skills Loop Operator",
+      "carried_forward_at": "2026-07-08T00:13:31-03:00",
+      "carried_forward_from": "operations/daily/2026-07-07/queues.json",
+      "progress": [
+        {"at":"2026-07-07T09:12:38-03:00","by":"Skills Loop Operator","batch":"identity-cloud-risk-redaction","result":"High-priority risk queue resolved; Cataloger refresh now blocks further package/publication endorsement."},
+        {"at":"2026-07-07T10:14:41-03:00","by":"Skills Loop Operator","batch":"identity-cloud-risk-redaction-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, and dist/install-manifest.json; Critic backlog is unblocked for the next bounded metadata batch."},
+        {"at":"2026-07-07T11:12:44-03:00","by":"Skills Loop Operator","batch":"threat-intel-detection-metadata-backfill","result":"Backfilled four package-facing threat-intelligence and detection skills with security-defensive, medium-risk, requires_review metadata; created Cataloger refresh queue before any package/publication endorsement."},
+        {"at":"2026-07-07T12:11:17-03:00","by":"Skills Loop Operator","batch":"threat-intel-detection-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, and dist/install-manifest.json; Critic backlog is unblocked for the next bounded metadata batch."},
+        {"at":"2026-07-07T13:11:04-03:00","by":"Skills Loop Operator","batch":"dpapi-risk-triage","result":"Stopped routine metadata backfill on a high-risk package-facing DPAPI credential-access skill and created risk queue risk-review-dpapi-credential-access-skill-20260707 before further package/publication endorsement."},
+        {"at":"2026-07-07T14:13:01-03:00","by":"Skills Loop Operator","batch":"dpapi-risk-redaction","result":"Resolved the high-risk DPAPI review by replacing default credential-access procedure detail with a defensive review-gated wrapper; Cataloger refresh now blocks further package/publication endorsement."},
+        {"at":"2026-07-07T15:14:25-03:00","by":"Skills Loop Operator","batch":"dpapi-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the package-facing DPAPI wrapper; Critic backlog is unblocked for the next bounded metadata batch."},
+        {"at":"2026-07-07T16:14:47-03:00","by":"Skills Loop Operator","batch":"c2-red-team-risk-triage","result":"Stopped routine metadata backfill on three uncategorized/unspecified-risk C2 and red-team infrastructure skills and created risk queue risk-review-c2-red-team-infrastructure-skills-20260707 before further package/publication endorsement."},
+        {"at":"2026-07-07T17:12:15-03:00","by":"Skills Loop Operator","batch":"c2-red-team-redaction","result":"Resolved the high-risk review by replacing three package-facing security entries with review-gated safety placeholders; Cataloger refresh now blocks further package/publication endorsement."},
+        {"at":"2026-07-07T18:12:29-03:00","by":"Skills Loop Operator","batch":"c2-red-team-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the three package-facing C2/red-team safety placeholders; Critic backlog is unblocked for the next bounded metadata batch."},
+        {"at":"2026-07-07T19:13:01-03:00","by":"Skills Loop Operator","batch":"agent-ops-cli-metadata-backfill","result":"Backfilled four package-facing agent-operations/security-defensive CLI and agent-instruction skills with explicit domain, medium risk, requires_review, and source status metadata; created Cataloger refresh queue catalog-refresh-after-metadata-backfill-agent-ops-cli-batch-20260707."},
+        {"at":"2026-07-07T20:14:54-03:00","by":"Skills Loop Operator","batch":"agent-ops-cli-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the four package-facing agent-ops/CLI metadata entries; Critic backlog is unblocked for the next bounded metadata batch."},
+        {"at":"2026-07-07T21:11:43-03:00","by":"Skills Loop Operator","batch":"credential-access-phishing-lateral-risk-triage","result":"Stopped routine metadata backfill on four high-risk package-facing credential-access, phishing/session-hijack, Kerberoasting, and lateral-movement entries; created risk queue risk-review-credential-access-phishing-lateral-movement-skills-20260707 before further package/publication endorsement."},
+        {"at":"2026-07-07T22:13:35-03:00","by":"Skills Loop Operator","batch":"credential-access-phishing-lateral-redaction","result":"Resolved the high-risk review by replacing four package-facing credential-access, AiTM phishing, Kerberoasting, and lateral-movement entries with review-gated defensive wrappers; Cataloger refresh now blocks further package/publication endorsement."},
+        {"at":"2026-07-07T23:12:27-03:00","by":"Skills Loop Operator","batch":"credential-access-phishing-lateral-catalog-verification","result":"Catalog queue closed after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the four package-facing credential-access/phishing/Kerberoasting/lateral-movement wrappers; Critic backlog is unblocked for the next bounded metadata batch."},
+        {"at":"2026-07-08T00:13:31-03:00","by":"Skills Loop Operator","batch":"daily-ledger-initialization","result":"Carried this unresolved queue item forward from 2026-07-07 during initialization-only Reporter pass. No discovery/review/normalization/package work was performed."}
+      ]
+    }
+  ]
+}
