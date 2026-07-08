@@ -11,23 +11,23 @@ status: active
 
 ## 2026-07-08
 
-- Ran board-driven Tool Builder for `skills-restore-discovery-handoff-001`.
+- Ran board-driven Risk Auditor for `skills-risk-review-mcp-tool-poisoning-001`.
 - Model requirement status: `model_setting_unverified`.
-- Inspected ref/SHA before content writes: `main` with first resulting artifact commit `8a223c7ace9b73a0102fcf5a54701b9ae5b86b74` after creating the discovery repair report.
+- Inspected ref/SHA before this ticket's first content write: `main` at `f3d8e7fed190f8da6471f427bf906b048d90cf4f`.
 - Confirmed today's daily ledger exists; no missing-ledger initialization was performed.
 - Confirmed `operations/action-runs/discover-skill-sources/latest.json` returned `404 Not Found` on the default branch during this run.
-- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, `operations/action-runs/discover-skill-sources/README.md`, `operations/scheduler-online-scout-contract.md`, `operations/manual-discovery-review-fallback.md`, `.github/workflows/discover-skill-sources.yml`, `scripts/discover_skill_sources.py`, `scripts/review_discovery_candidates.py`, today's status/queues, `operations/log.md`, `dist/catalog.json`, and `dist/install-manifest.json`.
-- Verified the producer workflow exists and is scheduled hourly at minute 23. It runs discovery, review, writes `operations/action-runs/discover-skill-sources/latest.json`, and commits discovery/review/candidate/handoff surfaces when changed.
-- Verified the discovery/review scripts are metadata-only by design: they do not copy third-party content, clone repositories, execute candidate code, or directly create skills.
-- Created `reports/discovery/2026-07-08-discovery-handoff-repair.md` documenting the connector-visible blocker: the handoff file is absent even though the producer workflow/scripts exist, so no successful producer commit containing the canonical handoff is visible on `main`.
-- Marked board ticket `skills-restore-discovery-handoff-001` done with acceptance evidence and queued `skills-manual-discovery-fallback-001` as the next discovery value ticket.
-- Added blocked ticket `skills-action-handoff-producer-verification-001` for future GitHub Actions/log or safe local/CI producer verification.
-- Updated `operations/value-ledger.json`, today's `queues.json`, today's `status.json`, and this log.
-- No third-party source was copied. No external repository was cloned, installed, imported, or executed. No generated catalog file was hand-edited. No npm publication was attempted.
-- Value delta: converted the missing discovery handoff from passive repeated blocker into an explicit board-controlled repair path with a metadata-only manual discovery fallback, while preserving package/risk gates.
-- Next justified action: Radar should consume `skills-manual-discovery-fallback-001` and produce metadata-only public candidate sources; Risk Auditor should still resolve `risk-review-mcp-tool-poisoning-ssrf-skill-20260708` before package/catalog endorsement.
+- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/install-manifest.json`, `dist/catalog.md`, `dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md`, and `reports/critic/2026-07-08-0912-mcp-tool-poisoning-ssrf-risk-triage.md`.
+- Updated `dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md` into a high-risk, `requires_review`, authorized-use defensive wrapper. Removed default executable MCP call snippets, explicit SSRF/internal/metadata/loopback/file target examples, and direct unauthenticated endpoint probe commands while preserving authorization scope, static metadata review, fingerprinting, SSRF design review, auth/exposure review, runtime guardrails, severity scoring, and remediation reporting.
+- Created `reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md`.
+- Marked board ticket `skills-risk-review-mcp-tool-poisoning-001` done with acceptance evidence and promoted `skills-catalog-refresh-after-risk-review-001` to ready.
+- Closed daily risk queue `risk-review-mcp-tool-poisoning-ssrf-skill-20260708` and opened daily catalog queue `catalog-refresh-after-mcp-ssrf-risk-review-20260708`.
+- Updated `operations/value-ledger.json`, today's `queues.json`, today's `status.json`, today's `report.md`, and this log.
+- Acceptance tests passed: risk level/requires_review classified; unsafe default executable SSRF/probing detail removed; defensive framing preserved; catalog-refresh ticket created because metadata/body changed.
+- No third-party source was copied. No repository was cloned. No code, MCP server, scanner, curl command, or endpoint probe was executed. No online search was used. No generated catalog surface was hand-edited. No npm publication was attempted.
+- Value delta: removed a package-facing high-risk blocker by converting an MCP/tool-poisoning and SSRF audit skill into a review-gated defensive wrapper instead of endorsing executable probing detail.
+- Next justified action: Cataloger should consume `skills-catalog-refresh-after-risk-review-001` and refresh or verify `dist/catalog.json`, `dist/catalog.md`, and `dist/install-manifest.json` before manual discovery fallback, metadata backlog cleanup, package endorsement, or publication.
 
-- Previous 2026-07-08 compacted entries retained in repository history before this log reconciliation. Key active state before this pass: `risk-review-mcp-tool-poisoning-ssrf-skill-20260708` was open; `metadata-backfill-uncategorized-and-unspecified-risk-20260707` remained open; `operations/action-runs/discover-skill-sources/latest.json` was absent.
+- Earlier 2026-07-08 state: discovery handoff repair ticket `skills-restore-discovery-handoff-001` was completed, manual discovery fallback was queued, Portfolio Supervisor repaired the board priority so high-risk MCP/SSRF review outranked manual discovery fallback, and metadata backlog `metadata-backfill-uncategorized-and-unspecified-risk-20260707` remained open.
 
 ## 2026-07-07
 
