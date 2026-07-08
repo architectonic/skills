@@ -6,34 +6,7 @@
   "discovery": [],
   "review": [],
   "normalization": [],
-  "catalog": [
-    {
-      "id": "catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708",
-      "priority": 1,
-      "role": "Cataloger",
-      "target": "dist/skills/auditing-foundry-smart-contract-security/SKILL.md",
-      "reason": "A package-facing dist/skills entry was changed by Critic metadata backfill; generated catalog and install surfaces must be regenerated or verified before package/publication endorsement.",
-      "action": "Run/verify catalog generation and confirm dist/catalog.json, dist/catalog.md, and dist/install-manifest.json reflect the updated Foundry smart-contract audit metadata.",
-      "risk_level": "medium",
-      "status": "open",
-      "created_by": "Skills Loop Operator",
-      "created_at": "2026-07-08T06:11:12-03:00",
-      "progress": [
-        {
-          "at": "2026-07-08T07:14:28-03:00",
-          "by": "Skills Loop Operator",
-          "batch": "foundry-smart-contract-catalog-blocker-verification",
-          "result": "Cataloger verified the package-facing Foundry skill metadata is updated, but dist/catalog.json and dist/catalog.md are still stale: the entry remains under uncategorized and summary counts have not changed. Queue remains open until build:catalog regenerates the catalog surfaces."
-        },
-        {
-          "at": "2026-07-08T08:11:46-03:00",
-          "by": "Skills Loop Operator",
-          "batch": "catalog-builder-workflow-repair",
-          "result": "Cataloger added .github/workflows/build-catalog.yml as a deterministic repository-side producer for npm run build:catalog, with Foundry metadata validation and commit-only-if-changed behavior for dist/catalog.json, dist/catalog.md, and dist/install-manifest.json. Queue remains open until a later Cataloger pass verifies refreshed generated surfaces on the default branch."
-        }
-      ]
-    }
-  ],
+  "catalog": [],
   "risk": [],
   "packaging": [],
   "publication": [],
@@ -75,7 +48,8 @@
         {"at":"2026-07-08T03:11:19-03:00","by":"Skills Loop Operator","batch":"vector-embedding-risk-triage","result":"Stopped routine metadata backfill on dist/skills/assessing-vector-and-embedding-weaknesses/SKILL.md and created risk queue risk-review-vector-embedding-weaknesses-skill-20260708 before classification, catalog endorsement, or package/publication endorsement."},
         {"at":"2026-07-08T04:12:31-03:00","by":"Skills Loop Operator","batch":"vector-embedding-risk-redaction","result":"Resolved vector/embedding risk queue by replacing default executable RAG data-exfiltration-adjacent procedures with a high-risk review-gated defensive wrapper; Cataloger refresh now blocks further package/publication endorsement."},
         {"at":"2026-07-08T05:13:11-03:00","by":"Skills Loop Operator","batch":"vector-embedding-catalog-verification","result":"Closed catalog-refresh-after-vector-embedding-redaction-20260708 after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the high-risk review-gated vector/embedding package wrapper; Critic backlog is unblocked for the next bounded metadata batch."},
-        {"at":"2026-07-08T06:11:12-03:00","by":"Skills Loop Operator","batch":"foundry-smart-contract-metadata-backfill","result":"Backfilled dist/skills/auditing-foundry-smart-contract-security/SKILL.md with security-defensive, medium-risk, requires_review, source status, normalized name/title/description/tags; created Cataloger queue catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708 before package/publication endorsement."}
+        {"at":"2026-07-08T06:11:12-03:00","by":"Skills Loop Operator","batch":"foundry-smart-contract-metadata-backfill","result":"Backfilled dist/skills/auditing-foundry-smart-contract-security/SKILL.md with security-defensive, medium-risk, requires_review, source status, normalized name/title/description/tags; created Cataloger queue catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708 before package/publication endorsement."},
+        {"at":"2026-07-08T08:11:46-03:00","by":"Skills Loop Operator","batch":"foundry-smart-contract-catalog-verification-after-workflow-repair","result":"Closed catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708 after adding the catalog build workflow and directly verifying dist/catalog.json, dist/catalog.md, and dist/install-manifest.json reflect the Foundry metadata on main."}
       ]
     }
   ]
