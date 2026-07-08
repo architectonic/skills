@@ -1,0 +1,135 @@
+{
+  "schema_version": "0.1",
+  "date": "2026-07-08",
+  "ticket": "skills-source-review-batch-001",
+  "role": "Source Reviewer",
+  "inspected_ref": "main",
+  "inspected_sha": "7cc1606cb14137314ab354d83769f62fe709875a",
+  "observed_at_utc": "2026-07-08T18:40:00Z",
+  "mode": "metadata_license_risk_review_only",
+  "boundaries": [
+    "no repository cloned",
+    "no candidate code executed",
+    "no third-party implementation content copied",
+    "no skill normalized",
+    "no catalog/package/publication action attempted",
+    "candidate repository reads limited to public metadata, README/license excerpts, and repository metadata"
+  ],
+  "sources_reviewed": [
+    "reports/discovery/2026-07-08-manual.md",
+    "reports/discovery/2026-07-08-manual.json",
+    "sources/candidates/2026-07-08-manual.json",
+    "modelcontextprotocol/servers README.md",
+    "modelcontextprotocol/servers LICENSE",
+    "vercel/ai packages/ai/README.md",
+    "vercel/ai LICENSE",
+    "QuantaAlpha/GitTaskBench README.md",
+    "QuantaAlpha/GitTaskBench LICENSE fetch result: 404 Not Found",
+    "openclaw/openclaw README.md",
+    "openclaw/openclaw LICENSE"
+  ],
+  "reviews": [
+    {
+      "name": "modelcontextprotocol/servers",
+      "decision": "source_profile_created_review_gated",
+      "license_status": "usable_with_attribution_and_license_tracking",
+      "license_evidence": "LICENSE states the project is transitioning from MIT to Apache-2.0, with documentation contributions excluding specifications under CC-BY-4.0.",
+      "usefulness": "high",
+      "risk_level": "medium",
+      "runtime_security_surface": [
+        "MCP server execution patterns",
+        "filesystem, git, fetch, memory, and tool/data access reference patterns",
+        "explicit non-production/reference warning and threat-model requirement"
+      ],
+      "redistribution_boundary": "Metadata/source-profile review only. Do not copy server code or executable snippets into package-facing skills. Any future normalization should extract boundary patterns and safety heuristics, not implementation content.",
+      "created_artifacts": [
+        "sources/profiles/2026-07-08/modelcontextprotocol-servers.json"
+      ],
+      "next_action": "eligible_for_bounded_metadata_or_safety-pattern_normalization_after separate normalization ticket"
+    },
+    {
+      "name": "vercel/ai",
+      "decision": "source_profile_created_review_gated",
+      "license_status": "usable_with_attribution_and_license_tracking",
+      "license_evidence": "LICENSE is Apache-2.0. packages/ai/README.md describes the package as a provider-agnostic TypeScript toolkit for AI-powered applications and agents.",
+      "usefulness": "high",
+      "risk_level": "medium",
+      "runtime_security_surface": [
+        "provider abstraction and gateway usage",
+        "tool-loop agents",
+        "local shell and sandbox examples",
+        "package-facing coding-agent skill entrypoint"
+      ],
+      "redistribution_boundary": "Source profile only in this pass. Do not copy examples, prompts, or implementation code. Future normalization may write original guidance about provider abstraction and sandbox/tool safety with attribution.",
+      "created_artifacts": [
+        "sources/profiles/2026-07-08/vercel-ai.json"
+      ],
+      "next_action": "eligible_for_bounded_original_normalization_ticket_if prioritized"
+    },
+    {
+      "name": "QuantaAlpha/GitTaskBench",
+      "decision": "watch_note_created_license_blocked",
+      "license_status": "blocked_unknown_license",
+      "license_evidence": "LICENSE fetch returned 404 on the default branch. README states a repo-level benchmark/tooling suite and lists benchmark data, task definitions, repositories, ground truth, test scripts, and reports.",
+      "usefulness": "medium",
+      "risk_level": "medium",
+      "runtime_security_surface": [
+        "benchmark harness and evaluation scripts",
+        "bundled task repositories and ground-truth/evaluation assets",
+        "agent framework integrations"
+      ],
+      "redistribution_boundary": "Do not normalize, package, copy, or derive dataset/task content until a license/redistribution boundary is directly verified.",
+      "created_artifacts": [
+        "sources/watch/2026-07-08-gittaskbench-license-blocked.json"
+      ],
+      "next_action": "watch_only_until_license_verified"
+    },
+    {
+      "name": "openclaw/openclaw",
+      "decision": "source_profile_created_high_risk_review_required",
+      "license_status": "usable_with_attribution_and_license_tracking",
+      "license_evidence": "LICENSE is MIT and records third-party notices separately. README describes real messaging channels, local-first gateway, multi-agent routing, tools, cron, browser/canvas/nodes, pairing defaults, and sandbox defaults.",
+      "usefulness": "high",
+      "risk_level": "high",
+      "runtime_security_surface": [
+        "real messaging/account/channel integrations",
+        "browser/canvas/nodes/cron tools",
+        "gateway exposure and remote access surfaces",
+        "host tool access in main session",
+        "sandbox and allowlist policy configuration"
+      ],
+      "redistribution_boundary": "Source profile only. No normalization or package-facing endorsement until a dedicated high-risk source review decides which safety patterns can be abstracted without operational account/browser/cron mutation detail.",
+      "created_artifacts": [
+        "sources/profiles/2026-07-08/openclaw-openclaw.json"
+      ],
+      "next_action": "high_risk_source_review_before_any_normalization"
+    }
+  ],
+  "queues_created": [
+    "risk-review-openclaw-source-runtime-surfaces-20260708",
+    "normalize-vercel-ai-sdk-source-profile-20260708"
+  ],
+  "acceptance_tests": [
+    {
+      "test": "verifies license/redistribution boundary for each review_next candidate",
+      "result": "pass",
+      "evidence": "modelcontextprotocol/servers, vercel/ai, and openclaw/openclaw license files were directly fetched; GitTaskBench LICENSE fetch returned 404 and was left watch/license-blocked."
+    },
+    {
+      "test": "classifies safety/runtime surface, including OpenClaw high-risk messaging/browser/cron/account surfaces",
+      "result": "pass",
+      "evidence": "OpenClaw was classified high risk due to real messaging/account/channel integrations, browser/canvas/nodes/cron tools, gateway exposure, host tool access, and sandbox policy surfaces."
+    },
+    {
+      "test": "creates source profiles, skip/watch notes, risk items, or normalization queues only when justified",
+      "result": "pass",
+      "evidence": "Created source profiles for three license-resolved candidates, one watch note for license-blocked GitTaskBench, one high-risk OpenClaw review queue, and one bounded Vercel AI SDK normalization queue."
+    },
+    {
+      "test": "does not copy third-party content, clone repositories, execute code, publish, or package candidates",
+      "result": "pass",
+      "evidence": "No repositories were cloned; no candidate code was executed; no third-party implementation content was copied; no skill, catalog, package, npm, or publication action occurred."
+    }
+  ],
+  "value_delta": "Converted metadata-only discovery candidates into reviewed source profiles, a license-blocked watch note, a high-risk OpenClaw review gate, and one bounded low-risk normalization path without copying or executing third-party content."
+}
