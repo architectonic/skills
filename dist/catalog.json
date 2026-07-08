@@ -17,16 +17,16 @@
       "research": 85,
       "runtime-tools": 35,
       "security-defensive": 58,
-      "security-offensive": 12,
+      "security-offensive": 13,
       "software-engineering": 146,
-      "uncategorized": 571,
+      "uncategorized": 570,
       "writing": 16
     },
     "risk_counts": {
-      "high": 9,
+      "high": 10,
       "low": 9,
       "medium": 431,
-      "unspecified": 733
+      "unspecified": 732
     }
   },
   "domains": {
@@ -497,7 +497,8 @@
       "auditing-entra-id-with-aadinternals",
       "building-c2-infrastructure-with-sliver-framework",
       "building-c2-redirector-infrastructure",
-      "building-red-team-c2-infrastructure-with-havoc"
+      "building-red-team-c2-infrastructure-with-havoc",
+      "performing-credential-access-with-lazagne"
     ],
     "software-engineering": [
       "API Design Reviewer — Linting, Breaking Change Detection, and Scorecards",
@@ -959,7 +960,6 @@
       "Performing CVE Prioritization with KEV Catalog",
       "Performing Container Security Scanning with Trivy",
       "Performing Content Security Policy Bypass",
-      "Performing Credential Access with LaZagne",
       "Performing DMARC Policy Enforcement Rollout",
       "Performing Dark Web Monitoring for Threats",
       "Performing Deception Technology Deployment",
@@ -21326,30 +21326,27 @@
       "type": "Playbook"
     },
     {
-      "slug": "Performing Credential Access with LaZagne",
+      "slug": "performing-credential-access-with-lazagne",
       "title": "Performing Credential Access with LaZagne",
-      "description": "Extract stored credentials from compromised endpoints using the LaZagne",
+      "description": "Review-gated defensive assessment wrapper for LaZagne credential-access risk. Use only for authorized security planning, evidence boundaries, detection mapping, and remediation.",
       "path": "dist/skills/performing-credential-access-with-lazagne/SKILL.md",
       "directory": "dist/skills/performing-credential-access-with-lazagne",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-offensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
         "agent-skill",
         "okf",
-        "red-team",
-        "credential-access",
         "lazagne",
-        "post-exploitation",
-        "password-recovery",
-        "credential-dumping",
-        "lateral-movement",
-        "security"
+        "credential-access",
+        "password-stores",
+        "endpoint-security",
+        "incident-response",
+        "security",
+        "review-gated"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "anthropic-cybersecurity-skills",
+      "source_status": "blocked-pending-redaction",
       "type": "Playbook"
     },
     {
