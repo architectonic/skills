@@ -1,9 +1,9 @@
 {
   "date": "2026-07-08",
-  "current_state": "openclaw_runtime_risk_review_done_vercel_ai_normalization_next",
+  "current_state": "vercel_ai_sdk_normalization_done_catalog_parity_next",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "5c9593ee6fc2e2c9542f610fbf74605fd2eb460c",
+  "inspected_sha": "89590689366ba99b4cb8827063183b6df3d6067c",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -20,24 +20,25 @@
     "source_profiles_added": 3,
     "watch_notes_added": 1,
     "risk_reviews_completed_today": 2,
-    "normalized_entries_added": 0,
-    "skills_updated": 0,
-    "catalog_skill_count": 1182,
+    "normalized_entries_added": 1,
+    "skills_updated": 1,
+    "catalog_skill_count": 1183,
     "security_defensive_count": 61,
     "security_offensive_count": 16,
+    "software_engineering_count": 147,
     "uncategorized_count": 563,
     "high_risk_count": 15,
-    "medium_risk_count": 433,
+    "medium_risk_count": 434,
     "unspecified_risk_count": 725,
     "requires_review_count": null,
-    "catalog_build_status": "unchanged_no_dist_skill_or_catalog_edit_this_pass",
-    "publication_readiness": "blocked_by_open_vercel_ai_normalization_open_metadata_backlog_and_absent_discovery_action_handoff"
+    "catalog_build_status": "catalog_surfaces_observed_updated_to_1183_after_new_skill_but_dedicated_catalog_parity_report_still_required",
+    "publication_readiness": "blocked_by_open_catalog_parity_after_ai_sdk_normalization_open_metadata_backlog_and_absent_discovery_action_handoff"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
-    "normalization": 1,
-    "catalog": 0,
+    "normalization": 0,
+    "catalog": 1,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -45,17 +46,17 @@
     "critic": 1
   },
   "latest_run": {
-    "started_at": "2026-07-08T18:12:00-03:00",
-    "completed_at": "2026-07-08T18:12:00-03:00",
+    "started_at": "2026-07-08T16:12:59-03:00",
+    "completed_at": "2026-07-08T16:12:59-03:00",
     "scheduled_role": "Skills Value Operator",
-    "selected_role": "Risk Auditor",
-    "board_ticket_consumed": "skills-risk-review-openclaw-source-runtime-surfaces-001",
+    "selected_role": "Normalizer",
+    "board_ticket_consumed": "skills-normalize-vercel-ai-sdk-profile-001",
     "override_reason": null,
     "inspected_ref": "main",
-    "inspected_sha": "5c9593ee6fc2e2c9542f610fbf74605fd2eb460c",
+    "inspected_sha": "89590689366ba99b4cb8827063183b6df3d6067c",
     "missing_ledger_initialization_performed": false,
-    "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent from the default branch; manual fallback and source review artifacts exist.",
-    "queue_item_consumed_or_created": "Closed risk-review-openclaw-source-runtime-surfaces-20260708; reprioritized normalize-vercel-ai-sdk-source-profile-20260708 as the next eligible queue.",
+    "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent from the default branch; manual fallback, source review, and Vercel AI SDK normalization artifacts now exist.",
+    "queue_item_consumed_or_created": "Closed normalize-vercel-ai-sdk-source-profile-20260708 and opened catalog-refresh-after-vercel-ai-sdk-normalization-20260708 / skills-catalog-refresh-after-normalization-001.",
     "sources_reviewed": [
       "operations/heartbeat.md",
       "operations/board.json",
@@ -68,12 +69,13 @@
       "dist/catalog.json",
       "dist/catalog.md",
       "dist/install-manifest.json",
-      "reports/review/2026-07-08-manual-source-review.md",
-      "sources/profiles/2026-07-08/openclaw-openclaw.json"
+      "sources/profiles/2026-07-08/vercel-ai.json",
+      "reports/review/2026-07-08-manual-source-review.md"
     ],
     "candidates_processed": 1,
     "files_changed": [
-      "reports/risk/2026-07-08-openclaw-source-runtime-surfaces-risk-review.md",
+      "dist/skills/ai-sdk-provider-tool-safety/SKILL.md",
+      "reports/normalization/2026-07-08-vercel-ai-sdk-profile-normalization.md",
       "operations/board.json",
       "operations/daily/2026-07-08/queues.json",
       "operations/value-ledger.json",
@@ -82,38 +84,39 @@
       "operations/log.md"
     ],
     "commit_shas": {
-      "openclaw_risk_report": "b63c1b909f36d2a74b18bc7520bc2c8e962bd6c3",
-      "board": "a53b5ad15c3be44b80d27087e800d39d5d8f4d44",
-      "queues": "aa54f62ac8f0aa638cfce7a44d547e8a0a25142d",
-      "value_ledger": "7a31be8fda92904f44a90cf1f09907f31e4b8710",
-      "daily_report": "62dddaa3ab5b4efbe712c7f8e8d3ab5ab923193b",
-      "status_initial_update": "9df9e649677b7f05c3b2ff5887c314c944a89ca2",
-      "log": "7755c3a87149122dd18362a92722f50d4d2a10d4",
-      "status_final": "pending_final_connector_response"
+      "ai_sdk_skill": "c8fd9806f71f67ef20a94a020bc66f1f395704b3",
+      "normalization_report": "450eb46b850f516cbd68863e7aa242b4fe0d0fa4",
+      "board": "2076ced24311f55ae636722643cd3657dbae9d3f",
+      "queues": "e383ccb35b6221829c8c51e9806dd57685b3e714",
+      "value_ledger": "154e3dd88e75df520d304eb14c20d3a3caec60d3",
+      "daily_report": "53d8e0ac390eebaad9bf75d09ce6460d7ff7052e",
+      "status_final": "pending_final_connector_response",
+      "log": "pending_next_write"
     },
     "acceptance_tests": [
-      {"test": "classifies account/browser/cron/gateway/host-tool risk surfaces", "result": "pass", "evidence": "All OpenClaw messaging/account/channel, gateway, browser/canvas/nodes/cron, host-tool, pairing, sandbox, daemon, and onboarding surfaces remain high-risk."},
-      {"test": "defines allowed abstraction boundaries for any future OpenClaw-derived skill", "result": "pass", "evidence": "Allowed boundary is limited to generic, original, source-attributed review/checklist patterns."},
-      {"test": "blocks command snippets, account setup, browser automation, cron execution, and operational channel mutation detail unless explicitly safe", "result": "pass", "evidence": "Commands, setup flows, browser/cron/gateway/account/channel operational detail, daemon/onboarding detail, and implementation content are explicitly blocked."},
-      {"test": "updates board and queues with either normalization, watch, or quarantine state", "result": "pass", "evidence": "OpenClaw risk queue closed; OpenClaw remains source-profile/watch-only for now; Vercel AI SDK normalization is next eligible."}
+      {"test": "writes original content only", "result": "pass", "evidence": "dist/skills/ai-sdk-provider-tool-safety/SKILL.md contains original boundary/checklist guidance and no copied source examples, prompts, code, or implementation content."},
+      {"test": "attributes Vercel AI SDK as source metadata", "result": "pass", "evidence": "Skill frontmatter records source_profile sources/profiles/2026-07-08/vercel-ai.json and source_attribution for vercel/ai, Apache-2.0."},
+      {"test": "does not copy README examples, code snippets, prompts, or implementation", "result": "pass", "evidence": "No third-party examples or implementation snippets were copied; no repository clone or code execution occurred."},
+      {"test": "classifies risk and requires_review based on tool/sandbox surface", "result": "pass", "evidence": "Skill frontmatter sets risk_level medium and requires_review true; body defines provider/tool/sandbox/UI/approval/failure gates."},
+      {"test": "creates catalog parity queue if dist skill content changes", "result": "pass", "evidence": "Added skills-catalog-refresh-after-normalization-001 and catalog-refresh-after-vercel-ai-sdk-normalization-20260708 as the next gate."}
     ],
-    "catalog_package_npm_status": "Catalog/install-manifest unchanged. No generated catalog surface was hand-edited. No npm publication attempted. Package/publication endorsement remains blocked until normalization/catalog parity, discovery Action, and backlog gates are clean.",
+    "catalog_package_npm_status": "A new dist skill was added. Catalog surfaces are observed at skill_count 1183 / software-engineering 147 / medium 434, but a dedicated catalog parity report is still required before package/publication endorsement. No npm publication attempted.",
     "blockers": [
+      "Catalog parity after AI SDK normalization is open and next: catalog-refresh-after-vercel-ai-sdk-normalization-20260708 / skills-catalog-refresh-after-normalization-001.",
       "Discovery Action handoff remains absent; manual fallback and source review artifacts exist but producer verification remains blocked.",
-      "Vercel AI SDK normalization queue is open and next: normalize-vercel-ai-sdk-source-profile-20260708 / skills-normalize-vercel-ai-sdk-profile-001.",
       "GitTaskBench remains watch/license-blocked because LICENSE returned 404 during source review.",
       "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
-      "Package/publication endorsement remains blocked until normalization/catalog parity, discovery Action, and backlog gates are clean."
+      "Package/publication endorsement remains blocked until catalog parity, discovery Action, and backlog gates are clean."
     ],
-    "value_delta": "Resolved the OpenClaw high-risk source-runtime blocker without normalizing or operationalizing OpenClaw. Safe future use is restricted to generic original runtime-surface safety patterns, and operational commands/setup/browser/cron/gateway/account/channel/daemon details remain blocked."
+    "value_delta": "Converted the reviewed Vercel AI SDK source profile into one original, medium-risk, requires_review package-facing skill for provider abstraction and tool/sandbox safety. This adds normalized skill value while preserving no-copy/no-execute boundaries and creating the required catalog parity gate."
   },
   "blockers": [
+    "Catalog parity after AI SDK normalization is open and next: catalog-refresh-after-vercel-ai-sdk-normalization-20260708 / skills-catalog-refresh-after-normalization-001.",
     "Discovery Action handoff remains absent; manual fallback and source review artifacts exist but producer verification remains blocked.",
-    "Vercel AI SDK normalization queue is open and next: normalize-vercel-ai-sdk-source-profile-20260708 / skills-normalize-vercel-ai-sdk-profile-001.",
     "GitTaskBench remains watch/license-blocked because LICENSE returned 404 during source review.",
     "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
-    "Package/publication endorsement remains blocked until normalization/catalog parity, discovery Action, and backlog gates are clean."
+    "Package/publication endorsement remains blocked until catalog parity, discovery Action, and backlog gates are clean."
   ],
-  "last_commit": "7755c3a87149122dd18362a92722f50d4d2a10d4",
-  "next_action": "Normalizer should consume skills-normalize-vercel-ai-sdk-profile-001 / normalize-vercel-ai-sdk-source-profile-20260708 and create only original provider/tool/sandbox guidance from the reviewed Vercel AI SDK source profile without copying examples or implementation content."
+  "last_commit": "pending_final_connector_response",
+  "next_action": "Cataloger should consume skills-catalog-refresh-after-normalization-001 / catalog-refresh-after-vercel-ai-sdk-normalization-20260708 and verify or refresh dist/catalog.json, dist/catalog.md, and dist/install-manifest.json after the new AI SDK Provider Tool Safety skill."
 }
