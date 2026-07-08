@@ -1,9 +1,9 @@
 {
   "date": "2026-07-08",
-  "current_state": "manual_discovery_fallback_done_source_review_next",
+  "current_state": "manual_source_review_done_openclaw_risk_review_next",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "661d73a66b302fa30988d84b83d993ff873429c5",
+  "inspected_sha": "7cc1606cb14137314ab354d83769f62fe709875a",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -15,8 +15,10 @@
   },
   "metrics": {
     "candidate_sources_discovered": 4,
-    "sources_reviewed": 0,
-    "sources_blocked": 0,
+    "sources_reviewed": 4,
+    "sources_blocked": 1,
+    "source_profiles_added": 3,
+    "watch_notes_added": 1,
     "normalized_entries_added": 0,
     "skills_updated": 0,
     "catalog_skill_count": 1182,
@@ -27,32 +29,32 @@
     "medium_risk_count": 433,
     "unspecified_risk_count": 725,
     "requires_review_count": null,
-    "catalog_build_status": "unchanged_after_manual_discovery_metadata_only",
-    "publication_readiness": "blocked_by_open_source_review_open_metadata_backlog_and_absent_discovery_action_handoff"
+    "catalog_build_status": "unchanged_after_source_review_metadata_only",
+    "publication_readiness": "blocked_by_open_openclaw_high_risk_source_review_open_normalization_queue_open_metadata_backlog_and_absent_discovery_action_handoff"
   },
   "queues": {
     "discovery": 0,
-    "review": 1,
-    "normalization": 0,
+    "review": 0,
+    "normalization": 1,
     "catalog": 0,
-    "risk": 0,
+    "risk": 1,
     "packaging": 0,
     "publication": 0,
     "maintenance": 0,
     "critic": 1
   },
   "latest_run": {
-    "started_at": "2026-07-08T18:20:00Z",
-    "completed_at": "2026-07-08T18:20:00Z",
+    "started_at": "2026-07-08T18:40:00Z",
+    "completed_at": "2026-07-08T18:40:00Z",
     "scheduled_role": "Skills Value Operator",
-    "selected_role": "Radar",
-    "board_ticket_consumed": "skills-manual-discovery-fallback-001",
+    "selected_role": "Source Reviewer",
+    "board_ticket_consumed": "skills-source-review-batch-001",
     "override_reason": null,
     "inspected_ref": "main",
-    "inspected_sha": "661d73a66b302fa30988d84b83d993ff873429c5",
+    "inspected_sha": "7cc1606cb14137314ab354d83769f62fe709875a",
     "missing_ledger_initialization_performed": false,
-    "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent from the default branch; manual fallback produced metadata-only discovery artifacts.",
-    "queue_item_consumed_or_created": "Closed manual-discovery-fallback-20260708 and opened source-review-manual-discovery-20260708.",
+    "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent from the default branch; manual fallback and source review have produced durable metadata artifacts.",
+    "queue_item_consumed_or_created": "Closed source-review-manual-discovery-20260708; opened risk-review-openclaw-source-runtime-surfaces-20260708 and normalize-vercel-ai-sdk-source-profile-20260708.",
     "sources_reviewed": [
       "operations/heartbeat.md",
       "operations/board.json",
@@ -64,75 +66,88 @@
       "operations/log.md",
       "dist/catalog.json",
       "dist/install-manifest.json",
-      "operations/scheduler-online-scout-contract.md",
-      "operations/manual-discovery-review-fallback.md",
-      "reports/discovery/2026-07-08-discovery-handoff-repair.md",
-      "public metadata: https://github.com/modelcontextprotocol/servers",
-      "public metadata: https://github.com/vercel/ai",
-      "public metadata: https://github.com/QuantaAlpha/GitTaskBench",
-      "public metadata: https://github.com/openclaw/openclaw"
-    ],
-    "candidates_processed": 4,
-    "files_changed": [
       "reports/discovery/2026-07-08-manual.md",
       "reports/discovery/2026-07-08-manual.json",
       "sources/candidates/2026-07-08-manual.json",
+      "modelcontextprotocol/servers README.md",
+      "modelcontextprotocol/servers LICENSE",
+      "vercel/ai packages/ai/README.md",
+      "vercel/ai LICENSE",
+      "QuantaAlpha/GitTaskBench README.md",
+      "QuantaAlpha/GitTaskBench LICENSE fetch result: 404 Not Found",
+      "openclaw/openclaw README.md",
+      "openclaw/openclaw LICENSE"
+    ],
+    "candidates_processed": 4,
+    "files_changed": [
+      "reports/review/2026-07-08-manual-source-review.md",
+      "reports/review/2026-07-08-manual-source-review.json",
+      "sources/profiles/2026-07-08/modelcontextprotocol-servers.json",
+      "sources/profiles/2026-07-08/vercel-ai.json",
+      "sources/profiles/2026-07-08/openclaw-openclaw.json",
+      "sources/watch/2026-07-08-gittaskbench-license-blocked.json",
       "operations/board.json",
       "operations/daily/2026-07-08/queues.json",
       "operations/value-ledger.json",
-      "operations/daily/2026-07-08/report.md",
       "operations/daily/2026-07-08/status.json",
+      "operations/daily/2026-07-08/report.md",
       "operations/log.md"
     ],
     "commit_shas": {
-      "manual_discovery_json_report": "f257d9148d20b651a8b65d8300e80b447d6ce6f7",
-      "manual_source_candidates_json": "88d21b4df12f67ab576fd7465a70caea07a1cee8",
-      "manual_discovery_markdown_report": "45f6a7a8a2fb180378245d2e27a7086aa604ef6c",
-      "board": "a20ad6dcc87014030853fe1cb84ea3e4bde83479",
-      "queues": "7b4a062d978d670e40cfd46769cbe08d0aed432d",
-      "value_ledger": "8eb258b135e3a301ead60a66ad52d7919a9b8c29",
-      "daily_report": "5d9d2089d7fc34342d6b970f7db19dccf099b864",
-      "status_initial_update": "5344c5c530f8fd706a881c7c6178b27898f0a80c",
-      "log": "240c092ee115ecee6f23f700b3c50bc853bcd0d5",
-      "status_final": "pending_final_connector_response"
+      "source_review_json": "742ba8c7f3aeda714568380b1a4d9a24d8045a03",
+      "source_review_markdown": "2fc980c5f181edda99fc0aad99b1e528f99d7d32",
+      "mcp_source_profile": "32257a4e1b962884aa11195e2f80e01fa5f5f6af",
+      "vercel_ai_source_profile": "bb6d9fa9a19e9910a5efc31ec1d29ce9d5cab885",
+      "openclaw_source_profile": "1d37fc707a0f50b0c0b69ac09e8e23b816ea3f33",
+      "gittaskbench_watch_note": "77a122fe4ab62c10b8aaa32134c20ff6527792a5",
+      "board": "37df668bec4549fb0503b34c48afe5da1889f589",
+      "queues": "928cf365054b2e6416a2e8a4ac754299959d588e",
+      "value_ledger": "1e41f9605206c52371c93b9e4281caa39b5571de",
+      "status_initial_update": "pending_final_connector_response",
+      "daily_report": "pending_next_write",
+      "log": "pending_next_write"
     },
     "acceptance_tests": [
       {
-        "test": "records at least three real public candidate sources or exact searches/blockers",
+        "test": "verifies license/redistribution boundary for each review_next candidate",
         "result": "pass",
-        "evidence": "Four real public candidates were recorded: modelcontextprotocol/servers, vercel/ai, QuantaAlpha/GitTaskBench, and openclaw/openclaw. Noisy/no-result Matt Pocock /teach searches were recorded rather than invented."
+        "evidence": "modelcontextprotocol/servers, vercel/ai, and openclaw/openclaw license files were directly fetched; GitTaskBench LICENSE returned 404 and was left watch/license-blocked."
       },
       {
-        "test": "classifies each candidate as review_next, watch, or skip_or_low_priority",
+        "test": "classifies safety/runtime surface, including OpenClaw high-risk messaging/browser/cron/account surfaces",
         "result": "pass",
-        "evidence": "modelcontextprotocol/servers, vercel/ai, and openclaw/openclaw are review_next; QuantaAlpha/GitTaskBench is watch."
+        "evidence": "OpenClaw was classified high risk due to real messaging/account/channel integrations, browser/canvas/nodes/cron tools, gateway exposure, host tool access, daemon/onboarding flow, and sandbox policy surfaces."
       },
       {
-        "test": "does not clone, execute, copy, import, normalize, publish, or package candidate content",
+        "test": "creates source profiles, skip/watch notes, risk items, or normalization queues only when justified",
         "result": "pass",
-        "evidence": "Only metadata-only artifacts were written; no candidate code or content was copied, cloned, executed, imported, normalized, packaged, or published."
+        "evidence": "Created source profiles for MCP servers, Vercel AI SDK, and OpenClaw; created a GitTaskBench license-blocked watch note; opened OpenClaw high-risk source-runtime review; opened a bounded Vercel AI SDK normalization queue."
       },
       {
-        "test": "creates review-next, watch, skip, risk, or source-review queue state",
+        "test": "does not copy third-party content, clone repositories, execute code, publish, or package candidates",
         "result": "pass",
-        "evidence": "Created source-review-manual-discovery-20260708 and left metadata backlog lower priority."
+        "evidence": "No repositories were cloned; no candidate code was executed; no third-party implementation content was copied; no skill, catalog, package, npm, or publication action occurred."
       }
     ],
-    "catalog_package_npm_status": "Catalog/install-manifest unchanged after metadata-only discovery. No generated catalog surface was hand-edited. No npm publication attempted. Package/publication endorsement remains blocked until source review and backlog gates are clean.",
+    "catalog_package_npm_status": "Catalog/install-manifest unchanged after metadata-only source review. No generated catalog surface was hand-edited. No npm publication attempted. Package/publication endorsement remains blocked until high-risk source review, normalization/catalog parity, discovery Action, and backlog gates are clean.",
     "blockers": [
-      "Discovery Action handoff remains absent; manual fallback has produced metadata but producer verification is still blocked.",
-      "Source review is open: source-review-manual-discovery-20260708 / skills-source-review-batch-001.",
+      "Discovery Action handoff remains absent; manual fallback and source review artifacts exist but producer verification is still blocked.",
+      "OpenClaw high-risk source-runtime review is open: risk-review-openclaw-source-runtime-surfaces-20260708 / skills-risk-review-openclaw-source-runtime-surfaces-001.",
+      "Vercel AI SDK normalization queue is open but lower priority than OpenClaw risk review.",
+      "GitTaskBench remains watch/license-blocked because LICENSE returned 404.",
       "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
-      "Package/publication endorsement remains blocked until source-review and backlog gates are clean."
+      "Package/publication endorsement remains blocked until source-risk, normalization/catalog parity, discovery, and backlog gates are clean."
     ],
-    "value_delta": "Converted absent discovery Action handoff from blocker-only state into four durable metadata-only public candidates plus a bounded source-review queue, without copying, cloning, executing, normalizing, packaging, or publishing third-party content."
+    "value_delta": "Converted metadata-only discovery candidates into reviewed source profiles, a license-blocked watch note, a high-risk OpenClaw source-runtime review gate, and one bounded Vercel AI SDK normalization path without copying or executing third-party content."
   },
   "blockers": [
-    "Discovery Action handoff remains absent; manual fallback has produced metadata but producer verification is still blocked.",
-    "Source review is open: source-review-manual-discovery-20260708 / skills-source-review-batch-001.",
+    "Discovery Action handoff remains absent; manual fallback and source review artifacts exist but producer verification is still blocked.",
+    "OpenClaw high-risk source-runtime review is open: risk-review-openclaw-source-runtime-surfaces-20260708 / skills-risk-review-openclaw-source-runtime-surfaces-001.",
+    "Vercel AI SDK normalization queue is open but lower priority than OpenClaw risk review.",
+    "GitTaskBench remains watch/license-blocked because LICENSE returned 404.",
     "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
-    "Package/publication endorsement remains blocked until source-review and backlog gates are clean."
+    "Package/publication endorsement remains blocked until source-risk, normalization/catalog parity, discovery, and backlog gates are clean."
   ],
-  "last_commit": "240c092ee115ecee6f23f700b3c50bc853bcd0d5",
-  "next_action": "Source Reviewer should consume skills-source-review-batch-001 / source-review-manual-discovery-20260708 for metadata/license/risk review. Do not clone, execute, copy, import, normalize, publish, or package candidate content."
+  "last_commit": "pending_final_connector_response",
+  "next_action": "Risk Auditor should consume skills-risk-review-openclaw-source-runtime-surfaces-001 / risk-review-openclaw-source-runtime-surfaces-20260708 before any OpenClaw-derived normalization or package-facing endorsement."
 }
