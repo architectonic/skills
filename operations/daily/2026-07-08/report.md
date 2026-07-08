@@ -9,13 +9,13 @@ status: active
 
 ## Latest board-driven heartbeat
 
-Ran `Cataloger` for board ticket `skills-catalog-refresh-after-normalization-001`.
+Ran `Critic` for board ticket `skills-metadata-backfill-batch-001`.
 
 ## Inspected state
 
 - Repository: `architectonic/skills`
 - Inspected ref: `main`
-- Inspected SHA before this ticket's first content write: `f102482c8f76097af7a9c993a6e614b0b4da0de8`
+- Inspected SHA before this ticket's first content write: `d780540a46e35ac1d8b614ec6efc5a8850428399`
 - Model requirement status: `model_setting_unverified`
 - Daily ledger present: yes
 - Missing-ledger initialization: no
@@ -36,58 +36,68 @@ Ran `Cataloger` for board ticket `skills-catalog-refresh-after-normalization-001
 - `dist/catalog.json`
 - `dist/catalog.md`
 - `dist/install-manifest.json`
-- `dist/skills/ai-sdk-provider-tool-safety/SKILL.md`
-- `reports/normalization/2026-07-08-vercel-ai-sdk-profile-normalization.md`
+- `dist/skills/autonomy-loop/SKILL.md`
+- `dist/skills/autoresearch-loop/SKILL.md`
+- `dist/skills/browser-trace/SKILL.md`
 
 ## Work performed
 
-Closed the AI SDK Provider Tool Safety catalog parity ticket by verifying that generated catalog surfaces already match the normalized skill.
+Closed one bounded metadata-backfill batch.
+
+Updated package-facing metadata for:
+
+- `dist/skills/autonomy-loop/SKILL.md`
+- `dist/skills/autoresearch-loop/SKILL.md`
 
 Created:
 
-- `reports/catalog/2026-07-08-ai-sdk-provider-tool-safety-catalog-parity.md`
+- `reports/critic/2026-07-08-metadata-backfill-batch.md`
 
-No generated catalog surface was hand-edited.
+Opened and promoted next:
 
-## Catalog parity decision
+- `skills-risk-review-browser-trace-001`
 
-Decision: `catalog_parity_verified_no_generated_surface_edit_required`.
+Created but blocked behind the risk review:
 
-The catalog surfaces already reflect the new normalized skill:
+- `skills-catalog-refresh-after-metadata-backfill-001`
 
-- `dist/catalog.json` shows `skill_count: 1183`.
-- `dist/catalog.json` shows `software-engineering: 147`.
-- `dist/catalog.json` shows `medium: 434`.
-- `dist/catalog.json` software-engineering list includes `ai-sdk-provider-tool-safety`.
-- `dist/catalog.md` mirrors the same headline counts.
-- `dist/install-manifest.json` keeps coherent discovery files and installer selection fields.
+## Metadata decisions
 
-## Queue changes
+### Autonomy Loop
 
-Closed:
+Decision: `agent_operations_medium_requires_review`.
 
-- `catalog-refresh-after-vercel-ai-sdk-normalization-20260708`
-- board ticket `skills-catalog-refresh-after-normalization-001`
+Reason: useful agent-operations loop material, but it coordinates autonomous repository mutation through builder/reviewer worktrees and test gates. It now requires explicit review before protected production mutation, deployment, publication, or unbounded autonomous loops.
 
-Promoted as next:
+### Autoresearch Loop
 
-- board ticket `skills-metadata-backfill-batch-001`
+Decision: `agent_operations_medium_requires_review`.
+
+Reason: useful agent-operations loop material, but it includes autonomous modify/verify cycles, security-audit modes, and a ship flow. It now requires explicit review before push, publish, deploy, irreversible mutation, out-of-scope security testing, or unbounded iteration.
+
+### Browser Trace
+
+Decision: `risk_review_required_before_metadata_or_catalog_endorsement`.
+
+The batch stopped at Browser Trace after direct review found browser/CDP session attachment, screenshots, DOM dumps, Browserbase API key mention, local debugger command snippets, and raw network/console/runtime filesystem traces. The skill was not edited in this pass.
 
 ## Acceptance tests
 
 | Test | Result | Evidence |
 |---|---|---|
-| Catalog reflects the new AI SDK Provider Tool Safety skill and updated software-engineering/medium counts | Pass | `dist/catalog.json` shows `skill_count: 1183`, `software-engineering: 147`, `medium: 434`, and software-engineering includes `ai-sdk-provider-tool-safety`. |
-| Install manifest remains coherent for installer selection fields | Pass | `dist/install-manifest.json` lists `README.md`, `dist/catalog.json`, `dist/catalog.md`, and `dist/install-manifest.json`; selection fields remain `slug`, `title`, `domain`, `risk_level`, `tags`, and `requires_review`. |
-| No npm publish attempted | Pass | This heartbeat used GitHub content reads/writes only. No package, npm, registry, or publication action occurred. |
-| Board next ticket is updated | Pass | `skills-catalog-refresh-after-normalization-001` is done and `skills-metadata-backfill-batch-001` is ready. |
+| Processes a bounded batch, not the entire catalog | Pass | Processed two metadata targets and stopped at the third candidate on risk grounds. |
+| Adds domain/risk/requires_review/source status when justified | Pass | `autonomy-loop` and `autoresearch-loop` now have `domain`, `risk_level`, `requires_review`, and `source_status` metadata. |
+| Stops and creates risk ticket on unsafe material | Pass | `browser-trace` was not edited; `skills-risk-review-browser-trace-001` / `risk-review-browser-trace-20260708` is open. |
+| Creates catalog refresh ticket after metadata changes | Pass | `skills-catalog-refresh-after-metadata-backfill-001` / `catalog-refresh-after-metadata-backfill-20260708` was created and blocked behind risk review. |
 
 ## Files changed
 
-- `reports/catalog/2026-07-08-ai-sdk-provider-tool-safety-catalog-parity.md`
+- `dist/skills/autonomy-loop/SKILL.md`
+- `dist/skills/autoresearch-loop/SKILL.md`
+- `reports/critic/2026-07-08-metadata-backfill-batch.md`
 - `operations/board.json`
-- `operations/daily/2026-07-08/queues.json`
 - `operations/value-ledger.json`
+- `operations/daily/2026-07-08/queues.json`
 - `operations/daily/2026-07-08/report.md`
 - `operations/daily/2026-07-08/status.json`
 - `operations/log.md`
@@ -97,13 +107,14 @@ Promoted as next:
 - No online discovery was performed.
 - No repository was cloned.
 - No candidate code was executed.
-- No third-party examples, prompts, README snippets, or implementation content were copied.
-- No generated catalog surface was manually rewritten.
+- No third-party content was copied.
+- No browser session was opened or attached.
+- No generated catalog surface was hand-edited.
 - No package, npm, registry, or publication action was attempted.
 
 ## Value delta
 
-The AI SDK Provider Tool Safety normalized skill is no longer blocked at catalog parity. It is discoverable through the catalog and selectable through the install manifest, while publication remains blocked by the absent canonical discovery Action handoff and open metadata backlog.
+Two agent-loop skills are no longer uncategorized/unspecified-risk in their package-facing metadata, and a browser/CDP trace skill was blocked from routine catalog endorsement until high-risk review. This is package-facing value because it improves discoverability/reviewability while preventing browser/session/data-capture workflows from slipping through routine metadata cleanup.
 
 ## Risk and publication state
 
@@ -114,23 +125,27 @@ The AI SDK Provider Tool Safety normalized skill is no longer blocked at catalog
 - OpenClaw source-runtime risk review: done.
 - Vercel AI SDK normalization: done.
 - Catalog parity after AI SDK normalization: done.
+- Metadata backfill batch 001: done.
+- Browser Trace risk review: open and next.
+- Catalog parity after metadata backfill: blocked until Browser Trace risk review completes.
 - GitTaskBench: watch/license-blocked.
-- Metadata backlog: open and next.
 - Discovery Action handoff: still absent.
-- Package/publication endorsement: still blocked until discovery Action and backlog gates are clean.
+- Package/publication endorsement: still blocked.
 
 ## Commit SHAs
 
 | Change | Commit |
 |---|---|
-| AI SDK catalog parity report | `a7b533e4d88b488919666f098a058be52c34859f` |
-| Board update | `69e8bb0657c98a9ebde2e719e9ab9866c180096e` |
-| Daily queues update | `178498d3d11cf8b96c7cb4e53df88b9ddbd9296d` |
-| Value ledger update | `aaab7ab7e35c4a8a390a2a3092c90b1cc3962f88` |
+| Autonomy Loop metadata | `8094766f4e058f3e921b960d56d57656d3617058` |
+| Autoresearch Loop metadata | `f24a66208a990b3fac130d2b6b9fbb002d809f37` |
+| Metadata backfill report | `75ac7f401c6efe25e79aba4e771a4adf5477d34d` |
+| Board update | `fa6dfcc1e920a13df28da929aa591d239f5d418a` |
+| Value ledger update | `f7a25bbc8df0e1e1d95ead4179b2cfe157da0750` |
+| Daily queues update | `f8e2420e3c8ae6e3156131bbc39160b9e69342b2` |
 | Daily report update | `pending_final_connector_response` |
 | Daily status update | `pending_next_write` |
 | Operations log update | `pending_next_write` |
 
 ## Next action
 
-Critic should consume `skills-metadata-backfill-batch-001` as one bounded metadata-backfill batch. It must stop and create a risk ticket on high-risk executable, credential, offensive, account, browser, or external-mutation surfaces.
+Risk Auditor should consume `skills-risk-review-browser-trace-001`. Further metadata cleanup and catalog/package/publication endorsement remain blocked until Browser Trace risk review and metadata-backfill catalog parity are complete.
