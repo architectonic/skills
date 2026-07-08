@@ -2,25 +2,46 @@
   "date": "2026-07-08",
   "initialized_by": "Skills Loop Operator",
   "inspected_ref": "main",
-  "inspected_commit": "2ff32ec74b69a66b12749591bc64fde13e7451ab",
+  "inspected_commit": "661d73a66b302fa30988d84b83d993ff873429c5",
   "discovery": [
     {
       "id": "manual-discovery-fallback-20260708",
       "priority": 1,
       "role": "Radar",
       "target": "public web/GitHub metadata-only candidate search",
-      "reason": "Canonical operations/action-runs/discover-skill-sources/latest.json is absent from the default branch while the discovery producer workflow and scripts exist. A bounded fallback is needed so the loop produces reviewable candidate metadata instead of status-only churn. Catalog parity after the MCP/SSRF risk review is now verified, so this is the next open value queue.",
-      "action": "Create reports/discovery/2026-07-08-manual.md, reports/discovery/2026-07-08-manual.json, and sources/candidates/2026-07-08-manual.json with at least three real public candidate sources or exact searches/blockers. Do not clone, execute, copy, import, normalize, publish, or package candidate content.",
+      "reason": "Canonical operations/action-runs/discover-skill-sources/latest.json is absent from the default branch while the discovery producer workflow and scripts exist. A bounded fallback was needed so the loop produced reviewable candidate metadata instead of status-only churn.",
+      "action": "Closed after creating reports/discovery/2026-07-08-manual.md, reports/discovery/2026-07-08-manual.json, and sources/candidates/2026-07-08-manual.json with four real public candidate sources. No cloning, execution, copying, importing, normalization, publishing, or packaging occurred.",
       "risk_level": "medium",
-      "status": "open",
+      "status": "closed",
       "created_by": "Skills Value Operator",
       "created_at": "2026-07-08T10:13:04-03:00",
       "reprioritized_by": "Skills Value Operator",
       "reprioritized_at": "2026-07-08T15:13:05-03:00",
+      "closed_by": "Skills Value Operator",
+      "closed_at": "2026-07-08T18:20:00Z",
+      "closure_artifacts": [
+        "reports/discovery/2026-07-08-manual.md",
+        "reports/discovery/2026-07-08-manual.json",
+        "sources/candidates/2026-07-08-manual.json"
+      ],
       "source_ticket": "skills-restore-discovery-handoff-001"
     }
   ],
-  "review": [],
+  "review": [
+    {
+      "id": "source-review-manual-discovery-20260708",
+      "priority": 1,
+      "role": "Source Reviewer",
+      "target": "reports/discovery/2026-07-08-manual.json and sources/candidates/2026-07-08-manual.json",
+      "reason": "Manual discovery fallback produced four metadata-only public candidates. Three are review_next and one is watch. Source review must verify license, usefulness, risk, security/runtime surface, and redistribution boundaries before any source profile, normalization, catalog, package, or publication work.",
+      "action": "Review metadata only for modelcontextprotocol/servers, vercel/ai, and openclaw/openclaw first. Treat QuantaAlpha/GitTaskBench as watch until license is verified. Do not clone, execute, copy, import, normalize, package, publish, or endorse candidates during source review unless separately authorized by board gates.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Skills Value Operator",
+      "created_at": "2026-07-08T18:20:00Z",
+      "source_ticket": "skills-manual-discovery-fallback-001"
+    }
+  ],
   "normalization": [],
   "catalog": [
     {
@@ -73,7 +94,7 @@
       "role": "Critic",
       "target": "dist/skills/**",
       "reason": "Catalog still has a large uncategorized-domain and unspecified-risk backlog under the current quality gate.",
-      "action": "Continue bounded metadata backfill batches only after discovery/risk gates allow it.",
+      "action": "Continue bounded metadata backfill batches only after discovery/source-review gates allow it.",
       "risk_level": "low",
       "status": "open",
       "created_by": "Fable 5 (Claude, external maintainer session)",
@@ -85,7 +106,8 @@
         {"at":"2026-07-08T10:13:04-03:00","by":"Skills Value Operator","batch":"discovery-handoff-repair","result":"Consumed board ticket skills-restore-discovery-handoff-001; documented that canonical latest.json is absent while producer workflow/scripts exist; queued manual-discovery-fallback-20260708 and preserved the MCP tool-poisoning/SSRF risk queue."},
         {"at":"2026-07-08T13:30:00Z","by":"Portfolio Supervisor","batch":"board-queue-priority-repair","result":"Aligned daily queues with operations/gates.md: high-risk MCP/SSRF package-facing review now outranks manual discovery fallback; publication and metadata backfill remain blocked."},
         {"at":"2026-07-08T14:14:42-03:00","by":"Skills Value Operator","batch":"mcp-ssrf-risk-review","result":"Closed high-risk MCP/SSRF review after converting the package-facing skill to an authorized-use defensive wrapper; metadata/body changes now require catalog parity refresh before backlog cleanup."},
-        {"at":"2026-07-08T15:13:05-03:00","by":"Skills Value Operator","batch":"mcp-ssrf-catalog-parity","result":"Closed catalog parity after verifying dist/catalog.json, dist/catalog.md, and dist/install-manifest.json reflect the MCP/SSRF risk-review metadata. Manual discovery fallback is now the next open value queue."}
+        {"at":"2026-07-08T15:13:05-03:00","by":"Skills Value Operator","batch":"mcp-ssrf-catalog-parity","result":"Closed catalog parity after verifying dist/catalog.json, dist/catalog.md, and dist/install-manifest.json reflect the MCP/SSRF risk-review metadata. Manual discovery fallback is now the next open value queue."},
+        {"at":"2026-07-08T18:20:00Z","by":"Skills Value Operator","batch":"manual-discovery-fallback","result":"Closed manual discovery fallback after recording four metadata-only public candidates and opening source-review-manual-discovery-20260708. Metadata backlog remains lower priority until source review resolves license/risk boundaries."}
       ]
     }
   ]
