@@ -16,17 +16,17 @@
       "media": 1,
       "research": 85,
       "runtime-tools": 35,
-      "security-defensive": 59,
+      "security-defensive": 60,
       "security-offensive": 16,
       "software-engineering": 146,
-      "uncategorized": 565,
+      "uncategorized": 564,
       "writing": 16
     },
     "risk_counts": {
       "high": 14,
       "low": 9,
-      "medium": 432,
-      "unspecified": 727
+      "medium": 433,
+      "unspecified": 726
     }
   },
   "domains": {
@@ -482,6 +482,7 @@
       "Scanning Infrastructure with Nessus",
       "agentic-actions-auditor",
       "assessing-vector-and-embedding-weaknesses",
+      "auditing-foundry-smart-contract-security",
       "automating-ioc-enrichment",
       "building-detection-rules-with-sigma",
       "building-threat-feed-aggregation-with-misp",
@@ -654,7 +655,6 @@
       "xurl"
     ],
     "uncategorized": [
-      "Auditing Foundry Smart Contract Security",
       "Auditing MCP Servers for Tool Poisoning",
       "Auditing TLS Certificate Transparency Logs",
       "Autonomy Loop",
@@ -3780,23 +3780,24 @@
       "type": "Playbook"
     },
     {
-      "slug": "Auditing Foundry Smart Contract Security",
+      "slug": "auditing-foundry-smart-contract-security",
       "title": "Auditing Foundry Smart Contract Security",
-      "description": "Deployed smart contracts are **immutable** and custody **real funds**, so a bug shipped to mainnet cannot be patched — it can only be exploited. Most catastrophic DeFi losses come from a small set of recurring classes: reentrancy, broken access",
+      "description": "Audits Foundry Solidity projects with static analysis, fuzzing, invariants, coverage, key hygiene, and deployment gates. Use before deploying or reviewing EVM smart contracts, triaging Slither/Aderyn/Mythril findings, or validating value-moving contract test coverage.",
       "path": "dist/skills/auditing-foundry-smart-contract-security/SKILL.md",
       "directory": "dist/skills/auditing-foundry-smart-contract-security",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-defensive",
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
-        "agent-skill",
-        "okf",
-        "security"
+        "solidity",
+        "foundry",
+        "smart-contract-security",
+        "security-defensive",
+        "software-engineering",
+        "okf"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "internal-skill-bundle",
+      "source_status": "adapted",
       "type": "Playbook"
     },
     {
