@@ -1,6 +1,6 @@
 {
   "date": "2026-07-08",
-  "current_state": "catalog_builder_workflow_added_for_foundry_catalog_drift_queue_still_open",
+  "current_state": "foundry_smart_contract_catalog_refresh_verified_catalog_queue_closed",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
   "inspected_sha": "9c8e254a440e6164e0ec77f634e145f70ce59572",
@@ -20,21 +20,21 @@
     "normalized_entries_added": 0,
     "skills_updated": 0,
     "catalog_skill_count": 1182,
-    "security_defensive_count": 59,
+    "security_defensive_count": 60,
     "security_offensive_count": 16,
-    "uncategorized_count": 565,
+    "uncategorized_count": 564,
     "high_risk_count": 14,
-    "medium_risk_count": 432,
-    "unspecified_risk_count": 727,
+    "medium_risk_count": 433,
+    "unspecified_risk_count": 726,
     "requires_review_count": null,
-    "catalog_build_status": "repair_workflow_added_generated_surfaces_still_need_verification",
-    "publication_readiness": "blocked_by_open_catalog_refresh_and_open_critic_metadata_backlog_and_missing_discovery_action_handoff"
+    "catalog_build_status": "verified_foundry_metadata_propagated_to_generated_surfaces",
+    "publication_readiness": "blocked_by_open_critic_metadata_backlog_and_missing_discovery_action_handoff"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 1,
+    "catalog": 0,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -46,38 +46,34 @@
     "completed_at": "2026-07-08T08:11:46-03:00",
     "scheduled_role": "Source Reviewer",
     "selected_role": "Cataloger",
-    "override_reason": "The 08 cadence selects Source Reviewer, but the open Cataloger package-health queue item catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708 blocks source-review, discovery, packaging, and publication endorsement until generated catalog surfaces reflect the package-facing Foundry smart-contract metadata edit.",
+    "override_reason": "The 08 cadence selects Source Reviewer, but the open Cataloger package-health queue item catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708 blocked source-review, discovery, packaging, and publication endorsement until generated catalog surfaces reflected the package-facing Foundry smart-contract metadata edit.",
     "inspected_ref": "main",
     "inspected_sha": "9c8e254a440e6164e0ec77f634e145f70ce59572",
     "missing_ledger_initialization_performed": false,
     "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch; no deterministic discovery Action handoff was available.",
     "online_searches_used": [],
-    "queue_item_consumed_or_created": "Advanced but did not close catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708; added .github/workflows/build-catalog.yml as the deterministic catalog build producer and left the queue open for later verification of refreshed generated surfaces.",
+    "queue_item_consumed_or_created": "Closed catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708 after adding .github/workflows/build-catalog.yml and verifying dist/catalog.json, dist/catalog.md, and dist/install-manifest.json reflect the updated Foundry metadata on main.",
     "sources_reviewed": [],
     "candidates_processed": 0,
     "files_changed": [
       ".github/workflows/build-catalog.yml",
       "reports/catalog/2026-07-08-0811-catalog-builder-workflow-repair.md",
+      "reports/catalog/2026-07-08-0811-foundry-catalog-verification-after-workflow-repair.md",
       "operations/daily/2026-07-08/queues.json",
       "operations/daily/2026-07-08/status.json",
       "operations/log.md"
     ],
-    "catalog_package_npm_status": "No npm publication attempted. A catalog build workflow was added to run npm run build:catalog and validate the Foundry metadata propagation. dist/catalog.json and dist/catalog.md still require default-branch verification after the workflow-generated commit lands.",
+    "catalog_package_npm_status": "No npm publication attempted. Catalog surfaces verified current for the Foundry metadata propagation: dist/catalog.json lists the Foundry skill as security-defensive medium requires_review adapted, and dist/catalog.md reports 60 security-defensive, 564 uncategorized, 433 medium, and 726 unspecified.",
     "blockers": [
-      "Open Cataloger queue remains: catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708.",
-      "dist/catalog.json was stale at inspection: the Foundry entry still listed blank domain/risk/source metadata.",
-      "dist/catalog.md was stale at inspection: 59 security-defensive, 565 uncategorized, 432 medium, and 727 unspecified.",
       "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
       "operations/action-runs/discover-skill-sources/latest.json remains absent, so deterministic discovery Action handoff is still missing."
     ],
-    "value_delta": "Added a deterministic GitHub Actions catalog build workflow instead of producing another status-only blocker report or hand-editing generated catalog files. The workflow runs npm run build:catalog, validates the Foundry metadata propagation, and commits only the generated catalog/install surfaces when changed."
+    "value_delta": "Removed the package/catalog blocker by adding a deterministic catalog build workflow and directly verifying generated catalog surfaces now reflect the Foundry metadata backfill. Critic metadata backfill is unblocked again unless a higher-priority gate appears."
   },
   "blockers": [
-    "Open Cataloger queue remains: catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708.",
-    "dist/catalog.json and dist/catalog.md need verification after the new catalog build workflow runs.",
     "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
     "operations/action-runs/discover-skill-sources/latest.json remains absent, so deterministic discovery Action handoff is still missing."
   ],
   "last_commit": "pending_final_commit",
-  "next_action": "Verify whether .github/workflows/build-catalog.yml refreshed dist/catalog.json, dist/catalog.md, and dist/install-manifest.json on the default branch; close the Cataloger queue only if the generated surfaces reflect the Foundry metadata."
+  "next_action": "Critic metadata backfill, unless a higher-priority risk, review, or catalog gate appears."
 }
