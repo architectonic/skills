@@ -2,6 +2,18 @@
 name: agent-development
 description: Create autonomous agent configurations for Claude Code plugins. Use when building subagents, designing agent frontmatter, writing system prompts, defining triggering conditions, or structuring agent files. Covers agent file format, description writing, tool restriction, model selection, and validation rules.
 type: Playbook
+title: Agent Development for Claude Code Plugins
+domain: agent-operations
+risk_level: medium
+requires_review: true
+source_family: claude-code-plugin
+source_status: adapted
+tags:
+- agent-operations
+- subagents
+- claude-code
+- plugin-development
+- okf
 ---
 
 # Agent Development for Claude Code Plugins
@@ -37,7 +49,7 @@ You are [agent role]...
 
 **Your Core Responsibilities:**
 1. [Responsibility 1]
-2. [Responsibility 2]
+2. [Secondary responsibility]
 
 **Analysis Process:**
 [Step-by-step workflow]
@@ -118,58 +130,3 @@ You are [role] specializing in [domain].
 **DO:** Second person, specific responsibilities, step-by-step process, defined output format, quality standards, edge cases, under 10,000 chars.
 
 **DON'T:** First person, vague/generic, omit process steps, leave output undefined, skip quality guidance, ignore errors.
-
-## Validation Rules
-
-| Field | Rules |
-|-------|-------|
-| name | 3-50 chars, lowercase-hyphens, start/end alphanumeric |
-| description | 10-5,000 chars, must include triggers; best 200-1,000 chars |
-| system prompt | 20-10,000 chars; best 500-3,000 chars |
-
-## Agent Organization
-
-```
-plugin-name/
-└── agents/
-    ├── analyzer.md
-    ├── reviewer.md
-    └── generator.md
-```
-
-All `.md` files in `agents/` are auto-discovered.
-
-## Testing Agents
-
-1. Write agent with specific triggering examples
-2. Use similar phrasing in test
-3. Check Claude loads the agent
-4. Verify agent provides expected functionality
-5. Test edge cases mentioned in prompt
-
-## Quick Reference: Minimal Agent
-
-```markdown
----
-name: simple-agent
-description: Use this agent when [condition]. Typical triggers include [trigger 1] and [trigger 2]. See "When to invoke" in the agent body.
-model: inherit
-color: blue
----
-
-You are an agent that [does X].
-
-## When to invoke
-- **[Scenario A].** [Description.]
-- **[Scenario B].** [Description.]
-
-Process:
-1. [Step 1]
-2. [Step 2]
-
-Output: [What to provide]
-```
-
-## Source
-
-Distilled from `anthropics/claude-plugins-official` → `plugins/plugin-dev/skills/agent-development/SKILL.md` (Apache-2.0).
