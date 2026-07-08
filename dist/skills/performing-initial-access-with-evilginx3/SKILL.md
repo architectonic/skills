@@ -1,162 +1,56 @@
 ---
-name: Performing Initial Access with EvilGinx3
-description: Perform authorized initial access using EvilGinx3 adversary-in-the-middle
-tags: [software-development, software-development, agent-skill, okf, red-team, initial-access, phishing, evilginx, mfa-bypass, adversary-in-the-middle, credential-theft, security]
+name: performing-initial-access-with-evilginx3
+description: Review-gated defensive assessment wrapper for EvilGinx3 adversary-in-the-middle phishing and session-capture risk. Use only for authorized security planning, detection mapping, and remediation.
+tags: [agent-skill, okf, evilginx, phishing, adversary-in-the-middle, session-theft, mfa-bypass, identity-security, security, review-gated]
 license: Apache-2.0
 type: Playbook
+title: Performing Initial Access with EvilGinx3
+domain: security-offensive
+risk_level: high
+requires_review: true
+source_family: anthropic-cybersecurity-skills
+source_license: Apache-2.0
+source_status: blocked-pending-redaction
 ---
 
 # Performing Initial Access with EvilGinx3
 
-## Overview
+This package-facing entry is blocked pending redaction and safety review.
 
-EvilGinx3 is a man-in-the-middle attack framework used for phishing login credentials along with session cookies, enabling bypass of multi-factor authentication (MFA). Unlike traditional credential phishing that only captures usernames and passwords, EvilGinx3 operates as a transparent reverse proxy between the victim and the legitimate authentication service, intercepting the full authentication flow including MFA tokens and session cookies. This makes it the primary tool for red teams demonstrating the risk of adversary-in-the-middle (AiTM) attacks against organizations relying solely on MFA for protection.
+Adversary-in-the-middle phishing workflows can capture credentials, session cookies, authentication material, and MFA-bypassing session state. This repository must not expose a default executable procedure for phishing infrastructure, lure generation, session capture, token replay, account takeover, or post-access activity. Treat the upstream technique as reference-only unless an approved defensive assessment workspace has written scope, legal authorization, notification rules, and human review controls.
 
+## Allowed use in this repository
 
-## When to Use
+- Record authorization requirements, scope boundaries, notification rules, and rules of engagement.
+- Plan defensive assessment scope for identity controls, phishing resilience, and session-security monitoring.
+- Map AiTM and session-replay risk to detections, controls, and remediation.
+- Preserve provenance, risk classification, review status, and package-safety rationale.
+- Help reviewers decide whether a future defensive-only workflow is safe to publish.
 
-- When conducting security assessments that involve performing initial access with evilginx3
-- When following incident response procedures for related security events
-- When performing scheduled security testing or auditing activities
-- When validating security controls through hands-on testing
+## Disallowed use in this repository
 
-## Prerequisites
+- Do not provide copyable live-operation commands, configuration steps, lure setup, delivery guidance, or session-replay instructions.
+- Do not include instructions for creating phishing infrastructure, generating lures, capturing credentials, capturing cookies, bypassing MFA, importing cookies, or hijacking sessions.
+- Do not request, paste, store, transform, summarize, or enrich credentials, cookies, tokens, authentication material, or captured session data.
+- Do not perform live domain, tenant, mailbox, cloud-account, browser, phishing, or network actions from this skill.
+- Do not package this entry as publication-ready until a reviewer replaces it with a defensive-only workflow.
 
-- Familiarity with red teaming concepts and tools
-- Access to a test or lab environment for safe execution
-- Python 3.8+ with required dependencies installed
-- Appropriate authorization for any testing activities
+## Safe reviewer checklist
 
-## Objectives
+1. Confirm written authorization, scope, notification requirements, and evidence-retention rules.
+2. Confirm the task is defensive validation, detection engineering, identity-control review, incident-response scoping, or remediation planning.
+3. Keep procedural phishing, lure, token-capture, and session-replay detail out of the package-facing skill.
+4. Move any operational references to a controlled, non-default review artifact if they are retained at all.
+5. Verify that the final skill teaches defensive planning, detection, evidence handling, and remediation rather than execution.
+6. Require explicit human approval before any installer, catalog, or publisher surface presents this as usable automation.
 
-- Deploy EvilGinx3 with custom phishlets targeting authorized scope
-- Configure DNS and SSL certificates for the phishing domain
-- Capture session tokens that bypass MFA protections
-- Import stolen session cookies into a browser to hijack authenticated sessions
-- Integrate with GoPhish or custom delivery mechanisms for phishing email campaigns
-- Document the complete attack chain from phishing email to authenticated access
+## Defensive review prompts
 
-## MITRE ATT&CK Mapping
+- Which identity providers, tenants, and session controls are in scope for defensive review?
+- Which controls reduce AiTM impact: phishing-resistant MFA, device binding, conditional access, token protection, impossible-travel checks, and session revocation?
+- Which logs, certificate-transparency signals, domain-monitoring events, proxy indicators, and authentication anomalies should be reviewed?
+- What remediation evidence can be collected without exposing or reproducing credentials, cookies, tokens, or captured sessions?
 
-- **T1566.002** - Phishing: Spearphishing Link
-- **T1557** - Adversary-in-the-Middle
-- **T1539** - Steal Web Session Cookie
-- **T1078** - Valid Accounts
-- **T1556** - Modify Authentication Process
-- **T1550.004** - Use Alternate Authentication Material: Web Session Cookie
+## Status
 
-## Workflow
-
-### Phase 1: Infrastructure Setup
-1. Register a convincing lookalike domain (e.g., using homoglyphs or typosquatting)
-2. Provision a VPS and point the domain's DNS A record to the server IP
-3. Install EvilGinx3:
-   ```bash
-   git clone https://github.com/kgretzky/evilginx2.git
-   cd evilginx2
-   make
-   sudo ./bin/evilginx -p ./phishlets
-   ```
-4. Configure the domain and IP in EvilGinx3:
-   ```
-   config domain example-phish.com
-   config ipv4 <server-ip>
-   ```
-5. EvilGinx3 automatically provisions Let's Encrypt certificates for configured hostnames
-
-### Phase 2: Phishlet Configuration
-1. Select or create a phishlet for the target service (e.g., Microsoft 365, Google Workspace):
-   ```
-   phishlets hostname o365 login.example-phish.com
-   phishlets enable o365
-   ```
-2. Verify phishlet is active and SSL certificate is issued:
-   ```
-   phishlets
-   ```
-3. Create a lure URL for the phishing campaign:
-   ```
-   lures create o365
-   lures get-url 0
-   ```
-4. Optionally configure a redirect URL for post-capture:
-   ```
-   lures edit 0 redirect_url https://legitimate-site.com
-   ```
-
-### Phase 3: Phishing Delivery
-1. Craft a pretext email with the lure URL embedded
-2. Use GoPhish or manual SMTP for email delivery:
-   ```
-   # Integration with EvilGoPhish for combined campaigns
-   # Provides GoPhish email tracking + EvilGinx3 credential capture
-   ```
-3. Implement URL masking or shortening if needed for link obfuscation
-4. Deploy landing page with appropriate social engineering pretext
-
-### Phase 4: Session Hijacking
-1. Monitor EvilGinx3 for captured sessions:
-   ```
-   sessions
-   sessions <session-id>
-   ```
-2. Extract captured session cookies from the session:
-   ```
-   # Session output includes:
-   # - Username and password
-   # - Session cookies (authentication tokens)
-   # - Custom captured parameters
-   ```
-3. Import session cookies into a browser using a cookie editor extension:
-   - Export cookies in JSON format
-   - Use Cookie-Editor or EditThisCookie browser extension
-   - Navigate to the target service to validate session hijack
-4. Establish persistent access by creating application passwords or OAuth tokens
-
-### Phase 5: Post-Access Activities
-1. Enumerate mailbox contents, contacts, and shared drives
-2. Identify additional targets for lateral phishing
-3. Check for access to connected cloud applications (SharePoint, Teams, OneDrive)
-4. Document all captured credentials and access achieved
-
-## Tools and Resources
-
-| Tool | Purpose | Platform |
-|------|---------|----------|
-| EvilGinx3 | AiTM phishing framework | Linux |
-| GoPhish | Phishing campaign management | Cross-platform |
-| EvilGoPhish | Combined EvilGinx3 + GoPhish integration | Linux |
-| Cookie-Editor | Browser cookie import/export | Browser Extension |
-| Modlishka | Alternative AiTM proxy framework | Linux |
-| Muraena | Alternative AiTM phishing proxy | Linux |
-
-## Phishlet Targets
-
-| Target Service | Phishlet | Captured Data |
-|---------------|----------|---------------|
-| Microsoft 365 | o365 | Session cookies, credentials |
-| Google Workspace | google | Session cookies, credentials |
-| Okta | okta | Session tokens, credentials |
-| GitHub | github | Session cookies, credentials |
-| AWS Console | aws | Session tokens, credentials |
-
-## Detection Indicators
-
-| Indicator | Detection Method |
-|-----------|-----------------|
-| Newly registered lookalike domains | Domain monitoring and certificate transparency logs |
-| SSL certificates for suspicious domains | CT log monitoring (crt.sh, Censys) |
-| Unusual login locations after phishing | SIEM correlation of authentication events |
-| Session cookie replay from different IP | Conditional access policy alerts |
-| AiTM proxy headers in traffic | Network inspection for proxy artifacts |
-
-## Validation Criteria
-
-- [ ] EvilGinx3 deployed with valid SSL certificates
-- [ ] Phishlet configured and enabled for target service
-- [ ] Lure URL generated and accessible
-- [ ] Test credentials captured successfully through phishing flow
-- [ ] Session cookies captured and validated for MFA bypass
-- [ ] Session hijack demonstrated in browser with stolen cookies
-- [ ] Post-authentication access to target service confirmed
-- [ ] Evidence documented with screenshots and session logs
+Risk decision: high risk, requires review, blocked pending redaction.
