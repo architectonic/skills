@@ -6,22 +6,22 @@
   "discovery": [],
   "review": [],
   "normalization": [],
-  "catalog": [],
-  "risk": [
+  "catalog": [
     {
-      "id": "risk-review-vector-embedding-weaknesses-skill-20260708",
+      "id": "catalog-refresh-after-vector-embedding-redaction-20260708",
       "priority": 1,
-      "role": "Risk Auditor",
+      "role": "Cataloger",
       "target": "dist/skills/assessing-vector-and-embedding-weaknesses/SKILL.md",
-      "reason": "Package-facing uncategorized/unspecified skill includes procedures for embedding inversion, membership inference, cross-tenant retrieval probing, and retrieval-poisoning assessment; explicit risk classification is required before routine metadata backfill or package/publication endorsement.",
-      "action": "Inspect whether the installed body can remain as a guarded defensive assessment, must be classified high-risk/review-gated, or should be redacted to a defensive wrapper before catalog/package endorsement.",
-      "risk_level": "medium_to_high_ai_security_data_exfiltration_boundary",
+      "reason": "Risk Auditor replaced the package-facing vector/embedding weakness body with a high-risk review-gated defensive wrapper; generated catalog and install surfaces must be refreshed/verified before package or publication endorsement.",
+      "action": "Verify dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the package-facing skill metadata/body after the redaction.",
+      "risk_level": "medium",
       "status": "open",
       "created_by": "Skills Loop Operator",
-      "created_at": "2026-07-08T03:11:19-03:00",
-      "source_queue": "metadata-backfill-uncategorized-and-unspecified-risk-20260707"
+      "created_at": "2026-07-08T04:12:31-03:00",
+      "source_queue": "risk-review-vector-embedding-weaknesses-skill-20260708"
     }
   ],
+  "risk": [],
   "packaging": [],
   "publication": [],
   "maintenance": [],
@@ -59,7 +59,8 @@
         {"at":"2026-07-08T00:13:31-03:00","by":"Skills Loop Operator","batch":"daily-ledger-initialization","result":"Carried this unresolved queue item forward from 2026-07-07 during initialization-only Reporter pass. No discovery, review, normalization, package work was performed."},
         {"at":"2026-07-08T01:12:08-03:00","by":"Skills Loop Operator","batch":"agent-development-metadata-backfill","result":"Backfilled dist/skills/agent-development/SKILL.md with agent-operations, medium-risk, requires_review, source_family, source_status, and tags; created Cataloger queue catalog-refresh-after-agent-development-metadata-backfill-20260708 before any package/publication endorsement."},
         {"at":"2026-07-08T02:14:05-03:00","by":"Skills Loop Operator","batch":"agent-development-catalog-verification","result":"Closed catalog-refresh-after-agent-development-metadata-backfill-20260708 after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the package-facing agent-development metadata; Critic backlog is unblocked for the next bounded metadata batch."},
-        {"at":"2026-07-08T03:11:19-03:00","by":"Skills Loop Operator","batch":"vector-embedding-risk-triage","result":"Stopped routine metadata backfill on dist/skills/assessing-vector-and-embedding-weaknesses/SKILL.md and created risk queue risk-review-vector-embedding-weaknesses-skill-20260708 before classification, catalog endorsement, or package/publication endorsement."}
+        {"at":"2026-07-08T03:11:19-03:00","by":"Skills Loop Operator","batch":"vector-embedding-risk-triage","result":"Stopped routine metadata backfill on dist/skills/assessing-vector-and-embedding-weaknesses/SKILL.md and created risk queue risk-review-vector-embedding-weaknesses-skill-20260708 before classification, catalog endorsement, or package/publication endorsement."},
+        {"at":"2026-07-08T04:12:31-03:00","by":"Skills Loop Operator","batch":"vector-embedding-risk-redaction","result":"Resolved vector/embedding risk queue by replacing default executable RAG data-exfiltration-adjacent procedures with a high-risk review-gated defensive wrapper; Cataloger refresh now blocks further package/publication endorsement."}
       ]
     }
   ]
