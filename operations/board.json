@@ -2,9 +2,9 @@
   "schema_version": "0.1",
   "repo": "architectonic/skills",
   "board_type": "repo_native_value_board",
-  "updated_at": "2026-07-08T10:13:04-03:00",
+  "updated_at": "2026-07-08T13:30:00Z",
   "purpose": "Force skills heartbeats to produce reviewed, installable, discoverable skill value instead of unbounded catalog/status churn.",
-  "selection_rule": "Operators must consume the highest-priority ready ticket allowed by gates.md. Safety and discovery restoration outrank routine metadata cleanup.",
+  "selection_rule": "Operators must consume the highest-priority ready ticket allowed by gates.md. High-risk package-facing review outranks manual discovery fallback; discovery restoration outranks routine metadata cleanup.",
   "definition_of_done": "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done.",
   "tickets": [
     {
@@ -44,9 +44,36 @@
       "next_ticket_on_failure": "skills-action-handoff-producer-verification-001"
     },
     {
-      "id": "skills-manual-discovery-fallback-001",
+      "id": "skills-risk-review-mcp-tool-poisoning-001",
       "status": "ready",
       "priority": 1,
+      "role": "Risk Auditor",
+      "mission": "Review and safely wrap or redact the MCP tool-poisoning/SSRF skill so package-facing surfaces preserve defensive audit value without default executable probing detail.",
+      "value_type": "risk_blocker_removed",
+      "input_artifacts": [
+        "dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md",
+        "operations/daily/2026-07-08/queues.json"
+      ],
+      "output_artifacts": [
+        "reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md"
+      ],
+      "external_action_allowed": false,
+      "required_connector": null,
+      "acceptance_tests": [
+        "classifies risk level and requires_review",
+        "removes default executable SSRF/probing detail if unsafe",
+        "preserves defensive audit framing",
+        "creates catalog-refresh ticket if package-facing metadata changed"
+      ],
+      "supervisor_gate": "Routine metadata backlog and publication/package endorsement must remain blocked while this high-risk ticket is open.",
+      "kill_condition": "If the skill cannot be made safe as a defensive wrapper, remove from installable catalog or mark non-publishable.",
+      "next_ticket_on_success": "skills-catalog-refresh-after-risk-review-001",
+      "next_ticket_on_failure": "skills-quarantine-mcp-tool-poisoning-001"
+    },
+    {
+      "id": "skills-manual-discovery-fallback-001",
+      "status": "ready",
+      "priority": 2,
       "role": "Radar",
       "mission": "Run the connector-safe metadata-only manual discovery fallback because the canonical GitHub Action handoff is absent from the default branch.",
       "value_type": "discovery_candidate_metadata",
@@ -68,7 +95,7 @@
         "does not clone, execute, copy, import, normalize, publish, or package candidate content",
         "creates review-next, watch, skip, risk, or source-review queue state"
       ],
-      "supervisor_gate": "Manual fallback output is discovery metadata only and cannot be treated as normalized skill content.",
+      "supervisor_gate": "Manual fallback output is discovery metadata only and cannot be treated as normalized skill content. Run after the open high-risk package-facing review unless a human explicitly overrides.",
       "kill_condition": "If fewer than three real candidates can be found after explicit public searches, record exact searches and blockers; do not invent candidates.",
       "next_ticket_on_success": "skills-source-review-batch-001",
       "next_ticket_on_failure": "skills-action-handoff-producer-verification-001"
@@ -76,7 +103,7 @@
     {
       "id": "skills-action-handoff-producer-verification-001",
       "status": "blocked",
-      "priority": 2,
+      "priority": 3,
       "role": "Tool Builder",
       "mission": "Inspect GitHub Actions run/log state or execute the discovery scripts in a safe local/CI context to prove whether the producer fails in discovery, review, handoff write, commit, pull/rebase, or push.",
       "value_type": "ci_repair",
@@ -101,33 +128,6 @@
       "kill_condition": "If the producer cannot be inspected by available tools, keep blocked and rely on manual metadata fallback.",
       "next_ticket_on_success": "skills-source-review-batch-001",
       "next_ticket_on_failure": "skills-manual-discovery-fallback-001"
-    },
-    {
-      "id": "skills-risk-review-mcp-tool-poisoning-001",
-      "status": "ready",
-      "priority": 3,
-      "role": "Risk Auditor",
-      "mission": "Review and safely wrap or redact the MCP tool-poisoning/SSRF skill so package-facing surfaces preserve defensive audit value without default executable probing detail.",
-      "value_type": "risk_blocker_removed",
-      "input_artifacts": [
-        "dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md",
-        "operations/daily/2026-07-08/queues.json"
-      ],
-      "output_artifacts": [
-        "reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md"
-      ],
-      "external_action_allowed": false,
-      "required_connector": null,
-      "acceptance_tests": [
-        "classifies risk level and requires_review",
-        "removes default executable SSRF/probing detail if unsafe",
-        "preserves defensive audit framing",
-        "creates catalog-refresh ticket if package-facing metadata changed"
-      ],
-      "supervisor_gate": "Routine metadata backlog must remain blocked while this high-risk ticket is open.",
-      "kill_condition": "If the skill cannot be made safe as a defensive wrapper, remove from installable catalog or mark non-publishable.",
-      "next_ticket_on_success": "skills-catalog-refresh-after-risk-review-001",
-      "next_ticket_on_failure": "skills-quarantine-mcp-tool-poisoning-001"
     },
     {
       "id": "skills-catalog-refresh-after-risk-review-001",
