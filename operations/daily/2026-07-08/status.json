@@ -101,6 +101,6 @@
     "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
     "operations/action-runs/discover-skill-sources/latest.json remains absent, so deterministic discovery Action handoff is still missing."
   ],
-  "last_commit": "pending_final_commit",
+  "last_commit": "aad6d3dc9ab56af7b75f22915ce44c0a9d800555",
   "next_action": "Radar should consume skills-manual-discovery-fallback-001 to produce metadata-only public candidate sources, then Source Reviewer can inspect review_next candidates. Risk Auditor should still resolve risk-review-mcp-tool-poisoning-ssrf-skill-20260708 before package/catalog endorsement."
 }
