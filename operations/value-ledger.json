@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1",
+  "repo": "architectonic/skills",
+  "purpose": "Machine-readable record of discovery, review, normalization, risk, catalog, and package value events.",
+  "events": [
+    {
+      "id": "skills-value-protocol-installed-20260708",
+      "timestamp": "2026-07-08T20:00:00-03:00",
+      "type": "governance_upgrade",
+      "source": "manual GitHub connector pass",
+      "artifact_paths": [
+        "operations/board.json",
+        "operations/gates.md",
+        "operations/heartbeat.md",
+        "operations/value-ledger.json"
+      ],
+      "summary": "Installed board-driven heartbeat protocol so Skills operators prioritize discovery restoration, risk review, package-facing skill quality, and catalog parity over status-only churn."
+    }
+  ]
+}
