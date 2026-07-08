@@ -92,6 +92,8 @@
       "queues": "7b4a062d978d670e40cfd46769cbe08d0aed432d",
       "value_ledger": "8eb258b135e3a301ead60a66ad52d7919a9b8c29",
       "daily_report": "5d9d2089d7fc34342d6b970f7db19dccf099b864",
+      "status_initial_update": "5344c5c530f8fd706a881c7c6178b27898f0a80c",
+      "log": "240c092ee115ecee6f23f700b3c50bc853bcd0d5",
       "status_final": "pending_final_connector_response"
     },
     "acceptance_tests": [
@@ -131,6 +133,6 @@
     "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
     "Package/publication endorsement remains blocked until source-review and backlog gates are clean."
   ],
-  "last_commit": "pending_final_connector_response",
+  "last_commit": "240c092ee115ecee6f23f700b3c50bc853bcd0d5",
   "next_action": "Source Reviewer should consume skills-source-review-batch-001 / source-review-manual-discovery-20260708 for metadata/license/risk review. Do not clone, execute, copy, import, normalize, publish, or package candidate content."
 }
