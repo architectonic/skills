@@ -78,6 +78,6 @@
     "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
     "operations/action-runs/discover-skill-sources/latest.json remains absent, so deterministic discovery Action handoff is still missing."
   ],
-  "last_commit": "pending_final_commit",
+  "last_commit": "1e2c3d1b4f4fc39bef6343673770b93947b2c6be",
   "next_action": "Regenerate catalog surfaces with npm run build:catalog or repair the catalog builder, then rerun Cataloger verification before further metadata backfill, packaging, publication, or discovery work."
 }
