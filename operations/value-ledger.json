@@ -45,6 +45,21 @@
         "operations/log.md"
       ],
       "summary": "Removed a package-facing risk blocker by converting the MCP/tool-poisoning and SSRF audit skill into a high-risk, requires_review defensive wrapper. Default executable probing, SSRF target lists, unauthenticated endpoint probe commands, and MCP tool-call snippets were removed while preserving authorized static review, fingerprinting, severity scoring, and remediation workflow. Catalog parity is now the next gate."
+    },
+    {
+      "id": "skills-catalog-parity-mcp-tool-poisoning-ssrf-20260708-1513",
+      "timestamp": "2026-07-08T15:13:05-03:00",
+      "type": "catalog_parity_repair",
+      "source": "Skills Value Operator board ticket skills-catalog-refresh-after-risk-review-001",
+      "artifact_paths": [
+        "reports/catalog/2026-07-08-risk-review-catalog-parity.md",
+        "operations/board.json",
+        "operations/daily/2026-07-08/queues.json",
+        "operations/daily/2026-07-08/status.json",
+        "operations/daily/2026-07-08/report.md",
+        "operations/log.md"
+      ],
+      "summary": "Verified catalog/install-manifest parity after the MCP/tool-poisoning and SSRF risk review. dist/catalog.json and dist/catalog.md reflect security-defensive/high/requires_review metadata for the skill, and dist/install-manifest.json remains coherent for installer selection. No generated catalog surface was hand-edited and no npm publication was attempted. Manual discovery fallback is now the next value ticket."
     }
   ]
 }
