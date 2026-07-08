@@ -57,39 +57,17 @@
     "missing_ledger_initialization_performed": false,
     "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent from the default branch; manual fallback, source review, risk review, normalization, and AI SDK catalog parity artifacts now exist.",
     "queue_item_consumed_or_created": "Closed catalog-refresh-after-vercel-ai-sdk-normalization-20260708 and board ticket skills-catalog-refresh-after-normalization-001. Promoted skills-metadata-backfill-batch-001 as the next bounded Critic ticket.",
-    "sources_reviewed": [
-      "operations/heartbeat.md",
-      "operations/board.json",
-      "operations/gates.md",
-      "operations/value-ledger.json",
-      "operations/daily/2026-07-08/status.json",
-      "operations/daily/2026-07-08/queues.json",
-      "operations/daily/2026-07-08/report.md",
-      "operations/log.md",
-      "dist/catalog.json",
-      "dist/catalog.md",
-      "dist/install-manifest.json",
-      "dist/skills/ai-sdk-provider-tool-safety/SKILL.md",
-      "reports/normalization/2026-07-08-vercel-ai-sdk-profile-normalization.md"
-    ],
+    "sources_reviewed": ["operations/heartbeat.md", "operations/board.json", "operations/gates.md", "operations/value-ledger.json", "operations/daily/2026-07-08/status.json", "operations/daily/2026-07-08/queues.json", "operations/daily/2026-07-08/report.md", "operations/log.md", "dist/catalog.json", "dist/catalog.md", "dist/install-manifest.json", "dist/skills/ai-sdk-provider-tool-safety/SKILL.md", "reports/normalization/2026-07-08-vercel-ai-sdk-profile-normalization.md"],
     "candidates_processed": 1,
-    "files_changed": [
-      "reports/catalog/2026-07-08-ai-sdk-provider-tool-safety-catalog-parity.md",
-      "operations/board.json",
-      "operations/daily/2026-07-08/queues.json",
-      "operations/value-ledger.json",
-      "operations/daily/2026-07-08/report.md",
-      "operations/daily/2026-07-08/status.json",
-      "operations/log.md"
-    ],
+    "files_changed": ["reports/catalog/2026-07-08-ai-sdk-provider-tool-safety-catalog-parity.md", "operations/board.json", "operations/daily/2026-07-08/queues.json", "operations/value-ledger.json", "operations/daily/2026-07-08/report.md", "operations/daily/2026-07-08/status.json", "operations/log.md"],
     "commit_shas": {
       "ai_sdk_catalog_parity_report": "a7b533e4d88b488919666f098a058be52c34859f",
       "board": "69e8bb0657c98a9ebde2e719e9ab9866c180096e",
       "queues": "178498d3d11cf8b96c7cb4e53df88b9ddbd9296d",
       "value_ledger": "aaab7ab7e35c4a8a390a2a3092c90b1cc3962f88",
       "daily_report": "dc39cee2c4539318d476927cc794fe3d746a1f14",
-      "status_final": "pending_final_connector_response",
-      "log": "pending_next_write"
+      "log": "6084322c79c47fe3df9393dca125c4068cd22d84",
+      "status_final": "pending_final_connector_response"
     },
     "acceptance_tests": [
       {"test": "catalog reflects the new AI SDK Provider Tool Safety skill and updated software-engineering/medium counts", "result": "pass", "evidence": "dist/catalog.json shows skill_count 1183, software-engineering 147, medium 434, and software-engineering includes ai-sdk-provider-tool-safety."},
@@ -98,20 +76,10 @@
       {"test": "board next ticket is updated", "result": "pass", "evidence": "skills-catalog-refresh-after-normalization-001 is done; skills-metadata-backfill-batch-001 is ready."}
     ],
     "catalog_package_npm_status": "Catalog parity after AI SDK Provider Tool Safety normalization is verified. No generated catalog surface was hand-edited. No npm publication attempted. Package/publication endorsement remains blocked until discovery Action handoff and backlog gates are clean.",
-    "blockers": [
-      "Discovery Action handoff remains absent; manual fallback and source review artifacts exist but producer verification remains blocked.",
-      "GitTaskBench remains watch/license-blocked because LICENSE returned 404 during source review.",
-      "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
-      "Package/publication endorsement remains blocked until discovery Action and backlog gates are clean."
-    ],
+    "blockers": ["Discovery Action handoff remains absent; manual fallback and source review artifacts exist but producer verification remains blocked.", "GitTaskBench remains watch/license-blocked because LICENSE returned 404 during source review.", "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.", "Package/publication endorsement remains blocked until discovery Action and backlog gates are clean."],
     "value_delta": "Verified catalog/install-manifest parity after adding AI SDK Provider Tool Safety. The normalized skill is now discoverable through the catalog and coherent for installer selection; this removes the immediate post-normalization catalog blocker without hand-editing generated surfaces or attempting publication."
   },
-  "blockers": [
-    "Discovery Action handoff remains absent; manual fallback and source review artifacts exist but producer verification remains blocked.",
-    "GitTaskBench remains watch/license-blocked because LICENSE returned 404 during source review.",
-    "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
-    "Package/publication endorsement remains blocked until discovery Action and backlog gates are clean."
-  ],
-  "last_commit": "pending_final_connector_response",
+  "blockers": ["Discovery Action handoff remains absent; manual fallback and source review artifacts exist but producer verification remains blocked.", "GitTaskBench remains watch/license-blocked because LICENSE returned 404 during source review.", "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.", "Package/publication endorsement remains blocked until discovery Action and backlog gates are clean."],
+  "last_commit": "6084322c79c47fe3df9393dca125c4068cd22d84",
   "next_action": "Critic should consume skills-metadata-backfill-batch-001 as one bounded metadata-backfill batch, stopping immediately on high-risk executable, credential, offensive, account, browser, or external-mutation surfaces."
 }
