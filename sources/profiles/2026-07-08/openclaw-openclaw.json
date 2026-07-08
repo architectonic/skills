@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "name": "openclaw/openclaw",
+  "url": "https://github.com/openclaw/openclaw",
+  "source_family": "local-first-personal-agent-runtime",
+  "reviewed_at_utc": "2026-07-08T18:40:00Z",
+  "review_ticket": "skills-source-review-batch-001",
+  "decision": "source_profile_created_high_risk_review_required",
+  "license_status": "usable_with_attribution_and_license_tracking",
+  "license_summary": "MIT license file directly fetched; third-party notices are recorded separately by the source repository.",
+  "usefulness": "high",
+  "risk_level": "high",
+  "requires_review_before_normalization": true,
+  "why_relevant": [
+    "High-signal local-first personal agent runtime.",
+    "Relevant to Skills guidance around gateway, channel routing, agent sessions, onboarding, skills, and sandbox defaults.",
+    "Contains safety defaults that may be useful only after high-risk review separates abstract patterns from operational account/browser/cron workflows."
+  ],
+  "runtime_security_surface": [
+    "real messaging and account/channel integrations",
+    "gateway exposure and remote access surfaces",
+    "browser, canvas, nodes, and cron tools",
+    "host tool access in main session",
+    "DM pairing, allowlist, and sandbox policy configuration",
+    "daemon/onboarding install flow"
+  ],
+  "redistribution_boundary": "Do not normalize or package OpenClaw-derived material until high-risk source review approves safe, abstract, non-operational patterns. Do not copy command snippets, channel setup flows, browser/cron/account workflows, or implementation content.",
+  "evidence_files": [
+    "openclaw/openclaw README.md",
+    "openclaw/openclaw LICENSE",
+    "reports/review/2026-07-08-manual-source-review.md"
+  ],
+  "next_allowed_action": "Risk Auditor should consume risk-review-openclaw-source-runtime-surfaces-20260708 before any normalization or package-facing endorsement."
+}
