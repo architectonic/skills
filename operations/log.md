@@ -11,6 +11,21 @@ status: active
 
 ## 2026-07-08
 
+- Ran Cataloger at the 08 cadence slot even though cadence selected Source Reviewer, because `catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708` is an open package-health queue item and catalog/package gates outrank source review, discovery, packaging, and publication until generated install-facing surfaces agree with package-facing skill metadata.
+- Model requirement status: `model_setting_unverified`.
+- Inspected ref/SHA before this pass: `main` at `9c8e254a440e6164e0ec77f634e145f70ce59572`.
+- Confirmed today's daily ledger exists; no missing-ledger initialization was performed.
+- Confirmed `operations/action-runs/discover-skill-sources/latest.json` remains absent on the default branch; no discovery Action handoff was available.
+- Read and followed `operations/project-operator-prompt.md`, `operations/aggregator-loop.md`, `operations/operator-stability.md`, `operations/action-runs/discover-skill-sources/README.md`, `operations/scheduler-online-scout-contract.md`, `operations/manual-discovery-review-fallback.md`, today's status/queues, `operations/log.md`, `.github/workflows/discover-skill-sources.yml`, `package.json`, `scripts/build_distribution_catalog.py`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, and `dist/skills/auditing-foundry-smart-contract-security/SKILL.md`.
+- Verified `dist/skills/auditing-foundry-smart-contract-security/SKILL.md` is package-facing with explicit `security-defensive`, `medium`, `requires_review`, source status, normalized name/title/description, and tags.
+- Verified generated catalog surfaces are stale before repair: `dist/catalog.json` still lists `Auditing Foundry Smart Contract Security` with blank domain/risk/source metadata; `dist/catalog.md` still reports 1182 skills, 59 `security-defensive`, 565 `uncategorized`, 432 `medium`, and 727 `unspecified`.
+- Added `.github/workflows/build-catalog.yml` to run `npm run build:catalog` on workflow dispatch and relevant pushes, install `pyyaml`, validate the Foundry metadata propagation, and commit only `dist/catalog.json`, `dist/catalog.md`, and `dist/install-manifest.json` when changed.
+- Created `reports/catalog/2026-07-08-0811-catalog-builder-workflow-repair.md`.
+- Left Cataloger queue `catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708` open until a later Cataloger pass verifies refreshed generated surfaces on the default branch.
+- No third-party source was copied. No external repository was cloned, installed, imported, or executed. No generated catalog file was hand-edited. No npm publication was attempted.
+- Value delta: converted a repeated catalog-staleness blocker into a deterministic GitHub Actions repair surface that can regenerate and validate package-facing catalog metadata after `dist/skills/**` changes.
+- Next justified action: verify whether the new catalog build workflow refreshed `dist/catalog.json`, `dist/catalog.md`, and `dist/install-manifest.json`; close the Cataloger queue only after direct verification.
+
 - Ran Cataloger at the 07 cadence slot even though cadence selected Radar, because `catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708` is an open package-health queue item and catalog/package gates outrank broad discovery until generated surfaces are coherent.
 - Model requirement status: `model_setting_unverified`.
 - Inspected ref/SHA before this pass: `main` at `afb311029679a14644febdd72e6c65f2aebf3c15`.
