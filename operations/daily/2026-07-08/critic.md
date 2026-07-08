@@ -26,3 +26,12 @@
 - Created Cataloger queue `catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708` because `dist/skills/**` changed and generated catalog/install surfaces are now stale until verified.
 - Created `reports/critic/2026-07-08-0611-foundry-smart-contract-metadata-backfill.md`.
 - No third-party source was copied; no repository was cloned or executed; no generated catalog file or npm surface was hand-edited.
+
+## 09:12 — MCP tool poisoning / SSRF risk triage
+
+- Selected Critic over Normalizer because the carried-forward metadata backlog is concrete and no higher-priority risk/catalog queue was open at run start.
+- Inspected `dist/catalog.json` and `dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md` directly from `main` before deciding.
+- Stopped routine metadata backfill because the package-facing body includes live MCP config/endpoint scanning, SSRF probing against metadata/loopback/internal targets, unauthenticated endpoint checks, and prompt-injection/tool-description inspection.
+- Created Risk Auditor queue `risk-review-mcp-tool-poisoning-ssrf-skill-20260708` before any classification, catalog endorsement, or package/publication endorsement.
+- Created `reports/critic/2026-07-08-0912-mcp-tool-poisoning-ssrf-risk-triage.md`.
+- No third-party source was copied; no repository was cloned or executed; no generated catalog file or npm surface was hand-edited.
