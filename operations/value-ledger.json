@@ -29,6 +29,22 @@
         "operations/log.md"
       ],
       "summary": "Consumed the discovery handoff repair ticket, confirmed canonical latest.json is absent while producer workflow/scripts exist, documented the connector-visible blocker, queued a metadata-only manual discovery fallback, and preserved package/risk gates."
+    },
+    {
+      "id": "skills-risk-review-mcp-tool-poisoning-ssrf-20260708-1414",
+      "timestamp": "2026-07-08T14:14:42-03:00",
+      "type": "risk_blocker_removed",
+      "source": "Skills Value Operator board ticket skills-risk-review-mcp-tool-poisoning-001",
+      "artifact_paths": [
+        "dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md",
+        "reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md",
+        "operations/board.json",
+        "operations/daily/2026-07-08/queues.json",
+        "operations/daily/2026-07-08/status.json",
+        "operations/daily/2026-07-08/report.md",
+        "operations/log.md"
+      ],
+      "summary": "Removed a package-facing risk blocker by converting the MCP/tool-poisoning and SSRF audit skill into a high-risk, requires_review defensive wrapper. Default executable probing, SSRF target lists, unauthenticated endpoint probe commands, and MCP tool-call snippets were removed while preserving authorized static review, fingerprinting, severity scoring, and remediation workflow. Catalog parity is now the next gate."
     }
   ]
 }
