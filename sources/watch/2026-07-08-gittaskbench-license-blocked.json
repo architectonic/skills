@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1",
+  "name": "QuantaAlpha/GitTaskBench",
+  "url": "https://github.com/QuantaAlpha/GitTaskBench",
+  "source_family": "agent-benchmark-evaluation-harness",
+  "reviewed_at_utc": "2026-07-08T18:40:00Z",
+  "review_ticket": "skills-source-review-batch-001",
+  "decision": "watch_note_created_license_blocked",
+  "license_status": "blocked_unknown_license",
+  "license_evidence": "Direct fetch of LICENSE on the default branch returned 404 Not Found.",
+  "usefulness": "medium",
+  "risk_level": "medium",
+  "requires_license_verification_before_normalization": true,
+  "why_relevant": [
+    "Repo-level benchmark and tooling suite for practical code-agent tasks.",
+    "Potentially useful for value metrics and agent-loop evaluation patterns.",
+    "Includes task definitions, code bases, ground-truth assets, test scripts, and reports; redistribution boundaries matter."
+  ],
+  "runtime_security_surface": [
+    "benchmark harness scripts",
+    "task repository assets",
+    "agent framework integrations",
+    "ground truth and evaluation data"
+  ],
+  "redistribution_boundary": "Watch only. Do not copy, normalize, package, or derive dataset/task content until license and redistribution rights are directly verified.",
+  "evidence_files": [
+    "QuantaAlpha/GitTaskBench README.md",
+    "QuantaAlpha/GitTaskBench LICENSE fetch result: 404 Not Found",
+    "reports/review/2026-07-08-manual-source-review.md"
+  ],
+  "next_allowed_action": "Repeat license verification later or skip if license remains unavailable."
+}
