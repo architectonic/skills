@@ -1,9 +1,9 @@
 {
   "date": "2026-07-08",
-  "current_state": "discovery_handoff_repair_done_risk_review_next_manual_discovery_after_risk_gate",
+  "current_state": "mcp_tool_poisoning_ssrf_risk_review_done_catalog_parity_next",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "8a223c7ace9b73a0102fcf5a54701b9ae5b86b74",
+  "inspected_sha": "f3d8e7fed190f8da6471f427bf906b048d90cf4f",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -18,7 +18,7 @@
     "sources_reviewed": 0,
     "sources_blocked": 0,
     "normalized_entries_added": 0,
-    "skills_updated": 0,
+    "skills_updated": 1,
     "catalog_skill_count": 1182,
     "security_defensive_count": 60,
     "security_offensive_count": 16,
@@ -27,70 +27,94 @@
     "medium_risk_count": 433,
     "unspecified_risk_count": 726,
     "requires_review_count": null,
-    "catalog_build_status": "unchanged_no_dist_skill_metadata_or_catalog_edit_this_pass",
-    "publication_readiness": "blocked_by_open_mcp_tool_poisoning_ssrf_risk_queue_absent_discovery_action_handoff_open_manual_fallback_and_open_critic_metadata_backlog"
+    "catalog_build_status": "stale_after_skill_frontmatter_and_body_change_catalog_refresh_required",
+    "publication_readiness": "blocked_by_catalog_parity_after_risk_review_absent_discovery_action_handoff_open_manual_fallback_and_open_critic_metadata_backlog"
   },
   "queues": {
     "discovery": 1,
     "review": 0,
     "normalization": 0,
-    "catalog": 0,
-    "risk": 1,
+    "catalog": 1,
+    "risk": 0,
     "packaging": 0,
     "publication": 0,
     "maintenance": 0,
     "critic": 1
   },
   "latest_run": {
-    "started_at": "2026-07-08T13:30:00Z",
-    "completed_at": "2026-07-08T13:30:00Z",
-    "scheduled_role": "Portfolio Supervisor",
-    "selected_role": "Board repair",
-    "board_ticket_consumed": null,
-    "override_reason": "Supervisor found a board/gates priority inconsistency: manual discovery fallback was ready before the open high-risk package-facing MCP/SSRF review, while operations/gates.md prioritizes high-risk review first.",
+    "started_at": "2026-07-08T14:14:42-03:00",
+    "completed_at": "2026-07-08T14:14:42-03:00",
+    "scheduled_role": "Skills Value Operator",
+    "selected_role": "Risk Auditor",
+    "board_ticket_consumed": "skills-risk-review-mcp-tool-poisoning-001",
+    "override_reason": null,
     "inspected_ref": "main",
+    "inspected_sha": "f3d8e7fed190f8da6471f427bf906b048d90cf4f",
     "missing_ledger_initialization_performed": false,
-    "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent from the default branch; manual fallback remains open but is now behind the package-facing risk review.",
-    "queue_item_consumed_or_created": "No content ticket consumed. Supervisor repaired board/daily priority state only.",
-    "sources_reviewed": [],
+    "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent from the default branch; manual fallback remains open but lower priority than catalog parity after the risk-review change.",
+    "queue_item_consumed_or_created": "Closed risk-review-mcp-tool-poisoning-ssrf-skill-20260708 and opened catalog-refresh-after-mcp-ssrf-risk-review-20260708.",
+    "sources_reviewed": [
+      "dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md",
+      "reports/critic/2026-07-08-0912-mcp-tool-poisoning-ssrf-risk-triage.md"
+    ],
     "candidates_processed": 0,
     "files_changed": [
+      "dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md",
+      "reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md",
       "operations/board.json",
       "operations/daily/2026-07-08/queues.json",
-      "operations/daily/2026-07-08/status.json"
+      "operations/value-ledger.json",
+      "operations/daily/2026-07-08/report.md",
+      "operations/daily/2026-07-08/status.json",
+      "operations/log.md"
     ],
+    "commit_shas": {
+      "skill_wrapper": "73b7511987b08547f12859295b0984c3e70ab92f",
+      "risk_report": "7881536660d57645b74d4d666dd79ce97a601a6d",
+      "board": "05f7b680253f43d713e555717780f3b8717f5403",
+      "queues": "ecd1f2ac5eed54cad29af188037f18adaf6350ee",
+      "value_ledger": "07edd3bfc47ddbabbcf5bc03e3cf482b819cc526",
+      "daily_report": "a7b886760d4425ccfbbc1d67f91fbc27f9314b8b",
+      "status": "pending_final_connector_response",
+      "log": "pending_next_write"
+    },
     "acceptance_tests": [
       {
-        "test": "board priority matches operations/gates.md",
+        "test": "classifies risk level and requires_review",
         "result": "pass",
-        "evidence": "skills-risk-review-mcp-tool-poisoning-001 is now the highest-priority ready board ticket; manual discovery fallback remains open but lower priority."
+        "evidence": "Skill frontmatter now includes risk_level: high and requires_review: true."
       },
       {
-        "test": "no third-party content copied or executed",
+        "test": "removes default executable SSRF/probing detail if unsafe",
         "result": "pass",
-        "evidence": "No discovery, cloning, execution, import, normalization, package, catalog, or publication work occurred."
+        "evidence": "Package-facing body no longer includes SSRF target lists, executable MCP tool-call scripts, or default unauthenticated endpoint probe commands."
       },
       {
-        "test": "package/publication gates preserved",
+        "test": "preserves defensive audit framing",
         "result": "pass",
-        "evidence": "Publication remains blocked until the high-risk MCP/SSRF review, discovery handoff/fallback, and metadata backlog improve."
+        "evidence": "Revised skill keeps authorization scope, static tool-description review, fingerprinting, SSRF design review, auth/exposure review, runtime guardrail assessment, severity scoring, and remediation reporting."
+      },
+      {
+        "test": "creates catalog-refresh ticket if package-facing metadata changed",
+        "result": "pass",
+        "evidence": "skills-catalog-refresh-after-risk-review-001 is ready and daily catalog queue catalog-refresh-after-mcp-ssrf-risk-review-20260708 is open."
       }
     ],
-    "catalog_package_npm_status": "No npm publication attempted. Catalog/package surfaces unchanged. Package/publication endorsement is blocked until Risk Auditor resolves risk-review-mcp-tool-poisoning-ssrf-skill-20260708 and discovery fallback or Action handoff is current.",
+    "catalog_package_npm_status": "No npm publication attempted. Generated catalog surfaces were not hand-edited. Catalog parity is stale after skill frontmatter/body changes and must be refreshed or verified by Cataloger before publication/package endorsement.",
     "blockers": [
-      "Risk Auditor queue open and highest-priority next: risk-review-mcp-tool-poisoning-ssrf-skill-20260708 / skills-risk-review-mcp-tool-poisoning-001.",
-      "Manual discovery fallback open but lower priority after risk gate: manual-discovery-fallback-20260708 / skills-manual-discovery-fallback-001.",
+      "Catalog parity required after MCP/SSRF risk-review metadata/body change.",
+      "Discovery Action handoff remains absent; manual fallback remains open after catalog parity.",
       "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
-      "operations/action-runs/discover-skill-sources/latest.json remains absent, so deterministic discovery Action handoff is still missing."
+      "Package/publication endorsement remains blocked until catalog parity, discovery, and review gates are clean."
     ],
-    "value_delta": "Corrected an operator-selection hazard before it could route public discovery work ahead of a high-risk package-facing MCP/SSRF review. This is supervisor value because it enforces the repo's own safety gate and prevents package/publication/discovery expansion from bypassing risk review."
+    "value_delta": "Removed a package-facing high-risk blocker by converting the MCP/tool-poisoning and SSRF audit skill into a high-risk, requires_review defensive wrapper without default executable probing or SSRF target detail."
   },
   "blockers": [
-    "Risk Auditor queue open and highest-priority next: risk-review-mcp-tool-poisoning-ssrf-skill-20260708 / skills-risk-review-mcp-tool-poisoning-001.",
-    "Manual discovery fallback open but lower priority after risk gate: manual-discovery-fallback-20260708 / skills-manual-discovery-fallback-001.",
+    "Catalog parity required after MCP/SSRF risk-review metadata/body change.",
+    "Discovery Action handoff remains absent; manual fallback remains open after catalog parity.",
     "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
-    "operations/action-runs/discover-skill-sources/latest.json remains absent, so deterministic discovery Action handoff is still missing."
+    "Package/publication endorsement remains blocked until catalog parity, discovery, and review gates are clean."
   ],
   "last_commit": "pending_final_connector_response",
-  "next_action": "Risk Auditor should consume skills-risk-review-mcp-tool-poisoning-001 / risk-review-mcp-tool-poisoning-ssrf-skill-20260708 before manual discovery fallback, metadata backfill, catalog/package endorsement, or publication work."
+  "next_action": "Cataloger should consume skills-catalog-refresh-after-risk-review-001 / catalog-refresh-after-mcp-ssrf-risk-review-20260708 and refresh or verify dist/catalog.json, dist/catalog.md, and dist/install-manifest.json after the MCP/SSRF risk-review change."
 }
