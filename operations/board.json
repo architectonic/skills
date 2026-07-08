@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "repo": "architectonic/skills",
   "board_type": "repo_native_value_board",
-  "updated_at": "2026-07-08T17:12:46-03:00",
+  "updated_at": "2026-07-08T18:12:22-03:00",
   "purpose": "Force skills heartbeats to produce reviewed, installable, discoverable skill value instead of unbounded catalog/status churn.",
   "selection_rule": "Operators must consume the highest-priority ready ticket allowed by gates.md. High-risk package-facing review outranks manual discovery fallback; discovery restoration outranks routine metadata cleanup.",
   "definition_of_done": "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done.",
@@ -134,6 +134,23 @@
       "next_ticket_on_failure": "skills-local-catalog-build-required-001"
     },
     {
+      "id": "skills-risk-review-browser-trace-001",
+      "status": "ready",
+      "priority": 1,
+      "role": "Risk Auditor",
+      "mission": "Review Browser Trace before metadata/catalog endorsement because it attaches to browser/CDP sessions, captures screenshots and DOM, mentions Browserbase API key use, and includes local debugger/trace command snippets.",
+      "value_type": "risk_blocker_removed",
+      "input_artifacts": ["dist/skills/browser-trace/SKILL.md", "reports/critic/2026-07-08-metadata-backfill-batch.md"],
+      "output_artifacts": ["reports/risk/2026-07-08-browser-trace-risk-review.md"],
+      "external_action_allowed": false,
+      "required_connector": null,
+      "acceptance_tests": ["classifies browser/CDP/session/API-key/DOM/screenshot/filesystem trace surfaces", "defines whether Browser Trace can remain package-facing as a read-only defensive debugging skill", "redacts or gates command snippets and API-key/browser-session handling if needed", "keeps catalog/package/publication endorsement blocked until review and catalog parity are complete"],
+      "supervisor_gate": "High-risk browser/session/data-capture review outranks catalog parity and further metadata backlog cleanup.",
+      "kill_condition": "If Browser Trace cannot be made safe as a review-gated read-only defensive debugging skill, quarantine it or mark non-publishable.",
+      "next_ticket_on_success": "skills-catalog-refresh-after-metadata-backfill-001",
+      "next_ticket_on_failure": "skills-quarantine-browser-trace-001"
+    },
+    {
       "id": "skills-action-handoff-producer-verification-001",
       "status": "blocked",
       "priority": 3,
@@ -169,8 +186,25 @@
       "next_ticket_on_failure": "skills-local-catalog-build-required-001"
     },
     {
+      "id": "skills-catalog-refresh-after-metadata-backfill-001",
+      "status": "blocked",
+      "priority": 2,
+      "role": "Cataloger",
+      "mission": "Refresh or verify catalog/install-manifest parity after metadata backfill classified Autonomy Loop and Autoresearch Loop.",
+      "value_type": "catalog_parity_repair",
+      "input_artifacts": ["dist/catalog.json", "dist/catalog.md", "dist/install-manifest.json", "dist/skills/autonomy-loop/SKILL.md", "dist/skills/autoresearch-loop/SKILL.md", "reports/critic/2026-07-08-metadata-backfill-batch.md"],
+      "output_artifacts": ["reports/catalog/2026-07-08-metadata-backfill-catalog-parity.md"],
+      "external_action_allowed": false,
+      "required_connector": null,
+      "acceptance_tests": ["catalog reflects Autonomy Loop and Autoresearch Loop as agent-operations medium requires_review skills", "catalog summary counts are updated or verified after generation", "install manifest remains coherent", "no npm publish attempted"],
+      "supervisor_gate": "Blocked until Browser Trace high-risk review is complete because high-risk browser/session/data-capture review outranks catalog parity.",
+      "kill_condition": "If generated surfaces cannot be refreshed or verified through available tooling, create a local catalog build ticket.",
+      "next_ticket_on_success": "skills-metadata-backfill-batch-002",
+      "next_ticket_on_failure": "skills-local-catalog-build-required-001"
+    },
+    {
       "id": "skills-metadata-backfill-batch-001",
-      "status": "ready",
+      "status": "done",
       "priority": 5,
       "role": "Critic",
       "mission": "Process one bounded batch from the uncategorized/unspecified-risk backlog, stopping immediately on any high-risk executable, credential, offensive, account, or external-mutation surface.",
@@ -180,9 +214,10 @@
       "external_action_allowed": false,
       "required_connector": null,
       "acceptance_tests": ["processes a bounded batch, not the entire catalog", "adds domain/risk/requires_review/source status when justified", "stops and creates risk ticket on unsafe material", "creates catalog refresh ticket after metadata changes"],
-      "supervisor_gate": "Backlog cleanup is lower priority than discovery restoration, high-risk review, source review, normalization, and catalog parity after real skill changes. It is now eligible only as a bounded Critic pass after catalog parity was verified.",
+      "acceptance_result": {"passed": true, "checked_at": "2026-07-08T18:12:22-03:00", "evidence": "reports/critic/2026-07-08-metadata-backfill-batch.md documents a bounded batch: classified autonomy-loop and autoresearch-loop as agent-operations/medium/requires_review with source status; stopped at browser-trace due browser/CDP/session/API-key/DOM/screenshot trace surfaces; opened skills-risk-review-browser-trace-001 and a blocked catalog parity ticket after metadata changes."},
+      "supervisor_gate": "Further metadata backlog cleanup is blocked until Browser Trace high-risk review and metadata-backfill catalog parity are complete.",
       "kill_condition": "Stop if the batch becomes generic metadata churn with no package-facing value.",
-      "next_ticket_on_success": "skills-catalog-refresh-after-risk-review-001",
+      "next_ticket_on_success": "skills-risk-review-browser-trace-001",
       "next_ticket_on_failure": "skills-risk-review-generated-001"
     }
   ]
