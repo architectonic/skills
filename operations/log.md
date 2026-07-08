@@ -11,6 +11,19 @@ status: active
 
 ## 2026-07-08
 
+- Ran Critic at the 09 cadence slot even though cadence selected Normalizer, because no normalization queue was open and the concrete open queue pressure was `metadata-backfill-uncategorized-and-unspecified-risk-20260707`.
+- Model requirement status: `model_setting_unverified`.
+- Inspected ref/SHA before this pass: `main` at `a00d179bc21fbe8b4761367dae05c93b07a991b9`.
+- Confirmed today's daily ledger exists; no missing-ledger initialization was performed.
+- Confirmed `operations/action-runs/discover-skill-sources/latest.json` remains absent on the default branch; no discovery Action handoff was available.
+- Read and followed `operations/project-operator-prompt.md`, `operations/aggregator-loop.md`, `operations/operator-stability.md`, `operations/action-runs/discover-skill-sources/README.md`, `operations/scheduler-online-scout-contract.md`, `operations/manual-discovery-review-fallback.md`, today's status/queues, `operations/log.md`, `dist/catalog.json`, and `dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md`.
+- Stopped routine metadata backfill on `dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md` because the package-facing body includes live MCP config/endpoint scanning, SSRF probing against metadata/loopback/internal targets, unauthenticated endpoint checks, and prompt-injection/tool-description inspection.
+- Created Risk Auditor queue `risk-review-mcp-tool-poisoning-ssrf-skill-20260708` before classification, catalog endorsement, package endorsement, or publication endorsement.
+- Created `reports/critic/2026-07-08-0912-mcp-tool-poisoning-ssrf-risk-triage.md` and updated `operations/daily/2026-07-08/critic.md`, `queues.json`, and `status.json`.
+- No third-party source was copied. No external repository was cloned, installed, imported, or executed. No generated catalog file was hand-edited. No npm publication was attempted.
+- Value delta: prevented routine metadata endorsement of a package-facing MCP/tool-poisoning and SSRF audit entry before safety review; recorded the reusable risk boundary that MCP audit skills with live server probing, SSRF tests, unauthenticated endpoint checks, or prompt-injection/tool-description payload inspection must go to Risk Auditor before catalog/package endorsement.
+- Next justified action: Risk Auditor should resolve `risk-review-mcp-tool-poisoning-ssrf-skill-20260708`, then Cataloger should verify generated surfaces if the skill is edited.
+
 - Ran Cataloger at the 08 cadence slot even though cadence selected Source Reviewer, because `catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708` was an open package-health queue item and catalog/package gates outrank source review, discovery, packaging, and publication until generated install-facing surfaces agree with package-facing skill metadata.
 - Model requirement status: `model_setting_unverified`.
 - Inspected ref/SHA before this pass: `main` at `9c8e254a440e6164e0ec77f634e145f70ce59572`.
