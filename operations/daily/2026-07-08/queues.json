@@ -2,8 +2,22 @@
   "date": "2026-07-08",
   "initialized_by": "Skills Loop Operator",
   "inspected_ref": "main",
-  "inspected_commit": "a00d179bc21fbe8b4761367dae05c93b07a991b9",
-  "discovery": [],
+  "inspected_commit": "8a223c7ace9b73a0102fcf5a54701b9ae5b86b74",
+  "discovery": [
+    {
+      "id": "manual-discovery-fallback-20260708",
+      "priority": 1,
+      "role": "Radar",
+      "target": "public web/GitHub metadata-only candidate search",
+      "reason": "Canonical operations/action-runs/discover-skill-sources/latest.json is absent from the default branch while the discovery producer workflow and scripts exist. A bounded fallback is needed so the loop produces reviewable candidate metadata instead of status-only churn.",
+      "action": "Create reports/discovery/2026-07-08-manual.md, reports/discovery/2026-07-08-manual.json, and sources/candidates/2026-07-08-manual.json with at least three real public candidate sources or exact searches/blockers. Do not clone, execute, copy, import, normalize, publish, or package candidate content.",
+      "risk_level": "medium",
+      "status": "open",
+      "created_by": "Skills Value Operator",
+      "created_at": "2026-07-08T10:13:04-03:00",
+      "source_ticket": "skills-restore-discovery-handoff-001"
+    }
+  ],
   "review": [],
   "normalization": [],
   "catalog": [],
@@ -32,7 +46,7 @@
       "role": "Critic",
       "target": "dist/skills/**",
       "reason": "Catalog still has a large uncategorized-domain and unspecified-risk backlog under the current quality gate.",
-      "action": "Continue bounded metadata backfill batches after open risk and catalog refresh queues are resolved.",
+      "action": "Continue bounded metadata backfill batches after open discovery, risk, and catalog refresh queues are resolved.",
       "risk_level": "low",
       "status": "open",
       "created_by": "Fable 5 (Claude, external maintainer session)",
@@ -64,7 +78,8 @@
         {"at":"2026-07-08T05:13:11-03:00","by":"Skills Loop Operator","batch":"vector-embedding-catalog-verification","result":"Closed catalog-refresh-after-vector-embedding-redaction-20260708 after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the high-risk review-gated vector/embedding package wrapper; Critic backlog is unblocked for the next bounded metadata batch."},
         {"at":"2026-07-08T06:11:12-03:00","by":"Skills Loop Operator","batch":"foundry-smart-contract-metadata-backfill","result":"Backfilled dist/skills/auditing-foundry-smart-contract-security/SKILL.md with security-defensive, medium-risk, requires_review, source status, normalized name/title/description/tags; created Cataloger queue catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708 before package/publication endorsement."},
         {"at":"2026-07-08T08:11:46-03:00","by":"Skills Loop Operator","batch":"foundry-smart-contract-catalog-verification-after-workflow-repair","result":"Closed catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708 after adding the catalog build workflow and directly verifying dist/catalog.json, dist/catalog.md, and dist/install-manifest.json reflect the Foundry metadata on main."},
-        {"at":"2026-07-08T09:12:59-03:00","by":"Skills Loop Operator","batch":"mcp-tool-poisoning-ssrf-risk-triage","result":"Stopped routine metadata backfill on dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md and created risk queue risk-review-mcp-tool-poisoning-ssrf-skill-20260708 before classification, catalog endorsement, or package/publication endorsement."}
+        {"at":"2026-07-08T09:12:59-03:00","by":"Skills Loop Operator","batch":"mcp-tool-poisoning-ssrf-risk-triage","result":"Stopped routine metadata backfill on dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md and created risk queue risk-review-mcp-tool-poisoning-ssrf-skill-20260708 before classification, catalog endorsement, or package/publication endorsement."},
+        {"at":"2026-07-08T10:13:04-03:00","by":"Skills Value Operator","batch":"discovery-handoff-repair","result":"Consumed board ticket skills-restore-discovery-handoff-001; documented that canonical latest.json is absent while producer workflow/scripts exist; queued manual-discovery-fallback-20260708 and preserved the MCP tool-poisoning/SSRF risk queue."}
       ]
     }
   ]
