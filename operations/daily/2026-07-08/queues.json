@@ -2,12 +2,26 @@
   "date": "2026-07-08",
   "initialized_by": "Skills Loop Operator",
   "inspected_ref": "main",
-  "inspected_commit": "9c8e254a440e6164e0ec77f634e145f70ce59572",
+  "inspected_commit": "a00d179bc21fbe8b4761367dae05c93b07a991b9",
   "discovery": [],
   "review": [],
   "normalization": [],
   "catalog": [],
-  "risk": [],
+  "risk": [
+    {
+      "id": "risk-review-mcp-tool-poisoning-ssrf-skill-20260708",
+      "priority": 1,
+      "role": "Risk Auditor",
+      "target": "dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md",
+      "reason": "Package-facing uncategorized skill includes live MCP server probing, SSRF testing against internal targets, unauthenticated endpoint checks, and tool-description prompt-injection handling. It must be reviewed/redacted before routine metadata classification or package/publication endorsement.",
+      "action": "Inspect and convert to a high-risk review-gated defensive wrapper if needed; preserve defensive audit value while removing default executable probing detail.",
+      "risk_level": "high",
+      "status": "open",
+      "created_by": "Skills Loop Operator",
+      "created_at": "2026-07-08T09:12:59-03:00",
+      "source_queue": "metadata-backfill-uncategorized-and-unspecified-risk-20260707"
+    }
+  ],
   "packaging": [],
   "publication": [],
   "maintenance": [],
@@ -49,7 +63,8 @@
         {"at":"2026-07-08T04:12:31-03:00","by":"Skills Loop Operator","batch":"vector-embedding-risk-redaction","result":"Resolved vector/embedding risk queue by replacing default executable RAG data-exfiltration-adjacent procedures with a high-risk review-gated defensive wrapper; Cataloger refresh now blocks further package/publication endorsement."},
         {"at":"2026-07-08T05:13:11-03:00","by":"Skills Loop Operator","batch":"vector-embedding-catalog-verification","result":"Closed catalog-refresh-after-vector-embedding-redaction-20260708 after verifying dist/catalog.json, dist/catalog.md, dist/install-manifest.json, and the high-risk review-gated vector/embedding package wrapper; Critic backlog is unblocked for the next bounded metadata batch."},
         {"at":"2026-07-08T06:11:12-03:00","by":"Skills Loop Operator","batch":"foundry-smart-contract-metadata-backfill","result":"Backfilled dist/skills/auditing-foundry-smart-contract-security/SKILL.md with security-defensive, medium-risk, requires_review, source status, normalized name/title/description/tags; created Cataloger queue catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708 before package/publication endorsement."},
-        {"at":"2026-07-08T08:11:46-03:00","by":"Skills Loop Operator","batch":"foundry-smart-contract-catalog-verification-after-workflow-repair","result":"Closed catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708 after adding the catalog build workflow and directly verifying dist/catalog.json, dist/catalog.md, and dist/install-manifest.json reflect the Foundry metadata on main."}
+        {"at":"2026-07-08T08:11:46-03:00","by":"Skills Loop Operator","batch":"foundry-smart-contract-catalog-verification-after-workflow-repair","result":"Closed catalog-refresh-after-foundry-smart-contract-metadata-backfill-20260708 after adding the catalog build workflow and directly verifying dist/catalog.json, dist/catalog.md, and dist/install-manifest.json reflect the Foundry metadata on main."},
+        {"at":"2026-07-08T09:12:59-03:00","by":"Skills Loop Operator","batch":"mcp-tool-poisoning-ssrf-risk-triage","result":"Stopped routine metadata backfill on dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md and created risk queue risk-review-mcp-tool-poisoning-ssrf-skill-20260708 before classification, catalog endorsement, or package/publication endorsement."}
       ]
     }
   ]
