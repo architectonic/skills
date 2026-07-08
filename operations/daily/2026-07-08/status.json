@@ -1,0 +1,73 @@
+{
+  "date": "2026-07-08",
+  "current_state": "daily_initialized",
+  "repo": "architectonic/skills",
+  "inspected_ref": "main",
+  "inspected_sha": "ca1c7917cf5e9e920ad59f780a3ffe0504ada331",
+  "model_requirement_status": "model_setting_unverified",
+  "missing_ledger_initialization_performed": true,
+  "package": {
+    "name": "architectonic-skills",
+    "version": "0.1.3",
+    "install_root": "dist/skills",
+    "catalog": "dist/catalog.json",
+    "install_manifest": "dist/install-manifest.json"
+  },
+  "metrics": {
+    "candidate_sources_discovered": 0,
+    "sources_reviewed": 0,
+    "sources_blocked": 0,
+    "normalized_entries_added": 0,
+    "skills_updated": 0,
+    "catalog_skill_count": null,
+    "high_risk_count": null,
+    "requires_review_count": null,
+    "catalog_build_status": null,
+    "publication_readiness": "blocked_until_post_initialization_pass"
+  },
+  "queues": {
+    "discovery": 0,
+    "review": 0,
+    "normalization": 0,
+    "catalog": 0,
+    "risk": 0,
+    "packaging": 0,
+    "publication": 0,
+    "maintenance": 0,
+    "critic": 1
+  },
+  "latest_run": {
+    "started_at": "2026-07-08T00:13:31-03:00",
+    "completed_at": "2026-07-08T00:13:31-03:00",
+    "scheduled_role": "Reporter",
+    "selected_role": "Reporter",
+    "override_reason": null,
+    "inspected_ref": "main",
+    "inspected_sha": "ca1c7917cf5e9e920ad59f780a3ffe0504ada331",
+    "missing_ledger_initialization_performed": true,
+    "action_handoff_state": "Not inspected in this initialization-only pass because today's required daily status/queues were missing; doctrine requires Reporter-only initialization and stop.",
+    "online_searches_used": [],
+    "queue_item_consumed_or_created": "Carried forward open Critic queue item metadata-backfill-uncategorized-and-unspecified-risk-20260707 from 2026-07-07. No discovery, review, normalization, package, or publication work was performed.",
+    "sources_reviewed": [],
+    "candidates_processed": 0,
+    "files_changed": [
+      "operations/daily/2026-07-08/status.json",
+      "operations/daily/2026-07-08/queues.json",
+      "operations/daily/2026-07-08/report.md"
+    ],
+    "catalog_package_npm_status": "Not inspected or changed in initialization-only pass. No npm publish was performed.",
+    "blockers": [
+      "Daily ledger was missing at run start and required initialization-only Reporter pass.",
+      "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
+      "Publication remains blocked until a non-initialization pass verifies current catalog/package state and queue pressure."
+    ],
+    "value_delta": "Initialized 2026-07-08 durable daily state from templates and carried forward only the unresolved prior-day Critic metadata backlog, preserving queue continuity without mixing initialization with substantive aggregator work."
+  },
+  "blockers": [
+    "Daily ledger was missing at run start and required initialization-only Reporter pass.",
+    "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
+    "Publication remains blocked until a non-initialization pass verifies current catalog/package state and queue pressure."
+  ],
+  "last_commit": "pending_initialization_commit",
+  "next_action": "Next run should perform a non-initialization role selection from the carried-forward queues; likely Critic metadata backfill unless a higher-priority risk or catalog gate appears."
+}
