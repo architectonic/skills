@@ -1,9 +1,9 @@
 {
   "date": "2026-07-07",
-  "current_state": "credential_access_phishing_lateral_movement_risk_triage_queued",
+  "current_state": "credential_access_phishing_lateral_redaction_catalog_refresh_queued",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "b51304f08329d1349412c3b7d39666657dc15857",
+  "inspected_sha": "50015279a56cf1ee7c5f075ccf4703e48cfe0768",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -18,7 +18,7 @@
     "sources_reviewed": 0,
     "sources_blocked": 0,
     "normalized_entries_added": 0,
-    "skills_updated": 0,
+    "skills_updated": 4,
     "catalog_skill_count": 1182,
     "agent_operations_count": 105,
     "security_defensive_count": 58,
@@ -28,55 +28,58 @@
     "unspecified_risk_count": 733,
     "uncategorized_domain_count": 571,
     "requires_review_count": null,
-    "catalog_build_status": "unchanged_verified_before_risk_triage",
-    "publication_readiness": "blocked_by_open_high_risk_credential_access_phishing_lateral_movement_queue"
+    "catalog_build_status": "stale_after_risk_redaction",
+    "publication_readiness": "blocked_by_catalog_refresh_after_high_risk_redaction"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 0,
-    "risk": 1,
+    "catalog": 1,
+    "risk": 0,
     "packaging": 0,
     "publication": 0,
     "maintenance": 0,
     "critic": 1
   },
   "latest_run": {
-    "started_at": "2026-07-07T21:11:43-03:00",
-    "completed_at": "2026-07-07T21:11:43-03:00",
-    "scheduled_role": "Cataloger",
-    "selected_role": "Critic",
-    "override_reason": "The hour cadence selected Cataloger, but no catalog queue was open and dist/catalog.json, dist/catalog.md, and dist/install-manifest.json were already coherent. The concrete open queue was metadata-backfill-uncategorized-and-unspecified-risk-20260707; direct package-facing inspection found high-risk credential-access, phishing/session-hijack, Kerberoasting, and lateral-movement procedure detail that must be routed to Risk Auditor before routine metadata backfill or package/publication endorsement.",
+    "started_at": "2026-07-07T22:13:35-03:00",
+    "completed_at": "2026-07-07T22:13:35-03:00",
+    "scheduled_role": "Critic",
+    "selected_role": "Risk Auditor",
+    "override_reason": "The 22:00 cadence selected Critic, but the open high-priority queue item risk-review-credential-access-phishing-lateral-movement-skills-20260707 required safety review. Risk Auditor overrides Critic metadata backfill while package-facing credential-access, phishing/session-capture, Kerberoasting, and lateral-movement procedure detail remains unresolved.",
     "inspected_ref": "main",
-    "inspected_sha": "b51304f08329d1349412c3b7d39666657dc15857",
+    "inspected_sha": "50015279a56cf1ee7c5f075ccf4703e48cfe0768",
     "missing_ledger_initialization_performed": false,
-    "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json returned 404 on the default branch; no discovery Action handoff was available. This Critic pass did not run manual discovery because the open metadata/risk-quality backlog outranked broad discovery.",
+    "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json returned 404 on the default branch; no discovery Action handoff was available. This Risk Auditor pass did not run manual discovery because the open high-priority risk queue outranked broad discovery and metadata fallback.",
     "online_searches_used": [],
-    "queue_item_consumed_or_created": "Created risk-review-credential-access-phishing-lateral-movement-skills-20260707; left metadata-backfill-uncategorized-and-unspecified-risk-20260707 open but advanced its progress log.",
+    "queue_item_consumed_or_created": "Closed risk-review-credential-access-phishing-lateral-movement-skills-20260707 and created catalog-refresh-after-credential-access-phishing-lateral-redaction-20260707.",
     "sources_reviewed": [],
     "candidates_processed": 4,
     "files_changed": [
-      "reports/critic/2026-07-07-2111-credential-access-phishing-lateral-risk-triage.md",
-      "operations/daily/2026-07-07/critic.md",
+      "dist/skills/performing-credential-access-with-lazagne/SKILL.md",
+      "dist/skills/performing-initial-access-with-evilginx3/SKILL.md",
+      "dist/skills/performing-kerberoasting-attack/SKILL.md",
+      "dist/skills/moving-laterally-with-netexec/SKILL.md",
+      "reports/risk/2026-07-07-2213-credential-access-phishing-lateral-redaction.md",
       "operations/daily/2026-07-07/queues.json",
       "operations/daily/2026-07-07/status.json"
     ],
-    "catalog_package_npm_status": "No catalog/package surfaces were changed. Pre-run verification showed dist/catalog.json and dist/catalog.md agree at 1182 skills, 105 agent-operations, 58 security-defensive, 12 security-offensive, 571 uncategorized, 9 high, 431 medium, and 733 unspecified. dist/install-manifest.json remains coherent. No npm publish was performed.",
+    "catalog_package_npm_status": "No catalog/package surfaces were rebuilt in this Risk Auditor pass. dist/catalog.json, dist/catalog.md, and dist/install-manifest.json are stale after four dist/skills edits. No npm publish was performed.",
     "blockers": [
-      "Open high-priority Risk Auditor queue item: risk-review-credential-access-phishing-lateral-movement-skills-20260707.",
+      "Open high-priority Cataloger queue item: catalog-refresh-after-credential-access-phishing-lateral-redaction-20260707.",
       "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
       "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch.",
-      "Publication endorsement remains blocked until the new risk queue is resolved, metadata quality backlog improves, and discovery Action handoff is restored or replaced by bounded fallback when cadence permits."
+      "Publication endorsement remains blocked until the new catalog queue is resolved, metadata quality backlog improves, and discovery Action handoff is restored or replaced by bounded fallback when cadence permits."
     ],
-    "value_delta": "Stopped routine metadata backfill on four high-risk installed package entries and created a concrete Risk Auditor queue for credential-access, phishing/session-hijack, Kerberoasting, and lateral-movement safety handling before classification, package endorsement, or publication."
+    "value_delta": "Removed default installed procedure bodies for four high-risk security entries and converted them into package-facing review-gated defensive wrappers. This preserves defensive planning value while removing copyable offensive credential-access, phishing/session-hijack, Kerberoasting/cracking, and lateral-movement automation from the default install surface."
   },
   "blockers": [
-    "Open high-priority Risk Auditor queue item: risk-review-credential-access-phishing-lateral-movement-skills-20260707.",
+    "Open high-priority Cataloger queue item: catalog-refresh-after-credential-access-phishing-lateral-redaction-20260707.",
     "Open Critic queue item remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
     "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch.",
-    "Publication endorsement remains blocked until the new risk queue is resolved, metadata quality backlog improves, and discovery Action handoff is restored or replaced by bounded fallback when cadence permits."
+    "Publication endorsement remains blocked until the new catalog queue is resolved, metadata quality backlog improves, and discovery Action handoff is restored or replaced by bounded fallback when cadence permits."
   ],
   "last_commit": "this_commit",
-  "next_action": "Risk Auditor should process risk-review-credential-access-phishing-lateral-movement-skills-20260707 before further metadata backfill, packaging, or publication endorsement."
+  "next_action": "Cataloger should process catalog-refresh-after-credential-access-phishing-lateral-redaction-20260707 before further metadata backfill, packaging, or publication endorsement."
 }
