@@ -17,16 +17,16 @@
       "research": 85,
       "runtime-tools": 35,
       "security-defensive": 58,
-      "security-offensive": 13,
+      "security-offensive": 14,
       "software-engineering": 146,
-      "uncategorized": 570,
+      "uncategorized": 569,
       "writing": 16
     },
     "risk_counts": {
-      "high": 10,
+      "high": 11,
       "low": 9,
       "medium": 431,
-      "unspecified": 732
+      "unspecified": 731
     }
   },
   "domains": {
@@ -498,7 +498,8 @@
       "building-c2-infrastructure-with-sliver-framework",
       "building-c2-redirector-infrastructure",
       "building-red-team-c2-infrastructure-with-havoc",
-      "performing-credential-access-with-lazagne"
+      "performing-credential-access-with-lazagne",
+      "performing-initial-access-with-evilginx3"
     ],
     "software-engineering": [
       "API Design Reviewer — Linting, Breaking Change Detection, and Scorecards",
@@ -972,7 +973,6 @@
       "Performing IOC Enrichment Automation",
       "Performing IP Reputation Analysis with Shodan",
       "Performing Indicator Lifecycle Management",
-      "Performing Initial Access with EvilGinx3",
       "Performing Kerberoasting Attack",
       "Performing Kubernetes CIS Benchmark with kube-bench",
       "Performing Kubernetes Penetration Testing",
@@ -22055,30 +22055,28 @@
       "type": "Playbook"
     },
     {
-      "slug": "Performing Initial Access with EvilGinx3",
+      "slug": "performing-initial-access-with-evilginx3",
       "title": "Performing Initial Access with EvilGinx3",
-      "description": "Perform authorized initial access using EvilGinx3 adversary-in-the-middle",
+      "description": "Review-gated defensive assessment wrapper for EvilGinx3 adversary-in-the-middle phishing and session-capture risk. Use only for authorized security planning, detection mapping, and remediation.",
       "path": "dist/skills/performing-initial-access-with-evilginx3/SKILL.md",
       "directory": "dist/skills/performing-initial-access-with-evilginx3",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-offensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
         "agent-skill",
         "okf",
-        "red-team",
-        "initial-access",
-        "phishing",
         "evilginx",
-        "mfa-bypass",
+        "phishing",
         "adversary-in-the-middle",
-        "credential-theft",
-        "security"
+        "session-theft",
+        "mfa-bypass",
+        "identity-security",
+        "security",
+        "review-gated"
       ],
-      "source_family": "",
-      "source_status": "",
+      "source_family": "anthropic-cybersecurity-skills",
+      "source_status": "blocked-pending-redaction",
       "type": "Playbook"
     },
     {
