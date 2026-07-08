@@ -9,13 +9,13 @@ status: active
 
 ## Latest board-driven heartbeat
 
-Ran `Normalizer` for board ticket `skills-normalize-vercel-ai-sdk-profile-001`.
+Ran `Cataloger` for board ticket `skills-catalog-refresh-after-normalization-001`.
 
 ## Inspected state
 
 - Repository: `architectonic/skills`
 - Inspected ref: `main`
-- Inspected SHA before this ticket's first content write: `89590689366ba99b4cb8827063183b6df3d6067c`
+- Inspected SHA before this ticket's first content write: `f102482c8f76097af7a9c993a6e614b0b4da0de8`
 - Model requirement status: `model_setting_unverified`
 - Daily ledger present: yes
 - Missing-ledger initialization: no
@@ -36,49 +36,55 @@ Ran `Normalizer` for board ticket `skills-normalize-vercel-ai-sdk-profile-001`.
 - `dist/catalog.json`
 - `dist/catalog.md`
 - `dist/install-manifest.json`
-- `sources/profiles/2026-07-08/vercel-ai.json`
-- `reports/review/2026-07-08-manual-source-review.md`
-
-## Work performed
-
-Closed the Vercel AI SDK normalization ticket by creating original package-facing guidance for provider abstraction and tool/sandbox safety.
-
-Created:
-
 - `dist/skills/ai-sdk-provider-tool-safety/SKILL.md`
 - `reports/normalization/2026-07-08-vercel-ai-sdk-profile-normalization.md`
 
-## Normalization decision
+## Work performed
 
-Decision: `normalized_original_review_gated_skill`.
+Closed the AI SDK Provider Tool Safety catalog parity ticket by verifying that generated catalog surfaces already match the normalized skill.
 
-The normalized skill attributes `vercel/ai` as source metadata and uses the reviewed source profile boundary. It does not copy README examples, code snippets, prompts, or implementation content. It is classified as `domain: software-engineering`, `risk_level: medium`, and `requires_review: true` because it discusses provider, tool, sandbox, approval, and runtime-effect boundaries.
+Created:
+
+- `reports/catalog/2026-07-08-ai-sdk-provider-tool-safety-catalog-parity.md`
+
+No generated catalog surface was hand-edited.
+
+## Catalog parity decision
+
+Decision: `catalog_parity_verified_no_generated_surface_edit_required`.
+
+The catalog surfaces already reflect the new normalized skill:
+
+- `dist/catalog.json` shows `skill_count: 1183`.
+- `dist/catalog.json` shows `software-engineering: 147`.
+- `dist/catalog.json` shows `medium: 434`.
+- `dist/catalog.json` software-engineering list includes `ai-sdk-provider-tool-safety`.
+- `dist/catalog.md` mirrors the same headline counts.
+- `dist/install-manifest.json` keeps coherent discovery files and installer selection fields.
 
 ## Queue changes
 
 Closed:
 
-- `normalize-vercel-ai-sdk-source-profile-20260708`
-
-Created / promoted as next:
-
 - `catalog-refresh-after-vercel-ai-sdk-normalization-20260708`
 - board ticket `skills-catalog-refresh-after-normalization-001`
+
+Promoted as next:
+
+- board ticket `skills-metadata-backfill-batch-001`
 
 ## Acceptance tests
 
 | Test | Result | Evidence |
 |---|---|---|
-| Writes original content only | Pass | `dist/skills/ai-sdk-provider-tool-safety/SKILL.md` contains original boundary/checklist guidance and no copied source examples, prompts, code, or implementation content. |
-| Attributes Vercel AI SDK as source metadata | Pass | Skill frontmatter records `source_profile: sources/profiles/2026-07-08/vercel-ai.json` and source attribution for `vercel/ai`, Apache-2.0. |
-| Does not copy README examples, code snippets, prompts, or implementation | Pass | No third-party examples or implementation snippets were copied; no repository clone or code execution occurred. |
-| Classifies risk and `requires_review` based on tool/sandbox surface | Pass | Skill frontmatter sets `risk_level: medium` and `requires_review: true`; body defines provider/tool/sandbox/UI/approval/failure gates. |
-| Creates catalog parity queue if dist skill content changes | Pass | Because a new dist skill was added, `skills-catalog-refresh-after-normalization-001` and `catalog-refresh-after-vercel-ai-sdk-normalization-20260708` are now next. |
+| Catalog reflects the new AI SDK Provider Tool Safety skill and updated software-engineering/medium counts | Pass | `dist/catalog.json` shows `skill_count: 1183`, `software-engineering: 147`, `medium: 434`, and software-engineering includes `ai-sdk-provider-tool-safety`. |
+| Install manifest remains coherent for installer selection fields | Pass | `dist/install-manifest.json` lists `README.md`, `dist/catalog.json`, `dist/catalog.md`, and `dist/install-manifest.json`; selection fields remain `slug`, `title`, `domain`, `risk_level`, `tags`, and `requires_review`. |
+| No npm publish attempted | Pass | This heartbeat used GitHub content reads/writes only. No package, npm, registry, or publication action occurred. |
+| Board next ticket is updated | Pass | `skills-catalog-refresh-after-normalization-001` is done and `skills-metadata-backfill-batch-001` is ready. |
 
 ## Files changed
 
-- `dist/skills/ai-sdk-provider-tool-safety/SKILL.md`
-- `reports/normalization/2026-07-08-vercel-ai-sdk-profile-normalization.md`
+- `reports/catalog/2026-07-08-ai-sdk-provider-tool-safety-catalog-parity.md`
 - `operations/board.json`
 - `operations/daily/2026-07-08/queues.json`
 - `operations/value-ledger.json`
@@ -91,13 +97,13 @@ Created / promoted as next:
 - No online discovery was performed.
 - No repository was cloned.
 - No candidate code was executed.
-- No third-party README examples, prompts, code snippets, or implementation content were copied.
-- No generated catalog surface was intentionally hand-edited by this heartbeat.
+- No third-party examples, prompts, README snippets, or implementation content were copied.
+- No generated catalog surface was manually rewritten.
 - No package, npm, registry, or publication action was attempted.
 
 ## Value delta
 
-The reviewed Vercel AI SDK source profile is now an original normalized skill candidate with explicit provider/tool/sandbox safety value. This is package-facing improvement, not status churn. Catalog parity after the new skill is now the blocking gate.
+The AI SDK Provider Tool Safety normalized skill is no longer blocked at catalog parity. It is discoverable through the catalog and selectable through the install manifest, while publication remains blocked by the absent canonical discovery Action handoff and open metadata backlog.
 
 ## Risk and publication state
 
@@ -107,25 +113,24 @@ The reviewed Vercel AI SDK source profile is now an original normalized skill ca
 - Manual source review: done.
 - OpenClaw source-runtime risk review: done.
 - Vercel AI SDK normalization: done.
-- Catalog parity after AI SDK normalization: open and next.
+- Catalog parity after AI SDK normalization: done.
 - GitTaskBench: watch/license-blocked.
-- Metadata backlog: still open, lower priority.
+- Metadata backlog: open and next.
 - Discovery Action handoff: still absent.
-- Package/publication endorsement: still blocked until catalog parity, discovery Action, and backlog gates are clean.
+- Package/publication endorsement: still blocked until discovery Action and backlog gates are clean.
 
 ## Commit SHAs
 
 | Change | Commit |
 |---|---|
-| AI SDK skill | `c8fd9806f71f67ef20a94a020bc66f1f395704b3` |
-| Normalization report | `450eb46b850f516cbd68863e7aa242b4fe0d0fa4` |
-| Board update | `2076ced24311f55ae636722643cd3657dbae9d3f` |
-| Daily queues update | `e383ccb35b6221829c8c51e9806dd57685b3e714` |
-| Value ledger update | `154e3dd88e75df520d304eb14c20d3a3caec60d3` |
+| AI SDK catalog parity report | `a7b533e4d88b488919666f098a058be52c34859f` |
+| Board update | `69e8bb0657c98a9ebde2e719e9ab9866c180096e` |
+| Daily queues update | `178498d3d11cf8b96c7cb4e53df88b9ddbd9296d` |
+| Value ledger update | `aaab7ab7e35c4a8a390a2a3092c90b1cc3962f88` |
 | Daily report update | `pending_final_connector_response` |
 | Daily status update | `pending_next_write` |
 | Operations log update | `pending_next_write` |
 
 ## Next action
 
-Cataloger should consume `skills-catalog-refresh-after-normalization-001` / `catalog-refresh-after-vercel-ai-sdk-normalization-20260708` and verify or refresh `dist/catalog.json`, `dist/catalog.md`, and `dist/install-manifest.json` after the new AI SDK Provider Tool Safety skill. No package/publication action should occur before that parity gate.
+Critic should consume `skills-metadata-backfill-batch-001` as one bounded metadata-backfill batch. It must stop and create a risk ticket on high-risk executable, credential, offensive, account, browser, or external-mutation surfaces.
