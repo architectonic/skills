@@ -15,6 +15,20 @@
         "operations/value-ledger.json"
       ],
       "summary": "Installed board-driven heartbeat protocol so Skills operators prioritize discovery restoration, risk review, package-facing skill quality, and catalog parity over status-only churn."
+    },
+    {
+      "id": "skills-discovery-handoff-repair-20260708-1013",
+      "timestamp": "2026-07-08T10:13:04-03:00",
+      "type": "discovery_pipeline_repair",
+      "source": "Skills Value Operator board ticket skills-restore-discovery-handoff-001",
+      "artifact_paths": [
+        "reports/discovery/2026-07-08-discovery-handoff-repair.md",
+        "operations/board.json",
+        "operations/daily/2026-07-08/status.json",
+        "operations/daily/2026-07-08/queues.json",
+        "operations/log.md"
+      ],
+      "summary": "Consumed the discovery handoff repair ticket, confirmed canonical latest.json is absent while producer workflow/scripts exist, documented the connector-visible blocker, queued a metadata-only manual discovery fallback, and preserved package/risk gates."
     }
   ]
 }
