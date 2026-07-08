@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "repo": "architectonic/skills",
   "board_type": "repo_native_value_board",
-  "updated_at": "2026-07-08T18:20:00Z",
+  "updated_at": "2026-07-08T18:40:00Z",
   "purpose": "Force skills heartbeats to produce reviewed, installable, discoverable skill value instead of unbounded catalog/status churn.",
   "selection_rule": "Operators must consume the highest-priority ready ticket allowed by gates.md. High-risk package-facing review outranks manual discovery fallback; discovery restoration outranks routine metadata cleanup.",
   "definition_of_done": "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done.",
@@ -14,28 +14,12 @@
       "role": "Tool Builder",
       "mission": "Restore deterministic discovery handoff production for public skill/source scouting or document the exact connector/runtime blocker and create the smallest repair path.",
       "value_type": "discovery_pipeline_repair",
-      "input_artifacts": [
-        "operations/action-runs/discover-skill-sources/README.md",
-        "operations/scheduler-online-scout-contract.md",
-        "operations/manual-discovery-review-fallback.md",
-        ".github/workflows/discover-skill-sources.yml",
-        "scripts/discover_skill_sources.py",
-        "scripts/review_discovery_candidates.py"
-      ],
+      "input_artifacts": ["operations/action-runs/discover-skill-sources/README.md", "operations/scheduler-online-scout-contract.md", "operations/manual-discovery-review-fallback.md", ".github/workflows/discover-skill-sources.yml", "scripts/discover_skill_sources.py", "scripts/review_discovery_candidates.py"],
       "output_artifacts": ["reports/discovery/2026-07-08-discovery-handoff-repair.md"],
       "external_action_allowed": false,
       "required_connector": "GitHub/web only; no copying third-party content",
-      "acceptance_tests": [
-        "explains why latest discovery handoff is absent",
-        "creates or queues a deterministic repair path",
-        "does not mirror third-party content",
-        "updates board and daily state with next source-review action"
-      ],
-      "acceptance_result": {
-        "passed": true,
-        "checked_at": "2026-07-08T10:13:04-03:00",
-        "evidence": "reports/discovery/2026-07-08-discovery-handoff-repair.md documents that latest.json is absent while the producer workflow/scripts exist, queues manual fallback, and preserves risk/package gates."
-      },
+      "acceptance_tests": ["explains why latest discovery handoff is absent", "creates or queues a deterministic repair path", "does not mirror third-party content", "updates board and daily state with next source-review action"],
+      "acceptance_result": {"passed": true, "checked_at": "2026-07-08T10:13:04-03:00", "evidence": "reports/discovery/2026-07-08-discovery-handoff-repair.md documents that latest.json is absent while the producer workflow/scripts exist, queues manual fallback, and preserves risk/package gates."},
       "supervisor_gate": "Supervisor should keep publication/readiness blocked until deterministic discovery or a bounded manual fallback is working.",
       "kill_condition": "If connector cannot inspect workflow/action state, create a precise local-agent/CI repair ticket instead of pretending discovery is active.",
       "next_ticket_on_success": "skills-manual-discovery-fallback-001",
@@ -48,24 +32,12 @@
       "role": "Risk Auditor",
       "mission": "Review and safely wrap or redact the MCP tool-poisoning/SSRF skill so package-facing surfaces preserve defensive audit value without default executable probing detail.",
       "value_type": "risk_blocker_removed",
-      "input_artifacts": [
-        "dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md",
-        "operations/daily/2026-07-08/queues.json"
-      ],
+      "input_artifacts": ["dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md", "operations/daily/2026-07-08/queues.json"],
       "output_artifacts": ["reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md"],
       "external_action_allowed": false,
       "required_connector": null,
-      "acceptance_tests": [
-        "classifies risk level and requires_review",
-        "removes default executable SSRF/probing detail if unsafe",
-        "preserves defensive audit framing",
-        "creates catalog-refresh ticket if package-facing metadata changed"
-      ],
-      "acceptance_result": {
-        "passed": true,
-        "checked_at": "2026-07-08T14:14:42-03:00",
-        "evidence": "dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md now has risk_level high, requires_review true, authorization gate, and no package-facing default SSRF target list or executable probing snippets. reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md records the review."
-      },
+      "acceptance_tests": ["classifies risk level and requires_review", "removes default executable SSRF/probing detail if unsafe", "preserves defensive audit framing", "creates catalog-refresh ticket if package-facing metadata changed"],
+      "acceptance_result": {"passed": true, "checked_at": "2026-07-08T14:14:42-03:00", "evidence": "dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md now has risk_level high, requires_review true, authorization gate, and no package-facing default SSRF target list or executable probing snippets. reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md records the review."},
       "supervisor_gate": "Routine metadata backlog and publication/package endorsement must remain blocked while catalog parity after this risk review is unresolved.",
       "kill_condition": "If the skill cannot be made safe as a defensive wrapper, remove from installable catalog or mark non-publishable.",
       "next_ticket_on_success": "skills-catalog-refresh-after-risk-review-001",
@@ -78,29 +50,12 @@
       "role": "Radar",
       "mission": "Run the connector-safe metadata-only manual discovery fallback because the canonical GitHub Action handoff is absent from the default branch.",
       "value_type": "discovery_candidate_metadata",
-      "input_artifacts": [
-        "operations/scheduler-online-scout-contract.md",
-        "operations/manual-discovery-review-fallback.md",
-        "reports/discovery/2026-07-08-discovery-handoff-repair.md"
-      ],
-      "output_artifacts": [
-        "reports/discovery/2026-07-08-manual.md",
-        "reports/discovery/2026-07-08-manual.json",
-        "sources/candidates/2026-07-08-manual.json"
-      ],
+      "input_artifacts": ["operations/scheduler-online-scout-contract.md", "operations/manual-discovery-review-fallback.md", "reports/discovery/2026-07-08-discovery-handoff-repair.md"],
+      "output_artifacts": ["reports/discovery/2026-07-08-manual.md", "reports/discovery/2026-07-08-manual.json", "sources/candidates/2026-07-08-manual.json"],
       "external_action_allowed": true,
       "required_connector": "public web/GitHub metadata only",
-      "acceptance_tests": [
-        "records at least three real public candidate sources or exact searches/blockers",
-        "classifies each candidate as review_next, watch, or skip_or_low_priority",
-        "does not clone, execute, copy, import, normalize, publish, or package candidate content",
-        "creates review-next, watch, skip, risk, or source-review queue state"
-      ],
-      "acceptance_result": {
-        "passed": true,
-        "checked_at": "2026-07-08T18:20:00Z",
-        "evidence": "reports/discovery/2026-07-08-manual.md, reports/discovery/2026-07-08-manual.json, and sources/candidates/2026-07-08-manual.json record four metadata-only public candidates: modelcontextprotocol/servers, vercel/ai, QuantaAlpha/GitTaskBench, and openclaw/openclaw. Three are review_next and one is watch. No clone, execution, copying, import, normalization, packaging, or publication occurred."
-      },
+      "acceptance_tests": ["records at least three real public candidate sources or exact searches/blockers", "classifies each candidate as review_next, watch, or skip_or_low_priority", "does not clone, execute, copy, import, normalize, publish, or package candidate content", "creates review-next, watch, skip, risk, or source-review queue state"],
+      "acceptance_result": {"passed": true, "checked_at": "2026-07-08T18:20:00Z", "evidence": "reports/discovery/2026-07-08-manual.md, reports/discovery/2026-07-08-manual.json, and sources/candidates/2026-07-08-manual.json record four metadata-only public candidates: modelcontextprotocol/servers, vercel/ai, QuantaAlpha/GitTaskBench, and openclaw/openclaw. Three are review_next and one is watch. No clone, execution, copying, import, normalization, packaging, or publication occurred."},
       "supervisor_gate": "Manual fallback output is discovery metadata only and cannot be treated as normalized skill content.",
       "kill_condition": "If fewer than three real candidates can be found after explicit public searches, record exact searches and blockers; do not invent candidates.",
       "next_ticket_on_success": "skills-source-review-batch-001",
@@ -108,32 +63,55 @@
     },
     {
       "id": "skills-source-review-batch-001",
-      "status": "ready",
+      "status": "done",
       "priority": 2,
       "role": "Source Reviewer",
       "mission": "Review the metadata-only manual discovery candidates for license, usefulness, safety, runtime/security surface, and redistribution boundaries before any source profile, normalization, catalog, package, or publication work.",
       "value_type": "source_review",
-      "input_artifacts": [
-        "reports/discovery/2026-07-08-manual.md",
-        "reports/discovery/2026-07-08-manual.json",
-        "sources/candidates/2026-07-08-manual.json"
-      ],
-      "output_artifacts": [
-        "reports/review/2026-07-08-manual-source-review.md",
-        "reports/review/2026-07-08-manual-source-review.json"
-      ],
+      "input_artifacts": ["reports/discovery/2026-07-08-manual.md", "reports/discovery/2026-07-08-manual.json", "sources/candidates/2026-07-08-manual.json"],
+      "output_artifacts": ["reports/review/2026-07-08-manual-source-review.md", "reports/review/2026-07-08-manual-source-review.json"],
       "external_action_allowed": true,
       "required_connector": "public web/GitHub metadata only; no cloning or code execution",
-      "acceptance_tests": [
-        "verifies license/redistribution boundary for each review_next candidate",
-        "classifies safety/runtime surface, including OpenClaw high-risk messaging/browser/cron/account surfaces",
-        "creates source profiles, skip/watch notes, risk items, or normalization queues only when justified",
-        "does not copy third-party content, clone repositories, execute code, publish, or package candidates"
-      ],
+      "acceptance_tests": ["verifies license/redistribution boundary for each review_next candidate", "classifies safety/runtime surface, including OpenClaw high-risk messaging/browser/cron/account surfaces", "creates source profiles, skip/watch notes, risk items, or normalization queues only when justified", "does not copy third-party content, clone repositories, execute code, publish, or package candidates"],
+      "acceptance_result": {"passed": true, "checked_at": "2026-07-08T18:40:00Z", "evidence": "reports/review/2026-07-08-manual-source-review.md and .json record license/risk/usefulness review. Source profiles were created for modelcontextprotocol/servers, vercel/ai, and openclaw/openclaw. GitTaskBench was left watch/license-blocked after LICENSE returned 404. OpenClaw got a high-risk source-runtime review queue. No clone, execution, implementation copy, normalization, package, or publication occurred."},
       "supervisor_gate": "No normalization, catalog endorsement, package endorsement, or publication until source review resolves license, usefulness, risk, security/runtime surface, and redistribution boundaries.",
       "kill_condition": "If license or runtime risk cannot be established, classify as watch or skip_or_low_priority rather than normalizing.",
-      "next_ticket_on_success": "skills-metadata-backfill-batch-001",
+      "next_ticket_on_success": "skills-risk-review-openclaw-source-runtime-surfaces-001",
       "next_ticket_on_failure": "skills-action-handoff-producer-verification-001"
+    },
+    {
+      "id": "skills-risk-review-openclaw-source-runtime-surfaces-001",
+      "status": "ready",
+      "priority": 1,
+      "role": "Risk Auditor",
+      "mission": "Review the OpenClaw source profile's real messaging, account/channel, browser, cron, gateway, node, and host-tool surfaces and decide what, if anything, may be abstracted into package-facing Skills material.",
+      "value_type": "risk_blocker_removed",
+      "input_artifacts": ["sources/profiles/2026-07-08/openclaw-openclaw.json", "reports/review/2026-07-08-manual-source-review.md", "reports/review/2026-07-08-manual-source-review.json"],
+      "output_artifacts": ["reports/risk/2026-07-08-openclaw-source-runtime-surfaces-risk-review.md"],
+      "external_action_allowed": false,
+      "required_connector": null,
+      "acceptance_tests": ["classifies account/browser/cron/gateway/host-tool risk surfaces", "defines allowed abstraction boundaries for any future OpenClaw-derived skill", "blocks command snippets, account setup, browser automation, cron execution, and operational channel mutation detail unless explicitly safe", "updates board and queues with either normalization, watch, or quarantine state"],
+      "supervisor_gate": "No OpenClaw-derived normalization or package-facing endorsement until this high-risk source-runtime review is done.",
+      "kill_condition": "If safe abstraction boundaries cannot be defined, keep OpenClaw as source-profile/watch only and block normalization.",
+      "next_ticket_on_success": "skills-normalize-vercel-ai-sdk-profile-001",
+      "next_ticket_on_failure": "skills-watch-openclaw-source-only-001"
+    },
+    {
+      "id": "skills-normalize-vercel-ai-sdk-profile-001",
+      "status": "ready",
+      "priority": 2,
+      "role": "Normalizer",
+      "mission": "Create a bounded original skill or review note from the reviewed Vercel AI SDK source profile, focused on provider abstraction and sandbox/tool safety, without copying third-party examples or implementation content.",
+      "value_type": "normalized_skill_candidate",
+      "input_artifacts": ["sources/profiles/2026-07-08/vercel-ai.json", "reports/review/2026-07-08-manual-source-review.md"],
+      "output_artifacts": ["dist/skills/ai-sdk-provider-tool-safety/SKILL.md", "reports/normalization/2026-07-08-vercel-ai-sdk-profile-normalization.md"],
+      "external_action_allowed": false,
+      "required_connector": null,
+      "acceptance_tests": ["writes original content only", "attributes Vercel AI SDK as source metadata", "does not copy README examples, code snippets, prompts, or implementation", "classifies risk and requires_review based on tool/sandbox surface", "creates catalog parity queue if dist skill content changes"],
+      "supervisor_gate": "Run only after higher-priority risk gates are clear.",
+      "kill_condition": "If normalization would mostly copy or paraphrase examples, write a skip note instead.",
+      "next_ticket_on_success": "skills-catalog-refresh-after-normalization-001",
+      "next_ticket_on_failure": "skills-metadata-backfill-batch-001"
     },
     {
       "id": "skills-action-handoff-producer-verification-001",
@@ -142,21 +120,11 @@
       "role": "Tool Builder",
       "mission": "Inspect GitHub Actions run/log state or execute the discovery scripts in a safe local/CI context to prove whether the producer fails in discovery, review, handoff write, commit, pull/rebase, or push.",
       "value_type": "ci_repair",
-      "input_artifacts": [
-        ".github/workflows/discover-skill-sources.yml",
-        "scripts/discover_skill_sources.py",
-        "scripts/review_discovery_candidates.py",
-        "operations/action-runs/discover-skill-sources/README.md"
-      ],
+      "input_artifacts": [".github/workflows/discover-skill-sources.yml", "scripts/discover_skill_sources.py", "scripts/review_discovery_candidates.py", "operations/action-runs/discover-skill-sources/README.md"],
       "output_artifacts": ["reports/discovery/2026-07-08-action-handoff-producer-verification.md"],
       "external_action_allowed": false,
       "required_connector": "GitHub Actions logs or safe local/CI execution surface",
-      "acceptance_tests": [
-        "identifies exact producer failure stage or verifies fresh handoff creation",
-        "does not clone or execute third-party candidate code",
-        "updates the producer workflow or scripts only if the failure is directly proven",
-        "keeps manual fallback available while the producer is unverified"
-      ],
+      "acceptance_tests": ["identifies exact producer failure stage or verifies fresh handoff creation", "does not clone or execute third-party candidate code", "updates the producer workflow or scripts only if the failure is directly proven", "keeps manual fallback available while the producer is unverified"],
       "supervisor_gate": "Promote only when Action logs or safe local/CI execution are inspectable.",
       "kill_condition": "If the producer cannot be inspected by available tools, keep blocked and rely on manual metadata fallback.",
       "next_ticket_on_success": "skills-source-review-batch-001",
@@ -169,27 +137,12 @@
       "role": "Cataloger",
       "mission": "Regenerate or verify catalog/install-manifest parity after MCP/SSRF risk-review metadata and body changes.",
       "value_type": "catalog_parity_repair",
-      "input_artifacts": [
-        "dist/catalog.json",
-        "dist/catalog.md",
-        "dist/install-manifest.json",
-        "dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md",
-        "reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md"
-      ],
+      "input_artifacts": ["dist/catalog.json", "dist/catalog.md", "dist/install-manifest.json", "dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md", "reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md"],
       "output_artifacts": ["reports/catalog/2026-07-08-risk-review-catalog-parity.md"],
       "external_action_allowed": false,
       "required_connector": null,
-      "acceptance_tests": [
-        "catalog reflects changed risk/domain/review metadata",
-        "install manifest is coherent",
-        "no npm publish attempted",
-        "board next ticket is updated"
-      ],
-      "acceptance_result": {
-        "passed": true,
-        "checked_at": "2026-07-08T15:13:05-03:00",
-        "evidence": "reports/catalog/2026-07-08-risk-review-catalog-parity.md verifies the MCP/tool-poisoning catalog entry and summary counts reflect security-defensive/high/requires_review metadata; install manifest selection fields remain coherent; no npm publish occurred."
-      },
+      "acceptance_tests": ["catalog reflects changed risk/domain/review metadata", "install manifest is coherent", "no npm publish attempted", "board next ticket is updated"],
+      "acceptance_result": {"passed": true, "checked_at": "2026-07-08T15:13:05-03:00", "evidence": "reports/catalog/2026-07-08-risk-review-catalog-parity.md verifies the MCP/tool-poisoning catalog entry and summary counts reflect security-defensive/high/requires_review metadata; install manifest selection fields remain coherent; no npm publish occurred."},
       "supervisor_gate": "Publication remains blocked until discovery and backlog gates are clean; catalog parity after the MCP/SSRF risk review is no longer the active blocker.",
       "kill_condition": "Block if generated surfaces cannot be updated via connector and require local script execution.",
       "next_ticket_on_success": "skills-manual-discovery-fallback-001",
@@ -206,13 +159,8 @@
       "output_artifacts": ["reports/critic/2026-07-08-metadata-backfill-batch.md"],
       "external_action_allowed": false,
       "required_connector": null,
-      "acceptance_tests": [
-        "processes a bounded batch, not the entire catalog",
-        "adds domain/risk/requires_review/source status when justified",
-        "stops and creates risk ticket on unsafe material",
-        "creates catalog refresh ticket after metadata changes"
-      ],
-      "supervisor_gate": "Backlog cleanup is lower priority than discovery restoration, high-risk review, and catalog parity after risk changes.",
+      "acceptance_tests": ["processes a bounded batch, not the entire catalog", "adds domain/risk/requires_review/source status when justified", "stops and creates risk ticket on unsafe material", "creates catalog refresh ticket after metadata changes"],
+      "supervisor_gate": "Backlog cleanup is lower priority than discovery restoration, high-risk review, source review, and catalog parity after risk changes.",
       "kill_condition": "Stop if the batch becomes generic metadata churn with no package-facing value.",
       "next_ticket_on_success": "skills-catalog-refresh-after-risk-review-001",
       "next_ticket_on_failure": "skills-risk-review-generated-001"
