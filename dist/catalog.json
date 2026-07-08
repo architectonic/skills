@@ -6,7 +6,7 @@
     "entrypoint": "README.md"
   },
   "summary": {
-    "skill_count": 1182,
+    "skill_count": 1183,
     "domain_counts": {
       "agent-operations": 106,
       "business": 46,
@@ -18,14 +18,14 @@
       "runtime-tools": 35,
       "security-defensive": 61,
       "security-offensive": 16,
-      "software-engineering": 146,
+      "software-engineering": 147,
       "uncategorized": 563,
       "writing": 16
     },
     "risk_counts": {
       "high": 15,
       "low": 9,
-      "medium": 433,
+      "medium": 434,
       "unspecified": 725
     }
   },
@@ -619,6 +619,7 @@
       "Testing WebSocket API Security",
       "Testing for Sensitive Data Exposure",
       "Verifying Build Provenance with SLSA and Sigstore",
+      "ai-sdk-provider-tool-safety",
       "codebase-design",
       "complexity-cuts",
       "cso",
@@ -28907,6 +28908,20 @@
         "software-engineering",
         "okf"
       ],
+      "source_family": "",
+      "source_status": "",
+      "type": "Playbook"
+    },
+    {
+      "slug": "ai-sdk-provider-tool-safety",
+      "title": "AI SDK Provider Tool Safety",
+      "description": "Design provider-agnostic AI features with explicit tool, sandbox, model, and runtime boundaries before implementation.",
+      "path": "dist/skills/ai-sdk-provider-tool-safety/SKILL.md",
+      "directory": "dist/skills/ai-sdk-provider-tool-safety",
+      "domain": "software-engineering",
+      "risk_level": "medium",
+      "requires_review": true,
+      "tags": [],
       "source_family": "",
       "source_status": "",
       "type": "Playbook"

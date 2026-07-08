@@ -2,7 +2,7 @@
 
 - Package: `architectonic-skills`
 - Install root: `dist/skills`
-- Skill count: **1182**
+- Skill count: **1183**
 
 ## Domains
 
@@ -18,7 +18,7 @@
 | `runtime-tools` | 35 |
 | `security-defensive` | 61 |
 | `security-offensive` | 16 |
-| `software-engineering` | 146 |
+| `software-engineering` | 147 |
 | `uncategorized` | 563 |
 | `writing` | 16 |
 
@@ -28,7 +28,7 @@
 |---|---:|
 | `high` | 15 |
 | `low` | 9 |
-| `medium` | 433 |
+| `medium` | 434 |
 | `unspecified` | 725 |
 
 ## Install Notes
