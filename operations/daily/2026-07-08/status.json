@@ -1,9 +1,9 @@
 {
   "date": "2026-07-08",
-  "current_state": "catalog_refresh_blocks_package_after_vector_embedding_redaction",
+  "current_state": "vector_embedding_catalog_blocker_closed_critic_metadata_backlog_open",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "8473a1320706e825b6e451e798ba2be27d0b3c28",
+  "inspected_sha": "4d692bae72e1d6235cf85127839fd6773a15dc4f",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -18,18 +18,23 @@
     "sources_reviewed": 0,
     "sources_blocked": 0,
     "normalized_entries_added": 0,
-    "skills_updated": 1,
+    "skills_updated": 0,
     "catalog_skill_count": 1182,
-    "high_risk_count": 13,
+    "security_defensive_count": 59,
+    "security_offensive_count": 16,
+    "uncategorized_count": 565,
+    "high_risk_count": 14,
+    "medium_risk_count": 432,
+    "unspecified_risk_count": 727,
     "requires_review_count": null,
-    "catalog_build_status": "stale_after_vector_embedding_redaction_cataloger_verification_required",
-    "publication_readiness": "blocked_by_open_catalog_queue_open_critic_metadata_backlog_and_missing_discovery_action_handoff"
+    "catalog_build_status": "verified_after_vector_embedding_redaction",
+    "publication_readiness": "blocked_by_open_critic_metadata_backlog_and_missing_discovery_action_handoff"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 1,
+    "catalog": 0,
     "risk": 0,
     "packaging": 0,
     "publication": 0,
@@ -37,39 +42,36 @@
     "critic": 1
   },
   "latest_run": {
-    "started_at": "2026-07-08T04:12:31-03:00",
-    "completed_at": "2026-07-08T04:12:31-03:00",
-    "scheduled_role": "Cataloger",
-    "selected_role": "Risk Auditor",
-    "override_reason": "The open high-priority risk queue risk-review-vector-embedding-weaknesses-skill-20260708 required safety review before Cataloger verification, packaging, publication, or further metadata backfill.",
+    "started_at": "2026-07-08T05:13:11-03:00",
+    "completed_at": "2026-07-08T05:13:11-03:00",
+    "scheduled_role": "Risk Auditor",
+    "selected_role": "Cataloger",
+    "override_reason": "The open catalog queue catalog-refresh-after-vector-embedding-redaction-20260708 was a package-health gate created by the prior dist/skills redaction; catalog verification overrides new Risk Auditor, Radar, Packager, Publisher, or Critic work until the package-facing surfaces agree.",
     "inspected_ref": "main",
-    "inspected_sha": "8473a1320706e825b6e451e798ba2be27d0b3c28",
+    "inspected_sha": "4d692bae72e1d6235cf85127839fd6773a15dc4f",
     "missing_ledger_initialization_performed": false,
     "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent on the default branch; no deterministic discovery Action handoff was available.",
     "online_searches_used": [],
-    "queue_item_consumed_or_created": "Closed risk-review-vector-embedding-weaknesses-skill-20260708 and created catalog-refresh-after-vector-embedding-redaction-20260708.",
+    "queue_item_consumed_or_created": "Closed catalog-refresh-after-vector-embedding-redaction-20260708; left metadata-backfill-uncategorized-and-unspecified-risk-20260707 open.",
     "sources_reviewed": [],
     "candidates_processed": 1,
     "files_changed": [
-      "dist/skills/assessing-vector-and-embedding-weaknesses/SKILL.md",
-      "reports/risk/2026-07-08-0412-vector-embedding-redaction.md",
+      "reports/catalog/2026-07-08-0513-vector-embedding-catalog-verification.md",
       "operations/daily/2026-07-08/queues.json",
       "operations/daily/2026-07-08/status.json",
       "operations/log.md"
     ],
-    "catalog_package_npm_status": "dist/catalog.json still reports 1182 skills, 566 uncategorized, 13 high, 432 medium, and 728 unspecified at run start; npm publish was not attempted. Catalog verification is required because a package-facing dist/skills entry changed.",
+    "catalog_package_npm_status": "Verified dist/catalog.json and dist/catalog.md agree at 1182 skills, 59 security-defensive, 16 security-offensive, 565 uncategorized, 14 high, 432 medium, and 727 unspecified. dist/install-manifest.json remains coherent. No npm publication was attempted.",
     "blockers": [
-      "Open Cataloger queue: catalog-refresh-after-vector-embedding-redaction-20260708.",
       "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
       "operations/action-runs/discover-skill-sources/latest.json remains absent, so deterministic discovery Action handoff is still missing."
     ],
-    "value_delta": "Removed default installed data-exfiltration-adjacent RAG/vector attack mechanics while preserving a usable defensive review process with trigger, inputs, ordered procedure, verification, failure modes, and explicit package boundary decision."
+    "value_delta": "Removed the catalog/package blocker created by the vector/embedding redaction by verifying catalog and install surfaces and the high-risk review-gated package wrapper."
   },
   "blockers": [
-    "Open Cataloger queue: catalog-refresh-after-vector-embedding-redaction-20260708.",
     "Open Critic backlog remains: metadata-backfill-uncategorized-and-unspecified-risk-20260707.",
     "operations/action-runs/discover-skill-sources/latest.json remains absent, so deterministic discovery Action handoff is still missing."
   ],
   "last_commit": "pending_final_commit",
-  "next_action": "Cataloger should process catalog-refresh-after-vector-embedding-redaction-20260708 before Critic continues routine metadata backfill."
+  "next_action": "Critic should continue metadata-backfill-uncategorized-and-unspecified-risk-20260707 unless a higher-priority risk, review, or catalog gate appears."
 }
