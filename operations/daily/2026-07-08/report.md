@@ -1,60 +1,102 @@
 ---
 type: DailyReport
-title: Skills Daily Initialization 2026-07-08
+title: Skills Daily Report 2026-07-08
 date: 2026-07-08
-status: initialized
+status: active
 ---
 
-# Skills Daily Initialization — 2026-07-08
+# Skills Daily Report — 2026-07-08
 
-## Summary
+## Latest board-driven heartbeat
 
-Today's required daily files were missing at run start:
+Ran `Risk Auditor` for board ticket `skills-risk-review-mcp-tool-poisoning-001`.
 
-- `operations/daily/2026-07-08/status.json`
-- `operations/daily/2026-07-08/queues.json`
-
-Per repository operating rules, this pass selected only `Reporter`, initialized today's daily status and queues from the templates, carried forward unresolved prior-day queue state, and stopped without discovery, source review, normalization, package, catalog, or publication work.
-
-## Inspected State
+## Inspected state
 
 - Repository: `architectonic/skills`
 - Inspected ref: `main`
-- Inspected SHA: `ca1c7917cf5e9e920ad59f780a3ffe0504ada331`
-- Verification: `main` compared identical to `ca1c7917cf5e9e920ad59f780a3ffe0504ada331` before writes.
+- Inspected SHA before this ticket's first content write: `f3d8e7fed190f8da6471f427bf906b048d90cf4f`
 - Model requirement status: `model_setting_unverified`
+- Daily ledger present: yes
+- Missing-ledger initialization: no
+- Discovery Action handoff: `operations/action-runs/discover-skill-sources/latest.json` absent on default branch
+- Online searches used: none
+- External connector used: GitHub only
 
-## Carried-Forward Queues
+## Files reviewed directly
 
-Carried forward only one open unresolved prior-day queue item:
-
-- `metadata-backfill-uncategorized-and-unspecified-risk-20260707` under `critic`
-
-All resolved prior-day catalog and risk items were not carried forward.
-
-## Files Created
-
+- `operations/heartbeat.md`
+- `operations/board.json`
+- `operations/gates.md`
+- `operations/value-ledger.json`
 - `operations/daily/2026-07-08/status.json`
 - `operations/daily/2026-07-08/queues.json`
 - `operations/daily/2026-07-08/report.md`
+- `operations/log.md`
+- `dist/catalog.json`
+- `dist/install-manifest.json`
+- `dist/catalog.md`
+- `dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md`
+- `reports/critic/2026-07-08-0912-mcp-tool-poisoning-ssrf-risk-triage.md`
 
-## Not Performed
+## Work performed
 
-- No discovery Action replacement work.
-- No online source scouting.
-- No source review.
-- No candidate processing.
-- No normalization.
-- No skill body changes.
-- No generated catalog edits.
-- No package or npm publication.
+The high-risk MCP/tool-poisoning and SSRF skill was converted into a package-facing defensive wrapper:
 
-## Blockers
+- added `domain: security-defensive`;
+- added `risk_level: high`;
+- added `requires_review: true`;
+- added `review_gate: authorized-security-review-only`;
+- removed default executable MCP call snippets;
+- removed explicit SSRF/internal/metadata/loopback/file target examples;
+- removed direct unauthenticated endpoint probe commands;
+- preserved authorization scope, static metadata inspection, fingerprinting, SSRF design review, authentication/exposure review, runtime guardrails, severity scoring, and remediation reporting.
 
-- Initialization-only rule blocked substantive aggregator work in this pass.
-- Critic metadata backlog remains open.
-- Package/publication endorsement remains blocked until a later non-initialization pass verifies current queue pressure and catalog/package state.
+Created risk report:
 
-## Next Action
+- `reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md`
 
-Run normal role selection on the next pass. If no higher-priority risk or catalog gate appears, the next useful role is `Critic` for a bounded continuation of `metadata-backfill-uncategorized-and-unspecified-risk-20260707`.
+## Acceptance tests
+
+| Test | Result | Evidence |
+|---|---|---|
+| Classifies risk level and `requires_review` | Pass | Skill frontmatter now includes `risk_level: high` and `requires_review: true`. |
+| Removes default executable SSRF/probing detail if unsafe | Pass | Package-facing body no longer includes SSRF target lists, executable MCP tool-call scripts, or default unauthenticated endpoint probe commands. |
+| Preserves defensive audit framing | Pass | Revised skill keeps authorization scope, static tool-description review, fingerprinting, SSRF design review, auth/exposure review, runtime guardrails, and remediation reporting. |
+| Creates catalog-refresh ticket if package-facing metadata changed | Pass | `skills-catalog-refresh-after-risk-review-001` is now ready; queue item `catalog-refresh-after-mcp-ssrf-risk-review-20260708` is open. |
+
+## Files changed
+
+- `dist/skills/auditing-mcp-servers-for-tool-poisoning/SKILL.md`
+- `reports/risk/2026-07-08-mcp-tool-poisoning-ssrf-risk-review.md`
+- `operations/board.json`
+- `operations/daily/2026-07-08/queues.json`
+- `operations/value-ledger.json`
+- `operations/daily/2026-07-08/report.md`
+- `operations/daily/2026-07-08/status.json`
+- `operations/log.md`
+
+## Boundaries preserved
+
+- No third-party source was copied.
+- No repository was cloned.
+- No code, MCP server, scanner, curl command, or endpoint probe was executed.
+- No online search was used.
+- No generated catalog surface was hand-edited.
+- No npm publication was attempted.
+
+## Value delta
+
+Removed a live package-facing risk blocker by converting the MCP/tool-poisoning and SSRF audit skill into a high-risk, review-gated defensive wrapper. This is substantive package-safety value, not status/report churn.
+
+## Risk and publication state
+
+- Risk review ticket: done.
+- Catalog parity: blocked until `skills-catalog-refresh-after-risk-review-001` runs.
+- Manual discovery fallback: still open, but lower priority than catalog parity after the risk metadata/body change.
+- Metadata backlog: still open, lower priority.
+- Package/publication endorsement: blocked until catalog parity, discovery, and review gates are clean.
+
+## Next action
+
+Cataloger should consume `skills-catalog-refresh-after-risk-review-001` and refresh or verify `dist/catalog.json`, `dist/catalog.md`, and `dist/install-manifest.json` after the MCP/SSRF risk-review change.
