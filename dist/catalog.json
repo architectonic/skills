@@ -18,15 +18,15 @@
       "runtime-tools": 35,
       "security-defensive": 61,
       "security-offensive": 16,
-      "software-engineering": 148,
-      "uncategorized": 560,
+      "software-engineering": 149,
+      "uncategorized": 559,
       "writing": 16
     },
     "risk_counts": {
       "high": 16,
-      "low": 9,
+      "low": 10,
       "medium": 436,
-      "unspecified": 722
+      "unspecified": 721
     }
   },
   "domains": {
@@ -524,6 +524,7 @@
       "Building Vulnerability Dashboard with DefectDojo",
       "Bypassing Authentication with Forced Browsing",
       "Capacity Planner — Ops Team Sizing with Erlang-C Queueing Theory",
+      "Code Complexity Scanner",
       "Conducting API Security Testing",
       "Configuring Active Directory Tiered Model",
       "Database Lookup",
@@ -678,7 +679,6 @@
       "Building Threat Actor Profile from OSINT",
       "Building Threat Intelligence Enrichment in Splunk",
       "Building Threat Intelligence Feed Integration",
-      "Code Complexity Scanner",
       "Code Documentation Generator",
       "Code Review",
       "Code Review Excellence",
@@ -5569,8 +5569,8 @@
       "description": "Measure cyclomatic complexity, cognitive complexity, and function length across codebases to identify maintenance hotspots. Use when analyzing code quality, finding complex functions, or prioritizing refactoring targets.",
       "path": "dist/skills/code-complexity-scanner/SKILL.md",
       "directory": "dist/skills/code-complexity-scanner",
-      "domain": "",
-      "risk_level": "",
+      "domain": "software-engineering",
+      "risk_level": "low",
       "requires_review": false,
       "tags": [
         "software-development",
@@ -5580,7 +5580,7 @@
         "static-analysis"
       ],
       "source_family": "",
-      "source_status": "",
+      "source_status": "reviewed-metadata-only",
       "type": "Metric"
     },
     {
