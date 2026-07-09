@@ -11,23 +11,27 @@ status: active
 
 ## 2026-07-09
 
-- Ran board-driven Critic for `skills-metadata-backfill-batch-004`.
+- Ran board-driven Risk Auditor for `skills-risk-review-ct-logs-attack-library-malware-pipeline-001`.
 - Model requirement status: `model_setting_unverified`.
-- Inspected ref/SHA before this ticket's first content write: `main` at `60e6b10e737982faa755c36d6a8f89cd507c1134`.
+- Inspected ref/SHA before this ticket's first content write: `main` at `00326a88e5e094f4d3e36e58839141a5ca3ed492`.
 - Confirmed today's daily ledger exists; no missing-ledger initialization was performed in this pass.
 - Confirmed `operations/action-runs/discover-skill-sources/latest.json` returned `404 Not Found` on the default branch during this run.
-- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `reports/catalog/2026-07-09-metadata-backfill-003-catalog-parity.md`, `dist/skills/auditing-tls-certificate-transparency-logs/SKILL.md`, `dist/skills/building-attack-pattern-library-from-cti-reports/SKILL.md`, and `dist/skills/building-automated-malware-submission-pipeline/SKILL.md`.
-- No online/source discovery was used because the selected board ticket was internal metadata backlog processing.
-- Created `reports/critic/2026-07-09-metadata-backfill-batch-004.md`.
-- Stopped before routine metadata endorsement of `Auditing TLS Certificate Transparency Logs` because it contains public CT API polling, subdomain discovery, typosquat/takeover triage, DNS validation, SMTP credentials, webhooks, alert delivery, and incident-response external action guidance.
-- Inspected adjacent backlog candidates and confirmed stronger risk surfaces: CTI attack-pattern extraction with executable Python/STIX/Sigma generation, and automated malware sample collection/submission with API keys, sandbox infrastructure, EDR quarantine collection, email gateway export, and suspicious-file handling.
-- No skill metadata was changed; no catalog refresh ticket was created because there was no catalog-impacting metadata change.
-- Blocked board ticket `skills-metadata-backfill-batch-004` and queue item `metadata-backfill-uncategorized-and-unspecified-risk-20260709-004` behind risk review.
-- Opened board ticket `skills-risk-review-ct-logs-attack-library-malware-pipeline-001` and queue item `risk-review-ct-logs-attack-library-malware-pipeline-20260709-001`.
-- Preserved boundaries: no online discovery, no clone, no script execution, no CT query, no DNS lookup, no CTI parsing, no malware collection, no sandboxing, no API submission, no Ghidra execution, no browser use, no generated catalog surface hand-edit, no third-party content copy, no package publication, no npm publication, and no registry publication.
-- Acceptance tests passed: bounded batch; no metadata added when risk review was required first; stopped and created risk ticket on unsafe material; no catalog refresh created because no metadata changed.
-- Value delta: prevented CT-log reconnaissance, credentialed alerting, CTI attack-pattern extraction, and automated malware-submission material from being routine metadata-endorsed without risk review.
-- Next justified action: Risk Auditor should consume `skills-risk-review-ct-logs-attack-library-malware-pipeline-001` before any further metadata backlog cleanup.
+- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/install-manifest.json`, `reports/critic/2026-07-09-metadata-backfill-batch-004.md`, `dist/skills/auditing-tls-certificate-transparency-logs/SKILL.md`, `dist/skills/building-attack-pattern-library-from-cti-reports/SKILL.md`, and `dist/skills/building-automated-malware-submission-pipeline/SKILL.md`.
+- No online/source discovery was used because the selected board ticket was internal package-facing risk review.
+- Created `reports/risk/2026-07-09-ct-logs-attack-library-malware-pipeline-risk-review.md`.
+- Converted `dist/skills/auditing-tls-certificate-transparency-logs/SKILL.md` into a high-risk, requires_review, authorized owned-domain defensive wrapper; removed package-facing CT API polling, DNS validation, typosquat/takeover triage, alerting, and external-action automation details.
+- Converted `dist/skills/building-attack-pattern-library-from-cti-reports/SKILL.md` into a high-risk, requires_review, defensive CTI abstraction wrapper; removed executable CTI parser, ATT&CK/STIX/Sigma generation, and procedure-reconstruction content.
+- Converted `dist/skills/building-automated-malware-submission-pipeline/SKILL.md` into a high-risk, requires_review, suspicious-file triage governance wrapper; removed executable collection/submission/API-key/sandbox/SIEM/blocklist/enforcement snippets.
+- Closed board ticket `skills-risk-review-ct-logs-attack-library-malware-pipeline-001` and queue item `risk-review-ct-logs-attack-library-malware-pipeline-20260709-001`.
+- Opened board ticket `skills-catalog-refresh-after-metadata-backfill-004` and queue item `catalog-refresh-after-metadata-backfill-20260709-004` because three package-facing skill metadata files changed.
+- Preserved boundaries: no online discovery, no clone, no script execution, no CT query, no DNS lookup, no CTI parsing, no malware collection, no sandboxing, no third-party submission, no SIEM push, no blocklist mutation, no Ghidra execution, no browser use, no generated catalog surface hand-edit, no third-party content copy, no package publication, no npm publication, and no registry publication.
+- Acceptance tests passed: CT-log, CTI attack-library, and malware-submission surfaces classified; safe defensive guidance preserved; catalog parity queued as next ticket.
+- Value delta: removed the CT-log, CTI attack-library, and automated malware-submission risk blocker while preserving useful defensive governance and analyst-review value.
+- Next justified action: Cataloger should consume `skills-catalog-refresh-after-metadata-backfill-004` before further metadata backlog cleanup.
+
+- Earlier 2026-07-09 run: Critic consumed `skills-metadata-backfill-batch-004`.
+- Prior Critic inspected ref/SHA before first content write: `main` at `60e6b10e737982faa755c36d6a8f89cd507c1134`.
+- Prior Critic stopped before routine endorsement of CT-log, CTI attack-library, and automated malware-submission surfaces and opened this risk-review ticket.
 
 - Earlier 2026-07-09 run: Cataloger consumed `skills-catalog-refresh-after-metadata-backfill-003`.
 - Prior Cataloger inspected ref/SHA before first content write: `main` at `d367195528b6045a49328c4eb15259db69276342`.
