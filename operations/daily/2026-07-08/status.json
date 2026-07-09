@@ -71,8 +71,9 @@
       "value_ledger": "d11d5ef6ce4370b98e64b7cd94fb1f4adeec8670",
       "queues": "499395c99b837cfd86765b6a93b74915b4d17101",
       "daily_report": "c599834226c1ccec837cf817c7b77c0ebd2b04b4",
-      "status_final": "pending_final_connector_response",
-      "log": "pending_next_write"
+      "status_first_pass": "59e8f7e672fb5cdab0f8502824aef6d10012235c",
+      "log": "7136f142fb9d87bf1a438339385ba21b5fbebbb3",
+      "status_final": "pending_final_connector_response"
     },
     "acceptance_tests": [
       {"test": "processes a bounded batch, not the entire catalog", "result": "pass", "evidence": "Three skill files were classified; the pass stopped on the fourth reviewed skill."},
@@ -85,6 +86,6 @@
     "value_delta": "Improved package-facing discoverability and reviewability for three software-engineering skills while stopping before routine cleanup could pass over browser/headless debugging trace surfaces without a dedicated risk review."
   },
   "blockers": ["Diagnosing Bugs risk review is open and highest-priority next because browser/headless automation and captured trace replay surfaces were found.", "Catalog parity after metadata-backfill batch 002 is blocked until the risk review completes.", "Discovery Action handoff remains absent; manual fallback and source review artifacts exist but producer verification remains blocked.", "GitTaskBench remains watch/license-blocked because LICENSE returned 404 during source review.", "Remaining metadata backlog is large: 560 uncategorized-domain and 722 unspecified-risk entries before the next catalog generation.", "Package/publication endorsement remains blocked until discovery Action, source/license, metadata backlog, risk, catalog, and package verification gates are clean."],
-  "last_commit": "pending_final_connector_response",
+  "last_commit": "7136f142fb9d87bf1a438339385ba21b5fbebbb3",
   "next_action": "Risk Auditor should consume skills-risk-review-diagnosing-bugs-001 before catalog parity, further metadata backlog cleanup, package endorsement, or publication."
 }
