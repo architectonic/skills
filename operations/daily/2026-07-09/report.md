@@ -55,7 +55,7 @@ Risk evidence classified:
 - `Building Incident Response Dashboard` included active incident SIEM searches, live IOC handling, affected-system and analyst lookup data, scheduled searches, lookup writes, and dashboard content that can expose incident scope, hosts, identities, and containment state.
 - `Building Incident Timeline with Timesketch` included service deployment commands, private forensic evidence ingestion, Sigma uploads, API examples with username/password placeholders, analyzer execution, event tagging, annotation, and investigation-record mutation.
 
-No generated catalog, install manifest, package, npm, registry, or publication file was changed.
+`dist/catalog.json` and `dist/catalog.md` now reflect the two metadata changes. The catalog parity report remains queued as the next board ticket; no install-manifest, package, npm, registry, or publication file was changed.
 
 ## Board and queue result
 
@@ -72,12 +72,14 @@ No generated catalog, install manifest, package, npm, registry, or publication f
 | Timesketch deployment, private forensic evidence ingestion, credential placeholders, API usage, and investigation-record mutation surfaces are classified | Pass | The Timesketch skill is now high-risk/requires_review and explicitly blocks deployment, evidence ingestion, credentialed API use, analyzer execution, investigation-record mutation, and private evidence examples. |
 | Safe defensive IR dashboard and forensic timeline guidance is preserved or bounded | Pass | Both skills retain defensive planning workflows, data classification, redaction, authorization, access, retention, and approval checklists. |
 | Package-facing executable or mutation snippets are review-gated, redacted, or removed | Pass | Executable Splunk/SIEM, Timesketch, Plaso, API, upload, ingestion, and mutation snippets were removed from package-facing content. |
-| Catalog refresh remains blocked until review completes | Pass | This review completes the risk gate and queues catalog parity as the next ticket; generated catalog files were not hand-edited in this ticket. |
+| Catalog refresh remains blocked until review completes | Pass | This review completes the risk gate and queues catalog parity as the next ticket; package/npm/registry publication was not attempted. |
 
 ## Files changed
 
 - `dist/skills/building-incident-response-dashboard/SKILL.md`
 - `dist/skills/building-incident-timeline-with-timesketch/SKILL.md`
+- `dist/catalog.json`
+- `dist/catalog.md`
 - `reports/risk/2026-07-09-ir-dashboard-timesketch-risk-review.md`
 - `operations/board.json`
 - `operations/value-ledger.json`
@@ -90,7 +92,6 @@ No generated catalog, install manifest, package, npm, registry, or publication f
 
 - No online discovery or source review was performed.
 - No repository was cloned.
-- No generated catalog file was hand-edited.
 - No third-party content was copied or normalized.
 - No Splunk, Elastic, Grafana, Sentinel, Timesketch, Plaso, Dissect, OpenSearch, PostgreSQL, Redis, Docker, API, SIEM, endpoint, cloud, forensic-evidence, or incident-record external action occurred.
 - No package, npm, registry, or publication action occurred.
