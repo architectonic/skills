@@ -13,7 +13,7 @@
     {"id":"catalog-refresh-after-metadata-backfill-20260709-005","priority":2,"role":"Cataloger","target":"dist/catalog.json","status":"done","source_ticket":"skills-catalog-refresh-after-metadata-backfill-005"},
     {"id":"catalog-refresh-after-metadata-backfill-20260709-006","priority":2,"role":"Cataloger","target":"dist/catalog.json","status":"done","source_ticket":"skills-catalog-refresh-after-metadata-backfill-006"},
     {"id":"catalog-refresh-after-metadata-backfill-20260709-007","priority":2,"role":"Cataloger","target":"dist/catalog.json","status":"done","source_ticket":"skills-catalog-refresh-after-metadata-backfill-007"},
-    {"id":"catalog-refresh-after-metadata-backfill-20260709-008","priority":2,"role":"Cataloger","target":"dist/catalog.json","reason":"IR dashboard and Timesketch timeline skills were converted to high-risk requires_review defensive governance wrappers.","status":"ready","unblocked_by":"skills-risk-review-ir-dashboard-timesketch-001","created_at":"2026-07-09T15:12:03-03:00","source_ticket":"skills-catalog-refresh-after-metadata-backfill-008"}
+    {"id":"catalog-refresh-after-metadata-backfill-20260709-008","priority":2,"role":"Cataloger","target":"dist/catalog.json","reason":"IR dashboard and Timesketch timeline skills were converted to high-risk requires_review defensive governance wrappers.","status":"done","unblocked_by":"skills-risk-review-ir-dashboard-timesketch-001","created_at":"2026-07-09T15:12:03-03:00","completed_at":"2026-07-09T16:13:23-03:00","source_ticket":"skills-catalog-refresh-after-metadata-backfill-008"}
   ],
   "risk": [
     {"id":"risk-review-email-header-and-golang-malware-analysis-20260709-001","priority":1,"role":"Risk Auditor","status":"done","source_ticket":"skills-risk-review-email-header-and-golang-malware-analysis-001"},
@@ -32,7 +32,8 @@
     {"id":"metadata-backfill-uncategorized-and-unspecified-risk-20260709-005","priority":3,"role":"Critic","status":"blocked_for_risk_review","source_ticket":"skills-metadata-backfill-batch-005"},
     {"id":"metadata-backfill-uncategorized-and-unspecified-risk-20260709-006","priority":3,"role":"Critic","status":"blocked_for_risk_review","source_ticket":"skills-metadata-backfill-batch-006"},
     {"id":"metadata-backfill-uncategorized-and-unspecified-risk-20260709-007","priority":3,"role":"Critic","status":"blocked_for_risk_review","source_ticket":"skills-metadata-backfill-batch-007"},
-    {"id":"metadata-backfill-uncategorized-and-unspecified-risk-20260709-008","priority":3,"role":"Critic","status":"blocked_for_risk_review","source_ticket":"skills-metadata-backfill-batch-008","blocked_by":"skills-risk-review-ir-dashboard-timesketch-001"}
+    {"id":"metadata-backfill-uncategorized-and-unspecified-risk-20260709-008","priority":3,"role":"Critic","status":"blocked_for_risk_review","source_ticket":"skills-metadata-backfill-batch-008","blocked_by":"skills-risk-review-ir-dashboard-timesketch-001"},
+    {"id":"metadata-backfill-uncategorized-and-unspecified-risk-20260709-009","priority":3,"role":"Critic","status":"ready","source_ticket":"skills-metadata-backfill-batch-009","target":"dist/skills/building-malware-incident-communication-template/SKILL.md","unblocked_by":"skills-catalog-refresh-after-metadata-backfill-008"}
   ],
   "progress": [
     {"at":"2026-07-09T00:11:50-03:00","by":"Skills Value Operator","batch":"daily-ledger-initialization","result":"Initialized 2026-07-09 daily queues as Reporter-only because today's ledger was missing. No board ticket was consumed."},
@@ -51,6 +52,7 @@
     {"at":"2026-07-09T13:11:32-03:00","by":"Skills Value Operator","batch":"identity-federation-saml-azure-ad-risk-review","result":"Converted identity federation skill into high-risk requires_review wrapper."},
     {"at":"2026-07-09T14:12:30-03:00","by":"Skills Value Operator","batch":"metadata-backfill-007-catalog-parity","result":"Verified catalog/install-manifest parity after identity-federation risk review."},
     {"at":"2026-07-09T14:37:32-03:00","by":"Skills Value Operator","batch":"metadata-backfill-batch-008","result":"Stopped before incident dashboard automation and Timesketch forensic timeline workflows; opened risk review."},
-    {"at":"2026-07-09T15:12:03-03:00","by":"Skills Value Operator","batch":"ir-dashboard-timesketch-risk-review","result":"Converted IR dashboard and Timesketch timeline skills into high-risk requires_review defensive governance wrappers; opened catalog parity gate."}
+    {"at":"2026-07-09T15:12:03-03:00","by":"Skills Value Operator","batch":"ir-dashboard-timesketch-risk-review","result":"Converted IR dashboard and Timesketch timeline skills into high-risk requires_review defensive governance wrappers; opened catalog parity gate."},
+    {"at":"2026-07-09T16:13:23-03:00","by":"Skills Value Operator","batch":"metadata-backfill-008-catalog-parity","result":"Verified catalog/install-manifest parity after IR dashboard and Timesketch risk review; queued metadata-backfill batch 009."}
   ]
 }
