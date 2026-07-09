@@ -1,310 +1,185 @@
 ---
 name: Analyzing Email Headers for Phishing Investigation
-description: Parse and analyze email headers to trace the origin of phishing emails,
-tags: [research, agent-skill, okf, forensics, email-analysis, phishing, spf, dkim, dmarc, header-analysis, security]
+description: Review suspicious email headers for phishing indicators under authorized incident-response controls.
+tags: [forensics, email-analysis, phishing, spf, dkim, dmarc, header-analysis, security-defensive, incident-response]
 license: Apache-2.0
 type: Playbook
+domain: forensics
+risk_level: high
+requires_review: true
+source_status: existing-package-skill-risk-reviewed
+review_gate: authorized-incident-response-only
 ---
-
 
 # Analyzing Email Headers for Phishing Investigation
 
+## Safety Boundary
+
+Use this skill only for authorized incident response, abuse-desk triage, legal/compliance review, or defensive mailbox investigation where the reviewer has permission to inspect the message and its metadata.
+
+Do not use this skill to access, extract, publish, submit, or enrich private mailbox content unless the case owner has approved the exact evidence handling path. Treat message bodies, attachments, recipients, internal relay names, authentication results, source IPs, and user identifiers as sensitive evidence.
+
+External reputation checks, third-party submissions, and API-backed enrichment must remain outside the package-facing default workflow unless a separate review approves data minimization, terms, credentials, retention, and disclosure risk.
+
 ## When to Use
-- When investigating a suspected phishing email to determine its true origin
-- For verifying sender authenticity and detecting email spoofing
-- During incident response when a user has clicked a phishing link
-- When tracing the delivery path and relay servers of a suspicious email
-- For validating SPF, DKIM, and DMARC alignment to identify forgery
 
-## Prerequisites
-- Raw email headers from the suspicious message (EML or MSG format)
-- Understanding of SMTP protocol and email header fields
-- Access to DNS lookup tools (dig, nslookup) for SPF/DKIM/DMARC verification
-- Email header analysis tools (MHA, emailheaders.net concepts)
-- Python with email parsing libraries for automated analysis
-- Access to threat intelligence platforms for IP/domain reputation
+- Investigating a suspected phishing message or business email compromise attempt.
+- Validating whether a visible sender is aligned with the authenticated sender.
+- Reviewing SPF, DKIM, DMARC, ARC, Return-Path, Reply-To, Message-ID, and Received-chain evidence.
+- Producing a defensive report that separates authentication failures, routing anomalies, sender-domain issues, and content indicators.
 
-## Workflow
+## Required Authorization Checklist
 
-### Step 1: Extract Raw Email Headers
+Before analysis, confirm:
 
-```bash
-# Export from Outlook: Open email > File > Properties > Internet Headers
-# Export from Gmail: Open email > Three dots > Show original
-# Export from Thunderbird: View > Message Source
+- The message is in scope for the investigation.
+- Evidence handling rules are known for the mailbox, tenant, case, or client.
+- Private content is minimized before being shared or copied.
+- Attachments and links are not opened or submitted without explicit approval.
+- Any external enrichment service has been approved for the data being sent.
 
-# If working with EML file from forensic image
-cp /mnt/evidence/Users/suspect/AppData/Local/Microsoft/Outlook/phishing_email.eml \
-   /cases/case-2024-001/email/
+## Review Workflow
 
-# If working with PST file, extract individual messages
-pip install pypff
-python3 << 'PYEOF'
-import pypff
+### 1. Preserve Evidence Without Expanding Exposure
 
-pst = pypff.file()
-pst.open("/cases/case-2024-001/email/outlook.pst")
-root = pst.get_root_folder()
+Work from a case-approved export or case-approved header view. Record where the evidence came from, who authorized access, and whether body or attachment content was reviewed.
 
-def extract_messages(folder, path=""):
-    for i in range(folder.get_number_of_sub_messages()):
-        msg = folder.get_sub_message(i)
-        headers = msg.get_transport_headers()
-        subject = msg.get_subject()
-        if headers:
-            filename = f"/cases/case-2024-001/email/msg_{i}_{subject[:30]}.txt"
-            with open(filename, 'w') as f:
-                f.write(headers)
-    for i in range(folder.get_number_of_sub_folders()):
-        extract_messages(folder.get_sub_folder(i))
+Preferred package-facing evidence scope:
 
-extract_messages(root)
-PYEOF
-```
+- Full raw headers.
+- Authentication-Results fields.
+- Envelope sender and visible sender fields.
+- Message-ID, Date, Return-Path, Reply-To.
+- Received-chain metadata needed to reconstruct routing.
 
-### Step 2: Parse the Email Header Chain
+Avoid unnecessary package-facing collection of:
 
-```bash
-# Parse headers using Python email library
-python3 << 'PYEOF'
-import email
-from email import policy
+- Full mailbox folders.
+- Unrelated messages.
+- Attachment contents.
+- Message bodies where header-only review is sufficient.
+- Personal contact lists or unrelated recipient data.
 
-with open('/cases/case-2024-001/email/phishing_email.eml', 'r') as f:
-    msg = email.message_from_file(f, policy=policy.default)
+### 2. Reconstruct the Delivery Chain
 
-print("=== KEY HEADER FIELDS ===")
-print(f"From:          {msg['From']}")
-print(f"To:            {msg['To']}")
-print(f"Subject:       {msg['Subject']}")
-print(f"Date:          {msg['Date']}")
-print(f"Message-ID:    {msg['Message-ID']}")
-print(f"Reply-To:      {msg['Reply-To']}")
-print(f"Return-Path:   {msg['Return-Path']}")
-print(f"X-Mailer:      {msg['X-Mailer']}")
-print(f"X-Originating-IP: {msg['X-Originating-IP']}")
+Read `Received` headers from earliest handoff to latest recipient-side handoff. Identify:
 
-print("\n=== RECEIVED HEADERS (bottom-up = chronological) ===")
-received_headers = msg.get_all('Received')
-if received_headers:
-    for i, header in enumerate(reversed(received_headers)):
-        print(f"\nHop {i+1}: {header.strip()}")
+- Apparent origin.
+- Relay sequence.
+- Boundary between external infrastructure and recipient infrastructure.
+- Missing, malformed, duplicated, or internally inconsistent hops.
+- Time anomalies that may indicate tampering, forwarding, or delayed delivery.
 
-print("\n=== AUTHENTICATION RESULTS ===")
-auth_results = msg.get_all('Authentication-Results')
-if auth_results:
-    for result in auth_results:
-        print(result)
+Treat self-reported client headers and display names as low-trust. Prefer server-added routing and authentication headers.
 
-print(f"\nARC-Authentication-Results: {msg.get('ARC-Authentication-Results', 'Not present')}")
-print(f"Received-SPF: {msg.get('Received-SPF', 'Not present')}")
-print(f"DKIM-Signature: {msg.get('DKIM-Signature', 'Not present')}")
-PYEOF
-```
+### 3. Validate Authentication and Alignment
 
-### Step 3: Validate SPF, DKIM, and DMARC Records
+Review these fields as a set, not in isolation:
 
-```bash
-# Extract the envelope sender domain
-SENDER_DOMAIN="example-corp.com"
+- SPF result and envelope sender alignment.
+- DKIM signature presence, selector, signing domain, and validation result.
+- DMARC disposition and alignment.
+- ARC results where forwarding may affect authentication.
+- Return-Path and Reply-To mismatch.
+- From display-name impersonation.
 
-# Check SPF record
-dig TXT $SENDER_DOMAIN +short | grep "v=spf1"
-# Example: "v=spf1 include:_spf.google.com include:sendgrid.net ~all"
+A pass on SPF or DKIM does not prove the message is benign. It may indicate legitimate infrastructure abuse, compromised accounts, forwarding, or authorized bulk-mail service use.
 
-# Check DKIM record (selector from DKIM-Signature header, e.g., "s=selector1")
-DKIM_SELECTOR="selector1"
-dig TXT ${DKIM_SELECTOR}._domainkey.${SENDER_DOMAIN} +short
+### 4. Review Sender and Infrastructure Signals
 
-# Check DMARC record
-dig TXT _dmarc.${SENDER_DOMAIN} +short
-# Example: "v=DMARC1; p=reject; rua=mailto:dmarc@example-corp.com; pct=100"
+Classify infrastructure findings without leaking sensitive details:
 
-# Verify the sending IP against SPF
-# Extract IP from first Received header
-SENDING_IP="203.0.113.45"
+- New, lookalike, or typo-squatted domains.
+- Mismatched visible sender, reply path, and envelope sender.
+- Unexpected sending service or relay path.
+- Suspicious Message-ID format or sender infrastructure mismatch.
+- Internal relay names or tenant identifiers that should be redacted in reports.
 
-# Manual SPF check using python
-python3 << 'PYEOF'
-import spf  # pip install pyspf
+Use generic descriptions when reporting to broader audiences. Preserve raw values only in restricted case evidence.
 
-result, explanation = spf.check2(
-    i='203.0.113.45',
-    s='sender@example-corp.com',
-    h='mail.example-corp.com'
-)
-print(f"SPF Result: {result}")
-print(f"Explanation: {explanation}")
-# Results: pass, fail, softfail, neutral, none, temperror, permerror
-PYEOF
+### 5. Review Body and Attachment Indicators Only When Approved
 
-# Check if sending IP is in known malicious IP lists
-# Query AbuseIPDB or VirusTotal
-curl -s "https://api.abuseipdb.com/api/v2/check?ipAddress=${SENDING_IP}" \
-   -H "Key: YOUR_API_KEY" -H "Accept: application/json" | python3 -m json.tool
-```
+If header evidence is insufficient and the case owner approves content review, inspect body and attachment indicators defensively:
 
-### Step 4: Analyze Sender Domain and Infrastructure
+- Visible link text versus actual destination.
+- Attachment names, types, and hashes.
+- Requests for credentials, payments, MFA codes, wire transfers, or account recovery.
+- Brand impersonation, urgency language, and reply-channel manipulation.
 
-```bash
-# WHOIS lookup on sender domain
-whois $SENDER_DOMAIN | grep -iE '(registrar|creation|expiration|registrant|nameserver)'
+Do not open links, detonate attachments, or submit sensitive content to public or third-party systems from the package-facing workflow.
 
-# Check domain age (recently registered domains are suspicious)
-# DNS record investigation
-dig A $SENDER_DOMAIN +short
-dig MX $SENDER_DOMAIN +short
-dig NS $SENDER_DOMAIN +short
+### 6. Produce a Minimal Defensive Report
 
-# Reverse DNS on sending IP
-dig -x $SENDING_IP +short
+A safe report should include:
 
-# Check for lookalike/typosquatting domains
-# Compare with legitimate domain using visual similarity
-python3 << 'PYEOF'
-import Levenshtein  # pip install python-Levenshtein
+- Case identifier.
+- Scope and authorization note.
+- Message metadata summary.
+- Authentication assessment.
+- Delivery-chain assessment.
+- Sender-domain and infrastructure assessment.
+- Content or attachment indicators only if approved.
+- Evidence sensitivity classification.
+- Recommended containment, user notification, tenant rule review, and detection follow-up.
 
-legitimate = "microsoft.com"
-suspicious = "micr0soft.com"
+## Classification Guidance
 
-distance = Levenshtein.distance(legitimate, suspicious)
-ratio = Levenshtein.ratio(legitimate, suspicious)
-print(f"Edit distance: {distance}")
-print(f"Similarity ratio: {ratio:.2%}")
-if ratio > 0.8:
-    print("WARNING: Likely typosquatting/lookalike domain!")
-PYEOF
-
-# Check domain reputation on VirusTotal
-curl -s "https://www.virustotal.com/api/v3/domains/${SENDER_DOMAIN}" \
-   -H "x-apikey: YOUR_VT_API_KEY" | python3 -m json.tool
-
-# Check if the Reply-To differs from From (common phishing indicator)
-python3 -c "
-import email
-with open('/cases/case-2024-001/email/phishing_email.eml') as f:
-    msg = email.message_from_file(f)
-from_addr = email.utils.parseaddr(msg['From'])[1]
-reply_to = email.utils.parseaddr(msg.get('Reply-To', msg['From']))[1]
-if from_addr != reply_to:
-    print(f'WARNING: From ({from_addr}) != Reply-To ({reply_to})')
-else:
-    print('From and Reply-To match')
-"
-```
-
-### Step 5: Examine Email Body and Attachments
-
-```bash
-# Extract URLs from email body
-python3 << 'PYEOF'
-import email
-import re
-from email import policy
-
-with open('/cases/case-2024-001/email/phishing_email.eml', 'r') as f:
-    msg = email.message_from_file(f, policy=policy.default)
-
-body = msg.get_body(preferencelist=('html', 'plain'))
-if body:
-    content = body.get_content()
-    urls = re.findall(r'https?://[^\s<>"\']+', content)
-    print("=== URLs FOUND IN EMAIL BODY ===")
-    for url in set(urls):
-        print(f"  {url}")
-
-    # Check for URL obfuscation (display text != href)
-    href_pattern = re.findall(r'<a[^>]*href=["\']([^"\']+)["\'][^>]*>(.*?)</a>', content, re.DOTALL)
-    print("\n=== HYPERLINK ANALYSIS ===")
-    for href, text in href_pattern:
-        display_url = re.findall(r'https?://[^\s<]+', text)
-        if display_url and display_url[0] != href:
-            print(f"  MISMATCH: Display='{display_url[0]}' -> Actual='{href}'")
-
-# Extract and hash attachments
-print("\n=== ATTACHMENTS ===")
-for part in msg.walk():
-    if part.get_content_disposition() == 'attachment':
-        filename = part.get_filename()
-        content = part.get_payload(decode=True)
-        import hashlib
-        sha256 = hashlib.sha256(content).hexdigest()
-        print(f"  File: {filename}, Size: {len(content)}, SHA-256: {sha256}")
-        with open(f'/cases/case-2024-001/email/attachments/{filename}', 'wb') as af:
-            af.write(content)
-PYEOF
-
-# Submit attachment hashes to VirusTotal
-# Submit URLs to URLhaus or PhishTank for reputation check
-```
-
-## Key Concepts
-
-| Concept | Description |
-|---------|-------------|
-| SPF (Sender Policy Framework) | DNS record specifying authorized mail servers for a domain |
-| DKIM (DomainKeys Identified Mail) | Cryptographic signature verifying email content integrity |
-| DMARC | Policy framework combining SPF and DKIM for sender authentication |
-| Received headers | Server-added headers showing each hop in the delivery chain (read bottom to top) |
-| Return-Path | Envelope sender address used for bounce messages; may differ from From |
-| Message-ID | Unique identifier assigned by the originating mail server |
-| X-Originating-IP | Original sender IP address (added by some mail services) |
-| Header forgery | Attackers can forge From, Reply-To, and other headers but not Received chains |
-
-## Tools & Systems
-
-| Tool | Purpose |
-|------|---------|
-| MXToolbox | Online email header analyzer and DNS lookup |
-| dig/nslookup | DNS record queries for SPF, DKIM, DMARC verification |
-| pyspf | Python SPF record validation library |
-| dkimpy | Python DKIM signature verification library |
-| PhishTool | Specialized phishing email analysis platform |
-| VirusTotal | URL and file reputation checking service |
-| AbuseIPDB | IP address reputation database |
-| whois | Domain registration information lookup |
-
-## Common Scenarios
-
-**Scenario 1: CEO Fraud / Business Email Compromise**
-The email claims to be from the CEO but Reply-To points to a Gmail address, SPF fails because the sending IP is not authorized for the spoofed domain, DKIM is missing, and the From domain is a lookalike (ceo-company.com vs company.com).
-
-**Scenario 2: Credential Harvesting Phishing**
-Email contains a link that displays "login.microsoft.com" but href points to a lookalike domain, the attachment is an HTML file containing a fake login page with credential exfiltration JavaScript, the sending domain was registered 3 days ago.
-
-**Scenario 3: Malware Delivery via Attachment**
-Email with an Office document attachment containing macros, the sender domain passes SPF but the account was compromised, DKIM signature is valid (sent from legitimate infrastructure), attachment SHA-256 matches known malware on VirusTotal.
-
-**Scenario 4: Spear Phishing with Legitimate Service**
-Attacker uses a legitimate email marketing service to send phishing, SPF and DKIM pass because the service is authorized, the phishing is in the content not the infrastructure, requires URL and content analysis rather than header authentication checks.
+| Finding | Interpretation |
+|---|---|
+| SPF fail with visible-domain impersonation | Strong spoofing indicator. |
+| DKIM absent or misaligned | Suspicious when a legitimate sender normally signs. |
+| DMARC fail or no enforcement | Raises impersonation risk. |
+| Reply-To mismatch | Common BEC and credential-harvest signal. |
+| Recently created lookalike domain | Strong phishing indicator. |
+| Authentication passes but content is malicious | Possible compromised account or authorized service abuse. |
+| Attachment hash matches known malware | Escalate to malware handling workflow. |
 
 ## Output Format
 
+```text
+Email Header Analysis Report
+
+Scope and authorization:
+- Case:
+- Reviewer:
+- Evidence source:
+- Handling restrictions:
+
+Header summary:
+- Visible From:
+- Envelope sender / Return-Path:
+- Reply-To:
+- Message-ID:
+- Date:
+
+Authentication:
+- SPF:
+- DKIM:
+- DMARC:
+- ARC / forwarding context:
+
+Delivery chain:
+- Earliest observed hop:
+- Recipient-side boundary:
+- Routing anomalies:
+
+Indicators:
+- Sender/domain:
+- Infrastructure:
+- Content/attachment indicators, if approved:
+
+Assessment:
+- Risk level:
+- Confidence:
+- Rationale:
+
+Recommended action:
+- Containment:
+- User guidance:
+- Detection or mail-rule follow-up:
+- Evidence retention notes:
 ```
-Email Header Analysis Report:
-  Subject:     "Urgent: Invoice Payment Required"
-  From:        accounting@examp1e-corp.com (SPOOFED)
-  Reply-To:    payments.urgent@gmail.com (MISMATCH)
-  Return-Path: <bounce@mail-server.xyz>
-  Date:        2024-01-15 09:23:45 UTC
 
-  Delivery Path (4 hops):
-    Hop 1: mail-server.xyz [203.0.113.45] -> relay1.isp.com
-    Hop 2: relay1.isp.com -> mx.target-company.com
-    Hop 3: mx.target-company.com -> internal-filter.target.com
-    Hop 4: internal-filter.target.com -> mailbox
+## Review Notes
 
-  Authentication:
-    SPF:    FAIL (203.0.113.45 not authorized for examp1e-corp.com)
-    DKIM:   NONE (no signature present)
-    DMARC:  FAIL (p=none, no enforcement)
-
-  Indicators of Phishing:
-    - Lookalike domain (examp1e-corp.com vs example-corp.com, 96% similar)
-    - From/Reply-To mismatch
-    - Domain registered 2 days before email sent
-    - URL in body points to credential harvesting page
-    - Attachment: invoice.xlsm (SHA-256: a3f2...) - Known malware on VT
-
-  Risk Level: HIGH
-```
+This package-facing version intentionally omits executable mailbox extraction, DNS/reputation commands, API-key examples, public submission workflows, attachment extraction scripts, and raw private-data examples. Those steps require a separate approved forensic runbook and case-specific authorization.
