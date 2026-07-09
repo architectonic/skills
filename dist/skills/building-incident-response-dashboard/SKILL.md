@@ -1,284 +1,185 @@
 ---
 name: Building Incident Response Dashboard
-description: Builds real-time incident response dashboards in Splunk, Elastic, or
-tags: [software-development, software-development, agent-skill, okf, soc, dashboard, incident-response, splunk, visualization, situational-awareness, metrics, security]
+description: Design defensive incident-response dashboard governance without exposing live incident data, IOCs, credentials, or SIEM mutation snippets.
+tags: [agent-skill, okf, soc, dashboard, incident-response, situational-awareness, metrics, security, governance]
 license: Apache-2.0
 type: Metric
+domain: security-defensive
+risk_level: high
+requires_review: true
+source_status: risk_reviewed
+reviewed_at: 2026-07-09
+review_ticket: skills-risk-review-ir-dashboard-timesketch-001
 ---
 
 # Building Incident Response Dashboard
 
-## When to Use
+## Purpose
 
-Use this skill when:
-- IR teams need real-time dashboards during active incidents for coordination and tracking
-- SOC leadership requires operational dashboards showing incident status and analyst workload
-- Post-incident reviews need visual timelines and impact assessments
-- Executive briefings require high-level incident metrics and trend analysis
+Use this skill to design or review incident-response dashboard requirements, data boundaries, ownership, and operational safeguards. It is a defensive governance wrapper for active-incident dashboards.
 
-**Do not use** for day-to-day SOC monitoring dashboards (use Incident Review instead) — IR dashboards are designed for active incident coordination and management reporting.
+This skill is high risk because active IR dashboards can expose live incident data, internal hosts, affected identities, IOCs, analyst assignments, containment state, and operational response steps. Dashboard automation can also mutate SIEM lookup tables, tickets, or incident records. Those surfaces require explicit human review before implementation or installation.
 
-## Prerequisites
+## Use When
 
-- SIEM platform (Splunk with Dashboard Studio, Elastic Kibana, or Grafana)
-- Notable event and incident data in SIEM (Splunk ES incident_review index)
-- Ticketing system integration (ServiceNow, Jira) for remediation tracking
-- Asset and identity lookup tables for context enrichment
-- Dashboard publishing access for SOC team and management distribution
+- An IR team needs a safe dashboard specification for active incident coordination.
+- SOC leadership needs status, workload, and response-progress reporting.
+- A team needs to decide which incident data may be shown to which audience.
+- A package, installer, or agent needs to classify an IR dashboard skill before publication.
 
-## Workflow
+## Do Not Use For
 
-### Step 1: Design Active Incident Dashboard Layout
+- Building or executing live SIEM searches.
+- Publishing real IOCs, hostnames, identities, case numbers, or containment status.
+- Writing or updating lookup tables, tickets, cases, dashboards, or incident records.
+- Creating scheduled searches, SOAR playbooks, alert actions, or account/device mutation.
+- Handling customer, employee, patient, legal, or regulated incident evidence without an approved evidence-handling process.
 
-Build a Splunk Dashboard Studio dashboard for active incident tracking:
+## Required Review Gate
 
-```xml
-<dashboard version="2" theme="dark">
-  <label>Active Incident Response Dashboard</label>
-  <description>Real-time tracking for IR-2024-0450</description>
+Before implementation, a reviewer must confirm:
 
-  <row>
-    <panel>
-      <title>Incident Summary</title>
-      <single>
-        <search>
-          <query>
-| makeresults
-| eval incident_id="IR-2024-0450",
-       status="CONTAINMENT",
-       severity="Critical",
-       affected_hosts=7,
-       contained_hosts=5,
-       iocs_identified=23,
-       hours_elapsed=round((now()-strptime("2024-03-15 14:00","%Y-%m-%d %H:%M"))/3600,1)
-| table incident_id, status, severity, affected_hosts, contained_hosts, iocs_identified, hours_elapsed
-          </query>
-        </search>
-      </single>
-    </panel>
-  </row>
-</dashboard>
+1. The organization owns or is authorized to process the incident data.
+2. Data fields are classified by sensitivity and audience.
+3. IOC, host, user, asset, and case identifiers are redacted or scoped to authorized viewers.
+4. Dashboard refresh behavior is read-only unless a separate change-control approval exists.
+5. Any SIEM, SOAR, ticketing, endpoint, cloud, or identity mutation is out of scope for this skill.
+6. Logging, retention, export, and screenshot policies are defined.
+7. Executive views aggregate sensitive data instead of exposing raw evidence.
+
+## Safe Dashboard Model
+
+Design dashboards as read-only views over pre-approved data products.
+
+Recommended dashboard sections:
+
+| Section | Safe Content | Review Notes |
+|---|---|---|
+| Incident summary | phase, severity band, owner role, last update time | avoid raw case IDs in broad-audience views |
+| Scope summary | aggregate affected system counts | do not expose hostnames unless viewer is authorized |
+| Containment progress | percentage and milestone state | avoid showing live containment commands or response actions |
+| IOC summary | counts by IOC type | do not publish raw indicators outside the approved response group |
+| Timeline | major response milestones | omit private evidence and personal data |
+| Workload | assigned team/queue counts | avoid naming analysts in executive views |
+| Business impact | service-level impact and recovery estimate | avoid unverified legal or breach conclusions |
+
+## Data Classification
+
+Classify every field before it appears in the dashboard.
+
+| Data Class | Examples | Default Handling |
+|---|---|---|
+| Public summary | status category, high-level impact | allowed in executive view after review |
+| Internal operational | queue counts, phase, response SLA | restricted to internal stakeholders |
+| Sensitive incident data | hostnames, usernames, IPs, hashes, domains, ticket IDs | restricted to incident team |
+| Private evidence | logs, emails, browser history, screenshots, endpoint artifacts | excluded from dashboards unless explicitly approved |
+| Mutation controls | isolation state, blocklists, ticket writes, lookup writes | excluded from this skill |
+
+## Safe Workflow
+
+1. Define the dashboard audience.
+2. Define allowed questions for that audience.
+3. Map questions to aggregate metrics.
+4. Classify each source field.
+5. Remove raw sensitive values from broad views.
+6. Require reviewer approval for any dashboard that shows live incident data.
+7. Use read-only service accounts and least-privilege dashboard permissions.
+8. Record the approved data sources, refresh cadence, owner, and retention period.
+9. Test with synthetic data before connecting to any production data source.
+10. Keep generated dashboards out of package publication until review is complete.
+
+## Dashboard Requirements Template
+
+```text
+Dashboard name:
+Incident type:
+Audience:
+Owner:
+Data sources:
+Refresh cadence:
+Allowed fields:
+Excluded fields:
+Sensitive-field handling:
+Reviewer:
+Approval date:
+Retention:
+Export/screenshot policy:
+Read-only guarantee:
+Known limitations:
 ```
 
-### Step 2: Build Real-Time Affected Systems Panel
+## Safe Metrics
 
-Track affected systems and their containment status:
+Prefer aggregate metrics that support coordination without exposing unnecessary evidence.
 
-```spl
-| inputlookup ir_affected_systems.csv
-| eval status_color = case(
-    status="Contained", "#2ecc71",
-    status="Compromised", "#e74c3c",
-    status="Investigating", "#f39c12",
-    status="Recovered", "#3498db",
-    1=1, "#95a5a6"
-  )
-| stats count by status
-| eval order = case(status="Compromised", 1, status="Investigating", 2,
-                    status="Contained", 3, status="Recovered", 4)
-| sort order
-| table status, count
+- incident phase
+- severity band
+- time since detection
+- containment percentage
+- affected-system count by category
+- unresolved task count by queue
+- handoff status
+- mean time to acknowledge
+- mean time to contain
+- recovery milestone status
 
---- Detailed host table
-| inputlookup ir_affected_systems.csv
-| lookup asset_lookup_by_cidr ip AS host_ip OUTPUT category, owner, priority
-| table hostname, host_ip, category, owner, status, containment_time,
-        compromise_vector, analyst_assigned
-| sort status, hostname
-```
+## Redaction Rules
 
-### Step 3: Build IOC Tracking Panel
+- Replace exact hostnames with asset categories unless exact names are required.
+- Replace usernames with team or role labels for management views.
+- Replace exact IOCs with counts by type for non-technical audiences.
+- Remove email addresses, file paths, URLs, screenshots, and raw event payloads.
+- Avoid embedding live case numbers in reusable templates.
+- Never include credentials, tokens, cookies, secrets, or private keys.
 
-Monitor IOC spread across the environment:
+## Implementation Boundary
 
-```spl
---- IOCs identified during incident
-index=* (src_ip IN ("185.234.218.50", "45.77.123.45") OR
-         dest IN ("evil-c2.com", "malware-drop.com") OR
-         file_hash IN ("a1b2c3d4...", "e5f6a7b8..."))
-earliest="2024-03-14"
-| stats count AS hits, dc(src_ip) AS unique_sources,
-        dc(dest) AS unique_dests, latest(_time) AS last_seen
-  by sourcetype
-| sort - hits
+This package-facing skill must not include:
 
---- IOC timeline
-index=* (src_ip IN ("185.234.218.50") OR dest="evil-c2.com")
-earliest="2024-03-14"
-| timechart span=1h count by sourcetype
+- executable SIEM queries against live data;
+- scheduled-search configuration;
+- lookup-table writes;
+- SOAR actions;
+- endpoint isolation;
+- identity or account changes;
+- firewall, DNS, or blocklist mutation;
+- ticket or incident-record mutation;
+- raw IOCs or private evidence examples.
 
---- New IOC discovery tracking
-| inputlookup ir_ioc_list.csv
-| stats count by ioc_type, source, discovery_time
-| sort discovery_time
-| table discovery_time, ioc_type, ioc_value, source, status
-```
+Those tasks require a separate authorized implementation plan outside this skill.
 
-### Step 4: Build Response Timeline Panel
+## Acceptance Checklist
 
-Create chronological incident timeline:
-
-```spl
-| inputlookup ir_timeline.csv
-| sort _time
-| eval phase = case(
-    action_type="detection", "Detection",
-    action_type="triage", "Triage",
-    action_type="containment", "Containment",
-    action_type="eradication", "Eradication",
-    action_type="recovery", "Recovery",
-    1=1, "Other"
-  )
-| eval phase_color = case(
-    phase="Detection", "#e74c3c",
-    phase="Triage", "#f39c12",
-    phase="Containment", "#e67e22",
-    phase="Eradication", "#2ecc71",
-    phase="Recovery", "#3498db"
-  )
-| table _time, phase, action, analyst, details
-```
-
-Example timeline data:
-```csv
-_time,action_type,action,analyst,details
-2024-03-15 14:00,detection,Alert triggered - Cobalt Strike beacon detected,splunk_es,Notable event NE-2024-08921
-2024-03-15 14:12,triage,Alert triaged - confirmed true positive,analyst_jdoe,VT score 52/72 on beacon hash
-2024-03-15 14:23,containment,Host WORKSTATION-042 isolated,analyst_jdoe,CrowdStrike network isolation
-2024-03-15 14:35,containment,C2 domain blocked on firewall,analyst_msmith,Palo Alto rule deployed
-2024-03-15 15:00,eradication,Enterprise-wide IOC scan initiated,analyst_jdoe,Splunk search across all indices
-2024-03-15 15:30,containment,3 additional hosts identified and isolated,analyst_msmith,Lateral movement confirmed
-2024-03-15 16:00,eradication,Malware removed from all affected hosts,analyst_tier3,CrowdStrike RTR cleanup
-2024-03-15 18:00,recovery,Systems restored and monitored,analyst_msmith,72-hour monitoring period started
-```
-
-### Step 5: Build SOC Operations Dashboard
-
-Track overall SOC performance metrics:
-
-```spl
---- Incident volume by severity (last 30 days)
-index=notable earliest=-30d
-| stats count by urgency
-| eval order = case(urgency="critical", 1, urgency="high", 2, urgency="medium", 3,
-                    urgency="low", 4, urgency="informational", 5)
-| sort order
-
---- MTTD (Mean Time to Detect)
-index=notable earliest=-30d status_label="Resolved*"
-| eval mttd_minutes = round((time_of_first_event - orig_time) / 60, 1)
-| stats avg(mttd_minutes) AS avg_mttd, median(mttd_minutes) AS med_mttd,
-        perc95(mttd_minutes) AS p95_mttd
-
---- MTTR (Mean Time to Respond/Resolve)
-index=notable earliest=-30d status_label="Resolved*"
-| eval mttr_hours = round((status_end - _time) / 3600, 1)
-| stats avg(mttr_hours) AS avg_mttr, median(mttr_hours) AS med_mttr by urgency
-
---- Analyst workload distribution
-index=notable earliest=-7d
-| stats count by owner
-| sort - count
-
---- Alert disposition breakdown
-index=notable earliest=-30d status_label IN ("Resolved*", "Closed*")
-| stats count by disposition
-| eval percentage = round(count / sum(count) * 100, 1)
-| sort - count
-```
-
-### Step 6: Build Executive Briefing Dashboard
-
-Create a high-level dashboard for leadership during major incidents:
-
-```spl
---- Executive summary panel
-| makeresults
-| eval metrics = "Business Impact: 1 file server offline (Finance dept), "
-                ."Estimated Recovery: 4 hours, "
-                ."Data Loss Risk: Low (backups verified), "
-                ."Customer Impact: None, "
-                ."Regulatory Notification: Not required (no PII exposure confirmed)"
-
---- Trend comparison (this month vs last month)
-index=notable earliest=-60d
-| eval period = if(_time > relative_time(now(), "-30d"), "Current Month", "Previous Month")
-| stats count by period, urgency
-| chart sum(count) AS incidents by period, urgency
-
---- Top threat categories
-index=notable earliest=-30d
-| top rule_name limit=10
-| table rule_name, count, percent
-```
-
-### Step 7: Automate Dashboard Updates
-
-Use Splunk scheduled searches to maintain dashboard data:
-
-```spl
---- Scheduled search to update affected systems lookup (runs every 5 minutes)
-index=* (src_ip IN [| inputlookup ir_ioc_list.csv | search ioc_type="ip"
-                    | fields ioc_value | rename ioc_value AS src_ip])
-earliest=-1h
-| stats latest(_time) AS last_seen, count AS event_count,
-        values(sourcetype) AS data_sources by src_ip
-| eval status = if(last_seen > relative_time(now(), "-15m"), "Active", "Dormant")
-| outputlookup ir_affected_systems_auto.csv
-```
-
-## Key Concepts
-
-| Term | Definition |
-|------|-----------|
-| **Situational Awareness** | Real-time understanding of incident scope, affected systems, and response progress |
-| **MTTD** | Mean Time to Detect — average time from threat occurrence to SOC alert generation |
-| **MTTR** | Mean Time to Respond — average time from alert to incident resolution or containment |
-| **Containment Rate** | Percentage of affected systems successfully isolated relative to total compromised systems |
-| **Burn-Down Chart** | Visual tracking of remaining open investigation tasks over time during an incident |
-| **Executive Briefing** | Non-technical summary dashboard showing business impact, timeline, and recovery status |
-
-## Tools & Systems
-
-- **Splunk Dashboard Studio**: Modern dashboard framework with drag-and-drop visualization and real-time data
-- **Elastic Kibana Dashboard**: Visualization platform with Lens, Maps, and Canvas for security dashboards
-- **Grafana**: Open-source visualization platform supporting multiple data sources including Elasticsearch and Splunk
-- **Microsoft Sentinel Workbooks**: Azure-native dashboard framework with Kusto-based analytics visualization
-- **TheHive**: Open-source incident response platform with built-in case tracking and metrics dashboards
-
-## Common Scenarios
-
-- **Active Ransomware Incident**: Dashboard showing encryption spread, containment status, backup verification, recovery progress
-- **Data Breach Investigation**: Dashboard tracking affected data stores, exfiltration volume, notification requirements
-- **Phishing Campaign Response**: Dashboard showing recipient count, click rate, credential exposure, remediation status
-- **Monthly SOC Report**: Leadership dashboard with incident trends, MTTD/MTTR metrics, analyst performance
-- **Compliance Audit**: Dashboard demonstrating detection coverage, response SLA compliance, and incident closure metrics
+- [ ] The skill is marked `risk_level: high`.
+- [ ] The skill is marked `requires_review: true`.
+- [ ] Raw SIEM query snippets have been removed or replaced with requirements language.
+- [ ] Raw IOC, host, user, and case examples have been removed or generalized.
+- [ ] Lookup-write and scheduled-search instructions have been removed or review-gated.
+- [ ] Safe dashboard guidance remains useful for defensive IR planning.
+- [ ] Catalog refresh is queued after metadata changes.
 
 ## Output Format
 
-```
-INCIDENT RESPONSE DASHBOARD — IR-2024-0450
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```text
+IR DASHBOARD REVIEW RESULT
 
-STATUS: CONTAINMENT PHASE (6h 30m elapsed)
+Risk: high
+Requires review: true
 
-Affected Systems:          Containment Progress:
-  Compromised:   2         [==========----------] 71%
-  Investigating: 1         5 of 7 systems contained
-  Contained:     3
-  Recovered:     1
+Approved safe use:
+- read-only dashboard requirements
+- aggregate metrics
+- audience and field classification
+- redaction and retention policy
 
-IOC Summary:               Response Timeline:
-  IPs:      4              14:00 — Alert triggered
-  Domains:  2              14:12 — Confirmed malicious
-  Hashes:   3              14:23 — First host isolated
-  URLs:     5              15:00 — Enterprise scan started
-  Emails:   1              15:30 — 3 more hosts isolated
+Blocked from package-facing use:
+- live SIEM queries
+- raw incident data
+- IOC publication
+- lookup writes
+- scheduled searches
+- SOAR or account/device mutation
 
-Key Metrics:
-  MTTD:    12 minutes
-  MTTC:    23 minutes (first host)
-  Analysts Active: 3 (Tier 2: 2, Tier 3: 1)
-
-Business Impact: LOW — Finance file server offline, no customer-facing systems affected
+Next gate:
+- catalog parity refresh after this risk review
 ```
