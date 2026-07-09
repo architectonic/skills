@@ -9,7 +9,7 @@
     "skill_count": 1183,
     "domain_counts": {
       "agent-operations": 108,
-      "business": 46,
+      "business": 47,
       "cloud-security": 42,
       "design": 40,
       "forensics": 25,
@@ -19,14 +19,14 @@
       "security-defensive": 61,
       "security-offensive": 16,
       "software-engineering": 152,
-      "uncategorized": 556,
+      "uncategorized": 555,
       "writing": 16
     },
     "risk_counts": {
       "high": 16,
-      "low": 10,
+      "low": 11,
       "medium": 439,
-      "unspecified": 718
+      "unspecified": 717
     }
   },
   "domains": {
@@ -176,6 +176,7 @@
       "Vendor Management — Scorecard, SLA Tracking, and Third-Party Risk",
       "acceptance-orchestrator",
       "achieving-cmmc-level-2-compliance",
+      "ai-seo",
       "channel-economics",
       "grilling",
       "gstack-openclaw-office-hours",
@@ -1064,7 +1065,6 @@
       "Testing for XSS Vulnerabilities with Burp Suite",
       "Validating Backup Integrity for Recovery",
       "Validating TPM Measured Boot and Attestation",
-      "ai-seo",
       "algorithmic-art",
       "anti-sycophancy",
       "apple-macos-apps",
@@ -1605,8 +1605,8 @@
       "description": "Optimize content for AI search and LLM citations across AI Overviews, ChatGPT, Perplexity, Claude, Gemini, and similar systems. Covers AI visibility audit, three-pillar optimization strategy (structure/authority/presence), and monitoring.",
       "path": "dist/skills/ai-seo/SKILL.md",
       "directory": "dist/skills/ai-seo",
-      "domain": "",
-      "risk_level": "",
+      "domain": "business",
+      "risk_level": "low",
       "requires_review": false,
       "tags": [
         "productivity",
@@ -1618,7 +1618,7 @@
         "content-optimization"
       ],
       "source_family": "",
-      "source_status": "",
+      "source_status": "adapted-origin-unverified",
       "type": "Reference"
     },
     {
