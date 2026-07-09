@@ -9,13 +9,13 @@ status: active
 
 ## Latest board-driven heartbeat
 
-Ran `Critic` for `skills-metadata-backfill-batch-007`.
+Ran `Risk Auditor` for `skills-risk-review-identity-federation-saml-azure-ad-001`.
 
 ## Inspected state
 
 - Repository: `architectonic/skills`
 - Inspected ref: `main`
-- Inspected SHA before this ticket's first content write: `e58f4ba87a367d55f145928d59a67f64db171aad`
+- Inspected SHA before this ticket's first content write: `42faade63f0879f9e0e216a39d7f4d4adabd36cd`
 - Model requirement status: `model_setting_unverified`
 - Daily ledger present at start: yes
 - Missing-ledger initialization: no
@@ -38,44 +38,50 @@ Ran `Critic` for `skills-metadata-backfill-batch-007`.
 - `dist/catalog.md`
 - `dist/install-manifest.json`
 - `dist/skills/building-identity-federation-with-saml-azure-ad/SKILL.md`
-- `reports/catalog/2026-07-09-metadata-backfill-006-catalog-parity.md`
+- `reports/critic/2026-07-09-metadata-backfill-batch-007.md`
 
 ## Work performed
 
-Consumed `skills-metadata-backfill-batch-007`.
+Consumed `skills-risk-review-identity-federation-saml-azure-ad-001`.
 
-Reviewed the next uncategorized/unspecified-risk backlog item: `Building Identity Federation with SAML Azure AD`.
+Converted `Building Identity Federation with SAML Azure AD` into a high-risk, `requires_review: true`, defensive governance wrapper.
 
-Stopped before routine metadata endorsement because the skill contains production identity-federation/account-control surfaces:
+Classified and removed/re-gated package-facing:
 
-- AD FS role installation and farm configuration.
-- Microsoft Graph `Domain.ReadWrite.All` connection scope.
-- Managed-domain to federated-domain conversion through `New-MgDomainFederationConfiguration`.
-- AD FS relying-party trust and claims-rule mutation.
-- Token-signing certificate rotation/removal.
-- Public federation endpoint and production SSO configuration guidance.
+- AD FS role installation, farm setup, federation service configuration, and public endpoint exposure.
+- Microsoft Graph tenant/domain mutation authority, including `Domain.ReadWrite.All` style scopes.
+- Managed-domain to federated-domain conversion payloads.
+- AD FS relying-party trust creation and mutation.
+- Claims-rule mutation snippets.
+- Token-signing certificate promotion, rotation, and removal commands.
+- Federation metadata/MEX/sign-in/sign-out endpoint implementation steps.
+- Production SSO, MFA, conditional-access, lockout, break-glass, and account-control operational boundaries.
 
-No skill metadata was changed and no generated catalog file was edited.
+Preserved safe identity-governance guidance: model selection, change control, least privilege, break-glass, staged rollout, certificate lifecycle review, monitoring, and rollback planning.
+
+No generated catalog file was edited; catalog parity is queued for the next ticket.
 
 ## Board and queue result
 
-- `skills-metadata-backfill-batch-007`: blocked for risk review.
-- `metadata-backfill-uncategorized-and-unspecified-risk-20260709-007`: blocked for risk review.
-- `skills-risk-review-identity-federation-saml-azure-ad-001`: ready.
-- `risk-review-identity-federation-saml-azure-ad-20260709-001`: ready.
+- `skills-risk-review-identity-federation-saml-azure-ad-001`: done.
+- `risk-review-identity-federation-saml-azure-ad-20260709-001`: done.
+- `skills-catalog-refresh-after-metadata-backfill-007`: ready.
+- `catalog-refresh-after-metadata-backfill-20260709-007`: ready.
 
 ## Acceptance tests
 
 | Test | Result | Evidence |
 |---|---|---|
-| Processes a bounded batch, not the entire catalog | Pass | Reviewed the next backlog item only and stopped at the first unsafe candidate. |
-| Adds domain/risk/requires_review/source status when justified | Pass | No metadata was added because the first candidate required risk review before routine backfill. |
-| Stops and creates risk ticket on unsafe material | Pass | Opened `skills-risk-review-identity-federation-saml-azure-ad-001` for tenant/domain/federation/account-control surfaces. |
-| Creates catalog refresh ticket after metadata changes | Pass | No catalog refresh was created because no metadata changed; catalog parity is intentionally unchanged. |
+| AD FS farm setup and federation service configuration surfaces are classified | Pass | AD FS farm/service setup and public federation endpoint exposure are classified as high-risk and removed from package-facing implementation steps. |
+| Microsoft Graph `Domain.ReadWrite.All` and federated-domain mutation surfaces are classified | Pass | Tenant/domain mutation authority and managed/federated conversion payloads are classified and removed from executable guidance. |
+| Relying-party trust, claims-rule, token-signing certificate, metadata endpoint, and production SSO/account-control boundaries are classified | Pass | Trusts, claims, signing material, metadata endpoints, SSO, MFA, lockout, break-glass, and account-control surfaces are listed as high-risk review-gated boundaries. |
+| Safe defensive identity-governance guidance is preserved or bounded | Pass | The rewritten skill retains governance flow, review checklist, design principles, monitoring, rollback, and approved-use boundaries. |
+| Catalog refresh remains blocked until review completes | Pass | Risk review completed and catalog refresh is queued as the next board ticket; no generated catalog file was edited in this ticket. |
 
 ## Files changed
 
-- `reports/critic/2026-07-09-metadata-backfill-batch-007.md`
+- `dist/skills/building-identity-federation-with-saml-azure-ad/SKILL.md`
+- `reports/risk/2026-07-09-identity-federation-saml-azure-ad-risk-review.md`
 - `operations/board.json`
 - `operations/value-ledger.json`
 - `operations/daily/2026-07-09/queues.json`
@@ -89,17 +95,17 @@ No skill metadata was changed and no generated catalog file was edited.
 - No repository was cloned.
 - No generated catalog file was hand-edited.
 - No third-party content was copied or normalized.
-- No package, npm, registry, or publication action occurred.
 - No Azure, Microsoft Graph, AD FS, tenant, DNS, certificate, identity, or account-control external action occurred.
+- No package, npm, registry, or publication action occurred.
 
 ## Value delta
 
-Prevented routine metadata/catalog endorsement of production identity-federation and account-control material before a dedicated risk review.
+Removed the identity-federation/account-control package risk blocker while preserving safe defensive governance guidance.
 
 ## Risk and publication state
 
-- Risk queue: open.
-- Catalog queue: clear because no metadata changed.
+- Risk queue: clear.
+- Catalog queue: open for `skills-catalog-refresh-after-metadata-backfill-007`.
 - GitTaskBench: watch/license-blocked.
 - Discovery Action handoff: still absent.
 - Remaining metadata backlog: open.
@@ -120,7 +126,8 @@ Prevented routine metadata/catalog endorsement of production identity-federation
 - A prior `Critic` run consumed `skills-metadata-backfill-batch-006`, backfilled Splunk SPL detection rules, and opened the IOC pipeline risk review.
 - A prior `Risk Auditor` run consumed `skills-risk-review-ioc-defanging-sharing-pipeline-001` and converted the IOC pipeline into a high-risk review-gated defensive governance wrapper.
 - A prior `Cataloger` run consumed `skills-catalog-refresh-after-metadata-backfill-006` and verified catalog parity after batch 006.
+- A prior `Critic` run consumed `skills-metadata-backfill-batch-007` and opened this identity-federation risk review.
 
 ## Next action
 
-`Risk Auditor` should consume `skills-risk-review-identity-federation-saml-azure-ad-001`.
+`Cataloger` should consume `skills-catalog-refresh-after-metadata-backfill-007`.
