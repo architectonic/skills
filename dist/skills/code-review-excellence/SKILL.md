@@ -1,8 +1,15 @@
 ---
 name: Code Review Excellence
 description: Master effective code review practices to provide constructive feedback, catch bugs early, and foster knowledge sharing while maintaining team morale. Use when reviewing pull requests, establishing review standards, or mentoring developers.
+tags: [software-development, code-review, engineering-management, mentoring, collaboration]
+domain: software-engineering
+risk_level: medium
+requires_review: true
+review_gate: repository-owner-authorized-review-only
 source: AgentSkillOS/data/skill_seeds/code-review-excellence/SKILL.md
 source_license: Apache-2.0 (AgentSkillOS)
+source_status: reviewed-metadata-only
+review_notes: Review may affect merge decisions and expose sensitive repository context; keep use bounded to authorized repositories and do not repeat secrets from reviewed code.
 type: Playbook
 ---
 
@@ -80,6 +87,7 @@ For each file, check: Logic & Correctness, Security, Performance, Maintainabilit
 ```
 
 ### The Question Approach
+
 ```
 ❌ "This will fail if the list is empty."
 ✅ "What happens if `items` is an empty array?"
@@ -90,6 +98,7 @@ For each file, check: Logic & Correctness, Security, Performance, Maintainabilit
 ```
 
 ### Suggest, Don't Command
+
 ```
 ❌ "You must change this to use async/await"
 ✅ "Suggestion: async/await might make this more readable.
