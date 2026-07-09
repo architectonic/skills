@@ -1,216 +1,105 @@
 ---
 name: Building Identity Federation with SAML Azure AD
-description: Establish SAML 2.0 identity federation between on-premises Active Directory
-tags: [software-development, software-development, agent-skill, okf, saml, azure-ad, entra-id, federation, identity, sso, adfs, hybrid-identity, security]
+description: Review-gated defensive governance guidance for SAML and Microsoft Entra ID federation without exposing tenant mutation commands, signing-certificate operations, or production account-control procedures.
+tags: [security-defensive, identity, saml, azure-ad, entra-id, federation, sso, adfs, hybrid-identity, governance, review-gated]
 license: Apache-2.0
 type: Playbook
+domain: security-defensive
+risk_level: high
+requires_review: true
+source_status: package_risk_reviewed
+reviewed_at: 2026-07-09
+reviewed_by: Skills Value Operator
 ---
-
 
 # Building Identity Federation with SAML Azure AD
 
-## Overview
+## Purpose
 
-Identity federation enables users authenticated by one identity provider to access resources managed by another without maintaining separate credentials. This skill covers establishing SAML 2.0 federation between an organization's on-premises Active Directory (via AD FS or third-party IdP) and Microsoft Entra ID (formerly Azure AD), as well as configuring federated SSO for third-party SaaS applications. Federation eliminates password synchronization concerns and keeps authentication authority on-premises while extending SSO to cloud resources.
+Use this skill to review or plan SAML federation between on-premises identity infrastructure, AD FS or a third-party IdP, and Microsoft Entra ID. It is intentionally review-gated because federation changes authentication authority, tenant/domain state, relying-party trusts, claims issuance, signing material, metadata endpoints, and production SSO/account-control behavior.
 
+This package-facing version is a defensive governance wrapper. It does not provide AD FS farm installation commands, Microsoft Graph tenant mutation commands, federation conversion payloads, relying-party trust scripts, claims-rule mutation snippets, token-signing certificate rotation/removal commands, or public endpoint deployment steps.
 
-## When to Use
+## Allowed Use
 
-- When deploying or configuring building identity federation with saml azure ad capabilities in your environment
-- When establishing security controls aligned to compliance requirements
-- When building or improving security architecture for this domain
-- When conducting security assessments that require this implementation
+Use this skill when you need to:
 
-## Prerequisites
+- scope a defensive identity-federation review;
+- identify approval gates before changing federation, SAML, tenant, domain, claims, certificates, or SSO behavior;
+- compare managed, pass-through, federated, and third-party IdP models at an architecture level;
+- document safe rollout, rollback, monitoring, and disaster-recovery requirements;
+- review whether a proposed federation change has the right owners, test plan, audit trail, and break-glass path.
 
-- On-premises Active Directory domain
-- AD FS 2019+ or third-party SAML IdP (Okta, Ping, etc.)
-- Microsoft Entra ID tenant (P1 or P2 license recommended)
-- Azure AD Connect (if using hybrid identity with password hash sync as backup)
-- Public TLS certificate for federation endpoint
-- DNS records for federation service name
+Do not use this skill to make live tenant, domain, AD FS, Microsoft Graph, certificate, DNS, claims-rule, or account-control changes without explicit authorization, change control, tested rollback, and a qualified identity administrator.
 
-## Core Concepts
+## Risk Classification
 
-### Federation Models
+High-risk surfaces requiring review:
 
-| Model | Authentication Authority | Use Case |
-|-------|------------------------|----------|
-| Federated (AD FS) | On-premises AD FS | Regulatory requirement to keep auth on-prem |
-| Managed (PHS) | Azure AD with password hash sync | Simplest cloud auth, AD FS not needed |
-| Managed (PTA) | On-premises via pass-through agent | Cloud auth validated against on-prem AD |
-| Third-Party Federation | External IdP (Okta, Ping) | Multi-IdP environment |
+- AD FS role installation, farm creation, federation-service configuration, or proxy exposure;
+- Microsoft Graph permissions such as domain write scopes or any tenant/domain mutation authority;
+- converting a domain between managed, pass-through, and federated authentication;
+- relying-party trust creation or mutation for Microsoft 365, Entra ID, or SaaS applications;
+- claims-rule design that changes identifiers, NameID, UPN, email, group, role, or authorization claims;
+- token-signing, token-decrypting, TLS, and metadata-signing certificate lifecycle operations;
+- public federation metadata, MEX, sign-in, sign-out, and assertion consumer endpoints;
+- conditional-access, MFA, smart-lockout, extranet-lockout, break-glass, and fallback-account behavior;
+- any production SSO change that can lock out users, weaken authentication, or redirect authentication trust.
 
-### SAML Federation Architecture
+## Safe Design Principles
 
-```
-User → Cloud App (SP)
-   │
-   └── Redirect to Azure AD
-          │
-          ├── Azure AD checks federated domain
-          │
-          └── Redirect to on-premises AD FS
-                 │
-                 ├── AD FS authenticates against Active Directory
-                 │
-                 ├── AD FS issues SAML token
-                 │
-                 └── Token posted back to Azure AD
-                        │
-                        ├── Azure AD validates federation trust
-                        │
-                        ├── Azure AD issues its own token
-                        │
-                        └── User receives access token for cloud app
-```
+1. **Preserve change control.** Treat federation changes as production identity changes requiring approval, maintenance windows, rollback, and owner sign-off.
+2. **Separate planning from execution.** Architecture review, test plans, and runbooks should be reviewed before any administrator runs tenant or AD FS commands.
+3. **Prefer least privilege.** Use scoped, time-bound administrative access and avoid persistent broad tenant/domain write permissions.
+4. **Keep break-glass independent.** Emergency access accounts should remain outside the federation dependency chain and be monitored separately.
+5. **Stage before production.** Validate claims, certificates, metadata, MFA, lockout, fallback, and user experience in a non-production or pilot scope first.
+6. **Protect signing material.** Certificate private keys, thumbprints, rollover timing, and metadata publication should be handled as sensitive operational material.
+7. **Audit decisions, not secrets.** Record approvers, scope, timestamps, test results, rollback state, and affected domains without embedding credentials or private key material.
+8. **Monitor both sides of trust.** Identity-provider health, Entra sign-in logs, certificate expiry, metadata reachability, lockout events, and relying-party errors should all be visible before rollout.
 
-### Federation Trust Components
+## Review Checklist
 
-| Component | Description |
-|-----------|-------------|
-| Token-Signing Certificate | X.509 certificate used by IdP to sign SAML assertions |
-| Federation Metadata | XML document describing IdP endpoints and capabilities |
-| Relying Party Trust | Configuration in AD FS for each SP (Azure AD) |
-| Claims Rules | Transform AD attributes into SAML claims |
-| Issuer URI | Unique identifier for the IdP (entity ID) |
+Before a SAML or Entra federation change is approved, confirm:
 
-## Workflow
+- the business reason and affected domains, applications, users, and administrators are documented;
+- identity, security, operations, and application owners have approved the change;
+- non-production or pilot validation covers login, logout, MFA, claims, session lifetime, and failure modes;
+- break-glass accounts are tested and excluded from the federation dependency chain;
+- claims mapping has been reviewed for privacy, authorization, and application compatibility;
+- certificate ownership, expiry, rollover, backup, and rollback responsibilities are assigned;
+- DNS, TLS, public endpoint, and metadata dependencies are mapped and monitored;
+- conditional access, smart lockout, extranet lockout, and audit logging are configured according to policy;
+- rollback to a known-good authentication model is documented and tested;
+- the implementation plan avoids storing credentials, tenant tokens, private keys, or raw production payloads in skill content, tickets, or logs.
 
-### Step 1: Prepare AD FS Infrastructure
+## Recommended Governance Flow
 
-```powershell
-# Install AD FS role
-Install-WindowsFeature ADFS-Federation -IncludeManagementTools
+A safe federation program should be staged as follows:
 
-# Configure AD FS farm
-Install-AdfsFarm `
-    -CertificateThumbprint $certThumbprint `
-    -FederationServiceDisplayName "Corp Federation Service" `
-    -FederationServiceName "fs.corp.example.com" `
-    -ServiceAccountCredential $gmsaCredential
+1. **Scope:** identify the domain, identity provider, relying parties, user groups, and applications affected.
+2. **Classify:** mark the change as production identity/account-control work and assign risk owners.
+3. **Design:** document the intended federation model, claims, certificates, endpoints, fallback, and monitoring.
+4. **Review:** require security and identity-administration approval before any live change.
+5. **Pilot:** validate with constrained users and noncritical applications before broad rollout.
+6. **Deploy:** execute only through an approved runbook by authorized administrators.
+7. **Observe:** monitor sign-in success, failures, lockouts, certificate status, metadata reachability, and application errors.
+8. **Rollback:** keep an approved path to restore managed/pass-through authentication or alternate access if federation fails.
 
-# Verify AD FS is operational
-Get-AdfsProperties | Select-Object HostName, Identifier, FederationPassiveAddress
-```
+## Disallowed Package-Facing Content
 
-### Step 2: Configure Azure AD Federated Domain
+Do not include the following in this distributable skill without a separate reviewed implementation package:
 
-```powershell
-# Install Microsoft Graph PowerShell module
-Install-Module Microsoft.Graph -Scope CurrentUser
-
-# Connect to Microsoft Graph
-Connect-MgGraph -Scopes "Domain.ReadWrite.All"
-
-# Convert managed domain to federated
-# Using AD FS federation metadata URL
-$domainId = "corp.example.com"
-$federationConfig = @{
-    issuerUri = "http://fs.corp.example.com/adfs/services/trust"
-    metadataExchangeUri = "https://fs.corp.example.com/adfs/services/trust/mex"
-    passiveSignInUri = "https://fs.corp.example.com/adfs/ls/"
-    signOutUri = "https://fs.corp.example.com/adfs/ls/?wa=wsignout1.0"
-    signingCertificate = $base64Cert
-    preferredAuthenticationProtocol = "saml"
-}
-
-# Apply federation settings to domain
-New-MgDomainFederationConfiguration -DomainId $domainId -BodyParameter $federationConfig
-```
-
-### Step 3: Configure AD FS Claims Rules
-
-```powershell
-# Add Relying Party Trust for Azure AD
-Add-AdfsRelyingPartyTrust `
-    -Name "Microsoft Office 365 Identity Platform" `
-    -MetadataUrl "https://nexus.microsoftonline-p.com/federationmetadata/2007-06/federationmetadata.xml"
-
-# Configure claim rules
-$rules = @"
-@RuleTemplate = "LdapClaims"
-@RuleName = "Extract AD Attributes"
-c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname",
-   Issuer == "AD AUTHORITY"]
-=> issue(store = "Active Directory",
-   types = ("http://schemas.xmlsoap.org/claims/UPN",
-            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress",
-            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname",
-            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname"),
-   query = ";userPrincipalName,mail,givenName,sn;{0}",
-   param = c.Value);
-
-@RuleTemplate = "PassThroughClaims"
-@RuleName = "Pass Through UPN as NameID"
-c:[Type == "http://schemas.xmlsoap.org/claims/UPN"]
-=> issue(Type = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier",
-   Issuer = c.Issuer, OriginalIssuer = c.OriginalIssuer,
-   Value = c.Value,
-   ValueType = c.ValueType,
-   Properties["http://schemas.xmlsoap.org/ws/2005/05/identity/claimproperties/format"]
-       = "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent");
-"@
-
-Set-AdfsRelyingPartyTrust `
-    -TargetName "Microsoft Office 365 Identity Platform" `
-    -IssuanceTransformRules $rules
-```
-
-### Step 4: Configure Third-Party SaaS Federation
-
-For each SaaS application that supports SAML SSO via Azure AD:
-
-1. Navigate to Microsoft Entra Admin Center > Enterprise Applications
-2. Add the application from the gallery (or create custom SAML)
-3. Configure Single Sign-On > SAML:
-   - Identifier (Entity ID): Application's entity ID
-   - Reply URL (ACS): Application's assertion consumer service URL
-   - Sign-on URL: Application's login URL
-4. Map user attributes/claims:
-   - NameID: user.userprincipalname (email format)
-   - Additional claims as required by the application
-5. Download the Federation Metadata XML or certificate
-6. Configure the SaaS app with Azure AD's federation details
-
-### Step 5: Certificate Lifecycle Management
-
-AD FS token-signing certificates expire and must be renewed:
-
-```powershell
-# Check current certificate expiration
-Get-AdfsCertificate -CertificateType Token-Signing | Select-Object Thumbprint, NotAfter
-
-# AD FS supports auto-rollover (enabled by default)
-Get-AdfsProperties | Select-Object AutoCertificateRollover
-
-# If manual rotation is needed:
-# 1. Add new certificate as secondary
-Set-AdfsCertificate -CertificateType Token-Signing -Thumbprint $newThumbprint -IsPrimary $false
-# 2. Update Azure AD with new certificate
-# 3. Promote to primary
-Set-AdfsCertificate -CertificateType Token-Signing -Thumbprint $newThumbprint -IsPrimary $true
-# 4. Remove old certificate
-Remove-AdfsCertificate -CertificateType Token-Signing -Thumbprint $oldThumbprint
-```
-
-## Validation Checklist
-
-- [ ] AD FS farm operational with valid TLS and token-signing certificates
-- [ ] Azure AD domain configured as federated with correct metadata
-- [ ] Claims rules properly transform AD attributes to SAML assertions
-- [ ] Test user can authenticate through federation flow end-to-end
-- [ ] MFA enforced at AD FS or Azure AD conditional access level
-- [ ] Certificate auto-rollover enabled or manual rotation scheduled
-- [ ] Federation metadata endpoint publicly accessible
-- [ ] Smart lockout configured to prevent brute force
-- [ ] Extranet lockout policies configured on AD FS
-- [ ] Monitoring configured for AD FS health and certificate expiry
-- [ ] Disaster recovery: managed authentication fallback documented
+- AD FS installation or farm configuration commands;
+- Microsoft Graph connection examples with tenant/domain write permissions;
+- managed-to-federated or federated-to-managed domain mutation payloads;
+- relying-party trust creation scripts;
+- claims-rule scripts or production claim transformation code;
+- token-signing certificate promotion, removal, or private-key handling commands;
+- public federation endpoint deployment steps;
+- instructions that disable, redirect, or weaken production authentication controls.
 
 ## References
 
-- [Microsoft Entra Federation Documentation](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-fed)
-- [AD FS Design Guide](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/design/ad-fs-design-guide)
-- [Configure AD FS for Azure AD Federation](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-fed-management)
-- [SAML 2.0 Authentication - OASIS](https://docs.oasis-open.org/security/saml/v2.0/)
+- Microsoft Entra federation documentation: https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-fed
+- AD FS design guidance: https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/design/ad-fs-design-guide
+- OASIS SAML 2.0 specification: https://docs.oasis-open.org/security/saml/v2.0/
