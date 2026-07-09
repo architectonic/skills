@@ -2,7 +2,11 @@
 name: Code Complexity Scanner
 description: Measure cyclomatic complexity, cognitive complexity, and function length across codebases to identify maintenance hotspots. Use when analyzing code quality, finding complex functions, or prioritizing refactoring targets.
 tags: [software-development, code-quality, complexity, metrics, static-analysis]
+domain: software-engineering
+risk_level: low
+requires_review: false
 source: terminal-skills (terminalskills.io)
+source_status: reviewed-metadata-only
 license: Apache-2.0
 distilled: 2026-06-22
 type: Metric
