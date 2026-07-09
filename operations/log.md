@@ -11,22 +11,30 @@ status: active
 
 ## 2026-07-09
 
-- Ran board-driven Critic for `skills-metadata-backfill-batch-003`.
+- Ran board-driven Risk Auditor for `skills-risk-review-email-header-and-golang-malware-analysis-001`.
 - Model requirement status: `model_setting_unverified`.
-- Inspected ref/SHA before this ticket's first content write: `main` at `b57378eef9bb47f6739b3f4075f7d2852f74add5`.
+- Inspected ref/SHA before this ticket's first content write: `main` at `1afc9b11df4ced6b8908342c901f28abafe4ec70`.
 - Confirmed today's daily ledger exists; no missing-ledger initialization was performed in this pass.
-- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `dist/skills/ai-seo/SKILL.md`, `dist/skills/analyzing-email-headers-for-phishing-investigation/SKILL.md`, and `dist/skills/analyzing-golang-malware-with-ghidra/SKILL.md`.
-- No online/source discovery was used because the selected board ticket was an internal metadata-backfill pass.
-- Backfilled `dist/skills/ai-seo/SKILL.md` as `business`, `low`, `requires_review: false`, with source status and review notes.
-- Stopped before routine metadata endorsement of `dist/skills/analyzing-email-headers-for-phishing-investigation/SKILL.md` and `dist/skills/analyzing-golang-malware-with-ghidra/SKILL.md` because direct review found private mailbox/header/body/attachment evidence, external reputation/API-key submission boundaries, malware sample analysis, and executable Python/Ghidra reverse-engineering scripts.
-- Created `reports/critic/2026-07-09-metadata-backfill-batch-003.md`.
-- Closed board ticket `skills-metadata-backfill-batch-003` and queue item `metadata-backfill-uncategorized-and-unspecified-risk-20260709-003`.
-- Opened board ticket `skills-risk-review-email-header-and-golang-malware-analysis-001` and queue item `risk-review-email-header-and-golang-malware-analysis-20260709-001` as the next required gate.
-- Created blocked board ticket `skills-catalog-refresh-after-metadata-backfill-003` and blocked queue item `catalog-refresh-after-metadata-backfill-20260709-003` because AI SEO metadata changed but catalog parity must wait for the risk review.
-- Preserved boundaries: no online discovery, no clone, no script execution, no DNS query, no email parsing, no malware tooling, no Ghidra execution, no generated catalog surface hand-edit, no third-party content copy, no package publication, no npm publication, and no registry publication.
-- Acceptance tests passed: bounded batch; justified metadata added; risk ticket opened on unsafe/private-data/malware-analysis material; catalog refresh ticket created after metadata change.
-- Value delta: improved AI SEO package-facing discoverability/reviewability while preventing private-data and malware-analysis workflows from passing through routine metadata cleanup.
-- Next justified action: Risk Auditor should consume `skills-risk-review-email-header-and-golang-malware-analysis-001`, before catalog refresh or further metadata backlog cleanup.
+- Confirmed `operations/action-runs/discover-skill-sources/latest.json` returned `404 Not Found` on the default branch during this run.
+- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `dist/skills/analyzing-email-headers-for-phishing-investigation/SKILL.md`, `dist/skills/analyzing-golang-malware-with-ghidra/SKILL.md`, and `reports/critic/2026-07-09-metadata-backfill-batch-003.md`.
+- No online/source discovery was used because the selected board ticket was an internal risk review.
+- Converted `dist/skills/analyzing-email-headers-for-phishing-investigation/SKILL.md` into a high-risk, requires_review, authorized incident-response defensive wrapper. Removed mailbox/PST/EML extraction commands, DNS/reputation command snippets, API-key examples, third-party submission commands, body/attachment extraction scripts, and raw private-data examples while preserving SPF/DKIM/DMARC/ARC/header-chain reasoning and defensive reporting.
+- Converted `dist/skills/analyzing-golang-malware-with-ghidra/SKILL.md` into a high-risk, requires_review, authorized isolated malware-analysis defensive wrapper. Removed executable binary parsing scripts, Ghidra automation scripts, sample execution paths, infrastructure contact paths, and detailed malware logic reproduction while preserving Go static-analysis concepts and defensive reporting.
+- Created `reports/risk/2026-07-09-email-header-and-golang-malware-analysis-risk-review.md`.
+- Closed board ticket `skills-risk-review-email-header-and-golang-malware-analysis-001` and queue item `risk-review-email-header-and-golang-malware-analysis-20260709-001`.
+- Unblocked board ticket `skills-catalog-refresh-after-metadata-backfill-003` and queue item `catalog-refresh-after-metadata-backfill-20260709-003` as the next required gate.
+- Preserved boundaries: no online discovery, no clone, no script execution, no DNS query, no email parsing, no malware tooling, no Ghidra execution, no browser use, no generated catalog surface hand-edit, no third-party content copy, no package publication, no npm publication, and no registry publication.
+- Acceptance tests passed: private mailbox/header/body/attachment evidence surfaces classified; external reputation/API-key and third-party submission boundaries classified; malware binary-analysis/Ghidra script surfaces classified; safe defensive guidance preserved; catalog refresh left for next ticket.
+- Value delta: removed two private-data/malware-analysis risk blockers by converting package-facing skills into high-risk review-gated defensive wrappers.
+- Next justified action: Cataloger should consume `skills-catalog-refresh-after-metadata-backfill-003`, before further metadata backlog cleanup.
+
+- Earlier 2026-07-09 run: Critic consumed `skills-metadata-backfill-batch-003`.
+- Prior Critic inspected ref/SHA before first content write: `main` at `b57378eef9bb47f6739b3f4075f7d2852f74add5`.
+- Prior Critic confirmed today's daily ledger exists; no missing-ledger initialization was performed in that pass.
+- Prior Critic read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `dist/skills/ai-seo/SKILL.md`, `dist/skills/analyzing-email-headers-for-phishing-investigation/SKILL.md`, and `dist/skills/analyzing-golang-malware-with-ghidra/SKILL.md`.
+- Prior Critic backfilled `dist/skills/ai-seo/SKILL.md` as `business`, `low`, `requires_review: false`, with source status and review notes.
+- Prior Critic stopped before routine metadata endorsement of `dist/skills/analyzing-email-headers-for-phishing-investigation/SKILL.md` and `dist/skills/analyzing-golang-malware-with-ghidra/SKILL.md` because direct review found private mailbox/header/body/attachment evidence, external reputation/API-key submission boundaries, malware sample analysis, and executable Python/Ghidra reverse-engineering scripts.
+- Prior Critic created `reports/critic/2026-07-09-metadata-backfill-batch-003.md`, opened `skills-risk-review-email-header-and-golang-malware-analysis-001`, and blocked `skills-catalog-refresh-after-metadata-backfill-003` behind it.
 
 - Earlier 2026-07-09 run: Reporter-only missing-ledger repair initialized the Skills heartbeat daily ledger.
 - Prior Reporter inspected ref/SHA before first content write: `main` at `509551196ca2c209b375be4dc3960ce9195db6a5`.
