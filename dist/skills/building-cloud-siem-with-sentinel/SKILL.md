@@ -1,292 +1,177 @@
 ---
 name: Building Cloud SIEM with Sentinel
-description: This skill covers deploying Microsoft Sentinel as a cloud-native SIEM
-tags: [software-development, software-development, agent-skill, okf, microsoft-sentinel, cloud-siem, kql-queries, soar-automation, threat-detection, security]
+description: Govern Microsoft Sentinel SIEM/SOAR design as an authorized, review-gated defensive security workflow without package-facing cloud mutation snippets.
+tags: [agent-skill, okf, microsoft-sentinel, cloud-siem, siem-governance, soar-governance, threat-detection, security-defensive]
 license: Apache-2.0
 type: Playbook
+domain: security-defensive
+risk_level: high
+requires_review: true
+source_status: existing_package_skill_risk_reviewed
+review_status: defensive_wrapper_only
+reviewed_at: 2026-07-09
 ---
-
 
 # Building Cloud SIEM with Sentinel
 
+## Safety Classification
+
+This skill is **high risk** because Microsoft Sentinel and connected SIEM/SOAR workflows can touch cloud subscriptions, identity logs, external threat-intelligence feeds, incident automation, and account-state mutation. Use it only for authorized defensive security work in environments where the operator has explicit approval.
+
+This package-facing version is a governance wrapper. It intentionally excludes executable Azure CLI, KQL, Logic Apps, Microsoft Graph, AWS connector, STS revocation, and account-disable snippets. Implementation commands, connector setup, production detections, or automated response playbooks must stay in a separate reviewed runbook with environment-specific approval.
+
 ## When to Use
 
-- When establishing a centralized security operations center for multi-cloud environments
-- When migrating from legacy SIEM platforms (Splunk, QRadar) to cloud-native architecture
-- When building automated incident response workflows for cloud-specific threats
-- When performing large-scale threat hunting across petabytes of security telemetry
-- When integrating threat intelligence feeds with cloud security log analysis
+Use this skill when planning or reviewing a Microsoft Sentinel deployment for a legitimate security operations environment:
 
-**Do not use** for AWS-only environments where Security Hub and GuardDuty suffice, for endpoint detection requiring EDR capabilities (use Defender for Endpoint), or for compliance posture monitoring (see building-cloud-security-posture-management).
+- Establishing a centralized SIEM for owned cloud tenants.
+- Reviewing Sentinel data-source coverage, retention, and detection governance.
+- Designing safe escalation paths for incident response automation.
+- Assessing whether SOAR actions need human approval, break-glass controls, or rollback paths.
+- Preparing a security architecture review before connector deployment or production analytics rules.
 
-## Prerequisites
+Do not use this skill to access cloud tenants without authorization, harvest identity or activity logs, deploy account-mutating playbooks, publish detection logic that exposes private telemetry, or automate response actions against accounts/resources without a reviewed change process.
 
-- Azure subscription with Microsoft Sentinel enabled on a Log Analytics workspace
-- Data connector permissions for target log sources (AWS CloudTrail, Azure Activity, GCP)
-- Logic Apps or Azure Functions for automated response playbooks
-- KQL (Kusto Query Language) proficiency for writing detection rules and hunting queries
+## Required Review Gate
 
-## Workflow
+Before implementation, a qualified reviewer must approve:
 
-### Step 1: Provision Sentinel Workspace and Data Connectors
+1. **Authority** — the tenant, subscriptions, workspaces, cloud accounts, and log sources are owned or contractually authorized.
+2. **Data handling** — identity logs, network telemetry, threat intelligence, and incident evidence have retention, access, and redaction rules.
+3. **Connector scope** — each connector has least-privilege credentials and documented blast radius.
+4. **Detection impact** — analytics rules are tested against sample or staged data before production alerting.
+5. **SOAR controls** — any account disablement, resource isolation, STS/session revocation, firewall change, or ticket automation has approval, audit logging, and rollback.
+6. **Publication boundary** — package/catalog surfaces do not expose executable tenant setup, production KQL, secrets, connection strings, IAM roles, webhook URLs, or automation payloads.
 
-Create a Log Analytics workspace optimized for security data and enable data connectors for multi-cloud ingestion.
+## Safe Workflow
 
-```powershell
-# Create Log Analytics workspace
-az monitor log-analytics workspace create \
-  --resource-group security-rg \
-  --workspace-name sentinel-workspace \
-  --location eastus \
-  --retention-time 365 \
-  --sku PerGB2018
+### 1. Define the SOC operating boundary
 
-# Enable Microsoft Sentinel on the workspace
-az sentinel onboarding-state create \
-  --resource-group security-rg \
-  --workspace-name sentinel-workspace
+Document the intended security operations scope before touching any tenant:
 
-# Enable AWS CloudTrail connector
-az sentinel data-connector create \
-  --resource-group security-rg \
-  --workspace-name sentinel-workspace \
-  --data-connector-id aws-cloudtrail \
-  --kind AmazonWebServicesCloudTrail \
-  --aws-cloud-trail-data-connector '{
-    "awsRoleArn": "arn:aws:iam::123456789012:role/SentinelCloudTrailRole",
-    "dataTypes": {"logs": {"state": "Enabled"}}
-  }'
+- Cloud environments in scope.
+- Business owners and emergency contacts.
+- Data classes ingested by Sentinel.
+- Retention period and access model.
+- Incident severity model.
+- Actions that are observe-only, analyst-approved, or automatically executable.
 
-# Enable Azure AD sign-in and audit logs
-az sentinel data-connector create \
-  --resource-group security-rg \
-  --workspace-name sentinel-workspace \
-  --data-connector-id azure-ad \
-  --kind AzureActiveDirectory \
-  --azure-active-directory '{
-    "dataTypes": {
-      "alerts": {"state": "Enabled"},
-      "signinLogs": {"state": "Enabled"},
-      "auditLogs": {"state": "Enabled"}
-    }
-  }'
-```
+Output a short architecture note rather than commands.
 
-### Step 2: Write KQL Detection Rules
+### 2. Plan workspace and connector governance
 
-Create analytics rules using Kusto Query Language to detect cloud-specific threats. Map each rule to MITRE ATT&CK techniques.
+For each data source, record:
 
-```kql
-// Detect impossible travel - sign-ins from geographically distant locations
-let timeframe = 1h;
-let distance_threshold = 500; // km
-SigninLogs
-| where TimeGenerated > ago(timeframe)
-| where ResultType == 0 // Successful sign-ins only
-| project TimeGenerated, UserPrincipalName, IPAddress, Location,
-          Latitude = toreal(LocationDetails.geoCoordinates.latitude),
-          Longitude = toreal(LocationDetails.geoCoordinates.longitude)
-| sort by UserPrincipalName asc, TimeGenerated asc
-| extend PrevLatitude = prev(Latitude, 1), PrevLongitude = prev(Longitude, 1),
-         PrevTime = prev(TimeGenerated, 1), PrevUser = prev(UserPrincipalName, 1)
-| where UserPrincipalName == PrevUser
-| extend TimeDiff = datetime_diff('minute', TimeGenerated, PrevTime)
-| where TimeDiff < 60
-| extend Distance = geo_distance_2points(Longitude, Latitude, PrevLongitude, PrevLatitude) / 1000
-| where Distance > distance_threshold
-| project TimeGenerated, UserPrincipalName, IPAddress, Location, Distance, TimeDiff
-```
+- Purpose of ingestion.
+- Required permissions.
+- Whether credentials are read-only or can mutate resources.
+- Expected data volume and cost owner.
+- Sensitive fields that require masking or restricted access.
+- Failure mode if the connector breaks or over-ingests.
 
-```kql
-// Detect AWS IAM credential abuse from CloudTrail
-AWSCloudTrail
-| where TimeGenerated > ago(24h)
-| where EventName in ("ConsoleLogin", "AssumeRole", "GetSessionToken")
-| where ErrorCode == ""
-| summarize LoginCount = count(), DistinctIPs = dcount(SourceIpAddress),
-            IPList = make_set(SourceIpAddress, 10)
-            by UserIdentityArn, bin(TimeGenerated, 1h)
-| where DistinctIPs > 3
-| project TimeGenerated, UserIdentityArn, LoginCount, DistinctIPs, IPList
-```
+High-risk connector categories include identity providers, cross-cloud activity logs, endpoint/security product feeds, threat-intelligence providers, and any connector that can trigger downstream automation.
 
-```kql
-// Detect mass S3 object deletion (potential ransomware)
-AWSCloudTrail
-| where TimeGenerated > ago(1h)
-| where EventName == "DeleteObject" or EventName == "DeleteObjects"
-| summarize DeleteCount = count(), BucketsAffected = dcount(RequestParameters_bucketName)
-            by UserIdentityArn, bin(TimeGenerated, 10m)
-| where DeleteCount > 100
-| project TimeGenerated, UserIdentityArn, DeleteCount, BucketsAffected
-```
+### 3. Review detection logic safely
 
-### Step 3: Build SOAR Playbooks with Logic Apps
+Detection design should be reviewed at the level of intent and test evidence:
 
-Create automated response playbooks that execute when analytics rules trigger incidents. Common actions include blocking users, isolating resources, and enriching alerts with threat intelligence.
+- Detection name and threat hypothesis.
+- Data tables or event classes used.
+- Known false-positive sources.
+- Severity mapping.
+- MITRE ATT&CK mapping when useful.
+- Test dataset or staging validation result.
+- Expected incident owner and escalation path.
 
-```json
-{
-  "definition": {
-    "triggers": {
-      "Microsoft_Sentinel_incident": {
-        "type": "ApiConnectionWebhook",
-        "inputs": {
-          "body": {"incidentArmId": "subscriptions/@{triggerBody()?['workspaceInfo']?['SubscriptionId']}/resourceGroups/@{triggerBody()?['workspaceInfo']?['ResourceGroupName']}/providers/Microsoft.OperationalInsights/workspaces/@{triggerBody()?['workspaceInfo']?['WorkspaceName']}/providers/Microsoft.SecurityInsights/Incidents/@{triggerBody()?['object']?['properties']?['incidentNumber']}"},
-          "host": {"connection": {"name": "@parameters('$connections')['microsoftsentinel']['connectionId']"}}
-        }
-      }
-    },
-    "actions": {
-      "Get_incident_entities": {
-        "type": "ApiConnection",
-        "inputs": {"method": "post", "path": "/Incidents/entities"}
-      },
-      "For_each_account_entity": {
-        "type": "Foreach",
-        "foreach": "@body('Get_incident_entities')?['Accounts']",
-        "actions": {
-          "Disable_Azure_AD_user": {
-            "type": "ApiConnection",
-            "inputs": {
-              "method": "PATCH",
-              "path": "/v1.0/users/@{items('For_each_account_entity')?['AadUserId']}",
-              "body": {"accountEnabled": false}
-            }
-          },
-          "Add_comment_to_incident": {
-            "type": "ApiConnection",
-            "inputs": {
-              "body": {"message": "User @{items('For_each_account_entity')?['Name']} disabled by automated playbook"}
-            }
-          }
-        }
-      }
-    }
-  }
-}
-```
+Avoid publishing production KQL that encodes sensitive schema assumptions, tenant-specific watchlists, private indicators, user identifiers, service principals, IP ranges, or operational thresholds.
 
-### Step 4: Configure Sentinel Data Lake for Long-Term Hunting
+### 4. Bound threat-intelligence matching
 
-Enable the Sentinel data lake for petabyte-scale log retention and advanced threat hunting using both KQL and SQL endpoints.
+Threat-intelligence feeds can create privacy, licensing, and false-positive problems. Before matching indicators against telemetry, confirm:
 
-```kql
-// Threat hunting query: detect lateral movement across AWS accounts
-let suspicious_roles = AWSCloudTrail
-| where TimeGenerated > ago(7d)
-| where EventName == "AssumeRole"
-| extend AssumedRoleArn = tostring(parse_json(RequestParameters).roleArn)
-| where AssumedRoleArn contains "cross-account" or AssumedRoleArn contains "admin"
-| summarize AssumeCount = count(), UniqueSourceAccounts = dcount(RecipientAccountId)
-            by UserIdentityArn, AssumedRoleArn
-| where AssumeCount > 10 and UniqueSourceAccounts > 2;
-suspicious_roles
-| join kind=inner (
-    AWSCloudTrail
-    | where TimeGenerated > ago(7d)
-    | where EventName in ("RunInstances", "CreateFunction", "PutBucketPolicy")
-) on UserIdentityArn
-| project TimeGenerated, UserIdentityArn, AssumedRoleArn, EventName, SourceIpAddress
-```
+- Indicator source license and redistribution limits.
+- Expiration/decay rules.
+- Confidence threshold.
+- What telemetry fields are matched.
+- Whether matches remain internal or are sent to another system.
+- How false positives are suppressed and audited.
 
-### Step 5: Integrate Threat Intelligence
+Do not submit private telemetry, user data, raw logs, or customer evidence to external reputation services unless the incident-response agreement and data-processing terms allow it.
 
-Connect threat intelligence providers and create indicator-based matching rules to detect communication with known malicious infrastructure.
+### 5. Gate SOAR and response automation
 
-```powershell
-# Enable Microsoft Threat Intelligence connector
-az sentinel data-connector create \
-  --resource-group security-rg \
-  --workspace-name sentinel-workspace \
-  --data-connector-id microsoft-ti \
-  --kind MicrosoftThreatIntelligence \
-  --microsoft-threat-intelligence '{
-    "dataTypes": {"microsoftEmergingThreatFeed": {"lookbackPeriod": "2025-01-01T00:00:00Z", "state": "Enabled"}}
-  }'
-```
+Treat SOAR as a change-control surface, not as a default feature. Separate actions into tiers:
 
-```kql
-// Match network indicators against cloud flow logs
-let TI_IPs = ThreatIntelligenceIndicator
-| where TimeGenerated > ago(30d)
-| where isnotempty(NetworkIP)
-| distinct NetworkIP;
-AzureNetworkAnalytics_CL
-| where TimeGenerated > ago(24h)
-| where DestIP_s in (TI_IPs)
-| project TimeGenerated, SrcIP_s, DestIP_s, DestPort_d, FlowType_s
-```
+- **Tier 0: Enrich only** — add context, route tickets, notify analysts.
+- **Tier 1: Reversible soft action** — analyst-approved labels, tags, or low-impact access review.
+- **Tier 2: Controlled containment** — account disablement, token/session revocation, resource isolation, firewall updates, or quarantine. Requires explicit approval, audit evidence, and rollback.
+- **Tier 3: Emergency automation** — only for pre-approved incident classes with tested rollback and after-action review.
 
-## Key Concepts
+Package-facing skills should describe these tiers, not include deployable Logic Apps payloads or account-mutation calls.
 
-| Term | Definition |
-|------|------------|
-| KQL | Kusto Query Language, the primary query language for Microsoft Sentinel used to search, analyze, and visualize security data |
-| Analytics Rule | Detection logic in Sentinel that evaluates log data on a schedule and creates incidents when conditions match |
-| SOAR Playbook | Automated workflow triggered by incidents that performs response actions such as blocking accounts, enriching alerts, or notifying teams |
-| Data Connector | Integration module that ingests security logs from cloud services, identity providers, and third-party tools into Sentinel |
-| Sentinel Data Lake | Petabyte-scale storage layer providing long-term log retention with KQL and SQL query interfaces for advanced hunting |
-| Workbook | Interactive dashboard in Sentinel displaying visualizations of security data, trends, and operational metrics |
-| Watchlist | Reference data tables in Sentinel used to enrich alerts with context such as VIP user lists or approved IP ranges |
-| Fusion Detection | Machine learning-powered correlation engine that automatically detects multi-stage attacks across data sources |
+### 6. Produce an implementation handoff
 
-## Tools & Systems
+The safe output of this skill is a reviewed handoff, not a live deployment. Include:
 
-- **Microsoft Sentinel**: Cloud-native SIEM/SOAR platform built on Azure Log Analytics with AI-powered threat detection
-- **Azure Logic Apps**: Low-code automation platform for building SOAR playbooks triggered by Sentinel incidents
-- **Microsoft Threat Intelligence**: Integrated threat feeds providing IP, domain, and URL indicators for matching against security logs
-- **Azure Data Explorer**: High-performance analytics engine underlying Sentinel KQL queries for large-scale data exploration
-- **MITRE ATT&CK Navigator**: Framework for mapping Sentinel detection rules to adversary tactics and techniques
+- Scope and authorization statement.
+- Connector inventory and risk rating.
+- Detection inventory and validation status.
+- Automation inventory by tier.
+- Open risks and required approvals.
+- Rollback and incident-review requirements.
+- Catalog/publication status.
 
-## Common Scenarios
+## Acceptance Criteria
 
-### Scenario: Detecting Cross-Cloud Credential Theft Campaign
+A Sentinel SIEM/SOAR plan is acceptable when:
 
-**Context**: An attacker compromises an Azure AD account through phishing, then uses the account to access AWS resources via federated identity. Sentinel needs to correlate the Azure sign-in anomaly with unusual AWS API activity.
+- The environment and owner are explicit.
+- No secrets, tenant IDs, raw private telemetry, service-principal details, IAM role ARNs, or webhook URLs are exposed in package-facing artifacts.
+- Detections are documented with purpose and validation evidence.
+- SOAR actions are tiered and review-gated.
+- Any account/resource mutation has human approval or a separately approved emergency playbook.
+- External threat-intelligence matching has licensing and data-handling review.
+- The result can be audited without requiring execution of cloud commands.
 
-**Approach**:
-1. Create an analytics rule detecting Azure AD impossible travel or anomalous sign-in risk
-2. Write a KQL query correlating the compromised Azure AD identity with AWS CloudTrail AssumeRoleWithSAML events
-3. Build a Fusion detection rule that links Azure AD risk events with subsequent AWS privilege escalation activity
-4. Deploy a SOAR playbook that automatically disables the Azure AD account and revokes AWS STS sessions
-5. Create a workbook showing the timeline from initial compromise through lateral movement to AWS
-6. Run a hunting query across the data lake to check for similar patterns affecting other accounts
+## Red Flags
 
-**Pitfalls**: Not correlating identity across cloud providers misses the full attack chain. Setting analytics rule frequency too low (e.g., 24 hours) allows attackers hours of undetected access.
+Stop and escalate if the work asks the agent to:
+
+- Provision or alter cloud SIEM resources directly from the package skill.
+- Connect a tenant, workspace, or cloud account without explicit authorization.
+- Disable accounts, revoke sessions, isolate resources, or update firewall/blocklists automatically.
+- Submit raw logs, mailbox evidence, network telemetry, customer data, or private indicators to external services.
+- Embed tenant-specific identifiers, secrets, IAM roles, service-principal IDs, webhook URLs, or production KQL in public/package-facing files.
+- Tune detections directly against live production data without a reviewed test plan.
 
 ## Output Format
 
-```
-Microsoft Sentinel SOC Operations Report
-==========================================
-Workspace: sentinel-workspace
-Data Sources: 14 connectors active
-Report Period: 2025-02-01 to 2025-02-23
+```markdown
+# Microsoft Sentinel SIEM/SOAR Review
 
-DATA INGESTION:
-  Azure AD Sign-in Logs:     2.3 TB (23 days)
-  AWS CloudTrail:            1.8 TB (23 days)
-  Azure Activity:            0.9 TB (23 days)
-  Defender for Cloud Alerts: 45 GB (23 days)
-  Total Ingestion:           5.1 TB
+## Scope
+- Tenant/workspace owner:
+- Cloud environments in scope:
+- Data classes ingested:
+- Authorization evidence:
 
-DETECTION SUMMARY:
-  Active Analytics Rules: 87
-  Incidents Created: 234
-    Critical: 8 | High: 34 | Medium: 89 | Low: 103
-  Mean Time to Detect (MTTD): 4.2 minutes
-  Mean Time to Respond (MTTR): 18 minutes
+## Connector Governance
+| Connector | Purpose | Permission Class | Data Sensitivity | Status | Reviewer |
+|---|---|---|---|---|---|
 
-TOP INCIDENT TYPES:
-  Impossible Travel Detected:          42 incidents
-  AWS Unauthorized API Call Pattern:   28 incidents
-  Mass File Deletion in S3:            3 incidents
-  Suspicious Azure AD App Registration: 12 incidents
+## Detection Governance
+| Detection | Hypothesis | Data Class | Severity | Validation Evidence | Status |
+|---|---|---|---|---|---|
 
-AUTOMATION:
-  Playbooks Executed: 156
-  Accounts Auto-Disabled: 23
-  Incidents Auto-Enriched: 198
-  False Positive Rate: 12%
+## SOAR Governance
+| Playbook | Action Tier | Mutation Risk | Approval Required | Rollback Path | Status |
+|---|---|---|---|---|---|
+
+## Risk Register
+| Risk | Impact | Mitigation | Owner | Due Date |
+|---|---|---|---|---|
+
+## Publication Boundary
+- Package-facing artifacts contain no executable cloud setup or account-mutation snippets.
+- Catalog state remains blocked until parity is refreshed after this risk review.
 ```
