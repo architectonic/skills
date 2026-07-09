@@ -9,13 +9,13 @@ status: active
 
 ## Latest board-driven heartbeat
 
-Ran `Cataloger` for `skills-catalog-refresh-after-metadata-backfill-006`.
+Ran `Critic` for `skills-metadata-backfill-batch-007`.
 
 ## Inspected state
 
 - Repository: `architectonic/skills`
 - Inspected ref: `main`
-- Inspected SHA before this ticket's first content write: `d1bb2f8e5b66830033e512707fd6358c6a76bb8b`
+- Inspected SHA before this ticket's first content write: `e58f4ba87a367d55f145928d59a67f64db171aad`
 - Model requirement status: `model_setting_unverified`
 - Daily ledger present at start: yes
 - Missing-ledger initialization: no
@@ -37,52 +37,45 @@ Ran `Cataloger` for `skills-catalog-refresh-after-metadata-backfill-006`.
 - `dist/catalog.json`
 - `dist/catalog.md`
 - `dist/install-manifest.json`
-- `dist/skills/building-detection-rule-with-splunk-spl/SKILL.md`
-- `dist/skills/building-ioc-defanging-and-sharing-pipeline/SKILL.md`
-- `reports/critic/2026-07-09-metadata-backfill-batch-006.md`
-- `reports/risk/2026-07-09-ioc-defanging-sharing-pipeline-risk-review.md`
+- `dist/skills/building-identity-federation-with-saml-azure-ad/SKILL.md`
+- `reports/catalog/2026-07-09-metadata-backfill-006-catalog-parity.md`
 
 ## Work performed
 
-Consumed `skills-catalog-refresh-after-metadata-backfill-006`.
+Consumed `skills-metadata-backfill-batch-007`.
 
-Verified catalog/install-manifest parity after metadata-backfill batch 006 and the IOC defanging/sharing pipeline risk review.
+Reviewed the next uncategorized/unspecified-risk backlog item: `Building Identity Federation with SAML Azure AD`.
 
-Verified package-facing catalog state:
+Stopped before routine metadata endorsement because the skill contains production identity-federation/account-control surfaces:
 
-- `Building Detection Rules with Splunk SPL`: `security-defensive`, `medium`, `requires_review: true`, `source_status: package_metadata_backfill`.
-- `Building IOC Defanging and Sharing Pipeline`: `security-defensive`, `high`, `requires_review: true`, `source_status: package_risk_reviewed`.
+- AD FS role installation and farm configuration.
+- Microsoft Graph `Domain.ReadWrite.All` connection scope.
+- Managed-domain to federated-domain conversion through `New-MgDomainFederationConfiguration`.
+- AD FS relying-party trust and claims-rule mutation.
+- Token-signing certificate rotation/removal.
+- Public federation endpoint and production SSO configuration guidance.
 
-Verified catalog counts:
-
-- `skill_count`: `1183`
-- `security-defensive`: `68`
-- `software-engineering`: `152`
-- `uncategorized`: `549`
-- `high`: `23`
-- `medium`: `440`
-- `low`: `11`
-- `unspecified`: `709`
+No skill metadata was changed and no generated catalog file was edited.
 
 ## Board and queue result
 
-- `skills-catalog-refresh-after-metadata-backfill-006`: done.
-- `catalog-refresh-after-metadata-backfill-20260709-006`: done.
-- `skills-metadata-backfill-batch-007`: ready.
-- `metadata-backfill-uncategorized-and-unspecified-risk-20260709-007`: ready.
+- `skills-metadata-backfill-batch-007`: blocked for risk review.
+- `metadata-backfill-uncategorized-and-unspecified-risk-20260709-007`: blocked for risk review.
+- `skills-risk-review-identity-federation-saml-azure-ad-001`: ready.
+- `risk-review-identity-federation-saml-azure-ad-20260709-001`: ready.
 
 ## Acceptance tests
 
 | Test | Result | Evidence |
 |---|---|---|
-| Catalog reflects Building Detection Rules with Splunk SPL as security-defensive medium requires_review | Pass | `dist/catalog.json` and skill frontmatter show `security-defensive`, `medium`, and `requires_review: true`. |
-| Catalog reflects IOC defanging/sharing pipeline as security-defensive high requires_review | Pass | `dist/catalog.json` and skill frontmatter show `security-defensive`, `high`, and `requires_review: true`. |
-| Install manifest remains coherent | Pass | `dist/install-manifest.json` still points installers to `README.md`, `dist/catalog.json`, `dist/catalog.md`, and `dist/install-manifest.json` and keeps the expected selection fields. |
-| No npm publish attempted | Pass | No package, npm, registry, publication, IOC extraction/refanging, STIX, MISP, TAXII, API-key, threat-intelligence connector, or external mutation action occurred. |
+| Processes a bounded batch, not the entire catalog | Pass | Reviewed the next backlog item only and stopped at the first unsafe candidate. |
+| Adds domain/risk/requires_review/source status when justified | Pass | No metadata was added because the first candidate required risk review before routine backfill. |
+| Stops and creates risk ticket on unsafe material | Pass | Opened `skills-risk-review-identity-federation-saml-azure-ad-001` for tenant/domain/federation/account-control surfaces. |
+| Creates catalog refresh ticket after metadata changes | Pass | No catalog refresh was created because no metadata changed; catalog parity is intentionally unchanged. |
 
 ## Files changed
 
-- `reports/catalog/2026-07-09-metadata-backfill-006-catalog-parity.md`
+- `reports/critic/2026-07-09-metadata-backfill-batch-007.md`
 - `operations/board.json`
 - `operations/value-ledger.json`
 - `operations/daily/2026-07-09/queues.json`
@@ -97,15 +90,16 @@ Verified catalog counts:
 - No generated catalog file was hand-edited.
 - No third-party content was copied or normalized.
 - No package, npm, registry, or publication action occurred.
+- No Azure, Microsoft Graph, AD FS, tenant, DNS, certificate, identity, or account-control external action occurred.
 
 ## Value delta
 
-Removed the catalog parity blocker after metadata-backfill batch 006 and the IOC defanging/sharing pipeline risk review.
+Prevented routine metadata/catalog endorsement of production identity-federation and account-control material before a dedicated risk review.
 
 ## Risk and publication state
 
-- Risk queue: clear.
-- Catalog queue: clear.
+- Risk queue: open.
+- Catalog queue: clear because no metadata changed.
 - GitTaskBench: watch/license-blocked.
 - Discovery Action handoff: still absent.
 - Remaining metadata backlog: open.
@@ -125,7 +119,8 @@ Removed the catalog parity blocker after metadata-backfill batch 006 and the IOC
 - A prior `Cataloger` run consumed `skills-catalog-refresh-after-metadata-backfill-005` and verified catalog parity after the Sentinel risk review.
 - A prior `Critic` run consumed `skills-metadata-backfill-batch-006`, backfilled Splunk SPL detection rules, and opened the IOC pipeline risk review.
 - A prior `Risk Auditor` run consumed `skills-risk-review-ioc-defanging-sharing-pipeline-001` and converted the IOC pipeline into a high-risk review-gated defensive governance wrapper.
+- A prior `Cataloger` run consumed `skills-catalog-refresh-after-metadata-backfill-006` and verified catalog parity after batch 006.
 
 ## Next action
 
-`Critic` should consume `skills-metadata-backfill-batch-007`.
+`Risk Auditor` should consume `skills-risk-review-identity-federation-saml-azure-ad-001`.
