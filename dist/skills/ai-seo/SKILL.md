@@ -2,6 +2,12 @@
 name: ai-seo
 description: Optimize content for AI search and LLM citations across AI Overviews, ChatGPT, Perplexity, Claude, Gemini, and similar systems. Covers AI visibility audit, three-pillar optimization strategy (structure/authority/presence), and monitoring.
 tags: [productivity, seo, ai-search, llm-citations, geo, aeo, content-optimization]
+domain: business
+risk_level: low
+requires_review: false
+source: antigravity-awesome-skills / coreyhaines31 marketingskills
+source_status: adapted-origin-unverified
+review_notes: Low-risk marketing and content-structure reference; statistics and platform behavior should be refreshed before client-facing strategic use because AI search surfaces change quickly.
 type: Reference
 ---
 
