@@ -12,24 +12,24 @@
 | `business` | 47 |
 | `cloud-security` | 42 |
 | `design` | 40 |
-| `forensics` | 26 |
+| `forensics` | 27 |
 | `media` | 1 |
 | `research` | 83 |
 | `runtime-tools` | 35 |
 | `security-defensive` | 70 |
 | `security-offensive` | 16 |
 | `software-engineering` | 152 |
-| `uncategorized` | 547 |
+| `uncategorized` | 546 |
 | `writing` | 16 |
 
 ## Risk Levels
 
 | Risk | Count |
 |---|---:|
-| `high` | 25 |
+| `high` | 26 |
 | `low` | 11 |
 | `medium` | 440 |
-| `unspecified` | 707 |
+| `unspecified` | 706 |
 
 ## Install Notes
 

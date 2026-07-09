@@ -12,21 +12,21 @@
       "business": 47,
       "cloud-security": 42,
       "design": 40,
-      "forensics": 26,
+      "forensics": 27,
       "media": 1,
       "research": 83,
       "runtime-tools": 35,
       "security-defensive": 70,
       "security-offensive": 16,
       "software-engineering": 152,
-      "uncategorized": 547,
+      "uncategorized": 546,
       "writing": 16
     },
     "risk_counts": {
-      "high": 25,
+      "high": 26,
       "low": 11,
       "medium": 440,
-      "unspecified": 707
+      "unspecified": 706
     }
   },
   "domains": {
@@ -281,6 +281,7 @@
       "Analyzing Bootkit and Rootkit Samples",
       "Analyzing Email Headers for Phishing Investigation",
       "Analyzing Memory Forensics with LiME and Volatility",
+      "Building Incident Timeline with Timesketch",
       "Building Super Timelines with Plaso",
       "Collecting Volatile Evidence from Compromised Hosts",
       "Extracting Browser History Artifacts",
@@ -673,7 +674,6 @@
       "xurl"
     ],
     "uncategorized": [
-      "Building Incident Timeline with Timesketch",
       "Building Malware Incident Communication Template",
       "Building Phishing Reporting Button Workflow",
       "Building Ransomware Playbook with CISA Framework",
@@ -4594,28 +4594,26 @@
     {
       "slug": "Building Incident Timeline with Timesketch",
       "title": "Building Incident Timeline with Timesketch",
-      "description": "Build collaborative forensic incident timelines using Timesketch to ingest,",
+      "description": "Govern defensive forensic timeline planning with Timesketch without exposing private evidence, credentials, deployment commands, API mutation snippets, or executable ingestion workflows.",
       "path": "dist/skills/building-incident-timeline-with-timesketch/SKILL.md",
       "directory": "dist/skills/building-incident-timeline-with-timesketch",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "forensics",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
         "agent-skill",
         "okf",
         "timesketch",
         "timeline-analysis",
         "forensic-timeline",
-        "plaso",
         "dfir",
         "incident-investigation",
         "collaborative-forensics",
-        "security"
+        "security",
+        "governance"
       ],
       "source_family": "",
-      "source_status": "",
+      "source_status": "risk_reviewed",
       "type": "Playbook"
     },
     {
