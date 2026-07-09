@@ -16,17 +16,17 @@
       "media": 1,
       "research": 83,
       "runtime-tools": 35,
-      "security-defensive": 68,
+      "security-defensive": 69,
       "security-offensive": 16,
       "software-engineering": 152,
-      "uncategorized": 549,
+      "uncategorized": 548,
       "writing": 16
     },
     "risk_counts": {
-      "high": 23,
+      "high": 24,
       "low": 11,
       "medium": 440,
-      "unspecified": 709
+      "unspecified": 708
     }
   },
   "domains": {
@@ -444,6 +444,7 @@
       "Building Cloud SIEM with Sentinel",
       "Building Detection Rules with Splunk SPL",
       "Building IOC Defanging and Sharing Pipeline",
+      "Building Identity Federation with SAML Azure AD",
       "Building Vulnerability Aging and SLA Tracking",
       "Building Vulnerability Exception Tracking System",
       "Building Vulnerability Scanning Workflow",
@@ -671,7 +672,6 @@
       "xurl"
     ],
     "uncategorized": [
-      "Building Identity Federation with SAML Azure AD",
       "Building Incident Response Dashboard",
       "Building Incident Timeline with Timesketch",
       "Building Malware Incident Communication Template",
@@ -4519,29 +4519,27 @@
     {
       "slug": "Building Identity Federation with SAML Azure AD",
       "title": "Building Identity Federation with SAML Azure AD",
-      "description": "Establish SAML 2.0 identity federation between on-premises Active Directory",
+      "description": "Review-gated defensive governance guidance for SAML and Microsoft Entra ID federation without exposing tenant mutation commands, signing-certificate operations, or production account-control procedures.",
       "path": "dist/skills/building-identity-federation-with-saml-azure-ad/SKILL.md",
       "directory": "dist/skills/building-identity-federation-with-saml-azure-ad",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-defensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
-        "agent-skill",
-        "okf",
+        "security-defensive",
+        "identity",
         "saml",
         "azure-ad",
         "entra-id",
         "federation",
-        "identity",
         "sso",
         "adfs",
         "hybrid-identity",
-        "security"
+        "governance",
+        "review-gated"
       ],
       "source_family": "",
-      "source_status": "",
+      "source_status": "package_risk_reviewed",
       "type": "Playbook"
     },
     {
