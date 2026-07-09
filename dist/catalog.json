@@ -18,15 +18,15 @@
       "runtime-tools": 35,
       "security-defensive": 61,
       "security-offensive": 16,
-      "software-engineering": 151,
-      "uncategorized": 557,
+      "software-engineering": 152,
+      "uncategorized": 556,
       "writing": 16
     },
     "risk_counts": {
       "high": 16,
       "low": 10,
-      "medium": 438,
-      "unspecified": 719
+      "medium": 439,
+      "unspecified": 718
     }
   },
   "domains": {
@@ -540,6 +540,7 @@
       "Detecting Shadow API Endpoints",
       "Detecting Supply Chain Attacks in CI/CD",
       "Detecting Typosquatting Packages",
+      "Diagnosing Bugs",
       "Escaping Containers to Host",
       "Exploiting API Injection Vulnerabilities",
       "Exploiting Excessive Data Exposure in API",
@@ -798,7 +799,6 @@
       "Detecting T1055 Process Injection with Sysmon",
       "Detecting T1548 Abuse Elevation Control Mechanism",
       "Detecting WMI Persistence",
-      "Diagnosing Bugs",
       "Doc Co-Authoring Workflow",
       "Enumerating Cloud with CloudFox",
       "Environment Manager",
@@ -10387,14 +10387,13 @@
     {
       "slug": "Diagnosing Bugs",
       "title": "Diagnosing Bugs",
-      "description": "Systematic diagnosis loop for hard bugs and performance regressions. Use when the user says \"diagnose\"/\"debug this\", or reports something broken/throwing/failing/slow. Covers feedback-loop construction, bisection, differential testing, and instrumentation.",
+      "description": "Systematic diagnosis loop for hard bugs and performance regressions. Use when the user says \"diagnose\"/\"debug this\", or reports something broken/throwing/failing/slow. Covers feedback-loop construction, bisection, differential testing, and instrumentation with browser, trace, fuzz, and human-in-the-loop surfaces review-gated.",
       "path": "dist/skills/diagnosing-bugs/SKILL.md",
       "directory": "dist/skills/diagnosing-bugs",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "software-engineering",
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [
-        "software-development",
         "software-development",
         "debugging",
         "diagnosis",
@@ -10402,7 +10401,7 @@
         "testing"
       ],
       "source_family": "",
-      "source_status": "",
+      "source_status": "reviewed-metadata-only",
       "type": "Playbook"
     },
     {
