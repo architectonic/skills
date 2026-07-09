@@ -11,23 +11,26 @@ status: active
 
 ## 2026-07-09
 
-- Ran board-driven Cataloger for `skills-catalog-refresh-after-metadata-backfill-006`.
+- Ran board-driven Critic for `skills-metadata-backfill-batch-007`.
 - Model requirement status: `model_setting_unverified`.
-- Inspected ref/SHA before this ticket's first content write: `main` at `d1bb2f8e5b66830033e512707fd6358c6a76bb8b`.
+- Inspected ref/SHA before this ticket's first content write: `main` at `e58f4ba87a367d55f145928d59a67f64db171aad`.
 - Confirmed today's daily ledger exists; no missing-ledger initialization was performed in this pass.
-- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `dist/skills/building-detection-rule-with-splunk-spl/SKILL.md`, `dist/skills/building-ioc-defanging-and-sharing-pipeline/SKILL.md`, `reports/critic/2026-07-09-metadata-backfill-batch-006.md`, and `reports/risk/2026-07-09-ioc-defanging-sharing-pipeline-risk-review.md`.
+- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `dist/skills/building-identity-federation-with-saml-azure-ad/SKILL.md`, and `reports/catalog/2026-07-09-metadata-backfill-006-catalog-parity.md`.
 - Attempted to read `operations/action-runs/discover-skill-sources/latest.json`; it remains absent on the default branch.
-- No online/source discovery was used because the selected board ticket was internal catalog parity verification.
-- Verified `dist/catalog.json` and `dist/catalog.md` counts: `skill_count` 1183, `security-defensive` 68, `software-engineering` 152, `uncategorized` 549, `high` 23, `medium` 440, `low` 11, and `unspecified` 709.
-- Verified `Building Detection Rules with Splunk SPL` is cataloged as `security-defensive`, `medium`, `requires_review: true`, with `source_status: package_metadata_backfill`.
-- Verified `Building IOC Defanging and Sharing Pipeline` is cataloged as `security-defensive`, `high`, `requires_review: true`, with `source_status: package_risk_reviewed`.
-- Created `reports/catalog/2026-07-09-metadata-backfill-006-catalog-parity.md`.
-- Closed board ticket `skills-catalog-refresh-after-metadata-backfill-006` and daily catalog queue item `catalog-refresh-after-metadata-backfill-20260709-006`.
-- Opened board ticket `skills-metadata-backfill-batch-007` and daily critic queue item `metadata-backfill-uncategorized-and-unspecified-risk-20260709-007`.
-- Preserved boundaries: no online discovery, no clone, no generated catalog hand-edit, no IOC extraction/refanging, no STIX generation, no MISP/TAXII/API-key use, no threat-intelligence submission, no third-party content copy, no package publication, no npm publication, and no registry publication.
-- Acceptance tests passed: Splunk SPL catalog parity, IOC pipeline catalog parity, install-manifest coherence, and no package/npm/registry publication.
-- Value delta: removed the catalog parity blocker after metadata-backfill batch 006 and the IOC defanging/sharing pipeline risk review.
-- Next justified action: Critic should consume `skills-metadata-backfill-batch-007`.
+- No online/source discovery was used because the selected board ticket was internal metadata backfill and direct file review was sufficient.
+- Reviewed the next bounded backlog item only: `Building Identity Federation with SAML Azure AD`.
+- Stopped before routine metadata endorsement because direct review found AD FS farm setup, Microsoft Graph `Domain.ReadWrite.All`, federated-domain conversion, AD FS relying-party trust and claims-rule mutation, token-signing certificate rotation/removal, public federation endpoint, and production SSO/account-control surfaces.
+- Created `reports/critic/2026-07-09-metadata-backfill-batch-007.md`.
+- Blocked board ticket `skills-metadata-backfill-batch-007` and daily critic queue item `metadata-backfill-uncategorized-and-unspecified-risk-20260709-007`.
+- Opened board ticket `skills-risk-review-identity-federation-saml-azure-ad-001` and daily risk queue item `risk-review-identity-federation-saml-azure-ad-20260709-001`.
+- Preserved boundaries: no online discovery, no clone, no generated catalog hand-edit, no third-party content copy, no Azure/Microsoft Graph/AD FS/tenant/DNS/certificate/account external action, no package publication, no npm publication, and no registry publication.
+- Acceptance tests passed: bounded batch, no unjustified metadata, risk ticket created on unsafe material, and no catalog refresh because no metadata changed.
+- Value delta: prevented routine metadata/catalog endorsement of production identity-federation and account-control material before dedicated risk review.
+- Next justified action: Risk Auditor should consume `skills-risk-review-identity-federation-saml-azure-ad-001`.
+
+- Earlier 2026-07-09 run: Cataloger consumed `skills-catalog-refresh-after-metadata-backfill-006`.
+- Prior Cataloger inspected ref/SHA before first content write: `main` at `d1bb2f8e5b66830033e512707fd6358c6a76bb8b`.
+- Prior Cataloger verified catalog/install-manifest parity after Splunk SPL metadata backfill and IOC defanging/sharing pipeline risk review.
 
 - Earlier 2026-07-09 run: Risk Auditor consumed `skills-risk-review-ioc-defanging-sharing-pipeline-001`.
 - Prior Risk Auditor inspected ref/SHA before first content write: `main` at `4908c0e60938e781fe95437b433141d380d61c85`.
@@ -77,7 +80,3 @@ status: active
 - Prior Critic stopped before routine metadata endorsement of email-header and Golang malware skills because direct review found private mailbox/header/body/attachment evidence, external reputation/API-key submission boundaries, malware sample analysis, and executable Python/Ghidra reverse-engineering scripts.
 
 - Earlier 2026-07-09 run: Reporter-only missing-ledger repair initialized the Skills heartbeat daily ledger and stopped without consuming a board ticket.
-
-## 2026-07-08
-
-- Prior entries retained in repository history before compact log reconciliation. See commits before `4d692bae72e1d6235cf85127839fd6773a15dc4f` for the full 2026-07-07 operational log.
