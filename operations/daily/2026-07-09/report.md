@@ -9,16 +9,16 @@ status: active
 
 ## Latest board-driven heartbeat
 
-Ran `Reporter` only because today's daily ledger was missing.
+Ran `Critic` for `skills-metadata-backfill-batch-003`.
 
 ## Inspected state
 
 - Repository: `architectonic/skills`
 - Inspected ref: `main`
-- Inspected SHA before this run's first content write: `509551196ca2c209b375be4dc3960ce9195db6a5`
+- Inspected SHA before this ticket's first content write: `b57378eef9bb47f6739b3f4075f7d2852f74add5`
 - Model requirement status: `model_setting_unverified`
-- Daily ledger present at start: no
-- Missing-ledger initialization: yes
+- Daily ledger present at start: yes
+- Missing-ledger initialization: no
 - Discovery Action handoff: `operations/action-runs/discover-skill-sources/latest.json` absent on default branch
 - Online/GitHub public source reads used: no
 - External connector used: GitHub only
@@ -29,28 +29,35 @@ Ran `Reporter` only because today's daily ledger was missing.
 - `operations/board.json`
 - `operations/gates.md`
 - `operations/value-ledger.json`
-- `operations/daily/2026-07-09/status.json` attempted and returned 404
-- `operations/daily/2026-07-09/queues.json` attempted and returned 404
-- `operations/daily/2026-07-08/status.json`
-- `operations/daily/2026-07-08/queues.json`
-- `operations/daily/2026-07-08/report.md`
-- `operations/log.md`
-- `operations/action-runs/discover-skill-sources/latest.json` attempted and returned 404
-- `dist/catalog.json`
-- `dist/catalog.md`
-- `dist/install-manifest.json`
-
-## Work performed
-
-Initialized today's daily ledger as Reporter-only:
-
 - `operations/daily/2026-07-09/status.json`
 - `operations/daily/2026-07-09/queues.json`
 - `operations/daily/2026-07-09/report.md`
+- `operations/log.md`
+- `dist/catalog.json`
+- `dist/catalog.md`
+- `dist/install-manifest.json`
+- `dist/skills/ai-seo/SKILL.md`
+- `dist/skills/analyzing-email-headers-for-phishing-investigation/SKILL.md`
+- `dist/skills/analyzing-golang-malware-with-ghidra/SKILL.md`
 
-No board ticket was consumed.
+## Work performed
 
-## Carry-forward state
+Backfilled package-facing metadata for one skill:
+
+- `dist/skills/ai-seo/SKILL.md`
+  - `domain: business`
+  - `risk_level: low`
+  - `requires_review: false`
+  - source metadata and review notes added
+
+Stopped before routine metadata cleanup on:
+
+- `dist/skills/analyzing-email-headers-for-phishing-investigation/SKILL.md`
+- `dist/skills/analyzing-golang-malware-with-ghidra/SKILL.md`
+
+Reason: the first handles private mailbox/header/body/attachment evidence plus external reputation/API-key submission boundaries; the second contains malware sample analysis and executable Python/Ghidra reverse-engineering scripts.
+
+## Carry-forward catalog state before this run's catalog parity
 
 | Surface | Verified value |
 |---|---:|
@@ -67,36 +74,39 @@ No board ticket was consumed.
 
 | Test | Result | Evidence |
 |---|---|---|
-| Today's daily status ledger exists after initialization | Pass | Created `operations/daily/2026-07-09/status.json`. |
-| Today's daily queues ledger exists after initialization | Pass | Created `operations/daily/2026-07-09/queues.json`. |
-| Reporter-only stop honored | Pass | No discovery, source review, risk review, metadata backfill, catalog refresh, package, npm, registry, or publication work was performed. |
+| Processes a bounded batch, not the entire catalog | Pass | Only `ai-seo` was backfilled before stopping on private-data/malware-analysis surfaces. |
+| Adds domain/risk/requires_review/source status when justified | Pass | `ai-seo` now has business/low/no-review/source metadata. |
+| Stops and creates risk ticket on unsafe material | Pass | Created `skills-risk-review-email-header-and-golang-malware-analysis-001`. |
+| Creates catalog refresh ticket after metadata changes | Pass | Created blocked `skills-catalog-refresh-after-metadata-backfill-003`. |
 
 ## Files changed
 
-- `operations/daily/2026-07-09/status.json`
+- `dist/skills/ai-seo/SKILL.md`
+- `reports/critic/2026-07-09-metadata-backfill-batch-003.md`
+- `operations/board.json`
 - `operations/daily/2026-07-09/queues.json`
+- `operations/daily/2026-07-09/status.json`
 - `operations/daily/2026-07-09/report.md`
 - `operations/value-ledger.json`
 - `operations/log.md`
 
 ## Boundaries preserved
 
-- No board ticket consumed.
-- No online discovery was performed.
+- No online discovery or source search was performed.
 - No repository was cloned.
-- No scripts or catalog generator were executed.
+- No scripts, DNS queries, email parsing, malware tooling, Ghidra, or catalog generator were executed.
 - No generated catalog surface was hand-edited.
 - No third-party content was copied.
-- No risk, metadata, catalog, package, npm, registry, or publication action was attempted.
+- No package, npm, registry, or publication action was attempted.
 
 ## Value delta
 
-Initialized the missing 2026-07-09 daily ledgers so subsequent Skills heartbeats can safely consume board tickets without mixing missing-ledger repair with value work.
+Improved package-facing metadata for `ai-seo` while preventing private-data and malware-analysis workflows from passing through routine metadata cleanup without explicit risk review.
 
 ## Risk and publication state
 
-- Risk queue: clear.
-- Catalog parity after metadata batch 002: done.
+- Risk queue: open for email-header phishing investigation and Golang malware analysis.
+- Catalog parity after metadata batch 003: blocked until risk review completes.
 - GitTaskBench: watch/license-blocked.
 - Discovery Action handoff: still absent.
 - Remaining metadata backlog: open.
@@ -106,12 +116,19 @@ Initialized the missing 2026-07-09 daily ledgers so subsequent Skills heartbeats
 
 | Change | Commit |
 |---|---|
-| Daily status initialization | `aef1adcb9feabcc2b3821464e6e0f439ee1e235a` |
-| Daily queues initialization | `0ec79cf929cf51ccd9967a71c51e891e22d1f61d` |
-| Daily report initialization | `pending_final_connector_response` |
+| AI SEO metadata backfill | `de65f92f5db27ab43472c51694fe9bb50fc9e42b` |
+| Critic report | `b14919f9e17abf1041e6870553f510a391eea86a` |
+| Board update | `b3d703d5979bd276d6076ff69ea8eb861201d6d1` |
+| Queues update | `00bd3c0047e23dc8e520e5dbebae56de4b546788` |
+| Status update | `fe45290e43349ea24c6b51b143303fd9ec399b3e` |
+| Daily report update | `pending_connector_response` |
 | Value ledger update | `pending_next_write` |
 | Operations log update | `pending_next_write` |
 
+## Earlier heartbeat today
+
+A prior `Reporter` run initialized today's missing daily ledger and stopped without consuming a board ticket.
+
 ## Next action
 
-Critic should consume `skills-metadata-backfill-batch-003` on the next heartbeat, stopping immediately on any high-risk executable, credential, offensive, account, browser, SSRF, private-data, or external-mutation surface.
+Risk Auditor should consume `skills-risk-review-email-header-and-golang-malware-analysis-001` before catalog refresh or further metadata backlog cleanup.
