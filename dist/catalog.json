@@ -18,15 +18,15 @@
       "runtime-tools": 35,
       "security-defensive": 61,
       "security-offensive": 16,
-      "software-engineering": 150,
-      "uncategorized": 558,
+      "software-engineering": 151,
+      "uncategorized": 557,
       "writing": 16
     },
     "risk_counts": {
       "high": 16,
       "low": 10,
-      "medium": 437,
-      "unspecified": 720
+      "medium": 438,
+      "unspecified": 719
     }
   },
   "domains": {
@@ -526,6 +526,7 @@
       "Capacity Planner — Ops Team Sizing with Erlang-C Queueing Theory",
       "Code Complexity Scanner",
       "Code Review",
+      "Code Review Excellence",
       "Conducting API Security Testing",
       "Configuring Active Directory Tiered Model",
       "Database Lookup",
@@ -681,7 +682,6 @@
       "Building Threat Intelligence Enrichment in Splunk",
       "Building Threat Intelligence Feed Integration",
       "Code Documentation Generator",
-      "Code Review Excellence",
       "Coercing Authentication with Coercer and PetitPotam",
       "Collecting Open-Source Intelligence",
       "Collecting Threat Intelligence with MISP",
@@ -5631,12 +5631,18 @@
       "description": "Master effective code review practices to provide constructive feedback, catch bugs early, and foster knowledge sharing while maintaining team morale. Use when reviewing pull requests, establishing review standards, or mentoring developers.",
       "path": "dist/skills/code-review-excellence/SKILL.md",
       "directory": "dist/skills/code-review-excellence",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
-      "tags": [],
+      "domain": "software-engineering",
+      "risk_level": "medium",
+      "requires_review": true,
+      "tags": [
+        "software-development",
+        "code-review",
+        "engineering-management",
+        "mentoring",
+        "collaboration"
+      ],
       "source_family": "",
-      "source_status": "",
+      "source_status": "reviewed-metadata-only",
       "type": "Playbook"
     },
     {
