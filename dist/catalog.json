@@ -16,17 +16,17 @@
       "media": 1,
       "research": 83,
       "runtime-tools": 35,
-      "security-defensive": 65,
+      "security-defensive": 66,
       "security-offensive": 16,
       "software-engineering": 152,
-      "uncategorized": 552,
+      "uncategorized": 551,
       "writing": 16
     },
     "risk_counts": {
-      "high": 21,
+      "high": 22,
       "low": 11,
       "medium": 439,
-      "unspecified": 712
+      "unspecified": 711
     }
   },
   "domains": {
@@ -441,6 +441,7 @@
       "Auditing TLS Certificate Transparency Logs",
       "Building Attack Pattern Library from CTI Reports",
       "Building Automated Malware Submission Pipeline",
+      "Building Cloud SIEM with Sentinel",
       "Building Vulnerability Aging and SLA Tracking",
       "Building Vulnerability Exception Tracking System",
       "Building Vulnerability Scanning Workflow",
@@ -668,7 +669,6 @@
       "xurl"
     ],
     "uncategorized": [
-      "Building Cloud SIEM with Sentinel",
       "Building Detection Rules with Splunk SPL",
       "Building IOC Defanging and Sharing Pipeline",
       "Building Identity Federation with SAML Azure AD",
@@ -4413,26 +4413,24 @@
     {
       "slug": "Building Cloud SIEM with Sentinel",
       "title": "Building Cloud SIEM with Sentinel",
-      "description": "This skill covers deploying Microsoft Sentinel as a cloud-native SIEM",
+      "description": "Govern Microsoft Sentinel SIEM/SOAR design as an authorized, review-gated defensive security workflow without package-facing cloud mutation snippets.",
       "path": "dist/skills/building-cloud-siem-with-sentinel/SKILL.md",
       "directory": "dist/skills/building-cloud-siem-with-sentinel",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-defensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
         "agent-skill",
         "okf",
         "microsoft-sentinel",
         "cloud-siem",
-        "kql-queries",
-        "soar-automation",
+        "siem-governance",
+        "soar-governance",
         "threat-detection",
-        "security"
+        "security-defensive"
       ],
       "source_family": "",
-      "source_status": "",
+      "source_status": "existing_package_skill_risk_reviewed",
       "type": "Playbook"
     },
     {
