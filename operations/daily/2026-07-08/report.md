@@ -9,13 +9,13 @@ status: active
 
 ## Latest board-driven heartbeat
 
-Ran `Cataloger` for board ticket `skills-catalog-refresh-after-metadata-backfill-001`.
+Ran `Critic` for board ticket `skills-metadata-backfill-batch-002`.
 
 ## Inspected state
 
 - Repository: `architectonic/skills`
 - Inspected ref: `main`
-- Inspected SHA before this ticket's first content write: `db0ef10010977b838a1bf27138b4fe1891940e2f`
+- Inspected SHA before this ticket's first content write: `46f395d1b881de28edf6d7b87e9bfd2b10012603`
 - Model requirement status: `model_setting_unverified`
 - Daily ledger present: yes
 - Missing-ledger initialization: no
@@ -34,57 +34,66 @@ Ran `Cataloger` for board ticket `skills-catalog-refresh-after-metadata-backfill
 - `operations/daily/2026-07-08/report.md`
 - `operations/log.md`
 - `dist/catalog.json`
-- `dist/catalog.md`
 - `dist/install-manifest.json`
 - `operations/action-runs/discover-skill-sources/latest.json` attempted and returned 404
-- `dist/skills/autonomy-loop/SKILL.md`
-- `dist/skills/autoresearch-loop/SKILL.md`
-- `dist/skills/browser-trace/SKILL.md`
-- `reports/critic/2026-07-08-metadata-backfill-batch.md`
-- `reports/risk/2026-07-08-browser-trace-risk-review.md`
+- `dist/skills/code-complexity-scanner/SKILL.md`
+- `dist/skills/code-review/SKILL.md`
+- `dist/skills/code-review-excellence/SKILL.md`
+- `dist/skills/diagnosing-bugs/SKILL.md`
 
 ## Work performed
 
-Closed catalog parity after the metadata backfill and Browser Trace risk review.
+Closed bounded metadata-backfill batch 002.
 
-Created:
+Updated:
 
-- `reports/catalog/2026-07-08-metadata-backfill-catalog-parity.md`
+- `dist/skills/code-complexity-scanner/SKILL.md`
+- `dist/skills/code-review/SKILL.md`
+- `dist/skills/code-review-excellence/SKILL.md`
+- `reports/critic/2026-07-08-metadata-backfill-batch-002.md`
 
-Verified:
+Opened next risk gate:
 
-- `Autonomy Loop` and `Autoresearch Loop` source skill frontmatter contains `domain: agent-operations`, `risk_level: medium`, and `requires_review: true`.
-- `Browser Trace` source skill frontmatter contains `domain: software-engineering`, `risk_level: high`, `requires_review: true`, and `review_gate: authorized-read-only-browser-debugging-only`.
-- `dist/catalog.json` summary counts reflect the post-change package surface.
-- `dist/catalog.md` mirrors those counts.
-- `dist/install-manifest.json` remains coherent for installer discovery and selection fields.
+- `skills-risk-review-diagnosing-bugs-001`
 
-Opened next:
+Blocked until risk review completes:
 
-- `skills-metadata-backfill-batch-002`
+- `skills-catalog-refresh-after-metadata-backfill-002`
 
-## Catalog parity evidence
+## Metadata evidence
 
-| Surface | Evidence |
+| Skill | Metadata result |
 |---|---|
-| `dist/catalog.json` | `skill_count: 1183`, `agent-operations: 108`, `software-engineering: 148`, `high: 16`, `medium: 436`, `uncategorized: 560`, `unspecified: 722` |
-| `dist/catalog.md` | Mirrors the same skill/domain/risk summary counts |
-| `dist/install-manifest.json` | Discovery files and selection fields remain coherent |
-| Source skills | Autonomy Loop, Autoresearch Loop, and Browser Trace frontmatter match expected package-facing metadata |
+| `Code Complexity Scanner` | `domain: software-engineering`, `risk_level: low`, `requires_review: false`, `source_status: reviewed-metadata-only` |
+| `Code Review` | `domain: software-engineering`, `risk_level: medium`, `requires_review: true`, `review_gate: repository-owner-authorized-review-only`, `source_status: native-or-curated-origin-unverified` |
+| `Code Review Excellence` | `domain: software-engineering`, `risk_level: medium`, `requires_review: true`, `review_gate: repository-owner-authorized-review-only`, `source_status: reviewed-metadata-only` |
+
+## Stop condition
+
+Stopped at `dist/skills/diagnosing-bugs/SKILL.md` after direct review found:
+
+- headless browser script surface;
+- Playwright / Puppeteer mention;
+- DOM / console / network assertion surface;
+- captured trace replay from real network payload or event log.
+
+The skill was not modified in this pass. A high-priority risk-review ticket was opened before catalog parity or further metadata cleanup.
 
 ## Acceptance tests
 
 | Test | Result | Evidence |
 |---|---|---|
-| Catalog reflects Autonomy Loop and Autoresearch Loop as `agent-operations` / `medium` / `requires_review` skills | Pass | Both source skill files contain the expected frontmatter and catalog summary counts reflect the category/risk shift. |
-| Catalog reflects Browser Trace as `software-engineering` / `high` / `requires_review` | Pass | Browser Trace source frontmatter contains the expected metadata and catalog summary counts reflect the software-engineering/high-risk shift. |
-| Catalog summary counts are updated or verified after generation | Pass | `dist/catalog.json` and `dist/catalog.md` agree on skill count and domain/risk summary counts. |
-| Install manifest remains coherent | Pass | `dist/install-manifest.json` still points to required discovery files and preserves `slug`, `title`, `domain`, `risk_level`, `tags`, and `requires_review`. |
-| No npm publish attempted | Pass | No package, npm, registry, publication, or external mutation action was performed. |
+| Processes a bounded batch, not the entire catalog | Pass | Three skill files were classified; the pass stopped on the fourth reviewed skill. |
+| Adds domain/risk/requires_review/source status when justified | Pass | Updated frontmatter for Code Complexity Scanner, Code Review, and Code Review Excellence. |
+| Stops and creates risk ticket on unsafe material | Pass | Stopped at Diagnosing Bugs because of browser/headless automation and captured trace replay surfaces; opened `skills-risk-review-diagnosing-bugs-001`. |
+| Creates catalog refresh ticket after metadata changes | Pass | Opened `skills-catalog-refresh-after-metadata-backfill-002`, blocked until the generated risk review is complete. |
 
 ## Files changed
 
-- `reports/catalog/2026-07-08-metadata-backfill-catalog-parity.md`
+- `dist/skills/code-complexity-scanner/SKILL.md`
+- `dist/skills/code-review/SKILL.md`
+- `dist/skills/code-review-excellence/SKILL.md`
+- `reports/critic/2026-07-08-metadata-backfill-batch-002.md`
 - `operations/board.json`
 - `operations/value-ledger.json`
 - `operations/daily/2026-07-08/queues.json`
@@ -103,7 +112,7 @@ Opened next:
 
 ## Value delta
 
-Removed the post-metadata-backfill catalog parity blocker by verifying the generated catalog/install-manifest surface after Autonomy Loop, Autoresearch Loop, and Browser Trace package-facing metadata changes. This confirms discoverability/reviewability changed coherently and unblocks the next bounded metadata-backfill batch.
+Improved package-facing discoverability and reviewability for three software-engineering skills while stopping before routine cleanup could pass over browser/headless debugging trace surfaces without a dedicated risk review.
 
 ## Risk and publication state
 
@@ -117,6 +126,9 @@ Removed the post-metadata-backfill catalog parity blocker by verifying the gener
 - Metadata backfill batch 001: done.
 - Browser Trace risk review: done.
 - Catalog parity after metadata backfill and Browser Trace review: done.
+- Metadata backfill batch 002: done.
+- Diagnosing Bugs risk review: open and next.
+- Catalog parity after metadata batch 002: blocked behind Diagnosing Bugs risk review.
 - GitTaskBench: watch/license-blocked.
 - Discovery Action handoff: still absent.
 - Remaining metadata backlog: open.
@@ -126,14 +138,17 @@ Removed the post-metadata-backfill catalog parity blocker by verifying the gener
 
 | Change | Commit |
 |---|---|
-| Metadata-backfill catalog parity report | `ca45704be99af39b2f50c6419ced6281fa8ab1bc` |
-| Board update | `d1f989317dcc7d0e48429da054ec5123f93c51f8` |
-| Value ledger update | `689beaff384c952307734f5bb225112f454a3d2d` |
-| Daily queues update | `17871ccc129b6f233cd7f6229816109b40f5ae88` |
+| Code Complexity Scanner metadata | `f299fcf7ef0a7e2fc2aecd10f2478ada985e9bbe` |
+| Code Review metadata | `b14fd8f103ee0b815e92aa08699938a2f25bc78e` |
+| Code Review Excellence metadata | `c779898419d1111d8332a6979d891eab903ed521` |
+| Metadata batch 002 report | `0b7777f292b75265fe3ceb54c0cb1fb028148bbc` |
+| Board update | `7c06358adfb7115b68614210309a794ad8c572b6` |
+| Value ledger update | `d11d5ef6ce4370b98e64b7cd94fb1f4adeec8670` |
+| Daily queues update | `499395c99b837cfd86765b6a93b74915b4d17101` |
 | Daily report update | `pending_final_connector_response` |
 | Daily status update | `pending_next_write` |
 | Operations log update | `pending_next_write` |
 
 ## Next action
 
-Critic should consume `skills-metadata-backfill-batch-002` as the next bounded metadata-backfill ticket, unless a higher-priority discovery, source-review, risk-review, normalization, or catalog-parity ticket appears first. Package/publication endorsement remains blocked.
+Risk Auditor should consume `skills-risk-review-diagnosing-bugs-001` before catalog parity, more metadata backfill, package verification, or publication endorsement.
