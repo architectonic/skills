@@ -16,17 +16,17 @@
       "media": 1,
       "research": 83,
       "runtime-tools": 35,
-      "security-defensive": 70,
+      "security-defensive": 71,
       "security-offensive": 16,
       "software-engineering": 152,
-      "uncategorized": 546,
+      "uncategorized": 545,
       "writing": 16
     },
     "risk_counts": {
-      "high": 26,
+      "high": 27,
       "low": 11,
       "medium": 440,
-      "unspecified": 706
+      "unspecified": 705
     }
   },
   "domains": {
@@ -447,6 +447,7 @@
       "Building IOC Defanging and Sharing Pipeline",
       "Building Identity Federation with SAML Azure AD",
       "Building Incident Response Dashboard",
+      "Building Malware Incident Communication Template",
       "Building Vulnerability Aging and SLA Tracking",
       "Building Vulnerability Exception Tracking System",
       "Building Vulnerability Scanning Workflow",
@@ -674,7 +675,6 @@
       "xurl"
     ],
     "uncategorized": [
-      "Building Malware Incident Communication Template",
       "Building Phishing Reporting Button Workflow",
       "Building Ransomware Playbook with CISA Framework",
       "Building SOC Escalation Matrix",
@@ -4671,15 +4671,13 @@
     {
       "slug": "Building Malware Incident Communication Template",
       "title": "Building Malware Incident Communication Template",
-      "description": "Build structured communication templates for malware incidents including",
+      "description": "Plan malware incident communications with review-gated, legally coordinated stakeholder messaging.",
       "path": "dist/skills/building-malware-incident-communication-template/SKILL.md",
       "directory": "dist/skills/building-malware-incident-communication-template",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-defensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
         "agent-skill",
         "okf",
         "incident-communication",
@@ -4691,7 +4689,7 @@
         "security"
       ],
       "source_family": "",
-      "source_status": "",
+      "source_status": "package_risk_reviewed",
       "type": "Playbook"
     },
     {
