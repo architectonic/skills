@@ -16,17 +16,17 @@
       "media": 1,
       "research": 83,
       "runtime-tools": 35,
-      "security-defensive": 63,
+      "security-defensive": 64,
       "security-offensive": 16,
       "software-engineering": 152,
-      "uncategorized": 554,
+      "uncategorized": 553,
       "writing": 16
     },
     "risk_counts": {
-      "high": 19,
+      "high": 20,
       "low": 11,
       "medium": 439,
-      "unspecified": 714
+      "unspecified": 713
     }
   },
   "domains": {
@@ -439,6 +439,7 @@
       "Auditing Cloud with CIS Benchmarks",
       "Auditing MCP Servers for Tool Poisoning",
       "Auditing TLS Certificate Transparency Logs",
+      "Building Attack Pattern Library from CTI Reports",
       "Building Vulnerability Aging and SLA Tracking",
       "Building Vulnerability Exception Tracking System",
       "Building Vulnerability Scanning Workflow",
@@ -666,7 +667,6 @@
       "xurl"
     ],
     "uncategorized": [
-      "Building Attack Pattern Library from CTI Reports",
       "Building Automated Malware Submission Pipeline",
       "Building Cloud SIEM with Sentinel",
       "Building Detection Rules with Splunk SPL",
@@ -4326,29 +4326,25 @@
     {
       "slug": "Building Attack Pattern Library from CTI Reports",
       "title": "Building Attack Pattern Library from CTI Reports",
-      "description": "Extract and catalog attack patterns from cyber threat intelligence reports",
+      "description": "Review-gated defensive guidance for turning authorized CTI reports into internal detection-engineering knowledge without operationalizing adversary procedures.",
       "path": "dist/skills/building-attack-pattern-library-from-cti-reports/SKILL.md",
       "directory": "dist/skills/building-attack-pattern-library-from-cti-reports",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-defensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
         "agent-skill",
         "okf",
-        "attack-pattern",
         "cti-reports",
+        "attack-patterns",
+        "detection-engineering",
         "mitre-attack",
         "stix",
-        "detection-engineering",
-        "threat-intelligence",
-        "nlp",
-        "extraction",
-        "security"
+        "sigma",
+        "defensive-security"
       ],
       "source_family": "",
-      "source_status": "",
+      "source_status": "package-facing-risk-reviewed",
       "type": "Playbook"
     },
     {
