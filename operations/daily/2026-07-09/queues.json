@@ -13,9 +13,9 @@
       "priority": 2,
       "role": "Cataloger",
       "target": "dist/catalog.json",
-      "reason": "AI SEO package-facing metadata changed during metadata-backfill batch 003.",
-      "status": "blocked",
-      "blocked_by": "skills-risk-review-email-header-and-golang-malware-analysis-001",
+      "reason": "AI SEO, email-header phishing investigation, and Golang malware/Ghidra package-facing metadata changed during metadata-backfill batch 003 and the follow-up risk review.",
+      "status": "ready",
+      "unblocked_by": "skills-risk-review-email-header-and-golang-malware-analysis-001",
       "source_ticket": "skills-catalog-refresh-after-metadata-backfill-003"
     }
   ],
@@ -29,9 +29,10 @@
         "dist/skills/analyzing-golang-malware-with-ghidra/SKILL.md"
       ],
       "reason": "Metadata-backfill batch 003 stopped on private mailbox/header/body/attachment evidence, external reputation/API-key submission boundaries, malware sample analysis, executable Python/Ghidra scripts, and reverse-engineering surfaces.",
-      "status": "open",
+      "status": "done",
       "created_by": "Skills Value Operator",
       "created_at": "2026-07-09T01:14:44-03:00",
+      "completed_at": "2026-07-09T02:11:10-03:00",
       "source_ticket": "skills-risk-review-email-header-and-golang-malware-analysis-001"
     }
   ],
@@ -66,6 +67,12 @@
       "by": "Skills Value Operator",
       "batch": "metadata-backfill-batch-003",
       "result": "Backfilled AI SEO as business/low/no-review, then stopped before private-data and malware-analysis surfaces. Opened risk review and blocked catalog parity behind it."
+    },
+    {
+      "at": "2026-07-09T02:11:10-03:00",
+      "by": "Skills Value Operator",
+      "batch": "email-header-and-golang-malware-analysis-risk-review",
+      "result": "Converted email-header phishing investigation and Golang malware/Ghidra analysis into high-risk requires_review defensive wrappers; closed risk queue and unblocked catalog parity."
     }
   ]
 }
