@@ -16,17 +16,17 @@
       "media": 1,
       "research": 83,
       "runtime-tools": 35,
-      "security-defensive": 69,
+      "security-defensive": 70,
       "security-offensive": 16,
       "software-engineering": 152,
-      "uncategorized": 548,
+      "uncategorized": 547,
       "writing": 16
     },
     "risk_counts": {
-      "high": 24,
+      "high": 25,
       "low": 11,
       "medium": 440,
-      "unspecified": 708
+      "unspecified": 707
     }
   },
   "domains": {
@@ -445,6 +445,7 @@
       "Building Detection Rules with Splunk SPL",
       "Building IOC Defanging and Sharing Pipeline",
       "Building Identity Federation with SAML Azure AD",
+      "Building Incident Response Dashboard",
       "Building Vulnerability Aging and SLA Tracking",
       "Building Vulnerability Exception Tracking System",
       "Building Vulnerability Scanning Workflow",
@@ -672,7 +673,6 @@
       "xurl"
     ],
     "uncategorized": [
-      "Building Incident Response Dashboard",
       "Building Incident Timeline with Timesketch",
       "Building Malware Incident Communication Template",
       "Building Phishing Reporting Button Workflow",
@@ -4570,28 +4570,25 @@
     {
       "slug": "Building Incident Response Dashboard",
       "title": "Building Incident Response Dashboard",
-      "description": "Builds real-time incident response dashboards in Splunk, Elastic, or",
+      "description": "Design defensive incident-response dashboard governance without exposing live incident data, IOCs, credentials, or SIEM mutation snippets.",
       "path": "dist/skills/building-incident-response-dashboard/SKILL.md",
       "directory": "dist/skills/building-incident-response-dashboard",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-defensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
         "agent-skill",
         "okf",
         "soc",
         "dashboard",
         "incident-response",
-        "splunk",
-        "visualization",
         "situational-awareness",
         "metrics",
-        "security"
+        "security",
+        "governance"
       ],
       "source_family": "",
-      "source_status": "",
+      "source_status": "risk_reviewed",
       "type": "Metric"
     },
     {
