@@ -11,23 +11,25 @@ status: active
 
 ## 2026-07-09
 
-- Ran board-driven Cataloger for `skills-catalog-refresh-after-metadata-backfill-004`.
+- Ran board-driven Critic for `skills-metadata-backfill-batch-005`.
 - Model requirement status: `model_setting_unverified`.
-- Inspected ref/SHA before this ticket's first content write: `main` at `004abcd311ed0b853caff52dd5033433db06bc18`.
+- Inspected ref/SHA before this ticket's first content write: `main` at `6560a5e0b259b0d369158aad50cd52830e74e626`.
 - Confirmed today's daily ledger exists; no missing-ledger initialization was performed in this pass.
 - Confirmed `operations/action-runs/discover-skill-sources/latest.json` returned `404 Not Found` on the default branch during this run.
-- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `reports/critic/2026-07-09-metadata-backfill-batch-004.md`, `reports/risk/2026-07-09-ct-logs-attack-library-malware-pipeline-risk-review.md`, `dist/skills/auditing-tls-certificate-transparency-logs/SKILL.md`, `dist/skills/building-attack-pattern-library-from-cti-reports/SKILL.md`, and `dist/skills/building-automated-malware-submission-pipeline/SKILL.md`.
-- No online/source discovery was used because the selected board ticket was internal catalog parity verification.
-- Created `reports/catalog/2026-07-09-metadata-backfill-004-catalog-parity.md`.
-- Verified `dist/catalog.json` and `dist/catalog.md` agree on `skill_count` 1183, `security-defensive` 65, `uncategorized` 552, `high` 21, `medium` 439, `low` 11, and `unspecified` 712.
-- Verified `Auditing TLS Certificate Transparency Logs`, `Building Attack Pattern Library from CTI Reports`, and `Building Automated Malware Submission Pipeline` are cataloged as `security-defensive`, `high`, and `requires_review: true`.
-- Verified `dist/install-manifest.json` remains coherent for package-facing selection fields.
-- Closed board ticket `skills-catalog-refresh-after-metadata-backfill-004` and queue item `catalog-refresh-after-metadata-backfill-20260709-004`.
-- Opened board ticket `skills-metadata-backfill-batch-005` and queue item `metadata-backfill-uncategorized-and-unspecified-risk-20260709-005`.
-- Preserved boundaries: no online discovery, no clone, no script execution, no CT query, no DNS lookup, no CTI parsing, no malware collection, no sandboxing, no third-party submission, no SIEM push, no blocklist mutation, no Ghidra execution, no browser use, no generated catalog surface hand-edit, no third-party content copy, no package publication, no npm publication, and no registry publication.
-- Acceptance tests passed: the three reviewed skills are reflected in catalog/install-manifest surfaces as high-risk review-gated defensive wrappers; no publication action occurred.
-- Value delta: removed the catalog parity blocker after CT-log, CTI attack-library, and automated malware-submission risk review.
-- Next justified action: Critic may consume `skills-metadata-backfill-batch-005`, stopping immediately on unsafe package-facing material.
+- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `reports/catalog/2026-07-09-metadata-backfill-004-catalog-parity.md`, and `dist/skills/building-cloud-siem-with-sentinel/SKILL.md`.
+- No online/source discovery was used because the selected board ticket was an internal metadata-backfill gate.
+- Created `reports/critic/2026-07-09-metadata-backfill-batch-005.md`.
+- Stopped on `Building Cloud SIEM with Sentinel` before routine metadata endorsement because it includes Azure/Sentinel workspace provisioning, cloud data connector setup, AWS CloudTrail connector wiring, KQL detections, threat-intelligence matching, Logic Apps/SOAR automation, account disablement, and AWS STS revocation guidance.
+- Closed queue item `metadata-backfill-uncategorized-and-unspecified-risk-20260709-005` as blocked for risk review.
+- Opened board ticket `skills-risk-review-cloud-siem-sentinel-001` and queue item `risk-review-cloud-siem-sentinel-20260709-001`.
+- Preserved boundaries: no online discovery, no clone, no Azure CLI execution, no KQL execution, no Logic Apps deployment, no Microsoft Graph mutation, no AWS connector setup, no STS revocation, no threat-intelligence connector action, no generated catalog surface hand-edit, no third-party content copy, no package publication, no npm publication, and no registry publication.
+- Acceptance tests passed: bounded batch, no routine metadata added because risk review is required, risk ticket created, and no catalog refresh created because no metadata changed.
+- Value delta: prevented routine catalog endorsement of a package-facing Sentinel/SOAR skill with credentialed cloud setup and account-mutation automation.
+- Next justified action: Risk Auditor should consume `skills-risk-review-cloud-siem-sentinel-001` before further metadata backlog cleanup.
+
+- Earlier 2026-07-09 run: Cataloger consumed `skills-catalog-refresh-after-metadata-backfill-004`.
+- Prior Cataloger inspected ref/SHA before first content write: `main` at `004abcd311ed0b853caff52dd5033433db06bc18`.
+- Prior Cataloger verified catalog/install-manifest parity after CT-log, CTI attack-library, and automated malware-submission risk review.
 
 - Earlier 2026-07-09 run: Risk Auditor consumed `skills-risk-review-ct-logs-attack-library-malware-pipeline-001`.
 - Prior Risk Auditor inspected ref/SHA before first content write: `main` at `00326a88e5e094f4d3e36e58839141a5ca3ed492`.
