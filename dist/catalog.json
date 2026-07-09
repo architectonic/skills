@@ -16,17 +16,17 @@
       "media": 1,
       "research": 83,
       "runtime-tools": 35,
-      "security-defensive": 66,
+      "security-defensive": 67,
       "security-offensive": 16,
       "software-engineering": 152,
-      "uncategorized": 551,
+      "uncategorized": 550,
       "writing": 16
     },
     "risk_counts": {
       "high": 22,
       "low": 11,
-      "medium": 439,
-      "unspecified": 711
+      "medium": 440,
+      "unspecified": 710
     }
   },
   "domains": {
@@ -442,6 +442,7 @@
       "Building Attack Pattern Library from CTI Reports",
       "Building Automated Malware Submission Pipeline",
       "Building Cloud SIEM with Sentinel",
+      "Building Detection Rules with Splunk SPL",
       "Building Vulnerability Aging and SLA Tracking",
       "Building Vulnerability Exception Tracking System",
       "Building Vulnerability Scanning Workflow",
@@ -669,7 +670,6 @@
       "xurl"
     ],
     "uncategorized": [
-      "Building Detection Rules with Splunk SPL",
       "Building IOC Defanging and Sharing Pipeline",
       "Building Identity Federation with SAML Azure AD",
       "Building Incident Response Dashboard",
@@ -4439,9 +4439,9 @@
       "description": "Build effective detection rules using Splunk Search Processing Language",
       "path": "dist/skills/building-detection-rule-with-splunk-spl/SKILL.md",
       "directory": "dist/skills/building-detection-rule-with-splunk-spl",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-defensive",
+      "risk_level": "medium",
+      "requires_review": true,
       "tags": [
         "software-development",
         "software-development",
@@ -4458,7 +4458,7 @@
         "security"
       ],
       "source_family": "",
-      "source_status": "",
+      "source_status": "package_metadata_backfill",
       "type": "Playbook"
     },
     {
