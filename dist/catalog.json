@@ -16,17 +16,17 @@
       "media": 1,
       "research": 83,
       "runtime-tools": 35,
-      "security-defensive": 67,
+      "security-defensive": 68,
       "security-offensive": 16,
       "software-engineering": 152,
-      "uncategorized": 550,
+      "uncategorized": 549,
       "writing": 16
     },
     "risk_counts": {
-      "high": 22,
+      "high": 23,
       "low": 11,
       "medium": 440,
-      "unspecified": 710
+      "unspecified": 709
     }
   },
   "domains": {
@@ -443,6 +443,7 @@
       "Building Automated Malware Submission Pipeline",
       "Building Cloud SIEM with Sentinel",
       "Building Detection Rules with Splunk SPL",
+      "Building IOC Defanging and Sharing Pipeline",
       "Building Vulnerability Aging and SLA Tracking",
       "Building Vulnerability Exception Tracking System",
       "Building Vulnerability Scanning Workflow",
@@ -670,7 +671,6 @@
       "xurl"
     ],
     "uncategorized": [
-      "Building IOC Defanging and Sharing Pipeline",
       "Building Identity Federation with SAML Azure AD",
       "Building Incident Response Dashboard",
       "Building Incident Timeline with Timesketch",
@@ -4626,29 +4626,26 @@
     {
       "slug": "Building IOC Defanging and Sharing Pipeline",
       "title": "Building IOC Defanging and Sharing Pipeline",
-      "description": "Build an automated pipeline to defang indicators of compromise (URLs,",
+      "description": "Review-gated defensive guidance for handling, defanging, and sharing indicators of compromise without exposing active malicious indicators, credentials, or automated external submission paths.",
       "path": "dist/skills/building-ioc-defanging-and-sharing-pipeline/SKILL.md",
       "directory": "dist/skills/building-ioc-defanging-and-sharing-pipeline",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-defensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
-        "agent-skill",
-        "okf",
+        "security-defensive",
+        "incident-response",
         "ioc",
         "defanging",
-        "threat-sharing",
-        "stix",
-        "pipeline",
-        "indicator",
-        "automation",
         "threat-intelligence",
-        "security"
+        "governance",
+        "stix",
+        "taxii",
+        "misp",
+        "review-gated"
       ],
       "source_family": "",
-      "source_status": "",
+      "source_status": "package_risk_reviewed",
       "type": "Playbook"
     },
     {
