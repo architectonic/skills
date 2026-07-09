@@ -9,13 +9,13 @@ status: active
 
 ## Latest board-driven heartbeat
 
-Ran `Risk Auditor` for `skills-risk-review-ir-dashboard-timesketch-001`.
+Ran `Cataloger` for `skills-catalog-refresh-after-metadata-backfill-008`.
 
 ## Inspected state
 
 - Repository: `architectonic/skills`
 - Inspected ref: `main`
-- Inspected SHA before this ticket's first content write: `051df1294ec1264d8f34237a9a630ebd755e33ba`
+- Inspected SHA before this ticket's first content write: `396b59f8d7af643802afdc27af29082ffa14c76a`
 - Model requirement status: `model_setting_unverified`
 - Daily ledger present at start: yes
 - Missing-ledger initialization: no
@@ -38,49 +38,51 @@ Ran `Risk Auditor` for `skills-risk-review-ir-dashboard-timesketch-001`.
 - `dist/catalog.md`
 - `dist/install-manifest.json`
 - `reports/critic/2026-07-09-metadata-backfill-batch-008.md`
+- `reports/risk/2026-07-09-ir-dashboard-timesketch-risk-review.md`
 - `dist/skills/building-incident-response-dashboard/SKILL.md`
 - `dist/skills/building-incident-timeline-with-timesketch/SKILL.md`
 
 ## Work performed
 
-Consumed `skills-risk-review-ir-dashboard-timesketch-001`.
+Consumed `skills-catalog-refresh-after-metadata-backfill-008`.
 
-Converted both package-facing skills into high-risk, `requires_review: true` defensive governance wrappers:
+Verified catalog parity after `skills-risk-review-ir-dashboard-timesketch-001`:
 
-- `Building Incident Response Dashboard`
-- `Building Incident Timeline with Timesketch`
+- `Building Incident Response Dashboard`: `security-defensive`, `high`, `requires_review: true`
+- `Building Incident Timeline with Timesketch`: `forensics`, `high`, `requires_review: true`
 
-Risk evidence classified:
+Verified summary counts:
 
-- `Building Incident Response Dashboard` included active incident SIEM searches, live IOC handling, affected-system and analyst lookup data, scheduled searches, lookup writes, and dashboard content that can expose incident scope, hosts, identities, and containment state.
-- `Building Incident Timeline with Timesketch` included service deployment commands, private forensic evidence ingestion, Sigma uploads, API examples with username/password placeholders, analyzer execution, event tagging, annotation, and investigation-record mutation.
+- `skill_count`: `1183`
+- `security-defensive`: `70`
+- `forensics`: `27`
+- `uncategorized`: `546`
+- `high`: `26`
+- `medium`: `440`
+- `low`: `11`
+- `unspecified`: `706`
 
-`dist/catalog.json` and `dist/catalog.md` now reflect the two metadata changes. The catalog parity report remains queued as the next board ticket; no install-manifest, package, npm, registry, or publication file was changed.
+`dist/install-manifest.json` remains coherent. No generated catalog, install manifest, package, npm, registry, or publication file was changed in this ticket.
 
 ## Board and queue result
 
-- `skills-risk-review-ir-dashboard-timesketch-001`: done.
-- `risk-review-ir-dashboard-timesketch-20260709-001`: done.
-- `skills-catalog-refresh-after-metadata-backfill-008`: ready.
-- `catalog-refresh-after-metadata-backfill-20260709-008`: ready.
+- `skills-catalog-refresh-after-metadata-backfill-008`: done.
+- `catalog-refresh-after-metadata-backfill-20260709-008`: done.
+- `skills-metadata-backfill-batch-009`: ready.
+- `metadata-backfill-uncategorized-and-unspecified-risk-20260709-009`: ready.
 
 ## Acceptance tests
 
 | Test | Result | Evidence |
 |---|---|---|
-| Live incident/SIEM dashboard data, IOC handling, scheduled searches, and lookup mutation surfaces are classified | Pass | The dashboard skill is now high-risk/requires_review and explicitly blocks live SIEM queries, raw incident data, IOC publication, lookup writes, scheduled searches, SOAR, and account/device mutation. |
-| Timesketch deployment, private forensic evidence ingestion, credential placeholders, API usage, and investigation-record mutation surfaces are classified | Pass | The Timesketch skill is now high-risk/requires_review and explicitly blocks deployment, evidence ingestion, credentialed API use, analyzer execution, investigation-record mutation, and private evidence examples. |
-| Safe defensive IR dashboard and forensic timeline guidance is preserved or bounded | Pass | Both skills retain defensive planning workflows, data classification, redaction, authorization, access, retention, and approval checklists. |
-| Package-facing executable or mutation snippets are review-gated, redacted, or removed | Pass | Executable Splunk/SIEM, Timesketch, Plaso, API, upload, ingestion, and mutation snippets were removed from package-facing content. |
-| Catalog refresh remains blocked until review completes | Pass | This review completes the risk gate and queues catalog parity as the next ticket; package/npm/registry publication was not attempted. |
+| Catalog reflects Building Incident Response Dashboard as security-defensive high requires_review | Pass | `dist/catalog.json` lists the skill with `domain: security-defensive`, `risk_level: high`, and `requires_review: true`; the skill frontmatter matches. |
+| Catalog reflects Building Incident Timeline with Timesketch as forensics high requires_review | Pass | `dist/catalog.json` lists the skill with `domain: forensics`, `risk_level: high`, and `requires_review: true`; the skill frontmatter matches. |
+| Install manifest remains coherent | Pass | `dist/install-manifest.json` still points installers at `dist/skills` and `dist/catalog.json`, with no missing discovery fields. |
+| No npm publish attempted | Pass | No package, npm, registry, or publication action was performed. |
 
 ## Files changed
 
-- `dist/skills/building-incident-response-dashboard/SKILL.md`
-- `dist/skills/building-incident-timeline-with-timesketch/SKILL.md`
-- `dist/catalog.json`
-- `dist/catalog.md`
-- `reports/risk/2026-07-09-ir-dashboard-timesketch-risk-review.md`
+- `reports/catalog/2026-07-09-metadata-backfill-008-catalog-parity.md`
 - `operations/board.json`
 - `operations/value-ledger.json`
 - `operations/daily/2026-07-09/queues.json`
@@ -93,17 +95,16 @@ Risk evidence classified:
 - No online discovery or source review was performed.
 - No repository was cloned.
 - No third-party content was copied or normalized.
-- No Splunk, Elastic, Grafana, Sentinel, Timesketch, Plaso, Dissect, OpenSearch, PostgreSQL, Redis, Docker, API, SIEM, endpoint, cloud, forensic-evidence, or incident-record external action occurred.
 - No package, npm, registry, or publication action occurred.
 
 ## Value delta
 
-Removed the open IR dashboard/Timesketch package risk blocker while preserving safe defensive incident-dashboard and forensic-timeline planning guidance.
+Removed the catalog parity blocker after the IR dashboard and Timesketch risk review, allowing bounded metadata backlog cleanup to resume.
 
 ## Risk and publication state
 
 - Risk queue: clear.
-- Catalog queue: open for `skills-catalog-refresh-after-metadata-backfill-008`.
+- Catalog queue: clear.
 - GitTaskBench: watch/license-blocked.
 - Discovery Action handoff: still absent.
 - Remaining metadata backlog: open.
@@ -111,4 +112,8 @@ Removed the open IR dashboard/Timesketch package risk blocker while preserving s
 
 ## Next action
 
-`Cataloger` should consume `skills-catalog-refresh-after-metadata-backfill-008`.
+`Critic` should consume `skills-metadata-backfill-batch-009`.
+
+## Previous 2026-07-09 run summary
+
+Earlier 2026-07-09 runs included daily-ledger initialization, metadata backfills 003-008, associated risk reviews, and catalog parity gates through `skills-catalog-refresh-after-metadata-backfill-007`, followed by the IR dashboard/Timesketch risk review.
