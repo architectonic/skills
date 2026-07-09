@@ -14,22 +14,22 @@
 | `design` | 40 |
 | `forensics` | 26 |
 | `media` | 1 |
-| `research` | 84 |
+| `research` | 83 |
 | `runtime-tools` | 35 |
-| `security-defensive` | 61 |
+| `security-defensive` | 63 |
 | `security-offensive` | 16 |
 | `software-engineering` | 152 |
-| `uncategorized` | 555 |
+| `uncategorized` | 554 |
 | `writing` | 16 |
 
 ## Risk Levels
 
 | Risk | Count |
 |---|---:|
-| `high` | 17 |
+| `high` | 19 |
 | `low` | 11 |
 | `medium` | 439 |
-| `unspecified` | 716 |
+| `unspecified` | 714 |
 
 ## Install Notes
 
