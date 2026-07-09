@@ -9,13 +9,13 @@ status: active
 
 ## Latest board-driven heartbeat
 
-Ran `Risk Auditor` for board ticket `skills-risk-review-diagnosing-bugs-001`.
+Ran `Cataloger` for board ticket `skills-catalog-refresh-after-metadata-backfill-002`.
 
 ## Inspected state
 
 - Repository: `architectonic/skills`
 - Inspected ref: `main`
-- Inspected SHA before this ticket's first content write: `724b80ca9da3838a531d4717ed9fab4c14c881e8`
+- Inspected SHA before this ticket's first content write: `a6b80052ceb4fdcb0d9c9cf3ca09fdc07e3fa2ff`
 - Model requirement status: `model_setting_unverified`
 - Daily ledger present: yes
 - Missing-ledger initialization: no
@@ -37,49 +37,54 @@ Ran `Risk Auditor` for board ticket `skills-risk-review-diagnosing-bugs-001`.
 - `dist/catalog.md`
 - `dist/install-manifest.json`
 - `operations/action-runs/discover-skill-sources/latest.json` attempted and returned 404
+- `dist/skills/code-complexity-scanner/SKILL.md`
+- `dist/skills/code-review/SKILL.md`
+- `dist/skills/code-review-excellence/SKILL.md`
 - `dist/skills/diagnosing-bugs/SKILL.md`
 - `reports/critic/2026-07-08-metadata-backfill-batch-002.md`
+- `reports/risk/2026-07-08-diagnosing-bugs-risk-review.md`
 
 ## Work performed
 
-Closed `skills-risk-review-diagnosing-bugs-001`.
+Closed `skills-catalog-refresh-after-metadata-backfill-002`.
 
-Updated:
+Created:
 
-- `dist/skills/diagnosing-bugs/SKILL.md`
-- `reports/risk/2026-07-08-diagnosing-bugs-risk-review.md`
+- `reports/catalog/2026-07-08-metadata-backfill-002-catalog-parity.md`
 
-Unblocked next catalog gate:
+Verified catalog/install-manifest parity after:
 
-- `skills-catalog-refresh-after-metadata-backfill-002`
+- `skills-metadata-backfill-batch-002`
+- `skills-risk-review-diagnosing-bugs-001`
 
-## Risk-review evidence
+Opened next bounded metadata backlog ticket:
 
-| Surface | Result |
-|---|---|
-| Browser/headless automation | Classified high-risk and review-gated. |
-| DOM/console/network capture | Classified high-risk and review-gated. |
-| Captured trace replay | Classified high-risk and review-gated. |
-| Fixture loops | Preserved with synthetic/sanitized fixture preference. |
-| Fuzz/property loops | Preserved but bounded and review-gated for external side effects. |
-| Bisection harnesses | Preserved but review-gated when service boot, mutation, or external accounts are involved. |
-| HITL scripts | Preserved only as last resort with explicit stop conditions and no hidden mutation. |
+- `skills-metadata-backfill-batch-003`
 
-`Diagnosing Bugs` is now `domain: software-engineering`, `risk_level: medium`, `requires_review: true`, and `review_gate: repository-owner-authorized-diagnostics-only`.
+## Catalog evidence
+
+| Surface | Verified value |
+|---|---:|
+| Skill count | `1183` |
+| `software-engineering` domain count | `152` |
+| `uncategorized` domain count | `556` |
+| `high` risk count | `16` |
+| `low` risk count | `10` |
+| `medium` risk count | `439` |
+| `unspecified` risk count | `718` |
 
 ## Acceptance tests
 
 | Test | Result | Evidence |
 |---|---|---|
-| Browser/headless automation, trace replay, fixture, bisection, fuzz, and HITL surfaces are classified | Pass | Risk report and skill body classify each surface and gate browser/headless, capture, trace replay, fuzz, bisection, and HITL surfaces. |
-| Safe diagnostic guidance is preserved | Pass | Feedback-loop hierarchy, cause isolation, bisection, differential comparison, fix/verify, and regression-test guidance remain. |
-| Operational browser/session/trace-capture snippets are review-gated or removed if package-facing unsafe | Pass | No Playwright/Puppeteer commands, browser-session setup, trace-capture steps, real-payload replay commands, or credential/API-key usage remain. |
-| Catalog refresh remains blocked until review completes | Pass | This pass closed the risk review and changed the catalog parity ticket from blocked to ready; no catalog generation or publication was attempted. |
+| Catalog reflects Code Complexity Scanner as software-engineering low no-review | Pass | `Code Complexity Scanner` frontmatter is `software-engineering`, `low`, `requires_review: false`; catalog counts reflect the updated low-risk software-engineering state. |
+| Catalog reflects Code Review, Code Review Excellence, and Diagnosing Bugs as software-engineering medium requires_review | Pass | All three skill files carry `software-engineering`, `medium`, `requires_review: true`; catalog counts reflect the updated medium-risk software-engineering totals. |
+| Install manifest remains coherent | Pass | `dist/install-manifest.json` preserves discovery files and selection fields: `slug`, `title`, `domain`, `risk_level`, `tags`, `requires_review`. |
+| No npm publish attempted | Pass | No package, npm, registry, or publication action occurred. |
 
 ## Files changed
 
-- `dist/skills/diagnosing-bugs/SKILL.md`
-- `reports/risk/2026-07-08-diagnosing-bugs-risk-review.md`
+- `reports/catalog/2026-07-08-metadata-backfill-002-catalog-parity.md`
 - `operations/board.json`
 - `operations/value-ledger.json`
 - `operations/daily/2026-07-08/queues.json`
@@ -94,13 +99,11 @@ Unblocked next catalog gate:
 - No scripts or catalog generator were executed.
 - No generated catalog surface was hand-edited.
 - No third-party content was copied.
-- No browser session was opened.
-- No trace tooling was executed.
 - No package, npm, registry, or publication action was attempted.
 
 ## Value delta
 
-Removed the Diagnosing Bugs browser/headless/trace risk blocker while preserving useful diagnostic guidance. Catalog parity after metadata-backfill batch 002 is now ready and must run before further metadata backlog cleanup.
+Removed the catalog parity blocker created by metadata-backfill batch 002 and the Diagnosing Bugs risk review. The package-facing catalog and install manifest now reflect the updated reviewability/discoverability state for four software-engineering skills.
 
 ## Risk and publication state
 
@@ -116,7 +119,7 @@ Removed the Diagnosing Bugs browser/headless/trace risk blocker while preserving
 - Catalog parity after metadata backfill and Browser Trace review: done.
 - Metadata backfill batch 002: done.
 - Diagnosing Bugs risk review: done.
-- Catalog parity after metadata batch 002: ready and next.
+- Catalog parity after metadata batch 002: done.
 - GitTaskBench: watch/license-blocked.
 - Discovery Action handoff: still absent.
 - Remaining metadata backlog: open.
@@ -126,15 +129,14 @@ Removed the Diagnosing Bugs browser/headless/trace risk blocker while preserving
 
 | Change | Commit |
 |---|---|
-| Diagnosing Bugs skill risk-gated rewrite | `4f072ce832b22c7474bd6c22ed7e8c0954da436f` |
-| Risk report | `e544886bc8d8867a0e693b6a9b119c8e34a8a244` |
-| Board update | `637987d07b1d32a16d2fc69c70a674eef3b89d79` |
-| Daily queues update | `85fdf38157522d23a7325a0d6d429e8167ed8dcb` |
-| Value ledger update | `4482dc391a4f9ea188005d494ac67bb9b0162616` |
+| Catalog parity report | `cbde07df345de8c7c83691b118625ff6e491ba0b` |
+| Board update | `68d29e7eeb0bb0e534034e69e451846759a4d80e` |
+| Daily queues update | `d1c3a7e34b37cdd0a055ca7ad9cde4bd3d301bef` |
+| Value ledger update | `9a3c903a2311281e679ac38dfe062cafc9a389a0` |
 | Daily report update | `pending_final_connector_response` |
 | Daily status update | `pending_next_write` |
 | Operations log update | `pending_next_write` |
 
 ## Next action
 
-Cataloger should consume `skills-catalog-refresh-after-metadata-backfill-002` before further metadata backlog cleanup, package verification, or publication endorsement.
+Critic should consume `skills-metadata-backfill-batch-003`, stopping immediately on any high-risk executable, credential, offensive, account, browser, SSRF, private-data, or external-mutation surface.
