@@ -9,13 +9,13 @@ status: active
 
 ## Latest board-driven heartbeat
 
-Ran `Critic` for board ticket `skills-metadata-backfill-batch-002`.
+Ran `Risk Auditor` for board ticket `skills-risk-review-diagnosing-bugs-001`.
 
 ## Inspected state
 
 - Repository: `architectonic/skills`
 - Inspected ref: `main`
-- Inspected SHA before this ticket's first content write: `46f395d1b881de28edf6d7b87e9bfd2b10012603`
+- Inspected SHA before this ticket's first content write: `724b80ca9da3838a531d4717ed9fab4c14c881e8`
 - Model requirement status: `model_setting_unverified`
 - Daily ledger present: yes
 - Missing-ledger initialization: no
@@ -34,66 +34,52 @@ Ran `Critic` for board ticket `skills-metadata-backfill-batch-002`.
 - `operations/daily/2026-07-08/report.md`
 - `operations/log.md`
 - `dist/catalog.json`
+- `dist/catalog.md`
 - `dist/install-manifest.json`
 - `operations/action-runs/discover-skill-sources/latest.json` attempted and returned 404
-- `dist/skills/code-complexity-scanner/SKILL.md`
-- `dist/skills/code-review/SKILL.md`
-- `dist/skills/code-review-excellence/SKILL.md`
 - `dist/skills/diagnosing-bugs/SKILL.md`
+- `reports/critic/2026-07-08-metadata-backfill-batch-002.md`
 
 ## Work performed
 
-Closed bounded metadata-backfill batch 002.
+Closed `skills-risk-review-diagnosing-bugs-001`.
 
 Updated:
 
-- `dist/skills/code-complexity-scanner/SKILL.md`
-- `dist/skills/code-review/SKILL.md`
-- `dist/skills/code-review-excellence/SKILL.md`
-- `reports/critic/2026-07-08-metadata-backfill-batch-002.md`
+- `dist/skills/diagnosing-bugs/SKILL.md`
+- `reports/risk/2026-07-08-diagnosing-bugs-risk-review.md`
 
-Opened next risk gate:
-
-- `skills-risk-review-diagnosing-bugs-001`
-
-Blocked until risk review completes:
+Unblocked next catalog gate:
 
 - `skills-catalog-refresh-after-metadata-backfill-002`
 
-## Metadata evidence
+## Risk-review evidence
 
-| Skill | Metadata result |
+| Surface | Result |
 |---|---|
-| `Code Complexity Scanner` | `domain: software-engineering`, `risk_level: low`, `requires_review: false`, `source_status: reviewed-metadata-only` |
-| `Code Review` | `domain: software-engineering`, `risk_level: medium`, `requires_review: true`, `review_gate: repository-owner-authorized-review-only`, `source_status: native-or-curated-origin-unverified` |
-| `Code Review Excellence` | `domain: software-engineering`, `risk_level: medium`, `requires_review: true`, `review_gate: repository-owner-authorized-review-only`, `source_status: reviewed-metadata-only` |
+| Browser/headless automation | Classified high-risk and review-gated. |
+| DOM/console/network capture | Classified high-risk and review-gated. |
+| Captured trace replay | Classified high-risk and review-gated. |
+| Fixture loops | Preserved with synthetic/sanitized fixture preference. |
+| Fuzz/property loops | Preserved but bounded and review-gated for external side effects. |
+| Bisection harnesses | Preserved but review-gated when service boot, mutation, or external accounts are involved. |
+| HITL scripts | Preserved only as last resort with explicit stop conditions and no hidden mutation. |
 
-## Stop condition
-
-Stopped at `dist/skills/diagnosing-bugs/SKILL.md` after direct review found:
-
-- headless browser script surface;
-- Playwright / Puppeteer mention;
-- DOM / console / network assertion surface;
-- captured trace replay from real network payload or event log.
-
-The skill was not modified in this pass. A high-priority risk-review ticket was opened before catalog parity or further metadata cleanup.
+`Diagnosing Bugs` is now `domain: software-engineering`, `risk_level: medium`, `requires_review: true`, and `review_gate: repository-owner-authorized-diagnostics-only`.
 
 ## Acceptance tests
 
 | Test | Result | Evidence |
 |---|---|---|
-| Processes a bounded batch, not the entire catalog | Pass | Three skill files were classified; the pass stopped on the fourth reviewed skill. |
-| Adds domain/risk/requires_review/source status when justified | Pass | Updated frontmatter for Code Complexity Scanner, Code Review, and Code Review Excellence. |
-| Stops and creates risk ticket on unsafe material | Pass | Stopped at Diagnosing Bugs because of browser/headless automation and captured trace replay surfaces; opened `skills-risk-review-diagnosing-bugs-001`. |
-| Creates catalog refresh ticket after metadata changes | Pass | Opened `skills-catalog-refresh-after-metadata-backfill-002`, blocked until the generated risk review is complete. |
+| Browser/headless automation, trace replay, fixture, bisection, fuzz, and HITL surfaces are classified | Pass | Risk report and skill body classify each surface and gate browser/headless, capture, trace replay, fuzz, bisection, and HITL surfaces. |
+| Safe diagnostic guidance is preserved | Pass | Feedback-loop hierarchy, cause isolation, bisection, differential comparison, fix/verify, and regression-test guidance remain. |
+| Operational browser/session/trace-capture snippets are review-gated or removed if package-facing unsafe | Pass | No Playwright/Puppeteer commands, browser-session setup, trace-capture steps, real-payload replay commands, or credential/API-key usage remain. |
+| Catalog refresh remains blocked until review completes | Pass | This pass closed the risk review and changed the catalog parity ticket from blocked to ready; no catalog generation or publication was attempted. |
 
 ## Files changed
 
-- `dist/skills/code-complexity-scanner/SKILL.md`
-- `dist/skills/code-review/SKILL.md`
-- `dist/skills/code-review-excellence/SKILL.md`
-- `reports/critic/2026-07-08-metadata-backfill-batch-002.md`
+- `dist/skills/diagnosing-bugs/SKILL.md`
+- `reports/risk/2026-07-08-diagnosing-bugs-risk-review.md`
 - `operations/board.json`
 - `operations/value-ledger.json`
 - `operations/daily/2026-07-08/queues.json`
@@ -108,11 +94,13 @@ The skill was not modified in this pass. A high-priority risk-review ticket was 
 - No scripts or catalog generator were executed.
 - No generated catalog surface was hand-edited.
 - No third-party content was copied.
+- No browser session was opened.
+- No trace tooling was executed.
 - No package, npm, registry, or publication action was attempted.
 
 ## Value delta
 
-Improved package-facing discoverability and reviewability for three software-engineering skills while stopping before routine cleanup could pass over browser/headless debugging trace surfaces without a dedicated risk review.
+Removed the Diagnosing Bugs browser/headless/trace risk blocker while preserving useful diagnostic guidance. Catalog parity after metadata-backfill batch 002 is now ready and must run before further metadata backlog cleanup.
 
 ## Risk and publication state
 
@@ -127,8 +115,8 @@ Improved package-facing discoverability and reviewability for three software-eng
 - Browser Trace risk review: done.
 - Catalog parity after metadata backfill and Browser Trace review: done.
 - Metadata backfill batch 002: done.
-- Diagnosing Bugs risk review: open and next.
-- Catalog parity after metadata batch 002: blocked behind Diagnosing Bugs risk review.
+- Diagnosing Bugs risk review: done.
+- Catalog parity after metadata batch 002: ready and next.
 - GitTaskBench: watch/license-blocked.
 - Discovery Action handoff: still absent.
 - Remaining metadata backlog: open.
@@ -138,17 +126,15 @@ Improved package-facing discoverability and reviewability for three software-eng
 
 | Change | Commit |
 |---|---|
-| Code Complexity Scanner metadata | `f299fcf7ef0a7e2fc2aecd10f2478ada985e9bbe` |
-| Code Review metadata | `b14fd8f103ee0b815e92aa08699938a2f25bc78e` |
-| Code Review Excellence metadata | `c779898419d1111d8332a6979d891eab903ed521` |
-| Metadata batch 002 report | `0b7777f292b75265fe3ceb54c0cb1fb028148bbc` |
-| Board update | `7c06358adfb7115b68614210309a794ad8c572b6` |
-| Value ledger update | `d11d5ef6ce4370b98e64b7cd94fb1f4adeec8670` |
-| Daily queues update | `499395c99b837cfd86765b6a93b74915b4d17101` |
+| Diagnosing Bugs skill risk-gated rewrite | `4f072ce832b22c7474bd6c22ed7e8c0954da436f` |
+| Risk report | `e544886bc8d8867a0e693b6a9b119c8e34a8a244` |
+| Board update | `637987d07b1d32a16d2fc69c70a674eef3b89d79` |
+| Daily queues update | `85fdf38157522d23a7325a0d6d429e8167ed8dcb` |
+| Value ledger update | `4482dc391a4f9ea188005d494ac67bb9b0162616` |
 | Daily report update | `pending_final_connector_response` |
 | Daily status update | `pending_next_write` |
 | Operations log update | `pending_next_write` |
 
 ## Next action
 
-Risk Auditor should consume `skills-risk-review-diagnosing-bugs-001` before catalog parity, more metadata backfill, package verification, or publication endorsement.
+Cataloger should consume `skills-catalog-refresh-after-metadata-backfill-002` before further metadata backlog cleanup, package verification, or publication endorsement.
