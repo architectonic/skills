@@ -1,9 +1,9 @@
 {
   "date": "2026-07-09",
-  "current_state": "metadata_backfill_009_blocked_malware_incident_communication_risk_review_ready",
+  "current_state": "malware_incident_communication_risk_review_done_catalog_parity_ready",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "3d3989b2e2e1c4160efda36a77a3994a4d1df14f",
+  "inspected_sha": "89ac6db53937274001c95d8cbcf67264518c150f",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -21,31 +21,31 @@
     "medium_risk_count": 440,
     "low_risk_count": 11,
     "unspecified_risk_count": 706,
-    "catalog_build_status": "unchanged_no_metadata_backfill_applied",
-    "publication_readiness": "blocked_by_open_malware_incident_communication_risk_review_absent_discovery_action_handoff_license_blocked_gittaskbench_remaining_metadata_backlog_and_package_verification_gates"
+    "catalog_build_status": "catalog_parity_pending_after_risk_review",
+    "publication_readiness": "blocked_by_catalog_parity_absent_discovery_action_handoff_license_blocked_gittaskbench_remaining_metadata_backlog_and_package_verification_gates"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
-    "catalog": 0,
-    "risk": 1,
+    "catalog": 1,
+    "risk": 0,
     "packaging": 0,
     "publication": 0,
     "maintenance": 0,
     "critic": 0
   },
   "latest_run": {
-    "started_at": "2026-07-09T17:14:40-03:00",
-    "completed_at": "2026-07-09T17:14:40-03:00",
+    "started_at": "2026-07-09T18:14:18-03:00",
+    "completed_at": "2026-07-09T18:14:18-03:00",
     "scheduled_role": "Skills Value Operator",
-    "selected_role": "Critic",
-    "board_ticket_consumed": "skills-metadata-backfill-batch-009",
+    "selected_role": "Risk Auditor",
+    "board_ticket_consumed": "skills-risk-review-malware-incident-communication-template-001",
     "inspected_ref": "main",
-    "inspected_sha": "3d3989b2e2e1c4160efda36a77a3994a4d1df14f",
+    "inspected_sha": "89ac6db53937274001c95d8cbcf67264518c150f",
     "missing_ledger_initialization_performed": false,
     "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent from the default branch.",
-    "queue_item_consumed_or_created": "Blocked metadata-backfill-uncategorized-and-unspecified-risk-20260709-009 for risk review and opened risk-review-malware-incident-communication-template-20260709-001.",
+    "queue_item_consumed_or_created": "Completed risk-review-malware-incident-communication-template-20260709-001 and opened catalog-refresh-after-metadata-backfill-20260709-009.",
     "sources_reviewed": [
       "operations/heartbeat.md",
       "operations/board.json",
@@ -59,11 +59,12 @@
       "dist/catalog.json",
       "dist/catalog.md",
       "dist/install-manifest.json",
-      "reports/catalog/2026-07-09-metadata-backfill-008-catalog-parity.md",
+      "reports/critic/2026-07-09-metadata-backfill-batch-009.md",
       "dist/skills/building-malware-incident-communication-template/SKILL.md"
     ],
     "files_changed": [
-      "reports/critic/2026-07-09-metadata-backfill-batch-009.md",
+      "dist/skills/building-malware-incident-communication-template/SKILL.md",
+      "reports/risk/2026-07-09-malware-incident-communication-template-risk-review.md",
       "operations/board.json",
       "operations/value-ledger.json",
       "operations/daily/2026-07-09/queues.json",
@@ -73,43 +74,48 @@
     ],
     "acceptance_tests": [
       {
-        "test": "processes a bounded batch, not the entire catalog",
+        "test": "malware incident disclosure, regulatory, customer, media, legal/comms, and executive briefing surfaces are classified",
         "result": "pass",
-        "evidence": "Reviewed only the malware incident communication template skill plus required board/catalog/context files."
+        "evidence": "Skill now classifies external, regulated, executive, media, customer, and legal/comms workflows as review-gated."
       },
       {
-        "test": "adds domain/risk/requires_review/source status when justified",
+        "test": "private/personal data, incident IDs, contact details, affected-system details, and IOC placeholders are classified",
         "result": "pass",
-        "evidence": "No metadata was added because the first candidate tripped the review-sensitive private-data/regulatory/comms gate before routine endorsement."
+        "evidence": "Skill redaction and classified-risk sections cover private data, incident IDs, contact/escalation details, affected systems, and IOCs."
       },
       {
-        "test": "stops and creates risk ticket on unsafe material",
+        "test": "safe defensive communication-planning guidance is preserved or bounded",
         "result": "pass",
-        "evidence": "Opened skills-risk-review-malware-incident-communication-template-001."
+        "evidence": "Skill preserves communication planning workflow, audience matrix, evidence binding, review checklist, and release governance."
       },
       {
-        "test": "creates catalog refresh ticket after metadata changes",
+        "test": "package-facing sensitive notification templates are review-gated, redacted, or removed",
         "result": "pass",
-        "evidence": "No catalog refresh ticket was created because no skill metadata/catalog changes were made; catalog refresh remains blocked until risk review completes."
+        "evidence": "Detailed notification templates were replaced with a redacted planning skeleton and reviewer requirements."
+      },
+      {
+        "test": "catalog refresh remains blocked until review completes",
+        "result": "pass",
+        "evidence": "Risk review completed and opened skills-catalog-refresh-after-metadata-backfill-009; catalog surfaces were not changed in this risk-review pass."
       }
     ],
     "catalog_package_npm_status": "No generated catalog, install-manifest, package, npm, registry, or publication file was changed in this ticket.",
     "blockers": [
-      "Open malware incident communication risk review.",
+      "Catalog parity after malware incident communication risk review.",
       "Discovery Action handoff remains absent; manual fallback and source review artifacts exist but producer verification remains blocked.",
       "GitTaskBench remains watch/license-blocked because LICENSE returned 404 during source review.",
       "Remaining metadata backlog remains open.",
       "Package/publication endorsement remains blocked until discovery Action, source/license, metadata backlog, risk, catalog, and package verification gates are clean."
     ],
-    "value_delta": "Prevented malware incident communication/regulatory/private-data/IOC/external-stakeholder material from routine metadata endorsement before risk review."
+    "value_delta": "Removed the malware incident communication package-facing risk blocker by converting the skill into a high-risk requires_review defensive governance wrapper."
   },
   "blockers": [
-    "Open malware incident communication risk review.",
+    "Catalog parity after malware incident communication risk review.",
     "Discovery Action handoff remains absent; manual fallback and source review artifacts exist but producer verification remains blocked.",
     "GitTaskBench remains watch/license-blocked because LICENSE returned 404 during source review.",
     "Remaining metadata backlog remains open.",
     "Package/publication endorsement remains blocked until discovery Action, source/license, metadata backlog, risk, catalog, and package verification gates are clean."
   ],
   "last_commit": "pending_final_connector_response",
-  "next_action": "Risk Auditor should consume skills-risk-review-malware-incident-communication-template-001."
+  "next_action": "Cataloger should consume skills-catalog-refresh-after-metadata-backfill-009."
 }
