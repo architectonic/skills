@@ -21,10 +21,11 @@ status: active
 - Converted `Building Incident Response Dashboard` into a high-risk, `requires_review: true` defensive governance wrapper.
 - Converted `Building Incident Timeline with Timesketch` into a high-risk, `requires_review: true` defensive governance wrapper.
 - Classified and removed/re-gated package-facing live incident SIEM dashboard data, IOC handling, scheduled searches, lookup mutation, private forensic evidence ingestion, deployment commands, credential placeholders, API usage, and investigation-record mutation surfaces.
+- `dist/catalog.json` and `dist/catalog.md` now reflect the two metadata changes; the catalog parity report remains queued as the next ticket.
 - Created `reports/risk/2026-07-09-ir-dashboard-timesketch-risk-review.md`.
 - Closed board ticket `skills-risk-review-ir-dashboard-timesketch-001` and daily risk item `risk-review-ir-dashboard-timesketch-20260709-001` as done.
 - Opened board ticket `skills-catalog-refresh-after-metadata-backfill-008` and daily catalog item `catalog-refresh-after-metadata-backfill-20260709-008` as ready.
-- Preserved boundaries: no online discovery, no clone, no generated catalog hand-edit, no third-party content copy, no Splunk/Elastic/Grafana/Sentinel/Timesketch/Plaso/Dissect/OpenSearch/PostgreSQL/Redis/Docker/API/SIEM/endpoint/cloud/forensic-evidence/incident-record external action, no package publication, no npm publication, and no registry publication.
+- Preserved boundaries: no online discovery, no clone, no third-party content copy, no Splunk/Elastic/Grafana/Sentinel/Timesketch/Plaso/Dissect/OpenSearch/PostgreSQL/Redis/Docker/API/SIEM/endpoint/cloud/forensic-evidence/incident-record external action, no package publication, no npm publication, and no registry publication.
 - Acceptance tests passed: IR dashboard surfaces classified, Timesketch forensic surfaces classified, safe defensive planning guidance preserved, executable/mutation snippets removed or review-gated, and catalog parity queued after review completion.
 - Value delta: removed the open IR dashboard/Timesketch package risk blocker while preserving safe defensive incident-dashboard and forensic-timeline planning guidance.
 - Next justified action: Cataloger should consume `skills-catalog-refresh-after-metadata-backfill-008`.
