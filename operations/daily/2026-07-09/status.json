@@ -1,9 +1,9 @@
 {
   "date": "2026-07-09",
-  "current_state": "risk_review_required_after_metadata_backfill_batch_003",
+  "current_state": "catalog_parity_required_after_metadata_backfill_batch_003_and_risk_review",
   "repo": "architectonic/skills",
   "inspected_ref": "main",
-  "inspected_sha": "b57378eef9bb47f6739b3f4075f7d2852f74add5",
+  "inspected_sha": "1afc9b11df4ced6b8908342c901f28abafe4ec70",
   "model_requirement_status": "model_setting_unverified",
   "missing_ledger_initialization_performed": false,
   "package": {
@@ -16,36 +16,36 @@
     "catalog_skill_count": 1183,
     "agent_operations_count": 108,
     "software_engineering_count": 152,
-    "uncategorized_count": 556,
+    "uncategorized_count": 555,
     "high_risk_count": 16,
     "medium_risk_count": 439,
-    "low_risk_count": 10,
-    "unspecified_risk_count": 718,
-    "catalog_build_status": "stale_after_ai_seo_metadata_change_until_catalog_parity_ticket_runs",
-    "publication_readiness": "blocked_by_open_risk_review_absent_discovery_action_handoff_license_blocked_gittaskbench_remaining_metadata_backlog_and_package_verification_gates"
+    "low_risk_count": 11,
+    "unspecified_risk_count": 717,
+    "catalog_build_status": "stale_after_email_header_and_golang_malware_risk_review_until_catalog_parity_ticket_runs",
+    "publication_readiness": "blocked_by_catalog_parity_absent_discovery_action_handoff_license_blocked_gittaskbench_remaining_metadata_backlog_and_package_verification_gates"
   },
   "queues": {
     "discovery": 0,
     "review": 0,
     "normalization": 0,
     "catalog": 1,
-    "risk": 1,
+    "risk": 0,
     "packaging": 0,
     "publication": 0,
     "maintenance": 0,
     "critic": 0
   },
   "latest_run": {
-    "started_at": "2026-07-09T01:14:44-03:00",
-    "completed_at": "2026-07-09T01:14:44-03:00",
+    "started_at": "2026-07-09T02:11:10-03:00",
+    "completed_at": "2026-07-09T02:11:10-03:00",
     "scheduled_role": "Skills Value Operator",
-    "selected_role": "Critic",
-    "board_ticket_consumed": "skills-metadata-backfill-batch-003",
+    "selected_role": "Risk Auditor",
+    "board_ticket_consumed": "skills-risk-review-email-header-and-golang-malware-analysis-001",
     "inspected_ref": "main",
-    "inspected_sha": "b57378eef9bb47f6739b3f4075f7d2852f74add5",
+    "inspected_sha": "1afc9b11df4ced6b8908342c901f28abafe4ec70",
     "missing_ledger_initialization_performed": false,
     "action_handoff_state": "operations/action-runs/discover-skill-sources/latest.json remains absent from the default branch.",
-    "queue_item_consumed_or_created": "Closed critic queue item metadata-backfill-uncategorized-and-unspecified-risk-20260709-003; created risk-review-email-header-and-golang-malware-analysis-20260709-001 and blocked catalog-refresh-after-metadata-backfill-20260709-003.",
+    "queue_item_consumed_or_created": "Closed risk-review-email-header-and-golang-malware-analysis-20260709-001; unblocked catalog-refresh-after-metadata-backfill-20260709-003.",
     "sources_reviewed": [
       "operations/heartbeat.md",
       "operations/board.json",
@@ -58,55 +58,56 @@
       "dist/catalog.json",
       "dist/catalog.md",
       "dist/install-manifest.json",
-      "dist/skills/ai-seo/SKILL.md",
       "dist/skills/analyzing-email-headers-for-phishing-investigation/SKILL.md",
-      "dist/skills/analyzing-golang-malware-with-ghidra/SKILL.md"
+      "dist/skills/analyzing-golang-malware-with-ghidra/SKILL.md",
+      "reports/critic/2026-07-09-metadata-backfill-batch-003.md"
     ],
     "files_changed": [
-      "dist/skills/ai-seo/SKILL.md",
-      "reports/critic/2026-07-09-metadata-backfill-batch-003.md",
+      "dist/skills/analyzing-email-headers-for-phishing-investigation/SKILL.md",
+      "dist/skills/analyzing-golang-malware-with-ghidra/SKILL.md",
+      "reports/risk/2026-07-09-email-header-and-golang-malware-analysis-risk-review.md",
       "operations/board.json",
       "operations/daily/2026-07-09/queues.json",
+      "operations/value-ledger.json",
       "operations/daily/2026-07-09/status.json",
       "operations/daily/2026-07-09/report.md",
-      "operations/value-ledger.json",
       "operations/log.md"
     ],
     "commit_shas": {
-      "ai_seo_metadata": "de65f92f5db27ab43472c51694fe9bb50fc9e42b",
-      "critic_report": "b14919f9e17abf1041e6870553f510a391eea86a",
-      "board_update": "b3d703d5979bd276d6076ff69ea8eb861201d6d1",
-      "queues_update": "00bd3c0047e23dc8e520e5dbebae56de4b546788",
+      "email_header_skill_risk_wrapper": "9311795353cd22439e01b69637f9c95247d6c218",
+      "golang_malware_skill_risk_wrapper": "d08e29161e8059b31d6e3b02d357f164abba8bd9",
+      "risk_report": "7974343e66c95f29a437c2ab3be96b5a46c8f697",
+      "board_update": "f52632f3f360e16dc43b105f98e8c29e95e35f1f",
+      "queues_update": "009c613cac937f8b56492b200fa2d11935fa08a9",
+      "value_ledger_update": "07e69079a3a76ea2cecb2ac2f280f2c1099825fe",
       "status_update": "pending_connector_response",
       "daily_report_update": "pending_next_write",
-      "value_ledger_update": "pending_next_write",
       "log_update": "pending_next_write"
     },
     "acceptance_tests": [
-      {"test": "processes a bounded batch, not the entire catalog", "result": "pass", "evidence": "Only AI SEO was backfilled before stopping on risk surfaces."},
-      {"test": "adds domain/risk/requires_review/source status when justified", "result": "pass", "evidence": "AI SEO now has business/low/no-review/source metadata."},
-      {"test": "stops and creates risk ticket on unsafe material", "result": "pass", "evidence": "Created skills-risk-review-email-header-and-golang-malware-analysis-001 for private-data, API-key, external reputation submission, malware-analysis, and executable reverse-engineering surfaces."},
-      {"test": "creates catalog refresh ticket after metadata changes", "result": "pass", "evidence": "Created blocked skills-catalog-refresh-after-metadata-backfill-003."}
+      {"test": "private mailbox/header/body/attachment evidence surfaces are classified", "result": "pass", "evidence": "Email header skill now declares high risk, requires review, authorized incident-response-only gate, and private evidence handling boundaries."},
+      {"test": "external reputation/API-key and third-party submission boundaries are classified", "result": "pass", "evidence": "Package-facing API/reputation command snippets were removed and third-party enrichment is blocked unless separately approved."},
+      {"test": "malware binary-analysis/Ghidra script surfaces are classified", "result": "pass", "evidence": "Golang malware/Ghidra skill now declares high risk, requires review, authorized isolated malware-analysis-only gate, and no executable parser or Ghidra script content remains."},
+      {"test": "safe defensive analysis guidance is preserved or bounded", "result": "pass", "evidence": "Both skills retain defensive workflows, classification guidance, and safe report templates."},
+      {"test": "catalog refresh remains blocked until review completes", "result": "pass", "evidence": "No catalog surface was edited in this ticket; catalog parity is now the next ready ticket after the risk review completed."}
     ],
-    "catalog_package_npm_status": "Catalog surfaces are stale after AI SEO metadata change until catalog parity runs. No package, npm, registry, or publication action occurred.",
+    "catalog_package_npm_status": "Catalog surfaces are stale until catalog parity runs. No package, npm, registry, or publication action occurred.",
     "blockers": [
-      "Risk review is open for email-header phishing investigation and Golang malware analysis.",
-      "Catalog parity after metadata batch 003 is blocked until risk review completes.",
+      "Catalog parity after metadata batch 003 and risk review is required.",
       "Discovery Action handoff remains absent; manual fallback and source review artifacts exist but producer verification remains blocked.",
       "GitTaskBench remains watch/license-blocked because LICENSE returned 404 during source review.",
-      "Remaining metadata backlog is large: catalog carry-forward counts show 556 uncategorized-domain and 718 unspecified-risk entries before this run's catalog parity update.",
+      "Remaining metadata backlog remains open.",
       "Package/publication endorsement remains blocked until discovery Action, source/license, metadata backlog, risk, catalog, and package verification gates are clean."
     ],
-    "value_delta": "Improved package-facing metadata for AI SEO while blocking private-data and malware-analysis workflows from routine metadata endorsement."
+    "value_delta": "Removed private-data and malware-analysis risk blockers by converting two package-facing skills into high-risk review-gated defensive wrappers."
   },
   "blockers": [
-    "Risk review is open for email-header phishing investigation and Golang malware analysis.",
-    "Catalog parity after metadata batch 003 is blocked until risk review completes.",
+    "Catalog parity after metadata batch 003 and risk review is required.",
     "Discovery Action handoff remains absent; manual fallback and source review artifacts exist but producer verification remains blocked.",
     "GitTaskBench remains watch/license-blocked because LICENSE returned 404 during source review.",
     "Remaining metadata backlog remains open.",
     "Package/publication endorsement remains blocked until discovery Action, source/license, metadata backlog, risk, catalog, and package verification gates are clean."
   ],
   "last_commit": "pending_final_connector_response",
-  "next_action": "Risk Auditor should consume skills-risk-review-email-header-and-golang-malware-analysis-001 before catalog refresh or further metadata backlog cleanup."
+  "next_action": "Cataloger should consume skills-catalog-refresh-after-metadata-backfill-003 before further metadata backlog cleanup."
 }
