@@ -1,356 +1,114 @@
 ---
 name: Building IOC Defanging and Sharing Pipeline
-description: Build an automated pipeline to defang indicators of compromise (URLs,
-tags: [software-development, software-development, agent-skill, okf, ioc, defanging, threat-sharing, stix, pipeline, indicator, automation, threat-intelligence, security]
+description: Review-gated defensive guidance for handling, defanging, and sharing indicators of compromise without exposing active malicious indicators, credentials, or automated external submission paths.
+tags: [security-defensive, incident-response, ioc, defanging, threat-intelligence, governance, stix, taxii, misp, review-gated]
 license: Apache-2.0
 type: Playbook
+domain: security-defensive
+risk_level: high
+requires_review: true
+source_status: package_risk_reviewed
+reviewed_at: 2026-07-09
+reviewed_by: Skills Value Operator
 ---
 
 # Building IOC Defanging and Sharing Pipeline
 
-## Overview
+## Purpose
 
-IOC defanging modifies potentially malicious indicators (URLs, IP addresses, domains, email addresses) to prevent accidental clicks or execution while preserving readability for analysis and sharing. This skill covers building an automated pipeline that ingests raw IOCs from multiple sources, normalizes and deduplicates them, applies defanging for safe human consumption, converts them to STIX 2.1 format for machine consumption, and distributes through TAXII servers, MISP instances, and email reports.
+Use this skill to design or review a defensive IOC handling pipeline for authorized security operations. It is intentionally review-gated because IOC extraction, refanging, STIX/TAXII/MISP integration, API-key usage, and external threat-intelligence sharing can expose malicious indicators, leak private incident evidence, or mutate external systems.
 
+This package-facing version is a governance wrapper. It does not provide executable submission code, live MISP/TAXII calls, API-key examples, automated feed distribution, or operational refanging routines.
 
-## When to Use
+## Allowed Use
 
-- When deploying or configuring building ioc defanging and sharing pipeline capabilities in your environment
-- When establishing security controls aligned to compliance requirements
-- When building or improving security architecture for this domain
-- When conducting security assessments that require this implementation
+Use this skill when you need to:
 
-## Prerequisites
+- define policy for safe IOC handling and defanging;
+- review whether IOC material is authorized, shareable, and correctly labeled;
+- design approval gates before publishing indicators to partners, MISP, TAXII, SIEM, SOAR, or email channels;
+- document defensive handling requirements for reports, tickets, and analyst handoffs;
+- verify that internal pipelines avoid accidental activation, leakage, or unaudited external mutation.
 
-- Python 3.9+ with `defang`, `ioc-fanger`, `stix2`, `requests`, `validators` libraries
-- MISP instance or TAXII server for automated sharing
-- Understanding of IOC types: IPv4/IPv6, domains, URLs, email addresses, file hashes
-- Familiarity with STIX 2.1 Indicator patterns and TLP marking definitions
-- Access to threat intelligence feeds for IOC ingestion
+Do not use this skill to harvest, activate, test, submit, or distribute indicators without explicit authorization and human approval.
 
-## Key Concepts
+## Risk Classification
 
-### IOC Defanging Standards
+High-risk surfaces requiring review:
 
-Defanging replaces active protocol and domain components to prevent execution: `http://` becomes `hxxp://`, `https://` becomes `hxxps://`, dots in domains/IPs become `[.]`, `@` in emails becomes `[@]`. This is critical for sharing IOCs in reports, emails, Slack channels, and paste sites where auto-linking could trigger network connections to malicious infrastructure.
+- IOC extraction from incident reports, mailbox data, tickets, logs, malware reports, or third-party feeds;
+- refanging or normalizing defanged malicious URLs, domains, IPs, email addresses, and hashes;
+- STIX bundle generation from unreviewed indicators;
+- MISP, TAXII, SIEM, SOAR, email, chat, or feed distribution;
+- API keys, passwords, tokens, connector credentials, or service accounts;
+- external submissions that can create, enrich, block, quarantine, alert, or publish indicators;
+- handling private, customer, partner, embargoed, or leaked threat-intelligence material.
 
-### IOC Normalization
+## Safe Design Principles
 
-Raw IOCs from different sources come in inconsistent formats. Normalization involves converting to lowercase, removing trailing slashes and whitespace, extracting domains from URLs, resolving URL encoding, validating format correctness, and deduplicating across sources.
+1. **Preserve authorization.** Only process IOC data from approved sources and within the scope of a documented defensive investigation.
+2. **Keep indicators inert by default.** Human-facing outputs should be defanged unless a reviewer explicitly approves machine-readable export.
+3. **Separate analysis from publication.** Extraction, review, enrichment, and sharing should be separate stages with audit records between them.
+4. **Minimize private evidence.** Strip message bodies, user identifiers, internal hostnames, customer names, and nonessential incident context before sharing.
+5. **Require explicit TLP and audience controls.** Every shared indicator set should include traffic-light protocol, distribution scope, confidence, source, and expiry metadata.
+6. **Prefer dry-run previews.** Analysts should review proposed indicator records before any external system receives them.
+7. **Log decisions, not secrets.** Audit records should identify approvers, sources, timestamps, and destinations without storing API keys or sensitive raw payloads.
 
-### STIX 2.1 Indicator Patterns
+## Review Checklist
 
-STIX patterns express IOCs in a standardized format: `[ipv4-addr:value = '203.0.113.1']`, `[domain-name:value = 'malicious.example.com']`, `[url:value = 'http://evil.com/payload']`, `[file:hashes.'SHA-256' = 'abc123...']`. Each indicator includes valid_from, indicator_types, confidence, and optional TLP markings.
+Before any IOC sharing pipeline is approved, confirm:
 
-## Workflow
+- the data source is authorized and documented;
+- all indicators are relevant to a defensive investigation;
+- false positives and known-good infrastructure have been removed;
+- private or regulated data has been redacted;
+- TLP, confidence, retention, and expiration are set;
+- intended recipients and external systems are approved;
+- API keys and connector credentials are stored outside skill content and logs;
+- a human reviewer has approved the exact payload and destination;
+- rollback or takedown procedures exist for erroneous submissions.
 
-### Step 1: Build IOC Extraction and Normalization
+## Recommended Pipeline Shape
 
-```python
-import re
-import hashlib
-from urllib.parse import urlparse, unquote
-from datetime import datetime
+A safe IOC pipeline should be staged as follows:
 
-class IOCExtractor:
-    """Extract and normalize IOCs from text."""
+1. **Intake:** collect only authorized incident evidence or trusted feed data.
+2. **Sanitize:** remove private context and normalize records in an internal workspace.
+3. **Defang for review:** produce inert analyst-facing indicators for human inspection.
+4. **Classify:** assign type, source, confidence, TLP, expiry, and distribution limits.
+5. **Approve:** require human approval before any machine-readable or external publication.
+6. **Export:** generate controlled output for approved destinations only.
+7. **Audit:** record source, reviewer, destination, and decision metadata.
+8. **Monitor:** track false positives, expiry, revocation, and partner feedback.
 
-    PATTERNS = {
-        "ipv4": r'\b(?:(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\b',
-        "domain": r'\b(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}\b',
-        "url": r'https?://[^\s<>"{}|\\^`\[\]]+',
-        "email": r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b',
-        "md5": r'\b[a-fA-F0-9]{32}\b',
-        "sha1": r'\b[a-fA-F0-9]{40}\b',
-        "sha256": r'\b[a-fA-F0-9]{64}\b',
-    }
+## Blocked Package-Facing Content
 
-    WHITELIST_DOMAINS = {
-        "google.com", "microsoft.com", "amazon.com", "github.com",
-        "cloudflare.com", "akamai.com", "example.com",
-    }
+The following are intentionally omitted from this package-facing skill:
 
-    def extract_from_text(self, text):
-        """Extract all IOC types from free text."""
-        # Refang any already-defanged indicators first
-        text = self._refang(text)
-        iocs = {"ipv4": set(), "domain": set(), "url": set(),
-                "email": set(), "md5": set(), "sha1": set(), "sha256": set()}
+- executable IOC extractors that refang or activate indicators;
+- STIX bundle generation snippets for malicious indicators;
+- MISP or TAXII client code;
+- API-key, username, password, or token examples;
+- authenticated external submission examples;
+- automated distribution to partners, email, chat, SIEM, SOAR, or blocklists;
+- sample malicious domains, URLs, or hashes presented as operational payloads.
 
-        for ioc_type, pattern in self.PATTERNS.items():
-            matches = re.findall(pattern, text)
-            for match in matches:
-                normalized = self._normalize(match, ioc_type)
-                if normalized and not self._is_whitelisted(normalized, ioc_type):
-                    iocs[ioc_type].add(normalized)
+Use internal, reviewed runbooks for implementation details when the environment, authorization, data handling policy, and destination controls are known.
 
-        # Remove domains that are part of URLs
-        url_domains = set()
-        for url in iocs["url"]:
-            parsed = urlparse(url)
-            url_domains.add(parsed.netloc)
-        iocs["domain"] -= url_domains
+## Acceptance Criteria
 
-        total = sum(len(v) for v in iocs.values())
-        print(f"[+] Extracted {total} unique IOCs from text")
-        return {k: sorted(v) for k, v in iocs.items()}
+A use of this skill is acceptable only when:
 
-    def _refang(self, text):
-        """Convert defanged indicators back to active form."""
-        text = text.replace("hxxp://", "http://").replace("hxxps://", "https://")
-        text = text.replace("[.]", ".").replace("[@]", "@")
-        text = text.replace("[://]", "://").replace("(.)", ".")
-        return text
-
-    def _normalize(self, value, ioc_type):
-        """Normalize an IOC value."""
-        value = value.strip().lower()
-        if ioc_type == "url":
-            value = unquote(value).rstrip("/")
-        elif ioc_type == "domain":
-            value = value.rstrip(".")
-        return value
-
-    def _is_whitelisted(self, value, ioc_type):
-        """Check if IOC is in whitelist."""
-        if ioc_type == "domain":
-            return value in self.WHITELIST_DOMAINS
-        if ioc_type == "url":
-            parsed = urlparse(value)
-            return parsed.netloc in self.WHITELIST_DOMAINS
-        return False
-
-extractor = IOCExtractor()
-sample_text = """
-Malware C2: hxxps://evil-domain[.]com/beacon
-Drops payload from 192.168.1.100 and contacts 10[.]0[.]0[.]1
-SHA256: 275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f
-Phishing email from attacker[@]phishing-domain[.]com
-"""
-iocs = extractor.extract_from_text(sample_text)
-```
-
-### Step 2: Defanging Engine
-
-```python
-class IOCDefanger:
-    """Defang IOCs for safe sharing in reports and communications."""
-
-    def defang_url(self, url):
-        return url.replace("http://", "hxxp://").replace("https://", "hxxps://").replace(".", "[.]")
-
-    def defang_domain(self, domain):
-        return domain.replace(".", "[.]")
-
-    def defang_ip(self, ip):
-        return ip.replace(".", "[.]")
-
-    def defang_email(self, email):
-        return email.replace("@", "[@]").replace(".", "[.]")
-
-    def defang_all(self, iocs):
-        """Defang all IOCs in a dictionary."""
-        defanged = {}
-        for ioc_type, values in iocs.items():
-            if ioc_type == "url":
-                defanged[ioc_type] = [self.defang_url(v) for v in values]
-            elif ioc_type == "domain":
-                defanged[ioc_type] = [self.defang_domain(v) for v in values]
-            elif ioc_type == "ipv4":
-                defanged[ioc_type] = [self.defang_ip(v) for v in values]
-            elif ioc_type == "email":
-                defanged[ioc_type] = [self.defang_email(v) for v in values]
-            else:
-                defanged[ioc_type] = values  # Hashes don't need defanging
-        return defanged
-
-    def generate_sharing_report(self, iocs, defanged, report_name="IOC Report"):
-        """Generate a human-readable defanged IOC report."""
-        report = f"# {report_name}\n"
-        report += f"Generated: {datetime.now().isoformat()}\n\n"
-
-        for ioc_type in ["url", "domain", "ipv4", "email", "sha256", "sha1", "md5"]:
-            values = defanged.get(ioc_type, [])
-            if values:
-                report += f"## {ioc_type.upper()} ({len(values)})\n"
-                for v in values:
-                    report += f"- `{v}`\n"
-                report += "\n"
-
-        return report
-
-defanger = IOCDefanger()
-defanged = defanger.defang_all(iocs)
-report = defanger.generate_sharing_report(iocs, defanged, "Malware Campaign IOCs")
-print(report)
-```
-
-### Step 3: Convert to STIX 2.1 Format
-
-```python
-from stix2 import Indicator, Bundle, TLP_WHITE, TLP_GREEN, TLP_AMBER
-from datetime import datetime
-
-class STIXConverter:
-    """Convert raw IOCs to STIX 2.1 Indicator objects."""
-
-    TLP_MAP = {"white": TLP_WHITE, "green": TLP_GREEN, "amber": TLP_AMBER}
-
-    def iocs_to_stix(self, iocs, tlp="green", confidence=75):
-        """Convert IOC dictionary to STIX 2.1 bundle."""
-        stix_objects = []
-        marking = self.TLP_MAP.get(tlp, TLP_GREEN)
-
-        for ip in iocs.get("ipv4", []):
-            stix_objects.append(Indicator(
-                name=f"Malicious IP: {ip}",
-                pattern=f"[ipv4-addr:value = '{ip}']",
-                pattern_type="stix",
-                valid_from=datetime.now(),
-                indicator_types=["malicious-activity"],
-                confidence=confidence,
-                object_marking_refs=[marking],
-            ))
-
-        for domain in iocs.get("domain", []):
-            stix_objects.append(Indicator(
-                name=f"Malicious Domain: {domain}",
-                pattern=f"[domain-name:value = '{domain}']",
-                pattern_type="stix",
-                valid_from=datetime.now(),
-                indicator_types=["malicious-activity"],
-                confidence=confidence,
-                object_marking_refs=[marking],
-            ))
-
-        for url in iocs.get("url", []):
-            escaped = url.replace("'", "\\'")
-            stix_objects.append(Indicator(
-                name=f"Malicious URL: {url[:60]}",
-                pattern=f"[url:value = '{escaped}']",
-                pattern_type="stix",
-                valid_from=datetime.now(),
-                indicator_types=["malicious-activity"],
-                confidence=confidence,
-                object_marking_refs=[marking],
-            ))
-
-        for sha256 in iocs.get("sha256", []):
-            stix_objects.append(Indicator(
-                name=f"Malicious File Hash: {sha256[:16]}...",
-                pattern=f"[file:hashes.'SHA-256' = '{sha256}']",
-                pattern_type="stix",
-                valid_from=datetime.now(),
-                indicator_types=["malicious-activity"],
-                confidence=confidence,
-                object_marking_refs=[marking],
-            ))
-
-        bundle = Bundle(objects=stix_objects)
-        print(f"[+] Created STIX bundle with {len(stix_objects)} indicators")
-        return bundle
-
-converter = STIXConverter()
-stix_bundle = converter.iocs_to_stix(iocs, tlp="amber", confidence=80)
-with open("iocs_stix_bundle.json", "w") as f:
-    f.write(stix_bundle.serialize(pretty=True))
-```
-
-### Step 4: Distribute Through MISP and TAXII
-
-```python
-import requests
-import json
-
-class IOCDistributor:
-    """Distribute IOCs through various channels."""
-
-    def push_to_misp(self, iocs, misp_url, misp_key, event_info):
-        """Push IOCs to MISP as a new event."""
-        headers = {
-            "Authorization": misp_key,
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-        }
-        event = {
-            "Event": {
-                "info": event_info,
-                "distribution": "1",  # This community only
-                "threat_level_id": "2",  # Medium
-                "analysis": "2",  # Completed
-                "Attribute": [],
-            }
-        }
-
-        type_mapping = {
-            "ipv4": "ip-dst",
-            "domain": "domain",
-            "url": "url",
-            "email": "email-src",
-            "md5": "md5",
-            "sha1": "sha1",
-            "sha256": "sha256",
-        }
-
-        for ioc_type, values in iocs.items():
-            misp_type = type_mapping.get(ioc_type)
-            if misp_type:
-                for value in values:
-                    event["Event"]["Attribute"].append({
-                        "type": misp_type,
-                        "value": value,
-                        "category": "Network activity" if ioc_type in ("ipv4", "domain", "url") else "Payload delivery",
-                        "to_ids": True,
-                    })
-
-        resp = requests.post(
-            f"{misp_url}/events",
-            headers=headers,
-            json=event,
-            verify=not os.environ.get("SKIP_TLS_VERIFY", "").lower() == "true",  # Set SKIP_TLS_VERIFY=true for self-signed certs in lab environments
-        )
-        if resp.status_code == 200:
-            event_id = resp.json().get("Event", {}).get("id", "")
-            print(f"[+] MISP event created: {event_id}")
-            return event_id
-        else:
-            print(f"[-] MISP error: {resp.status_code} - {resp.text[:200]}")
-            return None
-
-    def push_to_taxii(self, stix_bundle, taxii_url, collection_id, username, password):
-        """Push STIX bundle to TAXII 2.1 collection."""
-        from taxii2client.v21 import Collection
-        collection = Collection(
-            f"{taxii_url}/collections/{collection_id}/",
-            user=username, password=password,
-        )
-        response = collection.add_objects(stix_bundle.serialize())
-        print(f"[+] TAXII: Published bundle, status: {response.status}")
-        return response
-
-distributor = IOCDistributor()
-distributor.push_to_misp(
-    iocs,
-    misp_url="https://misp.organization.com",
-    misp_key="YOUR_MISP_API_KEY",
-    event_info="Malware Campaign IOCs - 2025",
-)
-```
-
-## Validation Criteria
-
-- IOCs extracted correctly from free text with refanging support
-- Defanging produces safe, non-clickable indicators
-- STIX 2.1 bundle contains valid indicator patterns
-- IOCs distributed to MISP and TAXII successfully
-- Deduplication prevents duplicate indicators
-- Whitelisting prevents false positives on known-good domains
+- the request is defensive and authorized;
+- indicator material is handled as potentially sensitive evidence;
+- no secrets or live connector details are embedded in skill content;
+- external publication is gated by explicit human review;
+- outputs remain inert unless a separate approved implementation runbook requires machine-readable export;
+- all sharing decisions are auditable.
 
 ## References
 
-- [CISA: Cybersecurity Automation and Threat Intelligence Sharing](https://www.cisa.gov/sites/default/files/publications/Operational%20Value%20of%20IOCs_508c.pdf)
-- [Defang Python Library](https://pypi.org/project/defang/)
-- [ioc-fanger](https://pypi.org/project/ioc-fanger/)
-- [STIX 2.1 Indicator Specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html)
-- [Grokipedia: Defanging](https://grokipedia.com/page/defanging)
-- [Hunt.io: Best IOC Feeds](https://hunt.io/glossary/best-ioc-feeds)
+- CISA guidance on the operational value and handling of indicators of compromise
+- OASIS STIX 2.1 specification
+- OASIS TAXII 2.1 specification
+- MISP documentation for information sharing governance
