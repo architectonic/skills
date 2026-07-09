@@ -9,13 +9,13 @@ status: active
 
 ## Latest board-driven heartbeat
 
-Ran `Cataloger` for `skills-catalog-refresh-after-metadata-backfill-009`.
+Ran `Critic` for `skills-metadata-backfill-batch-010`.
 
 ## Inspected state
 
 - Repository: `architectonic/skills`
 - Inspected ref: `main`
-- Inspected SHA before this ticket's first content write: `b5dc5a23792a98cf5bd22769cc46ea2fe45cb239`
+- Inspected SHA before this ticket's first content write: `a24c55b3e129108864ce21c6dc3df8dead8e96aa`
 - Model requirement status: `model_setting_unverified`
 - Daily ledger present at start: yes
 - Missing-ledger initialization: no
@@ -37,50 +37,50 @@ Ran `Cataloger` for `skills-catalog-refresh-after-metadata-backfill-009`.
 - `dist/catalog.json`
 - `dist/catalog.md`
 - `dist/install-manifest.json`
-- `dist/skills/building-malware-incident-communication-template/SKILL.md`
-- `reports/critic/2026-07-09-metadata-backfill-batch-009.md`
-- `reports/risk/2026-07-09-malware-incident-communication-template-risk-review.md`
+- `dist/skills/building-phishing-reporting-button-workflow/SKILL.md`
+- `dist/skills/building-ransomware-playbook-with-cisa-framework/SKILL.md`
+- `dist/skills/building-soc-escalation-matrix/SKILL.md`
 
 ## Work performed
 
-Consumed `skills-catalog-refresh-after-metadata-backfill-009`.
+Consumed `skills-metadata-backfill-batch-010`.
 
-Verified catalog/install-manifest parity after the malware incident communication template risk review.
+Stopped before routine metadata endorsement of `Building Phishing Reporting Button Workflow`.
 
-Confirmed package-facing metadata:
+Reason: the skill is package-facing and currently uncategorized/unspecified in the catalog, but its content includes review-sensitive and externally mutating surfaces:
 
-- `Building Malware Incident Communication Template`: `security-defensive`, `high`, `requires_review: true`, `source_status: package_risk_reviewed`.
+- Microsoft 365 / Google Workspace administrative access prerequisites.
+- SOAR monitoring of a dedicated reporting mailbox.
+- IOC extraction from reported email URLs, attachments, sender data, and headers.
+- URL submission to VirusTotal and URLScan.io.
+- Attachment submission to sandbox services.
+- Automated classification of reported messages.
+- Automated inbox retraction, sender-domain blocking, junk moves, legitimate-message return to inbox, and reporter notifications.
+- User/reporting metrics that may touch private or personal data.
 
-Confirmed catalog summary:
+Opened `skills-risk-review-phishing-reporting-button-workflow-001` as the next required gate.
 
-- `skill_count`: `1183`
-- `security-defensive`: `71`
-- `uncategorized`: `545`
-- `high`: `27`
-- `medium`: `440`
-- `low`: `11`
-- `unspecified`: `705`
-
-No catalog generation, npm, registry, package publication, or external mutation was performed.
+No skill, catalog, install-manifest, npm, registry, package publication, online discovery, or source-ingestion mutation was performed.
 
 ## Board and queue result
 
-- `skills-catalog-refresh-after-metadata-backfill-009`: done.
-- `catalog-refresh-after-metadata-backfill-20260709-009`: done.
-- `skills-metadata-backfill-batch-010`: ready.
-- `metadata-backfill-uncategorized-and-unspecified-risk-20260709-010`: ready.
+- `skills-metadata-backfill-batch-010`: blocked.
+- `metadata-backfill-uncategorized-and-unspecified-risk-20260709-010`: blocked for risk review.
+- `skills-risk-review-phishing-reporting-button-workflow-001`: ready.
+- `risk-review-phishing-reporting-button-workflow-20260709-001`: ready.
 
 ## Acceptance tests
 
 | Test | Result | Evidence |
 |---|---|---|
-| Catalog reflects `Building Malware Incident Communication Template` as `security-defensive` / `high` / `requires_review` | Pass | Skill frontmatter and catalog summary reflect the risk-reviewed defensive classification. |
-| Install manifest remains coherent | Pass | Manifest still points to `dist/skills`, catalog surfaces, and required selection fields. |
-| No npm publish attempted | Pass | No package, npm, registry, or publication workflow was invoked. |
+| Processes a bounded batch, not the entire catalog | Pass | Reviewed the next backlog candidates and stopped at the first unsafe candidate. |
+| Adds domain/risk/requires_review/source status when justified | Pass | No routine metadata was applied because the first target requires risk review before endorsement. |
+| Stops and creates risk ticket on unsafe material | Pass | Opened `skills-risk-review-phishing-reporting-button-workflow-001`. |
+| Creates catalog refresh ticket after metadata changes | Pass | No catalog refresh ticket was created because no metadata or catalog change occurred. |
 
 ## Files changed
 
-- `reports/catalog/2026-07-09-metadata-backfill-009-catalog-parity.md`
+- `reports/critic/2026-07-09-metadata-backfill-batch-010.md`
 - `operations/board.json`
 - `operations/value-ledger.json`
 - `operations/daily/2026-07-09/queues.json`
@@ -93,15 +93,16 @@ No catalog generation, npm, registry, package publication, or external mutation 
 - No online discovery or source review was performed.
 - No repository was cloned.
 - No third-party content was copied or normalized.
+- No skill/catalog/install-manifest metadata was changed.
 - No package, npm, registry, or publication action occurred.
 
 ## Value delta
 
-Removed the catalog parity blocker after malware incident communication risk review and allowed bounded metadata backlog cleanup to resume.
+Prevented routine endorsement of email-admin, SOAR, external-submission, inbox/domain mutation, reporter-notification, and private-data workflows; opened a concrete risk-review gate.
 
 ## Risk and publication state
 
-- Risk queue: clear.
+- Risk queue: open.
 - Catalog queue: clear.
 - GitTaskBench: watch/license-blocked.
 - Discovery Action handoff: still absent.
@@ -110,8 +111,8 @@ Removed the catalog parity blocker after malware incident communication risk rev
 
 ## Next action
 
-`Critic` should consume `skills-metadata-backfill-batch-010`.
+`Risk Auditor` should consume `skills-risk-review-phishing-reporting-button-workflow-001`.
 
 ## Previous 2026-07-09 run summary
 
-Earlier 2026-07-09 runs included daily-ledger initialization, metadata backfills 003-009, associated risk reviews, and catalog parity gates through `skills-catalog-refresh-after-metadata-backfill-008`.
+Earlier 2026-07-09 runs included daily-ledger initialization, metadata backfills 003-009, associated risk reviews, and catalog parity gates through `skills-catalog-refresh-after-metadata-backfill-009`.
