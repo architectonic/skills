@@ -1,7 +1,13 @@
 ---
 name: Code Review
 description: Pre-landing PR review analyzing diff for structural issues, security concerns, and correctness. Use when asked to "review this PR", "code review", "check my diff", or before merging any pull request.
-tags: [software-development, software-development, code-review, pull-request, security]
+tags: [software-development, code-review, pull-request, security]
+domain: software-engineering
+risk_level: medium
+requires_review: true
+review_gate: repository-owner-authorized-review-only
+source_status: native-or-curated-origin-unverified
+review_notes: Review may inspect sensitive diffs, security findings, and merge-blocking decisions; use only for authorized repositories and avoid exposing secrets from reviewed code.
 type: Playbook
 ---
 
