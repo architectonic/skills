@@ -4,6 +4,11 @@ description: Build effective detection rules using Splunk Search Processing Lang
 tags: [software-development, software-development, agent-skill, okf, splunk, spl, detection-engineering, correlation-search, siem, soc, threat-detection, enterprise-security, security]
 license: Apache-2.0
 type: Playbook
+domain: security-defensive
+risk_level: medium
+requires_review: true
+source_family: ""
+source_status: package_metadata_backfill
 ---
 
 
