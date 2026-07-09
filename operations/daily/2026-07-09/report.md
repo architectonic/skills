@@ -9,13 +9,13 @@ status: active
 
 ## Latest board-driven heartbeat
 
-Ran `Risk Auditor` for `skills-risk-review-cloud-siem-sentinel-001`.
+Ran `Cataloger` for `skills-catalog-refresh-after-metadata-backfill-005`.
 
 ## Inspected state
 
 - Repository: `architectonic/skills`
 - Inspected ref: `main`
-- Inspected SHA before this ticket's first content write: `3f241fbeeef473d67cbd189246d325cb42565f3d`
+- Inspected SHA before this ticket's first content write: `8dc711f5cd7f32567e67f97a8aa56069bd5e9752`
 - Model requirement status: `model_setting_unverified`
 - Daily ledger present at start: yes
 - Missing-ledger initialization: no
@@ -33,53 +33,54 @@ Ran `Risk Auditor` for `skills-risk-review-cloud-siem-sentinel-001`.
 - `operations/daily/2026-07-09/queues.json`
 - `operations/daily/2026-07-09/report.md`
 - `operations/log.md`
-- `reports/critic/2026-07-09-metadata-backfill-batch-005.md`
+- `dist/catalog.json`
+- `dist/catalog.md`
+- `dist/install-manifest.json`
 - `dist/skills/building-cloud-siem-with-sentinel/SKILL.md`
+- `reports/critic/2026-07-09-metadata-backfill-batch-005.md`
+- `reports/risk/2026-07-09-cloud-siem-sentinel-risk-review.md`
 
 ## Work performed
 
-Consumed the open Sentinel SIEM/SOAR risk-review ticket.
+Consumed the open Sentinel SIEM/SOAR catalog parity ticket.
 
-`dist/skills/building-cloud-siem-with-sentinel/SKILL.md` was converted into a high-risk, `requires_review: true`, defensive governance wrapper.
+Created `reports/catalog/2026-07-09-metadata-backfill-005-catalog-parity.md` and verified that generated catalog/package surfaces already reflect the risk-reviewed Sentinel skill.
 
-Risk surfaces classified and removed from package-facing content:
+Verified catalog state:
 
-- Sentinel / Log Analytics workspace provisioning.
-- Azure CLI setup and data connector commands.
-- AWS CloudTrail connector wiring and IAM role assumptions.
-- Production-style KQL detection and hunting queries over identity, cloud, storage, network, and threat-intelligence telemetry.
-- Microsoft Threat Intelligence connector setup and indicator matching.
-- Logic Apps / SOAR JSON that disabled accounts.
-- Scenario guidance for automatic account disablement and AWS STS revocation.
+- `skill_count`: `1183`
+- `security-defensive`: `66`
+- `uncategorized`: `551`
+- `high`: `22`
+- `medium`: `439`
+- `low`: `11`
+- `unspecified`: `711`
 
-Safe guidance preserved:
+Verified `Building Cloud SIEM with Sentinel`:
 
-- Authorized defensive SIEM/SOAR use cases.
-- Review gates for authority, data handling, connector scope, detection impact, SOAR controls, and publication boundary.
-- Connector, detection, threat-intelligence, and SOAR governance workflow.
-- SOAR action-tier model.
-- Safe implementation handoff format.
+- `domain`: `security-defensive`
+- `risk_level`: `high`
+- `requires_review`: `true`
+- `source_status`: `existing_package_skill_risk_reviewed`
 
 ## Board and queue result
 
-- `skills-risk-review-cloud-siem-sentinel-001`: done.
-- `risk-review-cloud-siem-sentinel-20260709-001`: done.
-- Opened `skills-catalog-refresh-after-metadata-backfill-005`.
-- Opened `catalog-refresh-after-metadata-backfill-20260709-005`.
+- `skills-catalog-refresh-after-metadata-backfill-005`: done.
+- `catalog-refresh-after-metadata-backfill-20260709-005`: done.
+- Opened `skills-metadata-backfill-batch-006`.
+- Opened `metadata-backfill-uncategorized-and-unspecified-risk-20260709-006`.
 
 ## Acceptance tests
 
 | Test | Result | Evidence |
 |---|---|---|
-| Sentinel workspace provisioning, cloud connector setup, KQL detection, threat-intelligence matching, Logic Apps/SOAR, account-disable, and STS revocation surfaces are classified | Pass | Risk report and rewritten skill classify the SIEM/SOAR, telemetry, cloud connector, and account-mutation surfaces. |
-| Safe authorized SIEM/SOAR governance guidance is preserved or bounded | Pass | The rewritten skill preserves review gates, governance workflow, SOAR tiering, and handoff format. |
-| Package-facing executable cloud setup and account-mutation snippets are review-gated, redacted, or removed | Pass | Azure CLI, KQL, Logic Apps JSON, threat-intelligence connector commands, account-disablement, and STS revocation snippets were removed. |
-| Catalog refresh remains blocked until review completes | Pass | Risk review is complete; catalog parity is now the next board ticket and was not consumed in this pass. |
+| Catalog reflects Building Cloud SIEM with Sentinel as security-defensive high requires_review | Pass | `dist/catalog.json` includes the Sentinel skill as `security-defensive`, `high`, and `requires_review: true`; `dist/catalog.md` summary counts match. |
+| Install manifest remains coherent | Pass | `dist/install-manifest.json` still points installers to `dist/skills` and preserves `slug`, `title`, `domain`, `risk_level`, `tags`, and `requires_review` as selection fields. |
+| No npm publish attempted | Pass | No package, npm, registry, or publication action occurred. |
 
 ## Files changed
 
-- `dist/skills/building-cloud-siem-with-sentinel/SKILL.md`
-- `reports/risk/2026-07-09-cloud-siem-sentinel-risk-review.md`
+- `reports/catalog/2026-07-09-metadata-backfill-005-catalog-parity.md`
 - `operations/board.json`
 - `operations/value-ledger.json`
 - `operations/daily/2026-07-09/queues.json`
@@ -89,23 +90,23 @@ Safe guidance preserved:
 
 ## Boundaries preserved
 
-- No online discovery or source search was performed.
+- No online discovery or source review was performed.
 - No repository was cloned.
 - No Azure CLI, KQL execution, Logic Apps deployment, Microsoft Graph mutation, AWS connector setup, STS revocation, threat-intelligence connector action, package, npm, registry, or publication action occurred.
 - No third-party content was copied or normalized.
-- No generated catalog file was hand-edited by this ticket.
+- No generated catalog file was hand-edited.
 
 ## Value delta
 
-Removed the open Sentinel SIEM/SOAR risk blocker by converting a package-facing cloud setup and account-mutation playbook into a high-risk review-gated defensive governance wrapper.
+Removed the catalog parity blocker after the Sentinel SIEM/SOAR risk review. The Sentinel skill is now package-discoverable as high-risk, review-gated defensive governance material.
 
 ## Risk and publication state
 
 - Risk queue: clear.
-- Catalog queue: open for Sentinel SIEM/SOAR parity.
+- Catalog queue: clear.
 - GitTaskBench: watch/license-blocked.
 - Discovery Action handoff: still absent.
-- Remaining metadata backlog: open, blocked until catalog parity clears.
+- Remaining metadata backlog: open.
 - Package/publication endorsement: still blocked.
 
 ## Earlier heartbeats today
@@ -118,7 +119,8 @@ Removed the open Sentinel SIEM/SOAR risk blocker by converting a package-facing 
 - A prior `Risk Auditor` run consumed `skills-risk-review-ct-logs-attack-library-malware-pipeline-001` and converted three package-facing skills into high-risk review-gated defensive wrappers.
 - A prior `Cataloger` run consumed `skills-catalog-refresh-after-metadata-backfill-004` and verified catalog parity after batch 004.
 - A prior `Critic` run consumed `skills-metadata-backfill-batch-005` and opened the Sentinel SIEM/SOAR risk review.
+- A prior `Risk Auditor` run consumed `skills-risk-review-cloud-siem-sentinel-001` and converted the Sentinel skill into a high-risk review-gated defensive governance wrapper.
 
 ## Next action
 
-`Cataloger` should consume `skills-catalog-refresh-after-metadata-backfill-005` before further metadata backlog cleanup.
+`Critic` should consume `skills-metadata-backfill-batch-006` as the next bounded package-facing metadata backlog pass.
