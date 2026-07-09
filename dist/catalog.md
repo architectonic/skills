@@ -12,9 +12,9 @@
 | `business` | 47 |
 | `cloud-security` | 42 |
 | `design` | 40 |
-| `forensics` | 25 |
+| `forensics` | 26 |
 | `media` | 1 |
-| `research` | 85 |
+| `research` | 84 |
 | `runtime-tools` | 35 |
 | `security-defensive` | 61 |
 | `security-offensive` | 16 |
@@ -26,10 +26,10 @@
 
 | Risk | Count |
 |---|---:|
-| `high` | 16 |
+| `high` | 17 |
 | `low` | 11 |
 | `medium` | 439 |
-| `unspecified` | 717 |
+| `unspecified` | 716 |
 
 ## Install Notes
 

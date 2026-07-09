@@ -12,9 +12,9 @@
       "business": 47,
       "cloud-security": 42,
       "design": 40,
-      "forensics": 25,
+      "forensics": 26,
       "media": 1,
-      "research": 85,
+      "research": 84,
       "runtime-tools": 35,
       "security-defensive": 61,
       "security-offensive": 16,
@@ -23,10 +23,10 @@
       "writing": 16
     },
     "risk_counts": {
-      "high": 16,
+      "high": 17,
       "low": 11,
       "medium": 439,
-      "unspecified": 717
+      "unspecified": 716
     }
   },
   "domains": {
@@ -279,6 +279,7 @@
       "Acquiring Disk Image with dd and dcfldd",
       "Analyzing Android Malware with Apktool",
       "Analyzing Bootkit and Rootkit Samples",
+      "Analyzing Email Headers for Phishing Investigation",
       "Analyzing Memory Forensics with LiME and Volatility",
       "Building Super Timelines with Plaso",
       "Collecting Volatile Evidence from Compromised Hosts",
@@ -314,7 +315,6 @@
       "Analyzing DNS Logs for Exfiltration",
       "Analyzing Disk Image with Autopsy",
       "Analyzing Docker Container Forensics",
-      "Analyzing Email Headers for Phishing Investigation",
       "Analyzing Golang Malware with Ghidra",
       "Analyzing Heap Spray Exploitation",
       "Analyzing Indicators of Compromise",
@@ -2104,16 +2104,13 @@
     {
       "slug": "Analyzing Email Headers for Phishing Investigation",
       "title": "Analyzing Email Headers for Phishing Investigation",
-      "description": "Parse and analyze email headers to trace the origin of phishing emails,",
+      "description": "Review suspicious email headers for phishing indicators under authorized incident-response controls.",
       "path": "dist/skills/analyzing-email-headers-for-phishing-investigation/SKILL.md",
       "directory": "dist/skills/analyzing-email-headers-for-phishing-investigation",
-      "domain": "research",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "forensics",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "research",
-        "agent-skill",
-        "okf",
         "forensics",
         "email-analysis",
         "phishing",
@@ -2121,10 +2118,11 @@
         "dkim",
         "dmarc",
         "header-analysis",
-        "security"
+        "security-defensive",
+        "incident-response"
       ],
       "source_family": "",
-      "source_status": "",
+      "source_status": "existing-package-skill-risk-reviewed",
       "type": "Playbook"
     },
     {
