@@ -9,13 +9,13 @@ status: active
 
 ## Latest board-driven heartbeat
 
-Ran `Cataloger` for `skills-catalog-refresh-after-metadata-backfill-008`.
+Ran `Critic` for `skills-metadata-backfill-batch-009`.
 
 ## Inspected state
 
 - Repository: `architectonic/skills`
 - Inspected ref: `main`
-- Inspected SHA before this ticket's first content write: `396b59f8d7af643802afdc27af29082ffa14c76a`
+- Inspected SHA before this ticket's first content write: `3d3989b2e2e1c4160efda36a77a3994a4d1df14f`
 - Model requirement status: `model_setting_unverified`
 - Daily ledger present at start: yes
 - Missing-ledger initialization: no
@@ -37,52 +37,46 @@ Ran `Cataloger` for `skills-catalog-refresh-after-metadata-backfill-008`.
 - `dist/catalog.json`
 - `dist/catalog.md`
 - `dist/install-manifest.json`
-- `reports/critic/2026-07-09-metadata-backfill-batch-008.md`
-- `reports/risk/2026-07-09-ir-dashboard-timesketch-risk-review.md`
-- `dist/skills/building-incident-response-dashboard/SKILL.md`
-- `dist/skills/building-incident-timeline-with-timesketch/SKILL.md`
+- `reports/catalog/2026-07-09-metadata-backfill-008-catalog-parity.md`
+- `dist/skills/building-malware-incident-communication-template/SKILL.md`
 
 ## Work performed
 
-Consumed `skills-catalog-refresh-after-metadata-backfill-008`.
+Consumed `skills-metadata-backfill-batch-009`.
 
-Verified catalog parity after `skills-risk-review-ir-dashboard-timesketch-001`:
+Reviewed `Building Malware Incident Communication Template` as the next bounded package-facing metadata-backfill candidate.
 
-- `Building Incident Response Dashboard`: `security-defensive`, `high`, `requires_review: true`
-- `Building Incident Timeline with Timesketch`: `forensics`, `high`, `requires_review: true`
+Stopped before routine metadata endorsement because the skill contains:
 
-Verified summary counts:
+- malware incident disclosure templates;
+- regulated notification text;
+- customer/public notification language;
+- executive, legal, communications, and media decision surfaces;
+- IOC placeholders;
+- incident IDs and contact/escalation details;
+- affected-system, data-at-risk, and personal/private-data placeholders.
 
-- `skill_count`: `1183`
-- `security-defensive`: `70`
-- `forensics`: `27`
-- `uncategorized`: `546`
-- `high`: `26`
-- `medium`: `440`
-- `low`: `11`
-- `unspecified`: `706`
-
-`dist/install-manifest.json` remains coherent. No generated catalog, install manifest, package, npm, registry, or publication file was changed in this ticket.
+No skill frontmatter, catalog surface, install manifest, package, npm, registry, or publication surface was changed.
 
 ## Board and queue result
 
-- `skills-catalog-refresh-after-metadata-backfill-008`: done.
-- `catalog-refresh-after-metadata-backfill-20260709-008`: done.
-- `skills-metadata-backfill-batch-009`: ready.
-- `metadata-backfill-uncategorized-and-unspecified-risk-20260709-009`: ready.
+- `skills-metadata-backfill-batch-009`: blocked for risk review.
+- `metadata-backfill-uncategorized-and-unspecified-risk-20260709-009`: blocked for risk review.
+- `skills-risk-review-malware-incident-communication-template-001`: ready.
+- `risk-review-malware-incident-communication-template-20260709-001`: ready.
 
 ## Acceptance tests
 
 | Test | Result | Evidence |
 |---|---|---|
-| Catalog reflects Building Incident Response Dashboard as security-defensive high requires_review | Pass | `dist/catalog.json` lists the skill with `domain: security-defensive`, `risk_level: high`, and `requires_review: true`; the skill frontmatter matches. |
-| Catalog reflects Building Incident Timeline with Timesketch as forensics high requires_review | Pass | `dist/catalog.json` lists the skill with `domain: forensics`, `risk_level: high`, and `requires_review: true`; the skill frontmatter matches. |
-| Install manifest remains coherent | Pass | `dist/install-manifest.json` still points installers at `dist/skills` and `dist/catalog.json`, with no missing discovery fields. |
-| No npm publish attempted | Pass | No package, npm, registry, or publication action was performed. |
+| Processes a bounded batch, not the entire catalog | Pass | Reviewed only `dist/skills/building-malware-incident-communication-template/SKILL.md` plus required board/catalog/context files. |
+| Adds domain/risk/requires_review/source status when justified | Pass | No metadata was added because the first candidate tripped the review-sensitive private-data/regulatory/comms gate before routine endorsement. |
+| Stops and creates risk ticket on unsafe material | Pass | Opened `skills-risk-review-malware-incident-communication-template-001`. |
+| Creates catalog refresh ticket after metadata changes | Pass | No catalog refresh ticket was created because no skill metadata/catalog changes were made; catalog refresh remains blocked until risk review completes. |
 
 ## Files changed
 
-- `reports/catalog/2026-07-09-metadata-backfill-008-catalog-parity.md`
+- `reports/critic/2026-07-09-metadata-backfill-batch-009.md`
 - `operations/board.json`
 - `operations/value-ledger.json`
 - `operations/daily/2026-07-09/queues.json`
@@ -99,12 +93,12 @@ Verified summary counts:
 
 ## Value delta
 
-Removed the catalog parity blocker after the IR dashboard and Timesketch risk review, allowing bounded metadata backlog cleanup to resume.
+Prevented malware incident communication, regulatory disclosure, private-data, IOC, and external stakeholder communication material from being routinely endorsed without review.
 
 ## Risk and publication state
 
-- Risk queue: clear.
-- Catalog queue: clear.
+- Risk queue: open.
+- Catalog queue: blocked until risk review completes.
 - GitTaskBench: watch/license-blocked.
 - Discovery Action handoff: still absent.
 - Remaining metadata backlog: open.
@@ -112,8 +106,8 @@ Removed the catalog parity blocker after the IR dashboard and Timesketch risk re
 
 ## Next action
 
-`Critic` should consume `skills-metadata-backfill-batch-009`.
+`Risk Auditor` should consume `skills-risk-review-malware-incident-communication-template-001`.
 
 ## Previous 2026-07-09 run summary
 
-Earlier 2026-07-09 runs included daily-ledger initialization, metadata backfills 003-008, associated risk reviews, and catalog parity gates through `skills-catalog-refresh-after-metadata-backfill-007`, followed by the IR dashboard/Timesketch risk review.
+Earlier 2026-07-09 runs included daily-ledger initialization, metadata backfills 003-008, associated risk reviews, and catalog parity gates through `skills-catalog-refresh-after-metadata-backfill-008`.
