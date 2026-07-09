@@ -11,22 +11,26 @@ status: active
 
 ## 2026-07-09
 
-- Ran board-driven Critic for `skills-metadata-backfill-batch-007`.
+- Ran board-driven Risk Auditor for `skills-risk-review-identity-federation-saml-azure-ad-001`.
 - Model requirement status: `model_setting_unverified`.
-- Inspected ref/SHA before this ticket's first content write: `main` at `e58f4ba87a367d55f145928d59a67f64db171aad`.
+- Inspected ref/SHA before this ticket's first content write: `main` at `42faade63f0879f9e0e216a39d7f4d4adabd36cd`.
 - Confirmed today's daily ledger exists; no missing-ledger initialization was performed in this pass.
-- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `dist/skills/building-identity-federation-with-saml-azure-ad/SKILL.md`, and `reports/catalog/2026-07-09-metadata-backfill-006-catalog-parity.md`.
+- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `dist/skills/building-identity-federation-with-saml-azure-ad/SKILL.md`, and `reports/critic/2026-07-09-metadata-backfill-batch-007.md`.
 - Attempted to read `operations/action-runs/discover-skill-sources/latest.json`; it remains absent on the default branch.
-- No online/source discovery was used because the selected board ticket was internal metadata backfill and direct file review was sufficient.
-- Reviewed the next bounded backlog item only: `Building Identity Federation with SAML Azure AD`.
-- Stopped before routine metadata endorsement because direct review found AD FS farm setup, Microsoft Graph `Domain.ReadWrite.All`, federated-domain conversion, AD FS relying-party trust and claims-rule mutation, token-signing certificate rotation/removal, public federation endpoint, and production SSO/account-control surfaces.
-- Created `reports/critic/2026-07-09-metadata-backfill-batch-007.md`.
-- Blocked board ticket `skills-metadata-backfill-batch-007` and daily critic queue item `metadata-backfill-uncategorized-and-unspecified-risk-20260709-007`.
-- Opened board ticket `skills-risk-review-identity-federation-saml-azure-ad-001` and daily risk queue item `risk-review-identity-federation-saml-azure-ad-20260709-001`.
+- No online/source discovery was used because the selected board ticket was an internal risk review and direct file review was sufficient.
+- Converted `Building Identity Federation with SAML Azure AD` into a high-risk, `requires_review: true`, defensive governance wrapper.
+- Classified and removed/re-gated package-facing AD FS farm/service setup, Microsoft Graph tenant/domain mutation, federated-domain conversion, relying-party trust and claims-rule mutation, token-signing certificate operations, federation metadata endpoints, and production SSO/account-control guidance.
+- Created `reports/risk/2026-07-09-identity-federation-saml-azure-ad-risk-review.md`.
+- Closed board ticket `skills-risk-review-identity-federation-saml-azure-ad-001` and daily risk queue item `risk-review-identity-federation-saml-azure-ad-20260709-001`.
+- Opened board ticket `skills-catalog-refresh-after-metadata-backfill-007` and daily catalog queue item `catalog-refresh-after-metadata-backfill-20260709-007`.
 - Preserved boundaries: no online discovery, no clone, no generated catalog hand-edit, no third-party content copy, no Azure/Microsoft Graph/AD FS/tenant/DNS/certificate/account external action, no package publication, no npm publication, and no registry publication.
-- Acceptance tests passed: bounded batch, no unjustified metadata, risk ticket created on unsafe material, and no catalog refresh because no metadata changed.
-- Value delta: prevented routine metadata/catalog endorsement of production identity-federation and account-control material before dedicated risk review.
-- Next justified action: Risk Auditor should consume `skills-risk-review-identity-federation-saml-azure-ad-001`.
+- Acceptance tests passed: AD FS surfaces classified, Graph/domain mutation surfaces classified, trust/claims/certificate/metadata/SSO/account-control boundaries classified, safe governance guidance preserved, and catalog refresh queued after review.
+- Value delta: removed the identity-federation/account-control package risk blocker while preserving safe defensive governance guidance.
+- Next justified action: Cataloger should consume `skills-catalog-refresh-after-metadata-backfill-007`.
+
+- Earlier 2026-07-09 run: Critic consumed `skills-metadata-backfill-batch-007`.
+- Prior Critic inspected ref/SHA before first content write: `main` at `e58f4ba87a367d55f145928d59a67f64db171aad`.
+- Prior Critic stopped before routine metadata endorsement of Building Identity Federation with SAML Azure AD and opened this risk review.
 
 - Earlier 2026-07-09 run: Cataloger consumed `skills-catalog-refresh-after-metadata-backfill-006`.
 - Prior Cataloger inspected ref/SHA before first content write: `main` at `d1bb2f8e5b66830033e512707fd6358c6a76bb8b`.
