@@ -11,22 +11,25 @@ status: active
 
 ## 2026-07-09
 
-- Ran board-driven Cataloger for `skills-catalog-refresh-after-metadata-backfill-005`.
+- Ran board-driven Critic for `skills-metadata-backfill-batch-006`.
 - Model requirement status: `model_setting_unverified`.
-- Inspected ref/SHA before this ticket's first content write: `main` at `8dc711f5cd7f32567e67f97a8aa56069bd5e9752`.
+- Inspected ref/SHA before this ticket's first content write: `main` at `c9cba1f5492d1ecdeef3e77cba9cf83fe643bb77`.
 - Confirmed today's daily ledger exists; no missing-ledger initialization was performed in this pass.
-- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, catalog surfaces, `reports/critic/2026-07-09-metadata-backfill-batch-005.md`, `reports/risk/2026-07-09-cloud-siem-sentinel-risk-review.md`, and `dist/skills/building-cloud-siem-with-sentinel/SKILL.md`.
-- No online/source discovery was used because the selected board ticket was an internal catalog parity verification.
-- Created `reports/catalog/2026-07-09-metadata-backfill-005-catalog-parity.md`.
-- Verified `dist/catalog.json` and `dist/catalog.md`: skill_count 1183, security-defensive 66, uncategorized 551, high 22, medium 439, low 11, unspecified 711.
-- Verified `Building Cloud SIEM with Sentinel` is cataloged as `security-defensive`, `high`, and `requires_review: true`.
-- Verified `dist/install-manifest.json` remains coherent for package-facing selection fields.
-- Closed board ticket `skills-catalog-refresh-after-metadata-backfill-005` and daily queue item `catalog-refresh-after-metadata-backfill-20260709-005`.
-- Opened board ticket `skills-metadata-backfill-batch-006` and daily queue item `metadata-backfill-uncategorized-and-unspecified-risk-20260709-006`.
-- Preserved boundaries: no online discovery, no clone, no Azure CLI execution, no KQL execution, no Logic Apps deployment, no Microsoft Graph mutation, no AWS connector setup, no STS revocation, no threat-intelligence connector action, no third-party content copy, no package publication, no npm publication, and no registry publication.
-- Acceptance tests passed: Sentinel catalog entry verified, install manifest coherent, and no npm/package/registry publication attempted.
-- Value delta: removed the catalog parity blocker after the Sentinel SIEM/SOAR risk review.
-- Next justified action: Critic should consume `skills-metadata-backfill-batch-006`.
+- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `reports/catalog/2026-07-09-metadata-backfill-005-catalog-parity.md`, `dist/skills/building-detection-rule-with-splunk-spl/SKILL.md`, and `dist/skills/building-ioc-defanging-and-sharing-pipeline/SKILL.md`.
+- No online/source discovery was used because the selected board ticket was an internal bounded metadata-backfill pass.
+- Backfilled `Building Detection Rules with Splunk SPL` as `security-defensive`, `medium`, `requires_review: true`, with `source_status: package_metadata_backfill`.
+- Stopped before routine metadata endorsement of `Building IOC Defanging and Sharing Pipeline` because the file contains IOC extraction/refanging, STIX bundle generation, MISP/TAXII/API-key distribution, and authenticated external threat-intelligence submission surfaces.
+- Created `reports/critic/2026-07-09-metadata-backfill-batch-006.md`.
+- Opened board ticket `skills-risk-review-ioc-defanging-sharing-pipeline-001` and daily risk queue item `risk-review-ioc-defanging-sharing-pipeline-20260709-001`.
+- Opened but blocked `skills-catalog-refresh-after-metadata-backfill-006` and daily catalog queue item `catalog-refresh-after-metadata-backfill-20260709-006` until IOC pipeline risk review completes.
+- Preserved boundaries: no online discovery, no clone, no Splunk execution, no MISP/TAXII/API-key use, no threat-intelligence submission, no third-party content copy, no package publication, no npm publication, and no registry publication.
+- Acceptance tests passed: bounded batch, justified metadata, risk ticket created on unsafe material, and catalog refresh ticket created but blocked.
+- Value delta: improved package-facing discoverability/reviewability for one defensive Splunk detection-engineering skill and prevented API-key-backed IOC sharing/external submission material from routine endorsement.
+- Next justified action: Risk Auditor should consume `skills-risk-review-ioc-defanging-sharing-pipeline-001`.
+
+- Earlier 2026-07-09 run: Cataloger consumed `skills-catalog-refresh-after-metadata-backfill-005`.
+- Prior Cataloger inspected ref/SHA before first content write: `main` at `8dc711f5cd7f32567e67f97a8aa56069bd5e9752`.
+- Prior Cataloger verified catalog/install-manifest parity after the Sentinel SIEM/SOAR risk review.
 
 - Earlier 2026-07-09 run: Risk Auditor consumed `skills-risk-review-cloud-siem-sentinel-001`.
 - Prior Risk Auditor inspected ref/SHA before first content write: `main` at `3f241fbeeef473d67cbd189246d325cb42565f3d`.
