@@ -11,21 +11,26 @@ status: active
 
 ## 2026-07-09
 
-- Ran board-driven Critic for `skills-metadata-backfill-batch-005`.
+- Ran board-driven Risk Auditor for `skills-risk-review-cloud-siem-sentinel-001`.
 - Model requirement status: `model_setting_unverified`.
-- Inspected ref/SHA before this ticket's first content write: `main` at `6560a5e0b259b0d369158aad50cd52830e74e626`.
+- Inspected ref/SHA before this ticket's first content write: `main` at `3f241fbeeef473d67cbd189246d325cb42565f3d`.
 - Confirmed today's daily ledger exists; no missing-ledger initialization was performed in this pass.
-- Confirmed `operations/action-runs/discover-skill-sources/latest.json` returned `404 Not Found` on the default branch during this run.
-- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `reports/catalog/2026-07-09-metadata-backfill-004-catalog-parity.md`, and `dist/skills/building-cloud-siem-with-sentinel/SKILL.md`.
-- No online/source discovery was used because the selected board ticket was an internal metadata-backfill gate.
-- Created `reports/critic/2026-07-09-metadata-backfill-batch-005.md`.
-- Stopped on `Building Cloud SIEM with Sentinel` before routine metadata endorsement because it includes Azure/Sentinel workspace provisioning, cloud data connector setup, AWS CloudTrail connector wiring, KQL detections, threat-intelligence matching, Logic Apps/SOAR automation, account disablement, and AWS STS revocation guidance.
-- Closed queue item `metadata-backfill-uncategorized-and-unspecified-risk-20260709-005` as blocked for risk review.
-- Opened board ticket `skills-risk-review-cloud-siem-sentinel-001` and queue item `risk-review-cloud-siem-sentinel-20260709-001`.
-- Preserved boundaries: no online discovery, no clone, no Azure CLI execution, no KQL execution, no Logic Apps deployment, no Microsoft Graph mutation, no AWS connector setup, no STS revocation, no threat-intelligence connector action, no generated catalog surface hand-edit, no third-party content copy, no package publication, no npm publication, and no registry publication.
-- Acceptance tests passed: bounded batch, no routine metadata added because risk review is required, risk ticket created, and no catalog refresh created because no metadata changed.
-- Value delta: prevented routine catalog endorsement of a package-facing Sentinel/SOAR skill with credentialed cloud setup and account-mutation automation.
-- Next justified action: Risk Auditor should consume `skills-risk-review-cloud-siem-sentinel-001` before further metadata backlog cleanup.
+- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `reports/critic/2026-07-09-metadata-backfill-batch-005.md`, and `dist/skills/building-cloud-siem-with-sentinel/SKILL.md`.
+- No online/source discovery was used because the selected board ticket was an internal package-facing risk review.
+- Updated `dist/skills/building-cloud-siem-with-sentinel/SKILL.md` into a high-risk, `requires_review: true`, defensive SIEM/SOAR governance wrapper.
+- Created `reports/risk/2026-07-09-cloud-siem-sentinel-risk-review.md`.
+- Removed package-facing Azure CLI, KQL, Logic Apps JSON, Sentinel/cloud connector setup, account-disablement, threat-intelligence connector, and AWS STS revocation snippets.
+- Preserved authorized defensive SIEM/SOAR governance guidance: scope review, connector governance, detection validation, threat-intelligence data handling, SOAR action tiers, and implementation handoff.
+- Closed board ticket `skills-risk-review-cloud-siem-sentinel-001` and daily queue item `risk-review-cloud-siem-sentinel-20260709-001`.
+- Opened board ticket `skills-catalog-refresh-after-metadata-backfill-005` and daily queue item `catalog-refresh-after-metadata-backfill-20260709-005`.
+- Preserved boundaries: no online discovery, no clone, no Azure CLI execution, no KQL execution, no Logic Apps deployment, no Microsoft Graph mutation, no AWS connector setup, no STS revocation, no threat-intelligence connector action, no third-party content copy, no package publication, no npm publication, and no registry publication.
+- Acceptance tests passed: Sentinel/SOAR surfaces classified, safe governance guidance preserved, executable cloud setup/account-mutation snippets removed or review-gated, and catalog parity left for the next ticket.
+- Value delta: removed the open Sentinel SIEM/SOAR risk blocker by converting a package-facing cloud setup and account-mutation playbook into a high-risk review-gated defensive governance wrapper.
+- Next justified action: Cataloger should consume `skills-catalog-refresh-after-metadata-backfill-005` before further metadata backlog cleanup.
+
+- Earlier 2026-07-09 run: Critic consumed `skills-metadata-backfill-batch-005`.
+- Prior Critic inspected ref/SHA before first content write: `main` at `6560a5e0b259b0d369158aad50cd52830e74e626`.
+- Prior Critic stopped before routine metadata endorsement of Sentinel workspace provisioning, cloud data connectors, KQL detections, threat-intelligence matching, Logic Apps/SOAR automation, account disablement, and STS revocation guidance and opened this risk-review ticket.
 
 - Earlier 2026-07-09 run: Cataloger consumed `skills-catalog-refresh-after-metadata-backfill-004`.
 - Prior Cataloger inspected ref/SHA before first content write: `main` at `004abcd311ed0b853caff52dd5033433db06bc18`.
