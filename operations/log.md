@@ -11,64 +11,36 @@ status: active
 
 ## 2026-07-09
 
-- Ran board-driven Risk Auditor for `skills-risk-review-email-header-and-golang-malware-analysis-001`.
+- Ran board-driven Cataloger for `skills-catalog-refresh-after-metadata-backfill-003`.
 - Model requirement status: `model_setting_unverified`.
-- Inspected ref/SHA before this ticket's first content write: `main` at `1afc9b11df4ced6b8908342c901f28abafe4ec70`.
+- Inspected ref/SHA before this ticket's first content write: `main` at `d367195528b6045a49328c4eb15259db69276342`.
 - Confirmed today's daily ledger exists; no missing-ledger initialization was performed in this pass.
 - Confirmed `operations/action-runs/discover-skill-sources/latest.json` returned `404 Not Found` on the default branch during this run.
-- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `dist/skills/analyzing-email-headers-for-phishing-investigation/SKILL.md`, `dist/skills/analyzing-golang-malware-with-ghidra/SKILL.md`, and `reports/critic/2026-07-09-metadata-backfill-batch-003.md`.
-- No online/source discovery was used because the selected board ticket was an internal risk review.
-- Converted `dist/skills/analyzing-email-headers-for-phishing-investigation/SKILL.md` into a high-risk, requires_review, authorized incident-response defensive wrapper. Removed mailbox/PST/EML extraction commands, DNS/reputation command snippets, API-key examples, third-party submission commands, body/attachment extraction scripts, and raw private-data examples while preserving SPF/DKIM/DMARC/ARC/header-chain reasoning and defensive reporting.
-- Converted `dist/skills/analyzing-golang-malware-with-ghidra/SKILL.md` into a high-risk, requires_review, authorized isolated malware-analysis defensive wrapper. Removed executable binary parsing scripts, Ghidra automation scripts, sample execution paths, infrastructure contact paths, and detailed malware logic reproduction while preserving Go static-analysis concepts and defensive reporting.
-- Created `reports/risk/2026-07-09-email-header-and-golang-malware-analysis-risk-review.md`.
-- Closed board ticket `skills-risk-review-email-header-and-golang-malware-analysis-001` and queue item `risk-review-email-header-and-golang-malware-analysis-20260709-001`.
-- Unblocked board ticket `skills-catalog-refresh-after-metadata-backfill-003` and queue item `catalog-refresh-after-metadata-backfill-20260709-003` as the next required gate.
+- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `dist/skills/ai-seo/SKILL.md`, `dist/skills/analyzing-email-headers-for-phishing-investigation/SKILL.md`, `dist/skills/analyzing-golang-malware-with-ghidra/SKILL.md`, `reports/critic/2026-07-09-metadata-backfill-batch-003.md`, and `reports/risk/2026-07-09-email-header-and-golang-malware-analysis-risk-review.md`.
+- No online/source discovery was used because the selected board ticket was an internal catalog parity repair.
+- Created `reports/catalog/2026-07-09-metadata-backfill-003-catalog-parity.md`.
+- Verified catalog parity after metadata-backfill batch 003 and risk review: `dist/catalog.json` and `dist/catalog.md` show `skill_count` 1183, `business` 47, `forensics` 26, `security-defensive` 61, `software-engineering` 152, `uncategorized` 555, `high` 17, `low` 11, `medium` 439, and `unspecified` 716.
+- Verified `dist/install-manifest.json` remains coherent with discovery files and selection fields: `slug`, `title`, `domain`, `risk_level`, `tags`, and `requires_review`.
+- Closed board ticket `skills-catalog-refresh-after-metadata-backfill-003` and queue item `catalog-refresh-after-metadata-backfill-20260709-003`.
+- Opened board ticket `skills-metadata-backfill-batch-004` and queue item `metadata-backfill-uncategorized-and-unspecified-risk-20260709-004` as the next bounded Critic pass.
 - Preserved boundaries: no online discovery, no clone, no script execution, no DNS query, no email parsing, no malware tooling, no Ghidra execution, no browser use, no generated catalog surface hand-edit, no third-party content copy, no package publication, no npm publication, and no registry publication.
-- Acceptance tests passed: private mailbox/header/body/attachment evidence surfaces classified; external reputation/API-key and third-party submission boundaries classified; malware binary-analysis/Ghidra script surfaces classified; safe defensive guidance preserved; catalog refresh left for next ticket.
-- Value delta: removed two private-data/malware-analysis risk blockers by converting package-facing skills into high-risk review-gated defensive wrappers.
-- Next justified action: Cataloger should consume `skills-catalog-refresh-after-metadata-backfill-003`, before further metadata backlog cleanup.
+- Acceptance tests passed: catalog reflects AI SEO as business/low/no-review; catalog reflects Email Header Phishing Investigation as forensics/high/requires_review; catalog reflects Golang Malware with Ghidra as security-defensive/high/requires_review; install manifest remains coherent; no npm publish attempted.
+- Value delta: removed the catalog parity blocker after metadata-backfill batch 003 and the email-header/Golang malware risk review.
+- Next justified action: Critic should consume `skills-metadata-backfill-batch-004`, stopping immediately on unsafe or high-risk material.
+
+- Earlier 2026-07-09 run: Risk Auditor consumed `skills-risk-review-email-header-and-golang-malware-analysis-001`.
+- Prior Risk Auditor inspected ref/SHA before first content write: `main` at `1afc9b11df4ced6b8908342c901f28abafe4ec70`.
+- Prior Risk Auditor converted `dist/skills/analyzing-email-headers-for-phishing-investigation/SKILL.md` into a high-risk, requires_review, authorized incident-response defensive wrapper.
+- Prior Risk Auditor converted `dist/skills/analyzing-golang-malware-with-ghidra/SKILL.md` into a high-risk, requires_review, authorized isolated malware-analysis defensive wrapper.
+- Prior Risk Auditor created `reports/risk/2026-07-09-email-header-and-golang-malware-analysis-risk-review.md`, closed the risk queue, and unblocked catalog parity.
 
 - Earlier 2026-07-09 run: Critic consumed `skills-metadata-backfill-batch-003`.
 - Prior Critic inspected ref/SHA before first content write: `main` at `b57378eef9bb47f6739b3f4075f7d2852f74add5`.
-- Prior Critic confirmed today's daily ledger exists; no missing-ledger initialization was performed in that pass.
-- Prior Critic read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `dist/skills/ai-seo/SKILL.md`, `dist/skills/analyzing-email-headers-for-phishing-investigation/SKILL.md`, and `dist/skills/analyzing-golang-malware-with-ghidra/SKILL.md`.
 - Prior Critic backfilled `dist/skills/ai-seo/SKILL.md` as `business`, `low`, `requires_review: false`, with source status and review notes.
-- Prior Critic stopped before routine metadata endorsement of `dist/skills/analyzing-email-headers-for-phishing-investigation/SKILL.md` and `dist/skills/analyzing-golang-malware-with-ghidra/SKILL.md` because direct review found private mailbox/header/body/attachment evidence, external reputation/API-key submission boundaries, malware sample analysis, and executable Python/Ghidra reverse-engineering scripts.
-- Prior Critic created `reports/critic/2026-07-09-metadata-backfill-batch-003.md`, opened `skills-risk-review-email-header-and-golang-malware-analysis-001`, and blocked `skills-catalog-refresh-after-metadata-backfill-003` behind it.
+- Prior Critic stopped before routine metadata endorsement of email-header and Golang malware skills because direct review found private mailbox/header/body/attachment evidence, external reputation/API-key submission boundaries, malware sample analysis, and executable Python/Ghidra reverse-engineering scripts.
 
-- Earlier 2026-07-09 run: Reporter-only missing-ledger repair initialized the Skills heartbeat daily ledger.
-- Prior Reporter inspected ref/SHA before first content write: `main` at `509551196ca2c209b375be4dc3960ce9195db6a5`.
-- Prior Reporter confirmed `operations/daily/2026-07-09/status.json` and `operations/daily/2026-07-09/queues.json` returned `404 Not Found` on the default branch at the start of the run.
-- Prior Reporter read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, prior daily status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, and `dist/install-manifest.json`.
-- Prior Reporter confirmed `operations/action-runs/discover-skill-sources/latest.json` still returned `404 Not Found` on the default branch.
-- Prior Reporter created `operations/daily/2026-07-09/status.json`, `operations/daily/2026-07-09/queues.json`, and `operations/daily/2026-07-09/report.md`.
-- Prior Reporter appended value-ledger event `skills-daily-ledger-initialized-20260709-0011`.
-- Prior Reporter consumed no board ticket because missing daily ledger initialization must stop before discovery, risk, metadata, catalog, package, or publication work.
-- Prior Reporter preserved boundaries: no online discovery, no clone, no script execution, no generated catalog surface hand-edit, no third-party content copy, no risk review, no metadata backfill, no catalog refresh, no package publication, no npm publication, and no registry publication.
-- Prior Reporter acceptance tests passed: today's status ledger exists, today's queues ledger exists, and Reporter-only stop was honored.
-- Prior Reporter value delta: initialized the missing 2026-07-09 daily ledgers so subsequent Skills heartbeats can safely consume board tickets without mixing missing-ledger repair with value work.
+- Earlier 2026-07-09 run: Reporter-only missing-ledger repair initialized the Skills heartbeat daily ledger and stopped without consuming a board ticket.
 
 ## 2026-07-08
-
-- Ran board-driven Cataloger for `skills-catalog-refresh-after-metadata-backfill-002`.
-- Model requirement status: `model_setting_unverified`.
-- Inspected ref/SHA before this ticket's first content write: `main` at `a6b80052ceb4fdcb0d9c9cf3ca09fdc07e3fa2ff`.
-- Confirmed today's daily ledger exists; no missing-ledger initialization was performed.
-- Confirmed `operations/action-runs/discover-skill-sources/latest.json` returned `404 Not Found` on the default branch during this run.
-- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `dist/skills/code-complexity-scanner/SKILL.md`, `dist/skills/code-review/SKILL.md`, `dist/skills/code-review-excellence/SKILL.md`, `dist/skills/diagnosing-bugs/SKILL.md`, `reports/critic/2026-07-08-metadata-backfill-batch-002.md`, and `reports/risk/2026-07-08-diagnosing-bugs-risk-review.md`.
-- No online/source discovery was used because the selected board ticket was an internal catalog parity repair.
-- Created `reports/catalog/2026-07-08-metadata-backfill-002-catalog-parity.md`.
-- Verified catalog parity after metadata-backfill batch 002 and Diagnosing Bugs risk review: `dist/catalog.json` and `dist/catalog.md` show `skill_count` 1183, `software-engineering` 152, `uncategorized` 556, `high` 16, `low` 10, `medium` 439, and `unspecified` 718.
-- Verified `dist/install-manifest.json` remains coherent with discovery files and selection fields: `slug`, `title`, `domain`, `risk_level`, `tags`, and `requires_review`.
-- Closed board ticket `skills-catalog-refresh-after-metadata-backfill-002` and queue item `catalog-refresh-after-metadata-backfill-20260708-002`.
-- Opened board ticket `skills-metadata-backfill-batch-003` and queue item `metadata-backfill-uncategorized-and-unspecified-risk-20260708-003` as the next bounded Critic pass.
-- Preserved boundaries: no online discovery, no clone, no script execution, no generated catalog surface hand-edit, no third-party content copy, no package publication, no npm publication, and no registry publication.
-- Acceptance tests passed: catalog reflects Code Complexity Scanner as software-engineering low/no-review; catalog reflects Code Review, Code Review Excellence, and Diagnosing Bugs as software-engineering medium/requires_review; install manifest remains coherent; no npm publish attempted.
-- Value delta: removed the catalog parity blocker created by metadata-backfill batch 002 and the Diagnosing Bugs risk review.
-- Next justified action: Critic should consume `skills-metadata-backfill-batch-003`, stopping immediately on any high-risk executable, credential, offensive, account, browser, SSRF, private-data, or external-mutation surface.
-
-- Earlier 2026-07-08 state: discovery handoff repair ticket `skills-restore-discovery-handoff-001` was completed, manual discovery fallback was queued, Portfolio Supervisor repaired board priority so high-risk MCP/SSRF review outranked manual discovery fallback, risk review ticket `skills-risk-review-mcp-tool-poisoning-001` was completed, catalog parity ticket `skills-catalog-refresh-after-risk-review-001` was completed, manual discovery fallback ticket `skills-manual-discovery-fallback-001` was completed, source review ticket `skills-source-review-batch-001` was completed, OpenClaw risk ticket `skills-risk-review-openclaw-source-runtime-surfaces-001` was completed, Vercel AI SDK normalization ticket `skills-normalize-vercel-ai-sdk-profile-001` was completed, AI SDK catalog parity ticket `skills-catalog-refresh-after-normalization-001` was completed, metadata backfill ticket `skills-metadata-backfill-batch-001` was completed, Browser Trace risk review ticket `skills-risk-review-browser-trace-001` was completed, metadata-backfill catalog parity ticket `skills-catalog-refresh-after-metadata-backfill-001` was completed, metadata backfill ticket `skills-metadata-backfill-batch-002` was completed, Diagnosing Bugs risk review ticket `skills-risk-review-diagnosing-bugs-001` was completed, GitTaskBench remained license-blocked/watch, and publication remains blocked.
-
-## 2026-07-07
 
 - Prior entries retained in repository history before compact log reconciliation. See commits before `4d692bae72e1d6235cf85127839fd6773a15dc4f` for the full 2026-07-07 operational log.
