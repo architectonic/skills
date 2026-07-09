@@ -11,21 +11,26 @@ status: active
 
 ## 2026-07-09
 
-- Ran board-driven Critic for `skills-metadata-backfill-batch-006`.
+- Ran board-driven Risk Auditor for `skills-risk-review-ioc-defanging-sharing-pipeline-001`.
 - Model requirement status: `model_setting_unverified`.
-- Inspected ref/SHA before this ticket's first content write: `main` at `c9cba1f5492d1ecdeef3e77cba9cf83fe643bb77`.
+- Inspected ref/SHA before this ticket's first content write: `main` at `4908c0e60938e781fe95437b433141d380d61c85`.
 - Confirmed today's daily ledger exists; no missing-ledger initialization was performed in this pass.
-- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `reports/catalog/2026-07-09-metadata-backfill-005-catalog-parity.md`, `dist/skills/building-detection-rule-with-splunk-spl/SKILL.md`, and `dist/skills/building-ioc-defanging-and-sharing-pipeline/SKILL.md`.
-- No online/source discovery was used because the selected board ticket was an internal bounded metadata-backfill pass.
-- Backfilled `Building Detection Rules with Splunk SPL` as `security-defensive`, `medium`, `requires_review: true`, with `source_status: package_metadata_backfill`.
-- Stopped before routine metadata endorsement of `Building IOC Defanging and Sharing Pipeline` because the file contains IOC extraction/refanging, STIX bundle generation, MISP/TAXII/API-key distribution, and authenticated external threat-intelligence submission surfaces.
-- Created `reports/critic/2026-07-09-metadata-backfill-batch-006.md`.
-- Opened board ticket `skills-risk-review-ioc-defanging-sharing-pipeline-001` and daily risk queue item `risk-review-ioc-defanging-sharing-pipeline-20260709-001`.
-- Opened but blocked `skills-catalog-refresh-after-metadata-backfill-006` and daily catalog queue item `catalog-refresh-after-metadata-backfill-20260709-006` until IOC pipeline risk review completes.
-- Preserved boundaries: no online discovery, no clone, no Splunk execution, no MISP/TAXII/API-key use, no threat-intelligence submission, no third-party content copy, no package publication, no npm publication, and no registry publication.
-- Acceptance tests passed: bounded batch, justified metadata, risk ticket created on unsafe material, and catalog refresh ticket created but blocked.
-- Value delta: improved package-facing discoverability/reviewability for one defensive Splunk detection-engineering skill and prevented API-key-backed IOC sharing/external submission material from routine endorsement.
-- Next justified action: Risk Auditor should consume `skills-risk-review-ioc-defanging-sharing-pipeline-001`.
+- Read and followed `operations/heartbeat.md`, `operations/board.json`, `operations/gates.md`, `operations/value-ledger.json`, today's status/queues/report, `operations/log.md`, `dist/catalog.json`, `dist/catalog.md`, `dist/install-manifest.json`, `dist/skills/building-ioc-defanging-and-sharing-pipeline/SKILL.md`, and `reports/critic/2026-07-09-metadata-backfill-batch-006.md`.
+- No online/source discovery was used because the selected board ticket was an internal risk review.
+- Converted `Building IOC Defanging and Sharing Pipeline` into a high-risk, `requires_review: true`, defensive governance wrapper.
+- Classified IOC extraction/refanging/defanging, STIX bundle generation, MISP/TAXII authenticated submission, API-key, credential, and external threat-intelligence sharing surfaces.
+- Removed package-facing executable extraction/refanging code, STIX generation snippets, MISP/TAXII client code, API-key placeholders, and authenticated external submission examples.
+- Created `reports/risk/2026-07-09-ioc-defanging-sharing-pipeline-risk-review.md`.
+- Closed board ticket `skills-risk-review-ioc-defanging-sharing-pipeline-001` and daily risk queue item `risk-review-ioc-defanging-sharing-pipeline-20260709-001`.
+- Unblocked board ticket `skills-catalog-refresh-after-metadata-backfill-006` and daily catalog queue item `catalog-refresh-after-metadata-backfill-20260709-006`.
+- Preserved boundaries: no online discovery, no clone, no IOC extraction, no refanging, no STIX generation, no MISP/TAXII/API-key use, no threat-intelligence submission, no third-party content copy, no package publication, no npm publication, and no registry publication.
+- Acceptance tests passed: IOC handling surfaces classified, STIX/TAXII/MISP/API-key boundaries classified, safe defensive guidance preserved, package-facing authenticated submission snippets removed or review-gated, and catalog parity left for the next ticket.
+- Value delta: removed the IOC defanging/sharing pipeline risk blocker while preserving safe defensive IOC handling governance.
+- Next justified action: Cataloger should consume `skills-catalog-refresh-after-metadata-backfill-006`.
+
+- Earlier 2026-07-09 run: Critic consumed `skills-metadata-backfill-batch-006`.
+- Prior Critic inspected ref/SHA before first content write: `main` at `c9cba1f5492d1ecdeef3e77cba9cf83fe643bb77`.
+- Prior Critic backfilled `Building Detection Rules with Splunk SPL` as `security-defensive`, `medium`, `requires_review: true`, with `source_status: package_metadata_backfill`, then opened this IOC pipeline risk review.
 
 - Earlier 2026-07-09 run: Cataloger consumed `skills-catalog-refresh-after-metadata-backfill-005`.
 - Prior Cataloger inspected ref/SHA before first content write: `main` at `8dc711f5cd7f32567e67f97a8aa56069bd5e9752`.
