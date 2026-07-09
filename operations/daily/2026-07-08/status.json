@@ -69,8 +69,8 @@
       "queues": "85fdf38157522d23a7325a0d6d429e8167ed8dcb",
       "value_ledger": "4482dc391a4f9ea188005d494ac67bb9b0162616",
       "daily_report": "b06f7c6d07ebba5b9119e12609a15c362e367059",
-      "status_first_pass": "pending_final_connector_response",
-      "log": "pending_next_write",
+      "status_first_pass": "f28438c4a0ad2271deb65755d0ffed5dcdbeb7b0",
+      "log": "580e85ba2f712fd0a62ec1c7581b3688d8aa382c",
       "status_final": "pending_final_connector_response"
     },
     "acceptance_tests": [
@@ -84,6 +84,6 @@
     "value_delta": "Removed the Diagnosing Bugs browser/headless/trace risk blocker while preserving useful diagnostic guidance. Catalog parity after metadata-backfill batch 002 is now ready and must run before further metadata backlog cleanup."
   },
   "blockers": ["Catalog parity after metadata-backfill batch 002 is now ready and must run before more metadata backlog cleanup.", "Discovery Action handoff remains absent; manual fallback and source review artifacts exist but producer verification remains blocked.", "GitTaskBench remains watch/license-blocked because LICENSE returned 404 during source review.", "Remaining metadata backlog is large: 557 uncategorized-domain and 719 unspecified-risk entries before the next catalog generation.", "Package/publication endorsement remains blocked until discovery Action, source/license, metadata backlog, risk, catalog, and package verification gates are clean."],
-  "last_commit": "b06f7c6d07ebba5b9119e12609a15c362e367059",
+  "last_commit": "580e85ba2f712fd0a62ec1c7581b3688d8aa382c",
   "next_action": "Cataloger should consume skills-catalog-refresh-after-metadata-backfill-002 before further metadata backlog cleanup, package verification, or publication endorsement."
 }
