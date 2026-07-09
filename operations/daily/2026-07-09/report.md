@@ -9,13 +9,13 @@ status: active
 
 ## Latest board-driven heartbeat
 
-Ran `Risk Auditor` for `skills-risk-review-ct-logs-attack-library-malware-pipeline-001`.
+Ran `Cataloger` for `skills-catalog-refresh-after-metadata-backfill-004`.
 
 ## Inspected state
 
 - Repository: `architectonic/skills`
 - Inspected ref: `main`
-- Inspected SHA before this ticket's first content write: `00326a88e5e094f4d3e36e58839141a5ca3ed492`
+- Inspected SHA before this ticket's first content write: `004abcd311ed0b853caff52dd5033433db06bc18`
 - Model requirement status: `model_setting_unverified`
 - Daily ledger present at start: yes
 - Missing-ledger initialization: no
@@ -34,58 +34,49 @@ Ran `Risk Auditor` for `skills-risk-review-ct-logs-attack-library-malware-pipeli
 - `operations/daily/2026-07-09/report.md`
 - `operations/log.md`
 - `dist/catalog.json`
+- `dist/catalog.md`
 - `dist/install-manifest.json`
 - `reports/critic/2026-07-09-metadata-backfill-batch-004.md`
+- `reports/risk/2026-07-09-ct-logs-attack-library-malware-pipeline-risk-review.md`
 - `dist/skills/auditing-tls-certificate-transparency-logs/SKILL.md`
 - `dist/skills/building-attack-pattern-library-from-cti-reports/SKILL.md`
 - `dist/skills/building-automated-malware-submission-pipeline/SKILL.md`
 
 ## Work performed
 
-Consumed the open high-priority risk-review ticket and converted three unsafe package-facing security skills into high-risk, review-gated defensive wrappers.
+Consumed the required catalog parity ticket after the CT-log, CTI attack-pattern library, and automated malware-submission pipeline risk review.
 
-Changed skills:
+No generated catalog surfaces were hand-edited. The existing generated catalog surfaces were verified directly against package-facing skill metadata and the install manifest.
+
+## Verified catalog state
+
+- `skill_count`: `1183`
+- `security-defensive`: `65`
+- `uncategorized`: `552`
+- `high`: `21`
+- `medium`: `439`
+- `low`: `11`
+- `unspecified`: `712`
+
+Verified high-risk review-gated catalog entries:
 
 - `Auditing TLS Certificate Transparency Logs`
 - `Building Attack Pattern Library from CTI Reports`
 - `Building Automated Malware Submission Pipeline`
 
-## Risk decisions
-
-### CT-log auditing
-
-Classified as high-risk because the source skill included public CT-log polling, subdomain discovery, typosquat/takeover triage, DNS validation, SMTP/webhook alerting, external investigation actions, and CT-log integrity implementation surfaces.
-
-Allowed package-facing boundary: authorized owned-domain monitoring, internal inventory review, defensive triage, and evidence preparation.
-
-### CTI attack-pattern library
-
-Classified as high-risk because the source skill included executable CTI parsing, ATT&CK/STIX/Sigma generation, malware/tool naming surfaces, and procedure-reconstruction risk.
-
-Allowed package-facing boundary: licensed or authorized CTI intake, defensive abstraction, telemetry mapping, detection hypotheses, and analyst-reviewed control backlog.
-
-### Automated malware-submission pipeline
-
-Classified as high-risk because the source skill included malware sample collection, EDR quarantine and email gateway extraction, third-party API submission, sandbox task creation, IOC extraction, SIEM push, and blocklist/sinkhole automation.
-
-Allowed package-facing boundary: suspicious-file triage governance, sample-handling policy, third-party submission decision matrix, analyst verdict templates, and future internal implementation controls.
-
 ## Acceptance tests
 
 | Test | Result | Evidence |
 |---|---|---|
-| CT-log polling, subdomain discovery, typosquat/takeover triage, credentialed alerting, and external investigation actions are classified | Pass | CT-log skill converted to `security-defensive`, `high`, `requires_review: true`; package-facing CT API, DNS, alerting, and external-action details removed. |
-| CTI report parsing, attack-pattern extraction, ATT&CK/STIX/Sigma generation, and malware/tool naming surfaces are classified | Pass | CTI skill converted to `security-defensive`, `high`, `requires_review: true`; executable parser/STIX/Sigma generation and procedure reconstruction content removed. |
-| Malware sample collection/submission, sandbox, EDR quarantine, email gateway export, and API-key boundaries are classified | Pass | Malware pipeline skill converted to `security-defensive`, `high`, `requires_review: true`; executable collection/submission/API/enforcement snippets removed. |
-| Safe defensive guidance is preserved or bounded | Pass | Each skill now preserves only governance, authorized-scope, analyst-review, and defensive-control guidance. |
-| Catalog refresh remains blocked until review completes | Pass | Risk review is complete and `skills-catalog-refresh-after-metadata-backfill-004` is now the next board ticket; generated catalog surfaces were not hand-edited. |
+| Catalog reflects CT Log Auditing as security-defensive high requires_review | Pass | Catalog domain list and skill entry show `Auditing TLS Certificate Transparency Logs` as `security-defensive`, `high`, `requires_review: true`. |
+| Catalog reflects CTI Attack Pattern Library as security-defensive high requires_review | Pass | Catalog domain list and skill entry show `Building Attack Pattern Library from CTI Reports` as `security-defensive`, `high`, `requires_review: true`. |
+| Catalog reflects Automated Malware Submission Pipeline as security-defensive high requires_review | Pass | Catalog domain list and skill entry show `Building Automated Malware Submission Pipeline` as `security-defensive`, `high`, `requires_review: true`. |
+| Install manifest remains coherent | Pass | `dist/install-manifest.json` preserves package name, install root, discovery files, and selection fields. |
+| No npm publish attempted | Pass | No package, npm, registry, or publication action occurred. |
 
 ## Files changed
 
-- `dist/skills/auditing-tls-certificate-transparency-logs/SKILL.md`
-- `dist/skills/building-attack-pattern-library-from-cti-reports/SKILL.md`
-- `dist/skills/building-automated-malware-submission-pipeline/SKILL.md`
-- `reports/risk/2026-07-09-ct-logs-attack-library-malware-pipeline-risk-review.md`
+- `reports/catalog/2026-07-09-metadata-backfill-004-catalog-parity.md`
 - `operations/board.json`
 - `operations/value-ledger.json`
 - `operations/daily/2026-07-09/queues.json`
@@ -103,12 +94,12 @@ Allowed package-facing boundary: suspicious-file triage governance, sample-handl
 
 ## Value delta
 
-Removed the CT-log, CTI attack-library, and automated malware-submission risk blocker while preserving useful defensive governance and analyst-review value.
+Removed the catalog parity blocker after CT-log, CTI attack-library, and automated malware-submission risk review. The three high-risk defensive wrappers are now discoverable through coherent catalog/install-manifest surfaces.
 
 ## Risk and publication state
 
 - Risk queue: clear.
-- Catalog parity after batch 004: required next because three skill metadata files changed.
+- Catalog queue: clear.
 - GitTaskBench: watch/license-blocked.
 - Discovery Action handoff: still absent.
 - Remaining metadata backlog: open.
@@ -121,7 +112,8 @@ Removed the CT-log, CTI attack-library, and automated malware-submission risk bl
 - A prior `Risk Auditor` run consumed `skills-risk-review-email-header-and-golang-malware-analysis-001` and converted the two package-facing skills into high-risk review-gated defensive wrappers.
 - A prior `Cataloger` run consumed `skills-catalog-refresh-after-metadata-backfill-003` and verified catalog parity after batch 003.
 - A prior `Critic` run consumed `skills-metadata-backfill-batch-004` and stopped before CT-log, CTI attack-library, and automated malware-submission surfaces.
+- A prior `Risk Auditor` run consumed `skills-risk-review-ct-logs-attack-library-malware-pipeline-001` and converted three package-facing skills into high-risk review-gated defensive wrappers.
 
 ## Next action
 
-`Cataloger` should consume `skills-catalog-refresh-after-metadata-backfill-004` before further metadata backlog cleanup.
+`Critic` may consume `skills-metadata-backfill-batch-005`, stopping immediately on unsafe package-facing material.
