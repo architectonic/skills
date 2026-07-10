@@ -16,17 +16,17 @@
       "media": 1,
       "research": 83,
       "runtime-tools": 35,
-      "security-defensive": 71,
+      "security-defensive": 72,
       "security-offensive": 16,
       "software-engineering": 152,
-      "uncategorized": 545,
+      "uncategorized": 544,
       "writing": 16
     },
     "risk_counts": {
-      "high": 27,
+      "high": 28,
       "low": 11,
       "medium": 440,
-      "unspecified": 705
+      "unspecified": 704
     }
   },
   "domains": {
@@ -448,6 +448,7 @@
       "Building Identity Federation with SAML Azure AD",
       "Building Incident Response Dashboard",
       "Building Malware Incident Communication Template",
+      "Building Phishing Reporting Button Workflow",
       "Building Vulnerability Aging and SLA Tracking",
       "Building Vulnerability Exception Tracking System",
       "Building Vulnerability Scanning Workflow",
@@ -675,7 +676,6 @@
       "xurl"
     ],
     "uncategorized": [
-      "Building Phishing Reporting Button Workflow",
       "Building Ransomware Playbook with CISA Framework",
       "Building SOC Escalation Matrix",
       "Building SOC Metrics and KPI Tracking",
@@ -4722,17 +4722,14 @@
     {
       "slug": "Building Phishing Reporting Button Workflow",
       "title": "Building Phishing Reporting Button Workflow",
-      "description": "Implement a phishing report button in email clients with automated triage",
+      "description": "Govern phishing reporting-button programs without exposing package-facing mailbox mutation, external-submission, or private-data automation.",
       "path": "dist/skills/building-phishing-reporting-button-workflow/SKILL.md",
       "directory": "dist/skills/building-phishing-reporting-button-workflow",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "security-defensive",
+      "risk_level": "high",
+      "requires_review": true,
       "tags": [
-        "software-development",
-        "software-development",
-        "agent-skill",
-        "okf",
+        "security-defensive",
         "phishing-reporting",
         "email-security",
         "incident-response",
@@ -4740,10 +4737,12 @@
         "outlook",
         "microsoft-365",
         "soar",
-        "security"
+        "governance",
+        "high-risk",
+        "requires-review"
       ],
       "source_family": "",
-      "source_status": "",
+      "source_status": "package_risk_reviewed",
       "type": "Playbook"
     },
     {
