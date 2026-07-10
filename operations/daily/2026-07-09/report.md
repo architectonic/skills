@@ -9,13 +9,13 @@ status: active
 
 ## Latest board-driven heartbeat
 
-Ran `Critic` for `skills-metadata-backfill-batch-010`.
+Ran `Risk Auditor` for `skills-risk-review-phishing-reporting-button-workflow-001`.
 
 ## Inspected state
 
 - Repository: `architectonic/skills`
 - Inspected ref: `main`
-- Inspected SHA before this ticket's first content write: `a24c55b3e129108864ce21c6dc3df8dead8e96aa`
+- Inspected SHA before this ticket's first content write: `3e43678bf2069362dc9a6345fdbda0efaeca13ac`
 - Model requirement status: `model_setting_unverified`
 - Daily ledger present at start: yes
 - Missing-ledger initialization: no
@@ -38,49 +38,46 @@ Ran `Critic` for `skills-metadata-backfill-batch-010`.
 - `dist/catalog.md`
 - `dist/install-manifest.json`
 - `dist/skills/building-phishing-reporting-button-workflow/SKILL.md`
-- `dist/skills/building-ransomware-playbook-with-cisa-framework/SKILL.md`
-- `dist/skills/building-soc-escalation-matrix/SKILL.md`
+- `reports/critic/2026-07-09-metadata-backfill-batch-010.md`
 
 ## Work performed
 
-Consumed `skills-metadata-backfill-batch-010`.
+Consumed `skills-risk-review-phishing-reporting-button-workflow-001`.
 
-Stopped before routine metadata endorsement of `Building Phishing Reporting Button Workflow`.
+Converted `Building Phishing Reporting Button Workflow` into a high-risk, `requires_review: true`, defensive governance wrapper.
 
-Reason: the skill is package-facing and currently uncategorized/unspecified in the catalog, but its content includes review-sensitive and externally mutating surfaces:
+Classified and removed or review-gated package-facing guidance for:
 
-- Microsoft 365 / Google Workspace administrative access prerequisites.
+- Microsoft 365, Google Workspace, or similar email-suite administrative configuration.
 - SOAR monitoring of a dedicated reporting mailbox.
-- IOC extraction from reported email URLs, attachments, sender data, and headers.
-- URL submission to VirusTotal and URLScan.io.
-- Attachment submission to sandbox services.
-- Automated classification of reported messages.
-- Automated inbox retraction, sender-domain blocking, junk moves, legitimate-message return to inbox, and reporter notifications.
-- User/reporting metrics that may touch private or personal data.
+- IOC extraction from reported emails, including URLs, attachments, sender data, headers, recipients, and reporter identity.
+- URL, attachment, header, or message submission to VirusTotal, URLScan, sandbox, or reputation services.
+- Automated classification and security response paths.
+- Inbox retraction, message movement, sender/domain blocking, reporter notifications, and user/reporting metrics.
 
-Opened `skills-risk-review-phishing-reporting-button-workflow-001` as the next required gate.
-
-No skill, catalog, install-manifest, npm, registry, package publication, online discovery, or source-ingestion mutation was performed.
+Preserved bounded defensive governance value: scope definition, approval routing, redaction policy, audit/rollback expectations, human-review matrix, and synthetic-test expectations.
 
 ## Board and queue result
 
-- `skills-metadata-backfill-batch-010`: blocked.
-- `metadata-backfill-uncategorized-and-unspecified-risk-20260709-010`: blocked for risk review.
-- `skills-risk-review-phishing-reporting-button-workflow-001`: ready.
-- `risk-review-phishing-reporting-button-workflow-20260709-001`: ready.
+- `skills-risk-review-phishing-reporting-button-workflow-001`: done.
+- `risk-review-phishing-reporting-button-workflow-20260709-001`: done.
+- `skills-catalog-refresh-after-metadata-backfill-010`: ready.
+- `catalog-refresh-after-metadata-backfill-20260709-010`: ready.
 
 ## Acceptance tests
 
 | Test | Result | Evidence |
 |---|---|---|
-| Processes a bounded batch, not the entire catalog | Pass | Reviewed the next backlog candidates and stopped at the first unsafe candidate. |
-| Adds domain/risk/requires_review/source status when justified | Pass | No routine metadata was applied because the first target requires risk review before endorsement. |
-| Stops and creates risk ticket on unsafe material | Pass | Opened `skills-risk-review-phishing-reporting-button-workflow-001`. |
-| Creates catalog refresh ticket after metadata changes | Pass | No catalog refresh ticket was created because no metadata or catalog change occurred. |
+| Email-suite admin configuration and SOAR mailbox monitoring surfaces are classified | Pass | Skill and report classify tenant admin and SOAR mailbox monitoring as high-risk review-gated surfaces. |
+| IOC extraction, URL/attachment submission, sandbox/reputation service, and private-data surfaces are classified | Pass | Skill and report classify IOC extraction and external submission paths as blocked from package-facing guidance. |
+| Automated inbox retraction, sender-domain blocking, message movement, and reporter notification actions are review-gated or removed | Pass | Skill removes operational mutation steps and requires review/change control. |
+| Safe defensive reporting-program governance is preserved or bounded | Pass | Skill preserves governance checklist, approval routing, redaction, audit, and synthetic test expectations. |
+| Catalog refresh remains blocked until review completes | Pass | Risk review completed and catalog parity ticket is now ready. |
 
 ## Files changed
 
-- `reports/critic/2026-07-09-metadata-backfill-batch-010.md`
+- `dist/skills/building-phishing-reporting-button-workflow/SKILL.md`
+- `reports/risk/2026-07-09-phishing-reporting-button-workflow-risk-review.md`
 - `operations/board.json`
 - `operations/value-ledger.json`
 - `operations/daily/2026-07-09/queues.json`
@@ -93,17 +90,17 @@ No skill, catalog, install-manifest, npm, registry, package publication, online 
 - No online discovery or source review was performed.
 - No repository was cloned.
 - No third-party content was copied or normalized.
-- No skill/catalog/install-manifest metadata was changed.
+- No catalog/install-manifest rebuild was claimed in this risk-review pass.
 - No package, npm, registry, or publication action occurred.
 
 ## Value delta
 
-Prevented routine endorsement of email-admin, SOAR, external-submission, inbox/domain mutation, reporter-notification, and private-data workflows; opened a concrete risk-review gate.
+Removed the phishing reporting workflow risk blocker by converting package-facing email-admin, SOAR, IOC extraction, external-submission, inbox/domain mutation, reporter-notification, and private-data material into a high-risk defensive governance wrapper.
 
 ## Risk and publication state
 
-- Risk queue: open.
-- Catalog queue: clear.
+- Risk queue: clear.
+- Catalog queue: open for parity after this risk review.
 - GitTaskBench: watch/license-blocked.
 - Discovery Action handoff: still absent.
 - Remaining metadata backlog: open.
@@ -111,8 +108,8 @@ Prevented routine endorsement of email-admin, SOAR, external-submission, inbox/d
 
 ## Next action
 
-`Risk Auditor` should consume `skills-risk-review-phishing-reporting-button-workflow-001`.
+`Cataloger` should consume `skills-catalog-refresh-after-metadata-backfill-010`.
 
 ## Previous 2026-07-09 run summary
 
-Earlier 2026-07-09 runs included daily-ledger initialization, metadata backfills 003-009, associated risk reviews, and catalog parity gates through `skills-catalog-refresh-after-metadata-backfill-009`.
+Earlier 2026-07-09 runs included daily-ledger initialization, metadata backfills 003-010, associated risk reviews, and catalog parity gates through `skills-catalog-refresh-after-metadata-backfill-009`.
