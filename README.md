@@ -36,3 +36,7 @@ npx architectonic@latest verify
 ```
 
 Installing the package does not authorize any skill to execute. Local agents must select skills explicitly under their own permissions and review policy.
+
+## Organization bootstrap
+
+The reviewed core includes `document-guided-organization-bootstrap`: a procedure for inspecting documents and source artifacts first, asking the human only where material gaps remain, routing explicit answers into organization-owned files, preserving unknowns, and stopping when the current work is sufficiently grounded.
