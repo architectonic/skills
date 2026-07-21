@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "status": "reviewed-core",
+  "trust_boundary": "Only files listed here are part of the default reviewed core. dist/ is an external registry surface and is not trusted by inclusion.",
+  "skills": [
+    "source-grounding",
+    "assumption-grilling",
+    "agent-handoff",
+    "architecture-review"
+  ]
+}
