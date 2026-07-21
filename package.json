@@ -1,6 +1,6 @@
 {
   "name": "architectonic-skills",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Reviewed core procedures plus an explicitly untrusted external skill registry and curation pipeline.",
   "license": "Apache-2.0",
   "type": "module",
