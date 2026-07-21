@@ -3,6 +3,7 @@
   "status": "reviewed-core",
   "trust_boundary": "Only files listed here are part of the default reviewed core. dist/ is an external registry surface and is not trusted by inclusion.",
   "skills": [
+    "document-guided-organization-bootstrap",
     "source-grounding",
     "assumption-grilling",
     "agent-handoff",
