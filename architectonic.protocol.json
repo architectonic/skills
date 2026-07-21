@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": "0.2.0",
-  "package_version": "0.2.0",
+  "package_version": "0.2.1",
   "package_name": "architectonic-skills",
   "layer": "skills",
   "canonical_entry": "README.md",
