@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.0
+
+- Add reviewed adaptive-composition guidance for no install, standalone layers, profiles, and custom compositions.
+- Add ordinary-versus-living knowledge lifecycle design.
+- Add source-first wiki compilation and second-brain distillation procedures.
+- Add bounded loop engineering with durable state, verification, budgets, authority, and stop conditions.
+- Add graph projection rules that distinguish extracted and inferred relations and preserve canonical files.
+- Add public-skill adoption review for provenance, license, hidden tools, supply-chain risk, and local authority.
+- Expand the reviewed core from five to twelve procedures.
+
 ## 0.2.1
 
 - Add the reviewed document-guided organization bootstrap skill.

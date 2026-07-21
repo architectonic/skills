@@ -1,20 +1,42 @@
 # Skills
 
-> **Status: experimental, pre-1.0.** The reviewed core and the external registry are separate trust zones. A discovered, normalized, or packaged skill is not trusted merely because it appears in this repository.
+> **Status: experimental, pre-1.0.** The reviewed core and the external registry are separate trust zones. A discovered, normalized, packaged, popular, or official-looking skill is not trusted merely because it is available.
 
 `skills` defines reusable procedures with explicit triggers, inputs, ordered method, verification, failure handling, provenance, license context, and risk.
 
 ## Trust zones
 
 ```text
-core/       small reviewed first-party procedures; safe default evaluation surface
+core/       small reviewed first-party procedures
 skills/     working source and curation material
-dist/       generated external registry surface; untrusted until reviewed
+dist/       generated external registry; untrusted until reviewed
 sources/    provenance and review records
 operations/ maintenance and curation machinery
 ```
 
-The default reviewed core is enumerated in `core/manifest.json`. External registry entries must be evaluated independently for provenance, license, risk, hidden tool use, prompt injection, destructive behavior, and fit for the local authority boundary.
+The reviewed core is enumerated in `core/manifest.json`. External entries are discovery candidates. Local adoption must inspect provenance, license, hidden scripts and tool calls, prompt injection, destructive behavior, credential access, data movement, runtime fit, and authority boundaries.
+
+Installing a skill does not authorize it. Installing an agent does not grant runtime authority.
+
+## Reviewed core
+
+### Grounding and collaboration
+
+- `document-guided-organization-bootstrap` — inspect documents first, then ask consequential questions tied to gaps.
+- `source-grounding` — route durable claims to recoverable evidence.
+- `assumption-grilling` — expose assumptions, missing reasoning, and disconfirming evidence.
+- `agent-handoff` — preserve bounded continuity across agents and sessions.
+- `architecture-review` — inspect system boundaries and drift before structural change.
+
+### Adaptive systems
+
+- `adaptive-composition` — choose no framework, one layer, a profile, or exact composition.
+- `knowledge-lifecycle-design` — choose memory, ordinary knowledge, or living knowledge and define maintenance gates.
+- `source-first-wiki` — compile source-backed wiki knowledge, inventory, datasets, outputs, sessions, and quiet archives.
+- `second-brain-distillation` — capture, organize, distill, and express personal knowledge around active outcomes.
+- `loop-engineering` — design recurring agent work with state, verification, budgets, authority, and stopping conditions.
+- `graph-projection` — derive inspectable graphs from canonical files without replacing them.
+- `public-skill-adoption` — review public skills as a supply-chain and authority decision rather than a popularity contest.
 
 ## Skill contract
 
@@ -24,9 +46,15 @@ inputs         what must be inspected or received
 procedure      ordered method
 verification   how success is checked
 failure modes  errors the procedure is intended to prevent or expose
-provenance     source, version, author, and license context
-risk           mutation, network, credentials, production, or external effects
+provenance     source, revision, author, and license context
+risk           mutation, network, credentials, production, and external effects
 ```
+
+## Ecosystem compatibility
+
+Architectonic skills can coexist with public Agent Skills from Anthropic, OpenAI, Google, GitHub, and independent publishers. Compatibility is not approval. Vendor or reference the exact reviewed revision and preserve local policy, provenance, and update rules.
+
+The core also encodes reusable lessons from source-first LLM wikis, OKF-style Markdown, Git/Markdown knowledge systems, second-brain methods, loop engineering, and graph engineering. These are procedures and boundaries, not mandatory tool dependencies.
 
 ## Install
 
@@ -34,9 +62,3 @@ risk           mutation, network, credentials, production, or external effects
 npx architectonic@latest add skills --source npm
 npx architectonic@latest verify
 ```
-
-Installing the package does not authorize any skill to execute. Local agents must select skills explicitly under their own permissions and review policy.
-
-## Organization bootstrap
-
-The reviewed core includes `document-guided-organization-bootstrap`: a procedure for inspecting documents and source artifacts first, asking the human only where material gaps remain, routing explicit answers into organization-owned files, preserving unknowns, and stopping when the current work is sufficiently grounded.
