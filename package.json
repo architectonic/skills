@@ -1,6 +1,6 @@
 {
   "name": "architectonic-skills",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Reviewed core procedures plus an explicitly untrusted external skill registry and curation pipeline.",
   "license": "Apache-2.0",
   "type": "module",
@@ -34,7 +34,11 @@
     "human-ai",
     "agents",
     "provenance",
-    "governance"
+    "governance",
+    "adaptive",
+    "loops",
+    "knowledge-graph",
+    "public-skills"
   ],
   "bin": {
     "architectonic-skills": "./bin/architectonic-skills.js"
