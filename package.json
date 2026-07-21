@@ -1,7 +1,7 @@
 {
   "name": "architectonic-skills",
-  "version": "0.1.4",
-  "description": "Runtime-neutral TeleAgent skills bundle with install, discovery manifests, and loop-engineered maintenance operations.",
+  "version": "0.2.0",
+  "description": "Reviewed core procedures plus an explicitly untrusted external skill registry and curation pipeline.",
   "license": "Apache-2.0",
   "type": "module",
   "repository": {
@@ -11,29 +11,32 @@
   "publishConfig": {
     "access": "public"
   },
-  "bin": {
-    "architectonic-skills": "./bin/architectonic-skills.js"
-  },
   "files": [
     "bin",
     "README.md",
+    "CHANGELOG.md",
+    "architectonic.protocol.json",
     "index.md",
     "doctrine",
     "operations",
     "dist",
-    "scripts"
+    "scripts",
+    "core"
   ],
   "scripts": {
-    "build:catalog": "python scripts/build_distribution_catalog.py"
+    "build:catalog": "python scripts/build_distribution_catalog.py",
+    "validate": "node scripts/validate-package.mjs && node scripts/validate-core.mjs",
+    "test": "npm run validate"
   },
   "keywords": [
-    "teleagent",
-    "skills",
-    "okf",
-    "agents",
-    "catalog",
-    "knowledge",
     "architectonic",
-    "loop-engineering"
-  ]
+    "skills",
+    "human-ai",
+    "agents",
+    "provenance",
+    "governance"
+  ],
+  "bin": {
+    "architectonic-skills": "./bin/architectonic-skills.js"
+  }
 }
