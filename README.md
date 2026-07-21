@@ -1,5 +1,7 @@
 # Skills
 
+**Architectonic layer:** [main CLI and adaptive profiles](https://github.com/architectonic/architectonic)
+
 > **Status: experimental, pre-1.0.** The reviewed core and the external registry are separate trust zones. A discovered, normalized, packaged, popular, or official-looking skill is not trusted merely because it is available.
 
 `skills` defines reusable procedures with explicit triggers, inputs, ordered method, verification, failure handling, provenance, license context, and risk.
