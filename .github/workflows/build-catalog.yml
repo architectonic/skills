@@ -12,6 +12,7 @@ on:
       - 'scripts/validate_catalog.py'
       - 'operations/classification-overrides.json'
       - 'operations/catalog-decisions.json'
+      - 'operations/catalog-decisions/**'
       - 'dist/skills/**'
       - 'skills/**'
       - 'sources/reviewed/**'

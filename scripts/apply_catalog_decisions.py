@@ -12,6 +12,7 @@ CATALOG_PATH = ROOT / "dist" / "catalog.json"
 CATALOG_MD_PATH = ROOT / "dist" / "catalog.md"
 MANIFEST_PATH = ROOT / "dist" / "install-manifest.json"
 DECISIONS_PATH = ROOT / "operations" / "catalog-decisions.json"
+DECISIONS_DIR = ROOT / "operations" / "catalog-decisions"
 
 ALLOWED_LIFECYCLE = {
     "unreviewed",
@@ -52,45 +53,65 @@ def load_json(path: Path) -> dict[str, Any]:
     return payload
 
 
+def decision_files() -> list[Path]:
+    paths = [DECISIONS_PATH]
+    if DECISIONS_DIR.exists():
+        paths.extend(sorted(DECISIONS_DIR.glob("*.json")))
+    return paths
+
+
 def load_decisions() -> list[dict[str, Any]]:
-    payload = load_json(DECISIONS_PATH)
-    if payload.get("schema_version") != "0.1":
-        raise ValueError("catalog decision schema_version must be 0.1")
-    decisions = payload.get("decisions")
-    if not isinstance(decisions, list):
-        raise ValueError("catalog decisions must be a list")
-
+    combined: list[dict[str, Any]] = []
     seen: set[tuple[str, str]] = set()
-    for index, decision in enumerate(decisions):
-        if not isinstance(decision, dict):
-            raise ValueError(f"catalog decision {index} must be an object")
-        name = normalize(decision.get("name"))
-        path = normalize(decision.get("path")).replace("\\", "/")
-        if not name and not path:
-            raise ValueError(f"catalog decision {index} requires name or path")
-        identity = ("path", path) if path else ("name", name)
-        if identity in seen:
-            raise ValueError(f"duplicate catalog decision: {identity}")
-        seen.add(identity)
 
-        lifecycle = normalize(decision.get("lifecycle_status"))
-        recommendation = normalize(decision.get("install_recommendation"))
-        if lifecycle not in ALLOWED_LIFECYCLE - {"unreviewed"}:
-            raise ValueError(f"unsupported lifecycle_status {lifecycle!r} for {name or path}")
-        if recommendation not in ALLOWED_RECOMMENDATIONS - {"inspect"}:
-            raise ValueError(
-                f"unsupported install_recommendation {recommendation!r} for {name or path}"
-            )
-        if "requires_review" in decision and not isinstance(
-            decision["requires_review"], bool
-        ):
-            raise ValueError(f"requires_review must be boolean for {name or path}")
-        unknown = set(decision) - PATCH_FIELDS - {"name", "path"}
-        if unknown:
-            raise ValueError(
-                f"unsupported catalog decision fields for {name or path}: {sorted(unknown)}"
-            )
-    return decisions
+    for source_path in decision_files():
+        payload = load_json(source_path)
+        source_name = source_path.relative_to(ROOT).as_posix()
+        if payload.get("schema_version") != "0.1":
+            raise ValueError(f"{source_name} schema_version must be 0.1")
+        decisions = payload.get("decisions")
+        if not isinstance(decisions, list):
+            raise ValueError(f"{source_name} decisions must be a list")
+
+        for index, decision in enumerate(decisions):
+            context = f"{source_name} decision {index}"
+            if not isinstance(decision, dict):
+                raise ValueError(f"{context} must be an object")
+            name = normalize(decision.get("name"))
+            path = normalize(decision.get("path")).replace("\\", "/")
+            if not name and not path:
+                raise ValueError(f"{context} requires name or path")
+            identity = ("path", path) if path else ("name", name)
+            if identity in seen:
+                raise ValueError(
+                    f"duplicate catalog decision across decision files: {identity}"
+                )
+            seen.add(identity)
+
+            lifecycle = normalize(decision.get("lifecycle_status"))
+            recommendation = normalize(decision.get("install_recommendation"))
+            if lifecycle not in ALLOWED_LIFECYCLE - {"unreviewed"}:
+                raise ValueError(
+                    f"unsupported lifecycle_status {lifecycle!r} for {name or path}"
+                )
+            if recommendation not in ALLOWED_RECOMMENDATIONS - {"inspect"}:
+                raise ValueError(
+                    f"unsupported install_recommendation {recommendation!r} "
+                    f"for {name or path}"
+                )
+            if "requires_review" in decision and not isinstance(
+                decision["requires_review"], bool
+            ):
+                raise ValueError(f"requires_review must be boolean for {name or path}")
+            unknown = set(decision) - PATCH_FIELDS - {"name", "path"}
+            if unknown:
+                raise ValueError(
+                    f"unsupported catalog decision fields for {name or path}: "
+                    f"{sorted(unknown)}"
+                )
+            combined.append(decision)
+
+    return combined
 
 
 def apply_decisions(
@@ -152,6 +173,9 @@ def apply_decisions(
 
     package = catalog.setdefault("package", {})
     package["catalog_decisions"] = "operations/catalog-decisions.json"
+    package["catalog_decision_files"] = [
+        path.relative_to(ROOT).as_posix() for path in decision_files()
+    ]
     return len(decisions)
 
 
@@ -163,9 +187,10 @@ def count(entries: list[dict[str, Any]], field: str, fallback: str) -> dict[str,
 
 def update_manifest(manifest: dict[str, Any]) -> None:
     discovery = manifest.setdefault("discovery_files", [])
-    decision_path = "operations/catalog-decisions.json"
-    if decision_path not in discovery:
-        discovery.append(decision_path)
+    for path in decision_files():
+        decision_path = path.relative_to(ROOT).as_posix()
+        if decision_path not in discovery:
+            discovery.append(decision_path)
 
     fields = manifest.setdefault("selection_fields", [])
     for field in [

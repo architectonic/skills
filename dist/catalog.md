@@ -3,9 +3,9 @@
 - Package: `architectonic-skills`
 - Install root: `dist/skills`
 - Skill count: **1183**
-- Explicit review required: **486**
+- Explicit review required: **487**
 - Classification overrides applied: **87**
-- Deep catalog decisions applied: **13**
+- Deep catalog decisions applied: **16**
 
 Classification overrides repair routing metadata without rewriting imported skill bodies. Deep catalog decisions record body-level review, lifecycle, and installation guidance. Neither grants runtime authority.
 
@@ -31,10 +31,10 @@ Classification overrides repair routing metadata without rewriting imported skil
 
 | Risk | Count |
 |---|---:|
-| `high` | 49 |
-| `low` | 35 |
+| `high` | 50 |
+| `low` | 36 |
 | `medium` | 481 |
-| `unspecified` | 618 |
+| `unspecified` | 616 |
 
 ## Artifact Kinds
 
@@ -59,7 +59,7 @@ Classification overrides repair routing metadata without rewriting imported skil
 
 | Source status | Count |
 |---|---:|
-| `adapted` | 406 |
+| `adapted` | 405 |
 | `blocked-pending-redaction` | 8 |
 | `blocked-redacted` | 3 |
 | `classification_reviewed` | 74 |
@@ -73,7 +73,7 @@ Classification overrides repair routing metadata without rewriting imported skil
 | `native-or-curated-origin-unverified` | 1 |
 | `normalized` | 3 |
 | `package-facing-risk-reviewed` | 3 |
-| `package_body_reviewed` | 10 |
+| `package_body_reviewed` | 13 |
 | `package_metadata_backfill` | 5 |
 | `package_reviewed_blocked` | 1 |
 | `package_reviewed_superseded` | 2 |
@@ -81,30 +81,32 @@ Classification overrides repair routing metadata without rewriting imported skil
 | `review-gated-redacted` | 1 |
 | `reviewed-metadata-only` | 3 |
 | `risk_reviewed` | 2 |
-| `unspecified` | 644 |
+| `unspecified` | 642 |
 
 ## Lifecycle Status
 
 | Lifecycle | Count |
 |---|---:|
-| `reviewed` | 10 |
+| `reviewed` | 13 |
 | `superseded` | 3 |
-| `unreviewed` | 1170 |
+| `unreviewed` | 1167 |
 
 ## Install Recommendation
 
 | Recommendation | Count |
 |---|---:|
-| `conditional` | 10 |
+| `conditional` | 13 |
 | `do-not-install` | 3 |
-| `inspect` | 1170 |
+| `inspect` | 1167 |
 
 ## Reviewed Catalog Decisions
 
 | Skill | Lifecycle | Install | Superseded by | Decision |
 |---|---|---|---|---|
+| `Graphify Onboarding` | `reviewed` | `conditional` | `—` | Retain the source hierarchy, ignore rules, private-data caveats, review-before-commit, and derived-not-canonical boundaries. Use it with an explicitly approved graph engine or no engine; it does not authorize installation, repository scanning, global configuration, hooks, watchers, dashboards, or canonical memory writes. |
 | `ai-seo` | `superseded` | `do-not-install` | `skills/ai-search-visibility-audit.md` | The imported reference has unverified origin and embeds date-sensitive platform behavior, crawler names, prevalence percentages, traffic-loss claims, citation multipliers, optimization gains, and source-share statistics without recoverable current evidence. It also refers to content-strategy and copywriting package skills that are not present. Preserve as evidence but use the current-source AI search visibility audit instead. |
 | `canvas-design` | `reviewed` | `conditional` | `—` | Retain as a static visual-art procedure. Its philosophy-to-canvas workflow is distinct from interface design and UI engineering and should not route web application tasks. |
+| `codebase-design` | `reviewed` | `conditional` | `—` | Retain as an optional module/interface design vocabulary. It is not a structural graph or impact-analysis tool and its exact terminology and universal-sounding rules should be applied only when the deep-module model fits the project, not as mandatory architecture language. |
 | `competitive-intel` | `reviewed` | `conditional` | `—` | Retain for broad business intelligence, sales battlecards, positioning, product, and leadership decisions. Current funding, hiring, customer, pricing, partnership, social, CRM, win/loss, and churn evidence requires source, privacy, confidentiality, and authorization review. Use skills/seo-competitive-research.md for search-market and ranking analysis. |
 | `frontend-design` | `superseded` | `do-not-install` | `skills/interface-design.md` | The imported body mandates an external Created By Deerflow link in every generated interface, forces index.html regardless of the host project, and encourages aesthetic escalation that can override project scope and design-system intent. Preserve as evidence but do not recommend installation. |
 | `frontend-ui-engineering` | `reviewed` | `conditional` | `—` | Retain for component architecture, state management, accessibility, responsive behavior, and implementation checks. It should not determine visual direction and should run after product intent and design-system boundaries are established. |
@@ -116,6 +118,7 @@ Classification overrides repair routing metadata without rewriting imported skil
 | `hyperframes-media` | `superseded` | `do-not-install` | `media-use` | The current HyperFrames capability map routes media resolution through media-use. This packaged legacy entry contains a different credential and provider workflow and would create conflicting instructions. Preserve as evidence but do not install. |
 | `hyperframes-registry` | `reviewed` | `conditional` | `—` | Reviewed at HyperFrames revision 84e4eafacdaf96e8d137ba745af750448c5de0de. Registry operations download remote blocks and components, write project files, merge HTML/CSS/JS, may touch the clipboard, and can prepare upstream pull requests. Require source, revision, license, script, filesystem, and contribution approval before use. |
 | `media-use` | `reviewed` | `conditional` | `—` | Retain as the current HyperFrames media resolver only after review. It searches and downloads remote assets, writes project and global caches, uses HeyGen credentials, adopts existing media, and recommends a remote shell installer. Asset rights, provider access, retention, cache scope, executable installation, and every download require explicit approval. |
+| `monorepo-navigator` | `reviewed` | `conditional` | `—` | Retain for monorepo structure, package impact, selective builds, migrations, and coordinated releases. The body reaches executable analyzers, CI filters, remote cache credentials, history rewriting, package moves, versioning, and publication; absolute tool preferences and bundled-script paths are advisory and every mutation requires repository-specific review. |
 
 ## Install Notes
 
