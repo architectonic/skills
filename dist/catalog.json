@@ -21272,8 +21272,8 @@
       "type": "Playbook",
       "lifecycle_status": "reviewed",
       "install_recommendation": "conditional",
-      "superseded_by": "skills/programmatic-video-production.md",
-      "decision_evidence": "Reviewed against heygen-com/hyperframes@84e4eafacdaf96e8d137ba745af750448c5de0de. Retain only when the user explicitly selects HyperFrames or the existing project already uses it. The body must not make HyperFrames the universal default or authorize skill updates, website crawling, browser capture, cloud rendering, feedback, publication, or external services without separate approval.",
+      "superseded_by": "",
+      "decision_evidence": "Reviewed against heygen-com/hyperframes@84e4eafacdaf96e8d137ba745af750448c5de0de. Retain only when the user explicitly selects HyperFrames or the existing project already uses it. The body must not make HyperFrames the universal default or authorize skill updates, website crawling, browser capture, cloud rendering, feedback, publication, or external services without separate approval. Use skills/programmatic-video-production.md as the framework-neutral governing workflow.",
       "catalog_decision": true
     },
     {
