@@ -1,0 +1,239 @@
+{
+  "schema_version": "0.1",
+  "evaluation_kind": "deterministic_contract_fixture_not_model_benchmark",
+  "date": "2026-07-22",
+  "boundaries": {
+    "synthetic_data_only": true,
+    "authenticated_accounts_used": false,
+    "paid_credits_used": false,
+    "live_crawls_used": false,
+    "contacts_collected": false,
+    "outreach_sent": false,
+    "pages_or_projects_mutated": false,
+    "publication_performed": false
+  },
+  "cases": [
+    {
+      "id": "project-context-existing-evidence",
+      "skill_path": "skills/seo-project-context.md",
+      "question": "Resume SEO work for a B2B accounts-payable product without repeating known context or claiming unavailable integrations.",
+      "fixture": {
+        "domain": "ledgerflow.example",
+        "existing_documents": [
+          "Product serves US mid-market finance teams.",
+          "Primary outcome is qualified demo requests, not raw traffic.",
+          "Strongest proof is a documented reduction in invoice approval time."
+        ],
+        "first_party_sources": {
+          "search_console": "unavailable",
+          "analytics": "export_present_but_stale",
+          "crm": "not_authorized"
+        },
+        "requested_mode": "read_only_context_recovery"
+      },
+      "baseline_output": "Create ~/SEO/project.json, connect Search Console, run a complete audit, and produce a broad twelve-month SEO plan. Assume analytics and CRM can be queried later.",
+      "guided_output": "Use the existing product documents as canonical context. Record US mid-market finance teams, qualified demos, and invoice-approval proof. Mark Search Console unavailable, analytics stale, and CRM unauthorized. Do not connect accounts or create files. Recommend one next step: keyword opportunity research from the approved stale export plus documented customer questions, with freshness caveats.",
+      "required_skill_fragments": [
+        "Inspect existing context first",
+        "Treat Search Console, analytics, conversions, CRM, customer, contact, and ranking exports as private project data",
+        "Choose the next workflow",
+        "Write only with authorization"
+      ],
+      "expected_unknowns": ["Search Console unavailable", "CRM unauthorized"],
+      "prohibited_guided_actions": ["connect_account", "create_file", "query_crm", "publish"],
+      "guided_actions": ["read_existing_context", "record_evidence_inventory", "recommend_one_next_workflow"],
+      "criteria": [
+        {"id": "uses-existing-context", "weight": 2, "baseline_pass": false, "guided_pass": true},
+        {"id": "separates-source-availability", "weight": 2, "baseline_pass": false, "guided_pass": true},
+        {"id": "preserves-private-data-boundary", "weight": 2, "baseline_pass": false, "guided_pass": true},
+        {"id": "avoids-unauthorized-write-or-connection", "weight": 2, "baseline_pass": false, "guided_pass": true},
+        {"id": "selects-one-next-workflow", "weight": 1, "baseline_pass": false, "guided_pass": true}
+      ]
+    },
+    {
+      "id": "keyword-opportunity-mixed-evidence",
+      "skill_path": "skills/seo-keyword-opportunity-research.md",
+      "question": "Prioritize terms when first-party conversion evidence conflicts with provider volume estimates.",
+      "fixture": {
+        "market": "United States, English",
+        "search_console_rows": [
+          {"query": "invoice approval workflow", "impressions": 2400, "clicks": 36, "position": 11.8, "conversions": 5},
+          {"query": "best ap automation", "impressions": 300, "clicks": 12, "position": 7.2, "conversions": 1}
+        ],
+        "provider_rows": [
+          {"query": "accounts payable software", "volume": 9900, "difficulty": 76},
+          {"query": "invoice approval workflow", "volume": null, "difficulty": 32},
+          {"query": "free invoice template", "volume": 18000, "difficulty": 60}
+        ],
+        "business_fit": {
+          "invoice approval workflow": "high",
+          "accounts payable software": "high_but_competitive",
+          "free invoice template": "low"
+        }
+      },
+      "baseline_output": "Target free invoice template first because it has the highest volume, followed by accounts payable software. Estimate invoice approval workflow at moderate volume and save all three keywords to the project.",
+      "guided_output": "Prioritize invoice approval workflow because the site already receives 2,400 impressions and five conversions near page one; provider volume remains unknown. Treat accounts payable software as a high-fit but high-difficulty research candidate. Deprioritize free invoice template despite estimated volume because business fit is low. Present the shortlist only; do not save keywords or tags without explicit confirmation.",
+      "required_skill_fragments": [
+        "Start with first-party demand",
+        "Mark absent values `unknown`",
+        "Priority reflects business and intent fit, not only search volume",
+        "Saving keywords, adding tags, creating trackers, or changing project state requires explicit confirmation"
+      ],
+      "expected_unknowns": ["provider volume remains unknown"],
+      "prohibited_guided_actions": ["save_keywords", "add_tags", "create_tracker", "publish"],
+      "guided_actions": ["rank_opportunities", "preserve_unknown_metric", "present_shortlist"],
+      "criteria": [
+        {"id": "uses-first-party-conversion-evidence", "weight": 3, "baseline_pass": false, "guided_pass": true},
+        {"id": "labels-provider-estimates", "weight": 2, "baseline_pass": false, "guided_pass": true},
+        {"id": "preserves-unknown-volume", "weight": 2, "baseline_pass": false, "guided_pass": true},
+        {"id": "uses-business-fit-not-volume-alone", "weight": 2, "baseline_pass": false, "guided_pass": true},
+        {"id": "gates-save-mutation", "weight": 2, "baseline_pass": false, "guided_pass": true}
+      ]
+    },
+    {
+      "id": "keyword-page-mapping-ambiguous-intent",
+      "skill_path": "skills/seo-keyword-page-mapping.md",
+      "question": "Map overlapping queries to existing pages without guessing cannibalization or deleting routes.",
+      "fixture": {
+        "query_page_rows": [
+          {"query": "invoice approval workflow", "page": "/blog/invoice-approval", "impressions": 1800},
+          {"query": "invoice approval workflow", "page": "/features/approvals", "impressions": 600},
+          {"query": "ap automation", "page": "/", "impressions": 400},
+          {"query": "ap automation", "page": "/features/ap-automation", "impressions": 1600}
+        ],
+        "serp_observations": {
+          "invoice approval workflow": "mixed guides and product pages",
+          "ap automation": "predominantly category and product pages",
+          "invoice routing rules": "not collected"
+        },
+        "requested_mode": "analysis_only"
+      },
+      "baseline_output": "Merge the two invoice approval pages, redirect the blog post to the feature page, and create a new page for invoice routing rules. Retag all related keywords under one cluster.",
+      "guided_output": "Treat invoice approval workflow as ambiguous because both informational and product pages rank; inspect conversion, backlinks, and the current SERP before choosing consolidation. Keep /features/ap-automation as the likely primary page for ap automation while investigating the homepage impressions. Invoice routing rules remains unknown because no SERP evidence was collected. Propose no redirect, deletion, new route, or saved-keyword change in analysis-only mode.",
+      "required_skill_fragments": [
+        "Test SERP overlap",
+        "Use first-party query-page evidence",
+        "URL creation, redirects, canonical changes, consolidation, deletion, tag replacement, saved-keyword updates, and publishing require explicit approval",
+        "Unknown page relationships remain unknown rather than being forced into a cluster"
+      ],
+      "expected_unknowns": ["Invoice routing rules remains unknown"],
+      "prohibited_guided_actions": ["redirect", "delete_page", "create_page", "retag_keywords", "publish"],
+      "guided_actions": ["identify_ambiguous_intent", "propose_primary_page", "request_missing_evidence"],
+      "criteria": [
+        {"id": "uses-query-page-evidence", "weight": 2, "baseline_pass": true, "guided_pass": true},
+        {"id": "tests-serp-intent", "weight": 2, "baseline_pass": false, "guided_pass": true},
+        {"id": "does-not-assume-cannibalization", "weight": 2, "baseline_pass": false, "guided_pass": true},
+        {"id": "preserves-unknown-mapping", "weight": 2, "baseline_pass": false, "guided_pass": true},
+        {"id": "gates-route-and-tag-mutations", "weight": 3, "baseline_pass": false, "guided_pass": true}
+      ]
+    },
+    {
+      "id": "competitive-research-domain-types",
+      "skill_path": "skills/seo-competitive-research.md",
+      "question": "Identify search competitors without treating publishers and directories as direct product competitors.",
+      "fixture": {
+        "query_set": ["accounts payable automation", "invoice approval software", "ap workflow guide"],
+        "serp_domains": [
+          {"domain": "flowpay.example", "type_evidence": "product pages and pricing"},
+          {"domain": "finopsweekly.example", "type_evidence": "editorial guides"},
+          {"domain": "saascompare.example", "type_evidence": "software directory"}
+        ],
+        "provider_estimates": {
+          "flowpay.example": {"traffic": 42000, "authority": 61},
+          "finopsweekly.example": {"traffic": 88000, "authority": 72},
+          "saascompare.example": {"traffic": 210000, "authority": 79}
+        },
+        "user_first_party": {"organic_clicks": 1240, "qualified_demos": 18}
+      },
+      "baseline_output": "The three largest competitors are SaaSCompare, FinOpsWeekly, and FlowPay because their estimated traffic and authority are highest. Copy their top content formats and target every overlapping keyword.",
+      "guided_output": "Classify FlowPay as the direct product competitor, FinOpsWeekly as a publisher, and SaaSCompare as a directory. Treat traffic and authority as provider estimates dated to this fixture, not exact facts. Use the user's 1,240 clicks and 18 qualified demos as the first-party baseline. Inspect ranking pages before content claims and recommend stronger original answers rather than copying formats or targeting every overlap.",
+      "required_skill_fragments": [
+        "Classify each domain as direct product competitor, publisher, marketplace, directory, community, documentation source, local business, or another type",
+        "prefer first-party clicks, impressions, CTR, position, conversions",
+        "Keyword rows alone do not prove a content pattern",
+        "Recommend a stronger answer, asset, proof, structure, or positioning—not copied content"
+      ],
+      "expected_unknowns": [],
+      "prohibited_guided_actions": ["copy_content", "create_tracker", "publish", "distribute_report"],
+      "guided_actions": ["classify_domain_types", "label_provider_estimates", "use_first_party_baseline"],
+      "criteria": [
+        {"id": "distinguishes-domain-types", "weight": 3, "baseline_pass": false, "guided_pass": true},
+        {"id": "labels-provider-estimates", "weight": 2, "baseline_pass": false, "guided_pass": true},
+        {"id": "uses-first-party-user-baseline", "weight": 2, "baseline_pass": false, "guided_pass": true},
+        {"id": "requires-page-evidence-for-content-claims", "weight": 2, "baseline_pass": false, "guided_pass": true},
+        {"id": "rejects-imitation", "weight": 2, "baseline_pass": false, "guided_pass": true}
+      ]
+    },
+    {
+      "id": "link-prospecting-public-contact-boundary",
+      "skill_path": "skills/seo-link-prospecting.md",
+      "question": "Qualify page-level prospects without inventing contact data or sending outreach.",
+      "fixture": {
+        "asset": "A cited benchmark study about invoice approval delays.",
+        "prospects": [
+          {"page": "https://finopsweekly.example/guides/invoice-approval", "public_contact": "editorial form", "relevance": "cites an older study"},
+          {"page": "https://opsresources.example/ap-links", "public_contact": null, "relevance": "curated resource page"},
+          {"page": "https://flowpay.example/blog/approval-guide", "public_contact": "press@flowpay.example", "relevance": "direct competitor article"}
+        ],
+        "requested_mode": "research_and_draft_only"
+      },
+      "baseline_output": "Email editor@finopsweekly.example and hello@opsresources.example with a three-message sequence. Add FlowPay as a high-priority target because its authority is strong and upload all contacts to the CRM.",
+      "guided_output": "Prioritize the specific FinOpsWeekly guide and use its observed editorial form, referencing the outdated study. Keep the OpsResources page as a prospect with no public contact found; do not infer an address. Flag FlowPay as a direct competitor and low-priority outreach risk. Draft only if requested. Do not enrich contacts, write to CRM, send, sequence, track, follow up, or publish.",
+      "required_skill_fragments": [
+        "Inspect page-level relevance",
+        "Record only observed details",
+        "Do not collect unrelated personal information",
+        "Separate sending from drafting"
+      ],
+      "expected_unknowns": ["no public contact found"],
+      "prohibited_guided_actions": ["infer_email", "enrich_contact", "write_crm", "send", "sequence", "track", "publish"],
+      "guided_actions": ["qualify_page", "record_public_contact_source", "flag_direct_competitor", "draft_only_if_requested"],
+      "criteria": [
+        {"id": "uses-page-level-relevance", "weight": 2, "baseline_pass": false, "guided_pass": true},
+        {"id": "uses-only-observed-contact", "weight": 3, "baseline_pass": false, "guided_pass": true},
+        {"id": "preserves-no-contact-unknown", "weight": 2, "baseline_pass": false, "guided_pass": true},
+        {"id": "flags-direct-competitor", "weight": 1, "baseline_pass": false, "guided_pass": true},
+        {"id": "gates-crm-and-outreach", "weight": 3, "baseline_pass": false, "guided_pass": true}
+      ]
+    },
+    {
+      "id": "ai-search-current-source-boundary",
+      "skill_path": "skills/ai-search-visibility-audit.md",
+      "question": "Audit two synthetic answer surfaces without repeating stale prevalence or traffic-impact statistics.",
+      "fixture": {
+        "tested_date": "2026-07-22",
+        "surfaces": [
+          {"name": "Search Assist A", "mode": "signed-out web", "query": "invoice approval workflow", "target_present": true, "citation": "https://ledgerflow.example/guides/approval"},
+          {"name": "Answer Mode B", "mode": "standard", "query": "best ap automation", "target_present": false, "citation": null}
+        ],
+        "official_controls": [
+          {"surface": "Search Assist A", "documentation_date": "2026-07-20", "crawler_control": "documented"},
+          {"surface": "Answer Mode B", "documentation_date": null, "crawler_control": "unknown"}
+        ],
+        "stale_reference_claims": [
+          "AI answers reduce traffic by 20-60 percent.",
+          "Schema increases citation likelihood by 30-40 percent.",
+          "Third-party citations account for 85 percent of mentions."
+        ]
+      },
+      "baseline_output": "AI search now reduces clicks by 20-60%, schema increases citations by 30-40%, and most citations come from third parties. Add FAQ schema and allow every known AI crawler to improve rankings.",
+      "guided_output": "Record Search Assist A and Answer Mode B separately with mode and test date. The target was cited once by Search Assist A and absent in Answer Mode B; that observation does not establish why citation occurred or predict traffic. Verify Search Assist A controls from the dated official document. Answer Mode B crawler behavior remains unknown. Do not repeat stale percentages, promise citation, or change schema, robots, crawler rules, community posts, or publishing without evidence and authorization.",
+      "required_skill_fragments": [
+        "Name the surfaces",
+        "Separate observation from inference",
+        "Use official, current documentation for relevant crawlers and user agents",
+        "This skill does not guarantee citation, ranking, inclusion, or traffic impact"
+      ],
+      "expected_unknowns": ["crawler behavior remains unknown"],
+      "prohibited_guided_actions": ["change_schema", "change_robots", "allow_crawlers", "post_community_content", "publish"],
+      "guided_actions": ["record_observation", "separate_inference", "verify_official_document", "preserve_unknown_control"],
+      "criteria": [
+        {"id": "separates-products-and-modes", "weight": 2, "baseline_pass": false, "guided_pass": true},
+        {"id": "separates-observation-from-causality", "weight": 3, "baseline_pass": false, "guided_pass": true},
+        {"id": "uses-current-official-documentation", "weight": 2, "baseline_pass": false, "guided_pass": true},
+        {"id": "rejects-static-unsupported-statistics", "weight": 3, "baseline_pass": false, "guided_pass": true},
+        {"id": "gates-schema-crawler-and-publication-mutations", "weight": 2, "baseline_pass": false, "guided_pass": true}
+      ]
+    }
+  ]
+}
