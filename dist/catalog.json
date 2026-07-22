@@ -9,7 +9,7 @@
   },
   "summary": {
     "skill_count": 1183,
-    "requires_review_count": 485,
+    "requires_review_count": 486,
     "classification_overrides_applied": 87,
     "domain_counts": {
       "agent-operations": 122,
@@ -27,9 +27,9 @@
       "writing": 25
     },
     "risk_counts": {
-      "high": 47,
+      "high": 49,
       "low": 35,
-      "medium": 483,
+      "medium": 481,
       "unspecified": 618
     },
     "artifact_kind_counts": {
@@ -49,7 +49,7 @@
       "adapted": 406,
       "blocked-pending-redaction": 8,
       "blocked-redacted": 3,
-      "classification_reviewed": 84,
+      "classification_reviewed": 76,
       "distilled": 1,
       "distilled-reviewed": 2,
       "existing-package-skill-risk-reviewed": 2,
@@ -60,9 +60,10 @@
       "native-or-curated-origin-unverified": 1,
       "normalized": 3,
       "package-facing-risk-reviewed": 3,
-      "package_body_reviewed": 2,
+      "package_body_reviewed": 9,
       "package_metadata_backfill": 5,
       "package_reviewed_blocked": 1,
+      "package_reviewed_superseded": 1,
       "package_risk_reviewed": 4,
       "review-gated-redacted": 1,
       "reviewed-metadata-only": 3,
@@ -76,20 +77,20 @@
       "authorized_lab_only": 1,
       "blocked_for_forced_branding_and_scope": 1,
       "browser_and_data_review_required": 1,
-      "command_execution_review_required": 1,
+      "command_cloud_publication_and_feedback_approval_required": 1,
       "connector_and_data_review_required": 2,
       "connector_and_sharing_review_required": 1,
       "credential_and_private_data_review_required": 1,
+      "credentials_network_filesystem_asset_rights_and_installer_review_required": 1,
       "defensive_wrapper_only": 1,
-      "dependency_and_registry_review_required": 1,
       "detection_limitations_review_required": 1,
       "environment_review_required": 2,
+      "explicit_hyperframes_project_selection_required": 1,
       "external_data_and_claims_review_required": 1,
-      "external_media_service_review_required": 1,
       "filesystem_credentials_and_runtime_review_required": 1,
       "governance_wrapper_only": 1,
       "identity_and_credential_review_required": 1,
-      "metadata_reviewed": 50,
+      "metadata_reviewed": 49,
       "packaging_and_execution_review_required": 1,
       "privacy_and_attribution_review_required": 1,
       "privacy_and_source_review_required": 1,
@@ -98,27 +99,30 @@
       "production_change_review_required": 1,
       "provider_rights_and_content_review_required": 1,
       "publication_review_required": 1,
+      "remote_code_filesystem_clipboard_and_upstream_review_required": 1,
+      "retained_after_project_design_and_content_contract": 1,
+      "retained_for_existing_hyperframes_authoring": 1,
       "retained_for_implementation_after_design_contract": 1,
+      "retained_for_seek_safe_hyperframes_motion": 1,
       "retained_for_static_visual_art": 1,
-      "rights_and_private_media_review_required": 1,
       "rights_and_rendering_review_required": 1,
-      "runtime_adapter_pending": 3,
       "runtime_and_permission_review_required": 3,
       "source_terms_and_attribution_review_required": 1,
+      "stale_media_workflow_replaced_by_media_use": 1,
       "tool_authority_review_required": 2,
       "unspecified": 1091
     },
     "lifecycle_status_counts": {
-      "reviewed": 2,
-      "superseded": 1,
-      "unreviewed": 1180
+      "reviewed": 9,
+      "superseded": 2,
+      "unreviewed": 1172
     },
     "install_recommendation_counts": {
-      "conditional": 2,
-      "do-not-install": 1,
-      "inspect": 1180
+      "conditional": 9,
+      "do-not-install": 2,
+      "inspect": 1172
     },
-    "catalog_decisions_applied": 3
+    "catalog_decisions_applied": 11
   },
   "domains": {
     "agent-operations": [
@@ -21239,8 +21243,8 @@
       "path": "dist/skills/hyperframes/SKILL.md",
       "directory": "dist/skills/hyperframes",
       "domain": "media",
-      "risk_level": "medium",
-      "requires_review": false,
+      "risk_level": "high",
+      "requires_review": true,
       "classification_status": "complete",
       "classification_override": true,
       "classification_evidence": "HTML-native deterministic video authoring suite; media workflow with runtime integration requirements.",
@@ -21260,17 +21264,17 @@
         "intent-routing"
       ],
       "source_family": "",
-      "source_status": "classification_reviewed",
-      "review_status": "runtime_adapter_pending",
+      "source_status": "package_body_reviewed",
+      "review_status": "explicit_hyperframes_project_selection_required",
       "source_url": "",
       "source_revision": "",
       "license": "",
       "type": "Playbook",
-      "lifecycle_status": "unreviewed",
-      "install_recommendation": "inspect",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
       "superseded_by": "",
-      "decision_evidence": "",
-      "catalog_decision": false
+      "decision_evidence": "Reviewed against heygen-com/hyperframes@84e4eafacdaf96e8d137ba745af750448c5de0de. Retain only when the user explicitly selects HyperFrames or the existing project already uses it. The body must not make HyperFrames the universal default or authorize skill updates, website crawling, browser capture, cloud rendering, feedback, publication, or external services without separate approval. Use skills/programmatic-video-production.md as the framework-neutral governing workflow.",
+      "catalog_decision": true
     },
     {
       "slug": "hyperframes-animation",
@@ -21294,17 +21298,17 @@
         "agent-skill"
       ],
       "source_family": "",
-      "source_status": "classification_reviewed",
-      "review_status": "runtime_adapter_pending",
+      "source_status": "package_body_reviewed",
+      "review_status": "retained_for_seek_safe_hyperframes_motion",
       "source_url": "",
       "source_revision": "",
       "license": "",
       "type": "Playbook",
-      "lifecycle_status": "unreviewed",
-      "install_recommendation": "inspect",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
       "superseded_by": "",
-      "decision_evidence": "",
-      "catalog_decision": false
+      "decision_evidence": "Reviewed at HyperFrames revision 84e4eafacdaf96e8d137ba745af750448c5de0de. Retain for deterministic, seek-safe motion inside HyperFrames. Runtime adapters, WebGL, WebGPU, external effect skills, helper bootstrapping, and executable analysis scripts remain project-scoped and review-sensitive.",
+      "catalog_decision": true
     },
     {
       "slug": "hyperframes-cli",
@@ -21327,17 +21331,17 @@
         "agent-skill"
       ],
       "source_family": "",
-      "source_status": "classification_reviewed",
-      "review_status": "command_execution_review_required",
+      "source_status": "package_body_reviewed",
+      "review_status": "command_cloud_publication_and_feedback_approval_required",
       "source_url": "",
       "source_revision": "",
       "license": "",
       "type": "Playbook",
-      "lifecycle_status": "unreviewed",
-      "install_recommendation": "inspect",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
       "superseded_by": "",
-      "decision_evidence": "",
-      "catalog_decision": false
+      "decision_evidence": "Reviewed at HyperFrames revision 84e4eafacdaf96e8d137ba745af750448c5de0de. The CLI can scaffold, install, capture, render, publish, authenticate, invoke hosted cloud, AWS, and GCP, send feedback, and file public reproductions. Each external, credentialed, billable, or publishing action requires explicit approval.",
+      "catalog_decision": true
     },
     {
       "slug": "hyperframes-core",
@@ -21361,17 +21365,17 @@
         "agent-skill"
       ],
       "source_family": "",
-      "source_status": "classification_reviewed",
-      "review_status": "runtime_adapter_pending",
+      "source_status": "package_body_reviewed",
+      "review_status": "retained_for_existing_hyperframes_authoring",
       "source_url": "",
       "source_revision": "",
       "license": "",
       "type": "Playbook",
-      "lifecycle_status": "unreviewed",
-      "install_recommendation": "inspect",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
       "superseded_by": "",
-      "decision_evidence": "",
-      "catalog_decision": false
+      "decision_evidence": "Reviewed at HyperFrames revision 84e4eafacdaf96e8d137ba745af750448c5de0de. Retain as the deterministic composition contract for an explicitly selected HyperFrames project. It does not authorize project scaffolding, dependencies, rendering, media retrieval, or framework migration by itself.",
+      "catalog_decision": true
     },
     {
       "slug": "hyperframes-creative",
@@ -21395,17 +21399,17 @@
         "agent-skill"
       ],
       "source_family": "",
-      "source_status": "classification_reviewed",
-      "review_status": "metadata_reviewed",
+      "source_status": "package_body_reviewed",
+      "review_status": "retained_after_project_design_and_content_contract",
       "source_url": "",
       "source_revision": "",
       "license": "",
       "type": "Playbook",
-      "lifecycle_status": "unreviewed",
-      "install_recommendation": "inspect",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
       "superseded_by": "",
-      "decision_evidence": "",
-      "catalog_decision": false
+      "decision_evidence": "Reviewed at HyperFrames revision 84e4eafacdaf96e8d137ba745af750448c5de0de. Retain for video-specific creative direction after the project's brand, content truth, and technical contract are known. Presets, package bootstrap, scripts, narration, music, and scene expansion are not implicit authority.",
+      "catalog_decision": true
     },
     {
       "slug": "hyperframes-media",
@@ -21429,17 +21433,17 @@
         "agent-skill"
       ],
       "source_family": "",
-      "source_status": "classification_reviewed",
-      "review_status": "external_media_service_review_required",
+      "source_status": "package_reviewed_superseded",
+      "review_status": "stale_media_workflow_replaced_by_media_use",
       "source_url": "",
       "source_revision": "",
       "license": "",
       "type": "Playbook",
-      "lifecycle_status": "unreviewed",
-      "install_recommendation": "inspect",
-      "superseded_by": "",
-      "decision_evidence": "",
-      "catalog_decision": false
+      "lifecycle_status": "superseded",
+      "install_recommendation": "do-not-install",
+      "superseded_by": "media-use",
+      "decision_evidence": "The current HyperFrames capability map routes media resolution through media-use. This packaged legacy entry contains a different credential and provider workflow and would create conflicting instructions. Preserve as evidence but do not install.",
+      "catalog_decision": true
     },
     {
       "slug": "hyperframes-registry",
@@ -21462,17 +21466,17 @@
         "agent-skill"
       ],
       "source_family": "",
-      "source_status": "classification_reviewed",
-      "review_status": "dependency_and_registry_review_required",
+      "source_status": "package_body_reviewed",
+      "review_status": "remote_code_filesystem_clipboard_and_upstream_review_required",
       "source_url": "",
       "source_revision": "",
       "license": "",
       "type": "Playbook",
-      "lifecycle_status": "unreviewed",
-      "install_recommendation": "inspect",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
       "superseded_by": "",
-      "decision_evidence": "",
-      "catalog_decision": false
+      "decision_evidence": "Reviewed at HyperFrames revision 84e4eafacdaf96e8d137ba745af750448c5de0de. Registry operations download remote blocks and components, write project files, merge HTML/CSS/JS, may touch the clipboard, and can prepare upstream pull requests. Require source, revision, license, script, filesystem, and contribution approval before use.",
+      "catalog_decision": true
     },
     {
       "slug": "i18n-localization",
@@ -29915,7 +29919,7 @@
       "path": "dist/skills/media-use/SKILL.md",
       "directory": "dist/skills/media-use",
       "domain": "media",
-      "risk_level": "medium",
+      "risk_level": "high",
       "requires_review": true,
       "classification_status": "complete",
       "classification_override": true,
@@ -29930,17 +29934,17 @@
         "agent-skill"
       ],
       "source_family": "",
-      "source_status": "classification_reviewed",
-      "review_status": "rights_and_private_media_review_required",
+      "source_status": "package_body_reviewed",
+      "review_status": "credentials_network_filesystem_asset_rights_and_installer_review_required",
       "source_url": "",
       "source_revision": "",
       "license": "",
       "type": "Playbook",
-      "lifecycle_status": "unreviewed",
-      "install_recommendation": "inspect",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
       "superseded_by": "",
-      "decision_evidence": "",
-      "catalog_decision": false
+      "decision_evidence": "Retain as the current HyperFrames media resolver only after review. It searches and downloads remote assets, writes project and global caches, uses HeyGen credentials, adopts existing media, and recommends a remote shell installer. Asset rights, provider access, retention, cache scope, executable installation, and every download require explicit approval.",
+      "catalog_decision": true
     },
     {
       "slug": "meeting-intelligence",

@@ -1,0 +1,38 @@
+{
+  "workflow": "programmatic-video-consolidation",
+  "recorded_at_utc": "2026-07-22T20:45:00Z",
+  "branch": "agent/video-skill-consolidation",
+  "status": "validation_pending",
+  "scope": [
+    "HyperFrames source and license review",
+    "Remotion Agent Skills source and license review",
+    "tool-neutral programmatic-video-production workflow",
+    "HyperFrames package lifecycle decisions",
+    "legacy hyperframes-media supersession",
+    "media-use risk and installation review",
+    "programmatic video catalog validation"
+  ],
+  "source_revisions": {
+    "hyperframes": "84e4eafacdaf96e8d137ba745af750448c5de0de",
+    "remotion_skills": "0dd76fafa3fd337b7bc6b5cd95b7db0179828a3d",
+    "remotion_license": "b8fdb73ae8600d011afb246a02b690bf6935f527"
+  },
+  "catalog_decisions": 11,
+  "video_decisions": {
+    "hyperframes": "reviewed_conditional_high",
+    "hyperframes-cli": "reviewed_conditional_high",
+    "hyperframes-core": "reviewed_conditional_medium",
+    "hyperframes-animation": "reviewed_conditional_medium",
+    "hyperframes-creative": "reviewed_conditional_medium",
+    "hyperframes-registry": "reviewed_conditional_high",
+    "hyperframes-media": "superseded_do_not_install",
+    "media-use": "reviewed_conditional_high"
+  },
+  "mutated_imported_skill_bodies": false,
+  "copied_external_skill_bodies": false,
+  "executed_remote_installer": false,
+  "invoked_external_media_or_cloud_service": false,
+  "promoted_to_reviewed_core": false,
+  "publication_attempted": false,
+  "next_action": "Open a draft pull request, validate lifecycle decisions and source-license boundaries, correct any CI failure, then merge only after checks pass."
+}

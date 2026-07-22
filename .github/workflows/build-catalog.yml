@@ -9,9 +9,12 @@ on:
       - '.github/workflows/build-catalog.yml'
       - 'scripts/build_distribution_catalog.py'
       - 'scripts/apply_catalog_decisions.py'
+      - 'scripts/validate_catalog.py'
       - 'operations/classification-overrides.json'
       - 'operations/catalog-decisions.json'
       - 'dist/skills/**'
+      - 'skills/**'
+      - 'sources/reviewed/**'
       - 'reports/dist-skills-enriched-inventory.json'
 
 permissions:
@@ -41,56 +44,8 @@ jobs:
           npm run build:catalog
           python scripts/apply_catalog_decisions.py
 
-      - name: Validate catalog metadata and deep decisions
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          catalog = json.loads(Path('dist/catalog.json').read_text(encoding='utf-8'))
-          entries = {entry.get('slug'): entry for entry in catalog.get('skills', [])}
-
-          foundry = entries.get('auditing-foundry-smart-contract-security')
-          if not foundry:
-              raise SystemExit('Missing Foundry catalog entry')
-          expected_foundry = {
-              'domain': 'security-defensive',
-              'risk_level': 'medium',
-              'requires_review': True,
-              'source_family': 'internal-skill-bundle',
-              'source_status': 'adapted',
-          }
-          for key, value in expected_foundry.items():
-              if foundry.get(key) != value:
-                  raise SystemExit(f'Foundry metadata mismatch for {key}: expected {value!r}, got {foundry.get(key)!r}')
-
-          summary = catalog.get('summary', {})
-          domain_counts = summary.get('domain_counts', {})
-          risk_counts = summary.get('risk_counts', {})
-          if domain_counts.get('security-defensive', 0) < 60:
-              raise SystemExit('security-defensive count did not preserve prior metadata backfills')
-          if domain_counts.get('uncategorized', 10**9) > 500:
-              raise SystemExit('classification override batch did not materially reduce uncategorized entries')
-          if risk_counts.get('unspecified', 10**9) > 650:
-              raise SystemExit('classification override batch did not materially reduce unspecified risk')
-          if summary.get('classification_overrides_applied', 0) < 60:
-              raise SystemExit('expected at least 60 reviewed classification overrides')
-          if summary.get('catalog_decisions_applied', 0) < 3:
-              raise SystemExit('expected at least three deep catalog decisions')
-
-          frontend = entries.get('frontend-design')
-          if not frontend:
-              raise SystemExit('Missing frontend-design catalog entry')
-          expected_frontend = {
-              'lifecycle_status': 'superseded',
-              'install_recommendation': 'do-not-install',
-              'requires_review': True,
-              'superseded_by': 'skills/interface-design.md',
-          }
-          for key, value in expected_frontend.items():
-              if frontend.get(key) != value:
-                  raise SystemExit(f'frontend-design decision mismatch for {key}: expected {value!r}, got {frontend.get(key)!r}')
-          PY
+      - name: Validate catalog classifications and lifecycle decisions
+        run: python scripts/validate_catalog.py
 
       - name: Commit refreshed catalog surfaces
         run: |
