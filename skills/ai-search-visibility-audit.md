@@ -26,7 +26,7 @@ review_status: source_reviewed_utility_evaluation_pending
 
 Use when auditing whether a brand, page, product, or topic appears accurately and citeably in current AI-assisted search and answer surfaces without relying on stale platform statistics or unsupported optimization claims.
 
-This is an observational and content-quality audit. It cannot guarantee citation, ranking, inclusion, or traffic impact.
+This is an observational and content-quality audit. This skill does not guarantee citation, ranking, inclusion, or traffic impact.
 
 ## Purpose
 
