@@ -2,10 +2,12 @@
 type: CriticReport
 title: Classification Override Batch 011
 date: 2026-07-22
-status: validation_pending
+status: validation_passed
 board_ticket: skills-metadata-backfill-batch-011
 selected_role: Critic
 branch: agent/skills-catalog-repair
+pull_request: 4
+validation_workflow_run: 29952399864
 ---
 
 # Classification Override Batch 011
@@ -98,12 +100,34 @@ These remain `distilled_candidate`, disclose unpinned upstream inspiration, and 
 
 - Added `.github/workflows/catalog-validation.yml` for pull-request validation.
 - Updated catalog refresh workflows to rebuild when classification overrides change.
-- Validation requires:
-  - Python syntax and package checks;
-  - successful catalog generation;
-  - first-batch reductions in uncategorized and unspecified-risk counts;
-  - exact expected classifications for representative entries;
+- Workflow run `29952399864` completed successfully.
+- Passed checks:
+  - package validation;
+  - Python compilation;
+  - catalog generation;
+  - exact matching for all 87 overrides;
+  - representative classification assertions;
+  - first-batch classification thresholds;
   - required structure and candidate status for the three new working skills.
+
+## Generated result
+
+| Metric | Before | After |
+|---|---:|---:|
+| Skill count | 1,183 | 1,183 |
+| Classification overrides | 0 | 87 |
+| Uncategorized | 544 | 458 |
+| Unspecified risk | 704 | 618 |
+| Media | 1 | 10 |
+| Software engineering | 152 | 168 |
+| Security defensive | 72 | 81 |
+
+Additional generated state:
+
+- explicit review required: 484;
+- complete classification: 565;
+- partial classification: 160;
+- unclassified: 458.
 
 ## Boundary result
 
@@ -116,22 +140,20 @@ These remain `distilled_candidate`, disclose unpinned upstream inspiration, and 
 
 ## Acceptance tests
 
-| Test | Expected result |
+| Test | Result |
 |---|---|
-| Override file parses and uses allowed taxonomy | Pass in PR CI |
-| Every override matches exactly one packaged skill | Pass in PR CI |
-| Catalog builder compiles and generates schema 0.2 | Pass in PR CI |
-| Uncategorized count falls below first-batch threshold | Pass in PR CI |
-| Unspecified-risk count falls below first-batch threshold | Pass in PR CI |
-| HyperFrames and `ai-seo` are deduplicated and classified rather than re-added | Pass in PR CI |
-| New candidate skills retain required structure and unpinned-source disclosure | Pass in PR CI |
+| Override file parses and uses allowed taxonomy | Pass |
+| Every override matches exactly one packaged skill | Pass |
+| Catalog builder compiles and generates schema 0.2 | Pass |
+| Uncategorized count falls below first-batch threshold | Pass |
+| Unspecified-risk count falls below first-batch threshold | Pass |
+| HyperFrames and `ai-seo` are deduplicated and classified rather than re-added | Pass |
+| New candidate skills retain required structure and unpinned-source disclosure | Pass |
 | Imported skill bodies remain unchanged | Pass by construction of override approach |
 
 ## Next justified action
 
-After CI passes:
-
-1. merge the classification infrastructure and first batch;
-2. let the main-branch catalog producer commit regenerated distribution surfaces;
-3. run source review on Transitions/Hallmark/Taste, Remotion/HyperFrames, OpenSEO, Last30Days/Claude Video, and Code Review Graph/Codebase Memory in that order;
-4. continue metadata repair in bounded semantic clusters instead of alphabetical bulk backfill.
+1. Review and merge draft pull request 4 when approved.
+2. Run source review on Transitions/Hallmark/Taste, Remotion/HyperFrames, OpenSEO, Last30Days/Claude Video, and Code Review Graph/Codebase Memory in that order.
+3. Continue metadata repair in bounded semantic clusters instead of alphabetical bulk backfill.
+4. Promote no candidate into the reviewed core until provenance, license, safety, and measured utility gates pass.
