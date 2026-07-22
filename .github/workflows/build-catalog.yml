@@ -8,6 +8,7 @@ on:
     paths:
       - '.github/workflows/build-catalog.yml'
       - 'scripts/build_distribution_catalog.py'
+      - 'operations/classification-overrides.json'
       - 'dist/skills/**'
       - 'reports/dist-skills-enriched-inventory.json'
 
@@ -63,13 +64,13 @@ jobs:
           domain_counts = summary.get('domain_counts', {})
           risk_counts = summary.get('risk_counts', {})
           if domain_counts.get('security-defensive', 0) < 60:
-              raise SystemExit('security-defensive count did not increase after Foundry metadata backfill')
-          if domain_counts.get('uncategorized', 10**9) > 564:
-              raise SystemExit('uncategorized count did not decrease after Foundry metadata backfill')
-          if risk_counts.get('medium', 0) < 433:
-              raise SystemExit('medium risk count did not increase after Foundry metadata backfill')
-          if risk_counts.get('unspecified', 10**9) > 726:
-              raise SystemExit('unspecified risk count did not decrease after Foundry metadata backfill')
+              raise SystemExit('security-defensive count did not preserve prior metadata backfills')
+          if domain_counts.get('uncategorized', 10**9) > 500:
+              raise SystemExit('classification override batch did not materially reduce uncategorized entries')
+          if risk_counts.get('unspecified', 10**9) > 650:
+              raise SystemExit('classification override batch did not materially reduce unspecified risk')
+          if summary.get('classification_overrides_applied', 0) < 60:
+              raise SystemExit('expected at least 60 reviewed classification overrides')
           PY
 
       - name: Commit refreshed catalog surfaces

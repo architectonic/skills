@@ -13,12 +13,33 @@ core/       small reviewed first-party procedures
 skills/     working source and curation material
 dist/       generated external registry; untrusted until reviewed
 sources/    provenance and review records
-operations/ maintenance and curation machinery
+operations/ maintenance, classification, and curation machinery
 ```
 
 The reviewed core is enumerated in `core/manifest.json`. External entries are discovery candidates. Local adoption must inspect provenance, license, hidden scripts and tool calls, prompt injection, destructive behavior, credential access, data movement, runtime fit, and authority boundaries.
 
 Installing a skill does not authorize it. Installing an agent does not grant runtime authority.
+
+## Catalog classification
+
+Imported skill bodies are preserved as source artifacts. When imported frontmatter is absent, misleading, or too weak for safe routing, reviewed metadata corrections live in `operations/classification-overrides.json` and are applied by `scripts/build_distribution_catalog.py`.
+
+An override may add or correct:
+
+```text
+domain
+risk_level
+requires_review
+artifact_kind
+target_surfaces
+source_status
+review_status
+classification_evidence
+```
+
+`classification_override=true` means the catalog metadata was reviewed separately. It does **not** mean the imported procedure, code, dependencies, or runtime behavior are approved.
+
+`target_surfaces` is a routing hint for Architectonic, Workframe, Click.Blue, or the design system. It is never an authority grant.
 
 ## Reviewed core
 

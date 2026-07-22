@@ -1,0 +1,60 @@
+{
+  "workflow": "skills-catalog-repair",
+  "recorded_at_utc": "2026-07-22T19:52:00Z",
+  "branch": "agent/skills-catalog-repair",
+  "pull_request": 4,
+  "status": "validation_passed",
+  "scope": [
+    "classification override infrastructure",
+    "first metadata repair batch",
+    "expanded source watchlist",
+    "curated source candidate batch",
+    "three working-source candidate skills",
+    "pull-request catalog validation"
+  ],
+  "mutated_third_party_skill_bodies": false,
+  "promoted_to_reviewed_core": false,
+  "publication_attempted": false,
+  "validation": {
+    "workflow": "Validate catalog metadata",
+    "workflow_run_id": 29952399864,
+    "job_id": 89033037484,
+    "conclusion": "success",
+    "checks": [
+      "package validation",
+      "Python compilation",
+      "catalog generation",
+      "exact override matching",
+      "representative classification assertions",
+      "classification threshold assertions",
+      "candidate skill contract assertions"
+    ]
+  },
+  "generated_metrics": {
+    "skill_count": 1183,
+    "classification_overrides_applied": 87,
+    "requires_review_count": 484,
+    "uncategorized_before": 544,
+    "uncategorized_after": 458,
+    "unspecified_risk_before": 704,
+    "unspecified_risk_after": 618,
+    "complete_classification_count": 565,
+    "partial_classification_count": 160,
+    "unclassified_count": 458
+  },
+  "acceptance": {
+    "catalog_schema": "0.2",
+    "minimum_classification_overrides": 60,
+    "maximum_uncategorized": 500,
+    "maximum_unspecified_risk": 650,
+    "representative_entries": [
+      "Building Ransomware Playbook with CISA Framework",
+      "Code Documentation Generator",
+      "hyperframes",
+      "hyperframes-cli",
+      "ai-seo"
+    ],
+    "result": "passed"
+  },
+  "next_action": "Review draft pull request 4 and merge when approved. After merge, continue semantic classification batches and source reviews without promoting unvalidated candidates into core."
+}

@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1",
+  "schema_version": "0.2",
   "package_name": "architectonic-skills",
   "distribution_kind": "skill-bundle",
   "install_root": "dist/skills",
@@ -7,7 +7,8 @@
     "README.md",
     "dist/catalog.json",
     "dist/catalog.md",
-    "dist/install-manifest.json"
+    "dist/install-manifest.json",
+    "operations/classification-overrides.json"
   ],
   "recommended_entrypoints": {
     "github_repo": "README.md",
@@ -18,6 +19,10 @@
     "title",
     "domain",
     "risk_level",
+    "artifact_kind",
+    "target_surfaces",
+    "source_status",
+    "review_status",
     "tags",
     "requires_review"
   ]
