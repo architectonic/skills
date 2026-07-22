@@ -43,7 +43,9 @@ classification_evidence
 
 ## Catalog lifecycle decisions
 
-Classification answers what an entry appears to be and how much review it needs. A deeper body-level review may additionally record a lifecycle and installation decision in `operations/catalog-decisions.json`.
+Classification answers what an entry appears to be and how much review it needs. A deeper body-level review may additionally record a lifecycle and installation decision.
+
+The original reviewed batches remain in `operations/catalog-decisions.json`. New bounded review clusters live in `operations/catalog-decisions/*.json`. `scripts/apply_catalog_decisions.py` merges all decision files, rejects duplicate name/path decisions, and exposes every contributing file in the generated install manifest.
 
 ```text
 lifecycle_status        candidate | review-required | reviewed | blocked | superseded | deprecated
