@@ -8,8 +8,10 @@ on:
       - "dist/skills/**"
       - "skills/**"
       - "operations/classification-overrides.json"
+      - "operations/catalog-decisions.json"
       - "reports/dist-skills-enriched-inventory.json"
       - "scripts/build_distribution_catalog.py"
+      - "scripts/apply_catalog_decisions.py"
       - "package.json"
 
 permissions:
@@ -31,7 +33,9 @@ jobs:
         run: python -m pip install --upgrade pyyaml
 
       - name: Build catalog surfaces
-        run: npm run build:catalog
+        run: |
+          npm run build:catalog
+          python scripts/apply_catalog_decisions.py
 
       - name: Verify generated surfaces are current
         run: |
