@@ -124,6 +124,29 @@
       "source_status": "package_body_reviewed",
       "review_status": "credentials_network_filesystem_asset_rights_and_installer_review_required",
       "decision_evidence": "Retain as the current HyperFrames media resolver only after review. It searches and downloads remote assets, writes project and global caches, uses HeyGen credentials, adopts existing media, and recommends a remote shell installer. Asset rights, provider access, retention, cache scope, executable installation, and every download require explicit approval."
+    },
+    {
+      "name": "ai-seo",
+      "lifecycle_status": "superseded",
+      "install_recommendation": "do-not-install",
+      "superseded_by": "skills/ai-search-visibility-audit.md",
+      "risk_level": "medium",
+      "requires_review": true,
+      "source_status": "package_reviewed_superseded",
+      "review_status": "volatile_unverified_claims_and_missing_dependencies",
+      "decision_evidence": "The imported reference has unverified origin and embeds date-sensitive platform behavior, crawler names, prevalence percentages, traffic-loss claims, citation multipliers, optimization gains, and source-share statistics without recoverable current evidence. It also refers to content-strategy and copywriting package skills that are not present. Preserve as evidence but use the current-source AI search visibility audit instead."
+    },
+    {
+      "name": "competitive-intel",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
+      "superseded_by": "",
+      "domain": "business",
+      "risk_level": "medium",
+      "requires_review": true,
+      "source_status": "package_body_reviewed",
+      "review_status": "retained_for_business_intelligence_not_seo_competitive_research",
+      "decision_evidence": "Retain for broad business intelligence, sales battlecards, positioning, product, and leadership decisions. Current funding, hiring, customer, pricing, partnership, social, CRM, win/loss, and churn evidence requires source, privacy, confidentiality, and authorization review. Use skills/seo-competitive-research.md for search-market and ranking analysis."
     }
   ]
 }

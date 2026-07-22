@@ -5,7 +5,7 @@
 - Skill count: **1183**
 - Explicit review required: **486**
 - Classification overrides applied: **87**
-- Deep catalog decisions applied: **11**
+- Deep catalog decisions applied: **13**
 
 Classification overrides repair routing metadata without rewriting imported skill bodies. Deep catalog decisions record body-level review, lifecycle, and installation guidance. Neither grants runtime authority.
 
@@ -62,7 +62,7 @@ Classification overrides repair routing metadata without rewriting imported skil
 | `adapted` | 406 |
 | `blocked-pending-redaction` | 8 |
 | `blocked-redacted` | 3 |
-| `classification_reviewed` | 76 |
+| `classification_reviewed` | 74 |
 | `distilled` | 1 |
 | `distilled-reviewed` | 2 |
 | `existing-package-skill-risk-reviewed` | 2 |
@@ -73,10 +73,10 @@ Classification overrides repair routing metadata without rewriting imported skil
 | `native-or-curated-origin-unverified` | 1 |
 | `normalized` | 3 |
 | `package-facing-risk-reviewed` | 3 |
-| `package_body_reviewed` | 9 |
+| `package_body_reviewed` | 10 |
 | `package_metadata_backfill` | 5 |
 | `package_reviewed_blocked` | 1 |
-| `package_reviewed_superseded` | 1 |
+| `package_reviewed_superseded` | 2 |
 | `package_risk_reviewed` | 4 |
 | `review-gated-redacted` | 1 |
 | `reviewed-metadata-only` | 3 |
@@ -87,23 +87,25 @@ Classification overrides repair routing metadata without rewriting imported skil
 
 | Lifecycle | Count |
 |---|---:|
-| `reviewed` | 9 |
-| `superseded` | 2 |
-| `unreviewed` | 1172 |
+| `reviewed` | 10 |
+| `superseded` | 3 |
+| `unreviewed` | 1170 |
 
 ## Install Recommendation
 
 | Recommendation | Count |
 |---|---:|
-| `conditional` | 9 |
-| `do-not-install` | 2 |
-| `inspect` | 1172 |
+| `conditional` | 10 |
+| `do-not-install` | 3 |
+| `inspect` | 1170 |
 
 ## Reviewed Catalog Decisions
 
 | Skill | Lifecycle | Install | Superseded by | Decision |
 |---|---|---|---|---|
+| `ai-seo` | `superseded` | `do-not-install` | `skills/ai-search-visibility-audit.md` | The imported reference has unverified origin and embeds date-sensitive platform behavior, crawler names, prevalence percentages, traffic-loss claims, citation multipliers, optimization gains, and source-share statistics without recoverable current evidence. It also refers to content-strategy and copywriting package skills that are not present. Preserve as evidence but use the current-source AI search visibility audit instead. |
 | `canvas-design` | `reviewed` | `conditional` | `—` | Retain as a static visual-art procedure. Its philosophy-to-canvas workflow is distinct from interface design and UI engineering and should not route web application tasks. |
+| `competitive-intel` | `reviewed` | `conditional` | `—` | Retain for broad business intelligence, sales battlecards, positioning, product, and leadership decisions. Current funding, hiring, customer, pricing, partnership, social, CRM, win/loss, and churn evidence requires source, privacy, confidentiality, and authorization review. Use skills/seo-competitive-research.md for search-market and ranking analysis. |
 | `frontend-design` | `superseded` | `do-not-install` | `skills/interface-design.md` | The imported body mandates an external Created By Deerflow link in every generated interface, forces index.html regardless of the host project, and encourages aesthetic escalation that can override project scope and design-system intent. Preserve as evidence but do not recommend installation. |
 | `frontend-ui-engineering` | `reviewed` | `conditional` | `—` | Retain for component architecture, state management, accessibility, responsive behavior, and implementation checks. It should not determine visual direction and should run after product intent and design-system boundaries are established. |
 | `hyperframes` | `reviewed` | `conditional` | `—` | Reviewed against heygen-com/hyperframes@84e4eafacdaf96e8d137ba745af750448c5de0de. Retain only when the user explicitly selects HyperFrames or the existing project already uses it. The body must not make HyperFrames the universal default or authorize skill updates, website crawling, browser capture, cloud rendering, feedback, publication, or external services without separate approval. Use skills/programmatic-video-production.md as the framework-neutral governing workflow. |

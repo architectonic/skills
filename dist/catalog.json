@@ -49,7 +49,7 @@
       "adapted": 406,
       "blocked-pending-redaction": 8,
       "blocked-redacted": 3,
-      "classification_reviewed": 76,
+      "classification_reviewed": 74,
       "distilled": 1,
       "distilled-reviewed": 2,
       "existing-package-skill-risk-reviewed": 2,
@@ -60,10 +60,10 @@
       "native-or-curated-origin-unverified": 1,
       "normalized": 3,
       "package-facing-risk-reviewed": 3,
-      "package_body_reviewed": 9,
+      "package_body_reviewed": 10,
       "package_metadata_backfill": 5,
       "package_reviewed_blocked": 1,
-      "package_reviewed_superseded": 1,
+      "package_reviewed_superseded": 2,
       "package_risk_reviewed": 4,
       "review-gated-redacted": 1,
       "reviewed-metadata-only": 3,
@@ -86,7 +86,6 @@
       "detection_limitations_review_required": 1,
       "environment_review_required": 2,
       "explicit_hyperframes_project_selection_required": 1,
-      "external_data_and_claims_review_required": 1,
       "filesystem_credentials_and_runtime_review_required": 1,
       "governance_wrapper_only": 1,
       "identity_and_credential_review_required": 1,
@@ -101,28 +100,29 @@
       "publication_review_required": 1,
       "remote_code_filesystem_clipboard_and_upstream_review_required": 1,
       "retained_after_project_design_and_content_contract": 1,
+      "retained_for_business_intelligence_not_seo_competitive_research": 1,
       "retained_for_existing_hyperframes_authoring": 1,
       "retained_for_implementation_after_design_contract": 1,
       "retained_for_seek_safe_hyperframes_motion": 1,
       "retained_for_static_visual_art": 1,
       "rights_and_rendering_review_required": 1,
       "runtime_and_permission_review_required": 3,
-      "source_terms_and_attribution_review_required": 1,
       "stale_media_workflow_replaced_by_media_use": 1,
       "tool_authority_review_required": 2,
-      "unspecified": 1091
+      "unspecified": 1091,
+      "volatile_unverified_claims_and_missing_dependencies": 1
     },
     "lifecycle_status_counts": {
-      "reviewed": 9,
-      "superseded": 2,
-      "unreviewed": 1172
+      "reviewed": 10,
+      "superseded": 3,
+      "unreviewed": 1170
     },
     "install_recommendation_counts": {
-      "conditional": 9,
-      "do-not-install": 2,
-      "inspect": 1172
+      "conditional": 10,
+      "do-not-install": 3,
+      "inspect": 1170
     },
-    "catalog_decisions_applied": 11
+    "catalog_decisions_applied": 13
   },
   "domains": {
     "agent-operations": [
@@ -1960,17 +1960,17 @@
         "content-optimization"
       ],
       "source_family": "",
-      "source_status": "classification_reviewed",
-      "review_status": "external_data_and_claims_review_required",
+      "source_status": "package_reviewed_superseded",
+      "review_status": "volatile_unverified_claims_and_missing_dependencies",
       "source_url": "",
       "source_revision": "",
       "license": "",
       "type": "Reference",
-      "lifecycle_status": "unreviewed",
-      "install_recommendation": "inspect",
-      "superseded_by": "",
-      "decision_evidence": "",
-      "catalog_decision": false
+      "lifecycle_status": "superseded",
+      "install_recommendation": "do-not-install",
+      "superseded_by": "skills/ai-search-visibility-audit.md",
+      "decision_evidence": "The imported reference has unverified origin and embeds date-sensitive platform behavior, crawler names, prevalence percentages, traffic-loss claims, citation multipliers, optimization gains, and source-share statistics without recoverable current evidence. It also refers to content-strategy and copywriting package skills that are not present. Preserve as evidence but use the current-source AI search visibility audit instead.",
+      "catalog_decision": true
     },
     {
       "slug": "alert-optimizer",
@@ -8945,17 +8945,17 @@
       ],
       "tags": [],
       "source_family": "",
-      "source_status": "classification_reviewed",
-      "review_status": "source_terms_and_attribution_review_required",
+      "source_status": "package_body_reviewed",
+      "review_status": "retained_for_business_intelligence_not_seo_competitive_research",
       "source_url": "",
       "source_revision": "",
       "license": "",
       "type": "Playbook",
-      "lifecycle_status": "unreviewed",
-      "install_recommendation": "inspect",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
       "superseded_by": "",
-      "decision_evidence": "",
-      "catalog_decision": false
+      "decision_evidence": "Retain for broad business intelligence, sales battlecards, positioning, product, and leadership decisions. Current funding, hiring, customer, pricing, partnership, social, CRM, win/loss, and churn evidence requires source, privacy, confidentiality, and authorization review. Use skills/seo-competitive-research.md for search-market and ranking analysis.",
+      "catalog_decision": true
     },
     {
       "slug": "Completion Contract Loop",
