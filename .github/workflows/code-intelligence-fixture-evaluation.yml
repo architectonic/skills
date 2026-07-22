@@ -1,0 +1,63 @@
+name: Evaluate code-intelligence skill fixtures
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/code-intelligence-fixture-evaluation.yml'
+      - 'scripts/evaluate_code_intelligence_skills.py'
+      - 'tests/fixtures/code-intelligence/**'
+      - 'skills/codebase-structural-map.md'
+      - 'skills/change-impact-review.md'
+  pull_request:
+    paths:
+      - '.github/workflows/code-intelligence-fixture-evaluation.yml'
+      - 'scripts/evaluate_code_intelligence_skills.py'
+      - 'tests/fixtures/code-intelligence/**'
+      - 'reports/evaluation/2026-07-22-code-intelligence-fixture-evaluation.*'
+      - 'skills/codebase-structural-map.md'
+      - 'skills/change-impact-review.md'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: code-intelligence-fixture-evaluation-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate evaluator syntax
+        run: python -m py_compile scripts/evaluate_code_intelligence_skills.py
+
+      - name: Generate deterministic reports
+        if: github.event_name != 'pull_request'
+        run: python scripts/evaluate_code_intelligence_skills.py --write
+
+      - name: Commit generated reports
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "architectonic-bot"
+          git config user.email "architectonic-bot@users.noreply.github.com"
+          if git diff --quiet -- reports/evaluation/2026-07-22-code-intelligence-fixture-evaluation.json reports/evaluation/2026-07-22-code-intelligence-fixture-evaluation.md; then
+            echo "Code-intelligence fixture reports already current."
+            exit 0
+          fi
+          git add reports/evaluation/2026-07-22-code-intelligence-fixture-evaluation.json reports/evaluation/2026-07-22-code-intelligence-fixture-evaluation.md
+          git commit -m "reports: evaluate code-intelligence skill fixtures"
+          git pull --rebase
+          git push
+
+      - name: Validate committed report parity
+        if: github.event_name == 'pull_request'
+        run: python scripts/evaluate_code_intelligence_skills.py
