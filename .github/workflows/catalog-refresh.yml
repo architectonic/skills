@@ -7,6 +7,7 @@ on:
       - ".github/workflows/catalog-refresh.yml"
       - "dist/skills/**"
       - "skills/**"
+      - "operations/classification-overrides.json"
       - "reports/dist-skills-enriched-inventory.json"
       - "scripts/build_distribution_catalog.py"
       - "package.json"
