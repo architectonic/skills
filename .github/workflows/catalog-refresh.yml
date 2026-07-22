@@ -9,9 +9,11 @@ on:
       - "skills/**"
       - "operations/classification-overrides.json"
       - "operations/catalog-decisions.json"
+      - "operations/catalog-decisions/**"
       - "reports/dist-skills-enriched-inventory.json"
       - "scripts/build_distribution_catalog.py"
       - "scripts/apply_catalog_decisions.py"
+      - "scripts/validate_catalog.py"
       - "package.json"
 
 permissions:
@@ -36,6 +38,7 @@ jobs:
         run: |
           npm run build:catalog
           python scripts/apply_catalog_decisions.py
+          python scripts/validate_catalog.py
 
       - name: Verify generated surfaces are current
         run: |
