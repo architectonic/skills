@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""
-Build lightweight distribution manifests for GitHub- and package-based skill installs.
-
-Imported skill files are preserved as source artifacts. Reviewed catalog corrections
-are applied from operations/classification-overrides.json so classification can evolve
-without silently rewriting third-party material.
-"""
+"""Build package-facing skill catalog surfaces with reviewed metadata overrides."""
 from __future__ import annotations
 
 from collections import Counter, defaultdict
@@ -24,136 +18,81 @@ OVERRIDES = ROOT / "operations" / "classification-overrides.json"
 FM_RE = re.compile(r"^---\r?\n(.*?)\r?\n---\r?\n", re.S)
 
 ALLOWED_DOMAINS = {
-    "agent-operations",
-    "business",
-    "cloud-security",
-    "design",
-    "forensics",
-    "media",
-    "research",
-    "runtime-tools",
-    "security-defensive",
-    "security-offensive",
-    "software-engineering",
-    "writing",
+    "agent-operations", "business", "cloud-security", "design", "forensics",
+    "media", "research", "runtime-tools", "security-defensive",
+    "security-offensive", "software-engineering", "writing",
 }
-ALLOWED_RISK_LEVELS = {"low", "medium", "high"}
-ALLOWED_ARTIFACT_KINDS = {
-    "skill",
-    "skill-suite",
-    "playbook",
-    "workflow",
-    "runbook",
-    "source-profile",
-    "reference",
+ALLOWED_RISKS = {"low", "medium", "high"}
+ALLOWED_KINDS = {
+    "skill", "skill-suite", "playbook", "workflow", "runbook",
+    "source-profile", "reference",
+}
+OVERRIDE_FIELDS = {
+    "domain", "risk_level", "requires_review", "artifact_kind",
+    "target_surfaces", "source_family", "source_status", "review_status",
+    "source_url", "source_revision", "license", "classification_evidence",
 }
 
 
-def load_inventory() -> list[dict[str, Any]]:
-    rows = json.loads(REPORT.read_text(encoding="utf-8-sig"))
-    current_paths = {
-        skill_file.relative_to(SKILLS).as_posix()
-        for skill_file in sorted(SKILLS.rglob("SKILL.md"))
-    }
-    by_path = {
-        row["path"].replace("\\", "/"): row
-        for row in rows
-        if row["path"].replace("\\", "/") in current_paths
-    }
-
-    for skill_file in sorted(SKILLS.rglob("SKILL.md")):
-        rel_path = skill_file.relative_to(SKILLS).as_posix()
-        by_path[rel_path] = synthesize_inventory_row(skill_file, rel_path)
-
-    return list(by_path.values())
-
-
-def parse_frontmatter(text: str) -> tuple[dict[str, Any], str]:
-    match = FM_RE.match(text)
-    if not match:
-        return {}, text
-    try:
-        fm = yaml.safe_load(match.group(1))
-        if not isinstance(fm, dict):
-            fm = {}
-    except yaml.YAMLError:
-        fm = {}
-    return fm, text[match.end():]
-
-
-def normalize_text(value: Any) -> str:
+def text(value: Any) -> str:
     return re.sub(r"\s+", " ", str(value or "").strip())
 
 
-def normalize_list(value: Any) -> list[str]:
+def values(value: Any) -> list[str]:
     if value is None or value == "":
         return []
-    values = value if isinstance(value, list) else [value]
-    return [
-        normalize_text(item)
-        for item in values
-        if normalize_text(item)
-    ]
+    raw = value if isinstance(value, list) else [value]
+    return [text(item) for item in raw if text(item)]
 
 
-def first_heading(body: str) -> str:
-    for raw in body.splitlines():
-        line = raw.strip()
-        if line.startswith("# "):
-            return line[2:].strip()
-    return ""
+def parse_frontmatter(raw: str) -> tuple[dict[str, Any], str]:
+    match = FM_RE.match(raw)
+    if not match:
+        return {}, raw
+    try:
+        parsed = yaml.safe_load(match.group(1))
+    except yaml.YAMLError:
+        parsed = {}
+    return (parsed if isinstance(parsed, dict) else {}), raw[match.end():]
 
 
-def first_meaningful_paragraph(body: str) -> str:
-    lines: list[str] = []
+def heading(body: str) -> str:
+    return next(
+        (line.strip()[2:] for line in body.splitlines() if line.strip().startswith("# ")),
+        "",
+    )
+
+
+def paragraph(body: str) -> str:
+    collected: list[str] = []
     for raw in body.splitlines():
         line = raw.strip()
         if not line:
-            if lines:
+            if collected:
                 break
             continue
-        if (
-            line.startswith("#")
-            or line.startswith(">")
-            or line.startswith("```")
-            or line.startswith("<!--")
-        ):
+        if line.startswith(("#", ">", "```", "<!--", "|")) or re.match(r"^[-*]\s", line):
             continue
-        if line.startswith("|") or re.match(r"^[-*]\s", line):
-            continue
-        lines.append(line)
-        if len(" ".join(lines)) >= 220:
+        collected.append(line)
+        if len(" ".join(collected)) >= 220:
             break
-    return normalize_text(" ".join(lines))
+    return text(" ".join(collected))
 
 
-def derive_domain_from_tags(tags: list[str]) -> str:
+def domain_from_tags(tags: list[str]) -> str:
     preferred = [
-        "software-engineering",
-        "security-defensive",
-        "design",
-        "business",
-        "runtime-tools",
-        "agent-operations",
-        "writing",
-        "security-offensive",
-        "cloud-security",
-        "research",
-        "forensics",
-        "media",
+        "software-engineering", "security-defensive", "design", "business",
+        "runtime-tools", "agent-operations", "writing", "security-offensive",
+        "cloud-security", "research", "forensics", "media",
     ]
-    tag_set = {str(tag).strip().lower() for tag in tags or []}
-    for candidate in preferred:
-        if candidate in tag_set:
-            return candidate
-    return ""
+    tag_set = {tag.lower() for tag in tags}
+    return next((candidate for candidate in preferred if candidate in tag_set), "")
 
 
-def derive_artifact_kind(fm: dict[str, Any]) -> str:
-    explicit = normalize_text(fm.get("artifact_kind")).lower()
+def artifact_kind(frontmatter: dict[str, Any]) -> str:
+    explicit = text(frontmatter.get("artifact_kind")).lower()
     if explicit:
         return explicit
-    raw_type = normalize_text(fm.get("type") or "Playbook").lower()
     aliases = {
         "skill": "skill",
         "playbook": "playbook",
@@ -163,7 +102,7 @@ def derive_artifact_kind(fm: dict[str, Any]) -> str:
         "source-profile": "source-profile",
         "reference": "reference",
     }
-    return aliases.get(raw_type, "playbook")
+    return aliases.get(text(frontmatter.get("type") or "Playbook").lower(), "playbook")
 
 
 def classification_status(row: dict[str, Any]) -> str:
@@ -174,171 +113,141 @@ def classification_status(row: dict[str, Any]) -> str:
     return "unclassified"
 
 
-def synthesize_inventory_row(skill_file: Path, rel_path: str) -> dict[str, Any]:
-    text = skill_file.read_text(encoding="utf-8", errors="replace")
-    fm, body = parse_frontmatter(text)
-    tags = normalize_list(fm.get("tags"))
-    title = fm.get("title") or first_heading(body) or skill_file.parent.name
-    description = normalize_text(fm.get("description")) or first_meaningful_paragraph(body)
-    domain = normalize_text(fm.get("domain")) or derive_domain_from_tags(tags)
-    risk_level = normalize_text(fm.get("risk_level")).lower()
-    artifact_kind = derive_artifact_kind(fm)
+def synthesize(skill_file: Path, rel_path: str) -> dict[str, Any]:
+    frontmatter, body = parse_frontmatter(
+        skill_file.read_text(encoding="utf-8", errors="replace")
+    )
+    tags = values(frontmatter.get("tags"))
+    risk = text(frontmatter.get("risk_level")).lower()
     row = {
         "path": rel_path,
-        "name": str(fm.get("name") or skill_file.parent.name),
-        "title": str(title),
-        "description": description,
-        "type": str(fm.get("type") or "Playbook"),
-        "artifact_kind": artifact_kind,
+        "name": str(frontmatter.get("name") or skill_file.parent.name),
+        "title": str(frontmatter.get("title") or heading(body) or skill_file.parent.name),
+        "description": text(frontmatter.get("description")) or paragraph(body),
+        "type": str(frontmatter.get("type") or "Playbook"),
+        "artifact_kind": artifact_kind(frontmatter),
         "tags": tags,
-        "domain": domain,
-        "risk_level": risk_level,
-        "requires_review": bool(fm.get("requires_review", risk_level == "high")),
-        "target_surfaces": normalize_list(fm.get("target_surfaces")),
-        "source_family": normalize_text(fm.get("source_family")),
-        "source_status": normalize_text(fm.get("source_status")),
-        "review_status": normalize_text(fm.get("review_status")),
-        "source_url": normalize_text(fm.get("source_url")),
-        "source_revision": normalize_text(fm.get("source_revision")),
-        "license": normalize_text(fm.get("license")),
-        "classification_evidence": normalize_text(fm.get("classification_evidence")),
-        "classification_override": false,
+        "domain": text(frontmatter.get("domain")) or domain_from_tags(tags),
+        "risk_level": risk,
+        "requires_review": bool(frontmatter.get("requires_review", risk == "high")),
+        "target_surfaces": values(frontmatter.get("target_surfaces")),
+        "source_family": text(frontmatter.get("source_family")),
+        "source_status": text(frontmatter.get("source_status")),
+        "review_status": text(frontmatter.get("review_status")),
+        "source_url": text(frontmatter.get("source_url")),
+        "source_revision": text(frontmatter.get("source_revision")),
+        "license": text(frontmatter.get("license")),
+        "classification_evidence": text(frontmatter.get("classification_evidence")),
+        "classification_override": False,
     }
     row["classification_status"] = classification_status(row)
     return row
 
 
-def load_classification_overrides() -> list[dict[str, Any]]:
+def load_inventory() -> list[dict[str, Any]]:
+    inventory = json.loads(REPORT.read_text(encoding="utf-8-sig"))
+    current = {
+        file.relative_to(SKILLS).as_posix(): file
+        for file in sorted(SKILLS.rglob("SKILL.md"))
+    }
+    rows = {
+        row["path"].replace("\\", "/"): row
+        for row in inventory
+        if row["path"].replace("\\", "/") in current
+    }
+    for rel_path, skill_file in current.items():
+        rows[rel_path] = synthesize(skill_file, rel_path)
+    return list(rows.values())
+
+
+def load_overrides() -> list[dict[str, Any]]:
     if not OVERRIDES.exists():
         return []
-
     payload = json.loads(OVERRIDES.read_text(encoding="utf-8"))
     if payload.get("schema_version") != "0.1":
-        raise ValueError(f"{OVERRIDES.relative_to(ROOT)} schema_version must be 0.1")
-
+        raise ValueError("classification override schema_version must be 0.1")
     overrides = payload.get("overrides")
     if not isinstance(overrides, list):
-        raise ValueError(f"{OVERRIDES.relative_to(ROOT)} overrides must be a list")
+        raise ValueError("classification overrides must be a list")
 
     seen: set[tuple[str, str]] = set()
     for index, override in enumerate(overrides):
         if not isinstance(override, dict):
             raise ValueError(f"classification override {index} must be an object")
-        name = normalize_text(override.get("name"))
-        path = normalize_text(override.get("path")).replace("\\", "/")
+        name = text(override.get("name"))
+        path = text(override.get("path")).replace("\\", "/")
         if not name and not path:
             raise ValueError(f"classification override {index} requires name or path")
         identity = ("path", path) if path else ("name", name)
         if identity in seen:
-            raise ValueError(f"duplicate classification override for {identity[0]}={identity[1]!r}")
+            raise ValueError(f"duplicate classification override: {identity}")
         seen.add(identity)
 
-        domain = normalize_text(override.get("domain"))
+        domain = text(override.get("domain"))
+        risk = text(override.get("risk_level")).lower()
+        kind = text(override.get("artifact_kind")).lower()
         if domain and domain not in ALLOWED_DOMAINS:
-            raise ValueError(f"unsupported domain {domain!r} for override {name or path}")
-
-        risk_level = normalize_text(override.get("risk_level")).lower()
-        if risk_level and risk_level not in ALLOWED_RISK_LEVELS:
-            raise ValueError(f"unsupported risk_level {risk_level!r} for override {name or path}")
-
-        artifact_kind = normalize_text(override.get("artifact_kind")).lower()
-        if artifact_kind and artifact_kind not in ALLOWED_ARTIFACT_KINDS:
-            raise ValueError(f"unsupported artifact_kind {artifact_kind!r} for override {name or path}")
-
+            raise ValueError(f"unsupported domain {domain!r} for {name or path}")
+        if risk and risk not in ALLOWED_RISKS:
+            raise ValueError(f"unsupported risk_level {risk!r} for {name or path}")
+        if kind and kind not in ALLOWED_KINDS:
+            raise ValueError(f"unsupported artifact_kind {kind!r} for {name or path}")
         if "requires_review" in override and not isinstance(override["requires_review"], bool):
-            raise ValueError(f"requires_review must be boolean for override {name or path}")
-
+            raise ValueError(f"requires_review must be boolean for {name or path}")
         surfaces = override.get("target_surfaces", [])
         if not isinstance(surfaces, list) or not all(
             isinstance(item, str) and item.strip() for item in surfaces
         ):
-            raise ValueError(f"target_surfaces must be a non-empty-string list for override {name or path}")
-
+            raise ValueError(f"target_surfaces must be a string list for {name or path}")
     return overrides
 
 
-def apply_classification_overrides(
-    rows: list[dict[str, Any]],
-    overrides: list[dict[str, Any]],
+def apply_overrides(
+    rows: list[dict[str, Any]], overrides: list[dict[str, Any]]
 ) -> tuple[list[dict[str, Any]], int]:
-    if not overrides:
-        return rows, 0
-
     name_counts = Counter(str(row.get("name") or "") for row in rows)
-    by_path = {
-        str(row["path"]).replace("\\", "/"): row
-        for row in rows
-    }
+    by_path = {str(row["path"]).replace("\\", "/"): row for row in rows}
     by_name = {
         str(row["name"]): row
         for row in rows
         if name_counts[str(row.get("name") or "")] == 1
     }
 
-    override_fields = {
-        "domain",
-        "risk_level",
-        "requires_review",
-        "artifact_kind",
-        "target_surfaces",
-        "source_family",
-        "source_status",
-        "review_status",
-        "source_url",
-        "source_revision",
-        "license",
-        "classification_evidence",
-    }
-
-    matched = 0
     for override in overrides:
-        path = normalize_text(override.get("path")).replace("\\", "/")
-        name = normalize_text(override.get("name"))
+        path = text(override.get("path")).replace("\\", "/")
+        name = text(override.get("name"))
         row = by_path.get(path) if path else by_name.get(name)
         if row is None:
-            if name and name_counts.get(name, 0) > 1:
-                raise ValueError(f"classification override name {name!r} is ambiguous; use path")
-            raise ValueError(f"classification override did not match a packaged skill: {path or name}")
+            if name_counts.get(name, 0) > 1:
+                raise ValueError(f"override name {name!r} is ambiguous; use path")
+            raise ValueError(f"override did not match a packaged skill: {path or name}")
 
-        for field in override_fields:
+        for field in OVERRIDE_FIELDS:
             if field not in override:
                 continue
             value = override[field]
             if field == "target_surfaces":
-                value = normalize_list(value)
-            elif field in {
-                "domain",
-                "risk_level",
-                "artifact_kind",
-                "source_family",
-                "source_status",
-                "review_status",
-                "source_url",
-                "source_revision",
-                "license",
-                "classification_evidence",
-            }:
-                value = normalize_text(value)
+                value = values(value)
+            elif field != "requires_review":
+                value = text(value)
                 if field in {"risk_level", "artifact_kind"}:
                     value = value.lower()
             row[field] = value
-
         row["classification_override"] = True
         row["classification_status"] = classification_status(row)
-        matched += 1
 
-    return rows, matched
+    return rows, len(overrides)
 
 
-def skill_entry(row: dict[str, Any]) -> dict[str, Any]:
+def catalog_entry(row: dict[str, Any]) -> dict[str, Any]:
     rel_path = row["path"].replace("\\", "/")
-    skill_dir = rel_path.rsplit("/", 1)[0]
+    directory = rel_path.rsplit("/", 1)[0]
     return {
         "slug": row["name"],
         "title": row.get("title") or row["name"],
         "description": row.get("description", ""),
         "path": f"dist/skills/{rel_path}",
-        "directory": f"dist/skills/{skill_dir}",
+        "directory": f"dist/skills/{directory}",
         "domain": row.get("domain", ""),
         "risk_level": row.get("risk_level", ""),
         "requires_review": bool(row.get("requires_review")),
@@ -358,18 +267,17 @@ def skill_entry(row: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def build_catalog(rows: list[dict[str, Any]], overrides_applied: int) -> dict[str, Any]:
-    entries = [skill_entry(row) for row in rows]
-    by_domain: dict[str, list[str]] = defaultdict(list)
+def counts(entries: list[dict[str, Any]], field: str, fallback: str) -> dict[str, int]:
+    return dict(sorted(Counter(entry.get(field) or fallback for entry in entries).items()))
+
+
+def build_catalog(
+    rows: list[dict[str, Any]], override_count: int
+) -> dict[str, Any]:
+    entries = [catalog_entry(row) for row in rows]
+    domains: dict[str, list[str]] = defaultdict(list)
     for entry in entries:
-        by_domain[entry["domain"] or "uncategorized"].append(entry["slug"])
-
-    domain_counts = Counter(entry["domain"] or "uncategorized" for entry in entries)
-    risk_counts = Counter(entry["risk_level"] or "unspecified" for entry in entries)
-    artifact_kind_counts = Counter(entry["artifact_kind"] or "unspecified" for entry in entries)
-    classification_counts = Counter(entry["classification_status"] or "unclassified" for entry in entries)
-    source_status_counts = Counter(entry["source_status"] or "unspecified" for entry in entries)
-
+        domains[entry["domain"] or "uncategorized"].append(entry["slug"])
     return {
         "schema_version": "0.2",
         "package": {
@@ -380,23 +288,22 @@ def build_catalog(rows: list[dict[str, Any]], overrides_applied: int) -> dict[st
         },
         "summary": {
             "skill_count": len(entries),
-            "requires_review_count": sum(1 for entry in entries if entry["requires_review"]),
-            "classification_overrides_applied": overrides_applied,
-            "domain_counts": dict(sorted(domain_counts.items())),
-            "risk_counts": dict(sorted(risk_counts.items())),
-            "artifact_kind_counts": dict(sorted(artifact_kind_counts.items())),
-            "classification_counts": dict(sorted(classification_counts.items())),
-            "source_status_counts": dict(sorted(source_status_counts.items())),
+            "requires_review_count": sum(entry["requires_review"] for entry in entries),
+            "classification_overrides_applied": override_count,
+            "domain_counts": counts(entries, "domain", "uncategorized"),
+            "risk_counts": counts(entries, "risk_level", "unspecified"),
+            "artifact_kind_counts": counts(entries, "artifact_kind", "unspecified"),
+            "classification_counts": counts(entries, "classification_status", "unclassified"),
+            "source_status_counts": counts(entries, "source_status", "unspecified"),
         },
         "domains": {
-            domain: sorted(slugs)
-            for domain, slugs in sorted(by_domain.items())
+            domain: sorted(slugs) for domain, slugs in sorted(domains.items())
         },
         "skills": entries,
     }
 
 
-def build_install_manifest(catalog: dict[str, Any]) -> dict[str, Any]:
+def build_manifest(catalog: dict[str, Any]) -> dict[str, Any]:
     return {
         "schema_version": "0.2",
         "package_name": catalog["package"]["name"],
@@ -414,38 +321,21 @@ def build_install_manifest(catalog: dict[str, Any]) -> dict[str, Any]:
             "installer_catalog": "dist/catalog.json",
         },
         "selection_fields": [
-            "slug",
-            "title",
-            "domain",
-            "risk_level",
-            "artifact_kind",
-            "target_surfaces",
-            "source_status",
-            "review_status",
-            "tags",
+            "slug", "title", "domain", "risk_level", "artifact_kind",
+            "target_surfaces", "source_status", "review_status", "tags",
             "requires_review",
         ],
     }
 
 
-def append_count_table(
-    lines: list[str],
-    heading: str,
-    label: str,
-    counts: dict[str, int],
+def add_table(
+    lines: list[str], heading: str, label: str, table_counts: dict[str, int]
 ) -> None:
-    lines += [
-        "",
-        f"## {heading}",
-        "",
-        f"| {label} | Count |",
-        "|---|---:|",
-    ]
-    for key, count in counts.items():
-        lines.append(f"| `{key}` | {count} |")
+    lines.extend(["", f"## {heading}", "", f"| {label} | Count |", "|---|---:|"])
+    lines.extend(f"| `{key}` | {count} |" for key, count in table_counts.items())
 
 
-def build_catalog_markdown(catalog: dict[str, Any]) -> str:
+def build_markdown(catalog: dict[str, Any]) -> str:
     summary = catalog["summary"]
     lines = [
         "# Skills Distribution Catalog",
@@ -456,50 +346,42 @@ def build_catalog_markdown(catalog: dict[str, Any]) -> str:
         f"- Explicit review required: **{summary['requires_review_count']}**",
         f"- Classification overrides applied: **{summary['classification_overrides_applied']}**",
         "",
-        "Classification overrides repair catalog metadata without rewriting imported skill bodies. Inclusion remains untrusted until the skill passes source, license, safety, and utility review.",
+        "Classification overrides repair catalog metadata without rewriting imported skill bodies. Inclusion remains untrusted until source, license, safety, and utility review pass.",
     ]
-
-    append_count_table(lines, "Domains", "Domain", summary["domain_counts"])
-    append_count_table(lines, "Risk Levels", "Risk", summary["risk_counts"])
-    append_count_table(lines, "Artifact Kinds", "Artifact kind", summary["artifact_kind_counts"])
-    append_count_table(lines, "Classification Completeness", "Status", summary["classification_counts"])
-    append_count_table(lines, "Source Status", "Source status", summary["source_status_counts"])
-
-    lines += [
+    add_table(lines, "Domains", "Domain", summary["domain_counts"])
+    add_table(lines, "Risk Levels", "Risk", summary["risk_counts"])
+    add_table(lines, "Artifact Kinds", "Artifact kind", summary["artifact_kind_counts"])
+    add_table(
+        lines, "Classification Completeness", "Status",
+        summary["classification_counts"],
+    )
+    add_table(lines, "Source Status", "Source status", summary["source_status_counts"])
+    lines.extend([
         "",
         "## Install Notes",
         "",
-        "- GitHub/open-repo consumers should start at `README.md` and inspect `dist/catalog.json` for machine-readable discovery.",
-        "- Runtime installers should copy from `dist/skills/` and preserve per-skill directories.",
-        "- High-risk or `requires_review=true` skills require explicit user confirmation before installation or use.",
-        "- `classification_override=true` means metadata was reviewed separately from the imported skill body; it does not mean the procedure itself is approved.",
-        "- Filter by `target_surfaces` only as a routing hint, never as an authority grant.",
-    ]
+        "- Inspect `dist/catalog.json` before selecting skills.",
+        "- Preserve complete per-skill directories during installation.",
+        "- High-risk or `requires_review=true` skills require explicit confirmation.",
+        "- `classification_override=true` means only the catalog metadata was separately reviewed.",
+        "- `target_surfaces` is a routing hint, not an authority grant.",
+    ])
     return "\n".join(lines) + "\n"
 
 
 def main() -> None:
     rows = load_inventory()
-    overrides = load_classification_overrides()
-    rows, overrides_applied = apply_classification_overrides(rows, overrides)
-    catalog = build_catalog(rows, overrides_applied)
-    install_manifest = build_install_manifest(catalog)
-    catalog_md = build_catalog_markdown(catalog)
-
+    rows, override_count = apply_overrides(rows, load_overrides())
+    catalog = build_catalog(rows, override_count)
     (DIST / "catalog.json").write_text(
-        json.dumps(catalog, indent=2, ensure_ascii=False),
-        encoding="utf-8",
+        json.dumps(catalog, indent=2, ensure_ascii=False), encoding="utf-8"
     )
     (DIST / "install-manifest.json").write_text(
-        json.dumps(install_manifest, indent=2, ensure_ascii=False),
+        json.dumps(build_manifest(catalog), indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
-    (DIST / "catalog.md").write_text(catalog_md, encoding="utf-8")
-
-    print(f"Wrote: {DIST / 'catalog.json'}")
-    print(f"Wrote: {DIST / 'install-manifest.json'}")
-    print(f"Wrote: {DIST / 'catalog.md'}")
-    print(f"Applied classification overrides: {overrides_applied}")
+    (DIST / "catalog.md").write_text(build_markdown(catalog), encoding="utf-8")
+    print(f"Applied classification overrides: {override_count}")
 
 
 if __name__ == "__main__":
