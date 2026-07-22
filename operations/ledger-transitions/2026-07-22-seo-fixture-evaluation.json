@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.1",
+  "transition_id": "2026-07-22-seo-fixture-evaluation-001",
+  "ledger_id": "architectonic-skills",
+  "recorded_at": "2026-07-22T21:25:00Z",
+  "updates": [
+    {
+      "id": "skills-evaluate-seo-fixtures-001",
+      "expect_status": "ready",
+      "set": {
+        "status": "done",
+        "evidence": [
+          "tests/fixtures/seo/contract-evaluation.json",
+          "scripts/evaluate_seo_skills.py",
+          "reports/evaluation/2026-07-22-seo-fixture-evaluation.json",
+          "reports/evaluation/2026-07-22-seo-fixture-evaluation.md"
+        ],
+        "completed_at": "2026-07-22T21:25:00Z",
+        "acceptance_result": {
+          "passed": true,
+          "checked_at": "2026-07-22T21:25:00Z",
+          "evaluation_kind": "deterministic_contract_fixture_not_model_benchmark",
+          "case_count": 6,
+          "live_services_used": false,
+          "promotion_decision": "hold_for_controlled_model_and_repository_evaluation"
+        },
+        "extensions": {
+          "next_ticket_on_success": "skills-source-review-code-intelligence-001",
+          "comparison_scope": "generic_fixture_output_vs_skill_guided_fixture_output",
+          "token_measurement": "ceil_utf8_characters_divided_by_4"
+        }
+      }
+    }
+  ],
+  "append_items": [
+    {
+      "id": "skills-source-review-code-intelligence-001",
+      "title": "Review code-intelligence graph sources and consolidate derived-map procedures",
+      "status": "ready",
+      "priority": 2,
+      "role": "Source Reviewer",
+      "value_type": "source_review_and_normalization",
+      "mission": "Review Code Review Graph, Codebase Memory MCP, and the current Understand Anything repository at pinned revisions; distinguish deterministic parser facts from heuristic, semantic, and LLM-generated relationships; define installation, configuration, persistence, privacy, model, cost, hook, watcher, UI, and repository-write boundaries; create only bounded first-party structural-map and change-impact procedures when they are distinct from the reviewed architecture and graph-projection core.",
+      "acceptance_tests": [
+        "record exact source revisions and licenses for all reviewed repositories",
+        "record that the original Understand Anything bookmark now resolves to the current Egonex-AI repository",
+        "do not execute installers, binaries, MCP servers, hooks, watchers, dashboards, model calls, or repository indexing",
+        "keep generated graph and onboarding artifacts derived rather than canonical",
+        "verify consequential impact claims against source, configuration, history, tests, or runtime evidence",
+        "review overlapping package entries before adding local procedures",
+        "record lifecycle and installation decisions without rewriting imported package bodies",
+        "leave utility evaluation as a separate next item"
+      ],
+      "dependencies": [
+        "skills-evaluate-seo-fixtures-001"
+      ],
+      "evidence": [],
+      "artifacts": [
+        "sources/reviewed/2026-07-22-code-intelligence-cluster.md",
+        "skills/codebase-structural-map.md",
+        "skills/change-impact-review.md",
+        "operations/catalog-decisions/code-intelligence.json",
+        "reports/source-review/2026-07-22-code-intelligence-consolidation.md"
+      ],
+      "sources": [
+        "https://github.com/tirth8205/code-review-graph",
+        "https://github.com/DeusData/codebase-memory-mcp",
+        "https://github.com/Egonex-AI/Understand-Anything"
+      ],
+      "external_action_allowed": false,
+      "extensions": {
+        "next_ticket_on_success": "skills-evaluate-code-intelligence-fixtures-001",
+        "runtime_installation_deferred_to_workframe": true,
+        "promotion_to_core_allowed": false
+      }
+    }
+  ]
+}
