@@ -43,7 +43,7 @@ def validate_summary(catalog: dict[str, Any], manifest: dict[str, Any]) -> None:
     require(catalog.get("schema_version") == "0.2", "catalog schema_version must be 0.2")
     require(manifest.get("schema_version") == "0.2", "install manifest schema_version must be 0.2")
     require(summary.get("classification_overrides_applied", 0) >= 60, "expected at least 60 classification overrides")
-    require(summary.get("catalog_decisions_applied", 0) >= 11, "expected at least eleven deep catalog decisions")
+    require(summary.get("catalog_decisions_applied", 0) >= 13, "expected at least thirteen deep catalog decisions")
     require(summary.get("domain_counts", {}).get("uncategorized", 10**9) <= 500, "uncategorized count remains above first-batch acceptance threshold")
     require(summary.get("risk_counts", {}).get("unspecified", 10**9) <= 650, "unspecified-risk count remains above first-batch acceptance threshold")
     require("operations/catalog-decisions.json" in manifest.get("discovery_files", []), "install manifest must expose catalog decisions")
@@ -158,6 +158,25 @@ def validate_decisions(entries: dict[str, dict[str, Any]]) -> None:
             "review_status": "credentials_network_filesystem_asset_rights_and_installer_review_required",
             "superseded_by": "",
         },
+        "ai-seo": {
+            "lifecycle_status": "superseded",
+            "install_recommendation": "do-not-install",
+            "risk_level": "medium",
+            "requires_review": True,
+            "source_status": "package_reviewed_superseded",
+            "review_status": "volatile_unverified_claims_and_missing_dependencies",
+            "superseded_by": "skills/ai-search-visibility-audit.md",
+        },
+        "competitive-intel": {
+            "lifecycle_status": "reviewed",
+            "install_recommendation": "conditional",
+            "domain": "business",
+            "risk_level": "medium",
+            "requires_review": True,
+            "source_status": "package_body_reviewed",
+            "review_status": "retained_for_business_intelligence_not_seo_competitive_research",
+            "superseded_by": "",
+        },
     }
     for slug, fields in expected.items():
         entry = entries.get(slug)
@@ -165,6 +184,23 @@ def validate_decisions(entries: dict[str, dict[str, Any]]) -> None:
         require(bool(entry.get("catalog_decision")), f"{slug} should disclose catalog_decision=true")
         for key, value in fields.items():
             require(entry.get(key) == value, f"{slug} decision mismatch for {key}: expected {value!r}, got {entry.get(key)!r}")
+
+
+def validate_reviewed_skill(
+    path: Path,
+    revision_fragment: str,
+    required_sections: list[str],
+) -> tuple[dict[str, Any], str, str]:
+    frontmatter, body, raw = load_markdown(path)
+    require(frontmatter.get("source_status") == "distilled-reviewed", f"{path.relative_to(ROOT)} source_status must be distilled-reviewed")
+    require(frontmatter.get("review_status") == "source_reviewed_utility_evaluation_pending", f"{path.relative_to(ROOT)} review_status mismatch")
+    revision = str(frontmatter.get("source_revision") or "")
+    require(revision_fragment in revision, f"{path.relative_to(ROOT)} missing pinned source revision")
+    require("unpinned-review-required" not in revision, f"{path.relative_to(ROOT)} must not retain an unpinned revision")
+    require(frontmatter.get("source_content_copied") is not True, f"{path.relative_to(ROOT)} must not disclose copied source content")
+    for section in required_sections:
+        require(section in body, f"{path.relative_to(ROOT)} missing required section {section}")
+    return frontmatter, body, raw
 
 
 def validate_working_skills() -> None:
@@ -180,19 +216,19 @@ def validate_working_skills() -> None:
         ROOT / "skills/interface-quality-audit.md": "taste-skill@98565e65bc3274ddf6eb0838734341714057178b",
         ROOT / "skills/interface-transition-review.md": "transitions.dev@047d036a79cc2ddecd868e7f1e3aa04b495644b2",
         ROOT / "skills/programmatic-video-production.md": "hyperframes@84e4eafacdaf96e8d137ba745af750448c5de0de",
+        ROOT / "skills/seo-project-context.md": "seo-project-setup@9101f1479e128fb08296348b8041df03a9a654d8",
+        ROOT / "skills/seo-keyword-opportunity-research.md": "keyword-research@4bdfc40dd4a27756f3abbc291b7b1bfe1176699c",
+        ROOT / "skills/seo-keyword-page-mapping.md": "keyword-clustering@0fbadf7564b3127dd9f87f4fd14f7e17c9bc4b39",
+        ROOT / "skills/seo-competitive-research.md": "competitive-landscape@0883708810e7fae718da8bb8b12200d759efacb5",
+        ROOT / "skills/seo-link-prospecting.md": "link-prospecting@e9b9fb7114c092e41dd06c6b6d0e0e77f3afd4eb",
+        ROOT / "skills/ai-search-visibility-audit.md": "packaged-ai-seo@62339de9a8c7ff51f3e8ff682e4c5e80a3dbc89d",
     }
+    loaded: dict[Path, tuple[dict[str, Any], str, str]] = {}
     for path, revision_fragment in reviewed.items():
-        frontmatter, body, _ = load_markdown(path)
-        require(frontmatter.get("source_status") == "distilled-reviewed", f"{path.relative_to(ROOT)} source_status must be distilled-reviewed")
-        require(frontmatter.get("review_status") == "source_reviewed_utility_evaluation_pending", f"{path.relative_to(ROOT)} review_status mismatch")
-        revision = str(frontmatter.get("source_revision") or "")
-        require(revision_fragment in revision, f"{path.relative_to(ROOT)} missing pinned source revision")
-        require("unpinned-review-required" not in revision, f"{path.relative_to(ROOT)} must not retain an unpinned revision")
-        for section in required_sections:
-            require(section in body, f"{path.relative_to(ROOT)} missing required section {section}")
+        loaded[path] = validate_reviewed_skill(path, revision_fragment, required_sections)
 
     video_path = ROOT / "skills/programmatic-video-production.md"
-    frontmatter, body, raw = load_markdown(video_path)
+    frontmatter, _, raw = loaded[video_path]
     require(frontmatter.get("risk_level") == "high", "programmatic-video-production must remain high risk")
     require(frontmatter.get("requires_review") is True, "programmatic-video-production must remain review gated")
     require(frontmatter.get("source_content_copied") is False, "programmatic-video-production must disclose source_content_copied=false")
@@ -204,6 +240,34 @@ def validate_working_skills() -> None:
     ]:
         require(evidence in raw, f"programmatic video skill missing evidence: {evidence}")
 
+    link_path = ROOT / "skills/seo-link-prospecting.md"
+    frontmatter, _, raw = loaded[link_path]
+    require(frontmatter.get("requires_review") is True, "seo-link-prospecting must remain review gated")
+    for evidence in [
+        "Do not collect unrelated personal information",
+        "Separate sending from drafting",
+        "No contact enrichment, CRM write, sequence, message, follow-up, tracking pixel, or publication occurred without explicit approval",
+    ]:
+        require(evidence in raw, f"SEO link prospecting skill missing boundary: {evidence}")
+
+    visibility_path = ROOT / "skills/ai-search-visibility-audit.md"
+    _, _, raw = loaded[visibility_path]
+    for evidence in [
+        "current official source",
+        "Observed citations are separated from hypotheses",
+        "does not guarantee citation, ranking, inclusion, or traffic impact",
+        "preserves no static platform statistics",
+    ]:
+        require(evidence in raw, f"AI search visibility skill missing boundary: {evidence}")
+
+    for path in [
+        ROOT / "skills/seo-keyword-opportunity-research.md",
+        ROOT / "skills/seo-keyword-page-mapping.md",
+    ]:
+        _, _, raw = loaded[path]
+        require("explicit confirmation" in raw or "without approval" in raw, f"{path.relative_to(ROOT)} must gate connector mutations")
+        require("unknown" in raw.lower(), f"{path.relative_to(ROOT)} must preserve unknown evidence")
+
     candidate_path = ROOT / "skills/recent-source-research.md"
     frontmatter, body, _ = load_markdown(candidate_path)
     require(frontmatter.get("source_status") == "distilled_candidate", "recent-source-research must remain a distilled candidate")
@@ -213,27 +277,38 @@ def validate_working_skills() -> None:
 
 
 def validate_source_reviews() -> None:
-    design = (ROOT / "sources/reviewed/2026-07-22-design-quality-cluster.md").read_text(encoding="utf-8")
-    for evidence in [
-        "aeb42fb354ff4efa36ab475773a082315a3af2ce",
-        "98565e65bc3274ddf6eb0838734341714057178b",
-        "047d036a79cc2ddecd868e7f1e3aa04b495644b2",
-        "No root `LICENSE` file was found",
-        "do not copy or redistribute snippets",
-    ]:
-        require(evidence in design, f"design source review missing evidence: {evidence}")
-
-    video = (ROOT / "sources/reviewed/2026-07-22-programmatic-video-cluster.md").read_text(encoding="utf-8")
-    for evidence in [
-        "84e4eafacdaf96e8d137ba745af750448c5de0de",
-        "0dd76fafa3fd337b7bc6b5cd95b7db0179828a3d",
-        "b8fdb73ae8600d011afb246a02b690bf6935f527",
-        "License: Apache-2.0",
-        "up to three employees",
-        "do not copy or redistribute skill bodies",
-        "Do not execute remote shell installers",
-    ]:
-        require(evidence in video, f"programmatic video source review missing evidence: {evidence}")
+    reviews = {
+        ROOT / "sources/reviewed/2026-07-22-design-quality-cluster.md": [
+            "aeb42fb354ff4efa36ab475773a082315a3af2ce",
+            "98565e65bc3274ddf6eb0838734341714057178b",
+            "047d036a79cc2ddecd868e7f1e3aa04b495644b2",
+            "No root `LICENSE` file was found",
+            "do not copy or redistribute snippets",
+        ],
+        ROOT / "sources/reviewed/2026-07-22-programmatic-video-cluster.md": [
+            "84e4eafacdaf96e8d137ba745af750448c5de0de",
+            "0dd76fafa3fd337b7bc6b5cd95b7db0179828a3d",
+            "b8fdb73ae8600d011afb246a02b690bf6935f527",
+            "License: Apache-2.0",
+            "up to three employees",
+            "do not copy or redistribute skill bodies",
+            "Do not execute remote shell installers",
+        ],
+        ROOT / "sources/reviewed/2026-07-22-seo-evidence-cluster.md": [
+            "95e95d48cb88e60e1277422254e59c59b3e7e2e2",
+            "License: MIT",
+            "d7d884f16474e989ff443e080f6e0d1ddb42c444",
+            "4bdfc40dd4a27756f3abbc291b7b1bfe1176699c",
+            "0fbadf7564b3127dd9f87f4fd14f7e17c9bc4b39",
+            "e9b9fb7114c092e41dd06c6b6d0e0e77f3afd4eb",
+            "Keyword saving is a connector mutation",
+            "No OpenSEO skill body",
+        ],
+    }
+    for path, evidence_items in reviews.items():
+        text = path.read_text(encoding="utf-8")
+        for evidence in evidence_items:
+            require(evidence in text, f"{path.relative_to(ROOT)} missing evidence: {evidence}")
 
 
 def main() -> int:
