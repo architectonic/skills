@@ -1,6 +1,6 @@
 {
-  "schema_version": "0.1",
-  "purpose": "High-signal upstream skill sources that should be checked for additions, removals, renamed skills, and material behavioral changes before broad discovery churn.",
+  "schema_version": "0.2",
+  "purpose": "High-signal upstream skill and capability sources checked for additions, removals, renamed skills, material behavior changes, and source-to-artifact routing opportunities.",
   "review_boundary": "metadata_only_no_content_copy_no_code_execution",
   "repositories": [
     {
@@ -10,40 +10,193 @@
       "url": "https://github.com/mattpocock/skills",
       "reason": "Known high-signal personal skill repository already distilled in part; new or renamed skills should become explicit review candidates instead of being missed by broad keyword search.",
       "watch_paths": [
-        {
-          "path": "skills",
-          "max_depth": 4,
-          "include_extensions": [".md"],
-          "include_path_regex": "/SKILL\\.md$"
-        },
-        {
-          "path": "docs",
-          "max_depth": 3,
-          "include_extensions": [".md"]
-        },
-        {
-          "path": "CHANGELOG.md",
-          "max_depth": 0,
-          "include_extensions": [".md"]
-        }
+        {"path": "skills", "max_depth": 4, "include_extensions": [".md"], "include_path_regex": "/SKILL\\.md$"},
+        {"path": "docs", "max_depth": 3, "include_extensions": [".md"]},
+        {"path": "CHANGELOG.md", "max_depth": 0, "include_extensions": [".md"]}
       ],
-      "known_reviewed_or_distilled_slugs": [
-        "ask-matt",
-        "codebase-design",
-        "domain-modeling",
-        "diagnosing-bugs",
-        "grilling",
-        "resolving-merge-conflicts",
-        "review",
-        "tdd",
-        "writing-great-skills"
+      "known_reviewed_or_distilled_slugs": ["ask-matt", "codebase-design", "domain-modeling", "diagnosing-bugs", "grilling", "resolving-merge-conflicts", "review", "tdd", "writing-great-skills"],
+      "watch_for": ["new skill directory", "new SKILL.md", "skill rename or removal", "material behavior, dependency, invocation, or safety-boundary change"]
+    },
+    {
+      "full_name": "remotion-dev/skills",
+      "priority": "high",
+      "source_family": "official_framework_skill_repository",
+      "url": "https://github.com/remotion-dev/skills",
+      "reason": "Official programmatic-video skills with direct relevance to deterministic media generation and future Workframe adapters.",
+      "watch_paths": [
+        {"path": "", "max_depth": 4, "include_extensions": [".md"], "include_path_regex": "(^|/)SKILL\\.md$"},
+        {"path": "README.md", "max_depth": 0, "include_extensions": [".md"]}
       ],
-      "watch_for": [
-        "new skill directory under skills/",
-        "new SKILL.md path",
-        "skill rename/removal in CHANGELOG.md",
-        "material behavior change that changes dependency, invocation, reusable asset, or safety boundary"
-      ]
+      "known_reviewed_or_distilled_slugs": [],
+      "watch_for": ["new rendering or composition skill", "Remotion API-version changes", "new executable dependencies", "licensing or redistribution changes"]
+    },
+    {
+      "full_name": "JakubAntalik/transitions.dev",
+      "priority": "high",
+      "source_family": "design_skill_repository",
+      "url": "https://github.com/JakubAntalik/transitions.dev",
+      "reason": "Focused transition-design and transition-polish procedures that can be evaluated against the restrained Architectonic design grammar.",
+      "watch_paths": [
+        {"path": "", "max_depth": 4, "include_extensions": [".md"], "include_path_regex": "(^|/)SKILL\\.md$"},
+        {"path": "README.md", "max_depth": 0, "include_extensions": [".md"]}
+      ],
+      "known_reviewed_or_distilled_slugs": [],
+      "watch_for": ["transition skill revisions", "reduced-motion guidance", "framework-specific dependencies", "new motion examples"]
+    },
+    {
+      "full_name": "Leonxlnx/taste-skill",
+      "priority": "high",
+      "source_family": "design_skill_repository",
+      "url": "https://github.com/Leonxlnx/taste-skill",
+      "reason": "High-signal design-taste, redesign, brand-kit, and visual direction skills that should be benchmarked against local design doctrine rather than copied wholesale.",
+      "watch_paths": [
+        {"path": "", "max_depth": 4, "include_extensions": [".md"], "include_path_regex": "(^|/)SKILL\\.md$"},
+        {"path": "README.md", "max_depth": 0, "include_extensions": [".md"]}
+      ],
+      "known_reviewed_or_distilled_slugs": [],
+      "watch_for": ["new design audit or brand skills", "DESIGN.md contracts", "image-generation dependencies", "license changes"]
+    },
+    {
+      "full_name": "Nutlope/hallmark",
+      "priority": "high",
+      "source_family": "design_audit_skill_repository",
+      "url": "https://github.com/Nutlope/hallmark",
+      "reason": "Anti-template interface audit and redesign workflow relevant to design-system quality gates and Click.Blue preview generation.",
+      "watch_paths": [
+        {"path": "", "max_depth": 4, "include_extensions": [".md"], "include_path_regex": "(^|/)SKILL\\.md$"},
+        {"path": "README.md", "max_depth": 0, "include_extensions": [".md"]}
+      ],
+      "known_reviewed_or_distilled_slugs": [],
+      "watch_for": ["audit rubric changes", "redesign workflow changes", "new visual verification assets", "runtime requirements"]
+    },
+    {
+      "full_name": "tushaarmehtaa/tushar-skills",
+      "priority": "high",
+      "source_family": "personal_skill_repository",
+      "url": "https://github.com/tushaarmehtaa/tushar-skills",
+      "reason": "Project-agnostic deployment, authentication, SEO, GTM, and anti-slop skills with direct relevance across the system.",
+      "watch_paths": [
+        {"path": "", "max_depth": 4, "include_extensions": [".md"], "include_path_regex": "(^|/)SKILL\\.md$"},
+        {"path": "README.md", "max_depth": 0, "include_extensions": [".md"]}
+      ],
+      "known_reviewed_or_distilled_slugs": [],
+      "watch_for": ["new project-agnostic skills", "deployment or auth mutation scope", "SEO evidence requirements", "license changes"]
+    },
+    {
+      "full_name": "StarTrail-org/PixelRAG",
+      "priority": "high",
+      "source_family": "visual_retrieval_repository",
+      "url": "https://github.com/StarTrail-org/PixelRAG",
+      "reason": "Visual retrieval and pixelbrowse patterns for screenshots, PDFs, charts, and interface evidence.",
+      "watch_paths": [
+        {"path": "", "max_depth": 4, "include_extensions": [".md"], "include_path_regex": "(^|/)SKILL\\.md$"},
+        {"path": "README.md", "max_depth": 0, "include_extensions": [".md"]}
+      ],
+      "known_reviewed_or_distilled_slugs": [],
+      "watch_for": ["pixelbrowse skill changes", "embedding or model dependencies", "document privacy boundaries", "evaluation results"]
+    },
+    {
+      "full_name": "bmad-code-org/BMAD-METHOD",
+      "priority": "medium",
+      "source_family": "workflow_method_repository",
+      "url": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "reason": "Large adaptive planning and development workflow source; only distinct bounded procedures should be extracted after deduplication.",
+      "watch_paths": [
+        {"path": "", "max_depth": 5, "include_extensions": [".md"], "include_path_regex": "(^|/)SKILL\\.md$"},
+        {"path": "README.md", "max_depth": 0, "include_extensions": [".md"]}
+      ],
+      "known_reviewed_or_distilled_slugs": [],
+      "watch_for": ["bounded investigation skills", "adaptive routing", "PRD and UX contracts", "large-framework overlap with Architectonic"]
+    },
+    {
+      "full_name": "SeanJ1ang/design-judge-skills",
+      "priority": "high",
+      "source_family": "design_evaluation_skill_repository",
+      "url": "https://github.com/SeanJ1ang/design-judge-skills",
+      "reason": "Evidence-driven design evaluation and award-submission procedures with explicit confidence and source boundaries.",
+      "watch_paths": [
+        {"path": "skills", "max_depth": 4, "include_extensions": [".md"], "include_path_regex": "/SKILL\\.md$"},
+        {"path": "README_EN.md", "max_depth": 0, "include_extensions": [".md"]}
+      ],
+      "known_reviewed_or_distilled_slugs": [],
+      "watch_for": ["design evaluation rubric changes", "official-award source updates", "new shared datasets", "license changes"]
+    },
+    {
+      "full_name": "every-app/open-seo",
+      "priority": "high",
+      "source_family": "application_and_skill_repository",
+      "url": "https://github.com/every-app/open-seo",
+      "reason": "Self-hosted SEO application, MCP surface, and skill suite; should yield separate source, connector, app, and skill records.",
+      "watch_paths": [
+        {"path": "", "max_depth": 5, "include_extensions": [".md"], "include_path_regex": "(^|/)SKILL\\.md$"},
+        {"path": "README.md", "max_depth": 0, "include_extensions": [".md"]}
+      ],
+      "known_reviewed_or_distilled_slugs": ["ai-seo"],
+      "watch_for": ["SEO skill additions", "MCP permission changes", "data-provider dependencies", "self-hosting changes"]
+    },
+    {
+      "full_name": "heygen-com/hyperframes",
+      "priority": "high",
+      "source_family": "application_and_skill_repository",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "reason": "HTML-native deterministic video runtime and skill family already present in the registry but previously weakly classified.",
+      "watch_paths": [
+        {"path": "", "max_depth": 5, "include_extensions": [".md"], "include_path_regex": "(^|/)SKILL\\.md$"},
+        {"path": "README.md", "max_depth": 0, "include_extensions": [".md"]}
+      ],
+      "known_reviewed_or_distilled_slugs": ["hyperframes", "hyperframes-animation", "hyperframes-cli", "hyperframes-core", "hyperframes-creative", "hyperframes-media", "hyperframes-registry"],
+      "watch_for": ["new adapters", "CLI changes", "media-service dependencies", "renderer or license changes"]
+    },
+    {
+      "full_name": "mvanhorn/last30days-skill",
+      "priority": "high",
+      "source_family": "recent_research_skill_repository",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "reason": "Recent multi-source research workflow directly addresses stale-source and unresolved-bookmark discovery gaps.",
+      "watch_paths": [
+        {"path": "", "max_depth": 4, "include_extensions": [".md"], "include_path_regex": "(^|/)SKILL\\.md$"},
+        {"path": "README.md", "max_depth": 0, "include_extensions": [".md"]}
+      ],
+      "known_reviewed_or_distilled_slugs": [],
+      "watch_for": ["source weighting changes", "new social or search providers", "date-window semantics", "API and scraping boundaries"]
+    },
+    {
+      "full_name": "bradautomates/claude-video",
+      "priority": "high",
+      "source_family": "video_analysis_skill_repository",
+      "url": "https://github.com/bradautomates/claude-video",
+      "reason": "Frame and transcript grounded video inspection that can prevent title-only or transcript-only hallucination.",
+      "watch_paths": [
+        {"path": "", "max_depth": 4, "include_extensions": [".md"], "include_path_regex": "(^|/)SKILL\\.md$"},
+        {"path": "README.md", "max_depth": 0, "include_extensions": [".md"]}
+      ],
+      "known_reviewed_or_distilled_slugs": [],
+      "watch_for": ["frame extraction changes", "transcription dependencies", "private-video handling", "evaluation evidence"]
+    },
+    {
+      "full_name": "tirth8205/code-review-graph",
+      "priority": "high",
+      "source_family": "code_graph_skill_repository",
+      "url": "https://github.com/tirth8205/code-review-graph",
+      "reason": "Persistent structural code graph and delta/PR review procedures relevant to Workframe engineering agents.",
+      "watch_paths": [
+        {"path": "", "max_depth": 5, "include_extensions": [".md"], "include_path_regex": "(^|/)SKILL\\.md$"},
+        {"path": "README.md", "max_depth": 0, "include_extensions": [".md"]}
+      ],
+      "known_reviewed_or_distilled_slugs": [],
+      "watch_for": ["graph build changes", "Tree-sitter language coverage", "PR-review workflow changes", "repository privacy boundaries"]
+    },
+    {
+      "full_name": "DeusData/codebase-memory-mcp",
+      "priority": "high",
+      "source_family": "mcp_code_graph_repository",
+      "url": "https://github.com/DeusData/codebase-memory-mcp",
+      "reason": "Persistent static code graph exposed through MCP; candidate connector and architectural reference rather than a single flat skill.",
+      "watch_paths": [
+        {"path": "README.md", "max_depth": 0, "include_extensions": [".md"]}
+      ],
+      "known_reviewed_or_distilled_slugs": [],
+      "watch_for": ["MCP tool changes", "language support", "index persistence", "filesystem and repository access boundaries"]
     }
   ],
   "registries": [
@@ -52,13 +205,26 @@
       "url": "https://skills.sh",
       "priority": "high",
       "source_family": "public_skill_registry",
-      "reason": "Large public registry of AI agent skills; should be sampled for new high-signal entries and registry/category changes, but not mirrored or copied.",
-      "watch_for": [
-        "new registry categories",
-        "new high-adoption or high-relevance skill entries",
-        "links to upstream source repositories",
-        "license/provenance signals"
-      ],
+      "reason": "Large public registry of AI agent skills; sample for new high-signal entries and upstream sources without mirroring the registry.",
+      "watch_for": ["new categories", "high-relevance entries", "upstream repositories", "license and provenance signals"],
+      "review_boundary": "metadata_only_no_content_copy_no_bulk_registry_scrape"
+    },
+    {
+      "name": "integrations.sh",
+      "url": "https://integrations.sh",
+      "priority": "high",
+      "source_family": "integration_registry",
+      "reason": "Cross-protocol integration index useful for discovering MCP, API, CLI, and service connectors; registry presence is not approval.",
+      "watch_for": ["new MCP or agent integrations", "upstream source repositories", "authentication requirements", "protocol changes"],
+      "review_boundary": "metadata_only_no_content_copy_no_bulk_registry_scrape"
+    },
+    {
+      "name": "WebMCP Directory",
+      "url": "https://webmcp.com",
+      "priority": "high",
+      "source_family": "webmcp_registry",
+      "reason": "Directory of websites exposing browser-native WebMCP tools; useful for capability discovery and browser-tool threat modeling.",
+      "watch_for": ["new WebMCP-capable sites", "tool declarations", "permission models", "browser support changes"],
       "review_boundary": "metadata_only_no_content_copy_no_bulk_registry_scrape"
     }
   ]
