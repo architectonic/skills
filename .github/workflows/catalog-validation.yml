@@ -6,7 +6,9 @@ on:
     paths:
       - '.github/workflows/catalog-validation.yml'
       - 'scripts/build_distribution_catalog.py'
+      - 'scripts/apply_catalog_decisions.py'
       - 'operations/classification-overrides.json'
+      - 'operations/catalog-decisions.json'
       - 'operations/source-watchlist.json'
       - 'dist/skills/**'
       - 'skills/**'
@@ -36,12 +38,18 @@ jobs:
       - name: Validate package and Python syntax
         run: |
           npm test
-          python -m py_compile scripts/build_distribution_catalog.py scripts/discover_skill_sources.py scripts/review_discovery_candidates.py
+          python -m py_compile \
+            scripts/build_distribution_catalog.py \
+            scripts/apply_catalog_decisions.py \
+            scripts/discover_skill_sources.py \
+            scripts/review_discovery_candidates.py
 
-      - name: Build catalog in validation mode
-        run: npm run build:catalog
+      - name: Build lifecycle-aware catalog in validation mode
+        run: |
+          npm run build:catalog
+          python scripts/apply_catalog_decisions.py
 
-      - name: Validate repaired classifications and candidate skill structure
+      - name: Validate classifications, lifecycle decisions, and skill contracts
         run: |
           python - <<'PY'
           import json
@@ -58,20 +66,22 @@ jobs:
               raise SystemExit('install manifest schema_version must be 0.2')
           if summary.get('classification_overrides_applied', 0) < 60:
               raise SystemExit('expected at least 60 classification overrides')
+          if summary.get('catalog_decisions_applied', 0) < 3:
+              raise SystemExit('expected at least three deep catalog decisions')
           if summary.get('domain_counts', {}).get('uncategorized', 10**9) > 500:
               raise SystemExit('uncategorized count remains above first-batch acceptance threshold')
           if summary.get('risk_counts', {}).get('unspecified', 10**9) > 650:
               raise SystemExit('unspecified-risk count remains above first-batch acceptance threshold')
 
           entries = {entry.get('slug'): entry for entry in catalog.get('skills', [])}
-          expected = {
+          expected_classifications = {
               'Building Ransomware Playbook with CISA Framework': ('security-defensive', 'high', True),
               'Code Documentation Generator': ('software-engineering', 'low', False),
               'hyperframes': ('media', 'medium', False),
               'hyperframes-cli': ('runtime-tools', 'high', True),
               'ai-seo': ('business', 'medium', True),
           }
-          for slug, (domain, risk, review) in expected.items():
+          for slug, (domain, risk, review) in expected_classifications.items():
               entry = entries.get(slug)
               if not entry:
                   raise SystemExit(f'missing expected catalog entry: {slug}')
@@ -81,22 +91,124 @@ jobs:
               if not entry.get('classification_override'):
                   raise SystemExit(f'{slug} should disclose classification_override=true')
 
-          required_sections = ['## Trigger', '## Inputs', '## Procedure', '## Verification', '## Failure Modes']
-          for path in [
-              Path('skills/interface-quality-audit.md'),
-              Path('skills/interface-transition-review.md'),
-              Path('skills/recent-source-research.md'),
+          expected_decisions = {
+              'frontend-design': {
+                  'lifecycle_status': 'superseded',
+                  'install_recommendation': 'do-not-install',
+                  'risk_level': 'medium',
+                  'requires_review': True,
+                  'source_status': 'package_reviewed_blocked',
+                  'review_status': 'blocked_for_forced_branding_and_scope',
+                  'superseded_by': 'skills/interface-design.md',
+              },
+              'frontend-ui-engineering': {
+                  'lifecycle_status': 'reviewed',
+                  'install_recommendation': 'conditional',
+                  'risk_level': 'medium',
+                  'requires_review': False,
+                  'source_status': 'package_body_reviewed',
+                  'review_status': 'retained_for_implementation_after_design_contract',
+              },
+              'canvas-design': {
+                  'lifecycle_status': 'reviewed',
+                  'install_recommendation': 'conditional',
+                  'risk_level': 'low',
+                  'requires_review': False,
+                  'source_status': 'package_body_reviewed',
+                  'review_status': 'retained_for_static_visual_art',
+              },
+          }
+          for slug, expected in expected_decisions.items():
+              entry = entries.get(slug)
+              if not entry:
+                  raise SystemExit(f'missing reviewed catalog entry: {slug}')
+              if not entry.get('catalog_decision'):
+                  raise SystemExit(f'{slug} should disclose catalog_decision=true')
+              for key, value in expected.items():
+                  if entry.get(key) != value:
+                      raise SystemExit(
+                          f'{slug} decision mismatch for {key}: '
+                          f'expected {value!r}, got {entry.get(key)!r}'
+                      )
+
+          if 'operations/catalog-decisions.json' not in manifest.get('discovery_files', []):
+              raise SystemExit('install manifest must expose catalog decisions')
+          for field in [
+              'lifecycle_status',
+              'install_recommendation',
+              'superseded_by',
+              'decision_evidence',
           ]:
+              if field not in manifest.get('selection_fields', []):
+                  raise SystemExit(f'install manifest missing selection field {field}')
+
+          required_sections = [
+              '## Trigger',
+              '## Inputs',
+              '## Procedure',
+              '## Verification',
+              '## Failure Modes',
+          ]
+          reviewed_skills = {
+              Path('skills/interface-design.md'): {
+                  'source_status': 'distilled-reviewed',
+                  'review_status': 'source_reviewed_utility_evaluation_pending',
+                  'revision_contains': 'hallmark@aeb42fb354ff4efa36ab475773a082315a3af2ce',
+              },
+              Path('skills/interface-quality-audit.md'): {
+                  'source_status': 'distilled-reviewed',
+                  'review_status': 'source_reviewed_utility_evaluation_pending',
+                  'revision_contains': 'taste-skill@98565e65bc3274ddf6eb0838734341714057178b',
+              },
+              Path('skills/interface-transition-review.md'): {
+                  'source_status': 'distilled-reviewed',
+                  'review_status': 'source_reviewed_utility_evaluation_pending',
+                  'revision_contains': 'transitions.dev@047d036a79cc2ddecd868e7f1e3aa04b495644b2',
+              },
+          }
+          for path, expected in reviewed_skills.items():
               raw = path.read_text(encoding='utf-8')
               if not raw.startswith('---\n'):
                   raise SystemExit(f'{path} missing frontmatter')
               _, frontmatter_raw, body = raw.split('---', 2)
               frontmatter = yaml.safe_load(frontmatter_raw)
-              if frontmatter.get('source_status') != 'distilled_candidate':
-                  raise SystemExit(f'{path} must remain a distilled candidate')
-              if frontmatter.get('source_revision') != 'unpinned-review-required':
-                  raise SystemExit(f'{path} must disclose unpinned upstream revision')
+              for key in ['source_status', 'review_status']:
+                  if frontmatter.get(key) != expected[key]:
+                      raise SystemExit(
+                          f'{path} expected {key}={expected[key]!r}, '
+                          f'got {frontmatter.get(key)!r}'
+                      )
+              revision = str(frontmatter.get('source_revision') or '')
+              if expected['revision_contains'] not in revision:
+                  raise SystemExit(f'{path} missing pinned source revision')
+              if 'unpinned-review-required' in revision:
+                  raise SystemExit(f'{path} must not retain an unpinned revision')
               for section in required_sections:
                   if section not in body:
                       raise SystemExit(f'{path} missing required section {section}')
+
+          candidate = Path('skills/recent-source-research.md')
+          raw = candidate.read_text(encoding='utf-8')
+          _, frontmatter_raw, body = raw.split('---', 2)
+          frontmatter = yaml.safe_load(frontmatter_raw)
+          if frontmatter.get('source_status') != 'distilled_candidate':
+              raise SystemExit('recent-source-research must remain a distilled candidate')
+          if frontmatter.get('source_revision') != 'unpinned-review-required':
+              raise SystemExit('recent-source-research must disclose unpinned upstream revision')
+          for section in required_sections:
+              if section not in body:
+                  raise SystemExit(f'{candidate} missing required section {section}')
+
+          source_review = Path(
+              'sources/reviewed/2026-07-22-design-quality-cluster.md'
+          ).read_text(encoding='utf-8')
+          for required in [
+              'aeb42fb354ff4efa36ab475773a082315a3af2ce',
+              '98565e65bc3274ddf6eb0838734341714057178b',
+              '047d036a79cc2ddecd868e7f1e3aa04b495644b2',
+              'No root `LICENSE` file was found',
+              'do not copy or redistribute snippets',
+          ]:
+              if required not in source_review:
+                  raise SystemExit(f'design source review missing evidence: {required}')
           PY
