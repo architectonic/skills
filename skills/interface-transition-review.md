@@ -5,18 +5,18 @@ description: Use when adding or reviewing interface motion so transitions commun
 tags: [skill, design, motion, transitions, accessibility, reduced-motion, performance, verification, okf]
 timestamp: 2026-07-22T00:00:00-03:00
 okf_version: "0.2"
-source_status: distilled_candidate
-source_name: Architectonic synthesis of Transitions.dev and local design-system doctrine
-source_url: https://github.com/JakubAntalik/transitions.dev
-source_revision: unpinned-review-required
+source_status: distilled-reviewed
+source_name: Architectonic synthesis of reviewed Transitions.dev patterns and local design-system doctrine
+source_url: https://github.com/architectonic/skills/blob/main/sources/reviewed/2026-07-22-design-quality-cluster.md
+source_revision: transitions.dev@047d036a79cc2ddecd868e7f1e3aa04b495644b2; skill-blob@f39bc0538a612700638da314bd26fdd240c64d49
 license: Apache-2.0
-source_license_status: upstream-review-pending
+source_license_status: upstream-license-unclear-reference-only-no-content-copied
 domain: design
 artifact_kind: skill
 target_surfaces: [skills, design-system, workframe]
 risk_level: low
 requires_review: false
-review_status: utility_evaluation_pending
+review_status: source_reviewed_utility_evaluation_pending
 ---
 
 # Interface Transition Review
@@ -91,4 +91,4 @@ Return:
 
 ## Provenance Boundary
 
-This is an original local procedure distilled from public transition-design patterns and Architectonic design doctrine. It does not copy an upstream skill body. Exact upstream revisions and licenses must be recorded before adapting implementation-specific material.
+This is an original local procedure distilled from reviewed transition-design patterns and Architectonic design doctrine. It does not copy an upstream skill body or CSS implementation. Exact revision, unresolved upstream licensing, retained ideas, and prohibited copying are recorded in `sources/reviewed/2026-07-22-design-quality-cluster.md`.
