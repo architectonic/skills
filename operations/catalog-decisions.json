@@ -41,12 +41,12 @@
       "name": "hyperframes",
       "lifecycle_status": "reviewed",
       "install_recommendation": "conditional",
-      "superseded_by": "skills/programmatic-video-production.md",
+      "superseded_by": "",
       "risk_level": "high",
       "requires_review": true,
       "source_status": "package_body_reviewed",
       "review_status": "explicit_hyperframes_project_selection_required",
-      "decision_evidence": "Reviewed against heygen-com/hyperframes@84e4eafacdaf96e8d137ba745af750448c5de0de. Retain only when the user explicitly selects HyperFrames or the existing project already uses it. The body must not make HyperFrames the universal default or authorize skill updates, website crawling, browser capture, cloud rendering, feedback, publication, or external services without separate approval."
+      "decision_evidence": "Reviewed against heygen-com/hyperframes@84e4eafacdaf96e8d137ba745af750448c5de0de. Retain only when the user explicitly selects HyperFrames or the existing project already uses it. The body must not make HyperFrames the universal default or authorize skill updates, website crawling, browser capture, cloud rendering, feedback, publication, or external services without separate approval. Use skills/programmatic-video-production.md as the framework-neutral governing workflow."
     },
     {
       "name": "hyperframes-cli",
