@@ -75,21 +75,56 @@ jobs:
               raise SystemExit('classification override batch did not materially reduce unspecified risk')
           if summary.get('classification_overrides_applied', 0) < 60:
               raise SystemExit('expected at least 60 reviewed classification overrides')
-          if summary.get('catalog_decisions_applied', 0) < 3:
-              raise SystemExit('expected at least three deep catalog decisions')
+          if summary.get('catalog_decisions_applied', 0) < 11:
+              raise SystemExit('expected at least eleven deep catalog decisions')
 
-          frontend = entries.get('frontend-design')
-          if not frontend:
-              raise SystemExit('Missing frontend-design catalog entry')
-          expected_frontend = {
-              'lifecycle_status': 'superseded',
-              'install_recommendation': 'do-not-install',
-              'requires_review': True,
-              'superseded_by': 'skills/interface-design.md',
+          expected_decisions = {
+              'frontend-design': {
+                  'lifecycle_status': 'superseded',
+                  'install_recommendation': 'do-not-install',
+                  'requires_review': True,
+                  'superseded_by': 'skills/interface-design.md',
+              },
+              'hyperframes': {
+                  'lifecycle_status': 'reviewed',
+                  'install_recommendation': 'conditional',
+                  'risk_level': 'high',
+                  'requires_review': True,
+                  'review_status': 'explicit_hyperframes_project_selection_required',
+              },
+              'hyperframes-cli': {
+                  'lifecycle_status': 'reviewed',
+                  'install_recommendation': 'conditional',
+                  'risk_level': 'high',
+                  'requires_review': True,
+              },
+              'hyperframes-media': {
+                  'lifecycle_status': 'superseded',
+                  'install_recommendation': 'do-not-install',
+                  'risk_level': 'high',
+                  'requires_review': True,
+                  'superseded_by': 'media-use',
+              },
+              'media-use': {
+                  'lifecycle_status': 'reviewed',
+                  'install_recommendation': 'conditional',
+                  'domain': 'media',
+                  'risk_level': 'high',
+                  'requires_review': True,
+              },
           }
-          for key, value in expected_frontend.items():
-              if frontend.get(key) != value:
-                  raise SystemExit(f'frontend-design decision mismatch for {key}: expected {value!r}, got {frontend.get(key)!r}')
+          for slug, expected in expected_decisions.items():
+              entry = entries.get(slug)
+              if not entry:
+                  raise SystemExit(f'Missing reviewed catalog entry: {slug}')
+              if not entry.get('catalog_decision'):
+                  raise SystemExit(f'{slug} should disclose catalog_decision=true')
+              for key, value in expected.items():
+                  if entry.get(key) != value:
+                      raise SystemExit(
+                          f'{slug} decision mismatch for {key}: '
+                          f'expected {value!r}, got {entry.get(key)!r}'
+                      )
           PY
 
       - name: Commit refreshed catalog surfaces
