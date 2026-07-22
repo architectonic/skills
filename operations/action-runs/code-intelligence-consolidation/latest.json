@@ -1,0 +1,40 @@
+{
+  "workflow": "code-intelligence-consolidation",
+  "recorded_at_utc": "2026-07-22T22:00:00Z",
+  "branch": "agent/code-intelligence-consolidation",
+  "status": "validation_pending",
+  "scope": [
+    "Code Review Graph source and license review",
+    "Codebase Memory MCP source and license review",
+    "Understand Anything source and license review",
+    "tool-neutral codebase structural map skill",
+    "source-verified change impact review skill",
+    "bounded catalog decision clusters",
+    "Graphify Onboarding lifecycle review",
+    "monorepo-navigator lifecycle review",
+    "codebase-design lifecycle review"
+  ],
+  "source_revisions": {
+    "code_review_graph": "6ce25b4e53f9df397f5136e86a59e17c02a610fe",
+    "code_review_graph_license_blob": "83c1ad6884340e94ff27816b4191ea6a23139cb4",
+    "codebase_memory_mcp": "7d6cdb23ef5ca2fd51f5d5b7509b33e112ef15f3",
+    "codebase_memory_license_blob": "0b95352746a97a8cf2d1f3ba568bc7bb5e514d1f",
+    "understand_anything": "6ae71878beb50226a1e4b7e2f52ac6468c86f74b",
+    "understand_anything_license_blob": "5df102e8a2e29cdfb881ae7ec5040f2766564680"
+  },
+  "catalog_decisions": 16,
+  "code_intelligence_decisions": {
+    "Graphify Onboarding": "reviewed_conditional_medium_derived_only",
+    "monorepo-navigator": "reviewed_conditional_high",
+    "codebase-design": "reviewed_conditional_low_optional_doctrine"
+  },
+  "mutated_imported_skill_bodies": false,
+  "copied_external_skill_bodies": false,
+  "executed_installers_or_binaries": false,
+  "indexed_repository_source": false,
+  "modified_mcp_or_agent_configuration": false,
+  "enabled_hooks_watchers_or_ci_comments": false,
+  "promoted_to_reviewed_core": false,
+  "publication_attempted": false,
+  "next_action": "Inspect the generated catalog, run centralized pull-request validation, correct exact-contract failures, and merge only after the current head passes."
+}
