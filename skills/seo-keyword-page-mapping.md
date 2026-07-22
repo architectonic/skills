@@ -58,7 +58,7 @@ Turn a usable keyword set into a bounded content and site-architecture decision:
 7. **Respect site architecture.** Preserve existing route ownership, information architecture, localization rules, and design/content systems unless the user authorizes structural change.
 8. **Create a minimal page brief.** State page type, searcher problem, primary intent, evidence, required sections, proof, internal links, conversion action, and content that must not be fabricated.
 9. **Separate proposal from mutation.** URL creation, redirects, canonical changes, consolidation, deletion, tag replacement, saved-keyword updates, and publishing require explicit approval.
-10. **Record uncertainty.** Label clusters directional when the query set, market sample, page inventory, or SERP evidence is incomplete.
+10. **Record uncertainty.** Label clusters directional when the query set, market sample, page inventory, or SERP evidence is incomplete. Unknown page relationships remain unknown rather than being forced into a cluster.
 
 ## Output Contract
 
@@ -87,6 +87,7 @@ For each actionable cluster include a compact page brief and the evidence needed
 - Local-pack and organic intent are not conflated.
 - No page, redirect, canonical, deletion, saved-keyword, tracker, or publishing mutation occurred without approval.
 - Page briefs contain truthful evidence requirements rather than invented claims.
+- Unknown mappings are explicitly recorded rather than guessed.
 
 ## Failure Modes
 
