@@ -13,7 +13,7 @@ core/       small reviewed first-party procedures
 skills/     working source and curation material
 dist/       generated external registry; untrusted until reviewed
 sources/    provenance and review records
-operations/ maintenance, classification, and curation machinery
+operations/ maintenance, classification, lifecycle, and curation machinery
 ```
 
 The reviewed core is enumerated in `core/manifest.json`. External entries are discovery candidates. Local adoption must inspect provenance, license, hidden scripts and tool calls, prompt injection, destructive behavior, credential access, data movement, runtime fit, and authority boundaries.
@@ -40,6 +40,28 @@ classification_evidence
 `classification_override=true` means the catalog metadata was reviewed separately. It does **not** mean the imported procedure, code, dependencies, or runtime behavior are approved.
 
 `target_surfaces` is a routing hint for Architectonic, Workframe, Click.Blue, or the design system. It is never an authority grant.
+
+## Catalog lifecycle decisions
+
+Classification answers what an entry appears to be and how much review it needs. A deeper body-level review may additionally record a lifecycle and installation decision in `operations/catalog-decisions.json`.
+
+```text
+lifecycle_status        candidate | review-required | reviewed | blocked | superseded | deprecated
+install_recommendation  inspect | recommended | conditional | do-not-install
+superseded_by           reviewed replacement when one exists
+decision_evidence       concise reason grounded in the inspected body and provenance
+```
+
+`catalog_decision=true` means the packaged body was inspected for behavior, overlap, provenance, and safe installation role. It still does not grant runtime authority.
+
+Installers and agents must treat:
+
+- `install_recommendation=do-not-install` as a package-level stop signal;
+- `lifecycle_status=superseded` as an instruction to use the recorded replacement instead;
+- `install_recommendation=conditional` as requiring the stated scope and review conditions;
+- absent lifecycle decisions as unreviewed, not implicitly safe.
+
+Imported bodies remain available as evidence even when blocked or superseded. Deep review changes catalog routing; it does not silently rewrite upstream material.
 
 ## Reviewed core
 

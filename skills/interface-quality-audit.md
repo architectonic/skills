@@ -5,18 +5,18 @@ description: Use when an implemented or generated interface is functional but ma
 tags: [skill, design, interface, audit, hierarchy, brand, accessibility, anti-template, verification, okf]
 timestamp: 2026-07-22T00:00:00-03:00
 okf_version: "0.2"
-source_status: distilled_candidate
-source_name: Architectonic synthesis of Hallmark, Taste Skill, Kill AI Slop, and local design-system doctrine
-source_url: https://github.com/Nutlope/hallmark
-source_revision: unpinned-review-required
+source_status: distilled-reviewed
+source_name: Architectonic synthesis of reviewed Hallmark and Taste Skill patterns plus local design-system doctrine
+source_url: https://github.com/architectonic/skills/blob/main/sources/reviewed/2026-07-22-design-quality-cluster.md
+source_revision: hallmark@aeb42fb354ff4efa36ab475773a082315a3af2ce; taste-skill@98565e65bc3274ddf6eb0838734341714057178b
 license: Apache-2.0
-source_license_status: upstream-review-pending
+source_license_status: hallmark-mit; taste-skill-mit
 domain: design
 artifact_kind: skill
 target_surfaces: [skills, design-system, click-blue, workframe]
 risk_level: low
 requires_review: false
-review_status: utility_evaluation_pending
+review_status: source_reviewed_utility_evaluation_pending
 ---
 
 # Interface Quality Audit
@@ -90,4 +90,4 @@ Each finding must identify the observed evidence and explain why it impairs the 
 
 ## Provenance Boundary
 
-This is an original local procedure distilled from public design-audit patterns and Architectonic design doctrine. It does not copy an upstream skill body. Before citing or adapting any upstream implementation details, record its exact revision and license separately.
+This is an original local procedure distilled from reviewed public design-audit patterns and Architectonic design doctrine. It does not copy an upstream skill body. Exact revisions, licenses, retained ideas, and rejected defaults are recorded in `sources/reviewed/2026-07-22-design-quality-cluster.md`.

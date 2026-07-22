@@ -8,7 +8,8 @@
     "dist/catalog.json",
     "dist/catalog.md",
     "dist/install-manifest.json",
-    "operations/classification-overrides.json"
+    "operations/classification-overrides.json",
+    "operations/catalog-decisions.json"
   ],
   "recommended_entrypoints": {
     "github_repo": "README.md",
@@ -24,6 +25,10 @@
     "source_status",
     "review_status",
     "tags",
-    "requires_review"
+    "requires_review",
+    "lifecycle_status",
+    "install_recommendation",
+    "superseded_by",
+    "decision_evidence"
   ]
 }

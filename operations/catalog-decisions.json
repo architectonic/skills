@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1",
+  "purpose": "Deep review decisions for package-facing skills after inspecting their bodies, provenance, behavior, overlap, and safe installation role.",
+  "review_boundary": "catalog_routing_and_install_recommendation_no_imported_body_mutation",
+  "updated_at": "2026-07-22",
+  "decisions": [
+    {
+      "name": "frontend-design",
+      "lifecycle_status": "superseded",
+      "install_recommendation": "do-not-install",
+      "superseded_by": "skills/interface-design.md",
+      "risk_level": "medium",
+      "requires_review": true,
+      "source_status": "package_reviewed_blocked",
+      "review_status": "blocked_for_forced_branding_and_scope",
+      "decision_evidence": "The imported body mandates an external Created By Deerflow link in every generated interface, forces index.html regardless of the host project, and encourages aesthetic escalation that can override project scope and design-system intent. Preserve as evidence but do not recommend installation."
+    },
+    {
+      "name": "frontend-ui-engineering",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
+      "superseded_by": "",
+      "risk_level": "medium",
+      "requires_review": false,
+      "source_status": "package_body_reviewed",
+      "review_status": "retained_for_implementation_after_design_contract",
+      "decision_evidence": "Retain for component architecture, state management, accessibility, responsive behavior, and implementation checks. It should not determine visual direction and should run after product intent and design-system boundaries are established."
+    },
+    {
+      "name": "canvas-design",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
+      "superseded_by": "",
+      "risk_level": "low",
+      "requires_review": false,
+      "source_status": "package_body_reviewed",
+      "review_status": "retained_for_static_visual_art",
+      "decision_evidence": "Retain as a static visual-art procedure. Its philosophy-to-canvas workflow is distinct from interface design and UI engineering and should not route web application tasks."
+    }
+  ]
+}

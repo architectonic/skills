@@ -8,7 +8,9 @@ on:
     paths:
       - '.github/workflows/build-catalog.yml'
       - 'scripts/build_distribution_catalog.py'
+      - 'scripts/apply_catalog_decisions.py'
       - 'operations/classification-overrides.json'
+      - 'operations/catalog-decisions.json'
       - 'dist/skills/**'
       - 'reports/dist-skills-enriched-inventory.json'
 
@@ -35,30 +37,32 @@ jobs:
         run: python -m pip install --upgrade pyyaml
 
       - name: Build catalog surfaces
-        run: npm run build:catalog
+        run: |
+          npm run build:catalog
+          python scripts/apply_catalog_decisions.py
 
-      - name: Validate Foundry catalog metadata while queue is open
+      - name: Validate catalog metadata and deep decisions
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
 
           catalog = json.loads(Path('dist/catalog.json').read_text(encoding='utf-8'))
-          entries = [entry for entry in catalog.get('skills', []) if entry.get('path') == 'dist/skills/auditing-foundry-smart-contract-security/SKILL.md']
-          if len(entries) != 1:
-              raise SystemExit(f'Expected one Foundry catalog entry, found {len(entries)}')
-          entry = entries[0]
-          expected = {
-              'slug': 'auditing-foundry-smart-contract-security',
+          entries = {entry.get('slug'): entry for entry in catalog.get('skills', [])}
+
+          foundry = entries.get('auditing-foundry-smart-contract-security')
+          if not foundry:
+              raise SystemExit('Missing Foundry catalog entry')
+          expected_foundry = {
               'domain': 'security-defensive',
               'risk_level': 'medium',
               'requires_review': True,
               'source_family': 'internal-skill-bundle',
               'source_status': 'adapted',
           }
-          for key, value in expected.items():
-              if entry.get(key) != value:
-                  raise SystemExit(f'Foundry catalog metadata mismatch for {key}: expected {value!r}, got {entry.get(key)!r}')
+          for key, value in expected_foundry.items():
+              if foundry.get(key) != value:
+                  raise SystemExit(f'Foundry metadata mismatch for {key}: expected {value!r}, got {foundry.get(key)!r}')
 
           summary = catalog.get('summary', {})
           domain_counts = summary.get('domain_counts', {})
@@ -71,6 +75,21 @@ jobs:
               raise SystemExit('classification override batch did not materially reduce unspecified risk')
           if summary.get('classification_overrides_applied', 0) < 60:
               raise SystemExit('expected at least 60 reviewed classification overrides')
+          if summary.get('catalog_decisions_applied', 0) < 3:
+              raise SystemExit('expected at least three deep catalog decisions')
+
+          frontend = entries.get('frontend-design')
+          if not frontend:
+              raise SystemExit('Missing frontend-design catalog entry')
+          expected_frontend = {
+              'lifecycle_status': 'superseded',
+              'install_recommendation': 'do-not-install',
+              'requires_review': True,
+              'superseded_by': 'skills/interface-design.md',
+          }
+          for key, value in expected_frontend.items():
+              if frontend.get(key) != value:
+                  raise SystemExit(f'frontend-design decision mismatch for {key}: expected {value!r}, got {frontend.get(key)!r}')
           PY
 
       - name: Commit refreshed catalog surfaces

@@ -1,0 +1,32 @@
+{
+  "workflow": "design-skill-consolidation",
+  "recorded_at_utc": "2026-07-22T20:15:00Z",
+  "branch": "agent/design-skill-consolidation",
+  "status": "validation_pending",
+  "scope": [
+    "Hallmark source review",
+    "Taste Skill source review",
+    "Transitions.dev source and license review",
+    "first-party interface-design procedure",
+    "reviewed provenance for interface-quality-audit",
+    "reviewed provenance for interface-transition-review",
+    "deep catalog lifecycle decisions",
+    "lifecycle-aware catalog validation"
+  ],
+  "source_revisions": {
+    "hallmark": "aeb42fb354ff4efa36ab475773a082315a3af2ce",
+    "taste_skill": "98565e65bc3274ddf6eb0838734341714057178b",
+    "transitions_dev": "047d036a79cc2ddecd868e7f1e3aa04b495644b2"
+  },
+  "decisions": {
+    "frontend-design": "superseded_do_not_install",
+    "frontend-ui-engineering": "reviewed_conditional",
+    "canvas-design": "reviewed_conditional"
+  },
+  "mutated_imported_skill_bodies": false,
+  "copied_external_skill_bodies": false,
+  "copied_transitions_css": false,
+  "promoted_to_reviewed_core": false,
+  "publication_attempted": false,
+  "next_action": "Open a draft pull request, validate catalog lifecycle decisions and source provenance, correct any CI failure, then merge only after checks pass."
+}
