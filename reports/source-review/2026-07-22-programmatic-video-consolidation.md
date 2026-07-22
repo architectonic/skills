@@ -2,7 +2,7 @@
 type: SourceReviewReport
 title: Programmatic Video Skill Consolidation
 date: 2026-07-22
-status: validation_pending
+status: merged_to_main
 branch: agent/video-skill-consolidation
 sources: [HyperFrames, Remotion Agent Skills]
 tags: [skills, media, video, rendering, lifecycle, licensing, validation]

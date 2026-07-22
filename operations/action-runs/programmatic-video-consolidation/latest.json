@@ -2,7 +2,8 @@
   "workflow": "programmatic-video-consolidation",
   "recorded_at_utc": "2026-07-22T20:45:00Z",
   "branch": "agent/video-skill-consolidation",
-  "status": "validation_pending",
+  "status": "merged_to_main",
+  "merge_commit": "001efb0",
   "scope": [
     "HyperFrames source and license review",
     "Remotion Agent Skills source and license review",
@@ -34,5 +35,5 @@
   "invoked_external_media_or_cloud_service": false,
   "promoted_to_reviewed_core": false,
   "publication_attempted": false,
-  "next_action": "Open a draft pull request, validate lifecycle decisions and source-license boundaries, correct any CI failure, then merge only after checks pass."
+  "next_action": "Evaluate the tool-neutral workflow on local fixtures before any core promotion, then review the OpenSEO and marketing/SEO source cluster recorded in operations/ledger.json."
 }

@@ -29,8 +29,10 @@ It does not store private project memory, private user facts, runtime secrets, o
 6. Read `doctrine/ingestion-policy.md` before importing or adapting external skills.
 7. Read `doctrine/normalization-pipeline.md` before normalizing public material.
 8. Read `doctrine/okf-frontmatter.md` before editing frontmatter.
-9. Read `operations/aggregator-loop.md` and `operations/project-operator-prompt.md` before running or editing scheduled aggregator behavior.
-10. Read `operations/daily/README.md` before writing daily ledger or queue state.
+9. Read `operations/ledger.json`, `operations/aggregator-loop.md`, and
+   `operations/project-operator-prompt.md` before scheduled aggregator work. The
+   ledger is the only current-work authority and implements
+   `architectonic-rail@0.3`.
 
 ## Core Rules
 
@@ -43,7 +45,7 @@ It does not store private project memory, private user facts, runtime secrets, o
 - Prefer distilled, summarized, or reference-only ingestion over mirroring.
 - Runtime-specific exports are not canonical source.
 - The aggregator must catalog broadly but normalize conservatively.
-- Use queues before inventing work.
+- Use the dependency-clear ready view before inventing work.
 - Health, provenance, and risk review outrank growth.
 
 ## Before Writing
@@ -63,7 +65,8 @@ Before creating or editing a skill:
 
 Before writing aggregator output:
 
-1. Check `operations/daily/YYYY-MM-DD/status.json` and `queues.json` when present.
+1. Read the selected item's sources in `operations/ledger.json` when durable
+   coordination is required.
 2. Prefer source profiles, candidate records, review notes, and catalog metadata over copied third-party content.
 3. Preserve URL, author or organization, license, review date, runtime targets, risk level, and ingestion status.
 4. Do not promote a candidate to normalized skill without a concrete trigger, procedure, verification method, and failure modes.

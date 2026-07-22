@@ -2,7 +2,8 @@
   "workflow": "design-skill-consolidation",
   "recorded_at_utc": "2026-07-22T20:15:00Z",
   "branch": "agent/design-skill-consolidation",
-  "status": "validation_pending",
+  "status": "merged_to_main",
+  "merge_commit": "95b447b",
   "scope": [
     "Hallmark source review",
     "Taste Skill source review",
@@ -28,5 +29,5 @@
   "copied_transitions_css": false,
   "promoted_to_reviewed_core": false,
   "publication_attempted": false,
-  "next_action": "Open a draft pull request, validate catalog lifecycle decisions and source provenance, correct any CI failure, then merge only after checks pass."
+  "next_action": "Run comparative utility evaluations before any core promotion, then review the Remotion and HyperFrames source cluster recorded in operations/ledger.json."
 }

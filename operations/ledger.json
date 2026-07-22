@@ -1,0 +1,943 @@
+{
+  "schema_version": "1.0",
+  "project": "architectonic-skills",
+  "updated": "2026-07-22",
+  "roadmap_ref": "START_HERE.md",
+  "items": [
+    {
+      "id": "skills-restore-discovery-handoff-001",
+      "title": "skills restore discovery handoff 001",
+      "status": "done",
+      "priority": "P0",
+      "owner_role": "tool-builder",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-restore-discovery-handoff-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "discovery_pipeline_repair",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-risk-review-mcp-tool-poisoning-001",
+      "title": "skills risk review mcp tool poisoning 001",
+      "status": "done",
+      "priority": "P0",
+      "owner_role": "risk-auditor",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-risk-review-mcp-tool-poisoning-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "risk_blocker_removed",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-catalog-refresh-after-risk-review-001",
+      "title": "skills catalog refresh after risk review 001",
+      "status": "done",
+      "priority": "P0",
+      "owner_role": "cataloger",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-catalog-refresh-after-risk-review-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_parity_repair",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-manual-discovery-fallback-001",
+      "title": "skills manual discovery fallback 001",
+      "status": "done",
+      "priority": "P1",
+      "owner_role": "radar",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-manual-discovery-fallback-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "discovery_candidate_metadata",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-source-review-batch-001",
+      "title": "skills source review batch 001",
+      "status": "done",
+      "priority": "P1",
+      "owner_role": "source-reviewer",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-source-review-batch-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "source_review",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-risk-review-openclaw-source-runtime-surfaces-001",
+      "title": "skills risk review openclaw source runtime surfaces 001",
+      "status": "done",
+      "priority": "P0",
+      "owner_role": "risk-auditor",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-risk-review-openclaw-source-runtime-surfaces-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "risk_blocker_removed",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-normalize-vercel-ai-sdk-profile-001",
+      "title": "skills normalize vercel ai sdk profile 001",
+      "status": "done",
+      "priority": "P1",
+      "owner_role": "normalizer",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-normalize-vercel-ai-sdk-profile-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "normalized_skill_candidate",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-catalog-refresh-after-normalization-001",
+      "title": "skills catalog refresh after normalization 001",
+      "status": "done",
+      "priority": "P0",
+      "owner_role": "cataloger",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-catalog-refresh-after-normalization-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_parity_repair",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-metadata-backfill-batch-001",
+      "title": "skills metadata backfill batch 001",
+      "status": "done",
+      "priority": "P3",
+      "owner_role": "critic",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-metadata-backfill-batch-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_quality_improvement",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-risk-review-browser-trace-001",
+      "title": "skills risk review browser trace 001",
+      "status": "done",
+      "priority": "P0",
+      "owner_role": "risk-auditor",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-risk-review-browser-trace-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "risk_blocker_removed",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-catalog-refresh-after-metadata-backfill-001",
+      "title": "skills catalog refresh after metadata backfill 001",
+      "status": "done",
+      "priority": "P1",
+      "owner_role": "cataloger",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-catalog-refresh-after-metadata-backfill-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_parity_repair",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-action-handoff-producer-verification-001",
+      "title": "skills action handoff producer verification 001",
+      "status": "blocked",
+      "priority": "P2",
+      "owner_role": "tool-builder",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "ci_repair",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      },
+      "blocked_reason": "Blocked by the repository risk/review sequence; inspect the named sources and successor item before resuming."
+    },
+    {
+      "id": "skills-metadata-backfill-batch-002",
+      "title": "skills metadata backfill batch 002",
+      "status": "done",
+      "priority": "P3",
+      "owner_role": "critic",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-metadata-backfill-batch-002"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_quality_improvement",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-risk-review-diagnosing-bugs-001",
+      "title": "skills risk review diagnosing bugs 001",
+      "status": "done",
+      "priority": "P0",
+      "owner_role": "risk-auditor",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-risk-review-diagnosing-bugs-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "risk_blocker_removed",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-catalog-refresh-after-metadata-backfill-002",
+      "title": "skills catalog refresh after metadata backfill 002",
+      "status": "done",
+      "priority": "P1",
+      "owner_role": "cataloger",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-catalog-refresh-after-metadata-backfill-002"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_parity_repair",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-metadata-backfill-batch-003",
+      "title": "skills metadata backfill batch 003",
+      "status": "done",
+      "priority": "P3",
+      "owner_role": "critic",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-metadata-backfill-batch-003"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_quality_improvement",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-risk-review-email-header-and-golang-malware-analysis-001",
+      "title": "skills risk review email header and golang malware analysis 001",
+      "status": "done",
+      "priority": "P0",
+      "owner_role": "risk-auditor",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-risk-review-email-header-and-golang-malware-analysis-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "risk_blocker_removed",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-catalog-refresh-after-metadata-backfill-003",
+      "title": "skills catalog refresh after metadata backfill 003",
+      "status": "done",
+      "priority": "P1",
+      "owner_role": "cataloger",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-catalog-refresh-after-metadata-backfill-003"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_parity_repair",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-metadata-backfill-batch-004",
+      "title": "skills metadata backfill batch 004",
+      "status": "blocked",
+      "priority": "P3",
+      "owner_role": "critic",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_quality_improvement",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      },
+      "blocked_reason": "Blocked by the repository risk/review sequence; inspect the named sources and successor item before resuming."
+    },
+    {
+      "id": "skills-risk-review-ct-logs-attack-library-malware-pipeline-001",
+      "title": "skills risk review ct logs attack library malware pipeline 001",
+      "status": "done",
+      "priority": "P0",
+      "owner_role": "risk-auditor",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-risk-review-ct-logs-attack-library-malware-pipeline-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "risk_blocker_removed",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-catalog-refresh-after-metadata-backfill-004",
+      "title": "skills catalog refresh after metadata backfill 004",
+      "status": "done",
+      "priority": "P1",
+      "owner_role": "cataloger",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-catalog-refresh-after-metadata-backfill-004"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_parity_repair",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-metadata-backfill-batch-005",
+      "title": "skills metadata backfill batch 005",
+      "status": "blocked",
+      "priority": "P3",
+      "owner_role": "critic",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_quality_improvement",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      },
+      "blocked_reason": "Blocked by the repository risk/review sequence; inspect the named sources and successor item before resuming."
+    },
+    {
+      "id": "skills-risk-review-cloud-siem-sentinel-001",
+      "title": "skills risk review cloud siem sentinel 001",
+      "status": "done",
+      "priority": "P0",
+      "owner_role": "risk-auditor",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-risk-review-cloud-siem-sentinel-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "risk_blocker_removed",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-catalog-refresh-after-metadata-backfill-005",
+      "title": "skills catalog refresh after metadata backfill 005",
+      "status": "done",
+      "priority": "P1",
+      "owner_role": "cataloger",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-catalog-refresh-after-metadata-backfill-005"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_parity_repair",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-metadata-backfill-batch-006",
+      "title": "skills metadata backfill batch 006",
+      "status": "blocked",
+      "priority": "P3",
+      "owner_role": "critic",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_quality_improvement",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      },
+      "blocked_reason": "Blocked by the repository risk/review sequence; inspect the named sources and successor item before resuming."
+    },
+    {
+      "id": "skills-risk-review-ioc-defanging-sharing-pipeline-001",
+      "title": "skills risk review ioc defanging sharing pipeline 001",
+      "status": "done",
+      "priority": "P0",
+      "owner_role": "risk-auditor",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-risk-review-ioc-defanging-sharing-pipeline-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "risk_blocker_removed",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-catalog-refresh-after-metadata-backfill-006",
+      "title": "skills catalog refresh after metadata backfill 006",
+      "status": "done",
+      "priority": "P1",
+      "owner_role": "cataloger",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-catalog-refresh-after-metadata-backfill-006"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_parity_repair",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-metadata-backfill-batch-007",
+      "title": "skills metadata backfill batch 007",
+      "status": "blocked",
+      "priority": "P3",
+      "owner_role": "critic",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_quality_improvement",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      },
+      "blocked_reason": "Blocked by the repository risk/review sequence; inspect the named sources and successor item before resuming."
+    },
+    {
+      "id": "skills-risk-review-identity-federation-saml-azure-ad-001",
+      "title": "skills risk review identity federation saml azure ad 001",
+      "status": "done",
+      "priority": "P0",
+      "owner_role": "risk-auditor",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-risk-review-identity-federation-saml-azure-ad-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "risk_blocker_removed",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-catalog-refresh-after-metadata-backfill-007",
+      "title": "skills catalog refresh after metadata backfill 007",
+      "status": "done",
+      "priority": "P1",
+      "owner_role": "cataloger",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-catalog-refresh-after-metadata-backfill-007"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_parity_repair",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-metadata-backfill-batch-008",
+      "title": "skills metadata backfill batch 008",
+      "status": "blocked",
+      "priority": "P3",
+      "owner_role": "critic",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "risk_gate_created",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      },
+      "blocked_reason": "Blocked by the repository risk/review sequence; inspect the named sources and successor item before resuming."
+    },
+    {
+      "id": "skills-risk-review-ir-dashboard-timesketch-001",
+      "title": "skills risk review ir dashboard timesketch 001",
+      "status": "done",
+      "priority": "P0",
+      "owner_role": "risk-auditor",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-risk-review-ir-dashboard-timesketch-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "risk_blocker_removed",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-catalog-refresh-after-metadata-backfill-008",
+      "title": "skills catalog refresh after metadata backfill 008",
+      "status": "done",
+      "priority": "P1",
+      "owner_role": "cataloger",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-catalog-refresh-after-metadata-backfill-008"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_parity_repair",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    },
+    {
+      "id": "skills-metadata-backfill-batch-009",
+      "title": "skills metadata backfill batch 009",
+      "status": "blocked",
+      "priority": "P3",
+      "owner_role": "critic",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "risk_gate_created",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      },
+      "blocked_reason": "Blocked by the repository risk/review sequence; inspect the named sources and successor item before resuming."
+    },
+    {
+      "id": "skills-risk-review-malware-incident-communication-template-001",
+      "title": "skills risk review malware incident communication template 001",
+      "status": "done",
+      "priority": "P0",
+      "owner_role": "risk-auditor",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [],
+      "evidence": [
+        "git-history:operations/board.json#skills-risk-review-malware-incident-communication-template-001"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "risk_blocker_removed",
+        "external_action_allowed": false,
+        "next_ticket_on_success": "skills-catalog-refresh-after-metadata-backfill-009"
+      }
+    },
+    {
+      "id": "skills-catalog-refresh-after-metadata-backfill-009",
+      "title": "skills catalog refresh after metadata backfill 009",
+      "status": "done",
+      "priority": "P1",
+      "owner_role": "cataloger",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [
+        "skills-risk-review-malware-incident-communication-template-001"
+      ],
+      "evidence": [
+        "git-history:operations/board.json#skills-catalog-refresh-after-metadata-backfill-009"
+      ],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_parity_repair",
+        "external_action_allowed": false,
+        "next_ticket_on_success": "skills-metadata-backfill-batch-010"
+      }
+    },
+    {
+      "id": "skills-metadata-backfill-batch-010",
+      "title": "skills metadata backfill batch 010",
+      "status": "blocked",
+      "priority": "P3",
+      "owner_role": "critic",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [
+        "skills-catalog-refresh-after-metadata-backfill-009"
+      ],
+      "evidence": [],
+      "sources": [],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "risk_gate_created",
+        "external_action_allowed": false,
+        "next_ticket_on_success": "skills-risk-review-phishing-reporting-button-workflow-001"
+      },
+      "blocked_reason": "Blocked by the repository risk/review sequence; inspect the named sources and successor item before resuming."
+    },
+    {
+      "id": "skills-risk-review-phishing-reporting-button-workflow-001",
+      "title": "Review and convert or quarantine Building Phishing Reporting Button Workflow before package-facing endorsement, with attention to administrative email-suite configuration, SOAR mailbox monitoring, IOC extraction, external URL/attachment submissions, automated inbox/domain mutation, reporter notification, and private-data surfaces.",
+      "status": "done",
+      "priority": "P0",
+      "owner_role": "risk-auditor",
+      "acceptance": [
+        "A done ticket must restore discovery, review a source/skill, normalize a skill, remove a risk blocker, repair catalog parity, publish/verify an installable surface, or kill unsafe/generic material. Status-only updates are not done."
+      ],
+      "depends_on": [
+        "skills-metadata-backfill-batch-010"
+      ],
+      "evidence": [
+        "reports/risk/2026-07-09-phishing-reporting-button-workflow-risk-review.md",
+        "acceptance_result:{\"passed\":true,\"checked_at\":\"2026-07-09T21:24:26-03:00\"}"
+      ],
+      "sources": [
+        "dist/skills/building-phishing-reporting-button-workflow/SKILL.md",
+        "reports/critic/2026-07-09-metadata-backfill-batch-010.md"
+      ],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "risk_blocker_removed",
+        "external_action_allowed": false,
+        "next_ticket_on_success": "skills-catalog-refresh-after-metadata-backfill-010"
+      }
+    },
+    {
+      "id": "skills-catalog-refresh-after-metadata-backfill-010",
+      "title": "Verify catalog/install-manifest parity after phishing reporting button workflow risk review and record package-facing catalog state without publishing.",
+      "status": "done",
+      "priority": "P1",
+      "owner_role": "cataloger",
+      "acceptance": [
+        "catalog reflects or reports pending parity for Building Phishing Reporting Button Workflow as security-defensive high requires_review",
+        "install manifest remains coherent",
+        "no npm publish attempted"
+      ],
+      "depends_on": [
+        "skills-risk-review-phishing-reporting-button-workflow-001"
+      ],
+      "evidence": [
+        "reports/catalog/2026-07-09-metadata-backfill-010-catalog-parity.md",
+        "acceptance_result:{\"passed\":true,\"checked_at\":\"2026-07-09T22:19:08-03:00\",\"evidence\":\"Catalog surfaces show 1183 skills, security-defensive 72, high-risk 28, unspecified 704; Building Phishing Reporting Button Workflow is package-facing as security-defensive/high/requires_review true; install manifest points to dist/skills and catalog files; no package publication occurred.\"}"
+      ],
+      "sources": [
+        "dist/catalog.json",
+        "dist/catalog.md",
+        "dist/install-manifest.json",
+        "dist/skills/building-phishing-reporting-button-workflow/SKILL.md",
+        "reports/risk/2026-07-09-phishing-reporting-button-workflow-risk-review.md"
+      ],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_parity_repair",
+        "external_action_allowed": false,
+        "next_ticket_on_success": "skills-metadata-backfill-batch-011"
+      },
+      "completed_at": "2026-07-09T22:19:08-03:00"
+    },
+    {
+      "id": "skills-metadata-backfill-batch-011",
+      "title": "Continue bounded metadata backlog cleanup from the next uncategorized or unspecified-risk package-facing skill; stop immediately and open a risk-review ticket if high-risk executable, credential, SSRF, offensive, account, browser, external-mutation, private-data, or publication-sensitive surfaces are encountered.",
+      "status": "done",
+      "priority": "P3",
+      "owner_role": "critic",
+      "acceptance": [
+        "inspect the next bounded metadata backlog candidate directly from the repository",
+        "backfill only safe metadata or stop before unsafe package endorsement",
+        "open a concrete risk-review ticket if unsafe surfaces are found",
+        "do not publish or perform external connector actions"
+      ],
+      "depends_on": [
+        "skills-catalog-refresh-after-metadata-backfill-010"
+      ],
+      "evidence": [
+        "reports/critic/2026-07-22-classification-override-batch-011.md",
+        "operations/action-runs/skills-catalog-repair/latest.json",
+        "commit:2e86e51",
+        "workflow_run:29952399864 conclusion=success"
+      ],
+      "sources": [
+        "dist/catalog.json",
+        "dist/catalog.md",
+        "dist/install-manifest.json",
+        "dist/skills/"
+      ],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "catalog_quality_improvement",
+        "external_action_allowed": false,
+        "next_ticket_on_success": "skills-source-review-remotion-hyperframes-001"
+      },
+      "completed_at": "2026-07-22T19:52:00Z"
+    },
+    {
+      "id": "skills-source-review-remotion-hyperframes-001",
+      "title": "Review the Remotion and HyperFrames source cluster against existing media and motion skills before any package promotion.",
+      "status": "done",
+      "priority": "P1",
+      "owner_role": "reviewer",
+      "acceptance": [
+        "record exact source revisions, provenance, and license boundaries",
+        "compare candidates with existing media, video, motion, and HyperFrames entries before creating or promoting any slug",
+        "preserve imported bodies and distinguish reference, candidate, conditional, superseded, and reviewed lifecycle decisions",
+        "run package and catalog validation without publishing"
+      ],
+      "depends_on": [
+        "skills-metadata-backfill-batch-011"
+      ],
+      "evidence": [
+        "reports/source-review/2026-07-22-programmatic-video-consolidation.md",
+        "operations/action-runs/programmatic-video-consolidation/latest.json",
+        "commit:001efb0"
+      ],
+      "sources": [
+        "operations/source-watchlist.json",
+        "sources/candidates/2026-07-22-curated-sources.md",
+        "reports/source-review/2026-07-22-design-skill-consolidation.md",
+        "dist/catalog.json"
+      ],
+      "stop_line": "No publication, package release, external mutation, credential use, private-data ingestion, unsafe endorsement, unlicensed copying, or candidate promotion without review evidence.",
+      "extensions": {
+        "value_type": "source_review_and_deduplication",
+        "external_action_allowed": false,
+        "next_ticket_on_success": "skills-source-review-openseo-marketing-001"
+      },
+      "completed_at": "2026-07-22T20:45:00Z"
+    },
+    {
+      "id": "skills-source-review-openseo-marketing-001",
+      "title": "Review OpenSEO and marketing/SEO overlap before adding or promoting package-facing skills.",
+      "status": "ready",
+      "priority": "P1",
+      "owner_role": "reviewer",
+      "acceptance": [
+        "record exact source revisions, provenance, license, and external-service boundaries",
+        "compare the source cluster with existing SEO, marketing, browser, analytics, and publishing entries before creating any slug",
+        "separate research, audit, implementation, external mutation, credential use, and publication authority",
+        "run package and catalog validation without publishing or invoking external services"
+      ],
+      "depends_on": [
+        "skills-source-review-remotion-hyperframes-001"
+      ],
+      "evidence": [],
+      "sources": [
+        "operations/source-watchlist.json",
+        "sources/candidates/2026-07-22-curated-sources.md",
+        "reports/source-review/2026-07-22-programmatic-video-consolidation.md",
+        "dist/catalog.json"
+      ],
+      "stop_line": "No publication, external account mutation, credential use, private-data ingestion, browser automation, remote installer, unsafe endorsement, or unlicensed copying.",
+      "extensions": {
+        "value_type": "source_review_and_deduplication",
+        "external_action_allowed": false,
+        "next_ticket_on_success": null
+      }
+    }
+  ],
+  "extensions": {
+    "purpose": "Force skills heartbeats to produce reviewed, installable, discoverable skill value instead of unbounded catalog/status churn.",
+    "selection_rule": "Consume the highest-priority dependency-clear ready item allowed by operations/gates.md. If none is eligible, stop cleanly."
+  }
+}

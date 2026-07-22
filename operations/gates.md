@@ -4,7 +4,8 @@
 
 The Skills loop must produce installable, reviewable, discoverable skill value. Catalog metadata is useful only when it improves package safety, discoverability, installability, or reviewability.
 
-The board of record is `operations/board.json`. Daily ledgers remain audit trails.
+The work ledger of record is `operations/ledger.json`. Historical run evidence
+does not select current work.
 
 ## Promotion ladder
 

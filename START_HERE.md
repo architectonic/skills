@@ -21,7 +21,7 @@ This is the first-run guide for agents reading `skills`.
 6. Read `doctrine/okf-frontmatter.md` before editing metadata.
 7. Read `doctrine/ingestion-policy.md` and `doctrine/normalization-pipeline.md` before importing external material.
 8. Read `operations/aggregator-loop.md` and `operations/project-operator-prompt.md` before running scheduled aggregator maintenance.
-9. Read `operations/daily/README.md` before writing ledger or queue state.
+9. Read `operations/ledger.json` when durable aggregator coordination is required.
 
 ## Skill Test
 
