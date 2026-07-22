@@ -36,6 +36,94 @@
       "source_status": "package_body_reviewed",
       "review_status": "retained_for_static_visual_art",
       "decision_evidence": "Retain as a static visual-art procedure. Its philosophy-to-canvas workflow is distinct from interface design and UI engineering and should not route web application tasks."
+    },
+    {
+      "name": "hyperframes",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
+      "superseded_by": "skills/programmatic-video-production.md",
+      "risk_level": "high",
+      "requires_review": true,
+      "source_status": "package_body_reviewed",
+      "review_status": "explicit_hyperframes_project_selection_required",
+      "decision_evidence": "Reviewed against heygen-com/hyperframes@84e4eafacdaf96e8d137ba745af750448c5de0de. Retain only when the user explicitly selects HyperFrames or the existing project already uses it. The body must not make HyperFrames the universal default or authorize skill updates, website crawling, browser capture, cloud rendering, feedback, publication, or external services without separate approval."
+    },
+    {
+      "name": "hyperframes-cli",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
+      "superseded_by": "",
+      "risk_level": "high",
+      "requires_review": true,
+      "source_status": "package_body_reviewed",
+      "review_status": "command_cloud_publication_and_feedback_approval_required",
+      "decision_evidence": "Reviewed at HyperFrames revision 84e4eafacdaf96e8d137ba745af750448c5de0de. The CLI can scaffold, install, capture, render, publish, authenticate, invoke hosted cloud, AWS, and GCP, send feedback, and file public reproductions. Each external, credentialed, billable, or publishing action requires explicit approval."
+    },
+    {
+      "name": "hyperframes-core",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
+      "superseded_by": "",
+      "risk_level": "medium",
+      "requires_review": false,
+      "source_status": "package_body_reviewed",
+      "review_status": "retained_for_existing_hyperframes_authoring",
+      "decision_evidence": "Reviewed at HyperFrames revision 84e4eafacdaf96e8d137ba745af750448c5de0de. Retain as the deterministic composition contract for an explicitly selected HyperFrames project. It does not authorize project scaffolding, dependencies, rendering, media retrieval, or framework migration by itself."
+    },
+    {
+      "name": "hyperframes-animation",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
+      "superseded_by": "",
+      "risk_level": "medium",
+      "requires_review": false,
+      "source_status": "package_body_reviewed",
+      "review_status": "retained_for_seek_safe_hyperframes_motion",
+      "decision_evidence": "Reviewed at HyperFrames revision 84e4eafacdaf96e8d137ba745af750448c5de0de. Retain for deterministic, seek-safe motion inside HyperFrames. Runtime adapters, WebGL, WebGPU, external effect skills, helper bootstrapping, and executable analysis scripts remain project-scoped and review-sensitive."
+    },
+    {
+      "name": "hyperframes-creative",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
+      "superseded_by": "",
+      "risk_level": "medium",
+      "requires_review": false,
+      "source_status": "package_body_reviewed",
+      "review_status": "retained_after_project_design_and_content_contract",
+      "decision_evidence": "Reviewed at HyperFrames revision 84e4eafacdaf96e8d137ba745af750448c5de0de. Retain for video-specific creative direction after the project's brand, content truth, and technical contract are known. Presets, package bootstrap, scripts, narration, music, and scene expansion are not implicit authority."
+    },
+    {
+      "name": "hyperframes-registry",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
+      "superseded_by": "",
+      "risk_level": "high",
+      "requires_review": true,
+      "source_status": "package_body_reviewed",
+      "review_status": "remote_code_filesystem_clipboard_and_upstream_review_required",
+      "decision_evidence": "Reviewed at HyperFrames revision 84e4eafacdaf96e8d137ba745af750448c5de0de. Registry operations download remote blocks and components, write project files, merge HTML/CSS/JS, may touch the clipboard, and can prepare upstream pull requests. Require source, revision, license, script, filesystem, and contribution approval before use."
+    },
+    {
+      "name": "hyperframes-media",
+      "lifecycle_status": "superseded",
+      "install_recommendation": "do-not-install",
+      "superseded_by": "media-use",
+      "risk_level": "high",
+      "requires_review": true,
+      "source_status": "package_reviewed_superseded",
+      "review_status": "stale_media_workflow_replaced_by_media_use",
+      "decision_evidence": "The current HyperFrames capability map routes media resolution through media-use. This packaged legacy entry contains a different credential and provider workflow and would create conflicting instructions. Preserve as evidence but do not install."
+    },
+    {
+      "name": "media-use",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
+      "superseded_by": "",
+      "risk_level": "high",
+      "requires_review": true,
+      "source_status": "package_body_reviewed",
+      "review_status": "credentials_network_filesystem_asset_rights_and_installer_review_required",
+      "decision_evidence": "Retain as the current HyperFrames media resolver only after review. It searches and downloads remote assets, writes project and global caches, uses HeyGen credentials, adopts existing media, and recommends a remote shell installer. Asset rights, provider access, retention, cache scope, executable installation, and every download require explicit approval."
     }
   ]
 }
