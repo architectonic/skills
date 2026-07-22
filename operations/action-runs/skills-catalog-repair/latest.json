@@ -1,0 +1,31 @@
+{
+  "workflow": "skills-catalog-repair",
+  "recorded_at_utc": "2026-07-22T16:00:00Z",
+  "branch": "agent/skills-catalog-repair",
+  "status": "validation_pending",
+  "scope": [
+    "classification override infrastructure",
+    "first metadata repair batch",
+    "expanded source watchlist",
+    "curated source candidate batch",
+    "three working-source candidate skills",
+    "pull-request catalog validation"
+  ],
+  "mutated_third_party_skill_bodies": false,
+  "promoted_to_reviewed_core": false,
+  "publication_attempted": false,
+  "acceptance": {
+    "catalog_schema": "0.2",
+    "minimum_classification_overrides": 60,
+    "maximum_uncategorized": 500,
+    "maximum_unspecified_risk": 650,
+    "representative_entries": [
+      "Building Ransomware Playbook with CISA Framework",
+      "Code Documentation Generator",
+      "hyperframes",
+      "hyperframes-cli",
+      "ai-seo"
+    ]
+  },
+  "next_action": "Open a draft pull request, inspect catalog-validation results, fix any unmatched override or schema regression, then merge only after checks pass."
+}
