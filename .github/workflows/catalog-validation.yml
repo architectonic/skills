@@ -1,0 +1,102 @@
+name: Validate catalog metadata
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/catalog-validation.yml'
+      - 'scripts/build_distribution_catalog.py'
+      - 'operations/classification-overrides.json'
+      - 'operations/source-watchlist.json'
+      - 'dist/skills/**'
+      - 'skills/**'
+      - 'sources/**'
+      - 'package.json'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install catalog dependencies
+        run: python -m pip install --upgrade pyyaml
+
+      - name: Validate package and Python syntax
+        run: |
+          npm test
+          python -m py_compile scripts/build_distribution_catalog.py scripts/discover_skill_sources.py scripts/review_discovery_candidates.py
+
+      - name: Build catalog in validation mode
+        run: npm run build:catalog
+
+      - name: Validate repaired classifications and candidate skill structure
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import yaml
+
+          catalog = json.loads(Path('dist/catalog.json').read_text(encoding='utf-8'))
+          manifest = json.loads(Path('dist/install-manifest.json').read_text(encoding='utf-8'))
+          summary = catalog.get('summary', {})
+
+          if catalog.get('schema_version') != '0.2':
+              raise SystemExit('catalog schema_version must be 0.2')
+          if manifest.get('schema_version') != '0.2':
+              raise SystemExit('install manifest schema_version must be 0.2')
+          if summary.get('classification_overrides_applied', 0) < 60:
+              raise SystemExit('expected at least 60 classification overrides')
+          if summary.get('domain_counts', {}).get('uncategorized', 10**9) > 500:
+              raise SystemExit('uncategorized count remains above first-batch acceptance threshold')
+          if summary.get('risk_counts', {}).get('unspecified', 10**9) > 650:
+              raise SystemExit('unspecified-risk count remains above first-batch acceptance threshold')
+
+          entries = {entry.get('slug'): entry for entry in catalog.get('skills', [])}
+          expected = {
+              'Building Ransomware Playbook with CISA Framework': ('security-defensive', 'high', True),
+              'Code Documentation Generator': ('software-engineering', 'low', False),
+              'hyperframes': ('media', 'medium', False),
+              'hyperframes-cli': ('runtime-tools', 'high', True),
+              'ai-seo': ('business', 'medium', True),
+          }
+          for slug, (domain, risk, review) in expected.items():
+              entry = entries.get(slug)
+              if not entry:
+                  raise SystemExit(f'missing expected catalog entry: {slug}')
+              actual = (entry.get('domain'), entry.get('risk_level'), entry.get('requires_review'))
+              if actual != (domain, risk, review):
+                  raise SystemExit(f'{slug} classification mismatch: {actual!r}')
+              if not entry.get('classification_override'):
+                  raise SystemExit(f'{slug} should disclose classification_override=true')
+
+          required_sections = ['## Trigger', '## Inputs', '## Procedure', '## Verification', '## Failure Modes']
+          for path in [
+              Path('skills/interface-quality-audit.md'),
+              Path('skills/interface-transition-review.md'),
+              Path('skills/recent-source-research.md'),
+          ]:
+              raw = path.read_text(encoding='utf-8')
+              if not raw.startswith('---\n'):
+                  raise SystemExit(f'{path} missing frontmatter')
+              _, frontmatter_raw, body = raw.split('---', 2)
+              frontmatter = yaml.safe_load(frontmatter_raw)
+              if frontmatter.get('source_status') != 'distilled_candidate':
+                  raise SystemExit(f'{path} must remain a distilled candidate')
+              if frontmatter.get('source_revision') != 'unpinned-review-required':
+                  raise SystemExit(f'{path} must disclose unpinned upstream revision')
+              for section in required_sections:
+                  if section not in body:
+                      raise SystemExit(f'{path} missing required section {section}')
+          PY
