@@ -2,7 +2,8 @@
   "workflow": "seo-skill-consolidation",
   "recorded_at_utc": "2026-07-22T21:15:00Z",
   "branch": "agent/seo-skill-consolidation",
-  "status": "validation_pending",
+  "status": "merged_to_main",
+  "merge_commit": "5eb7796",
   "scope": [
     "OpenSEO source and license review",
     "SEO project context skill",
@@ -39,5 +40,5 @@
   "sent_outreach": false,
   "promoted_to_reviewed_core": false,
   "publication_attempted": false,
-  "next_action": "Inspect generated catalog, run centralized PR validation, fix exact-contract failures, and merge only after the current head passes."
+  "next_action": "Evaluate the local SEO skills on deterministic fixtures before any core promotion, as recorded in operations/ledger.json."
 }

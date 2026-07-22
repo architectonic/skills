@@ -909,7 +909,7 @@
     {
       "id": "skills-source-review-openseo-marketing-001",
       "title": "Review OpenSEO and marketing/SEO overlap before adding or promoting package-facing skills.",
-      "status": "ready",
+      "status": "done",
       "priority": "P1",
       "owner_role": "reviewer",
       "acceptance": [
@@ -921,7 +921,11 @@
       "depends_on": [
         "skills-source-review-remotion-hyperframes-001"
       ],
-      "evidence": [],
+      "evidence": [
+        "reports/source-review/2026-07-22-seo-skill-consolidation.md",
+        "operations/action-runs/seo-skill-consolidation/latest.json",
+        "commit:5eb7796"
+      ],
       "sources": [
         "operations/source-watchlist.json",
         "sources/candidates/2026-07-22-curated-sources.md",
@@ -931,6 +935,39 @@
       "stop_line": "No publication, external account mutation, credential use, private-data ingestion, browser automation, remote installer, unsafe endorsement, or unlicensed copying.",
       "extensions": {
         "value_type": "source_review_and_deduplication",
+        "external_action_allowed": false,
+        "next_ticket_on_success": "skills-evaluate-seo-fixtures-001"
+      },
+      "completed_at": "2026-07-22T21:15:00Z"
+    },
+    {
+      "id": "skills-evaluate-seo-fixtures-001",
+      "title": "Evaluate the local SEO skills against provider-neutral fixtures before any core promotion.",
+      "status": "ready",
+      "priority": "P1",
+      "owner_role": "tests",
+      "acceptance": [
+        "exercise project context, keyword opportunity, page mapping, competitive research, link prospecting, and AI visibility procedures on deterministic local fixtures",
+        "verify observed first-party facts, provider estimates, unknowns, and freshness are never collapsed into one evidence class",
+        "verify authenticated data, saved keyword state, crawling, contact collection, outreach, page mutation, and publication remain separately gated",
+        "record comparative utility and token cost without using live accounts or external services"
+      ],
+      "depends_on": [
+        "skills-source-review-openseo-marketing-001"
+      ],
+      "evidence": [],
+      "sources": [
+        "reports/source-review/2026-07-22-seo-skill-consolidation.md",
+        "skills/seo-project-context.md",
+        "skills/seo-keyword-opportunity-research.md",
+        "skills/seo-keyword-page-mapping.md",
+        "skills/seo-competitive-research.md",
+        "skills/seo-link-prospecting.md",
+        "skills/ai-search-visibility-audit.md"
+      ],
+      "stop_line": "Local fixtures only. No authenticated account, paid credit, live crawl, contact collection, outreach, page mutation, report publication, or core promotion.",
+      "extensions": {
+        "value_type": "comparative_utility_evaluation",
         "external_action_allowed": false,
         "next_ticket_on_success": null
       }
