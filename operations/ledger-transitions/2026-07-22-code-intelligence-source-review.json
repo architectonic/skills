@@ -59,14 +59,16 @@
       "dependencies": [
         "skills-source-review-code-intelligence-001"
       ],
-/change-impact-review.md",
-        "sources/reviewed/2026-07-22-code-intelligence-cluster.md"
-      ],
-      "external_action_allowed": false,
-      "extensions": {aluation/2026-07-22-code-intelligence-fixture-evaluation.json",
+      "evidence": [],
+      "artifacts": [
+        "tests/fixtures/code-intelligence/contract-evaluation.json",
+        "scripts/evaluate_code_intelligence_skills.py",
+        "reports/evaluation/2026-07-22-code-intelligence-fixture-evaluation.json",
         "reports/evaluation/2026-07-22-code-intelligence-fixture-evaluation.md"
       ],
       "sources": [
+        "skills/codebase-structural-map.md",
+        "skills/change-impact-review.md",
         "sources/reviewed/2026-07-22-code-intelligence-cluster.md"
       ],
       "external_action_allowed": false,
