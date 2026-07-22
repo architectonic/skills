@@ -1,0 +1,43 @@
+{
+  "workflow": "seo-skill-consolidation",
+  "recorded_at_utc": "2026-07-22T21:15:00Z",
+  "branch": "agent/seo-skill-consolidation",
+  "status": "validation_pending",
+  "scope": [
+    "OpenSEO source and license review",
+    "SEO project context skill",
+    "keyword opportunity research skill",
+    "keyword-to-page mapping skill",
+    "SEO competitive research skill",
+    "SEO link prospecting skill",
+    "AI search visibility audit",
+    "ai-seo supersession",
+    "competitive-intel lifecycle review",
+    "SEO catalog validation"
+  ],
+  "source_revisions": {
+    "open_seo": "95e95d48cb88e60e1277422254e59c59b3e7e2e2",
+    "open_seo_license_blob": "d7d884f16474e989ff443e080f6e0d1ddb42c444",
+    "seo_project_setup": "9101f1479e128fb08296348b8041df03a9a654d8",
+    "seo_coach": "8688416662a6b72a4ae3ee69d285842907e8ecf3",
+    "keyword_research": "4bdfc40dd4a27756f3abbc291b7b1bfe1176699c",
+    "keyword_clustering": "0fbadf7564b3127dd9f87f4fd14f7e17c9bc4b39",
+    "competitive_landscape": "0883708810e7fae718da8bb8b12200d759efacb5",
+    "competitor_analysis": "1ca9333ba7e8f8233d4df6e6e29db3736f9bf719",
+    "link_prospecting": "e9b9fb7114c092e41dd06c6b6d0e0e77f3afd4eb"
+  },
+  "catalog_decisions": 13,
+  "seo_decisions": {
+    "ai-seo": "superseded_do_not_install",
+    "competitive-intel": "reviewed_conditional_business_scope"
+  },
+  "mutated_imported_skill_bodies": false,
+  "copied_external_skill_bodies": false,
+  "accessed_authenticated_seo_data": false,
+  "saved_keywords_or_tags": false,
+  "collected_contacts": false,
+  "sent_outreach": false,
+  "promoted_to_reviewed_core": false,
+  "publication_attempted": false,
+  "next_action": "Inspect generated catalog, run centralized PR validation, fix exact-contract failures, and merge only after the current head passes."
+}
