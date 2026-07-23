@@ -9,7 +9,8 @@
     "dist/catalog.md",
     "dist/install-manifest.json",
     "operations/classification-overrides.json",
-    "operations/catalog-decisions.json"
+    "operations/catalog-decisions.json",
+    "operations/catalog-decisions/code-intelligence.json"
   ],
   "recommended_entrypoints": {
     "github_repo": "README.md",

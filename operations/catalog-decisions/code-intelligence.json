@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.1",
+  "purpose": "Body-level lifecycle decisions for code intelligence, graph onboarding, change impact, monorepo operations, and module-design entries.",
+  "review_boundary": "catalog_routing_and_install_recommendation_no_imported_body_mutation",
+  "updated_at": "2026-07-22",
+  "decisions": [
+    {
+      "name": "Graphify Onboarding",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
+      "superseded_by": "",
+      "domain": "agent-operations",
+      "risk_level": "medium",
+      "requires_review": true,
+      "source_status": "package_body_reviewed",
+      "review_status": "retained_as_derived_graph_onboarding_not_canonical_truth",
+      "decision_evidence": "Retain the source hierarchy, ignore rules, private-data caveats, review-before-commit, and derived-not-canonical boundaries. Use it with an explicitly approved graph engine or no engine; it does not authorize installation, repository scanning, global configuration, hooks, watchers, dashboards, or canonical memory writes."
+    },
+    {
+      "name": "monorepo-navigator",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
+      "superseded_by": "",
+      "domain": "software-engineering",
+      "risk_level": "high",
+      "requires_review": true,
+      "source_status": "package_body_reviewed",
+      "review_status": "ci_history_cache_migration_and_publication_approval_required",
+      "decision_evidence": "Retain for monorepo structure, package impact, selective builds, migrations, and coordinated releases. The body reaches executable analyzers, CI filters, remote cache credentials, history rewriting, package moves, versioning, and publication; absolute tool preferences and bundled-script paths are advisory and every mutation requires repository-specific review."
+    },
+    {
+      "name": "codebase-design",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
+      "superseded_by": "",
+      "domain": "software-engineering",
+      "risk_level": "low",
+      "requires_review": false,
+      "source_status": "package_body_reviewed",
+      "review_status": "retained_as_optional_deep_module_doctrine",
+      "decision_evidence": "Retain as an optional module/interface design vocabulary. It is not a structural graph or impact-analysis tool and its exact terminology and universal-sounding rules should be applied only when the deep-module model fits the project, not as mandatory architecture language."
+    }
+  ]
+}

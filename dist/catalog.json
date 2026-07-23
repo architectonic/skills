@@ -5,11 +5,15 @@
     "install_root": "dist/skills",
     "entrypoint": "README.md",
     "classification_overrides": "operations/classification-overrides.json",
-    "catalog_decisions": "operations/catalog-decisions.json"
+    "catalog_decisions": "operations/catalog-decisions.json",
+    "catalog_decision_files": [
+      "operations/catalog-decisions.json",
+      "operations/catalog-decisions/code-intelligence.json"
+    ]
   },
   "summary": {
     "skill_count": 1183,
-    "requires_review_count": 486,
+    "requires_review_count": 487,
     "classification_overrides_applied": 87,
     "domain_counts": {
       "agent-operations": 122,
@@ -27,10 +31,10 @@
       "writing": 25
     },
     "risk_counts": {
-      "high": 49,
-      "low": 35,
+      "high": 50,
+      "low": 36,
       "medium": 481,
-      "unspecified": 618
+      "unspecified": 616
     },
     "artifact_kind_counts": {
       "playbook": 1090,
@@ -46,7 +50,7 @@
       "unclassified": 458
     },
     "source_status_counts": {
-      "adapted": 406,
+      "adapted": 405,
       "blocked-pending-redaction": 8,
       "blocked-redacted": 3,
       "classification_reviewed": 74,
@@ -60,7 +64,7 @@
       "native-or-curated-origin-unverified": 1,
       "normalized": 3,
       "package-facing-risk-reviewed": 3,
-      "package_body_reviewed": 10,
+      "package_body_reviewed": 13,
       "package_metadata_backfill": 5,
       "package_reviewed_blocked": 1,
       "package_reviewed_superseded": 2,
@@ -68,7 +72,7 @@
       "review-gated-redacted": 1,
       "reviewed-metadata-only": 3,
       "risk_reviewed": 2,
-      "unspecified": 644
+      "unspecified": 642
     },
     "review_status_counts": {
       "authorized-defensive-cti-use-only": 1,
@@ -77,6 +81,7 @@
       "authorized_lab_only": 1,
       "blocked_for_forced_branding_and_scope": 1,
       "browser_and_data_review_required": 1,
+      "ci_history_cache_migration_and_publication_approval_required": 1,
       "command_cloud_publication_and_feedback_approval_required": 1,
       "connector_and_data_review_required": 2,
       "connector_and_sharing_review_required": 1,
@@ -100,6 +105,8 @@
       "publication_review_required": 1,
       "remote_code_filesystem_clipboard_and_upstream_review_required": 1,
       "retained_after_project_design_and_content_contract": 1,
+      "retained_as_derived_graph_onboarding_not_canonical_truth": 1,
+      "retained_as_optional_deep_module_doctrine": 1,
       "retained_for_business_intelligence_not_seo_competitive_research": 1,
       "retained_for_existing_hyperframes_authoring": 1,
       "retained_for_implementation_after_design_contract": 1,
@@ -109,20 +116,20 @@
       "runtime_and_permission_review_required": 3,
       "stale_media_workflow_replaced_by_media_use": 1,
       "tool_authority_review_required": 2,
-      "unspecified": 1091,
+      "unspecified": 1088,
       "volatile_unverified_claims_and_missing_dependencies": 1
     },
     "lifecycle_status_counts": {
-      "reviewed": 10,
+      "reviewed": 13,
       "superseded": 3,
-      "unreviewed": 1170
+      "unreviewed": 1167
     },
     "install_recommendation_counts": {
-      "conditional": 10,
+      "conditional": 13,
       "do-not-install": 3,
-      "inspect": 1170
+      "inspect": 1167
     },
-    "catalog_decisions_applied": 13
+    "catalog_decisions_applied": 16
   },
   "domains": {
     "agent-operations": [
@@ -8440,8 +8447,8 @@
       "path": "dist/skills/codebase-design/SKILL.md",
       "directory": "dist/skills/codebase-design",
       "domain": "software-engineering",
-      "risk_level": "medium",
-      "requires_review": true,
+      "risk_level": "low",
+      "requires_review": false,
       "classification_status": "complete",
       "classification_override": false,
       "classification_evidence": "",
@@ -8452,17 +8459,17 @@
         "okf"
       ],
       "source_family": "agent-skills-standard",
-      "source_status": "adapted",
-      "review_status": "",
+      "source_status": "package_body_reviewed",
+      "review_status": "retained_as_optional_deep_module_doctrine",
       "source_url": "",
       "source_revision": "",
       "license": "",
       "type": "Playbook",
-      "lifecycle_status": "unreviewed",
-      "install_recommendation": "inspect",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
       "superseded_by": "",
-      "decision_evidence": "",
-      "catalog_decision": false
+      "decision_evidence": "Retain as an optional module/interface design vocabulary. It is not a structural graph or impact-analysis tool and its exact terminology and universal-sounding rules should be applied only when the deep-module model fits the project, not as mandatory architecture language.",
+      "catalog_decision": true
     },
     {
       "slug": "codex",
@@ -18889,8 +18896,8 @@
       "path": "dist/skills/graphify-onboarding/SKILL.md",
       "directory": "dist/skills/graphify-onboarding",
       "domain": "agent-operations",
-      "risk_level": "",
-      "requires_review": false,
+      "risk_level": "medium",
+      "requires_review": true,
       "classification_status": "partial",
       "classification_override": false,
       "classification_evidence": "",
@@ -18905,17 +18912,17 @@
         "project-mapping"
       ],
       "source_family": "",
-      "source_status": "",
-      "review_status": "",
+      "source_status": "package_body_reviewed",
+      "review_status": "retained_as_derived_graph_onboarding_not_canonical_truth",
       "source_url": "",
       "source_revision": "",
       "license": "",
       "type": "Playbook",
-      "lifecycle_status": "unreviewed",
-      "install_recommendation": "inspect",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
       "superseded_by": "",
-      "decision_evidence": "",
-      "catalog_decision": false
+      "decision_evidence": "Retain the source hierarchy, ignore rules, private-data caveats, review-before-commit, and derived-not-canonical boundaries. Use it with an explicitly approved graph engine or no engine; it does not authorize installation, repository scanning, global configuration, hooks, watchers, dashboards, or canonical memory writes.",
+      "catalog_decision": true
     },
     {
       "slug": "grill-me",
@@ -30420,9 +30427,9 @@
       "description": "Navigate, manage, and optimize monorepos. Covers Turborepo, Nx, pnpm workspaces, and Lerna. Cross-package impact analysis, selective builds/tests on affected packages, remote caching, dependency graph visualization, and structured multi-repo to monorepo migrations. Use when setting up a new monorepo, optimizing CI for a large workspace, debugging cross-package dependency issues, or planning a multi-repo consolidation.",
       "path": "dist/skills/monorepo-navigator/SKILL.md",
       "directory": "dist/skills/monorepo-navigator",
-      "domain": "",
-      "risk_level": "",
-      "requires_review": false,
+      "domain": "software-engineering",
+      "risk_level": "high",
+      "requires_review": true,
       "classification_status": "unclassified",
       "classification_override": false,
       "classification_evidence": "",
@@ -30430,17 +30437,17 @@
       "target_surfaces": [],
       "tags": [],
       "source_family": "",
-      "source_status": "",
-      "review_status": "",
+      "source_status": "package_body_reviewed",
+      "review_status": "ci_history_cache_migration_and_publication_approval_required",
       "source_url": "",
       "source_revision": "",
       "license": "",
       "type": "Playbook",
-      "lifecycle_status": "unreviewed",
-      "install_recommendation": "inspect",
+      "lifecycle_status": "reviewed",
+      "install_recommendation": "conditional",
       "superseded_by": "",
-      "decision_evidence": "",
-      "catalog_decision": false
+      "decision_evidence": "Retain for monorepo structure, package impact, selective builds, migrations, and coordinated releases. The body reaches executable analyzers, CI filters, remote cache credentials, history rewriting, package moves, versioning, and publication; absolute tool preferences and bundled-script paths are advisory and every mutation requires repository-specific review.",
+      "catalog_decision": true
     },
     {
       "slug": "motion-graphics",
