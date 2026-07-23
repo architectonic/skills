@@ -7,6 +7,7 @@ on:
       - '.github/workflows/seo-fixture-evaluation.yml'
       - 'scripts/evaluate_seo_skills.py'
       - 'tests/fixtures/seo/**'
+      - 'reports/evaluation/2026-07-22-seo-fixture-evaluation.*'
       - 'skills/seo-*.md'
       - 'skills/ai-search-visibility-audit.md'
   pull_request:
@@ -19,19 +20,17 @@ on:
       - 'skills/ai-search-visibility-audit.md'
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: seo-fixture-evaluation-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   evaluate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -40,24 +39,5 @@ jobs:
       - name: Validate evaluator syntax
         run: python -m py_compile scripts/evaluate_seo_skills.py
 
-      - name: Generate deterministic reports
-        if: github.event_name != 'pull_request'
-        run: python scripts/evaluate_seo_skills.py --write
-
-      - name: Commit generated reports
-        if: github.event_name != 'pull_request'
-        run: |
-          git config user.name "architectonic-bot"
-          git config user.email "architectonic-bot@users.noreply.github.com"
-          if git diff --quiet -- reports/evaluation/2026-07-22-seo-fixture-evaluation.json reports/evaluation/2026-07-22-seo-fixture-evaluation.md; then
-            echo "SEO fixture reports already current."
-            exit 0
-          fi
-          git add reports/evaluation/2026-07-22-seo-fixture-evaluation.json reports/evaluation/2026-07-22-seo-fixture-evaluation.md
-          git commit -m "reports: evaluate SEO skill fixtures"
-          git pull --rebase
-          git push
-
       - name: Validate committed report parity
-        if: github.event_name == 'pull_request'
         run: python scripts/evaluate_seo_skills.py
