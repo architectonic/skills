@@ -46,10 +46,10 @@ Select the smallest sufficient review surface, trace plausible impact beyond cha
 
 1. **Resolve the review target.** Record base, head, changed files, uncommitted state, generated files, renames, deletions, and whether the diff is complete.
 2. **Read intent before impact.** Inspect the issue, PR body, specification, tests, and changed source to understand the intended behavior and acceptance criteria.
-3. **Check graph suitability.** Use graph evidence only when the index covers the relevant languages and paths and is fresh enough for the base/head state. Record stale or excluded regions.
+3. **Check graph suitability.** Use graph evidence only when the index covers the relevant languages and paths and is fresh enough for the base/head state. Stale indexes are not treated as current evidence; record stale or excluded regions.
 4. **Identify changed symbols and contracts.** Determine modified interfaces, schemas, routes, commands, configuration keys, events, data models, permissions, dependencies, and persisted formats.
 5. **Generate an impact hypothesis.** Use graph queries or source search to identify likely callers, dependents, implementations, tests, consumers, routes, data flows, and cross-package or cross-service edges.
-6. **Verify in source.** Inspect every consequential relationship in actual code, manifests, configuration, generated artifacts, history, or tests. Mark graph-only edges as unverified and do not report them as defects.
+6. **Verify in source.** Inspect every consequential relationship in actual code, manifests, configuration, generated artifacts, history, or tests. Graph-only edges are unverified and must not be reported as defects.
 7. **Look beyond static edges.** Check dynamic imports, dependency injection, reflection, framework registration, configuration-driven routing, templates, generated code, database migrations, feature flags, message channels, and external APIs that a static graph may miss.
 8. **Inspect negative impact.** Consider deleted behavior, broken fallbacks, error paths, cancellation, retries, permissions, privacy, concurrency, caching, compatibility, rollback, and observability.
 9. **Map test obligations.** Identify existing tests that should exercise the change, tests likely affected, missing coverage, and the minimum relevant commands. Do not assume graph-linked tests are sufficient.
