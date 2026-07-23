@@ -115,7 +115,7 @@
   ],
   "date": "2026-07-22",
   "evaluation_kind": "deterministic_contract_fixture_not_model_benchmark",
-  "fixture_path": "tests\\fixtures\\seo\\contract-evaluation.json",
+  "fixture_path": "tests/fixtures/seo/contract-evaluation.json",
   "schema_version": "0.1",
   "summary": {
     "baseline_estimated_tokens": 286,

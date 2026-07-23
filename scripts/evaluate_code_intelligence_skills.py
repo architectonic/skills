@@ -286,7 +286,7 @@ def evaluate() -> dict[str, Any]:
         "schema_version": "0.1",
         "date": str(fixture["date"]),
         "evaluation_kind": str(fixture["evaluation_kind"]),
-        "fixture_path": str(FIXTURE_PATH.relative_to(ROOT)),
+        "fixture_path": FIXTURE_PATH.relative_to(ROOT).as_posix(),
         "boundaries": boundaries,
         "summary": {
             "case_count": len(results),
