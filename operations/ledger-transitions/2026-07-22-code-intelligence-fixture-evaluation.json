@@ -1,0 +1,85 @@
+{
+  "schema_version": "0.1",
+  "transition_id": "2026-07-22-code-intelligence-fixture-evaluation-001",
+  "ledger_id": "architectonic-skills",
+  "recorded_at": "2026-07-22T22:10:00Z",
+  "updates": [
+    {
+      "id": "skills-evaluate-code-intelligence-fixtures-001",
+      "expect_status": "ready",
+      "set": {
+        "status": "done",
+        "evidence": [
+          "tests/fixtures/code-intelligence/contract-evaluation.json",
+          "scripts/evaluate_code_intelligence_skills.py",
+          "reports/evaluation/2026-07-22-code-intelligence-fixture-evaluation.json",
+          "reports/evaluation/2026-07-22-code-intelligence-fixture-evaluation.md"
+        ],
+        "completed_at": "2026-07-22T22:10:00Z",
+        "acceptance_result": {
+          "passed": true,
+          "checked_at": "2026-07-22T22:10:00Z",
+          "evaluation_kind": "deterministic_contract_fixture_not_model_benchmark",
+          "case_count": 6,
+          "maximum_score": 65,
+          "baseline_score": 0,
+          "guided_score": 65,
+          "score_delta": 65,
+          "baseline_estimated_tokens": 230,
+          "guided_estimated_tokens": 590,
+          "token_delta": 360,
+          "token_estimation_method": "ceil_utf8_bytes_divided_by_4",
+          "live_repository_indexed": false,
+          "external_runtimes_executed": false,
+          "repository_mutated": false,
+          "promotion_decision": "hold_for_controlled_model_and_real_repository_evaluation"
+        },
+        "extensions": {
+          "next_ticket_on_success": "skills-source-review-memory-cluster-001",
+          "comparison_scope": "generic_fixture_output_vs_skill_guided_fixture_output",
+          "report_wording_note": "Markdown explanatory line says characters; authoritative evaluator and JSON metric use UTF-8 bytes."
+        }
+      }
+    }
+  ],
+  "append_items": [
+    {
+      "id": "skills-source-review-memory-cluster-001",
+      "title": "Review local and project memory sources and consolidate lifecycle procedures",
+      "status": "ready",
+      "priority": 2,
+      "role": "Source Reviewer",
+      "value_type": "source_review_and_normalization",
+      "mission": "Review Supermemory Local, ProjectMem, and Cognee at exact current sources and revisions; distinguish conversational memory, project event memory, graph/vector memory, ordinary knowledge, living knowledge, and canonical project records; define privacy, retention, deletion, encryption, embeddings, model-provider, network, credential, multi-tenant, MCP, filesystem, background-process, and synchronization boundaries; inspect existing package memory skills before adding or superseding procedures; create only bounded first-party memory lifecycle or project-memory procedures that remain distinct from the reviewed knowledge-lifecycle, source-first-wiki, second-brain, graph-projection, and agent-handoff core.",
+      "acceptance_tests": [
+        "resolve the exact current repository or primary source for every reviewed system and record revision and license",
+        "do not install or execute memory servers, databases, MCP tools, embeddings, model calls, connectors, watchers, or background jobs",
+        "distinguish memory from canonical knowledge and record which store is authoritative for each artifact",
+        "define consent, privacy, retention, export, deletion, encryption, tenant, credential, and model-provider boundaries",
+        "treat inferred entities, graph edges, summaries, and embeddings as derived evidence rather than canonical truth",
+        "review overlapping package memory skills and lifecycle guidance before adding local procedures",
+        "record lifecycle and installation decisions without rewriting imported package bodies",
+        "leave utility evaluation and core promotion as separate later items"
+      ],
+      "dependencies": [
+        "skills-evaluate-code-intelligence-fixtures-001"
+      ],
+      "evidence": [],
+      "artifacts": [
+        "sources/reviewed/2026-07-22-memory-runtime-cluster.md",
+        "reports/source-review/2026-07-22-memory-skill-consolidation.md"
+      ],
+      "sources": [
+        "https://supermemory.ai/changelog/local/",
+        "https://github.com/riponcm/projectmem",
+        "https://github.com/topoteretes/cognee"
+      ],
+      "external_action_allowed": false,
+      "extensions": {
+        "next_ticket_on_success": "skills-evaluate-memory-fixtures-001",
+        "runtime_installation_deferred_to_workframe": true,
+        "promotion_to_core_allowed": false
+      }
+    }
+  ]
+}
